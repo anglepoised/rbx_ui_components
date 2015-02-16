@@ -1,5 +1,10 @@
 var gulp = require ('gulp');
 
+/** *****************
+*
+* JS Linting task
+*
+** *************** */
 gulp.task('scripts:lint', function () {
 
     var cached = require('gulp-cached'),

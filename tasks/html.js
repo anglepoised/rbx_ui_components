@@ -1,5 +1,10 @@
 var gulp = require ('gulp');
 
+/** **********************
+*
+* HTML minification task
+*
+** ******************** */
 gulp.task('html', function () {
 
     var gulpIf = require('gulp-if'),
