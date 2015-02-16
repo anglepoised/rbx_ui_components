@@ -27,9 +27,11 @@ gulp.task('test', function (cb) {
       ], cb);
 });
 
-/**
-* Run test once and exit
-*/
+/** *********************
+*
+* Task for Karma tests
+*
+** ******************* */
 gulp.task('unit-tests', function (done) {
     karma.start({
         configFile: __dirname + '/karma-src.conf.js',

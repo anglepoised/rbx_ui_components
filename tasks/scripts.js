@@ -1,5 +1,14 @@
 var gulp = require ('gulp');
 
+/** ****************************************************
+*
+* Scripts task
+*
+* Takes care of angular DI annotation
+* When release adds a minified "*.min.js" script file
+*
+** ************************************************** */
+
 gulp.task('scripts', function () {
 
     var gulpIf = require('gulp-if'),

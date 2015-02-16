@@ -1,5 +1,15 @@
 var gulp = require ('gulp');
 
+/** ******************************************
+*
+* Watch task
+*
+* Starts a server with a default page
+* Watches for changes in HTML and JS files
+* and triggers reload
+*
+** **************************************** */
+
 gulp.task('watch', ['default'], function () {
 
     var browserSync = require('browser-sync'),

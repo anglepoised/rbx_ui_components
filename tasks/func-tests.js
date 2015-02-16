@@ -2,6 +2,12 @@ var gulp = require ('gulp'),
     connect = require('gulp-connect'),
     protractor = require('gulp-protractor').protractor;
 
+/** ****************************
+*
+* Task for Protractor tests
+*
+** ************************** */
+
 gulp.task('func-tests', function (cb) {
 
     var paths = {

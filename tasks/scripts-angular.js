@@ -11,7 +11,7 @@ var gulp = require ('gulp'),
  * Packs angular libraries and project JS libraries
  * into a main.js file.
  * Takes care of angular DI annotation
- * Minifies the main.js file if is Release
+ * Minifies the main.js file when Release
  *
  ** *********************************************** */
 
