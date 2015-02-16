@@ -4,6 +4,17 @@ var gulp = require ('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify');
 
+/** **************************************************
+ *
+ * Angular scripts task
+ *
+ * Packs angular libraries and project JS libraries
+ * into a main.js file.
+ * Takes care of angular DI annotation
+ * Minifies the main.js file if is Release
+ *
+ ** *********************************************** */
+
 gulp.task('scripts:angular', function (cb) {
 
     var angularModule = ['vendor/angular/angular.js'],
