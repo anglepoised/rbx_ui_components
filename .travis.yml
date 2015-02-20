@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "0.10"
+before_install:
+  - cp protractor-base.conf.js.travis protractor-base.conf.js
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
+  - mkdir -p /home/travis/build/rockabox/rbx_ui_components/node_modules/protractor/selenium/
+  - cp selenium-server-standalone-2.44.0.jar /home/travis/build/rockabox/rbx_ui_components/node_modules/protractor/selenium/
+before_script:
+  - npm install -g bower
+  - bower install
+  - java -jar selenium-server-standalone-2.44.0.jar > /tmp/selenium.log 2> /tmp/selenium.error &
+  - sleep 5
+  - nohup bash -c "./nodemodules/protractor/bin/webdriver-manager start 2>&1 &"
