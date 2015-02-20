@@ -6,7 +6,9 @@ module.exports = function(config) {
         // list of files / patterns to load in the browser
         files: [
             'vendor/angular/angular.js',
-            //'src/**/*.spec.js',
+            'vendor/angular-mocks/angular-mocks.js',
+            'src/**/*.js',
+            'src/**/*.spec.js',
             'tests/js/unit/**/*.js'
         ],
         exclude: [],
