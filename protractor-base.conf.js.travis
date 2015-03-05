@@ -19,5 +19,6 @@ exports.config = {
     },
     jasmineNodeOpts: {
         showColors: true
-    }
+    },
+    getPageTimeout: 30000
 };
