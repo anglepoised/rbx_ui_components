@@ -15,7 +15,7 @@ var gulp = require ('gulp'),
  *
  ** *********************************************** */
 
-gulp.task('scripts:angular', function (cb) {
+gulp.task('scripts:angular', ['templates:dist'], function (cb) {
 
     var angularModule = ['vendor/angular/angular.js'],
         vendorFiles = ['vendor/angular-animate/angular-animate.js',
@@ -31,9 +31,9 @@ gulp.task('scripts:angular', function (cb) {
         };
 
     return gulp.src(angularModule.concat(vendorFiles).concat(jsFiles))
-      .pipe(ngAnnotate({'single_quotes': true}))
-      .pipe(gulpIf(isRelease, uglify()))
-      .pipe(concat('main.js'))
-      .pipe(gulp.dest(paths.dest));
+        .pipe(ngAnnotate({'single_quotes': true}))
+        .pipe(gulpIf(isRelease, uglify()))
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest(paths.dest));
 
 });

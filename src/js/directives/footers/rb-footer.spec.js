@@ -14,7 +14,9 @@ describe('rb-footer', function () {
         template = '<rb-footer copyright="copyright" ' +
             'links="links" clickfunction="clickfunction(id)"></rb-footer>';
 
-    beforeEach(module('directives.footers.rb-footer'));
+    beforeEach(module('footers/rb-footer.tpl.html',
+        'directives.footers.rb-footer'
+    ));
 
     beforeEach(inject(function (_$compile_, _$rootScope_) {
         $scope = _$rootScope_.$new({});

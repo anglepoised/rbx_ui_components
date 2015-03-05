@@ -15,10 +15,10 @@ gulp.task('html', function () {
         };
 
     return gulp.src(paths.src)
-    .pipe(gulpIf(isRelease, minifyHTML({
-        comments: true,
-        quotes: true
-    })))
-    .pipe(gulp.dest(paths.dest));
+        .pipe(gulpIf(isRelease, minifyHTML({
+            comments: true,
+            quotes: true
+        })))
+        .pipe(gulp.dest(paths.dest));
 
 });

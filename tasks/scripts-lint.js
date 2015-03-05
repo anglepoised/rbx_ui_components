@@ -20,13 +20,13 @@ gulp.task('scripts:lint', function () {
         };
 
     return gulp.src(paths.src)
-      .pipe(cached('scripts'))
-      .pipe(jscs())
-      .on('error', function (err) {
-          console.log(err.message);
-          this.emit('end');
-      })
-      .pipe(jshint())
-      .pipe(jshint.reporter('jshint-stylish'));
+        .pipe(cached('scripts'))
+        .pipe(jscs())
+        .on('error', function (err) {
+            console.log(err.message);
+            this.emit('end');
+        })
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'));
 
 });

@@ -19,17 +19,17 @@ gulp.task('watch', ['default'], function () {
         srcHtml: 'src/js/**/*.html',
         srcScripts: 'src/js/**/*.js',
         srcScriptsLint: [
-        'gulpfile.js',
-        'tasks/*.js',
-        'src/js/**/*.js'
+            'gulpfile.js',
+            'tasks/*.js',
+            'src/js/**/*.js'
     ]};
 
     // start browser sync server
     browserSync({
-      open: false,
-      server: {
-        baseDir: paths.dist
-      }
+        open: false,
+        server: {
+            baseDir: paths.dist
+        }
     });
 
     // watch src gulp tasks and trigger reload

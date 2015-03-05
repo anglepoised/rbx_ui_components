@@ -19,12 +19,13 @@ gulp.task('test', function (cb) {
         'raw',
         'html',
         'scripts',
+        'templates:dist',
         'scripts:angular',
         'scripts:lint',
         'html:lint',
         'unit-tests',
         'func-tests'
-      ], cb);
+    ], cb);
 });
 
 /** *********************
@@ -48,6 +49,7 @@ gulp.task('default', ['clean'], function (cb) {
     ], [
         'html',
         'scripts',
+        'templates:dist',
         'scripts:angular',
         'unit-tests'
     ],

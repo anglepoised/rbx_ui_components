@@ -1,0 +1,10 @@
+<footer class="Footer" role="contentinfo">
+    <ul class="Footer-items">
+        <li class="Footer-item" ng-repeat="link in ::links track by $index">
+            <a class="Footer-itemInner" ng-click="clickfunction({id:link.id})">{{::link.text}}</a>
+        </li>
+    </ul>
+    <div class="Footer-Copyright">
+        <p>{{::copyright}}</p>
+    </div>
+</footer>
