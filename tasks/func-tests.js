@@ -8,7 +8,7 @@ var gulp = require ('gulp'),
 *
 ** ************************** */
 
-gulp.task('func-tests', function (cb) {
+gulp.task('func-tests', ['scripts:angular'], function (cb) {
 
     var paths = {
         src: 'tests/js/functional/**/*.js',
