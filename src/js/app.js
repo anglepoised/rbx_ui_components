@@ -3,7 +3,7 @@
  *
  */
 angular
-    .module('app', ['hljs'])
+    .module('app', ['hljs', 'templates'])
         .controller('mainCtrl', function () {
             this.title = 'rbx_ui_components test page';
         });

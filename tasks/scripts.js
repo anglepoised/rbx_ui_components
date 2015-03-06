@@ -18,19 +18,19 @@ gulp.task('scripts', function () {
 
         paths = {
             src: ['src/js/**/*.js',
-                  '!src/js/**/*.spec.js'
+                '!src/js/**/*.spec.js'
                 ],
             dest: 'dist/js'
         };
 
     return gulp.src(paths.src)
-      .pipe(ngAnnotate({'single_quotes': true}))
-      .pipe(gulpIf(isRelease, rename(function (path) {
-          if (path.extname === '.js') {
-              path.basename += '.min';
-          }
-      })))
-      .pipe(gulpIf(isRelease, uglify()))
-      .pipe(gulp.dest(paths.dest));
+        .pipe(ngAnnotate({'single_quotes': true}))
+        .pipe(gulpIf(isRelease, rename(function (path) {
+            if (path.extname === '.js') {
+                path.basename += '.min';
+            }
+        })))
+        .pipe(gulpIf(isRelease, uglify()))
+        .pipe(gulp.dest(paths.dest));
 
 });

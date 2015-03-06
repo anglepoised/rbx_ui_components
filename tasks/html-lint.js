@@ -14,12 +14,12 @@ gulp.task('html:lint', function () {
     };
 
     return gulp.src(paths.src)
-    .pipe(cached('html'))
-    .pipe(htmlhint())
-    .on('error', function (err) {
-        console.log(err.message);
-        this.emit('end');
-    })
-    .pipe(htmlhint.reporter());
+        .pipe(cached('html'))
+        .pipe(htmlhint())
+        .on('error', function (err) {
+            console.log(err.message);
+            this.emit('end');
+        })
+        .pipe(htmlhint.reporter());
 
 });
