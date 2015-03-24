@@ -1,0 +1,10 @@
+<nav class="Navigation" role="navigation">
+    <ul class="Navigation-items">
+        <li class="Navigation-item" ng-repeat="option in ::options track by $index">
+            <a class="Navigation-itemInner" ng-class="{ 'is-active': isactivefunction({id:option.id})}"
+                ng-click="clickfunction({id:option.id})" ng-aria>
+                {{::option.text}}
+            </a>
+        </li>
+    </ul>
+</nav>

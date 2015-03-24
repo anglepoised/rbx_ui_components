@@ -3,26 +3,26 @@
 
     /**
      * @ngdoc module
-     * @name directives.headers.nav-bar.rb-header-nav-bar
+     * @name directives.nav-bars.nav-bar.rb-nav-bar
      * @description
      *
-     * RB Header Navigation Bar
+     * RB Navigation Bar
      *
      */
-    angular.module('directives.headers.nav-bar.rb-header-nav-bar', [
+    angular.module('directives.nav-bars.nav-bar.rb-nav-bar', [
 
     ])
-    .directive('rbHeaderNavBar', RbHeaderNavBarDirective);
+    .directive('rbNavBar', RbNavBarDirective);
 
     /**
      * @ngdoc directive
-     * @name rbHeaderNavBar
-     * @module directives.headers.nav-bar.rb-header-nav-bar
+     * @name rbNavBar
+     * @module directives.nav-bars.nav-bar.rb-nav-bar
      *
      * @restrict E
      *
      * @description
-     * `<rb-header-nav-bar>` is a directive that shows a navigation bar in a header
+     * `<rb-nav-bar>` is a directive that shows a navigation bar
      *
      * @scope
      *  'options': an array containing option objects to be placed in the navigation bar.
@@ -32,18 +32,20 @@
      *  'clickfunction': a custom function to be executed on every option when clicked
      *                   The function receives the 'id' from the option object as param
      *  'isactivefunction': a custom function that returns if an option should be displayed
-     *                   with an is-active class.
+     *                   with an `is-active` class.
      *                   The function receives the 'id' from the option object as param
      *
      * @usage
      * <hljs lang="html">
-     *   <rb-header-nav-bar options="ctrl.options" clickfunction="ctrl.goTo(id)"
-     *   isactivefunction="ctrl.isActive(id)"></rb-header-nav-bar>
+     *    <div class="Header-nav">
+     *        <rb-nav-bar options="ctrl.options" clickfunction="ctrl.goTo(id)"
+     *            isactivefunction="ctrl.isActive(id)"></rb-nav-bar>
+     *    </div>
      * </hljs>
      *
      */
 
-    function RbHeaderNavBarDirective () {
+    function RbNavBarDirective () {
 
         return {
             scope: {
@@ -53,7 +55,7 @@
             },
             restrict: 'E',
             replace: true,
-            templateUrl: 'headers/nav-bar/rb-header-nav-bar.tpl.html'
+            templateUrl: 'nav-bars/nav-bar/rb-nav-bar.tpl.html'
         };
     }
 })();

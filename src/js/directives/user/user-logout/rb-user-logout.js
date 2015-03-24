@@ -3,27 +3,26 @@
 
     /**
      * @ngdoc module
-     * @name directives.headers.logout.rb-header-logout
+     * @name directives.user.user-logout.rb-user-logout
      * @description
      *
-     * RB Header Logout
+     * RB User Logout
      *
      */
-    angular.module('directives.headers.logout.rb-header-logout', [
+    angular.module('directives.user.user-logout.rb-user-logout', [
 
     ])
-    .directive('rbHeaderLogout', RbHeaderLogoutDirective);
+    .directive('rbUserLogout', RbUserLogoutDirective);
 
     /**
      * @ngdoc directive
-     * @name rbHeaderLogout
-     * @module directives.headers.logout.rb-header-logout
+     * @name rbUserLogout
+     * @module directives.user.user-logout.rb-user-logout
      *
      * @restrict E
      *
      * @description
-     * `<rb-header-logout>` is a directive that shows a username and logout component
-     * in a header
+     * `<rb-user-logout>` is a directive that shows a username and logout component
      *
      * @scope
      *  'username': contains an expression that returns the current logged in username
@@ -31,13 +30,16 @@
      *
      * @usage
      * <hljs lang="html">
-     *   <rb-header-logout username="ctrl.currentUsername"
-     *   logoutfunction="ctrl.logout()">Sign out</rb-header-logout>
+     *   <div class="Header-user">
+     *      <rb-user-logout username="ctrl.currentUsername" logoutfunction="ctrl.logout()">
+     *          Sign out
+     *      </rb-user-logout>
+     *   </div>
      * </hljs>
      *
      */
 
-    function RbHeaderLogoutDirective () {
+    function RbUserLogoutDirective () {
 
         return {
             scope: {
@@ -47,7 +49,7 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'headers/logout/rb-header-logout.tpl.html'
+            templateUrl: 'user/user-logout/rb-user-logout.tpl.html'
         };
     }
 })();

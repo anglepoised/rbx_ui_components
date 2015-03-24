@@ -1,4 +1,4 @@
-describe('rb-header-nav-bar', function () {
+describe('rb-nav-bar', function () {
 
     var $scope,
         $compile,
@@ -13,11 +13,11 @@ describe('rb-header-nav-bar', function () {
         _isactivefunction = function (id) {
             return true;
         },
-        template = '<rb-header-nav-bar options="options" clickfunction="clickfunction(id)" ' +
-            ' isactivefunction="isactivefunction(id)"></rb-header-nav-bar>';
+        template = '<rb-nav-bar options="options" clickfunction="clickfunction(id)" ' +
+            ' isactivefunction="isactivefunction(id)"></rb-nav-bar>';
 
-    beforeEach(module('headers/nav-bar/rb-header-nav-bar.tpl.html',
-        'directives.headers.nav-bar.rb-header-nav-bar'
+    beforeEach(module('nav-bars/nav-bar/rb-nav-bar.tpl.html',
+        'directives.nav-bars.nav-bar.rb-nav-bar'
     ));
 
     beforeEach(inject(function (_$compile_, _$rootScope_) {
@@ -28,9 +28,9 @@ describe('rb-header-nav-bar', function () {
         $scope.isactivefunction = _isactivefunction;
     }));
 
-    it('should convert attributes on a rb-header-nav-bar to attributes on the generated nav bar',
+    it('should convert attributes on a rb-nav-bar to attributes on the generated nav bar',
         function () {
-            var navBar = $compile('<rb-header-nav-bar anyattr any-attr></rb-header-nav-bar>')($scope);
+            var navBar = $compile('<rb-nav-bar anyattr any-attr></rb-nav-bar>')($scope);
 
             $scope.$apply();
             expect(navBar[0].hasAttribute('anyattr')).toBe(true);
@@ -39,12 +39,12 @@ describe('rb-header-nav-bar', function () {
 
     describe('rendering', function () {
 
-        it('should render with a "div" tagname', function () {
+        it('should render with a "nav" tagname', function () {
             var navBar = angular.element(template),
                 element = $compile(navBar)($scope);
 
             $scope.$apply();
-            expect(element[0].tagName.toLowerCase()).toEqual('div');
+            expect(element[0].tagName.toLowerCase()).toEqual('nav');
         });
 
         it('should place navigation options in the navigation bar', function () {
