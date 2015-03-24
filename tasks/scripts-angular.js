@@ -15,11 +15,12 @@ var gulp = require ('gulp'),
  *
  ** *********************************************** */
 
-gulp.task('scripts:angular', ['templates:dist'], function (cb) {
+gulp.task('scripts:angular', ['templates:dev'], function (cb) {
 
     var angularModule = ['vendor/angular/angular.js'],
         vendorFiles = ['vendor/angular-animate/angular-animate.js',
                        'vendor/angular-aria/angular-aria.js',
+                       'vendor/angular-touch/angular-touch.js',
                        'vendor/ng-lodash/build/ng-lodash.js',
                        'vendor/highlightjs/highlight.pack.js',
                        'vendor/angular-highlightjs/angular-highlightjs.js'],
@@ -27,7 +28,7 @@ gulp.task('scripts:angular', ['templates:dist'], function (cb) {
             '!src/js/**/*.spec.js',
             '!src/js/app.js'],
         paths = {
-            dest: 'dist/js'
+            dest: 'dev/js'
         };
 
     return gulp.src(angularModule.concat(vendorFiles).concat(jsFiles))

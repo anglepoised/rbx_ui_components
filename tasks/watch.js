@@ -15,7 +15,7 @@ gulp.task('watch', ['default'], function () {
     var browserSync = require('browser-sync'),
     reload = browserSync.reload,
     paths = {
-        dist: 'dist',
+        dist: 'dev',
         srcHtml: 'src/js/**/*.html',
         srcScripts: 'src/js/**/*.js',
         srcScriptsLint: [

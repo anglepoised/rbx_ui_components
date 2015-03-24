@@ -11,7 +11,7 @@ gulp.task('html', function () {
         minifyHTML = require('gulp-minify-html'),
         paths = {
             src: 'src/**/*.html',
-            dest: 'dist'
+            dest: 'dev'
         };
 
     return gulp.src(paths.src)

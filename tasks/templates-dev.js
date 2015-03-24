@@ -10,11 +10,11 @@ var gulp = require ('gulp'),
  *
  ** ************************************************** */
 
-gulp.task('templates:dist', function (cb) {
+gulp.task('templates:dev', function (cb) {
 
     var templateFiles = ['src/js/directives/**/*.tpl.html'],
         paths = {
-            dest: 'dist'
+            dest: 'dev/templates'
         };
 
     return gulp.src(templateFiles)

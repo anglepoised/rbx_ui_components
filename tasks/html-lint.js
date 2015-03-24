@@ -10,7 +10,7 @@ gulp.task('html:lint', function () {
     var cached = require('gulp-cached'),
         htmlhint = require('gulp-htmlhint'),
         paths = {
-            src: 'dist/**/*.html'
+            src: 'dev/**/*.html'
     };
 
     return gulp.src(paths.src)

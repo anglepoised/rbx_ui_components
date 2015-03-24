@@ -20,7 +20,7 @@ gulp.task('scripts', function () {
             src: ['src/js/**/*.js',
                 '!src/js/**/*.spec.js'
                 ],
-            dest: 'dist/js'
+            dest: 'dev/js'
         };
 
     return gulp.src(paths.src)

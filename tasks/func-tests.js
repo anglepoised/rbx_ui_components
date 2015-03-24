@@ -12,11 +12,11 @@ gulp.task('func-tests', ['scripts:angular'], function (cb) {
 
     var paths = {
         src: 'tests/js/functional/**/*.js',
-        dist: 'dist'
+        dev: 'dev'
     };
 
     connect.server({
-        root: paths.dist,
+        root: paths.dev,
         port: protractorPort
     });
 
