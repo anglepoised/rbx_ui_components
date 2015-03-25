@@ -37,9 +37,9 @@
      *                isactivefunction="ctrl.isActive(id)"></rb-nav-bar>
      *        </div>
      *        <div class="Header-user">
-     *            <rb-user-logout username="ctrl.currentUsername" logoutfunction="ctrl.logout()">
+     *            <rb-user username="ctrl.currentUsername" logoutfunction="ctrl.logout()">
      *                Sign out
-     *            </rb-user-logout>
+     *            </rb-user>
      *        </div>
      *     </rb-header>
      * </hljs>

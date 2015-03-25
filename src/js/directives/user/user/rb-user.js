@@ -3,26 +3,26 @@
 
     /**
      * @ngdoc module
-     * @name directives.user.user-logout.rb-user-logout
+     * @name directives.user.user.rb-user
      * @description
      *
-     * RB User Logout
+     * RB User
      *
      */
-    angular.module('directives.user.user-logout.rb-user-logout', [
+    angular.module('directives.user.user.rb-user', [
 
     ])
-    .directive('rbUserLogout', RbUserLogoutDirective);
+    .directive('rbUser', RbUserDirective);
 
     /**
      * @ngdoc directive
-     * @name rbUserLogout
-     * @module directives.user.user-logout.rb-user-logout
+     * @name rbUser
+     * @module directives.user.user.rb-user
      *
      * @restrict E
      *
      * @description
-     * `<rb-user-logout>` is a directive that shows a username and logout component
+     * `<rb-user>` is a directive that shows a username and logout component
      *
      * @scope
      *  'username': contains an expression that returns the current logged in username
@@ -31,15 +31,15 @@
      * @usage
      * <hljs lang="html">
      *   <div class="Header-user">
-     *      <rb-user-logout username="ctrl.currentUsername" logoutfunction="ctrl.logout()">
+     *      <rb-user username="ctrl.currentUsername" logoutfunction="ctrl.logout()">
      *          Sign out
-     *      </rb-user-logout>
+     *      </rb-user>
      *   </div>
      * </hljs>
      *
      */
 
-    function RbUserLogoutDirective () {
+    function RbUserDirective () {
 
         return {
             scope: {
@@ -49,7 +49,7 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'user/user-logout/rb-user-logout.tpl.html'
+            templateUrl: 'user/user/rb-user.tpl.html'
         };
     }
 })();
