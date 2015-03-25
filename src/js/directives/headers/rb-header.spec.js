@@ -4,8 +4,8 @@ describe('rb-header', function () {
         $compile,
         template = '<rb-header></rb-header>';
 
-    beforeEach(module('headers/header/rb-header.tpl.html',
-        'directives.headers.header.rb-header'
+    beforeEach(module('headers/rb-header.tpl.html',
+        'directives.headers.rb-header'
     ));
 
     beforeEach(inject(function (_$compile_, _$rootScope_) {

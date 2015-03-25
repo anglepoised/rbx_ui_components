@@ -5,8 +5,8 @@ describe('rb-icon', function () {
         _icon = 'icon',
         template = '<rb-icon icon="icon">Rockabox</rb-icon>';
 
-    beforeEach(module('icons/icon/rb-icon.tpl.html',
-        'directives.icons.icon.rb-icon'
+    beforeEach(module('icons/rb-icon.tpl.html',
+        'directives.icons.rb-icon'
     ));
 
     beforeEach(inject(function (_$compile_, _$rootScope_) {

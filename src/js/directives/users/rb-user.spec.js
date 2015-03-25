@@ -9,8 +9,8 @@ describe('rb-user', function () {
         template = '<rb-user username="username" ' +
             'logoutfunction="logoutfunction()">Sign out</rb-user>';
 
-    beforeEach(module('user/user/rb-user.tpl.html',
-        'directives.user.user.rb-user'
+    beforeEach(module('users/rb-user.tpl.html',
+        'directives.users.rb-user'
     ));
 
     beforeEach(inject(function (_$compile_, _$rootScope_) {

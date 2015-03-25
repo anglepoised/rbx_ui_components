@@ -16,8 +16,8 @@ describe('rb-nav-bar', function () {
         template = '<rb-nav-bar options="options" clickfunction="clickfunction(id)" ' +
             ' isactivefunction="isactivefunction(id)"></rb-nav-bar>';
 
-    beforeEach(module('nav-bars/nav-bar/rb-nav-bar.tpl.html',
-        'directives.nav-bars.nav-bar.rb-nav-bar'
+    beforeEach(module('nav-bars/rb-nav-bar.tpl.html',
+        'directives.nav-bars.rb-nav-bar'
     ));
 
     beforeEach(inject(function (_$compile_, _$rootScope_) {
