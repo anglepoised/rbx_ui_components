@@ -3,13 +3,13 @@
 
     /**
      * @ngdoc module
-     * @name directives.headers.header.rb-header
+     * @name directives.headers.rb-header
      * @description
      *
      * RB Header
      *
      */
-    angular.module('directives.headers.header.rb-header', [
+    angular.module('directives.headers.rb-header', [
 
     ])
     .directive('rbHeader', RbHeaderDirective);
@@ -17,7 +17,7 @@
     /**
      * @ngdoc directive
      * @name rbHeader
-     * @module directives.headers.header.rb-header
+     * @module directives.headers.rb-header
      *
      * @restrict E
      *
@@ -54,7 +54,7 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'headers/header/rb-header.tpl.html'
+            templateUrl: 'headers/rb-header.tpl.html'
         };
     }
 })();

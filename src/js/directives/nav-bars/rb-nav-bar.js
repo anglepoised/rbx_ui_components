@@ -3,13 +3,13 @@
 
     /**
      * @ngdoc module
-     * @name directives.nav-bars.nav-bar.rb-nav-bar
+     * @name directives.nav-bars.rb-nav-bar
      * @description
      *
      * RB Navigation Bar
      *
      */
-    angular.module('directives.nav-bars.nav-bar.rb-nav-bar', [
+    angular.module('directives.nav-bars.rb-nav-bar', [
 
     ])
     .directive('rbNavBar', RbNavBarDirective);
@@ -17,7 +17,7 @@
     /**
      * @ngdoc directive
      * @name rbNavBar
-     * @module directives.nav-bars.nav-bar.rb-nav-bar
+     * @module directives.nav-bars.rb-nav-bar
      *
      * @restrict E
      *
@@ -55,7 +55,7 @@
             },
             restrict: 'E',
             replace: true,
-            templateUrl: 'nav-bars/nav-bar/rb-nav-bar.tpl.html'
+            templateUrl: 'nav-bars/rb-nav-bar.tpl.html'
         };
     }
 })();

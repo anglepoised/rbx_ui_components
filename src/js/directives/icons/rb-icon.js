@@ -3,13 +3,13 @@
 
     /**
      * @ngdoc module
-     * @name directives.icons.icon.rb-icon
+     * @name directives.icons.rb-icon
      * @description
      *
      * RB Icon
      *
      */
-    angular.module('directives.icons.icon.rb-icon', [
+    angular.module('directives.icons.rb-icon', [
 
     ])
     .directive('rbIcon', RbIconDirective);
@@ -17,7 +17,7 @@
     /**
      * @ngdoc directive
      * @name rbIcon
-     * @module directives.icons.icon.rb-icon
+     * @module directives.icons.rb-icon
      *
      * @restrict E
      *
@@ -45,7 +45,7 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'icons/icon/rb-icon.tpl.html'
+            templateUrl: 'icons/rb-icon.tpl.html'
         };
     }
 })();

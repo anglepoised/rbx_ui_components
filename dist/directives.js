@@ -59,13 +59,13 @@
 
     /**
      * @ngdoc module
-     * @name directives.headers.header.rb-header
+     * @name directives.headers.rb-header
      * @description
      *
      * RB Header
      *
      */
-    angular.module('directives.headers.header.rb-header', [
+    angular.module('directives.headers.rb-header', [
 
     ])
     .directive('rbHeader', RbHeaderDirective);
@@ -73,7 +73,7 @@
     /**
      * @ngdoc directive
      * @name rbHeader
-     * @module directives.headers.header.rb-header
+     * @module directives.headers.rb-header
      *
      * @restrict E
      *
@@ -110,7 +110,7 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'headers/header/rb-header.tpl.html'
+            templateUrl: 'headers/rb-header.tpl.html'
         };
     }
 })();
@@ -120,13 +120,13 @@
 
     /**
      * @ngdoc module
-     * @name directives.icons.icon.rb-icon
+     * @name directives.icons.rb-icon
      * @description
      *
      * RB Icon
      *
      */
-    angular.module('directives.icons.icon.rb-icon', [
+    angular.module('directives.icons.rb-icon', [
 
     ])
     .directive('rbIcon', RbIconDirective);
@@ -134,7 +134,7 @@
     /**
      * @ngdoc directive
      * @name rbIcon
-     * @module directives.icons.icon.rb-icon
+     * @module directives.icons.rb-icon
      *
      * @restrict E
      *
@@ -162,7 +162,7 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'icons/icon/rb-icon.tpl.html'
+            templateUrl: 'icons/rb-icon.tpl.html'
         };
     }
 })();
@@ -172,13 +172,13 @@
 
     /**
      * @ngdoc module
-     * @name directives.nav-bars.nav-bar.rb-nav-bar
+     * @name directives.nav-bars.rb-nav-bar
      * @description
      *
      * RB Navigation Bar
      *
      */
-    angular.module('directives.nav-bars.nav-bar.rb-nav-bar', [
+    angular.module('directives.nav-bars.rb-nav-bar', [
 
     ])
     .directive('rbNavBar', RbNavBarDirective);
@@ -186,7 +186,7 @@
     /**
      * @ngdoc directive
      * @name rbNavBar
-     * @module directives.nav-bars.nav-bar.rb-nav-bar
+     * @module directives.nav-bars.rb-nav-bar
      *
      * @restrict E
      *
@@ -224,7 +224,7 @@
             },
             restrict: 'E',
             replace: true,
-            templateUrl: 'nav-bars/nav-bar/rb-nav-bar.tpl.html'
+            templateUrl: 'nav-bars/rb-nav-bar.tpl.html'
         };
     }
 })();
@@ -234,13 +234,13 @@
 
     /**
      * @ngdoc module
-     * @name directives.user.user.rb-user
+     * @name directives.users.rb-user
      * @description
      *
      * RB User
      *
      */
-    angular.module('directives.user.user.rb-user', [
+    angular.module('directives.users.rb-user', [
 
     ])
     .directive('rbUser', RbUserDirective);
@@ -248,7 +248,7 @@
     /**
      * @ngdoc directive
      * @name rbUser
-     * @module directives.user.user.rb-user
+     * @module directives.users.rb-user
      *
      * @restrict E
      *
@@ -280,7 +280,7 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'user/user/rb-user.tpl.html'
+            templateUrl: 'users/rb-user.tpl.html'
         };
     }
 })();

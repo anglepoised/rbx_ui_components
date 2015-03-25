@@ -3,13 +3,13 @@
 
     /**
      * @ngdoc module
-     * @name directives.user.user.rb-user
+     * @name directives.users.rb-user
      * @description
      *
      * RB User
      *
      */
-    angular.module('directives.user.user.rb-user', [
+    angular.module('directives.users.rb-user', [
 
     ])
     .directive('rbUser', RbUserDirective);
@@ -17,7 +17,7 @@
     /**
      * @ngdoc directive
      * @name rbUser
-     * @module directives.user.user.rb-user
+     * @module directives.users.rb-user
      *
      * @restrict E
      *
@@ -49,7 +49,7 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'user/user/rb-user.tpl.html'
+            templateUrl: 'users/rb-user.tpl.html'
         };
     }
 })();
