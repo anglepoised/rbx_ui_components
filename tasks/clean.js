@@ -4,8 +4,9 @@ gulp.task('clean', function (cb) {
 
     var del = require('del'),
         paths = {
-            dist: 'dist'
+            dist: 'dist',
+            dev: 'dev'
         };
 
-    del(paths.dist, cb);
+    del(['paths.dist', 'paths.dev'], cb);
 });

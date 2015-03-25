@@ -20,7 +20,9 @@ gulp.task('test', function (cb) {
         'html',
         'scripts',
         'templates:dist',
+        'templates:dev',
         'scripts:angular',
+        'scripts:dist',
         'scripts:lint',
         'html:lint',
         'unit-tests',
@@ -50,7 +52,9 @@ gulp.task('default', ['clean'], function (cb) {
         'html',
         'scripts',
         'templates:dist',
+        'templates:dev',
         'scripts:angular',
+        'scripts:dist',
         'unit-tests'
     ],
     ['html:lint'], cb);

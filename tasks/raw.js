@@ -6,7 +6,7 @@ gulp.task('raw', function (done) {
           '!src/js/**/*.spec.js',
           '!src/js/**/*.tpl.html'
       ],
-      dest: 'dist/js'
+      dest: 'dev/js'
     };
 
     return gulp.src(paths.src)
