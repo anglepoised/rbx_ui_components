@@ -23,7 +23,7 @@ config = {
         ],
         alias: {
             dev: path.join(__dirname, 'dev'),
-            components: path.join(__dirname, 'src/js/directives')
+            components: path.join(__dirname, 'src')
         }
     },
 
