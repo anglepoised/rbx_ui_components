@@ -1,6 +1,6 @@
 define([
     'components/rb-footer'
-], function (rbFooter) {    
+], function (rbFooter) {
     describe('rb-footer', function () {
 
         var $scope,
