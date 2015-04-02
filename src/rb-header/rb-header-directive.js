@@ -31,7 +31,7 @@ define([
      *        </div>
      *     </rb-header>
      * </hljs>
-     * 
+     *
      * @ngInject
      */
     function rbHeaderDirective () {

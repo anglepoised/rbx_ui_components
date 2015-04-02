@@ -1,6 +1,6 @@
 // Karma configuration
 
-module.exports = function(config) {
+module.exports = function (config) {
     config.set({
         basePath: './',
         preprocessors: {
@@ -30,6 +30,6 @@ module.exports = function(config) {
         runnerPort: 9100,
         autoWatch: true,
         captureTimeout: 60000,
-        singleRun: true,
+        singleRun: true
     });
 };

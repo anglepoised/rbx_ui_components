@@ -40,5 +40,5 @@ define([
         };
     }
 
-    return rbUserDirective
+    return rbUserDirective;
 });

@@ -32,4 +32,3 @@ define([
 
     return headerCtrl;
 });
-
