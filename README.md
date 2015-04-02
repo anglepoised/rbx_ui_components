@@ -5,11 +5,13 @@ A set of angular components.
 ## Dependencies
 
 * [Git](http://git-scm.com)
-* [Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
-* [Gulp](http://gulpjs.com/): `npm install -g gulp`.
+* [Grunt](http://gruntjs.com/): `npm install -g grunt`.
 * [Bower](http://bower.io): `npm install -g bower`.
-* [Selenium Server](https://www.npmjs.com/package/selenium-standalone): `npm install -g selenium-standalone`.
+* [Selenium Server](https:/* [Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+/www.npmjs.com/package/selenium-standalone): `npm install -g selenium-standalone`.
 * [Protractor](https://www.npmjs.com/package/protractor): `npm install -g protractor`.
+* [Webpack](http://webpack.github.io): `npm install -g webpack`.
+* [Webpack-dev-server](http://webpack.github.io): `npm install -g webpack-dev-server`.
 
 ## Getting started
 
@@ -17,7 +19,7 @@ A set of angular components.
 * Checkout the repo: `git clone git@github.com:rockabox/rbx_ui_components && cd rbx_ui_components`
 * Install project dependencies: `npm install`.
 * Install bower packages: `bower install`.
-* Run `gulp watch`. (For production environment run `gulp watch --release`)
+* Run `npm start`.
 
 ## Running functional tests with Protractor
 
