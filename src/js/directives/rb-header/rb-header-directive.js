@@ -1,18 +1,6 @@
-(function () {
-    'use strict';
-
-    /**
-     * @ngdoc module
-     * @name directives.headers.rb-header
-     * @description
-     *
-     * RB Header
-     *
-     */
-    angular.module('directives.headers.rb-header', [
-
-    ])
-    .directive('rbHeader', RbHeaderDirective);
+define([
+    'html!./rb-header.tpl.html'
+], function (template) {
 
     /**
      * @ngdoc directive
@@ -43,10 +31,10 @@
      *        </div>
      *     </rb-header>
      * </hljs>
-     *
+     * 
+     * @ngInject
      */
-
-    function RbHeaderDirective () {
+    function rbHeaderDirective () {
 
         return {
             scope: {
@@ -54,7 +42,9 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'headers/rb-header.tpl.html'
+            template: template
         };
     }
-})();
+
+    return rbHeaderDirective;
+});

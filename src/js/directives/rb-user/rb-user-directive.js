@@ -1,19 +1,6 @@
-(function () {
-    'use strict';
-
-    /**
-     * @ngdoc module
-     * @name directives.users.rb-user
-     * @description
-     *
-     * RB User
-     *
-     */
-    angular.module('directives.users.rb-user', [
-
-    ])
-    .directive('rbUser', RbUserDirective);
-
+define([
+    'html!./rb-user.tpl.html'
+], function (template) {
     /**
      * @ngdoc directive
      * @name rbUser
@@ -37,9 +24,9 @@
      *   </div>
      * </hljs>
      *
+     * @ngInject
      */
-
-    function RbUserDirective () {
+    function rbUserDirective () {
 
         return {
             scope: {
@@ -49,7 +36,9 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'users/rb-user.tpl.html'
+            template: template
         };
     }
-})();
+
+    return rbUserDirective
+});
