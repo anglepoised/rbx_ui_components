@@ -19,7 +19,7 @@ define([
             template = '<rb-nav-bar options="options" clickfunction="clickfunction(id)" ' +
                 ' isactivefunction="isactivefunction(id)"></rb-nav-bar>';
 
-        beforeEach(angular.mock.module('rb-nav-bar'));
+        beforeEach(angular.mock.module(rbNavBar.name));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $scope = _$rootScope_.$new({});

@@ -17,7 +17,7 @@ define([
             template = '<rb-footer copyright="copyright" ' +
                 'links="links" clickfunction="clickfunction(id)"></rb-footer>';
 
-        beforeEach(angular.mock.module('rb-footer'));
+        beforeEach(angular.mock.module(rbFooter.name));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $scope = _$rootScope_.$new({});

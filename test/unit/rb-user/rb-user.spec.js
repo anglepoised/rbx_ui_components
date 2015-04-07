@@ -12,7 +12,7 @@ define([
             template = '<rb-user username="username" ' +
                 'logoutfunction="logoutfunction()">Sign out</rb-user>';
 
-        beforeEach(angular.mock.module('rb-user'));
+        beforeEach(angular.mock.module(rbUser.name));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $scope = _$rootScope_.$new({});
