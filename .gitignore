@@ -27,8 +27,8 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
-# Generated version
-dev
-
 # Bower directory
 /vendor/
+
+# Webpack bundle- built on the fly with npm start
+dev/bundle.js
