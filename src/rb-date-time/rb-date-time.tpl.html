@@ -1,0 +1,6 @@
+<time
+    class="DateTime"
+    ng-class="understateTime ? 'DateTime--understateTime' : ''"
+    datetime="{{ dateTime }}">
+    <span class="DateTime-date">{{ dateTime | date:'dd MMM yyyy' }}</span> <span ng-if="!showTime" class="DateTime-time">{{ dateTime | date:'HH:mm' }}</span>
+</time>
