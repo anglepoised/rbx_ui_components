@@ -4,7 +4,7 @@ define([
     /**
      * @ngdoc directive
      * @name rbFooter
-     * @module directives.footers.rb-footer
+     * @module rb-footer
      *
      * @restrict E
      *

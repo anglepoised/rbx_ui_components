@@ -5,7 +5,7 @@ define([
     /**
      * @ngdoc directive
      * @name rbHeader
-     * @module directives.headers.rb-header
+     * @module rb-header
      *
      * @restrict E
      *

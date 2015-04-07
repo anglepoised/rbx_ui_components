@@ -3,7 +3,7 @@ define([
 ], function (rbIconDirective) {
     /**
      * @ngdoc module
-     * @name directives.icons.rb-icon
+     * @name rb-icon
      * @description
      *
      * RB Icon

@@ -3,7 +3,7 @@ define([
 ], function (rbHeaderDirective) {
     /**
      * @ngdoc module
-     * @name directives.headers.rb-header
+     * @name rb-header
      * @description
      *
      * RB Header
