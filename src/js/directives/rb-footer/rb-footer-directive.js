@@ -1,19 +1,6 @@
-(function () {
-    'use strict';
-
-    /**
-     * @ngdoc module
-     * @name directives.footers.rb-footer
-     * @description
-     *
-     * RB Footer
-     *
-     */
-    angular.module('directives.footers.rb-footer', [
-
-    ])
-    .directive('rbFooter', RbFooterDirective);
-
+define([
+    'html!./rb-footer.tpl.html'
+], function (template) {
     /**
      * @ngdoc directive
      * @name rbFooter
@@ -37,9 +24,9 @@
      *   <rb-footer copyright="ctrl.copyright" links="ctrl.links" clickfunction="ctrl.goTo(id)"></rb-footer>
      * </hljs>
      *
+     * @ngInject
      */
-
-    function RbFooterDirective () {
+    function rbFooterDirective () {
 
         return {
             scope: {
@@ -49,7 +36,10 @@
             },
             restrict: 'E',
             replace: true,
-            templateUrl: 'footers/rb-footer.tpl.html'
+            template: template
         };
     }
-})();
+
+    return rbFooterDirective;
+
+});

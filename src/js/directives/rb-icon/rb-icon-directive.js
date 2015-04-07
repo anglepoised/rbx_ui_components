@@ -1,19 +1,6 @@
-(function () {
-    'use strict';
-
-    /**
-     * @ngdoc module
-     * @name directives.icons.rb-icon
-     * @description
-     *
-     * RB Icon
-     *
-     */
-    angular.module('directives.icons.rb-icon', [
-
-    ])
-    .directive('rbIcon', RbIconDirective);
-
+define([
+    'html!./rb-icon.tpl.html'
+], function (template) {
     /**
      * @ngdoc directive
      * @name rbIcon
@@ -34,9 +21,9 @@
      *    </a>
      * </hljs>
      *
+     * @ngInject
      */
-
-    function RbIconDirective () {
+    function rbIconDirective () {
 
         return {
             scope: {
@@ -45,7 +32,9 @@
             restrict: 'E',
             replace: true,
             transclude: true,
-            templateUrl: 'icons/rb-icon.tpl.html'
+            template: template
         };
     }
-})();
+
+    return rbIconDirective;
+});

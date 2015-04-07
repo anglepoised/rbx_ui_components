@@ -1,18 +1,6 @@
-(function () {
-    'use strict';
-
-    /**
-     * @ngdoc module
-     * @name directives.nav-bars.rb-nav-bar
-     * @description
-     *
-     * RB Navigation Bar
-     *
-     */
-    angular.module('directives.nav-bars.rb-nav-bar', [
-
-    ])
-    .directive('rbNavBar', RbNavBarDirective);
+define([
+    'html!./rb-nav-bar.tpl.html'
+], function (template) {
 
     /**
      * @ngdoc directive
@@ -43,9 +31,9 @@
      *    </div>
      * </hljs>
      *
+     * @ngInject
      */
-
-    function RbNavBarDirective () {
+    function rbNavBarDirective () {
 
         return {
             scope: {
@@ -55,7 +43,9 @@
             },
             restrict: 'E',
             replace: true,
-            templateUrl: 'nav-bars/rb-nav-bar.tpl.html'
+            template: template
         };
     }
-})();
+
+    return rbNavBarDirective;
+});
