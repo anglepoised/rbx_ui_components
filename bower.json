@@ -7,8 +7,9 @@
     }
   ],
   "ignore": [
-    "src",
-    "tests",
+    "dev",
+    "grunt",
+    "test",
     ".bowerrc",
     ".gitignore",
     "bower.json",

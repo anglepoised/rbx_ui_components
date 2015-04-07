@@ -23,7 +23,7 @@ config = {
         ],
         alias: {
             dev: path.join(__dirname, 'dev'),
-            components: path.join(__dirname, 'src/js/directives')
+            components: path.join(__dirname, 'src')
         }
     },
 
@@ -41,8 +41,7 @@ config = {
         noParse: [
             // We don't need to webpack "parse" pre-packaged Angular modules
             path.join(bowerRoot, '/angular'),
-            path.join(bowerRoot, '/angular-ui-router'),
-            path.join(bowerRoot, '/ng-lodash')
+            path.join(bowerRoot, '/angular-ui-router')
         ]
     }
 
