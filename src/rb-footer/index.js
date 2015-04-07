@@ -3,7 +3,7 @@ define([
 ], function (rbFooterDirective) {
     /**
      * @ngdoc module
-     * @name directives.footers.rb-footer
+     * @name rb-footer
      * @description
      *
      * RB Footer

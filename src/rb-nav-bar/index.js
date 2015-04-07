@@ -3,7 +3,7 @@ define([
 ], function (rbNavBarDirective) {
     /**
      * @ngdoc module
-     * @name directives.nav-bars.rb-nav-bar
+     * @name rb-nav-bar
      * @description
      *
      * RB Navigation Bar

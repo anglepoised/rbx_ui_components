@@ -5,7 +5,7 @@ define([
     /**
      * @ngdoc directive
      * @name rbNavBar
-     * @module directives.nav-bars.rb-nav-bar
+     * @module rb-nav-bar
      *
      * @restrict E
      *

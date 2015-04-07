@@ -8,7 +8,7 @@ define([
             _icon = 'icon',
             template = '<rb-icon icon="icon">Rockabox</rb-icon>';
 
-        beforeEach(angular.mock.module('rb-icon'));
+        beforeEach(angular.mock.module(rbIcon.name));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $scope = _$rootScope_.$new({});

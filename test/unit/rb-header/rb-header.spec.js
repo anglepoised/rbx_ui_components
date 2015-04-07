@@ -7,7 +7,7 @@ define([
             $compile,
             template = '<rb-header></rb-header>';
 
-        beforeEach(angular.mock.module('rb-header'));
+        beforeEach(angular.mock.module(rbHeader.name));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $scope = _$rootScope_.$new({});

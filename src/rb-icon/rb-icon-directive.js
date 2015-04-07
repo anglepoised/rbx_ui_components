@@ -4,7 +4,7 @@ define([
     /**
      * @ngdoc directive
      * @name rbIcon
-     * @module directives.icons.rb-icon
+     * @module rb-icon
      *
      * @restrict E
      *

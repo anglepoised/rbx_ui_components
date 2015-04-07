@@ -1,5 +1,5 @@
 define([
-    'html!./rb-header.tpl.html'
+    'html!./rb-page-title.tpl.html'
 ], function (template) {
 
     /**
@@ -34,10 +34,15 @@ define([
      *
      * @ngInject
      */
-    function rbHeaderDirective () {
+    function rbPageTitleDirective () {
 
         return {
             scope: {
+                heading: '@',
+                subheading: '@',
+                button: '@',
+                back: '@',
+                status: '@'
             },
             restrict: 'E',
             replace: true,
@@ -46,5 +51,5 @@ define([
         };
     }
 
-    return rbHeaderDirective;
+    return rbPageTitleDirective;
 });
