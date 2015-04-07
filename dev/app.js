@@ -1,8 +1,9 @@
 define([
     'angular-ui-router',
     'components/rb-footer/demo',
-    'components/rb-header/demo'
-], function (uiRouter, rbFooterDemo, rbHeaderDemo) {
+    'components/rb-header/demo',
+    'components/rb-page-title/demo'
+], function (uiRouter, rbFooterDemo, rbHeaderDemo, rbPageTitleDemo) {
 
     // Setup of development app for working on rb-table
     // @ngInject
@@ -10,7 +11,8 @@ define([
         .module('ui-demo', [
             'ui.router',
             rbFooterDemo.name,
-            rbHeaderDemo.name
+            rbHeaderDemo.name,
+            rbPageTitleDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
