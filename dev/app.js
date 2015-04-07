@@ -3,6 +3,7 @@ define([
     'html!./demo.tpl.html',
     'components/rb-badge/demo',
     'components/rb-button/demo',
+    'components/rb-currency/demo',
     'components/rb-date-time/demo',
     'components/rb-footer/demo',
     'components/rb-header/demo',
@@ -25,6 +26,7 @@ define([
     template,
     rbBadgeDemo,
     rbButtonDemo,
+    rbCurrencyDemo,
     rbDateTimeDemo,
     rbFooterDemo,
     rbHeaderDemo,
@@ -49,6 +51,7 @@ define([
             'ui.router',
             rbBadgeDemo.name,
             rbButtonDemo.name,
+            rbCurrency.name,
             rbDateTimeDemo.name,
             rbFooterDemo.name,
             rbHeaderDemo.name,
@@ -65,6 +68,7 @@ define([
             rbSystemMessage.name,
             rbTextControlDemo.name,
             rbWarningMessagesDemo.name
+
         ])
         .config(function ($stateProvider, $httpProvider) {
 

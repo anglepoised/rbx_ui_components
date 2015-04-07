@@ -1,0 +1,4 @@
+<data class="Currency" value="${{ fullAmount }}">
+    <span class="Currency-unit">{{ amount | currency:"$":0 }}</span>
+    <span class="Currency-cent" ng-if="decimal !== 0">.{{ decimal }}</span>
+</data>
