@@ -4,9 +4,9 @@ define([
 
     // @ngInject
     function demoState ($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('rb-date-time', {
-            url: '/rb-date-time',
-            controller: 'demo-date-time-ctrl as demoCtrl',
+        $stateProvider.state('rb-ratio', {
+            url: '/rb-ratio',
+            controller: 'demo-rb-ratio-ctrl as demoCtrl',
             template: template
         });
     }

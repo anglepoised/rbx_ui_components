@@ -3,8 +3,9 @@ define([
     'components/rb-footer/demo',
     'components/rb-header/demo',
     'components/rb-page-title/demo',
-    'components/rb-date-time/demo'
-], function (uiRouter, rbFooterDemo, rbHeaderDemo, rbPageTitleDemo, rbDateTimeDemo) {
+    'components/rb-date-time/demo',
+    'components/rb-ratio/demo'
+], function (uiRouter, rbFooterDemo, rbHeaderDemo, rbPageTitleDemo, rbDateTimeDemo, rbRatioDemo) {
 
     // @ngInject
     angular
@@ -13,7 +14,8 @@ define([
             rbFooterDemo.name,
             rbHeaderDemo.name,
             rbPageTitleDemo.name,
-            rbDateTimeDemo.name
+            rbDateTimeDemo.name,
+            rbRatioDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
