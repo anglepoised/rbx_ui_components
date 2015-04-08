@@ -13,9 +13,9 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-date-time dateTime="1970-01-01T00:00"></rb-date-time>
-     *    <rb-date-time dateTime="1970-01-01T00:00" understateTime="true"></rb-date-time>
-     *    <rb-date-time dateTime="1970-01-01T00:00" understateTime="true" show-time="false"></rb-date-time>
+     *    <rb-date-time date-time="1970-01-01T00:00"></rb-date-time>
+     *    <rb-date-time date-time="1970-01-01T00:00" understate-time="true"></rb-date-time>
+     *    <rb-date-time date-time="1970-01-01T00:00" show-time="false"></rb-date-time>
      * </hljs>
      *
      * @ngInject
@@ -30,7 +30,6 @@ define([
             },
             restrict: 'E',
             replace: true,
-            transclude: true,
             template: template
         };
     }
