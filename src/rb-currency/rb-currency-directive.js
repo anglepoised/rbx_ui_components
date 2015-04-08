@@ -1,6 +1,7 @@
 define([
+    './rb-currency-link',
     'html!./rb-currency.tpl.html'
-], function (template) {
+], function (rbCurrencyLink, template) {
 
     /**
      * @ngdoc directive
@@ -10,6 +11,10 @@ define([
      * @restrict E
      *
      * @description
+     * The link function for the `<rb-currency>` directive
+     *
+     * @scope
+     *  'fullAmount': contains the full amount in which to display as currency
      *
      * @usage
      * <hljs lang="html">
@@ -26,14 +31,8 @@ define([
             },
             restrict: 'E',
             replace: true,
-            transclude: true,
             template: template,
-            link: function (scope, element, attributes) {
-                var value = scope.fullAmount.toString().split('.');
-
-                scope.amount = value[0];
-                scope.decimal = value[1] || 0;
-            }
+            link: rbCurrencyLink
         };
     }
 
