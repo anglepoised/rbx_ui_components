@@ -6,7 +6,7 @@ define([
     function demoState ($stateProvider, $urlRouterProvider) {
         $stateProvider.state('rb-currency', {
             url: '/rb-currency',
-            controller: 'demo-ctrl as demoCtrl',
+            controller: 'demo-currency-ctrl as demoCtrl',
             template: template
         });
     }

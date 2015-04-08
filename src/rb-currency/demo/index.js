@@ -8,7 +8,7 @@ define([
             rbCurrency.name
         ])
         .config(demoState)
-        .controller('demo-ctrl', demoCtrl);
+        .controller('demo-currency-ctrl', demoCtrl);
 
     return demo;
 });
