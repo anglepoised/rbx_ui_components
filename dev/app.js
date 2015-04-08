@@ -2,17 +2,18 @@ define([
     'angular-ui-router',
     'components/rb-footer/demo',
     'components/rb-header/demo',
-    'components/rb-page-title/demo'
-], function (uiRouter, rbFooterDemo, rbHeaderDemo, rbPageTitleDemo) {
+    'components/rb-page-title/demo',
+    'components/rb-date-time/demo'
+], function (uiRouter, rbFooterDemo, rbHeaderDemo, rbPageTitleDemo, rbDateTimeDemo) {
 
-    // Setup of development app for working on rb-table
     // @ngInject
     angular
         .module('ui-demo', [
             'ui.router',
             rbFooterDemo.name,
             rbHeaderDemo.name,
-            rbPageTitleDemo.name
+            rbPageTitleDemo.name,
+            rbDateTimeDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
