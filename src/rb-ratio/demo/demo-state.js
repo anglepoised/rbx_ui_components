@@ -6,7 +6,7 @@ define([
     function demoState ($stateProvider, $urlRouterProvider) {
         $stateProvider.state('rb-ratio', {
             url: '/rb-ratio',
-            controller: 'demo-ctrl as demoCtrl',
+            controller: 'demo-rb-ratio-ctrl as demoCtrl',
             template: template
         });
     }

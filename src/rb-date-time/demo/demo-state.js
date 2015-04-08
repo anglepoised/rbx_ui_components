@@ -6,7 +6,7 @@ define([
     function demoState ($stateProvider, $urlRouterProvider) {
         $stateProvider.state('rb-date-time', {
             url: '/rb-date-time',
-            controller: 'demo-ctrl as demoCtrl',
+            controller: 'demo-date-time-ctrl as demoCtrl',
             template: template
         });
     }

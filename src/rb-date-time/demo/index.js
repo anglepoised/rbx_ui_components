@@ -8,7 +8,7 @@ define([
             rbDateTime.name
         ])
         .config(demoState)
-        .controller('demo-ctrl', demoCtrl);
+        .controller('demo-date-time-ctrl', demoCtrl);
 
     return demo;
 });
