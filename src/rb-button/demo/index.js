@@ -8,7 +8,7 @@ define([
             rbButton.name
         ])
         .config(demoState)
-        .controller('demo-ctrl', demoCtrl);
+        .controller('demo-button-ctrl', demoCtrl);
 
     return demo;
 });

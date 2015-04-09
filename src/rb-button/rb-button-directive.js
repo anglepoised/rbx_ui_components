@@ -15,12 +15,15 @@ define([
      * `<rb-button>` is a plain button directive
      *
      * If you supply a `type` attribute with `submit` as value, it will become
-     * a submit button `<input type="submit"/>`. If you supply a `href`, `ng-href`
+     * a submit button `<button type="submit"/>`. If you supply a `href`, `ng-href`
      * or `ui-sref` attribute, it will become an anchor element `<a>`. Otherwise
      * it will default to a `button` element.
      *
      * If you supply a `size` attribute with `large` or `small` value, it will become
      * a button with larger or smaller dimensions.
+     *
+     * If you supply a `block` attribute with `yes` value, it will become
+     * a button with full-width.
      *
      * If you supply a `state` attribute with a value, i.e. `positive`,`warning`,
      * `danger`, it will become a button with a different colour.
@@ -38,7 +41,7 @@ define([
      *   <rb-button href="http://www.xe.com" size="large">
      *     Button
      *   </rb-button>
-     *   <rb-button type="submit" state="warning" block="block">
+     *   <rb-button type="submit" state="warning" block="yes">
      *     Button
      *   </rb-button>
      * </hljs>
@@ -68,15 +71,7 @@ define([
 
         function isBlock (attr) {
             return angular.isDefined(attr.block) &&
-                angular.equals(angular.lowercase(attr.block), 'block');
-        }
-
-        function isSizePresent (attr) {
-            return angular.isDefined(attr.size);
-        }
-
-        function isStatePresent (attr) {
-            return angular.isDefined(attr.state);
+                angular.equals(angular.lowercase(attr.block), 'yes');
         }
 
         function getTemplate (elem, attr) {
@@ -93,13 +88,13 @@ define([
 
             // Defaults to default size when no
             // size is supplied
-            if (isSizePresent(attr)) {
+            if (angular.isDefined(attr.size)) {
                 elem.addClass('Button--' + attr.size);
             }
 
             // Defaults to blue colour when no
             // state is supplied (Default state)
-            if (isStatePresent(attr)) {
+            if (angular.isDefined(attr.state)) {
                 elem.addClass('Button--' + attr.state);
             }
 
