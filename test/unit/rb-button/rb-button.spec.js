@@ -87,7 +87,7 @@ define([
             }));
 
             it('should be a full-width button if block attr is supplied', inject(function ($compile, $rootScope) {
-                var button = angular.element('<rb-button block="block"></rb-button>'),
+                var button = angular.element('<rb-button block="yes"></rb-button>'),
                     element = $compile(button)($rootScope.$new());
 
                 $rootScope.$apply();
