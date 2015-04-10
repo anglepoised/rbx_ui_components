@@ -13,8 +13,18 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-text-control>
-     *     </rb-text-control>
+     *     <form name="userForm">
+     *         <rb-text-control
+     *             form="userForm"
+     *             title="Your Name"
+     *             placeholder="Enter your name..."
+     *             name="name"
+     *             type="text"
+     *             ng-model="demoCtrl.data.name"
+     *             is-required="true"
+     *             help-message="This is what we will call you!">
+     *         </rb-text-control>
+     *     </form>
      * </hljs>
      *
      * @ngInject
