@@ -1,0 +1,40 @@
+<main class="Main">
+    <article class="Article">
+
+        <form name="userForm">
+
+            <rb-text-control
+                form="userForm"
+                title="Your Name"
+                placeholder="Enter your name..."
+                name="name"
+                type="text"
+                ng-model="demoCtrl.data.name"
+                is-required="true"
+                help-message="This is what we will call you!">
+            </rb-text-control>
+
+            <rb-text-control
+                form="userForm"
+                title="Pet Name"
+                placeholder="Enter the name of your pet..."
+                name="pet"
+                type="text"
+                ng-model="demoCtrl.data.pet"
+                is-required="true">
+            </rb-text-control>
+
+            <div ng-if="userForm.$valid">
+                Form is valid
+            </div>
+            <div ng-if="userForm.$invalid">
+                Form is invalid
+            </div>
+
+            <div hljs language="json">
+                {{ demoCtrl.data }}
+            </div>
+
+        </form>
+    </article>
+</main>

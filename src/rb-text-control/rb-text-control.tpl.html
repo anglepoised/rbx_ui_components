@@ -1,0 +1,30 @@
+<div class="TextControl TextControl--text">
+
+    <label
+        class="TextControl-label u-textLabel"
+        ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}">
+        {{title}}
+    </label>
+
+    <input
+        class="TextControl-field"
+        name="{{name}}"
+        placeholder="{{placeholder}}"
+        type="{{type}}"
+        ng-model="ngModel"
+        ng-required="{{isRequired}}"
+        ng-disabled="{{isDisabled}}"
+        ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
+    >
+
+    <div class="TextControl-message" ng-show="helpMessage">
+        {{helpMessage}}
+    </div>
+
+    <div ng-if="form[name].$touched">
+        <div class="TextControl-message is-invalid" ng-if="form[name].$error.required">
+            This field is required.
+        </div>
+    </div>
+
+</div>
