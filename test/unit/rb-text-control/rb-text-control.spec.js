@@ -154,16 +154,27 @@ define([
         });
 
         describe('required validation', function () {
-            it('should show required message when control is set to required and is empty after touch', function () {
-                // Focus and unfocus the input field to trigger validation messages
-                element.find('input').triggerHandler('focus');
-                element.find('input').triggerHandler('blur');
+            describe('message', function () {
+                it('should show when control is set to required and is empty after touch', function () {
+                    // Focus and unfocus the input field to trigger validation messages
+                    element.find('input').triggerHandler('focus');
+                    element.find('input').triggerHandler('blur');
 
-                // Get validation message
-                element = angular.element(element[0].querySelector('.TextControl-message.is-invalid'));
+                    // Get validation message
+                    element = angular.element(element[0].querySelector('.TextControl-message.is-invalid'));
 
-                expect(element.html()).toContain('This field is required.');
+                    expect(element.html()).toContain('This field is required.');
+                });
             });
+
+            describe('accepts', function () {
+                it('any text input', function () {
+                    recompile({data: {firstName: 'Tim'}});
+
+                    expect($scope.testForm.firstName.$invalid).toBe(false);
+                });
+            });
+
         });
 
     });
