@@ -14,7 +14,7 @@ define([
             rbUser.name
         ])
         .config(demoState)
-        .controller('header-ctrl', demoCtrl);
+        .controller('header-demo-ctrl', demoCtrl);
 
     return demo;
 });

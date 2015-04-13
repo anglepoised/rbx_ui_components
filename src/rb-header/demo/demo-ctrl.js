@@ -2,7 +2,7 @@ define([
 ], function () {
 
     // @ngInject
-    function headerCtrl ($rootScope, $state, $injector) {
+    function headerDemoCtrl () {
 
         this.currentNavBarOption = 1;
 
@@ -12,7 +12,9 @@ define([
             this.currentNavBarOption = id;
         };
 
-        this.logout = function () {};
+        this.logout = function () {
+            console.log('logging out !!!');
+        };
 
         this.isActive = function (id) {
             return this.currentNavBarOption === id;
@@ -30,5 +32,5 @@ define([
 
     }
 
-    return headerCtrl;
+    return headerDemoCtrl;
 });
