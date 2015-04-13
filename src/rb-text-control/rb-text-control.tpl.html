@@ -1,4 +1,7 @@
-<div class="TextControl TextControl--text">
+<div class="TextControl TextControl--text" ng-class="{
+    'TextControl--text': type=='text',
+    'TextControl--email': type=='email'
+}">
 
     <label
         class="TextControl-label u-textLabel"
@@ -15,6 +18,7 @@
         ng-required="{{isRequired}}"
         ng-disabled="{{isDisabled}}"
         ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
+        custom-validation
     >
 
     <div class="TextControl-message" ng-show="helpMessage">
@@ -24,6 +28,9 @@
     <div ng-if="form[name].$touched">
         <div class="TextControl-message is-invalid" ng-if="form[name].$error.required">
             This field is required.
+        </div>
+        <div class="TextControl-message is-invalid" ng-if="form[name].$error.email">
+            Please enter a valid email address.
         </div>
     </div>
 

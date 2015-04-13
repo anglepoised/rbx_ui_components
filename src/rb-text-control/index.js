@@ -1,6 +1,7 @@
 define([
-    './rb-text-control-directive'
-], function (rbTextControlDirective) {
+    './rb-text-control-directive',
+    './custom-validation-directive'
+], function (rbTextControlDirective, customValidationDirective) {
     /**
      * @ngdoc module
      * @name rb-text-control
@@ -11,6 +12,7 @@ define([
      */
     var rbTextControl = angular
         .module('rb-text-control', [])
+        .directive('customValidation', customValidationDirective)
         .directive('rbTextControl', rbTextControlDirective);
 
     return rbTextControl;

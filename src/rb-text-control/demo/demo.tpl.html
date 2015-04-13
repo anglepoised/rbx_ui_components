@@ -5,13 +5,13 @@
 
             <rb-text-control
                 form="userForm"
-                title="Your Name"
-                placeholder="Enter your name..."
+                title="Your Email"
+                placeholder="Enter your email..."
                 name="name"
-                type="text"
-                ng-model="demoCtrl.data.name"
+                type="email"
+                ng-model="demoCtrl.data.email"
                 is-required="true"
-                help-message="This is what we will call you!">
+                help-message="This is so we can harass you">
             </rb-text-control>
 
             <rb-text-control
@@ -21,7 +21,8 @@
                 name="pet"
                 type="text"
                 ng-model="demoCtrl.data.pet"
-                is-required="true">
+                is-required="true"
+                help-message="i.e. Purple Prawn">
             </rb-text-control>
 
             <div ng-if="userForm.$valid">
