@@ -25,12 +25,12 @@ define([
 
         describe('rendering', function () {
 
-            it('should render with a "div" tagname', function () {
+            it('should render with a "header" tagname', function () {
                 var header = angular.element(template),
                     element = $compile(header)($scope);
 
                 $scope.$apply();
-                expect(element[0].tagName.toLowerCase()).toEqual('div');
+                expect(element[0].tagName.toLowerCase()).toEqual('header');
             });
 
         });
