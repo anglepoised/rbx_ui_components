@@ -1,34 +1,41 @@
 define([
     'angular-ui-router',
+    'components/rb-badge/demo',
+    'components/rb-button/demo',
+    'components/rb-date-time/demo',
     'components/rb-footer/demo',
     'components/rb-header/demo',
+    'components/rb-loading/demo',
+    'components/rb-main/demo',
     'components/rb-page-header/demo',
     'components/rb-page-title/demo',
-    'components/rb-date-time/demo',
     'components/rb-ratio/demo',
-    'components/rb-button/demo',
-    'components/rb-loading/demo',
-    'components/rb-badge/demo',
-    'components/rb-site/demo',
-    'components/rb-main/demo'
-], function (uiRouter, rbFooterDemo, rbHeaderDemo, rbPageHeaderDemo, rbPageTitleDemo, rbDateTimeDemo,
-    rbRatioDemo, rbButtonDemo, rbLoadingDemo, rbBadgeDemo, rbSiteDemo, rbMainDemo) {
+    'components/rb-site/demo'
+], function (
+    uiRouter, rbBadgeDemo, rbButtonDemo, rbDateTimeDemo, rbFooterDemo, rbHeaderDemo, rbLoadingDemo, rbMainDemo,
+    rbPageHeaderDemo, rbPageTitleDemo, rbRatioDemo, rbSiteDemo
+    ) {
 
     // @ngInject
     angular
         .module('ui-demo', [
             'ui.router',
+            rbBadgeDemo.name,
+            rbButtonDemo.name,
+            rbDateTimeDemo.name,
             rbFooterDemo.name,
             rbHeaderDemo.name,
+            rbLoadingDemo.name,
             rbPageHeaderDemo.name,
             rbPageTitleDemo.name,
+            rbMainDemo.name,
             rbDateTimeDemo.name,
             rbRatioDemo.name,
             rbButtonDemo.name,
             rbLoadingDemo.name,
             rbBadgeDemo.name,
-            rbSiteDemo.name,
-            rbMainDemo.name
+            rbRatioDemo.name,
+            rbSiteDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
