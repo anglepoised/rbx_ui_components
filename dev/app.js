@@ -1,43 +1,48 @@
 define([
     'angular-ui-router',
+    'html!./demo.tpl.html',
+    'components/rb-badge/demo',
+    'components/rb-button/demo',
+    'components/rb-date-time/demo',
     'components/rb-footer/demo',
     'components/rb-header/demo',
+    'components/rb-loading/demo',
+    'components/rb-main/demo',
     'components/rb-page-header/demo',
     'components/rb-page-title/demo',
-    'components/rb-date-time/demo',
     'components/rb-ratio/demo',
-    'components/rb-button/demo',
-    'components/rb-loading/demo',
-    'components/rb-badge/demo',
-    'components/rb-site/demo',
-    'components/rb-main/demo'
-], function (uiRouter, rbFooterDemo, rbHeaderDemo, rbPageHeaderDemo, rbPageTitleDemo, rbDateTimeDemo,
-    rbRatioDemo, rbButtonDemo, rbLoadingDemo, rbBadgeDemo, rbSiteDemo, rbMainDemo) {
+    'components/rb-site/demo'
+], function (
+    uiRouter, template, rbBadgeDemo, rbButtonDemo, rbDateTimeDemo, rbFooterDemo, rbHeaderDemo, rbLoadingDemo,
+    rbMainDemo, rbPageHeaderDemo, rbPageTitleDemo, rbRatioDemo, rbSiteDemo
+    ) {
 
     // @ngInject
     angular
         .module('ui-demo', [
             'ui.router',
+            rbBadgeDemo.name,
+            rbButtonDemo.name,
+            rbDateTimeDemo.name,
             rbFooterDemo.name,
             rbHeaderDemo.name,
+            rbLoadingDemo.name,
+            rbMainDemo.name,
             rbPageHeaderDemo.name,
             rbPageTitleDemo.name,
-            rbDateTimeDemo.name,
             rbRatioDemo.name,
-            rbButtonDemo.name,
-            rbLoadingDemo.name,
-            rbBadgeDemo.name,
-            rbSiteDemo.name,
-            rbMainDemo.name
+            rbSiteDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
             // App State
             $stateProvider.state({
                 name: 'app',
-                abstract: true,
                 url: '/',
-                template: '<div ui-view></div>'
+                template: template,
+                controller: function ($scope, $state) {
+                    $scope.states = $state.get();
+                }
             });
 
         })
@@ -48,7 +53,7 @@ define([
             // Show the error page if a route isn't matched
             $urlRouterProvider.otherwise(function ($injector, $location) {
                 var $state = $injector.get('$state');
-                $state.go('rb-footer');
+                $state.go('app');
             });
         });
 });
