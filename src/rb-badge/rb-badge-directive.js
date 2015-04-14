@@ -46,8 +46,7 @@ define([
     function rbBadgeDirective () {
 
         return {
-            scope: {
-            },
+            scope: {},
             restrict: 'E',
             replace: true,
             link: link,
@@ -73,7 +72,7 @@ define([
 
         // Set is-collapsed class
         if (angular.isDefined(attr.collapsed)) {
-            elem.addClass('is-collapsed');
+            scope.collapsed = true;
         }
     }
 
