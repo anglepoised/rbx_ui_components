@@ -46,7 +46,9 @@ define([
     function rbBadgeDirective () {
 
         return {
-            scope: {},
+            scope: {
+                collapsed: '@'
+            },
             restrict: 'E',
             replace: true,
             link: link,
@@ -68,11 +70,6 @@ define([
         // Set body text for warning state. Defaults to &nbsp; in template
         if (angular.isDefined(attr.body) && attr.state == 'warning') {
             scope.body = attr.body + ' !';
-        }
-
-        // Set is-collapsed class
-        if (angular.isDefined(attr.collapsed)) {
-            scope.collapsed = true;
         }
     }
 

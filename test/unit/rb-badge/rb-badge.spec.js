@@ -128,12 +128,32 @@ define([
         describe('with collapsed', function () {
 
             it('should take collapsed from attribute', inject(function ($compile, $rootScope) {
-                var badge = angular.element('<rb-badge collapsed></rb-badge>'),
+                var badge = angular.element('<rb-badge collapsed="true"></rb-badge>'),
                     element = $compile(badge)($rootScope.$new());
 
                 $rootScope.$apply();
                 expect(element.hasClass('is-collapsed')).toBe(true);
             }));
+
+            it('should not add is-collapsed class if collapsed attribute is false',
+                inject(function ($compile, $rootScope) {
+                    var badge = angular.element('<rb-badge collapsed="false"></rb-badge>'),
+                        element = $compile(badge)($rootScope.$new());
+
+                    $rootScope.$apply();
+                    expect(element.hasClass('is-collapsed')).toBe(true);
+                }
+            ));
+
+            it('should not add is-collapsed class if collapsed attribute missing',
+                inject(function ($compile, $rootScope) {
+                    var badge = angular.element('<rb-badge></rb-badge>'),
+                        element = $compile(badge)($rootScope.$new());
+
+                    $rootScope.$apply();
+                    expect(element.hasClass('is-collapsed')).toBe(false);
+                }
+            ));
         });
 
     });
