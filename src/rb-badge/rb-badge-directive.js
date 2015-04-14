@@ -47,25 +47,29 @@ define([
 
         return {
             scope: {
-                collapsed: '@'
+                collapsed: '@',
+                state: '@'
             },
             restrict: 'E',
             replace: true,
             link: link,
-            template: template
+            template: template,
+            controller: controller
+        };
+    }
+
+    function controller ($scope) {
+
+        // Allow template to check a state is valid.
+        $scope.validState = function (state) {
+            return state in STATE_DETAILS;
         };
     }
 
     function link (scope, elem, attr) {
 
-        // Set state class and details string
-        // Only set states defined in STATE_DETAILS
-        if (angular.isDefined(attr.state) && attr.state in STATE_DETAILS) {
-            elem.addClass('Badge--' + attr.state);
-            scope.details = STATE_DETAILS[attr.state];
-        } else {
-            elem.html('');
-        }
+        // Pass details lookup to scope.
+        scope.details = STATE_DETAILS;
 
         // Set body text for warning state. Defaults to &nbsp; in template
         if (angular.isDefined(attr.body) && attr.state == 'warning') {

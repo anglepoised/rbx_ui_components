@@ -12,6 +12,7 @@ define([
             $rootScope.$apply();
             expect(element.hasClass('Badge')).toBe(true);
             expect(element[0].tagName).toBe('DIV');
+            expect(element.hasClass('ng-hide')).toBe(false);
             spans = element.find('span');
             expect(spans.length).toBe(2);
             expect(angular.element(spans[0]).hasClass('Badge-body')).toBe(true);
@@ -86,13 +87,23 @@ define([
                 }
             ));
 
+            it('should render nothing if no state passed',
+                inject(function ($compile, $rootScope) {
+                    var badge = angular.element('<rb-badge></rb-badge>'),
+                        element = $compile(badge)($rootScope.$new());
+
+                    $rootScope.$apply();
+                    expect(element.hasClass('ng-hide')).toBe(true);
+                }
+            ));
+
             it('should render nothing if no valid state passed',
                 inject(function ($compile, $rootScope) {
                     var badge = angular.element('<rb-badge state="custom"></rb-badge>'),
                         element = $compile(badge)($rootScope.$new());
 
                     $rootScope.$apply();
-                    expect(element.html()).toBe('');
+                    expect(element.hasClass('ng-hide')).toBe(true);
                 }
             ));
 
