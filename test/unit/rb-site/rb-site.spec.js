@@ -5,7 +5,7 @@ define([
 
         var $scope,
             $compile,
-            template = '<rb-site></rb-site>';
+            template = '<rb-site><main></main></rb-site>';
 
         beforeEach(angular.mock.module(rbSite.name));
 
@@ -14,14 +14,17 @@ define([
             $compile = _$compile_;
         }));
 
-        it('should convert attributes on rb-site to attributes on the generated wrapper',
-            function () {
-                var site = $compile('<rb-site anyattr any-attr></rb-site>')($scope);
+        describe('attribute generation', function () {
 
-                $scope.$apply();
-                expect(site[0].hasAttribute('anyattr')).toBe(true);
-                expect(site[0].hasAttribute('any-attr')).toBe(true);
-            });
+            it('should convert attributes on rb-site to attributes on the generated wrapper',
+                function () {
+                    var site = $compile('<rb-site anyattr any-attr></rb-site>')($scope);
+
+                    $scope.$apply();
+                    expect(site[0].hasAttribute('anyattr')).toBe(true);
+                    expect(site[0].hasAttribute('any-attr')).toBe(true);
+                });
+        });
 
         describe('rendering', function () {
 
@@ -33,6 +36,14 @@ define([
                 expect(element[0].tagName.toLowerCase()).toEqual('div');
             });
 
+            it('should render transcluded elements', function () {
+                var site = angular.element(template),
+                    element = $compile(site)($scope),
+                    main = angular.element(element.find('main'));
+
+                $scope.$apply();
+                expect(main[0].tagName.toLowerCase()).toEqual('main');
+            });
         });
     });
 });
