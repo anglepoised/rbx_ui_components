@@ -1,5 +1,5 @@
 define([
-    'html!./rb-badge.tpl.html',
+    'html!./rb-badge.tpl.html'
 ], function (template) {
 
     /**
@@ -13,7 +13,7 @@ define([
         'statusPaused': 'Paused',
         'statusPending': 'Pending',
         'statusFinished': 'Finished'
-    }
+    };
 
     /**
      * @ngdoc directive
@@ -62,11 +62,13 @@ define([
         if (angular.isDefined(attr.state) && attr.state in STATE_DETAILS) {
             elem.addClass('Badge--' + attr.state);
             scope.details = STATE_DETAILS[attr.state];
+        } else {
+            elem.html('');
         }
 
-        // Set body text. Defaults to &nbsp; in template
-        if (angular.isDefined(attr.body)) {
-            scope.body = attr.body;
+        // Set body text for warning state. Defaults to &nbsp; in template
+        if (angular.isDefined(attr.body) && attr.state == 'warning') {
+            scope.body = attr.body + ' !';
         }
 
         // Set is-collapsed class
