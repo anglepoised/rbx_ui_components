@@ -7,9 +7,10 @@ define([
     'components/rb-date-time/demo',
     'components/rb-ratio/demo',
     'components/rb-button/demo',
-    'components/rb-loading/demo'
+    'components/rb-loading/demo',
+    'components/rb-badge/demo'
 ], function (uiRouter, rbFooterDemo, rbHeaderDemo, rbPageHeaderDemo, rbPageTitleDemo, rbDateTimeDemo,
-    rbRatioDemo, rbButtonDemo, rbLoadingDemo) {
+    rbRatioDemo, rbButtonDemo, rbLoadingDemo, rbBadgeDemo) {
 
     // @ngInject
     angular
@@ -22,7 +23,8 @@ define([
             rbDateTimeDemo.name,
             rbRatioDemo.name,
             rbButtonDemo.name,
-            rbLoadingDemo.name
+            rbLoadingDemo.name,
+            rbBadgeDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
