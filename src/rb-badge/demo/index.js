@@ -5,7 +5,7 @@ define([
 ], function (rbBadge, demoCtrl, demoState) {
     var demo = angular
         .module('rb-badge-demo', [
-            rbBadge.name,
+            rbBadge.name
         ])
         .config(demoState)
         .controller('demo-rb-badge-ctrl', demoCtrl);
