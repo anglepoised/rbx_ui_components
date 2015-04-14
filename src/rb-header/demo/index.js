@@ -1,20 +1,12 @@
 define([
     '../index.js',
     './demo-ctrl',
-    './demo-state',
-    '../../rb-nav-bar',
-    '../../rb-icon',
-    '../../rb-user'
-], function (rbHeader, demoCtrl, demoState, rbNavBar, rbIcon, rbUser) {
+    './demo-state'
+], function (rbHeader, demoCtrl, demoState) {
     var demo = angular
-        .module('rb-header-demo', [
-            rbHeader.name,
-            rbNavBar.name,
-            rbIcon.name,
-            rbUser.name
-        ])
+        .module('rb-header-demo', [rbHeader.name])
         .config(demoState)
-        .controller('header-ctrl', demoCtrl);
+        .controller('header-demo-ctrl', demoCtrl);
 
     return demo;
 });
