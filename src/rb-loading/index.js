@@ -1,6 +1,7 @@
 define([
-    './rb-loading-directive'
-], function (rbLoadingDirective) {
+    './rb-loading-directive',
+    './rb-loading.css'
+], function (rbLoadingDirective, css) {
     /**
      * @ngdoc module
      * @name rb-loading
