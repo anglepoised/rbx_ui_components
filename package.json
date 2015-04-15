@@ -2,6 +2,7 @@
   "name": "rbx_ui_components",
   "version": "0.1.0",
   "scripts": {
+    "pretest": "bower install",
     "test": "grunt test",
     "start": "webpack-dev-server --content-base dev --port 7000 --history-api-fallback"
   },
