@@ -1,5 +1,6 @@
 define([
-    './rb-ratio-directive'
+    './rb-ratio-directive',
+    './rb-ratio.css'
 ], function (rbRatioDirective) {
     /**
      * @ngdoc module
