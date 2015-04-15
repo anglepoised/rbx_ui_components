@@ -2,7 +2,7 @@ var path = require('path'),
     webpack = require('webpack'),
     bowerRoot = path.join(__dirname, 'vendor'),
     webpackPostcssTools = require('webpack-postcss-tools'),
-    map = webpackPostcssTools.makeVarMap('vendor/rbx_style_guide/src/assets/styles/theme/colours.css'),
+    map = webpackPostcssTools.makeVarMap('vendor/rbx_style_guide/src/assets/styles/theme/colors.css'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     // ngAnnotatePlugin = require('ng-annotate-webpack-plugin'),
     config;

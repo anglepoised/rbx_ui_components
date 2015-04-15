@@ -39,6 +39,7 @@
     "extract-text-webpack-plugin": "~0.5.0",
     "postcss-custom-properties": "~3.3.0",
     "postcss-loader": "~0.3.0",
+    "style-loader": "~0.10.2",
     "webpack-postcss-tools": "~1.0.2"
   }
 }
