@@ -48,7 +48,8 @@ define([
         return {
             scope: {
                 collapsed: '@',
-                state: '@'
+                state: '@',
+                body: '@'
             },
             restrict: 'E',
             replace: true,
@@ -70,11 +71,6 @@ define([
 
         // Pass details lookup to scope.
         scope.details = STATE_DETAILS;
-
-        // Set body text for warning state. Defaults to &nbsp; in template
-        if (angular.isDefined(attr.body) && attr.state == 'warning') {
-            scope.body = attr.body + ' !';
-        }
     }
 
     return rbBadgeDirective;

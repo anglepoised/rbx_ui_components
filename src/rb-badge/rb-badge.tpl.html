@@ -1,3 +1,3 @@
 <div ng-show="validState(state)" class="Badge Badge--{{ state }}" ng-class="{'is-collapsed': collapsed}">
-    <span class="Badge-body">{{ body ? body : '&nbsp;' }}</span>&nbsp;<span class="Badge-details">{{ details[state] }}</span>
+    <span class="Badge-body">{{ body && state == 'warning' ? body : '&nbsp;' }}</span>&nbsp;<span class="Badge-details">{{ details[state] }}</span>
 </div>

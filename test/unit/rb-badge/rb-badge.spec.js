@@ -116,7 +116,7 @@ define([
                     element = $compile(badge)($rootScope.$new());
 
                 $rootScope.$apply();
-                expect(angular.element(element.find('span')[0]).text()).toBe('6 !');
+                expect(angular.element(element.find('span')[0]).text()).toBe('6');
             }));
 
             it('should not take body from attribute if not warnging state', inject(function ($compile, $rootScope) {
