@@ -1,6 +1,7 @@
 define([
-    './rb-site-directive'
-], function (rbSiteDirective) {
+    './rb-site-directive',
+    './rb-site.css'
+], function (rbSiteDirective, css) {
     /**
      * @ngdoc module
      * @name rb-site
