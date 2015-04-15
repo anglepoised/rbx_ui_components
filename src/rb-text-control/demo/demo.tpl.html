@@ -7,7 +7,7 @@
                 form="userForm"
                 title="Your Email"
                 placeholder="Enter your email..."
-                name="name"
+                name="email"
                 type="email"
                 ng-model="demoCtrl.data.email"
                 is-required="true"
@@ -32,6 +32,16 @@
                 name="password"
                 type="password"
                 ng-model="demoCtrl.data.password"
+                is-required="true">
+            </rb-text-control>
+
+            <rb-text-control
+                form="userForm"
+                title="How cool is Nick on a scale of 1-10?"
+                placeholder="0"
+                name="rating"
+                type="number"
+                ng-model="demoCtrl.data.rating"
                 is-required="true">
             </rb-text-control>
 

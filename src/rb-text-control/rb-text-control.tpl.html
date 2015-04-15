@@ -1,7 +1,8 @@
 <div class="TextControl TextControl--text" ng-class="{
     'TextControl--text': type=='text',
     'TextControl--email': type=='email',
-    'TextControl--password': type=='password'
+    'TextControl--password': type=='password',
+    'TextControl--number': type=='number'
 }">
 
     <label
@@ -32,6 +33,9 @@
         </div>
         <div class="TextControl-message is-invalid" ng-if="form[name].$error.email">
             Please enter a valid email address.
+        </div>
+        <div class="TextControl-message is-invalid" ng-if="form[name].$error.number">
+            Please enter a valid number.
         </div>
     </div>
 
