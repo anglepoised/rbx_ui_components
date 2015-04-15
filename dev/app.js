@@ -11,12 +11,12 @@ define([
     'components/rb-page-header/demo',
     'components/rb-page-title/demo',
     'components/rb-ratio/demo',
-    'components/rb-site/demo'
+    'components/rb-site/demo',
+    'components/rb-text-control/demo'
 ], function (
     uiRouter, template, rbBadgeDemo, rbButtonDemo, rbDateTimeDemo, rbFooterDemo, rbHeaderDemo, rbLoadingDemo,
-    rbMainDemo, rbPageHeaderDemo, rbPageTitleDemo, rbRatioDemo, rbSiteDemo
+    rbMainDemo, rbPageHeaderDemo, rbPageTitleDemo, rbRatioDemo, rbSiteDemo, rbTextControlDemo
     ) {
-
     // @ngInject
     angular
         .module('ui-demo', [
@@ -31,7 +31,8 @@ define([
             rbPageHeaderDemo.name,
             rbPageTitleDemo.name,
             rbRatioDemo.name,
-            rbSiteDemo.name
+            rbSiteDemo.name,
+            rbTextControlDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
