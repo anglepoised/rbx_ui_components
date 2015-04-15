@@ -37,6 +37,12 @@ define([
             isolatedScope.$digest();
         }));
 
+        describe('root element', function () {
+            it('should have the TextControl--email class', function () {
+                expect(element.find('div').hasClass('TextControl--email')).toBe(true);
+            });
+        });
+
         describe('email validation', function () {
 
             describe('message', function () {

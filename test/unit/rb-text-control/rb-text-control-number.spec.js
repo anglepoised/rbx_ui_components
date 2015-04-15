@@ -37,6 +37,12 @@ define([
             isolatedScope.$digest();
         }));
 
+        describe('root element', function () {
+            it('should have the TextControl--number class', function () {
+                expect(element.find('div').hasClass('TextControl--number')).toBe(true);
+            });
+        });
+
         describe('number validation', function () {
 
             describe('message', function () {
