@@ -1,6 +1,9 @@
 var path = require('path'),
     webpack = require('webpack'),
     bowerRoot = path.join(__dirname, 'vendor'),
+    webpackPostcssTools = require('webpack-postcss-tools'),
+    map = webpackPostcssTools.makeVarMap('vendor/rbx_style_guide/src/assets/styles/theme/colours.css'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
     // ngAnnotatePlugin = require('ng-annotate-webpack-plugin'),
     config;
 
@@ -34,17 +37,34 @@ config = {
         new webpack.ResolverPlugin([
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main']),
             new webpack.ResolverPlugin.FileAppendPlugin(['index.js'])
-        ])
+        ]),
+        new ExtractTextPlugin('style.css')
     ],
 
     module: {
+        loaders: [
+            {
+                test:   /\.css$/,
+                // loader: 'style-loader?singleton!css-loader!postcss-loader',
+                loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss')
+            }
+        ],
         noParse: [
             // We don't need to webpack "parse" pre-packaged Angular modules
             path.join(bowerRoot, '/angular'),
             path.join(bowerRoot, '/angular-ui-router')
         ]
-    }
-
+    },
+    postcss: [
+        webpackPostcssTools.prependTildesToImports,
+        require('autoprefixer-core')({
+            remove: false,
+            cascade: false
+        }),
+        require('postcss-custom-properties')({
+            variables: map.vars
+        })
+    ]
 };
 
 module.exports = config;
