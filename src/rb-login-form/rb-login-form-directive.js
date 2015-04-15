@@ -38,10 +38,9 @@ define([
         return {
             scope: {
                 'icon': '@',
-                'formname': '@',
-                'emailmodel': '=',
-                'passwordmodel': '=',
-                'loginfunction': '&'
+                'emailModel': '=',
+                'passwordModel': '=',
+                'onLogin': '&'
             },
             restrict: 'E',
             replace: true,

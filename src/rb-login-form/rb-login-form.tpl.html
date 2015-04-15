@@ -2,32 +2,33 @@
     <div class="Login-icon">
         <rb-icon icon="{{::icon}}"></rb-icon>
     </div>
-    <form name="{{::formname}}" class="Login-body">
+    <form name="loginForm" class="Login-body">
         <fieldset>
             <div class="Login-control">
-                <div class="TextControl TextControl--email">
-                    <label class="TextControl-label u-textLabel" for="f-Login-email">Email</label>
-                    <input class="TextControl-field" id="f-Login-email" name="email" ng-model="emailmodel" placeholder="Email" type="email" autofocus="" required ng-minlength="5" ng-maxlength="8">
-                    <div ng-messages="{{::formname}}.email.$error">
-                        <div class="TextControl-message is-invalid" ng-message="required">Please, enter your email</div>
-                        <div class="TextControl-message is-invalid" ng-message="email">Invalid email</div>
-                        <div class="TextControl-message is-invalid" ng-message="maxlength">Too long</div>
-                        <div class="TextControl-message is-invalid" ng-message="minlength">Too short</div>
-                    </div>
-                </div>
+                <rb-text-control
+                    form="loginForm"
+                    title="Email"
+                    placeholder="Email"
+                    name="email"
+                    type="email"
+                    ng-model="emailModel"
+                    is-required="true">
+                </rb-text-control>
             </div>
             <div class="Login-control">
-                <div class="TextControl TextControl--password">
-                    <label class="TextControl-label u-textLabel" for="f-Login-password">Password</label>
-                    <input class="TextControl-field" id="f-Login-password" name="password" ng-model="passwordmodel" placeholder="Password" type="password" required>
-                    <div ng-messages="{{::formname}}.password.$error">
-                        <div class="TextControl-message is-invalid" ng-message="required">Please, enter your password</div>
-                    </div>
-                </div>
+                <rb-text-control
+                    form="loginForm"
+                    title="Password"
+                    placeholder="Password"
+                    name="password"
+                    type="password"
+                    ng-model="passwordModel"
+                    is-required="true">
+                </rb-text-control>
             </div>
         </fieldset>
         <fieldset class="Login-button">
-            <rb-button block="yes" state="positive" ng-disabled="{{::formname}}.$invalid" ng-click="loginfunction()">Login</rb-button>
+            <rb-button block="yes" state="positive" ng-disabled="loginForm.$invalid" ng-click="onLogin()">Login</rb-button>
         </fieldset>
     </form>
 </div>
