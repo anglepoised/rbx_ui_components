@@ -38,6 +38,12 @@ define([
             isolatedScope.$digest();
         }));
 
+        describe('root element', function () {
+            it('should have the TextControl--text class', function () {
+                expect(element.find('div').hasClass('TextControl--text')).toBe(true);
+            });
+        });
+
         describe('label', function () {
             it('should contain title', function () {
                 expect(element.find('label').html()).toContain('Your Name');
