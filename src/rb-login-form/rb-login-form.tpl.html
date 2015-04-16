@@ -1,0 +1,34 @@
+<div class="Login">
+    <div class="Login-icon">
+        <rb-icon icon="{{::icon}}"></rb-icon>
+    </div>
+    <form name="loginForm" class="Login-body">
+        <fieldset>
+            <div class="Login-control">
+                <rb-text-control
+                    form="loginForm"
+                    title="Email"
+                    placeholder="Email"
+                    name="email"
+                    type="email"
+                    ng-model="emailModel"
+                    is-required="true">
+                </rb-text-control>
+            </div>
+            <div class="Login-control">
+                <rb-text-control
+                    form="loginForm"
+                    title="Password"
+                    placeholder="Password"
+                    name="password"
+                    type="password"
+                    ng-model="passwordModel"
+                    is-required="true">
+                </rb-text-control>
+            </div>
+        </fieldset>
+        <fieldset class="Login-button">
+            <rb-button block="yes" state="positive" ng-disabled="loginForm.$invalid" ng-click="onLogin()">Login</rb-button>
+        </fieldset>
+    </form>
+</div>

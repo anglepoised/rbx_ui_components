@@ -7,6 +7,7 @@ define([
     'components/rb-footer/demo',
     'components/rb-header/demo',
     'components/rb-loading/demo',
+    'components/rb-login-form/demo',
     'components/rb-main/demo',
     'components/rb-page-header/demo',
     'components/rb-page-title/demo',
@@ -15,7 +16,7 @@ define([
     'components/rb-text-control/demo'
 ], function (
     uiRouter, template, rbBadgeDemo, rbButtonDemo, rbDateTimeDemo, rbFooterDemo, rbHeaderDemo, rbLoadingDemo,
-    rbMainDemo, rbPageHeaderDemo, rbPageTitleDemo, rbRatioDemo, rbSiteDemo, rbTextControlDemo
+    rbLoginFormDemo, rbMainDemo, rbPageHeaderDemo, rbPageTitleDemo, rbRatioDemo, rbSiteDemo, rbTextControlDemo
     ) {
     // @ngInject
     angular
@@ -27,6 +28,7 @@ define([
             rbFooterDemo.name,
             rbHeaderDemo.name,
             rbLoadingDemo.name,
+            rbLoginFormDemo.name,
             rbMainDemo.name,
             rbPageHeaderDemo.name,
             rbPageTitleDemo.name,
