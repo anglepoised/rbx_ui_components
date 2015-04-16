@@ -2,8 +2,9 @@ define([
     './rb-login-form-directive',
     'components/rb-button',
     'components/rb-icon',
-    'components/rb-text-control'
-], function (rbLoginFormDirective, rbButton, rbIcon, rbTextControl) {
+    'components/rb-text-control',
+    './rb-login-form.css'
+], function (rbLoginFormDirective, rbButton, rbIcon, rbTextControl, css) {
     /**
      * @ngdoc module
      * @name rb-login-form

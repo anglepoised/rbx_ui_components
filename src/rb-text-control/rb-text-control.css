@@ -1,0 +1,145 @@
+/** @define TextControl; use strict */
+
+/**
+ * The `.TextControl` component groups simple, text-based fields that share a set of common states.
+ *
+ * Various states are available and can be stacked. The `disabled` state always takes visual priority over other states.
+ *
+ * A single is available for an entire instance: `TextControl--small`. This reduces the size of the field.
+ */
+
+:root {
+    --TextControl-field-background-color: var(--color-form-field-background);
+    --TextControl-field-border-color: var(--color-gray-ghost);
+    --TextControl-field-border-radius: 4px;
+    --TextControl-field-color: var(--color-gray-tuna);
+    --TextControl-field-disabled-background-color: var(--color-white-catskill);
+    --TextControl-field-disabled-color: var(--color-gray-regent);
+    --TextControl-field-disabled-image: "./images/Control-disabled.svg";
+    --TextControl-field-focus-border-color: var(--color-green-base);
+    --TextControl-field-image-padding: 2.5em;
+    --TextControl-field-invalid-border-color: var(--color-red-base);
+    --TextControl-field-invalid-color: var(--color-red-base);
+    --TextControl-field-placeholder-color: var(--color-gray-ghost);
+    --TextControl-field-required-image: "./images/Control-required.svg";
+    --TextControl-field-required-invalid-image: "./images/Control-required-invalid.svg";
+    --TextControl-label-invalid-color: var(--color-red-base);
+    --TextControl-message-invalid-background-color: var(--color-red-base);
+    --TextControl-message-invalid-color: var(--color-white);
+}
+
+/**
+ * 1. Set consistent spacing after every field.
+ * 2. Remove `outline` in favour of `border`.
+ * 3. Nudge `required` indicator from top right corner.
+ * 4. Swap background when chained to match other state colours.
+ * 5. Disabled state always overrides other states.
+ * 6. Prevent text selection on disabled field.
+ */
+
+.TextControl {
+    display: flex;
+    flex-direction: column;
+}
+
+/**
+ * Default
+ */
+
+.TextControl-field {
+    background: var(--TextControl-field-background-color);
+    border: 1px solid var(--TextControl-field-border-color);
+    border-radius: var(--TextControl-field-border-radius);
+    color: var(--TextControl-field-color);
+    margin-bottom: 0.5em; /* 1 */
+    padding: 0.75em 0.75em 0.5em;
+}
+
+.TextControl-field::placeholder {
+    color: var(--TextControl-field-placeholder-color);
+}
+
+.TextControl-field:focus,
+.TextControl-field.is-focused {
+    border-color: var(--TextControl-field-focus-border-color);
+    outline: none; /* 2 */
+}
+
+.TextControl-message {
+    display: block;
+    font-size: var(--font-size-x-small);
+}
+
+/**
+ * Invalid
+ */
+
+.TextControl-label.is-invalid {
+    color: var(--TextControl-label-invalid-color);
+}
+
+.TextControl-field:invalid:focus,
+.TextControl-field.is-invalid {
+    border-color: var(--TextControl-field-invalid-border-color);
+}
+
+.TextControl-message.is-invalid {
+    background: var(--TextControl-message-invalid-background-color);
+    border-radius: var(--TextControl-field-border-radius);
+    color: var(--TextControl-message-invalid-color);
+    padding: 0.75em 0.75em 0.5em;
+}
+
+/**
+ * Required
+ */
+
+.TextControl-field:required,
+.TextControl-field.is-required {
+    background: var(--TextControl-field-background-color) url(var(--TextControl-field-required-image)) no-repeat;
+    background-position: right 6px top 6px; /* 3 */
+    outline: none; /* 2 */
+}
+
+.TextControl-field:focus:required:invalid {
+    background-image: url(var(--TextControl-field-required-invalid-image)); /* 4 */
+}
+
+/**
+ * Disabled
+ */
+
+.TextControl-field:disabled,
+.TextControl-field.is-disabled {
+    background: var(--TextControl-field-disabled-background-color) url(var(--TextControl-field-disabled-image)) no-repeat calc(100% - 12px) center !important; /* 5 */
+    border: 1px solid var(--TextControl-field-border-color) !important; /* 5 */
+    color: var(--TextControl-field-disabled-color) !important; /* 5 */
+    user-select: none; /* 6 */
+}
+
+.TextControl-field:disabled::placeholder,
+.TextControl-field.is-disabled::placeholder {
+    color: var(--TextControl-field-disabled-color) !important; /* 5 */
+}
+
+/**
+ * Small
+ */
+
+.TextControl--small .TextControl-field {
+    font-size: var(--font-size-x-small);
+}
+
+/**
+ * Search
+ */
+.TextControl--search .TextControl-field {
+    background-image: url("./images/Control-search.svg");
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    padding-left: var(--TextControl-field-image-padding);
+}
+
+.TextControl--search .TextControl-field:focus {
+    background-image: url("./images/Control-search-focus.svg");
+}

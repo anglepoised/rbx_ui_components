@@ -1,0 +1,30 @@
+/** @define Login; use strict */
+
+/**
+ * The `.Login` component is a composed form component.
+ */
+
+:root {
+    --Login-color: var(--color-white-alabaster);
+}
+
+/**
+ * 1. Comment
+ */
+
+.Login {
+    color: var(--Login-color);
+}
+
+.Login-icon {
+    margin: 0 2.75em 2.25em;
+    text-align: center;
+}
+
+.Login-control {
+    margin-bottom: 0.25em;
+}
+
+.Login-button {
+    margin-top: 1em;
+}

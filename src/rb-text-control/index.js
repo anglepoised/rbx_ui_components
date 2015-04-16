@@ -1,7 +1,8 @@
 define([
     './rb-text-control-directive',
-    './custom-validation-directive'
-], function (rbTextControlDirective, customValidationDirective) {
+    './custom-validation-directive',
+    './rb-text-control.css'
+], function (rbTextControlDirective, customValidationDirective, css) {
     /**
      * @ngdoc module
      * @name rb-text-control
