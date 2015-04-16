@@ -45,9 +45,13 @@ config = {
     module: {
         loaders: [
             {
-                test:   /\.css$/,
+                test: /\.css$/,
                 // loader: 'style-loader?singleton!css-loader!postcss-loader',
                 loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss')
+            },
+            {
+                test: /\.svg$/,
+                loader: 'url-loader'
             }
         ],
         noParse: [

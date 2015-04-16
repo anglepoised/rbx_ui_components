@@ -81,7 +81,7 @@
 }
 
 .Badge--statusIncomplete .Badge-body {
-    background: var(--Badge--statusIncomplete-base) url("~url!./images/Badge--statusIncomplete.svg") no-repeat center center;
+    background: var(--Badge--statusIncomplete-base) url("./images/Badge--statusIncomplete.svg") no-repeat center center;
     border-color: var(--Badge--statusIncomplete-base);
 }
 
@@ -99,7 +99,7 @@
 }
 
 .Badge--statusLive .Badge-body {
-    background: var(--Badge--statusLive-base) url("~url!./images/Badge--statusLive.svg") no-repeat center center;
+    background: var(--Badge--statusLive-base) url("./images/Badge--statusLive.svg") no-repeat center center;
     border-color: var(--Badge--statusLive-base);
 }
 
@@ -117,7 +117,7 @@
 }
 
 .Badge--statusPending .Badge-body {
-    background: var(--Badge--statusPending-base) url("~url!./images/Badge--statusPending.svg") no-repeat center center;
+    background: var(--Badge--statusPending-base) url("./images/Badge--statusPending.svg") no-repeat center center;
     border-color: var(--Badge--statusPending-base);
 }
 
@@ -135,7 +135,7 @@
 }
 
 .Badge--statusPaused .Badge-body {
-    background: var(--Badge--statusPaused-base) url("~url!./images/Badge--statusPaused.svg") no-repeat center center;
+    background: var(--Badge--statusPaused-base) url("./images/Badge--statusPaused.svg") no-repeat center center;
     border-color: var(--Badge--statusPaused-base);
 }
 
@@ -153,7 +153,7 @@
 }
 
 .Badge--statusFinished .Badge-body {
-    background: var(--Badge--statusFinished-base) url("~url!./images/Badge--statusFinished.svg") no-repeat center center;
+    background: var(--Badge--statusFinished-base) url("./images/Badge--statusFinished.svg") no-repeat center center;
     border-color: var(--Badge--statusFinished-base);
 }
 
