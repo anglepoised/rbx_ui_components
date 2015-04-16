@@ -1,10 +1,7 @@
 define([
-    'components/rb-button',
-    'components/rb-icon',
     'components/rb-login-form',
-    'components/rb-text-control',
     'html!./rb-login-form.tpl.html'
-], function (rbButton, rbIcon, rbLoginForm, rbTextControl, template) {
+], function (rbLoginForm, template) {
     describe('rb-login-form', function () {
 
         var $rootScope,
@@ -22,10 +19,7 @@ define([
             $scope.$apply();
         };
 
-        beforeEach(angular.mock.module('rb-button'));
-        beforeEach(angular.mock.module('rb-icon'));
         beforeEach(angular.mock.module('rb-login-form'));
-        beforeEach(angular.mock.module('rb-text-control'));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $rootScope = _$rootScope_;
