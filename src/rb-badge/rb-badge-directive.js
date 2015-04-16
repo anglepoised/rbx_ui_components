@@ -39,6 +39,7 @@ define([
      * <hljs lang="html">
      *    <rb-badge state="warning" body="6!"></rb-badge>
      *    <rb-badge state="statusComplete"></rb-badge>
+     *    <rb-badge state="warning" body="6!" collapsed="true"></rb-badge>
      * </hljs>
      *
      * @ngInject
@@ -47,7 +48,6 @@ define([
 
         return {
             scope: {
-                collapsed: '@',
                 state: '@',
                 body: '@'
             },
@@ -71,6 +71,19 @@ define([
 
         // Pass details lookup to scope.
         scope.details = STATE_DETAILS;
+
+        // Evaluate 'collapsed' attribute as Boolean.
+        scope.collapsed = scope.$eval(attr.collapsed);
+
+        // Set 'title' for use on 'title' attribute
+        if (scope.collapsed) {
+            scope.title = STATE_DETAILS[scope.state];
+
+            if (scope.state == 'warning') {
+                // Prepend body e.g. '6 Warnings on this item'
+                scope.title = scope.body + ' ' + scope.title;
+            }
+        }
     }
 
     return rbBadgeDirective;
