@@ -1,6 +1,7 @@
 define([
-    './rb-page-title-directive'
-], function (rbPageTitleDirective) {
+    './rb-page-title-directive',
+    './rb-page-title.css'
+], function (rbPageTitleDirective, css) {
     /**
      * @ngdoc module
      * @name rb-page-title
