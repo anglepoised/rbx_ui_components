@@ -1,0 +1,106 @@
+/** @define Navigation; use strict */
+
+/**
+ * The `.Navigation` component is a subcomponent of `.PageHeader`.
+ *
+ * Links in this component should point to the root pages of discrete applications.
+ *
+ * It currently supports 3 standard or 4 short items at the low end of the medium viewport. To extend, consider either
+ * moving current styles to large viewport and using smaller spacing for items at medium, or Quantity Queries for CSS
+ * http://alistapart.com/article/quantity-queries-for-css
+ */
+
+:root {
+    --Navigation-background: var(--color-gray-tuna);
+    --Navigation-background-hover: var(--color-gray-shark);
+    --Navigation-color: var(--color-gray-ghost);
+    --Navigation-color-active: var(--color-white-alabaster);
+    --Navigation-color-hover: var(--color-white-alabaster);
+    --Navigation-font-size: var(--font-size);
+    --Navigation-is-active-arrow-size: var(0.25em);
+    --Navigation-is-active-background: var(--color-brand-green);
+}
+
+/**
+ * 1. Linearize layout for small viewport
+ * 2. Set horizontal padding to match global gutter on small viewport
+ * 3. Stretch full width to support `:focus` and `:hover` state
+ * 4. Horizontal and full-height stretch layout for medium+ viewports
+ * 5. Vertically centre content
+ * 6. Prevent wrapping and avoid alignment issues
+ * 7. Allow absolute positioning of `.is-active` state
+ * 8. Set `.is-active` arrow background colour
+ * 9. Active indicator left arrow slant
+ * 10. Active indicator right arrow slant
+ */
+
+.Navigation {
+    background: var(--Navigation-background);
+    font-size: var(--Navigation-font-size);
+}
+
+.Navigation-items {
+    flex-direction: column; /* 1 */
+}
+
+.Navigation-item {
+    display: flex;
+}
+
+.Navigation-itemInner {
+    color: var(--Navigation-color);
+    cursor: pointer;
+    padding: 0 var(--layout-gutter); /* 2 */
+    text-decoration: none;
+    width: 100%; /* 3 */
+}
+
+.Navigation-itemInner:hover,
+.Navigation-itemInner:focus {
+    background: var(--Navigation-background-hover);
+    color: var(--Navigation-color-hover);
+}
+
+.Navigation-itemInner.is-active {
+    color: var(--Navigation-color-active);
+}
+
+@media (--md-viewport) {
+
+    .Navigation-items {
+        align-items: stretch; /* 4 */
+        display: flex; /* 4 */
+        flex-direction: row; /* 4 */
+        justify-content: flex-start;
+    }
+
+    .Navigation-item {
+        display: flex;
+        flex-direction: column; /* 5 */
+    }
+
+    .Navigation-itemInner {
+        min-height: 4.25em; /* 5 */
+        padding: 1.6em 1.875em 1.4em; /* 5 */
+        text-align: center;
+        white-space: nowrap; /* 6 */
+        width: 100%;
+    }
+
+    .Navigation-itemInner.is-active {
+        position: relative; /* 7 */
+    }
+
+    .Navigation-itemInner.is-active::after {
+        border-bottom: var(--Navigation-is-active-arrow-size) solid var(--Navigation-is-active-background); /* 8 */
+        border-left: var(--Navigation-is-active-arrow-size) solid var(--color-transparent); /* 9 */
+        border-right: var(--Navigation-is-active-arrow-size) solid var(--color-transparent); /* 11 */
+        bottom: 0;
+        content: "";
+        height: 0;
+        left: calc(50% - var(--Navigation-is-active-arrow-size));
+        position: absolute;
+        width: 0;
+    }
+
+}
