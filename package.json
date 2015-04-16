@@ -38,8 +38,14 @@
     "autoprefixer-core": "~5.1.9",
     "css-loader": "~0.10.1",
     "extract-text-webpack-plugin": "~0.5.0",
+    "postcss-calc": "~4.0.1",
+    "postcss-color-function": "~1.2.0",
+    "postcss-custom-media": "~3.0.0",
     "postcss-custom-properties": "~3.3.0",
+    "postcss-font-variant": "~1.1.0",
+    "postcss-import": "~5.2.0",
     "postcss-loader": "~0.3.0",
+    "postcss-media-minmax": "~1.1.0",
     "style-loader": "~0.10.2",
     "webpack-postcss-tools": "~1.0.2"
   }

@@ -2,7 +2,8 @@ var path = require('path'),
     webpack = require('webpack'),
     bowerRoot = path.join(__dirname, 'vendor'),
     webpackPostcssTools = require('webpack-postcss-tools'),
-    map = webpackPostcssTools.makeVarMap('vendor/rbx_style_guide/src/assets/styles/theme/colors.css'),
+    map = webpackPostcssTools.makeVarMap('vendor/rbx_style_guide/src/assets/styles/variables.css'),
+    media = webpackPostcssTools.makeVarMap('vendor/rbx_style_guide/src/assets/styles/boot/responsive.css'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     // ngAnnotatePlugin = require('ng-annotate-webpack-plugin'),
     config;
@@ -57,12 +58,24 @@ config = {
     },
     postcss: [
         webpackPostcssTools.prependTildesToImports,
-        require('autoprefixer-core')({
-            remove: false,
-            cascade: false
+        require('postcss-import')({
+            path: [
+                path.join('vendor/rbx_style_guide/src/assets/styles')
+            ]}
+        ),
+        require('postcss-custom-media')({
+            extensions: media.media
         }),
         require('postcss-custom-properties')({
             variables: map.vars
+        }),
+        require('postcss-color-function')(),
+        require('postcss-calc')(),
+        require('postcss-media-minmax')(),
+        require('postcss-font-variant')(),
+        require('autoprefixer-core')({
+            remove: false,
+            cascade: false
         })
     ]
 };
