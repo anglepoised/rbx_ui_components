@@ -138,27 +138,50 @@ define([
 
         describe('with collapsed', function () {
 
-            it('should take collapsed from attribute', inject(function ($compile, $rootScope) {
-                var badge = angular.element('<rb-badge collapsed="true"></rb-badge>'),
+            it('should take collapsed from attribute and set title attribute', inject(function ($compile, $rootScope) {
+                var badge = angular.element('<rb-badge collapsed="true" state="statusFinished"></rb-badge>'),
                     element = $compile(badge)($rootScope.$new());
 
                 $rootScope.$apply();
                 expect(element.hasClass('is-collapsed')).toBe(true);
+                expect(element.attr('title')).toBe('Finished');
             }));
 
-            it('should not add is-collapsed class if collapsed attribute is false',
+            it('should not add is-collapsed class or title attribute if collapsed attribute is false',
                 inject(function ($compile, $rootScope) {
-                    var badge = angular.element('<rb-badge collapsed="false"></rb-badge>'),
+                    var badge = angular.element('<rb-badge collapsed="false" state="warning"></rb-badge>'),
+                        element = $compile(badge)($rootScope.$new());
+
+                    $rootScope.$apply();
+                    expect(element.hasClass('is-collapsed')).toBe(false);
+                    expect(element.attr('title')).toBe(undefined);
+                }
+            ));
+
+            it('should take collapsed from attribute and set title attribute with body when warnging state',
+                inject(function ($compile, $rootScope) {
+                    var badge = angular.element('<rb-badge collapsed="true" body="6" state="warning"></rb-badge>'),
                         element = $compile(badge)($rootScope.$new());
 
                     $rootScope.$apply();
                     expect(element.hasClass('is-collapsed')).toBe(true);
+                    expect(element.attr('title')).toBe('6 Warnings on this item');
                 }
             ));
 
             it('should not add is-collapsed class if collapsed attribute missing',
                 inject(function ($compile, $rootScope) {
                     var badge = angular.element('<rb-badge></rb-badge>'),
+                        element = $compile(badge)($rootScope.$new());
+
+                    $rootScope.$apply();
+                    expect(element.hasClass('is-collapsed')).toBe(false);
+                }
+            ));
+
+            it('should not add is-collapsed class if collapsed attribute is not "true"',
+                inject(function ($compile, $rootScope) {
+                    var badge = angular.element('<rb-badge collapsed="foo"></rb-badge>'),
                         element = $compile(badge)($rootScope.$new());
 
                     $rootScope.$apply();
