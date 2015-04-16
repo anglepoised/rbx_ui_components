@@ -1,0 +1,87 @@
+/** @define User; use strict */
+
+/**
+ * The `.User` component is a subcomponent of `.PageHeader`.
+ *
+ * Can be used with any element, but should ideally be attached to a `<div>` element with attributes
+ * `role="button" tabindex="0"` to ensure the component is focusable.
+ */
+
+:root {
+    --User-background: var(--color-gray-tuna);
+    --User-item-color: var(--color-gray-tuna);
+}
+
+/**
+ * 1. Preserve spacing during inactive state
+ * 2. Move default outline from trigger to target
+ * 3. Move default cursor from trigger to target
+ * 4. Show items on `:focus` and `:hover`
+ * 5. Prevent individual items wrapping, so container expands to width of longest item
+ */
+
+.User {
+    background: var(--color-gray-tuna) url("./images/User.svg") no-repeat 50% 6px;
+    border: 1px solid transparent; /* 1 */
+    border-bottom: 0;
+    display: block;
+    height: 1.5em;
+    text-align: center;
+    width: 100%;
+}
+
+.User:hover,
+.User:focus {
+    background: var(--color-white-alabaster) url("./images/User-hover.svg") no-repeat 50% 6px;
+    border: 1px solid var(--color-gray-ghost);
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+    outline: none; /* 2 */
+}
+
+.User-items {
+    background: var(--color-white-alabaster);
+    border: 1px solid var(--color-gray-ghost);
+    border-radius: 3px 0 3px 3px;
+    cursor: default; /* 3 */
+    line-height: 1;
+    margin-top: -1px;
+    position: absolute;
+    right: 0;
+    top: 1.5em;
+    visibility: hidden; /* 4 */
+    white-space: nowrap; /* 5 */
+    z-index: -1;
+}
+
+.User:hover .User-items,
+.User:focus .User-items {
+    visibility: visible; /* 4 */
+}
+
+.User:focus .User-items {
+    outline: 1px dotted;  /* 2 */
+}
+
+@supports (-webkit-appearance:none) {
+    .User:focus .User-items {
+        outline: 5px auto -webkit-focus-ring-color; /* 2 */
+    }
+}
+
+.User-item {
+    color: var(--User-item-color);
+    font-size: var(--font-size-small);
+    padding: 1em 0.5em 0;
+    text-align: right;
+}
+
+.User-item:last-child {
+    padding-bottom: 0.714285714em;
+}
+
+.User-itemInner {
+    cursor: pointer; /* 3 */
+    display: block;
+}
