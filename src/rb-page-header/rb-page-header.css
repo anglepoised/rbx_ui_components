@@ -1,0 +1,74 @@
+/** @define PageHeader; use strict */
+
+/**
+ * The `.PageHeader` component should be used across all products. It consists of:
+ *
+ * - A mandatory logo
+ * - An optional `.Navigation` subcomponent
+ * - An optional `.User` subcomponent
+ */
+
+:root {
+    --PageHeader-background: var(--color-gray-tuna);
+    --PageHeader-border-color: var(--color-brand-green);
+    --PageHeader-color: var(--color-gray-ghost);
+    --PageHeader-user-width: 2em;
+}
+
+/**
+ * 1. Set explicit foreground colour
+ * 2. Linearize layout for small viewport
+ * 3. Allow absolute positioning of `.PageHeader-user` child
+ * 4. Set global gutter (not set on parent container to avoid breaking `.Navigation.is-active` state)
+ * 5. Nudge down for fake centring and matching of `.PageHeader-user`
+ * 6. Reset stacking order for `.User` subcomponent
+ * 7. Horizontal layout for medium+ viewports
+ * 8. Match design rhythm with consistent height
+ * 9. Stop other subcomponents flowing into `.PageHeader-user` subcomponent, using child width + (2 * gutter).
+ *    To spec, but triggers this parser bug at W3C CSS Validator: https://www.w3.org/Bugs/Public/show_bug.cgi?id=18913
+ * 10. Kill margin and switch to flex layout for vertical centering of content
+ */
+
+.PageHeader {
+    background: var(--PageHeader-background);
+    border-bottom: 0.25em solid var(--PageHeader-border-color);
+    color: var(--PageHeader-color); /* 1 */
+    display: flex;
+    flex-direction: column; /* 2 */
+    position: relative; /* 3 */
+}
+
+.PageHeader-logo {
+    cursor: pointer;
+    margin: 0 var(--layout-gutter); /* 4 */
+    margin-top: 0.5em; /* 5 */
+}
+
+.PageHeader-user {
+    position: absolute;
+    right: var(--layout-gutter);
+    top: 2px;
+    width: var(--PageHeader-user-width);
+    z-index: 0; /* 6 */
+}
+
+@media (--md-viewport) {
+
+    .PageHeader {
+        flex-direction: row; /* 7 */
+        min-height: 4.5em; /* 8 */
+        padding-right: calc(var(--PageHeader-user-width) + (2 * var(--layout-gutter))); /* 9 */
+    }
+
+    .PageHeader-logo {
+        display: flex;
+        flex-direction: column; /* 10 */
+        justify-content: center; /* 10 */
+        margin-top: 0; /* 10 */
+    }
+
+    .PageHeader-user {
+        top: 20px;
+    }
+
+}

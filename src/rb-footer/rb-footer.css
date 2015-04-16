@@ -1,0 +1,81 @@
+/** @define Footer; use strict */
+
+/**
+ * The `.Footer` component can be used across all products. It consists of an optional copyright line and any number of
+ * links. Links are linearised on small screens. `.Main` and `.Site` components are necessary to fix the footer to the
+ * bottom of the viewport.
+ */
+
+:root {
+    --Footer-background: var(--color-gray-tuna);
+    --Footer-color: var(--color-gray-regent);
+    --Footer-color-hover: var(--color-white-alabaster);
+    --Footer-font-size: var(--font-size-small);
+    --Footer-padding-vertical: var(0.642857143em);
+}
+
+/**
+ * 1. Reverse direction to allow correct source order
+ * 2. Reset line-height to control spacing
+ * 3. Remove border on last item
+ * 4. Force copyright to left when no links present
+ */
+
+.Footer {
+    background: var(--Footer-background);
+    display: block;
+    font-size: var(--Footer-font-size);
+    padding: var(--Footer-padding-vertical) 0.714285714em;
+}
+
+.Footer-itemInner {
+    color: var(--Footer-color);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Footer-itemInner:hover,
+.Footer-itemInner:focus {
+    color: var(--Footer-color-hover);
+}
+
+.Footer-copyright {
+    color: var(--Footer-color);
+}
+
+@media (--md-viewport) {
+
+    .Footer {
+        display: flex;
+        flex-direction: row-reverse; /* 1 */
+        line-height: 1; /* 2 */
+        padding: var(--Footer-padding-vertical) var(--layout-gutter);
+    }
+
+    .Footer-items {
+        align-self: flex-end;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .Footer-item {
+        border-right: 1px solid var(--Footer-color);
+    }
+
+    .Footer-item:last-child {
+        border: 0; /* 3 */
+    }
+
+    .Footer-itemInner {
+        padding: 0 0.714285714em;
+    }
+
+    .Footer-item:last-child .Footer-itemInner {
+        padding-right: 0;
+    }
+
+    .Footer-copyright {
+        margin: 0 auto 0 0; /* 4 */
+    }
+
+}

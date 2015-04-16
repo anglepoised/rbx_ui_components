@@ -1,0 +1,71 @@
+/** @define PageTitle; use strict */
+
+/**
+ * The `.PageTitle` component can be used across all products. It consists of:
+ *
+ * - An optional navigation descendent (generally pointing back to an index)
+ * - A mandatory page body, containing a mandatory page heading
+ * - An optional badge, displayed near the page heading
+ * - An optional subheading
+ * - An optional button
+ */
+
+:root {
+    --PageTitle-background: var(--color-white-alabaster);
+    --PageTitle-border: var(--color-green-base);
+}
+
+/**
+ * 1. Column layout for small viewport, row for larger.
+ * 2. Allow heading and badge to wrap when required.
+ * 3. Vertically center button.
+ */
+
+.PageTitle {
+    background: var(--PageTitle-background);
+    border-bottom: 1px solid var(--PageTitle-border);
+    display: flex;
+    padding: 1em var(--layout-gutter) 0.875em;
+}
+
+.PageTitle-inner {
+    display: flex;
+    flex-direction: column; /* 1 */
+}
+
+.PageTitle-navigation {
+    font-size: var(--font-size-small);
+}
+
+.PageTitle-body {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap; /* 2 */
+    justify-content: space-between;
+}
+
+.PageTitle-heading {
+    margin-right: 1em;
+}
+
+.PageTitle-sub {
+    font-size: var(--font-size-small);
+}
+
+.PageTitle-button {
+    flex: none;
+    margin: auto 0 auto auto; /* 3 */
+    padding-left: 1em;
+}
+
+@media (--md-viewport) {
+
+    .PageTitle {
+        flex-direction: row; /* 1 */
+    }
+
+    .PageTitle-body {
+        justify-content: flex-start;
+    }
+
+}

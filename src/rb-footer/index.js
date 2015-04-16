@@ -1,6 +1,7 @@
 define([
-    './rb-footer-directive'
-], function (rbFooterDirective) {
+    './rb-footer-directive',
+    './rb-footer.css'
+], function (rbFooterDirective, css) {
     /**
      * @ngdoc module
      * @name rb-footer

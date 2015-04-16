@@ -1,6 +1,7 @@
 define([
-    './rb-page-header-directive'
-], function (rbPageHeaderDirective) {
+    './rb-page-header-directive',
+    './rb-page-header.css'
+], function (rbPageHeaderDirective, css) {
     /**
      * @ngdoc module
      * @name rb-page-header

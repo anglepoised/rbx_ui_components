@@ -1,6 +1,7 @@
 define([
-    './rb-icon-directive'
-], function (rbIconDirective) {
+    './rb-icon-directive',
+    './rb-icon.css'
+], function (rbIconDirective, css) {
     /**
      * @ngdoc module
      * @name rb-icon

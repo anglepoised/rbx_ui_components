@@ -1,0 +1,163 @@
+/** @define Badge; use strict */
+
+/**
+ * The `.Badge` component consists of two mandatory descendents:
+ *
+ * - body: either an icon or numeral.
+ * - detail: a text description.
+ *
+ * One state is available: `.is-collapsed`, which hides the detail part.
+ *
+ * Two groups of modifiers are available:
+ *
+ * - `--warning`: warning count messages.
+ * - `--statusName`: status messages.
+ */
+
+:root {
+    --Badge-border-radius: 500px;
+    --Badge-border-width: 1px;
+    --Badge-details-offset: 1.4em;
+    --Badge-font-size: var(--font-size-small);
+    --Badge-padding-bottom: 3px;
+    --Badge-padding-horizontal: 12px;
+    --Badge-padding-top: 4px;
+}
+
+/**
+ * 1. Reduce `font-size` for whole component. All component space calculations derived from this.
+ * 2. Force `border-radius` into pill. See: http://stackoverflow.com/a/18795153/2270732
+ * 3. Hide body.
+ */
+
+.Badge {
+    display: flex;
+    font-size: var(--Badge-font-size); /* 1 */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.Badge-body {
+    border: var(--Badge-border-width) solid;
+    border-radius: var(--Badge-border-radius); /* 2 */
+    display: inline-block;
+    padding: var(--Badge-padding-top) var(--Badge-padding-horizontal) var(--Badge-padding-bottom);
+}
+
+.Badge-details {
+    display: inline-block;
+    padding: var(--Badge-padding-top) var(--Badge-padding-horizontal) var(--Badge-padding-bottom) 0.571428571em;
+}
+
+.Badge.is-collapsed .Badge-details {
+    display: none; /* 3 */
+}
+
+/**
+ * Warning
+ */
+
+:root {
+    --Badge--warning-base: var(--color-orange-base);
+    --Badge--warning-body-color: var(--color-white);
+}
+
+.Badge--warning .Badge-body {
+    background: var(--Badge--warning-base);
+    border-color: var(--Badge--warning-base);
+    color: var(--Badge--warning-body-color);
+}
+
+.Badge--warning .Badge-details {
+    color: var(--Badge--warning-base);
+}
+
+/**
+ * Status Incomplete modifier
+ */
+
+:root {
+    --Badge--statusIncomplete-base: var(--color-blue-base);
+}
+
+.Badge--statusIncomplete .Badge-body {
+    background: var(--Badge--statusIncomplete-base) url("./images/Badge--statusIncomplete.svg") no-repeat center center;
+    border-color: var(--Badge--statusIncomplete-base);
+}
+
+.Badge--statusIncomplete .Badge-details {
+    border-color: var(--Badge--statusIncomplete-base);
+    color: var(--Badge--statusIncomplete-base);
+}
+
+/**
+ * Status Live modifier
+ */
+
+:root {
+    --Badge--statusLive-base: var(--color-status-live-base);
+}
+
+.Badge--statusLive .Badge-body {
+    background: var(--Badge--statusLive-base) url("./images/Badge--statusLive.svg") no-repeat center center;
+    border-color: var(--Badge--statusLive-base);
+}
+
+.Badge--statusLive .Badge-details {
+    border-color: var(--Badge--statusLive-base);
+    color: var(--Badge--statusLive-base);
+}
+
+/**
+ * Status Pending modifier
+ */
+
+:root {
+    --Badge--statusPending-base: var(--color-status-pending-base);
+}
+
+.Badge--statusPending .Badge-body {
+    background: var(--Badge--statusPending-base) url("./images/Badge--statusPending.svg") no-repeat center center;
+    border-color: var(--Badge--statusPending-base);
+}
+
+.Badge--statusPending .Badge-details {
+    border-color: var(--Badge--statusPending-base);
+    color: var(--Badge--statusPending-base);
+}
+
+/**
+ * Status Paused modifier
+ */
+
+:root {
+    --Badge--statusPaused-base: var(--color-status-paused-base);
+}
+
+.Badge--statusPaused .Badge-body {
+    background: var(--Badge--statusPaused-base) url("./images/Badge--statusPaused.svg") no-repeat center center;
+    border-color: var(--Badge--statusPaused-base);
+}
+
+.Badge--statusPaused .Badge-details {
+    border-color: var(--Badge--statusPaused-base);
+    color: var(--Badge--statusPaused-base);
+}
+
+/**
+ * Status Finished modifier
+ */
+
+:root {
+    --Badge--statusFinished-base: var(--color-status-finished-base);
+}
+
+.Badge--statusFinished .Badge-body {
+    background: var(--Badge--statusFinished-base) url("./images/Badge--statusFinished.svg") no-repeat center center;
+    border-color: var(--Badge--statusFinished-base);
+}
+
+.Badge--statusFinished .Badge-details {
+    border-color: var(--Badge--statusFinished-base);
+    color: var(--Badge--statusFinished-base);
+}

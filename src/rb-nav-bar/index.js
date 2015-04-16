@@ -1,6 +1,7 @@
 define([
-    './rb-nav-bar-directive'
-], function (rbNavBarDirective) {
+    './rb-nav-bar-directive',
+    './rb-nav-bar.css'
+], function (rbNavBarDirective, css) {
     /**
      * @ngdoc module
      * @name rb-nav-bar
