@@ -1,6 +1,7 @@
 define([
-    './rb-main-directive'
-], function (rbMainDirective) {
+    './rb-main-directive',
+    './rb-main.css'
+], function (rbMainDirective, css) {
     /**
      * @ngdoc module
      * @name rb-main

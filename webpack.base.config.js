@@ -52,6 +52,10 @@ config = {
             {
                 test: /\.svg$/,
                 loader: 'url-loader'
+            },
+            {
+                test: /\.jpg$/,
+                loader: 'file-loader?name=images/[hash].[ext]'
             }
         ],
         noParse: [
