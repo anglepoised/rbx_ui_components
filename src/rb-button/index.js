@@ -1,6 +1,7 @@
 define([
-    './rb-button-directive'
-], function (rbButtonDirective) {
+    './rb-button-directive',
+    './rb-button.css'
+], function (rbButtonDirective, css) {
     /**
      * @ngdoc module
      * @name rb-button

@@ -1,0 +1,238 @@
+/** @define Button; use strict */
+
+:root {
+    --Button-background: var(--color-blue-base);
+    --Button-background-hover: var(--color-blue-hover);
+    --Button-background-pressed: var(--color-blue-shadow);
+    --Button-border-radius: 2px;
+    --Button-color: var(--color-white-alabaster);
+    --Button-disabled-opacity: 0.5;
+    --Button-font: inherit;
+    --Button-line-height: 2.5;
+    --Button-padding: 0 1em;
+}
+
+/**
+ * The button classes are best applied to link and button elements.
+ * These components can be used in forms, as calls to action, or as part of the
+ * general UI of the site/app.
+ */
+
+/**
+ * 1. Corrects inability to style clickable `input` types in iOS.
+ * 2. Hide back face for transition.
+ * 3. Ensure no `text-decoration` on anchors.
+ * 4. Prevent button text from being selectable.
+ * 5. Prevent text wrapping (allows controlling space with line height).
+ */
+
+.Button {
+    -webkit-appearance: none; /* 1 */
+    backface-visibility: hidden; /* 2 */
+    background-color: var(--Button-background);
+    border-radius: var(--Button-border-radius);
+    border-style: none;
+    border-width: 0;
+    color: var(--Button-color);
+    cursor: pointer;
+    display: inline-block;
+    font: var(--Button-font);
+    line-height: var(--Button-line-height);
+    margin: 0;
+    padding: var(--Button-padding);
+    position: relative;
+    text-align: center;
+    text-decoration: none; /* 3 */
+    text-transform: capitalize;
+    transition-duration: 0.2s;
+    transition-property: background-color;
+    user-select: none; /* 4 */
+    white-space: nowrap; /* 5 */
+}
+
+/**
+ * Work around a Firefox/IE bug where the transparent `button` background
+ * results in a loss of the default `button` focus styles.
+ */
+
+.Button:focus {
+    outline: 1px dotted;
+}
+
+@supports (-webkit-appearance:none) {
+    .Button:focus {
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+}
+
+/**
+ * Restore default Firefox focus style, but add *outside* element (as opposed to
+  the default inside, which looks poor with RBX button style).
+ */
+
+.Button:-moz-focusring {
+    outline: 1px dotted var(--color-moz-focusring);
+}
+
+/**
+ * UI states
+ *
+ * 1. Prevent link :hover styles change colour
+ * 2. Prevent link :hover styles change text-decoration
+ * 3. Remove outline on :hover (but preserve for :focus)
+ */
+
+.Button:hover,
+.Button:focus {
+    background-color: var(--Button-background-hover);
+    color: var(--Button-color); /* 1 */
+    text-decoration: none; /* 2 */
+}
+
+.Button:hover {
+    outline: none; /* 3 */
+}
+
+.Button:active,
+.Button.is-pressed {
+    background-color: var(--Button-background-pressed);
+}
+
+.Button:disabled,
+.Button.is-disabled {
+    background: var(--Button-background);
+    cursor: default;
+    opacity: var(--Button-disabled-opacity);
+}
+
+/**
+ * Large variant
+ */
+
+:root {
+    --Button--large-font-size: var(--font-size-large);
+    --Button--large-line-height: 2.666666667;
+    --Button--large-padding: 0 1.111111111em;
+    --Button-border-radius: 3px;
+}
+
+.Button--large {
+    font-size: var(--Button--large-font-size);
+    line-height: var(--Button--large-line-height);
+    padding: var(--Button--large-padding);
+}
+
+/**
+ * Small variant
+ */
+
+:root {
+    --Button--small-border-radius: 1px;
+    --Button--small-font-size: var(--font-size-small);
+    --Button--small-line-height: 2.285714286;
+    --Button--small-padding: 0 0.857142857em;
+}
+
+.Button--small {
+    border-radius: var(--Button--small-border-radius);
+    font-size: var(--Button--small-font-size);
+    line-height: var(--Button--small-line-height);
+    padding: var(--Button--small-padding);
+}
+
+/**
+ * Block variant
+ */
+
+.Button--block {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+/**
+ * Positive variant
+ */
+
+:root {
+    --Button--positive-background: var(--color-green-base);
+    --Button--positive-background-hover: var(--color-green-hover);
+    --Button--positive-background-pressed: var(--color-green-shadow);
+}
+
+.Button--positive {
+    background-color: var(--Button--positive-background);
+}
+
+.Button--positive:hover,
+.Button--positive:focus {
+    background-color: var(--Button--positive-background-hover);
+}
+
+.Button--positive:active,
+.Button--positive.is-pressed {
+    background-color: var(--Button--positive-background-pressed);
+}
+
+.Button--positive:disabled,
+.Button--positive.is-disabled {
+    background-color: var(--Button--positive-background);
+}
+
+/**
+ * Warning variant
+ */
+
+:root {
+    --Button--warning-background: var(--color-orange-base);
+    --Button--warning-background-hover: var(--color-orange-hover);
+    --Button--warning-background-pressed: var(--color-orange-shadow);
+}
+
+.Button--warning {
+    background-color: var(--Button--warning-background);
+}
+
+.Button--warning:hover,
+.Button--warning:focus {
+    background-color: var(--Button--warning-background-hover);
+}
+
+.Button--warning:active,
+.Button--warning.is-pressed {
+    background-color: var(--Button--warning-background-pressed);
+}
+
+.Button--warning:disabled,
+.Button--warning.is-disabled {
+    background-color: var(--Button--warning-background);
+}
+
+/**
+ * Danger variant
+ */
+
+:root {
+    --Button--danger-background: var(--color-red-base);
+    --Button--danger-background-hover: var(--color-red-hover);
+    --Button--danger-background-pressed: var(--color-red-shadow);
+}
+
+.Button--danger {
+    background-color: var(--Button--danger-background);
+}
+
+.Button--danger:hover,
+.Button--danger:focus {
+    background-color: var(--Button--danger-background-hover);
+}
+
+.Button--danger:active,
+.Button--danger.is-pressed {
+    background-color: var(--Button--danger-background-pressed);
+}
+
+.Button--danger:disabled,
+.Button--danger.is-disabled {
+    background-color: var(--Button--danger-background);
+}
