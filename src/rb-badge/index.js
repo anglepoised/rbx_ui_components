@@ -1,6 +1,7 @@
 define([
-    './rb-badge-directive'
-], function (rbBadgeDirective) {
+    './rb-badge-directive',
+    './rb-badge.css'
+], function (rbBadgeDirective, css) {
     /**
      * @ngdoc module
      * @name rb-badge
