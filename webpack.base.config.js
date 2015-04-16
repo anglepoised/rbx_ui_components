@@ -60,9 +60,9 @@ config = {
         webpackPostcssTools.prependTildesToImports,
         require('postcss-import')({
             path: [
-                path.join('vendor/rbx_style_guide/src/assets/styles')
-            ]}
-        ),
+                path.join(__dirname, 'vendor/rbx_style_guide/src/assets/styles')
+            ]
+        }),
         require('postcss-custom-media')({
             extensions: media.media
         }),
