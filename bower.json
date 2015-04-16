@@ -27,7 +27,7 @@
     "angular-touch": "~1.3.0",
     "angular-mocks": "~1.3.0",
     "angular-ui-router": "~0.2.13",
-    "rbx_style_guide": "rockabox/rbx_style_guide#f6e4a1ecc8e0e64e1e63898ce9e310f24dd1e144"
+    "rbx_style_guide": "rockabox/rbx_style_guide#develop"
   },
   "resolutions": {
     "angular": "~1.3.15"
