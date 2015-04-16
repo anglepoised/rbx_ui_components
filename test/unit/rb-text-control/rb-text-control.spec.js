@@ -64,6 +64,11 @@ define([
         });
 
         describe('input', function () {
+            it('should bind to the model', function () {
+                recompile({data: {firstName: 'Steve'}});
+                expect(element.find('input')[0].value).toBe('Steve');
+            });
+
             it('should use invalid class when control invalid after touch', function () {
                 // Focus and unfocus the input field
                 element.find('input').triggerHandler('focus');
