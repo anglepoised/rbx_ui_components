@@ -25,6 +25,9 @@ define([
      * If you supply a `block` attribute with `yes` value, it will become
      * a button with full-width.
      *
+     * If you supply an `outline` attribute with `yes` value, it will become
+     * a button with an outline modifier to be used for less important actions.
+     *
      * If you supply a `state` attribute with a value, i.e. `positive`,`warning`,
      * `danger`, it will become a button with a different colour.
      * Positive buttons are green.
@@ -42,6 +45,9 @@ define([
      *     Button
      *   </rb-button>
      *   <rb-button type="submit" state="warning" block="yes">
+     *     Button
+     *   </rb-button>
+     *   <rb-button type="submit" state="warning" outline="yes">
      *     Button
      *   </rb-button>
      * </hljs>
@@ -74,6 +80,11 @@ define([
                 angular.equals(angular.lowercase(attr.block), 'yes');
         }
 
+        function isOutline (attr) {
+            return angular.isDefined(attr.outline) &&
+                angular.equals(angular.lowercase(attr.outline), 'yes');
+        }
+
         function getTemplate (elem, attr) {
             if (isAnchor(attr)) {
                 return linkTemplate;
@@ -85,6 +96,13 @@ define([
         }
 
         function link (scope, elem, attr) {
+
+            // Defaults to standard modifier
+            if (isOutline(attr)) {
+                elem.addClass('Button--outline');
+            } else {
+                elem.addClass('Button--standard');
+            }
 
             // Defaults to default size when no
             // size is supplied

@@ -1,53 +1,46 @@
 /** @define Button; use strict */
 
+/**
+ * The `.Button` component is best applied to link and button elements. This components can be used in forms, as calls
+ to action, or as part of the general UI.
+ */
+
 :root {
-    --Button-background: var(--color-blue-base);
-    --Button-background-hover: var(--color-blue-hover);
-    --Button-background-pressed: var(--color-blue-shadow);
-    --Button-border-radius: 2px;
-    --Button-color: var(--color-white-alabaster);
+    --Button-border-size: 2px;
     --Button-disabled-opacity: 0.5;
     --Button-font: inherit;
-    --Button-line-height: 2.5;
-    --Button-padding: 0 1em;
+    --Button-line-height: 2.3;
+    --Button-padding: 0 0.625em;
 }
 
 /**
- * The button classes are best applied to link and button elements.
- * These components can be used in forms, as calls to action, or as part of the
- * general UI of the site/app.
- */
-
-/**
  * 1. Corrects inability to style clickable `input` types in iOS.
- * 2. Hide back face for transition.
- * 3. Ensure no `text-decoration` on anchors.
- * 4. Prevent button text from being selectable.
- * 5. Prevent text wrapping (allows controlling space with line height).
+ * 2. Hide back face for transitions.
+ * 3. Set border on all types, for consistent sizing across primary modifiers.
+ * 4. Ensure no `text-decoration` on anchors.
+ * 5. Prevent button text from being selectable.
+ * 6. Prevent text wrapping (allows control of spacing with line height).
  */
 
 .Button {
     -webkit-appearance: none; /* 1 */
     backface-visibility: hidden; /* 2 */
-    background-color: var(--Button-background);
-    border-radius: var(--Button-border-radius);
-    border-style: none;
-    border-width: 0;
-    color: var(--Button-color);
+    border-radius: var(--Button-border-size);
+    border-style: solid; /* A */
+    border-width: var(--Button-border-size); /* 3 */
     cursor: pointer;
     display: inline-block;
     font: var(--Button-font);
     line-height: var(--Button-line-height);
     margin: 0;
     padding: var(--Button-padding);
-    position: relative;
     text-align: center;
-    text-decoration: none; /* 3 */
+    text-decoration: none; /* 4 */
     text-transform: capitalize;
     transition-duration: 0.2s;
-    transition-property: background-color;
-    user-select: none; /* 4 */
-    white-space: nowrap; /* 5 */
+    transition-property: all;
+    user-select: none; /* 5 */
+    white-space: nowrap; /* 6 */
 }
 
 /**
@@ -66,8 +59,8 @@
 }
 
 /**
- * Restore default Firefox focus style, but add *outside* element (as opposed to
-  the default inside, which looks poor with RBX button style).
+ * Restore default Firefox focus style, but add *outside* element (as opposed to the default inside, which looks poor
+ * with this button style).
  */
 
 .Button:-moz-focusring {
@@ -75,73 +68,143 @@
 }
 
 /**
- * UI states
+ * Shared UI states
  *
- * 1. Prevent link :hover styles change colour
- * 2. Prevent link :hover styles change text-decoration
- * 3. Remove outline on :hover (but preserve for :focus)
+ * 1. Prevent :hover styles changing text-decoration when used on links.
+ * 2. Remove outline on `:hover`, but preserve for `:focus`.
  */
 
 .Button:hover,
 .Button:focus {
-    background-color: var(--Button-background-hover);
-    color: var(--Button-color); /* 1 */
-    text-decoration: none; /* 2 */
+    text-decoration: none; /* 1 */
 }
 
 .Button:hover {
-    outline: none; /* 3 */
-}
-
-.Button:active,
-.Button.is-pressed {
-    background-color: var(--Button-background-pressed);
+    outline: none; /* 2 */
 }
 
 .Button:disabled,
 .Button.is-disabled {
-    background: var(--Button-background);
     cursor: default;
     opacity: var(--Button-disabled-opacity);
 }
 
 /**
- * Large variant
+ * Standard modifier
  */
 
 :root {
+    --Button--standard-background: var(--color-blue-base);
+    --Button--standard-color: var(--color-white-alabaster);
+    --Button--standard-hover-background: var(--color-blue-hover);
+    --Button--standard-pressed-background: var(--color-blue-shadow);
+    --Button--standard-pressed-color: var(--color-white-alabaster);
+}
+
+.Button--standard {
+    background-color: var(--Button--standard-background);
+    border-color: var(--Button--standard-background);
+    color: var(--Button--standard-color);
+}
+
+.Button--standard:hover,
+.Button--standard:focus {
+    background-color: var(--Button--standard-hover-background);
+    border-color: var(--Button--standard-hover-background);
+    color: var(--Button--standard-color);
+}
+
+.Button--standard:active,
+.Button--standard.is-pressed {
+    background: var(--Button--standard-pressed-background);
+    border-color: var(--Button--standard-pressed-background);
+    color: var(--Button--standard-pressed-color);
+}
+
+.Button--standard:disabled,
+.Button--standard.is-disabled {
+    background: var(--Button--standard-background);
+}
+
+/**
+ * Outline modifier
+ */
+
+:root {
+    --Button--outline-background: transparent;
+    --Button--outline-border-color: var(--color-blue-base);
+    --Button--outline-color: var(--color-blue-base);
+    --Button--outline-hover-background: var(--color-blue-hover);
+    --Button--outline-hover-color: var(--color-white-catskill);
+    --Button--outline-pressed-background: var(--Button--standard-pressed-background);
+    --Button--outline-pressed-color: var(--Button--standard-pressed-color);
+}
+
+.Button--outline {
+    border-color: var(--Button--outline-border-color);
+    color: var(--Button--outline-color);
+}
+
+.Button--outline:hover,
+.Button--outline:focus {
+    background: var(--Button--outline-hover-background);
+    border-color: var(--color-blue-hover);
+    color: var(--Button--outline-hover-color);
+}
+
+.Button--outline:active,
+.Button--outline.is-pressed {
+    background-color: var(--Button--outline-pressed-background);
+    border-color: var(--Button--outline-pressed-background);
+    color: var(--Button--outline-pressed-color);
+}
+
+.Button--outline:disabled,
+.Button--outline.is-disabled {
+    background: var(--Button--outline-background);
+    color: var(--Button--outline-color);
+}
+
+/**
+ * Large modifier
+ */
+
+:root {
+    --Button--large-border-size: 3px;
     --Button--large-font-size: var(--font-size-large);
-    --Button--large-line-height: 2.666666667;
-    --Button--large-padding: 0 1.111111111em;
-    --Button-border-radius: 3px;
+    --Button--large-line-height: 2.333333333;
+    --Button--large-padding: 0 0.944444444em;
 }
 
 .Button--large {
+    border-radius: var(--Button--large-border-size);
+    border-width: var(--Button--large-border-size);
     font-size: var(--Button--large-font-size);
     line-height: var(--Button--large-line-height);
     padding: var(--Button--large-padding);
 }
 
 /**
- * Small variant
+ * Small modifier
  */
 
 :root {
-    --Button--small-border-radius: 1px;
+    --Button--small-border-size: 1px;
     --Button--small-font-size: var(--font-size-small);
-    --Button--small-line-height: 2.285714286;
-    --Button--small-padding: 0 0.857142857em;
+    --Button--small-line-height: 2.142857143;
+    --Button--small-padding: 0 0.785714286em;
 }
 
 .Button--small {
-    border-radius: var(--Button--small-border-radius);
+    border-radius: var(--Button--small-border-size);
+    border-width: var(--Button--small-border-size);
     font-size: var(--Button--small-font-size);
     line-height: var(--Button--small-line-height);
     padding: var(--Button--small-padding);
 }
 
 /**
- * Block variant
+ * Block modifier
  */
 
 .Button--block {
@@ -151,88 +214,166 @@
 }
 
 /**
- * Positive variant
+ * Positive modifier
  */
 
 :root {
-    --Button--positive-background: var(--color-green-base);
-    --Button--positive-background-hover: var(--color-green-hover);
-    --Button--positive-background-pressed: var(--color-green-shadow);
+    --Button--positive: var(--color-green-base);
+    --Button--positive-color: var(--color-white-alabaster);
+    --Button--positive-hover: var(--color-green-hover);
+    --Button--positive-pressed: var(--color-green-shadow);
 }
 
-.Button--positive {
-    background-color: var(--Button--positive-background);
+.Button--standard.Button--positive {
+    background-color: var(--Button--positive);
+    border-color: var(--Button--positive);
 }
 
-.Button--positive:hover,
-.Button--positive:focus {
-    background-color: var(--Button--positive-background-hover);
+.Button--outline.Button--positive {
+    border-color: var(--Button--positive-hover);
+    color: var(--Button--positive);
 }
 
-.Button--positive:active,
-.Button--positive.is-pressed {
-    background-color: var(--Button--positive-background-pressed);
+.Button.Button--positive:hover,
+.Button.Button--positive:focus {
+    background-color: var(--Button--positive-hover);
+    border-color: var(--Button--positive-hover);
+    color: var(--Button--positive-color);
 }
 
-.Button--positive:disabled,
-.Button--positive.is-disabled {
-    background-color: var(--Button--positive-background);
+.Button.Button--positive:active {
+    color: var(--Button--positive-color);
+}
+
+.Button.Button--positive:active,
+.Button.Button--positive.is-pressed {
+    background-color: var(--Button--positive-pressed);
+    border-color: var(--Button--positive-pressed);
+    color: var(--Button--positive-color);
+}
+
+.Button--outline.Button--positive:active,
+.Button--outline.Button--positive.is-pressed {
+    border-color: var(--Button--positive-pressed);
+}
+
+.Button--standard.Button--positive:disabled,
+.Button--standard.Button--positive.is-disabled {
+    background-color: var(--Button--positive);
+}
+
+.Button--outline.Button--positive:disabled,
+.Button--outline.Button--positive.is-disabled {
+    background-color: var(--Button--outline-background);
+    color: var(--Button--positive);
 }
 
 /**
- * Warning variant
+ * Warning modifier
  */
 
 :root {
-    --Button--warning-background: var(--color-orange-base);
-    --Button--warning-background-hover: var(--color-orange-hover);
-    --Button--warning-background-pressed: var(--color-orange-shadow);
+    --Button--warning: var(--color-orange-base);
+    --Button--warning-color: var(--color-white-alabaster);
+    --Button--warning-hover: var(--color-orange-hover);
+    --Button--warning-pressed: var(--color-orange-shadow);
 }
 
-.Button--warning {
-    background-color: var(--Button--warning-background);
+.Button--standard.Button--warning {
+    background-color: var(--Button--warning);
+    border-color: var(--Button--warning);
 }
 
-.Button--warning:hover,
-.Button--warning:focus {
-    background-color: var(--Button--warning-background-hover);
+.Button--outline.Button--warning {
+    border-color: var(--Button--warning-hover);
+    color: var(--Button--warning);
 }
 
-.Button--warning:active,
-.Button--warning.is-pressed {
-    background-color: var(--Button--warning-background-pressed);
+.Button.Button--warning:hover,
+.Button.Button--warning:focus {
+    background-color: var(--Button--warning-hover);
+    border-color: var(--Button--warning-hover);
+    color: var(--Button--warning-color);
 }
 
-.Button--warning:disabled,
-.Button--warning.is-disabled {
-    background-color: var(--Button--warning-background);
+.Button.Button--warning:active {
+    color: var(--Button--warning-color);
+}
+
+.Button.Button--warning:active,
+.Button.Button--warning.is-pressed {
+    background-color: var(--Button--warning-pressed);
+    border-color: var(--Button--warning-pressed);
+    color: var(--Button--warning-color);
+}
+
+.Button--outline.Button--warning:active,
+.Button--outline.Button--warning.is-pressed {
+    border-color: var(--Button--warning-pressed);
+}
+
+.Button--standard.Button--warning:disabled,
+.Button--standard.Button--warning.is-disabled {
+    background-color: var(--Button--warning);
+}
+
+.Button--outline.Button--warning:disabled,
+.Button--outline.Button--warning.is-disabled {
+    background-color: var(--Button--outline-background);
+    color: var(--Button--warning);
 }
 
 /**
- * Danger variant
+ * Danger modifier
  */
 
 :root {
-    --Button--danger-background: var(--color-red-base);
-    --Button--danger-background-hover: var(--color-red-hover);
-    --Button--danger-background-pressed: var(--color-red-shadow);
+    --Button--danger: var(--color-red-base);
+    --Button--danger-color: var(--color-white-alabaster);
+    --Button--danger-hover: var(--color-red-hover);
+    --Button--danger-pressed: var(--color-red-shadow);
 }
 
-.Button--danger {
-    background-color: var(--Button--danger-background);
+.Button--standard.Button--danger {
+    background-color: var(--Button--danger);
+    border-color: var(--Button--danger);
 }
 
-.Button--danger:hover,
-.Button--danger:focus {
-    background-color: var(--Button--danger-background-hover);
+.Button--outline.Button--danger {
+    border-color: var(--Button--danger-hover);
+    color: var(--Button--danger);
 }
 
-.Button--danger:active,
-.Button--danger.is-pressed {
-    background-color: var(--Button--danger-background-pressed);
+.Button.Button--danger:hover,
+.Button.Button--danger:focus {
+    background-color: var(--Button--danger-hover);
+    border-color: var(--Button--danger-hover);
+    color: var(--Button--danger-color);
 }
 
-.Button--danger:disabled,
-.Button--danger.is-disabled {
-    background-color: var(--Button--danger-background);
+.Button.Button--danger:active {
+    color: var(--Button--danger-color);
+}
+
+.Button.Button--danger:active,
+.Button.Button--danger.is-pressed {
+    background-color: var(--Button--danger-pressed);
+    border-color: var(--Button--danger-pressed);
+    color: var(--Button--danger-color);
+}
+
+.Button--outline.Button--danger:active,
+.Button--outline.Button--danger.is-pressed {
+    border-color: var(--Button--danger-pressed);
+}
+
+.Button--standard.Button--danger:disabled,
+.Button--standard.Button--danger.is-disabled {
+    background-color: var(--Button--danger);
+}
+
+.Button--outline.Button--danger:disabled,
+.Button--outline.Button--danger.is-disabled {
+    background-color: var(--Button--outline-background);
+    color: var(--Button--danger);
 }

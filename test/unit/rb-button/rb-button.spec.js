@@ -68,7 +68,7 @@ define([
 
         });
 
-        describe('with size, state and block', function () {
+        describe('with size, state, outline and block', function () {
 
             it('should be a large button if large size attr is supplied', inject(function ($compile, $rootScope) {
                 var button = angular.element('<rb-button size="large"></rb-button>'),
@@ -92,6 +92,22 @@ define([
 
                 $rootScope.$apply();
                 expect(button.hasClass('Button--block')).toBe(true);
+            }));
+
+            it('should be an outline button if outline attr is supplied', inject(function ($compile, $rootScope) {
+                var button = angular.element('<rb-button outline="yes"></rb-button>'),
+                    element = $compile(button)($rootScope.$new());
+
+                $rootScope.$apply();
+                expect(button.hasClass('Button--outline')).toBe(true);
+            }));
+
+            it('should be a standard button if outline attr is not supplied', inject(function ($compile, $rootScope) {
+                var button = angular.element('<rb-button></rb-button>'),
+                    element = $compile(button)($rootScope.$new());
+
+                $rootScope.$apply();
+                expect(button.hasClass('Button--standard')).toBe(true);
             }));
 
             it('should attach a state class (positive, warning, danger) if state attr is supplied',
