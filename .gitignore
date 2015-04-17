@@ -31,5 +31,4 @@ node_modules
 /vendor/
 
 # Webpack bundle- built on the fly with npm start
-dev/bundle.js
-dev/style.css
+dist

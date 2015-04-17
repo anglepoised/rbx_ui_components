@@ -5,7 +5,7 @@ var path = require('path'),
     map = webpackPostcssTools.makeVarMap('vendor/rbx_style_guide/src/assets/styles/variables.css'),
     media = webpackPostcssTools.makeVarMap('vendor/rbx_style_guide/src/assets/styles/boot/responsive.css'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    // ngAnnotatePlugin = require('ng-annotate-webpack-plugin'),
+    ngAnnotatePlugin = require('ng-annotate-webpack-plugin'),
     config;
 
 config = {
@@ -16,7 +16,7 @@ config = {
     },
 
     output: {
-        path: path.join(__dirname, 'dev'),
+        path: path.join(__dirname, 'dist'),
         publicPath: '/',
         filename: 'bundle.js'
     },
@@ -32,9 +32,9 @@ config = {
     },
 
     plugins: [
-        // new ngAnnotatePlugin({
-        //     add: true
-        // }),
+        new ngAnnotatePlugin({
+            add: true
+        }),
         new webpack.ResolverPlugin([
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main']),
             new webpack.ResolverPlugin.FileAppendPlugin(['index.js'])
