@@ -1,6 +1,7 @@
 define([
-    './rb-user-directive'
-], function (rbUserDirective) {
+    './rb-user-directive',
+    './rb-user.css'
+], function (rbUserDirective, css) {
     /**
      * @ngdoc module
      * @name directives.nav-bars.rb-nav-bar
