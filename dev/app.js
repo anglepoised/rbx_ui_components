@@ -13,10 +13,11 @@ define([
     'components/rb-page-title/demo',
     'components/rb-ratio/demo',
     'components/rb-site/demo',
-    'components/rb-text-control/demo'
+    'components/rb-text-control/demo',
+    'rbx_style_guide'
 ], function (
     uiRouter, template, rbBadgeDemo, rbButtonDemo, rbDateTimeDemo, rbFooterDemo, rbHeaderDemo, rbLoadingDemo,
-    rbLoginFormDemo, rbMainDemo, rbPageHeaderDemo, rbPageTitleDemo, rbRatioDemo, rbSiteDemo, rbTextControlDemo
+    rbLoginFormDemo, rbMainDemo, rbPageHeaderDemo, rbPageTitleDemo, rbRatioDemo, rbSiteDemo, rbTextControlDemo, css
     ) {
     // @ngInject
     angular

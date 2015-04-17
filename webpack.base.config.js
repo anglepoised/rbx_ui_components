@@ -54,8 +54,12 @@ config = {
                 loader: 'url-loader'
             },
             {
-                test: /\.jpg$/,
+                test: /\.(jpg)$/,
                 loader: 'file-loader?name=images/[hash].[ext]'
+            },
+            {
+                test: /\.((woff2)|(woff)|(ttf))$/,
+                loader: 'file-loader?name=fonts/[hash].[ext]'
             }
         ],
         noParse: [
@@ -66,11 +70,7 @@ config = {
     },
     postcss: [
         webpackPostcssTools.prependTildesToImports,
-        require('postcss-import')({
-            path: [
-                path.join(__dirname, 'vendor/rbx_style_guide/src/assets/styles')
-            ]
-        }),
+        require('postcss-import')(),
         require('postcss-custom-media')({
             extensions: media.media
         }),
