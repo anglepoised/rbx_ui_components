@@ -45,6 +45,16 @@ define([
                 // Should be 83% not 83.33333% (recurring)
                 expect(angular.element(ele).text()).toBe('83%');
             });
+
+            it('should default to zero if NaN', function () {
+                var ele;
+                template = '<rb-ratio numerator="0" denominator="0"></rb-ratio>';
+                ele = $compile(template)($scope);
+
+                $scope.$apply();
+
+                expect(angular.element(ele).text()).toBe('0%');
+            });
         });
     });
 });

@@ -1,1 +1,1 @@
-<span class="Ratio">{{ (numerator * 100) / denominator | number:0 }}%</span>
+<span class="Ratio">{{ ((numerator * 100) / denominator) || 0 | number:0 }}%</span>
