@@ -1,0 +1,16 @@
+/** @define rbModalConfirm; use strict */
+
+/**
+ * The `.rbModalConfirm` component...
+ */
+
+:root {
+    --rbModalConfirm-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rbModalConfirm {
+}
