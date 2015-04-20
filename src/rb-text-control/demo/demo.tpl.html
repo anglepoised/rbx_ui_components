@@ -45,6 +45,15 @@
                 is-required="true">
             </rb-text-control>
 
+            <rb-text-control
+                form="userForm"
+                title="What are you looking for?"
+                placeholder="Search me"
+                name="query"
+                type="search"
+                ng-model="demoCtrl.data.query">
+            </rb-text-control>
+
             <div ng-if="userForm.$valid">
                 Form is valid
             </div>
