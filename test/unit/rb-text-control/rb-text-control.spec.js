@@ -81,23 +81,23 @@ define([
                 expect(element.find('input').hasClass('is-invalid')).toBe(false);
             });
 
-            it('should become disabled when is-disabled is set', function () {
+            it('should be disabled when is-disabled is set', function () {
                 recompile({isDisabled: true});
+                expect(element.find('input').attr('disabled')).toBe('disabled');
+            });
 
-                // Can just test ng-disabled exists as we can assume that works
-                expect(element.find('input').attr('ng-disabled')).toBe('true');
+            it('should not be disabled when is-disabled is set', function () {
+                recompile({isDisabled: false});
+                expect(element.find('input').attr('disabled')).toBe(undefined);
             });
 
             it('should become required when is-required is true', function () {
-                // Can just test ng-required exists as we can assume that works
-                expect(element.find('input').attr('ng-required')).toBe('true');
+                expect(element.find('input').attr('required')).toBe('required');
             });
 
             it('should not be required when is-required is false', function () {
                 recompile({isRequired: false});
-
-                // Can just test ng-required exists as we can assume that works
-                expect(element.find('input').attr('ng-required')).toBe('false');
+                expect(element.find('input').attr('required')).toBe(undefined);
             });
 
             it('should accept a placeholder', function () {
