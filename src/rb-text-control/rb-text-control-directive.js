@@ -35,6 +35,7 @@ define([
             scope: {
                 isDisabled: '@',
                 isRequired: '@',
+                isReadonly: '@',
                 title: '@',
                 placeholder: '@',
                 helpMessage: '@',

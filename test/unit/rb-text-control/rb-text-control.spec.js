@@ -100,6 +100,16 @@ define([
                 expect(element.find('input').attr('required')).toBe(undefined);
             });
 
+            it('should be readonly when is-readonly is true', function () {
+                recompile({isReadonly: true});
+                expect(element.find('input').attr('readonly')).toBe('readonly');
+            });
+
+            it('should not be readonly when is-readonly is false', function () {
+                recompile({isReadonly: false});
+                expect(element.find('input').attr('readonly')).toBe(undefined);
+            });
+
             it('should accept a placeholder', function () {
                 recompile({placeholder: 'Enter your name...'});
 

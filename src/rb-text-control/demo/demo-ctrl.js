@@ -3,7 +3,9 @@ define([
 
     // @ngInject
     function demoCtrl ($rootScope, $state, $injector) {
-        this.data = {};
+        this.data = {
+            readonlyMessage: 'This is read only! Aha!'
+        };
     }
 
     return demoCtrl;
