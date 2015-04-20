@@ -1,0 +1,88 @@
+/** @define SystemMessage; use strict */
+
+/**
+ * The `.SystemMessage` component can be used for displaying low-level system error messages.
+ *
+ * Modifiers:
+ *
+ * - No modifier: displays a message with blue background.
+ * - `.SystemMessage--danger`: displays a message with red background.
+ * - `.SystemMessage--positive`:  displays a message with green background.
+ *
+ * TODO: Use global variable for `z-index`.
+ */
+
+:root {
+    --SystemMessage--danger-background: var(--color-red-accent);
+    --SystemMessage--danger-border: var(--color-red-base);
+    --SystemMessage--positive-background: var(--color-green-accent);
+    --SystemMessage--positive-border: var(--color-green-base);
+    --SystemMessage-background: var(--color-blue-accent);
+    --SystemMessage-border: var(--color-blue-base);
+    --SystemMessage-border-width: 1px;
+    --SystemMessage-gutter-width: 2em;
+    --SystemMessage-image-width: 4px;
+}
+
+/**
+ * 1. Calculate position to include half width of background image.
+ */
+
+.SystemMessage {
+    background-color: var(--SystemMessage-border);
+    background-image: url("images/SystemMessage-background.svg");
+    background-position: calc((var(--SystemMessage-gutter-width) / 2) - (var(--SystemMessage-image-width) / 2)) center; /* 1 */
+    background-repeat: no-repeat;
+    border-color: var(--SystemMessage-border);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: var(--SystemMessage-border-width);
+    box-shadow: var(--effect-box-shadow);
+    margin: 2em 0;
+    max-width: 46.25em;
+    padding-left: calc(var(--SystemMessage-gutter-width) - var(--SystemMessage-border-width));
+}
+
+.SystemMessage-inner {
+    background-color: var(--SystemMessage-background);
+    padding: 1em 1.5em;
+}
+
+.SystemMessage-body {
+    margin-bottom: 1em;
+}
+
+.SystemMessage-details {
+    margin-bottom: 1em;
+}
+
+.SystemMessage-action {
+    margin-bottom: 0.5em;
+    text-align: right;
+}
+
+/**
+ * Danger modifier
+ */
+
+.SystemMessage--danger {
+    background-color: var(--SystemMessage--danger-border);
+    border-color: var(--SystemMessage--danger-border);
+}
+
+.SystemMessage--danger .SystemMessage-inner {
+    background-color: var(--SystemMessage--danger-background);
+}
+
+/**
+ * Positive modifier
+ */
+
+.SystemMessage--positive {
+    background-color: var(--SystemMessage--positive-border);
+    border-color: var(--SystemMessage--positive-border);
+}
+
+.SystemMessage--positive .SystemMessage-inner {
+    background: var(--SystemMessage--positive-background);
+}
