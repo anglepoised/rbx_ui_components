@@ -1,3 +1,56 @@
-<rb-header>
-    <rb-page-title heading="My Test Page" subheading="This subheading rocks"></rb-page-title>
-</rb-header>
+<section class="Section Section--gutter">
+    <div class="RawHTML">
+        <h2>
+            rb-page-title
+        </h2>
+        <p>
+            The <code>rb-page-title</code> component can be used across all products. It consists of:
+        </p>
+        <ul>
+            <li>An optional navigation descendent, generally pointing back to an index.</li>
+            <li>A mandatory page body, containing a mandatory page heading.</li>
+            <li>An optional badge, displayed near the page heading.</li>
+            <li>An optional subheading.</li>
+            <li>An optional action, containing a button.</li>
+        </ul>
+        <h3>
+            Current Angular Version
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-page-title heading="My Test Page" subheading="This subheading rocks">
+        </rb-page-title>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Static Reference Version
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <div class="PageTitle">
+            <div class="PageTitle-inner">
+                <div class="PageTitle-navigation">
+                    <a class="u-linkClean" href="#">← Back somewhere</a>
+                </div>
+                <div class="PageTitle-body">
+                    <div class="PageTitle-heading">
+                        <h1 class="u-textHeading1">
+                            Page Title
+                        </h1>
+                    </div>
+                    <div class="PageTitle-badge">
+                        <rb-badge state="statusLive" collapsed="false"></rb-badge>
+                    </div>
+                </div>
+                <p class="PageTitle-sub">
+                    Subheading
+                </p>
+            </div>
+            <div class="PageTitle-button">
+                <rb-button>
+                    Action
+                </rb-button>
+            </div>
+        </div>
+    </div>
+</section>
