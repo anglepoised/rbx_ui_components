@@ -14,15 +14,15 @@ define([
      *
      * @scope
      *  'warnings': an array containing warnings objects to be listed.
-     *  'onclickfunction': a custom function to be executed on every issue link when clicked
-     *                   The function receives the 'warning' object
-     *  'ondismissfunction': a custom function to be executed on every dismiss icon when clicked
-     *                   The function receives the 'warning id' as param
+     *  'onIssueClick': a custom function to be executed on every issue link when clicked
+     *                  The function receives the 'warning' object
+     *  'onDismiss': a custom function to be executed on every dismiss icon when clicked
+     *               The function receives the 'warning id' as param
      *
      * @usage
      * <hljs lang="html">
      *   <rb-warning-messages warnings="ctrl.warningList"
-     *      on-issue-clicked="ctrl.goToIssue(warning)"
+     *      on-issue-click="ctrl.goToIssue(warning)"
      *      on-dismiss="ctrl.dismissWarning(id)">
      *   </rb-warning-messages>
      * </hljs>
@@ -34,7 +34,7 @@ define([
         return {
             scope: {
                 'warnings': '=',
-                'onIssueClicked': '&',
+                'onIssueClick': '&',
                 'onDismiss': '&'
             },
             restrict: 'E',

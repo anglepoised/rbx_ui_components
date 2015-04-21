@@ -5,6 +5,8 @@ define([
 
         var $scope,
             $compile,
+            warningList,
+            element,
             _warnings = [
                 {
                     'id': 1,
@@ -23,14 +25,14 @@ define([
                     }
                 }
             ],
-            _onIssueClicked = function (warning) {
+            _onIssueClick = function (warning) {
                 return warning;
             },
             _onDismiss = function (id) {
                 return id;
             },
             template = '<rb-warning-messages warnings="warnings" ' +
-                'on-issue-clicked="onIssueClicked(warning)" ' +
+                'on-issue-clicked="onIssueClick(warning)" ' +
                 'on-dismiss="onDismiss(id)"></rb-warning-messages>';
 
         beforeEach(angular.mock.module(rbWarningMessages.name));
@@ -39,8 +41,11 @@ define([
             $scope = _$rootScope_.$new({});
             $compile = _$compile_;
             $scope.warnings = _warnings;
-            $scope.onIssueClicked = _onIssueClicked;
+            $scope.onIssueClick = _onIssueClick;
             $scope.onDismiss = _onDismiss;
+            warningList = angular.element(template);
+            element = $compile(warningList)($scope);
+            $scope.$apply();
         }));
 
         describe('attribute generation', function () {
@@ -49,7 +54,6 @@ define([
                 function () {
                     var warnings = $compile('<rb-warning-messages anyattr any-attr></rb-warning-messages>')($scope);
 
-                    $scope.$apply();
                     expect(warnings[0].hasAttribute('anyattr')).toBe(true);
                     expect(warnings[0].hasAttribute('any-attr')).toBe(true);
                 });
@@ -58,39 +62,27 @@ define([
         describe('rendering', function () {
 
             it('should render with a "div" tagname', function () {
-                var div = angular.element(template),
-                    element = $compile(div)($scope);
 
-                $scope.$apply();
                 expect(element[0].tagName.toLowerCase()).toEqual('div');
             });
 
             it('should show warnings as a list', function () {
-                var warningList = angular.element(template),
-                    element = $compile(warningList)($scope);
 
-                $scope.$apply();
                 expect(element.find('li').length).toBe(2);
             });
 
-            it('should attach an onIssueClicked function to the warnings', function () {
-                var list = angular.element(template),
-                    element = $compile(list)($scope),
-                    warnings;
+            it('should attach an onIssueClick function to the warnings', function () {
 
-                $scope.$apply();
-                warnings = angular.element(element.find('li'));
-                expect(warnings[0].outerHTML).toContain('ng-click="onIssueClicked(');
-                expect(warnings[1].outerHTML).toContain('ng-click="onDismiss(');
+                var warnings = angular.element(element.find('li'));
+
+                expect(warnings[0].outerHTML).toContain('ng-click="onIssueClick(');
+                expect(warnings[1].outerHTML).toContain('ng-click="onIssueClick(');
             });
 
             it('should attach an onDismiss function to the warnings', function () {
-                var list = angular.element(template),
-                    element = $compile(list)($scope),
-                    warnings;
 
-                $scope.$apply();
-                warnings = angular.element(element.find('li'));
+                var warnings = angular.element(element.find('li'));
+
                 expect(warnings[0].outerHTML).toContain('ng-click="onDismiss(');
                 expect(warnings[1].outerHTML).toContain('ng-click="onDismiss(');
             });
