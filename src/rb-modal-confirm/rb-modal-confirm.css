@@ -1,0 +1,49 @@
+/** @define ModalConfirm; use strict */
+
+/**
+ * The `.ModalConfirm` component should be used for modal confirmation dialogues.
+ */
+
+:root {
+    --ModalConfirm-border-radius: 3px;
+}
+
+/**
+ * 1. Force `max-width`.
+ * 2. Set consistent half-spacing either side of action buttons.
+ */
+
+.ModalConfirm {
+    box-shadow: var(--effect-box-shadow);
+    max-width: 28em; /* 1 */
+    text-align: center;
+}
+
+.ModalConfirm-title {
+    background: var(--color-white-alabaster);
+    border-bottom: 1px solid var(--color-green-base);
+    border-top-left-radius: var(--ModalConfirm-border-radius);
+    border-top-right-radius: var(--ModalConfirm-border-radius);
+    padding: 1em;
+}
+
+.ModalConfirm-body {
+    background: var(--color-white-catskill);
+    border-bottom-left-radius: var(--ModalConfirm-border-radius);
+    border-bottom-right-radius: var(--ModalConfirm-border-radius);
+    padding: 1.5em 1em 0.5em;
+}
+
+.ModalConfirm-message {
+    margin-bottom: 1.5em;
+}
+
+.ModalConfirm-action {
+    display: flex; /* 2 */
+    justify-content: center; /* 2 */
+    margin-bottom: 1.5em;
+}
+
+.ModalConfirm-actionItem {
+    margin: 0 1.25em; /* 2 */
+}
