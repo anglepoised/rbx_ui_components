@@ -1,0 +1,54 @@
+/** @define WarningMessages; use strict */
+
+/**
+ * The `.WarningMessages` component displays a series of warnings in a list structure.
+ *
+ * Each message consists of a simple text message with a contextual link, followed by a single action.
+ */
+
+:root {
+    --WarningMessages-background: var(--color-orange-accent);
+    --WarningMessages-border: var(--color-orange-base);
+    --WarningMessages-color: var(--color-gray-tuna);
+}
+
+/**
+ * 1. Prevent message and action wrapping onto separate lines
+ * 2. Consistent spacing between all items bar last
+ * 3. Enlarge link target area
+ */
+
+.WarningMessages-item {
+    background: var(--WarningMessages-background);
+    border: 1px solid var(--WarningMessages-border);
+    color: var(--WarningMessages-color);
+    display: flex;
+    flex-wrap: nowrap; /* 1 */
+    padding: 0.75em 0;
+}
+
+.WarningMessages-item:not(:last-child) {
+    margin-bottom: 0.5em; /* 2 */
+}
+
+.WarningMessages-itemMessage {
+    color: var(--WarningMessages-color);
+    cursor: pointer;
+    margin: auto 1em;
+    text-decoration: none;
+}
+
+.WarningMessages-itemMessage:hover,
+.WarningMessages-itemMessage:focus {
+    color: var(--WarningMessages-color);
+    text-decoration: underline;
+}
+
+.WarningMessages-itemAction {
+    align-self: flex-end;
+    cursor: pointer;
+    display: block;
+    flex: none;
+    margin: 0 0.5em auto auto;
+    padding: 0.25em 0.5em; /* 3 */
+}

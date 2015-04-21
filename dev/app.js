@@ -16,6 +16,7 @@ define([
     'components/rb-site/demo',
     'components/rb-system-message/demo',
     'components/rb-text-control/demo',
+    'components/rb-warning-messages/demo',
     'rbx_style_guide'
 ], function (
     uiRouter,
@@ -35,6 +36,7 @@ define([
     rbSiteDemo,
     rbSystemMessage,
     rbTextControlDemo,
+    rbWarningMessagesDemo,
     css
 ) {
     // @ngInject
@@ -55,7 +57,8 @@ define([
             rbRatioDemo.name,
             rbSiteDemo.name,
             rbSystemMessage.name,
-            rbTextControlDemo.name
+            rbTextControlDemo.name,
+            rbWarningMessagesDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 

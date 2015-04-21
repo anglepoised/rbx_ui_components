@@ -1,0 +1,12 @@
+<div class="WarningMessages">
+    <ul class="WarningMessages-items">
+        <li class="WarningMessages-item" ng-repeat="warning in warnings track by $index">
+            <a class="WarningMessages-itemMessage" ng-click="onIssueClick({warning:warning})" title="View issue" ng-aria>
+                {{warning.message}}
+            </a>
+            <a class="WarningMessages-itemAction" ng-click="onDismiss({id:warning.id})" title="Dismiss" ng-aria>
+                <rb-icon icon="orange-base-12-x">Dismiss</rb-icon>
+            </a>
+        </li>
+    </ul>
+</div>
