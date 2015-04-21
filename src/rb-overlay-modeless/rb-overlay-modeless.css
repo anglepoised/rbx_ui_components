@@ -1,0 +1,16 @@
+/** @define rbOverlayModeless; use strict */
+
+/**
+ * The `.rbOverlayModeless` component...
+ */
+
+:root {
+    --rbOverlayModeless-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rbOverlayModeless {
+}
