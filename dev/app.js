@@ -36,7 +36,7 @@ define([
     rbSystemMessage,
     rbTextControlDemo,
     css
-    ) {
+) {
     // @ngInject
     angular
         .module('ui-demo', [
