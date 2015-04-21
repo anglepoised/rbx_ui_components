@@ -1,0 +1,16 @@
+/** @define rbOverlayModal; use strict */
+
+/**
+ * The `.rbOverlayModal` component...
+ */
+
+:root {
+    --rbOverlayModal-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rbOverlayModal {
+}
