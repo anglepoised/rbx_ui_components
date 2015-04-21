@@ -56,6 +56,15 @@
 
             <rb-text-control
                 form="userForm"
+                title="Readonly control"
+                name="readonly_message"
+                type="textarea"
+                is-readonly="true"
+                ng-model="demoCtrl.data.readonlyMessage">
+            </rb-text-control>
+
+            <rb-text-control
+                form="userForm"
                 title="What are you looking for?"
                 placeholder="Search me"
                 name="query"

@@ -1,4 +1,4 @@
-<div class="TextControl TextControl--text" ng-class="{
+<div class="TextControl" ng-class="{
     'TextControl--text': type==='text',
     'TextControl--email': type==='email',
     'TextControl--password': type==='password',
@@ -22,6 +22,7 @@
         ng-model="ngModel"
         ng-required="{{isRequired}}"
         ng-disabled="{{isDisabled}}"
+        ng-readonly="{{isReadonly}}"
         ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
         custom-validation
     />
@@ -35,6 +36,7 @@
         ng-model="ngModel"
         ng-required="{{isRequired}}"
         ng-disabled="{{isDisabled}}"
+        ng-readonly="{{isReadonly}}"
         ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
         custom-validation
     />
