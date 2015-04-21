@@ -18,9 +18,24 @@ define([
     'components/rb-text-control/demo',
     'rbx_style_guide'
 ], function (
-    uiRouter, template, rbBadgeDemo, rbButtonDemo, rbDateTimeDemo, rbFooterDemo, rbHeaderDemo, rbLoadingDemo,
-    rbLoginFormDemo, rbMainDemo, rbModalConfirmDemo, rbPageHeaderDemo, rbPageTitleDemo, rbRatioDemo, rbSiteDemo,
-    rbSystemMessage, rbTextControlDemo, css
+    uiRouter,
+    template,
+    rbBadgeDemo,
+    rbButtonDemo,
+    rbDateTimeDemo,
+    rbFooterDemo,
+    rbHeaderDemo,
+    rbLoadingDemo,
+    rbLoginFormDemo,
+    rbMainDemo,
+    rbModalConfirmDemo,
+    rbPageHeaderDemo,
+    rbPageTitleDemo,
+    rbRatioDemo,
+    rbSiteDemo,
+    rbSystemMessage,
+    rbTextControlDemo,
+    css
     ) {
     // @ngInject
     angular
