@@ -8,8 +8,6 @@
  * - No modifier: displays a message with blue background.
  * - `.SystemMessage--danger`: displays a message with red background.
  * - `.SystemMessage--positive`:  displays a message with green background.
- *
- * TODO: Use global variable for `z-index`.
  */
 
 :root {
