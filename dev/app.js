@@ -39,10 +39,6 @@ define([
     rbWarningMessagesDemo,
     css
 ) {
-    uiRouter, template, rbBadgeDemo, rbButtonDemo, rbDateTimeDemo, rbFooterDemo, rbHeaderDemo, rbLoadingDemo,
-    rbLoginFormDemo, rbMainDemo, rbPageHeaderDemo, rbPageTitleDemo, rbRatioDemo, rbSiteDemo, rbSystemMessage,
-    rbTextControlDemo, rbWarningMessagesDemo, css
-    ) {
     // @ngInject
     angular
         .module('ui-demo', [
