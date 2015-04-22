@@ -8,7 +8,6 @@ define([
             $scope,
             isolatedScope,
             $compile,
-            textControl,
             element,
             recompile;
 
