@@ -1,10 +1,16 @@
 <div class="PageTitle">
     <div class="PageTitle-inner">
+        <div class="PageTitle-navigation" ng-if="backText && backSref">
+            <a class="u-linkClean" ui-sref="{{ backSref }}">← {{ backText }}</a>
+        </div>
         <div class="PageTitle-body">
             <div class="PageTitle-heading">
                 <h1 class="u-textHeading1">
                     {{ heading }}
                 </h1>
+            </div>
+            <div class="PageTitle-badge" ng-if="badgeStatus">
+                <rb-badge state="{{ badgeStatus }}" collapsed="false"></rb-badge>
             </div>
         </div>
         <p class="PageTitle-sub" ng-if="subheading">
