@@ -1,5 +1,8 @@
 <div class="PageTitle">
     <div class="PageTitle-inner">
+        <div class="PageTitle-navigation" ng-if="backText && backSref">
+            <a class="u-linkClean" ui-sref="{{ backSref }}">← {{ backText }}</a>
+        </div>
         <div class="PageTitle-body">
             <div class="PageTitle-heading">
                 <h1 class="u-textHeading1">
