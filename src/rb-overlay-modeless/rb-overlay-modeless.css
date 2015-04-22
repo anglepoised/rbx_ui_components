@@ -1,0 +1,30 @@
+/** @define OverlayModeless; use strict */
+
+/**
+ * The `.OverlayModeless` component can be used to display multiple components in a modeless fashion (modeless in this
+ * context meaning that components appearing lower in the stacking order can still be interacted with.
+ * cf. `.OverlayModal`.
+ */
+
+:root {
+    --OverlayModeless-stacking: var(--stacking-overlay-modeless);
+}
+
+/**
+ * 1. Center halfway across viewport.
+ * 2. Fix to top of viewport.
+ * 3. Space multiple items.
+ */
+
+.OverlayModeless {
+    backface-visibility: hidden;
+    left: 50%; /* 1 */
+    position: fixed; /* 2 */
+    top: 0; /* 2 */
+    transform: translate(-50%, 0); /* 1 */
+    z-index: var(--OverlayModeless-stacking);
+}
+
+.OverlayModeless-item {
+    margin: 2em 0; /* 3 */
+}

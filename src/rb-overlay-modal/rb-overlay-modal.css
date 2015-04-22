@@ -1,0 +1,31 @@
+/** @define OverlayModal; use strict */
+
+/**
+ * The `.OverlayModal` component can be used to display a single component in a modal fashion, with a lightbox style.
+ * cf. `.OverlayModeless`.
+ */
+
+:root {
+    --OverlayModal-stacking: var(--stacking-overlay-modal);
+}
+
+/**
+ * 1. Fix to top of viewport.
+ * 2. Center in viewport.
+ */
+
+.OverlayModal {
+    background: var(--color-lightbox);
+    height: 100vh;
+    position: fixed; /* 1 */
+    top: 0; /* 1 */
+    width: 100vw;
+    z-index: var(--OverlayModal-stacking);
+}
+
+.OverlayModal-inner {
+    align-items: center; /* 2 */
+    display: flex;
+    height: 100vh;
+    justify-content: center; /* 2 */
+}
