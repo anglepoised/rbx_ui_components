@@ -51,7 +51,7 @@ define([
             'ui.router',
             rbBadgeDemo.name,
             rbButtonDemo.name,
-            rbCurrency.name,
+            rbCurrencyDemo.name,
             rbDateTimeDemo.name,
             rbFooterDemo.name,
             rbHeaderDemo.name,

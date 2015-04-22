@@ -17,10 +17,14 @@ define([
      * @ngInject
      */
     function rbCurrencyLink (scope, element, attributes) {
-        var value = scope.fullAmount.toString().split('.');
+        var value,
+            decimalPlaces = attributes.decimalPlaces || 2;
 
-        scope.amount = value[0];
-        scope.decimal = value[1] || 0;
+        // Rounds the amount to the correct amount of decimal places and splits the number.
+        value = parseFloat(scope.amount).toFixed(decimalPlaces).toString().split('.');
+
+        scope.integerPart = value[0];
+        scope.fractionalPart = value[1] || 0;
     }
 
     return rbCurrencyLink;

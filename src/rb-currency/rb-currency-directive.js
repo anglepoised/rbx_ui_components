@@ -14,7 +14,7 @@ define([
      * The link function for the `<rb-currency>` directive
      *
      * @scope
-     *  'fullAmount': contains the full amount in which to display as currency
+     *  'amount': contains the full amount in which to display as currency
      *
      * @usage
      * <hljs lang="html">
@@ -27,7 +27,7 @@ define([
 
         return {
             scope: {
-                fullAmount: '@amount'
+                amount: '@'
             },
             restrict: 'E',
             replace: true,
