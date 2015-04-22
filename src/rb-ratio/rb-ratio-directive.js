@@ -14,7 +14,12 @@ define([
      *
      * @usage
      * <hljs lang="html">
+     *    <rb-ratio numerator="2500" denominator="3000" display-type="number"></rb-ratio>
      *    <rb-ratio numerator="2500" denominator="3000"></rb-ratio>
+     *    <rb-ratio numerator="2500" denominator="3000" ratio-type="fractional"></rb-ratio>
+     *    <rb-ratio numerator="2500" denominator="3000" ratio-type="fractional" display-type="currency"></rb-ratio>
+     *    <rb-ratio numerator="2500" denominator="3000" ratio-type="fractional" display-type="currency"
+     *    	decimal-places="0"></rb-ratio>
      * </hljs>
      *
      * @ngInject
@@ -23,8 +28,11 @@ define([
 
         return {
             scope: {
+                denominator: '@',
+                decimalPlaces: '@',
+                displayType: '@',
                 numerator: '@',
-                denominator: '@'
+                ratioType: '@'
             },
             restrict: 'E',
             replace: true,

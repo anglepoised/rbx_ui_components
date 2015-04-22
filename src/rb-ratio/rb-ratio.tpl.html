@@ -1,1 +1,9 @@
-<span class="Ratio">{{ ((numerator * 100) / denominator) || 0 | number:0 }}%</span>
+<span class="Ratio" ng-switch on="ratioType">
+    <span ng-switch-when="fraction" ng-switch on="displayType">
+        <span ng-switch-when="currency">
+            <rb-currency amount="{{ numerator }}" decimal-places="{{ decimalPlaces }}"></rb-currency/>&nbsp;⁄ <rb-currency amount="{{ denominator }}" decimal-places="{{ decimalPlaces }}"></rb-currency>
+        </span>
+        <span ng-switch-default>{{ numerator }} ⁄ {{ denominator }}</span>
+    </span>
+    <span ng-switch-default>{{ ((numerator * 100) / denominator) || 0 | number:0 }}%</span>
+</span>

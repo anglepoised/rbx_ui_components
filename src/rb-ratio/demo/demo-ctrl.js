@@ -10,7 +10,21 @@ define([
             },
             {
                 numerator: 2500,
-                denominator: 3000
+                denominator: 3000,
+                ratioType: 'fraction'
+            },
+            {
+                numerator: 2521.35,
+                denominator: 3000,
+                ratioType: 'fraction',
+                displayType: 'currency'
+            },
+            {
+                numerator: 2591.59,
+                denominator: 3000,
+                ratioType: 'fraction',
+                displayType: 'currency',
+                decimalPlaces: 0
             }
         ];
     }
