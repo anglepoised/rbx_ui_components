@@ -1,0 +1,36 @@
+<div class="SystemMessage" ng-class="{
+    'SystemMessage--danger': modifier==='danger',
+    'SystemMessage--positive': modifier==='positive',
+}">
+    <div class="SystemMessage-inner">
+        <div class="SystemMessage-body">
+            <h2 class="u-textHeading2">
+                {{ title }}
+            </h2>
+            <p>
+                {{ message }}
+                <a
+                    ng-if="contact"
+                    href="mailto:{{contact}}">
+                        {{contact}}
+                </a>
+            </p>
+        </div>
+        <div class="SystemMessage-details">
+            <h3 class="u-textBold u-textSmall">
+                Technical details
+            </h3>
+            <rb-text-control
+                name="technicalDetails"
+                type="textarea"
+                ng-model="technicalDetails"
+                is-readonly="true">
+            </rb-text-control>
+        </div>
+        <div class="SystemMessage-action">
+            <rb-button size="small" ng-click="onDismiss()">
+                {{ dismissMessage || "Okay I understand"}}
+            </rb-button>
+        </div>
+    </div>
+</div>

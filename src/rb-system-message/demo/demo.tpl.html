@@ -2,95 +2,56 @@
     .SystemMessage
 </h1>
 
-<h2 class="u-textHeading2">
-    No modifier
-</h2>
+<h3>
+    API
+</h3>
 
-<div class="SystemMessage">
-    <div class="SystemMessage-inner">
-        <div class="SystemMessage-body">
-            <h2 class="u-textHeading2">
-                Message title
-            </h2>
-            <p>
-                Add a message here about it and what not Nullam quis risus eget urna mollis ornare eu leo. Cras
-                justo odio, dapibus ac facilisis in, egestas eget.
-                <a href="mailto:test@example.com">test@example.com</a>
-            </p>
-        </div>
-        <div class="SystemMessage-details">
-            <h3 class="u-textBold u-textSmall">
-                Technical details
-            </h3>
-            <rb-text-control name="technical-details" type="textarea"></rb-text-control>
-        </div>
-        <div class="SystemMessage-action">
-            <rb-button size="small">
-                Message Dismiss
-            </rb-button>
-        </div>
-    </div>
-</div>
+<p>
+    <ul>
+        <li><code>title</code>: Title atop the component.</li>
+        <li><code>message</code>: System message in layman's terms.</li>
+        <li><code>technical-details</code>: Technical message for more information.</li>
+        <li><code>on-dismiss</code>: An expression evaluated when dismiss button is clicked.</li>
+        <li><code>contact [optional]</code>: Contact email address.</li>
+        <li><code>modifier [optional]</code>: Change the mode of the system message. Can be <code>danger</code> or <code>positive</code>.</li>
+        <li><code>dismiss-message [optional]</code>: Custom message for the dismiss button. Defaults to "Okay I Understand".</li>
+    </ul>
+</p>
 
-<h2 class="u-textHeading2">
-    Danger modifier
-</h2>
+<br/>
 
-<div class="SystemMessage SystemMessage--danger">
-    <div class="SystemMessage-inner">
-        <div class="SystemMessage-body">
-            <h2 class="u-textHeading2">
-                Message title
-            </h2>
-            <p>
-                Add a message here about it and what not Nullam quis risus eget urna mollis ornare eu leo. Cras
-                justo odio, dapibus ac facilisis in, egestas eget.
-                <a href="mailto:test@example.com">test@example.com</a>
-            </p>
-        </div>
-        <div class="SystemMessage-details">
-            <h3 class="u-textBold u-textSmall">
-                Technical details
-            </h3>
-            <rb-text-control name="technical-details" type="textarea"></rb-text-control>
-        </div>
-        <div class="SystemMessage-action">
-            <rb-button size="small">
-                Message Dismiss
-            </rb-button>
-        </div>
-    </div>
-</div>
+<h4>
+    NO MODIFIER
+</h4>
 
-<h2 class="u-textHeading2">
-    Positive modifier
-</h2>
+<rb-system-message
+    title="Something happened"
+    message="Here is the message"
+    technical-details="HUH"
+    dismiss-message="Custom onDismiss function"
+    on-dismiss="demoCtrl.dismiss(1)">
+</rb-system-message>
 
-<div class="SystemMessage SystemMessage--positive">
-    <div class="SystemMessage-inner">
-        <div class="SystemMessage-body">
-            <h2 class="u-textHeading2">
-                Message title
-            </h2>
-            <p>
-                Add a message here about it and what not Nullam quis risus eget urna mollis ornare eu leo. Cras
-                justo odio, dapibus ac facilisis in, egestas eget.
-                <a href="mailto:test@example.com">test@example.com</a>
-            </p>
-        </div>
-        <div class="SystemMessage-details">
-            <h3 class="u-textBold u-textSmall">
-                Technical details
-            </h3>
-            <rb-text-control
-                name="technical-details"
-                type="textarea">
-            </rb-text-control>
-        </div>
-        <div class="SystemMessage-action">
-            <rb-button size="small">
-                Message Dismiss
-            </rb-button>
-        </div>
-    </div>
-</div>
+<h4>
+    DANGER MODIFIER
+</h4>
+
+<rb-system-message
+    title="500 Server Error"
+    message="error_description: Couldn't connect to the servers. Please try again later."
+    technical-details="status_code: 500 url: https://www.example.com/api/v1/users/"
+    modifier="danger"
+    contact="support@example.com"
+    dismiss-message="Save me!">
+</rb-system-message>
+
+<h4>
+    POSITIVE MODIFIER
+</h4>
+
+<rb-system-message
+    title="Something good happened"
+    message="Here is the message"
+    technical-details="FIVE KITTENS WERE BORN"
+    modifier="positive">
+</rb-system-message>
