@@ -7,8 +7,8 @@ define([
             $compile,
             _options = [
                 {'id': '31', 'text': 'Option 1'},
-                {'id': '37', 'text': 'Option 2'},
-                {'id': '41', 'text': 'Option 3'}
+                {'id': '37', 'text': 'Option 2', 'state': 'test-state'},
+                {'id': '41', 'text': 'Option 3', 'url': 'http://example.com'}
             ],
             _clickfunction = function (id) {
                 return id;
@@ -64,6 +64,26 @@ define([
                 $scope.$apply();
                 options = angular.element(element.find('a'));
                 expect(options[0].outerHTML).toContain('ng-click="clickfunction(');
+            });
+
+            it('should set ui-sref if option has a state', function () {
+                var navBar = angular.element(template),
+                    element = $compile(navBar)($scope),
+                    options;
+
+                $scope.$apply();
+                options = angular.element(element.find('a'));
+                expect(angular.element(options[1]).attr('ui-sref')).toBe('test-state');
+            });
+
+            it('should set ui-sref if option has a state', function () {
+                var navBar = angular.element(template),
+                    element = $compile(navBar)($scope),
+                    options;
+
+                $scope.$apply();
+                options = angular.element(element.find('a'));
+                expect(angular.element(options[2]).attr('href')).toBe('http://example.com');
             });
 
             it('should attach an isactivefunction to the navigation options', function () {

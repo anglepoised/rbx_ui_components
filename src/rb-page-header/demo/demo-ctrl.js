@@ -25,9 +25,9 @@ define([
         };
 
         this.options = [
-            {'id': 1, 'text': 'Campaigns'},
-            {'id': 2, 'text': 'Reporting'},
-            {'id': 3, 'text': 'Creatives'}
+            {'id': 1, 'text': 'Campaigns', 'state': 'rb-badge'},
+            {'id': 2, 'text': 'Reporting', 'url': 'http://google.com'},
+            {'id': 3, 'text': 'Creatives', 'state': false}
         ];
 
     }
