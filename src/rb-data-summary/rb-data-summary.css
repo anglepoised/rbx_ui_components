@@ -1,16 +1,81 @@
 /** @define DataSummary; use strict */
 
 /**
- * The `.DataSummary` component...
+ * The `.DataSummary` component can be used to represent summary data for a particular item.
+ *
+ * A `.DataSummary-item` descendent creates a new internal column.
+ *
+ * The layout for groups of `.DataSummary` components should be managed with the `.Grid` component.
+ *
+ * Three modifiers are available:
+ *
+ * - `.DataSummary--financials`: adds a financial background image.
+ * - `.DataSummary--timings`: adds a timing background image.
+ * - `.DataSummary--notes`: adds a notes background image.
+ *
+ * If other imagery is required, an additional modifier with associated image should be created.
  */
 
 :root {
-    --DataSummary-variable: var();
+    --DataSummary-background: var(--color-white-alabaster);
+    --DataSummary-border: var(--color-gray-regent);
+    --DataSummary-gutter-width: 2em;
+    --DataSummary-image-width: 16px;
 }
 
 /**
- * 1. Comment
+ * 1. Arrange contents in flex columns.
+ * 2. Vertically center contents.
  */
 
 .DataSummary {
+    background-color: var(--DataSummary-border);
+    background-position: calc((var(--DataSummary-gutter-width) / 2) - (var(--DataSummary-image-width) / 2)) center; /* 1 */
+    background-repeat: no-repeat;
+    padding: 0 0.25em 0 var(--DataSummary-gutter-width);
+}
+
+.DataSummary-inner {
+    background: var(--DataSummary-background);
+    padding-top: 1.5em;
+}
+
+.DataSummary-item {
+    padding-bottom: 1.5em;
+}
+
+.DataSummary-inner {
+    align-content: space-around; /* 1 */
+    align-items: center; /* 2 */
+    display: flex; /* 1 */
+    flex-wrap: wrap; /* 1 */
+    justify-content: flex-start; /* 1 */
+}
+
+.DataSummary-item {
+    margin: 0 1.5em;
+}
+
+/**
+ * Financials modifier
+ */
+
+.DataSummary--financials {
+    background-image: url("images/financials.svg");
+}
+
+/**
+ * Timings modifier
+ */
+
+.DataSummary--timings {
+    background-image: url("images/timings.svg");
+}
+
+/**
+ * Notes modifier
+ */
+
+.DataSummary--notes {
+    background-image: url("images/notes.svg");
 }
