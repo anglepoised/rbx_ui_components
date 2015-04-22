@@ -13,7 +13,14 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-system-message>
+     *     <rb-system-message
+     *         title="Something happened"
+     *         message="Here is the message"
+     *         technical-details="SIGILL"
+     *         dismiss-message="Close me"
+     *         on-dismiss="alert('Dismissed!')"
+     *         modifier="danger"
+     *         contact="support@example.com">
      *     </rb-system-message>
      * </hljs>
      *
@@ -23,6 +30,13 @@ define([
 
         return {
             scope: {
+                contact: '@',
+                dismissMessage: '@',
+                message: '@',
+                modifier: '@',
+                onDismiss: '&',
+                technicalDetails: '@',
+                title: '@'
             },
             restrict: 'E',
             replace: true,
