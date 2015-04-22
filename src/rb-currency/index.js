@@ -1,6 +1,7 @@
 define([
-    './rb-currency-directive'
-], function (rbCurrencyDirective) {
+    './rb-currency-directive',
+    './rb-currency.css'
+], function (rbCurrencyDirective, css) {
     /**
      * @ngdoc module
      * @name rb-currency

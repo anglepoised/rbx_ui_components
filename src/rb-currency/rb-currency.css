@@ -1,0 +1,30 @@
+/** @define Currency; use strict */
+
+/**
+ * The `.Currency` component must be used for all representations of a currency and consists of a unit part and
+ * an optional decimal part.
+ */
+
+:root {
+    --Currency-cent-font-size: var(--font-size-x-small);
+    --Currency-unit-font-size: var(--font-size);
+}
+
+/**
+ * 1. Regrettable fix to remove whitespace between inline components.
+ *    See: http://davidwalsh.name/remove-whitespace-inline-block
+ * 2. Reset unit size to default.
+ * 3. Reduce cent font size.
+ */
+
+.Currency {
+    font-size: 0; /* 1 */
+}
+
+.Currency-unit {
+    font-size: var(--Currency-unit-font-size); /* 2 */
+}
+
+.Currency-cent {
+    font-size: var(--Currency-cent-font-size); /* 3 */
+}
