@@ -9,6 +9,9 @@
                     {{ heading }}
                 </h1>
             </div>
+            <div class="PageTitle-badge" ng-if="badgeStatus">
+                <rb-badge state="{{ badgeStatus }}" collapsed="false"></rb-badge>
+            </div>
         </div>
         <p class="PageTitle-sub" ng-if="subheading">
             {{ subheading }}

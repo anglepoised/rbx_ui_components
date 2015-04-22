@@ -32,6 +32,23 @@ define([
             expect(element.html()).toContain('My Subheading');
         });
 
+        it('should attach a badge to the page title', function () {
+            var pageTitle = angular.element(template),
+                element,
+                badgeEle;
+
+            pageTitle.attr('badge-status', 'statusFinished');
+
+            element = $compile(pageTitle)($scope);
+
+            $scope.$apply();
+
+            badgeEle = element.find('rb-badge');
+
+            expect(badgeEle.length).toBe(1);
+            expect(angular.element(badgeEle[0]).attr('state')).toBe('statusFinished');
+        });
+
         describe('back to parent', function () {
             it('should be set when setting the text and the state', function () {
                 var pageTitle = angular.element(template),
@@ -74,6 +91,5 @@ define([
                 expect(element.html()).not.toContain('Back somewhere');
             });
         });
-
     });
 });

@@ -17,6 +17,7 @@ define([
      *    <rb-page-title
      *    		heading="My Test Page"
      *    		subheading="This subheading rocks"
+     *    		badge-status="statusFinished"
      *    		back-text="Back to home page"
      *    		back-sref="home">
      *    </rb-page-title>
@@ -31,6 +32,7 @@ define([
                 heading: '@',
                 subheading: '@',
                 button: '@',
+                badgeStatus: '@',
                 backText: '@',
                 backSref: '@',
                 status: '@'
