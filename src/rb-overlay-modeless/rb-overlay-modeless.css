@@ -7,7 +7,7 @@
  */
 
 :root {
-    --OverlayModeless-stacking: var(--stacking-system-message);
+    --OverlayModeless-stacking: var(--stacking-overlay-modeless);
 }
 
 /**

@@ -6,7 +6,7 @@
  */
 
 :root {
-    --OverlayModal-stacking: var(--stacking-modal-confirm);
+    --OverlayModal-stacking: var(--stacking-overlay-modal);
 }
 
 /**
