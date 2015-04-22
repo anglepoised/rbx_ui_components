@@ -1,0 +1,16 @@
+/** @define DataSummary; use strict */
+
+/**
+ * The `.DataSummary` component...
+ */
+
+:root {
+    --DataSummary-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.DataSummary {
+}
