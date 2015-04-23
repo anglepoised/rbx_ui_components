@@ -33,19 +33,35 @@ define([
             expect(element.html()).toContain('My Subheading');
         });
 
-        it('should attach a badge to the page title', function () {
-            var badgeEle;
+        describe('badge', function () {
+            it('should attach a badge to the page title', function () {
+                var pageTitleBadgeWrapper,
+                    badgeEle;
 
-            pageTitle.attr('badge-status', 'statusFinished');
+                pageTitle.attr('badge-status', 'statusFinished');
 
-            element = $compile(pageTitle)($scope);
+                element = $compile(pageTitle)($scope);
 
-            $scope.$apply();
+                $scope.$apply();
 
-            badgeEle = element.find('rb-badge');
+                pageTitleBadgeWrapper = element[0].getElementsByClassName('PageTitle-badge');
+                badgeEle = angular.element(pageTitleBadgeWrapper).find('div')[0];
 
-            expect(badgeEle.length).toBe(1);
-            expect(angular.element(badgeEle[0]).attr('state')).toBe('statusFinished');
+                expect(pageTitleBadgeWrapper.length).toBe(1);
+                expect(angular.element(badgeEle).attr('state')).toBe('statusFinished');
+            });
+
+            it('should not attach a badge to the page title', function () {
+                var pageTitleBadgeWrapper;
+
+                element = $compile(pageTitle)($scope);
+
+                $scope.$apply();
+
+                pageTitleBadgeWrapper = element[0].getElementsByClassName('PageTitle-badge');
+
+                expect(pageTitleBadgeWrapper.length).toBe(0);
+            });
         });
 
         describe('back to parent', function () {
