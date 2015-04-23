@@ -8,16 +8,8 @@ define([
 
         this.user = 'sirdigbychicken@caeser.com';
 
-        this.goToOption = function (id) {
-            this.currentNavBarOption = id;
-        };
-
         this.logout = function () {
             console.log('logging out !!!');
-        };
-
-        this.isActive = function (id) {
-            return this.currentNavBarOption === id;
         };
 
         this.logoHeaderFunction = function () {
@@ -25,9 +17,9 @@ define([
         };
 
         this.options = [
-            {'id': 1, 'text': 'Campaigns', 'state': 'rb-badge'},
-            {'id': 2, 'text': 'Reporting', 'url': 'http://google.com'},
-            {'id': 3, 'text': 'Creatives', 'state': false}
+            {'text': 'Campaigns', 'state': 'rb-badge', 'active': true},
+            {'text': 'Reporting', 'url': 'http://google.com'},
+            {'text': 'Creatives', 'state': false}
         ];
 
     }

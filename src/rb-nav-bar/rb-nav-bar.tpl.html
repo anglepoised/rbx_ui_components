@@ -1,10 +1,10 @@
 <nav class="Navigation" role="navigation">
     <ul class="Navigation-items">
         <li class="Navigation-item" ng-repeat="option in ::options track by $index" ng-switch="!option.state">
-            <a ng-switch-when="true" ng-attr-href="{{ option.url }}" class="Navigation-itemInner" ng-class="{ 'is-active': isactivefunction({id:option.id})}" ng-click="clickfunction({id:option.id})" ng-aria>
+            <a ng-switch-when="true" ng-attr-href="{{ option.url }}" class="Navigation-itemInner" ng-class="{ 'is-active': option.active }" ng-click="clickfunction({id:option.id})" ng-aria>
                 {{::option.text}}
             </a>
-            <a ng-switch-when="false" ui-sref="{{ option.state }}" ui-sref-active="is-active" class="Navigation-itemInner"  ng-aria>
+            <a ng-switch-when="false" ui-sref="{{ option.state }}" class="Navigation-itemInner" ng-class="{ 'is-active': option.active }" ng-aria>
                 {{::option.text}}
             </a>
         </li>
