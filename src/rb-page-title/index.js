@@ -1,7 +1,8 @@
 define([
     './rb-page-title-directive',
+    'components/rb-badge',
     './rb-page-title.css'
-], function (rbPageTitleDirective, css) {
+], function (rbPageTitleDirective, rbBadge, css) {
     /**
      * @ngdoc module
      * @name rb-page-title
@@ -11,7 +12,9 @@ define([
      *
      */
     var rbHeader = angular
-        .module('rb-page-title', [])
+        .module('rb-page-title', [
+            rbBadge.name
+        ])
         .directive('rbPageTitle', rbPageTitleDirective);
 
     return rbHeader;
