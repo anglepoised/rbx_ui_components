@@ -1,0 +1,16 @@
+/** @define rbProgressButton; use strict */
+
+/**
+ * The `.rbProgressButton` component...
+ */
+
+:root {
+    --rbProgressButton-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rbProgressButton {
+}
