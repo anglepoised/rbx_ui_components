@@ -1,0 +1,16 @@
+/** @define rbFormMessage; use strict */
+
+/**
+ * The `.rbFormMessage` component...
+ */
+
+:root {
+    --rbFormMessage-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rbFormMessage {
+}
