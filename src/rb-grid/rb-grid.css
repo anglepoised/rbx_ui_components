@@ -1,0 +1,16 @@
+/** @define Grid; use strict */
+
+/**
+ * The `.Grid` component...
+ */
+
+:root {
+    --Grid-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.Grid {
+}
