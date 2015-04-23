@@ -1,9 +1,12 @@
 <span class="Ratio" ng-switch on="ratioType">
     <span ng-switch-when="fraction" ng-switch on="displayType">
+        <!-- Display the ratio in a fraction representation using currency -->
         <span ng-switch-when="currency">
             <rb-currency amount="{{ numerator }}" decimal-places="{{ decimalPlaces }}"></rb-currency/>&nbsp;⁄ <rb-currency amount="{{ denominator }}" decimal-places="{{ decimalPlaces }}"></rb-currency>
         </span>
+        <!-- Display the ratio in a fraction representation -->
         <span ng-switch-default>{{ numerator }} ⁄ {{ denominator }}</span>
     </span>
+    <!-- Display the ratio in using percentages -->
     <span ng-switch-default>{{ ((numerator * 100) / denominator) || 0 | number:0 }}%</span>
 </span>
