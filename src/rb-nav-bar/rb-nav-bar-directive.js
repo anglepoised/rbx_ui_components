@@ -26,8 +26,7 @@ define([
      * @usage
      * <hljs lang="html">
      *    <div class="Header-nav">
-     *        <rb-nav-bar options="ctrl.options" clickfunction="ctrl.goTo(id)"
-     *            isactivefunction="ctrl.isActive(id)"></rb-nav-bar>
+     *        <rb-nav-bar options="ctrl.options"></rb-nav-bar>
      *    </div>
      * </hljs>
      *
@@ -37,9 +36,7 @@ define([
 
         return {
             scope: {
-                'options': '=',
-                'clickfunction': '&',
-                'isactivefunction': '&'
+                'options': '='
             },
             restrict: 'E',
             replace: true,
