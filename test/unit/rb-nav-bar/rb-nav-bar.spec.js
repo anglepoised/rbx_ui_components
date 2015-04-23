@@ -6,9 +6,9 @@ define([
         var $scope,
             $compile,
             _options = [
-                {'id': '31', 'text': 'Option 1'},
-                {'id': '37', 'text': 'Option 2', 'state': 'test-state'},
-                {'id': '41', 'text': 'Option 3', 'url': 'http://example.com'}
+                {'text': 'Option 1'},
+                {'text': 'Option 2', 'state': 'test-state'},
+                {'text': 'Option 3', 'url': 'http://example.com'}
             ],
             template = '<rb-nav-bar options="options"></rb-nav-bar>';
 
