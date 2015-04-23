@@ -7,14 +7,8 @@ define([
             $scope,
             isolatedScope,
             $compile,
-            element;
-
-        // Compile directive, apply scope and fetch new isolated scope
-        compileTemplate = function (template) {
-            element = $compile(template)($scope);
-            $scope.$apply();
-            isolatedScope = element.isolateScope();
-        };
+            element,
+            compileTemplate;
 
         beforeEach(angular.mock.module(rbSystemMessage.name));
 
@@ -22,6 +16,13 @@ define([
             $rootScope = _$rootScope_;
             $scope = _$rootScope_.$new({});
             $compile = _$compile_;
+
+            // Compile directive, apply scope and fetch new isolated scope
+            compileTemplate = function (template) {
+                element = $compile(template)($scope);
+                $scope.$apply();
+                isolatedScope = element.isolateScope();
+            };
         }));
 
         describe('title', function () {

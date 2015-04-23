@@ -1,6 +1,5 @@
 define([
-    'components/rb-form-message',
-    'html!./rb-form-message.tpl.html'
+    'components/rb-form-message'
 ], function (rbFormMessage, template) {
     describe('rb-form-message', function () {
 
@@ -9,14 +8,7 @@ define([
             isolatedScope,
             $compile,
             element,
-            recompile;
-
-        // Recompile directive after updating $scope
-        recompile = function (scopeChanges) {
-            angular.extend($scope, scopeChanges);
-            element = $compile(template)($scope);
-            $scope.$apply();
-        };
+            compileTemplate;
 
         beforeEach(angular.mock.module(rbFormMessage.name));
 
@@ -25,15 +17,23 @@ define([
             $scope = _$rootScope_.$new({});
             $compile = _$compile_;
 
-            // Use scope variables to dynamically modify test template
-            $scope.data = {};
-
-            element = $compile(template)($scope);
-            $scope.$digest();
+            // Compile directive, apply scope and fetch new isolated scope
+            compileTemplate = function (template) {
+                element = $compile(template)($scope);
+                $scope.$apply();
+                isolatedScope = element.isolateScope();
+            };
         }));
 
-        describe('', function () {
-            it('should ', function () {
+        it('should trancslude its contents', function () {
+            compileTemplate('<rb-form-message>Something bad happened!</rb-form-message>');
+            expect(element.text()).toContain('Something bad happened!');
+        });
+
+        describe('root element', function () {
+            it('should default to .is-invalid state', function () {
+                compileTemplate('<rb-form-message>Something bad happened!</rb-form-message>');
+                expect(element.hasClass('is-invalid')).toBe(true);
             });
         });
 
