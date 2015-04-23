@@ -1,16 +1,28 @@
-/** @define rbFormMessage; use strict */
+/** @define FormMessage; use strict */
 
 /**
- * The `.rbFormMessage` component...
+ * The `.FormMessage` component groups non-field form messages that share a set of common states.
+ *
+ * The only state currently available is `.is-invalid'.
  */
 
 :root {
-    --rbFormMessage-variable: var();
+    --FormMessage-border-radius: 4px;
+    --FormMessage-invalid-background-color: var(--color-red-base);
+    --FormMessage-invalid-color: var(--color-white);
+}
+
+.FormMessage {
+    border-radius: var(--FormMessage-border-radius);
+    display: block;
+    font-size: var(--font-size-x-small);
+    padding: 0.75em 0.75em 0.5em;
 }
 
 /**
- * 1. Comment
+ * Invalid
  */
-
-.rbFormMessage {
+.FormMessage.is-invalid {
+    background: var(--FormMessage-invalid-background-color);
+    color: var(--FormMessage-invalid-color);
 }

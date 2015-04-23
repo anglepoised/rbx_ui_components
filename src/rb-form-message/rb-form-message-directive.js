@@ -26,6 +26,7 @@ define([
             },
             restrict: 'E',
             replace: true,
+            transclude: true,
             template: template
         };
     }
