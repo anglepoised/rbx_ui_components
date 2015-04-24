@@ -35,6 +35,9 @@
  * 4. Swap background when chained to match other state colours.
  * 5. Disabled state always overrides other states.
  * 6. Prevent text selection on disabled field.
+ * 7. Remove spinner on number type field in disabled state, prevents conflict with padlock icon.
+ *      Mozilla: https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance
+ *      WebKit: http://trac.webkit.org/wiki/Styling%20Form%20Controls#Removingspinbuttonsforinputtypenumber
  */
 
 .TextControl {
@@ -120,6 +123,18 @@
 .TextControl-field:disabled::placeholder,
 .TextControl-field.is-disabled::placeholder {
     color: var(--TextControl-field-disabled-color) !important; /* 5 */
+}
+
+.TextControl-field[type=number]:disabled,
+.TextControl-field[type=number].is-disabled {
+    -moz-appearance: textfield; /* 7 */
+}
+
+.TextControl-field[type=number]::-webkit-inner-spin-button:disabled,
+.TextControl-field[type=number]::-webkit-outer-spin-button:disabled,
+.TextControl-field[type=number]::-webkit-inner-spin-button.is-disabled,
+.TextControl-field[type=number]::-webkit-outer-spin-button.is-disabled {
+    -webkit-appearance: none; /* 7 */
 }
 
 /**
