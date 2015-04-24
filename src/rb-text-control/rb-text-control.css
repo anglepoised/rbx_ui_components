@@ -133,6 +133,7 @@
 /**
  * Search
  */
+
 .TextControl--search .TextControl-field {
     background-image: url("./images/Control-search.svg");
     background-position: 12px center;
