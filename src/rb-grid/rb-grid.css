@@ -1,16 +1,39 @@
 /** @define Grid; use strict */
 
 /**
- * The `.Grid` component...
+ * The `.Grid` component arranges other components in a grid layout at medium viewport and above.
+ *
+ * Use a new `.Grid` for each row: each `.Grid-cell` in a `.Grid` will have the same width.
+ *
+ * This is a very cut-down version of Philip Walton's "Better, Simpler Grid Systems".
+ * See: http://philipwalton.github.io/solved-by-flexbox/demos/grids/
  */
-
-:root {
-    --Grid-variable: var();
-}
 
 /**
- * 1. Comment
+ * 1. Only use Grid's flex columns at medium viewport and above.
  */
 
-.Grid {
+.Grid-cell {
+    flex: 1;
+}
+
+.Grid--flexCells > .Grid-cell {
+    display: flex;
+}
+
+.Grid--gutter {
+    margin: -1em 0 1em -1em;
+}
+
+.Grid--gutter > .Grid-cell {
+    padding: 1em 0 0 1em;
+}
+
+@media (--md-viewport) {
+
+    .Grid {
+        display: flex; /* 1 */
+        flex-wrap: wrap;
+    }
+
 }
