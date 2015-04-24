@@ -1,0 +1,209 @@
+# For SCSS-Lint v0.34.0
+
+exclude:
+    - 'vendor/**'
+
+linters:
+
+    BangFormat:
+        enabled: true
+        severity: error
+        space_before_bang: true
+        space_after_bang: false
+
+    BorderZero:
+        enabled: true
+        severity: error
+
+    ColorKeyword:
+        enabled: true
+        severity: error
+
+    Comment:
+        enabled: false
+
+    DebugStatement:
+        enabled: false
+
+    DeclarationOrder:
+        enabled: false
+
+    DuplicateProperty:
+        enabled: true
+        severity: error
+
+    ElsePlacement:
+        enabled: false
+
+    EmptyLineBetweenBlocks:
+        enabled: true
+        severity: error
+        ignore_single_line_blocks: true
+
+    EmptyRule:
+        enabled: true
+        severity: error
+
+    FinalNewline:
+        enabled: true
+        severity: error
+        present: true
+
+    HexLength:
+        enabled: true
+        severity: error
+        style: short
+
+    HexNotation:
+        enabled: true
+        severity: error
+        style: lowercase
+
+    HexValidation:
+        enabled: true
+        severity: error
+
+    IdSelector:
+        enabled: true
+        severity: error
+
+    ImportantRule:
+        enabled: false
+
+    ImportPath:
+        enabled: false
+
+    Indentation:
+        enabled: true
+        severity: error
+        character: space
+        width: 4
+
+    LeadingZero:
+        enabled: true
+        severity: error
+        style: include_zero
+
+    MergeableSelector:
+        enabled: false
+
+    NameFormat:
+        enabled: false
+
+    NestingDepth:
+        enabled: true
+        severity: error
+        max_depth: 1
+
+    PlaceholderInExtend:
+        enabled: false
+
+    PropertyCount:
+        enabled: false
+
+    PropertySortOrder:
+        enabled: true
+        severity: warning
+
+    PropertySpelling:
+        enabled: true
+        severity: error
+        extra_properties:
+            - font-variant-numeric
+
+    QualifyingElement:
+        enabled: true
+        severity: error
+
+    SelectorDepth:
+        enabled: true
+        severity: error
+        max_depth: 3
+
+    SelectorFormat:
+        enabled: true
+        severity: error
+        convention: hyphenated_lowercase
+        class_convention: '^(?:u|is|has)\-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][a-zA-Z0-9]*)?$'
+
+    Shorthand:
+        enabled: true
+        severity: error
+
+    SingleLinePerProperty:
+        enabled: true
+        severity: error
+        allow_single_line_rule_sets: true
+
+    SingleLinePerSelector:
+        enabled: true
+        severity: error
+
+    SpaceAfterComma:
+        enabled: true
+        severity: error
+
+    SpaceAfterPropertyColon:
+        enabled: true
+        severity: error
+        style: one_space
+
+    SpaceAfterPropertyName:
+        enabled: true
+        severity: error
+
+    SpaceBeforeBrace:
+        enabled: true
+        severity: error
+        style: space
+        allow_single_line_padding: true
+
+    SpaceBetweenParens:
+        enabled: true
+        severity: error
+        spaces: 0
+
+    StringQuotes:
+        enabled: true
+        severity: error
+        style: double_quotes
+
+    TrailingSemicolon:
+        enabled: true
+        severity: error
+
+    TrailingZero:
+        enabled: true
+        severity: error
+
+    UnnecessaryMantissa:
+        enabled: true
+        severity: error
+
+    UnnecessaryParentReference:
+        enabled: false
+
+    UrlFormat:
+        enabled: false
+
+    UrlQuotes:
+        enabled: true
+        severity: error
+
+    VariableForProperty:
+        enabled: false
+        properties: []
+
+    VendorPrefixes:
+        enabled: true
+        severity: error
+        identifier_list: base
+        include: []
+        exclude: []
+
+    ZeroUnit:
+        enabled: true
+        severity: error
+
+    Compass::*:
+        enabled: false
