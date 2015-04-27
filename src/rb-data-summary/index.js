@@ -1,7 +1,8 @@
 define([
     './rb-data-summary-directive',
+    './rb-data-summary-item-directive',
     './rb-data-summary.css'
-], function (rbDataSummaryDirective, css) {
+], function (rbDataSummaryDirective, rbDataSummaryItemDirective, css) {
     /**
      * @ngdoc module
      * @name rb-data-summary
@@ -12,7 +13,8 @@ define([
      */
     var rbDataSummary = angular
         .module('rb-data-summary', [])
-        .directive('rbDataSummary', rbDataSummaryDirective);
+        .directive('rbDataSummary', rbDataSummaryDirective)
+        .directive('rbDataSummaryItem', rbDataSummaryItemDirective);
 
     return rbDataSummary;
 

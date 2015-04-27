@@ -19,8 +19,34 @@ define([
             $scope.$apply();
         }));
 
-        it('should do something', function () {
+        describe('attribute generation', function () {
+
+            it('should convert attributes on a rb-header to attributes on the generated header',
+                function () {
+                    var rbDataSummary = $compile('<rb-data-summary anyattr any-attr></rb-data-summary>')($scope);
+
+                    $scope.$apply();
+                    expect(rbDataSummary[0].hasAttribute('anyattr')).toBe(true);
+                    expect(rbDataSummary[0].hasAttribute('any-attr')).toBe(true);
+                });
         });
 
+        describe('rendering', function () {
+
+            it('should render with a "div" tagname', function () {
+                expect(element[0].tagName.toLowerCase()).toEqual('div');
+            });
+        });
+
+        describe('with type', function () {
+
+            it('should attach a class `DataSummary--<type>` when type is present', function () {
+                var dataSummary = angular.element('<rb-data-summary type="anytype"></rb-data-summary>'),
+                    element = $compile(dataSummary)($scope);
+
+                $scope.$apply();
+                expect(dataSummary.hasClass('DataSummary--anytype')).toBe(true);
+            });
+        });
     });
 });
