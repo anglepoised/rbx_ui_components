@@ -11,24 +11,16 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <div class="DataSummary DataSummary--financials">
-            <h2 class="u-hiddenVisually">
-                Summary
-            </h2>
-            <div class="DataSummary-inner">
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        Total Campaign Spend ⁄ Budget
-                    </h3>
-                    <p class="u-textLight u-textXLarge">
-                        <span class="Ratio"><data class="Currency" value="$99999999.99"><span class="Currency-unit">$99,999,999<span class="Currency-cent">.99</span></span></data> ⁄ <data class="Currency" value="$99999999.99"><span class="Currency-unit">$99,999,999<span class="Currency-cent">.99</span></span></data></span>
-                    </p>
-                    <p class="u-textRegular u-textXSmall">
-                        Unassigned Budget: <data class="Currency" value="$99999999.99"><span class="Currency-unit">$99,999,999<span class="Currency-cent">.99</span></span></data>
-                    </p>
-                </div>
-            </div>
-        </div>
+        <rb-data-summary type="financials">
+            <rb-data-summary-item header="Total Campaign Spend ⁄ Budget">
+                <p class="u-textLight u-textXLarge">
+                    <rb-ratio numerator="99999999.99" denominator="99999999.99" ratio-type="fraction" display-type="currency"></rb-ratio>
+                </p>
+                <p class="u-textRegular u-textXSmall">
+                    Unassigned Budget: <rb-currency amount="99999999.99"></rb-currency>
+                </p>
+            </rb-data-summary-item>
+        </rb-data-summary>
     </div>
     <div class="RawHTML">
         <h3>
@@ -36,29 +28,18 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <div class="DataSummary DataSummary--timings">
-            <h2 class="u-hiddenVisually">
-                Summary
-            </h2>
-            <div class="DataSummary-inner">
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        Campaign Start
-                    </h3>
-                    <div class="u-textLight u-textXLarge">
-                        <rb-date-time date-time="1970-09-01T00:00" understate-time="true"></rb-date-time>
-                    </div>
+        <rb-data-summary type="timings">
+            <rb-data-summary-item header="Campaign Start">
+                <div class="u-textLight u-textXLarge">
+                    <rb-date-time date-time="1970-09-01T00:00" understate-time="true"></rb-date-time>
                 </div>
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        Campaign End
-                    </h3>
-                    <div class="u-textLight u-textXLarge">
-                        <rb-date-time date-time="1970-09-01T00:00" understate-time="true"></rb-date-time>
-                    </div>
+            </rb-data-summary-item>
+            <rb-data-summary-item header="Campaign End">
+                <div class="u-textLight u-textXLarge">
+                    <rb-date-time date-time="1970-09-01T00:00" understate-time="true"></rb-date-time>
                 </div>
-            </div>
-        </div>
+            </rb-data-summary-item>
+        </rb-data-summary>
     </div>
     <div class="RawHTML">
         <h3>
@@ -66,41 +47,27 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <div class="DataSummary DataSummary--notes">
-            <h2 class="u-hiddenVisually">
-                Summary
-            </h2>
-            <div class="DataSummary-inner">
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        Sector
-                    </h3>
-                    <p>
-                        Retail
-                    </p>
-                </div>
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        External ID
-                    </h3>
-                    <p>
-                        ABC123
-                    </p>
-                </div>
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        Notes
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <rb-data-summary type="notes">
+            <rb-data-summary-item header="Sector">
+                <p>
+                    Retail
+                </p>
+            </rb-data-summary-item>
+            <rb-data-summary-item header="External ID">
+                <p>
+                    ABC123
+                </p>
+            </rb-data-summary-item>
+            <rb-data-summary-item header="Notes">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </rb-data-summary-item>
+        </rb-data-summary>
     </div>
     <div class="RawHTML">
         <h3>
@@ -108,56 +75,36 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <div class="DataSummary DataSummary--notes">
-            <h2 class="u-hiddenVisually">
-                Summary
-            </h2>
-            <div class="DataSummary-inner">
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        Daily Budget
-                    </h3>
-                    <p>
-                        <data class="Currency" value="$99999999.99"><span class="Currency-unit">$99,999,999<span class="Currency-cent">.99</span></span></data>
-                    </p>
-                </div>
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        Max Bid
-                    </h3>
-                    <p>
-                        <data class="Currency" value="$99999999.99"><span class="Currency-unit">$99,999,999<span class="Currency-cent">.99</span></span></data>
-                    </p>
-                </div>
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        Pacing
-                    </h3>
-                    <p>
-                        Even
-                    </p>
-                </div>
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        Impression Goal
-                    </h3>
-                    <p>
-                        000,000,000
-                    </p>
-                </div>
-                <div class="DataSummary-item">
-                    <h3 class="u-textRegular u-textXSmall">
-                        Notes
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <rb-data-summary type="notes">
+            <rb-data-summary-item header="Daily Budget">
+                <p>
+                    <rb-currency amount="99999999.99"></rb-currency>
+                </p>
+            </rb-data-summary-item>
+            <rb-data-summary-item header="Max Bid">
+                <p>
+                    <rb-currency amount="99999999.99"></rb-currency>
+                </p>
+            </rb-data-summary-item>
+            <rb-data-summary-item header="Pacing">
+                <p>
+                    Even
+                </p>
+            </rb-data-summary-item>
+            <rb-data-summary-item header="Impression Goal">
+                <p>
+                    000,000,000
+                </p>
+            </rb-data-summary-item>
+            <rb-data-summary-item header="Notes">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </rb-data-summary-item>
+        </rb-data-summary>
     </div>
 </section>
