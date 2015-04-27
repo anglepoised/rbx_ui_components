@@ -64,9 +64,12 @@ define([
                 // Default progress message
                 progressLabel = 'Please Wait';
 
+            // Overrides the default interval attribute
+            // if an interval attribute is present
+            // with a numeric value.
             if (angular.isDefined(attr.interval) &&
-                !isNaN(parseInt(attr.interval)) &&
-                isFinite(attr.interval)) {
+                    !isNaN(parseInt(attr.interval)) &&
+                    isFinite(attr.interval)) {
 
                 interval = attr.interval;
             }
@@ -129,8 +132,8 @@ define([
                 // Execution not allowed if any execution is under way
                 // or execute function is not present
                 if (angular.isDefined(stopInterval) ||
-                    angular.isUndefined(attr.onExecute) ||
-                    angular.equals(attr.onExecute, '')) {
+                        angular.isUndefined(attr.onExecute) ||
+                        angular.equals(attr.onExecute, '')) {
 
                     return;
                 }
