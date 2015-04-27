@@ -21,7 +21,7 @@ define([
 
         describe('attribute generation', function () {
 
-            it('should convert attributes on a rb-header to attributes on the generated header',
+            it('should convert attributes on a rb-data-summary to attributes on the generated summary',
                 function () {
                     var rbDataSummary = $compile('<rb-data-summary anyattr any-attr></rb-data-summary>')($scope);
 

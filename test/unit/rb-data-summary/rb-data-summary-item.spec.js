@@ -21,7 +21,7 @@ define([
 
         describe('attribute generation', function () {
 
-            it('should convert attributes on a rb-header to attributes on the generated header',
+            it('should convert attributes on a rb-data-summary-item to attributes on the generated item',
                 function () {
                     var rbDataSummaryItem = $compile('<rb-data-summary-item ' +
                         'anyattr any-attr></rb-data-summary-item>')($scope);
@@ -37,6 +37,11 @@ define([
             it('should render with a "div" tagname', function () {
                 expect(element[0].tagName.toLowerCase()).toEqual('div');
             });
+
+            it('should render with a "header" text', function () {
+                expect(element.find('h3').html()).toEqual('any text');
+            });
+
         });
 
     });
