@@ -13,13 +13,14 @@
         {{title}}
     </label>
 
+    <!-- ng-if creates child scope so need to use $parent.ngModel for 2-way binding -->
     <input
         ng-if="type !== 'textarea'"
         class="TextControl-field"
         name="{{name}}"
         placeholder="{{placeholder}}"
         type="{{type}}"
-        ng-model="ngModel"
+        ng-model="$parent.ngModel"
         ng-required="{{isRequired}}"
         ng-disabled="{{isDisabled}}"
         ng-readonly="{{isReadonly}}"
@@ -33,7 +34,7 @@
         name="{{name}}"
         placeholder="{{placeholder}}"
         type="{{type}}"
-        ng-model="ngModel"
+        ng-model="$parent.ngModel"
         ng-required="{{isRequired}}"
         ng-disabled="{{isDisabled}}"
         ng-readonly="{{isReadonly}}"
