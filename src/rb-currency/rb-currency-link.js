@@ -20,11 +20,13 @@ define([
         var value,
             decimalPlaces = attributes.decimalPlaces || 2;
 
-        // Rounds the amount to the correct amount of decimal places and splits the number.
-        value = parseFloat(scope.amount).toFixed(decimalPlaces).toString().split('.');
+        scope.$watch('amount', function (newValue) {
+            // Rounds the amount to the correct amount of decimal places and splits the number.
+            value = parseFloat(newValue).toFixed(decimalPlaces).toString().split('.');
 
-        scope.integerPart = value[0];
-        scope.fractionalPart = value[1] || 0;
+            scope.integerPart = value[0];
+            scope.fractionalPart = value[1] || 0;
+        });
     }
 
     return rbCurrencyLink;
