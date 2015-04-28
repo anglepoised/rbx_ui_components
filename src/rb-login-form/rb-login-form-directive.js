@@ -18,6 +18,7 @@ define([
      *  `emailmodel`: contains the model for the email field
      *  `passwordmodel`: contains the model for the password field
      *  `loginfunction`: contains a login function to execute
+     *  `message`: contains a message to include in a <rb-form-message> directive
      *
      * @usage
      * <hljs lang="html">
@@ -26,7 +27,8 @@ define([
      *      formname="loginForm"
      *      emailmodel="demoCtrl.email"
      *      passwordmodel="demoCtrl.password"
-     *      loginfunction="demoCtrl.login()">
+     *      loginfunction="demoCtrl.login()"
+     *      message="demoCtrl.errorMessage">
      *   </rb-login-form>
      * </hljs>
      *
@@ -40,7 +42,8 @@ define([
                 'icon': '@',
                 'emailModel': '=',
                 'passwordModel': '=',
-                'onLogin': '&'
+                'onLogin': '&',
+                'message': '='
             },
             restrict: 'E',
             replace: true,
