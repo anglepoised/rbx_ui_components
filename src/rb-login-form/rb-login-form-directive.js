@@ -43,7 +43,7 @@ define([
                 'emailModel': '=',
                 'passwordModel': '=',
                 'onLogin': '&',
-                'message': '='
+                'message': '@'
             },
             restrict: 'E',
             replace: true,
