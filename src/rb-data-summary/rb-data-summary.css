@@ -32,12 +32,15 @@
     background-color: var(--DataSummary-border);
     background-position: calc((var(--DataSummary-gutter-width) / 2) - (var(--DataSummary-image-width) / 2)) center; /* 1 */
     background-repeat: no-repeat;
+    display: flex;
     padding: 0 0.25em 0 var(--DataSummary-gutter-width);
+    width: 100%;
 }
 
 .DataSummary-inner {
     background: var(--DataSummary-background);
     padding-top: 1.5em;
+    width: 100%;
 }
 
 .DataSummary-item {
