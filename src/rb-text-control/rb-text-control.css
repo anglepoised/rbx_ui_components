@@ -9,6 +9,9 @@
  */
 
 :root {
+    --TextControl--currency-field-focus-image: "./images/Control-currency-focus.svg";
+    --TextControl--currency-field-image: "./images/Control-currency.svg";
+    --TextControl--currency-field-invalid-image: "./images/Control-currency-invalid.svg";
     --TextControl-field-background-color: var(--color-form-field-background);
     --TextControl-field-border-color: var(--color-gray-ghost);
     --TextControl-field-border-radius: 4px;
@@ -16,13 +19,16 @@
     --TextControl-field-disabled-background-color: var(--color-white-catskill);
     --TextControl-field-disabled-color: var(--color-gray-regent);
     --TextControl-field-disabled-image: "./images/Control-disabled.svg";
+    --TextControl-field-disabled-image-position: calc(100% - 12px) center;
     --TextControl-field-focus-border-color: var(--color-green-base);
     --TextControl-field-image-padding: 2.5em;
     --TextControl-field-invalid-border-color: var(--color-red-base);
     --TextControl-field-invalid-color: var(--color-red-base);
     --TextControl-field-placeholder-color: var(--color-gray-ghost);
     --TextControl-field-required-image: "./images/Control-required.svg";
+    --TextControl-field-required-image-position: right 6px top 6px;
     --TextControl-field-required-invalid-image: "./images/Control-required-invalid.svg";
+    --TextControl-field-type-image-position: 12px center;
     --TextControl-label-invalid-color: var(--color-red-base);
     --TextControl-message-invalid-background-color: var(--color-red-base);
     --TextControl-message-invalid-color: var(--color-white);
@@ -38,6 +44,7 @@
  * 7. Remove spinner on number type field in disabled state, prevents conflict with padlock icon.
  *      Mozilla: https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance
  *      WebKit: http://trac.webkit.org/wiki/Styling%20Form%20Controls#Removingspinbuttonsforinputtypenumber
+ * 8. Make `.is-populated` match focus state to preserve background image colour.
  */
 
 .TextControl {
@@ -100,7 +107,7 @@
 .TextControl-field:required,
 .TextControl-field.is-required {
     background: var(--TextControl-field-background-color) url(var(--TextControl-field-required-image)) no-repeat;
-    background-position: right 6px top 6px; /* 3 */
+    background-position: var(--TextControl-field-required-image-position); /* 3 */
     outline: none; /* 2 */
 }
 
@@ -114,7 +121,7 @@
 
 .TextControl-field:disabled,
 .TextControl-field.is-disabled {
-    background: var(--TextControl-field-disabled-background-color) url(var(--TextControl-field-disabled-image)) no-repeat calc(100% - 12px) center !important; /* 5 */
+    background: var(--TextControl-field-disabled-background-color) url(var(--TextControl-field-disabled-image)) no-repeat var(--TextControl-field-disabled-image-position) !important; /* 5 */
     border: 1px solid var(--TextControl-field-border-color) !important; /* 5 */
     color: var(--TextControl-field-disabled-color) !important; /* 5 */
     user-select: none; /* 6 */
@@ -151,11 +158,57 @@
 
 .TextControl--search .TextControl-field {
     background-image: url("./images/Control-search.svg");
-    background-position: 12px center;
+    background-position: var(--TextControl-field-type-image-position);
     background-repeat: no-repeat;
     padding-left: var(--TextControl-field-image-padding);
 }
 
 .TextControl--search .TextControl-field:focus {
     background-image: url("./images/Control-search-focus.svg");
+}
+
+/**
+ * Currency
+ */
+
+.TextControl--currency .TextControl-field {
+    background-image: url(var(--TextControl--currency-field-image));
+    background-position: var(--TextControl-field-type-image-position);
+    background-repeat: no-repeat;
+    padding-left: var(--TextControl-field-image-padding);
+}
+
+.TextControl--currency .TextControl-field:focus,
+.TextControl--currency .TextControl-field.is-populated {
+    background-image: url(var(--TextControl--currency-field-focus-image)); /* 8 */
+}
+
+.TextControl--currency .TextControl-field:invalid:focus,
+.TextControl--currency .TextControl-field.is-invalid {
+    background-image: url(var(--TextControl--currency-field-invalid-image));
+}
+
+.TextControl--currency .TextControl-field:required,
+.TextControl--currency .TextControl-field.is-required {
+    background-image: url(var(--TextControl--currency-field-image)), url(var(--TextControl-field-required-image));
+    background-position: var(--TextControl-field-type-image-position), var(--TextControl-field-required-image-position);
+}
+
+.TextControl--currency .TextControl-field:required:focus,
+.TextControl--currency .TextControl-field.is-required:focus,
+.TextControl--currency .TextControl-field.is-populated:required,
+.TextControl--currency .TextControl-field.is-populated.is-required {
+    background-image: url(var(--TextControl--currency-field-focus-image)), url(var(--TextControl-field-required-image));
+    background-position: var(--TextControl-field-type-image-position), var(--TextControl-field-required-image-position);
+}
+
+.TextControl--currency .TextControl-field:focus:required:invalid {
+    background-image: url(var(--TextControl--currency-field-invalid-image)), url(var(--TextControl-field-required-invalid-image));
+    background-position: var(--TextControl-field-type-image-position), var(--TextControl-field-required-image-position);
+}
+
+.TextControl--currency .TextControl-field:disabled,
+.TextControl--currency .TextControl-field.is-disabled {
+    background-image: url(var(--TextControl--currency-field-image)), url(var(--TextControl-field-disabled-image)) !important;
+    background-position: var(--TextControl-field-type-image-position), var(--TextControl-field-disabled-image-position) !important;
 }
