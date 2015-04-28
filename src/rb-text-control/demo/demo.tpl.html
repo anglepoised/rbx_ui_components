@@ -1,38 +1,14 @@
 <section class="Section Section--gutter">
+    <div class="RawHTML">
+        <h2>
+            rb-text-control
+        </h2>
+        <h3>
+            Current Angular Version
+        </h3>
+    </div>
+    <div class="ComponentView">
         <form name="userForm">
-
-            <h2>Currency Normal</h2>
-
-            <div class="TextControl TextControl--currency">
-                <label class="TextControl-label u-textLabel" for="f-Text-currency">Currency label</label>
-                <input class="TextControl-field" id="f-Text-currency" min="1" name="number" placeholder="Currency" type="number" step="any">
-            </div>
-
-            <h2>Currency Disabled</h2>
-
-            <div class="TextControl TextControl--currency">
-                <label class="TextControl-label is-disabled u-textLabel" for="f-Text-currency-disabled">Currency label</label>
-                <input class="TextControl-field is-disabled" id="f-Text-currency-disabled" min="1" name="number" placeholder="Currency" type="number" step="any" disabled>
-            </div>
-
-            <h2>Currency Required</h2>
-
-            <div class="TextControl TextControl--currency is-required">
-                <label class="TextControl-label is-required u-textLabel" for="f-Text-currency-required">Currency label</label>
-                <input class="TextControl-field is-required" id="f-Text-currency-required" name="number" placeholder="Currency" type="number" required>
-            </div>
-
-            <h2>Currency Populated</h2>
-
-            <p>
-                Matches <code>:focus</code> state. There's no way of changing an <code>input</code> style if it's
-                populated (or not). This adds the correct background image and needs setting via Angular.
-            </p>
-
-            <div class="TextControl TextControl--currency is-populated">
-                <label class="TextControl-label is-populated u-textLabel" for="f-Text-currency-populated">Currency label</label>
-                <input class="TextControl-field is-populated" id="f-Text-currency-populated" name="number" placeholder="Currency" type="number" value="666" required>
-            </div>
 
             <rb-text-control
                 form="userForm"
@@ -115,4 +91,46 @@
             </div>
 
         </form>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Static Reference Version
+        </h3>
+        <h4>
+            Currency Normal
+        </h4>
+    </div>
+    <div class="ComponentView">
+        <form>
+            <div class="TextControl TextControl--currency">
+                <label class="TextControl-label u-textLabel" for="f-Text-currency">Currency label</label>
+                <input class="TextControl-field" id="f-Text-currency" min="1" name="number" placeholder="Currency" type="number" step="any">
+            </div>
+            <h2>
+                Currency Disabled
+            </h2>
+            <div class="TextControl TextControl--currency">
+                <label class="TextControl-label is-disabled u-textLabel" for="f-Text-currency-disabled">Currency label</label>
+                <input class="TextControl-field is-disabled" id="f-Text-currency-disabled" min="1" name="number" placeholder="Currency" type="number" step="any" disabled>
+            </div>
+            <h2>
+                Currency Required
+            </h2>
+            <div class="TextControl TextControl--currency is-required">
+                <label class="TextControl-label is-required u-textLabel" for="f-Text-currency-required">Currency label</label>
+                <input class="TextControl-field is-required" id="f-Text-currency-required" name="number" placeholder="Currency" type="number" required>
+            </div>
+            <h2>
+                Currency Populated
+            </h2>
+            <p>
+                Matches <code>:focus</code> state. There's no way of changing an <code>input</code> style if it's
+                populated (or not). This adds the correct background image and needs setting via Angular.
+            </p>
+            <div class="TextControl TextControl--currency is-populated">
+                <label class="TextControl-label is-populated u-textLabel" for="f-Text-currency-populated">Currency label</label>
+                <input class="TextControl-field is-populated" id="f-Text-currency-populated" name="number" placeholder="Currency" type="number" value="666" required>
+            </div>
+        </form>
+    </div>
 </section>
