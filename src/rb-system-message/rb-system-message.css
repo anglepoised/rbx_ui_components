@@ -28,7 +28,7 @@
 
 .SystemMessage {
     background-color: var(--SystemMessage-border);
-    background-image: url("images/SystemMessage-background.svg");
+    background-image: url("./images/SystemMessage-background.svg");
     background-position: calc((var(--SystemMessage-gutter-width) / 2) - (var(--SystemMessage-image-width) / 2)) center; /* 1 */
     background-repeat: no-repeat;
     border-color: var(--SystemMessage-border);
