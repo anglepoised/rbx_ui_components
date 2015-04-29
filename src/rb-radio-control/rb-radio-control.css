@@ -1,0 +1,16 @@
+/** @define RadioControl; use strict */
+
+/**
+ * The `.RadioControl` component...
+ */
+
+:root {
+    --RadioControl-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.RadioControl {
+}
