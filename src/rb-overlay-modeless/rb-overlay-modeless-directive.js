@@ -10,11 +10,14 @@ define([
      * @restrict E
      *
      * @description
+     * `<rb-overlay-modeless>` is an overlay directive that wraps content
+     * and allows interaction behind the content
      *
      * @usage
      * <hljs lang="html">
      *    <rb-overlay-modeless>
-     *     </rb-overlay-modeless>
+     *        Drop any content here
+     *    </rb-overlay-modeless>
      * </hljs>
      *
      * @ngInject
@@ -22,10 +25,9 @@ define([
     function rbOverlayModelessDirective () {
 
         return {
-            scope: {
-            },
             restrict: 'E',
             replace: true,
+            transclude: true,
             template: template
         };
     }
