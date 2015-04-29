@@ -8,8 +8,8 @@
         </h2>
     </div>
     <div class="ComponentView">
-        <div class="Grid Grid--flexCells Grid--gutter">
-            <div class="Grid-cell">
+        <rb-grid>
+            <rb-grid-cell>
                 <div class="DataSummary DataSummary--financials">
                     <h2 class="u-hiddenVisually">
                         Summary
@@ -28,8 +28,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="Grid-cell">
+            </rb-grid-cell>
+            <rb-grid-cell>
                 <rb-data-summary type="timings">
                     <rb-data-summary-item header="Campaign Start">
                         <div class="u-textLight u-textXLarge">
@@ -42,10 +42,10 @@
                         </div>
                     </rb-data-summary-item>
                 </rb-data-summary>
-            </div>
-        </div>
-        <div class="Grid Grid--flexCells Grid--gutter">
-            <div class="Grid-cell">
+            </rb-grid-cell>
+        </rb-grid>
+        <rb-grid>
+            <rb-grid-cell>
                 <rb-data-summary type="notes">
                     <rb-data-summary-item header="Sector">
                         <p>
@@ -67,7 +67,7 @@
                         </p>
                     </rb-data-summary-item>
                 </rb-data-summary>
-            </div>
-        </div>
+            </rb-grid-cell>
+        </rb-grid>
     </div>
 </section>

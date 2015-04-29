@@ -1,11 +1,11 @@
 define([
-    'html!./rb-grid.tpl.html'
+    'html!./rb-grid-cell.tpl.html'
 ], function (template) {
 
     /**
      * @ngdoc directive
-     * @name rbGrid
-     * @module rb-grid
+     * @name rbGridCell
+     * @module rb-grid-cell
      *
      * @restrict E
      *
@@ -13,13 +13,13 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-grid>
-     *     </rb-grid>
+     *    <rb-grid-cell>
+     *     </rb-grid-cell>
      * </hljs>
      *
      * @ngInject
      */
-    function rbGridDirective () {
+    function rbGridCellDirective () {
 
         return {
             scope: {
@@ -31,5 +31,5 @@ define([
         };
     }
 
-    return rbGridDirective;
+    return rbGridCellDirective;
 });
