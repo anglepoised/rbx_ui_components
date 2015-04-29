@@ -1,4 +1,3 @@
 <data class="Currency" value="${{ fullAmount }}">
-    <span class="Currency-unit">{{ integerPart | currency:"$":0 }}</span>
-    <span class="Currency-cent" ng-if="fractionalPart !== 0">.{{ fractionalPart }}</span>
+    <span class="Currency-unit">{{ integerPart | currency:"$":0 }}</span><span class="Currency-cent" ng-if="fractionalPart !== 0">.{{ fractionalPart }}</span>
 </data>
