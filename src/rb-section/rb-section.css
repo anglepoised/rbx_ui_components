@@ -1,16 +1,34 @@
 /** @define Section; use strict */
 
 /**
- * The `.Section` component...
+ * The `.Section` component should be used to distinguish between distinct sections in a view. It should generally be
+ * attached to `<section>` elements, all of which should be children of a `<main class="Main">` pairing.
+ *
+ * It helps maintain a consistent vertical rhythm between discrete groups of components and sets the horizontal gutter
+ * for any components contained in `.Main`.
+ *
+ * Every `.Section` should have a heading. The heading can optionally be hidden visually.
+ *
+ * A `.Section` should never be nested within another `.Section`.
+ *
+ * The `.Section--gutterless` modifier should be used when wrapping components that manage guttering themselves.
  */
 
-:root {
-    --Section-variable: var();
-}
-
 /**
- * 1. Comment
+ * 1. Use margin collapsing to control space between multiple sections.
+ *      See: https://developer.mozilla.org/en-US/docs/Web/CSS/margin_collapsing
+ * 2. Remove gutter.
  */
 
 .Section {
+    margin: 1.5em 0 3em; /* 1 */
+    padding: 0 var(--layout-gutter);
+}
+
+/**
+ * Gutterless modifier
+ */
+
+.Section--gutterless {
+    padding: 0; /* 2 */
 }
