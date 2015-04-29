@@ -19,7 +19,8 @@ define([
      *    		subheading="This subheading rocks"
      *    		badge-status="statusFinished"
      *    		back-text="Back to home page"
-     *    		back-sref="home">
+     *    		back-sref="home"
+     *    		button-click="" button-label="Text Action" button-show="true" button-state="positive">
      *    </rb-page-title>
      * </hljs>
      *
@@ -35,6 +36,10 @@ define([
                 badgeStatus: '@',
                 backText: '@',
                 backSref: '@',
+                buttonClick: '&',
+                buttonLabel: '@',
+                buttonShow: '=',
+                buttonState: '@',
                 status: '@'
             },
             restrict: 'E',

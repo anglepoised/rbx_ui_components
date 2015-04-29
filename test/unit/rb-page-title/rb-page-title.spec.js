@@ -97,5 +97,45 @@ define([
                 expect(element.html()).not.toContain('Back somewhere');
             });
         });
+
+        describe('button', function () {
+            it('should add a button to the Page title', function () {
+                pageTitle.attr('button-show', true);
+                pageTitle.attr('button-label', 'Some text');
+
+                element = $compile(pageTitle)($scope);
+
+                $scope.$apply();
+
+                expect(element.html()).toContain('Some text');
+            });
+
+            it('should add a button section to the Page title', function () {
+                var buttonEle;
+
+                pageTitle.attr('button-show', true);
+                pageTitle.attr('button-label', 'Some text');
+
+                element = $compile(pageTitle)($scope);
+
+                $scope.$apply();
+
+                buttonEle = element[0].getElementsByClassName('PageTitle-button');
+
+                expect(buttonEle.length).toBe(1);
+            });
+
+            it('should not add a button section Page title', function () {
+                var buttonEle;
+
+                element = $compile(pageTitle)($scope);
+
+                $scope.$apply();
+
+                buttonEle = element[0].getElementsByClassName('PageTitle-button');
+
+                expect(buttonEle.length).toBe(0);
+            });
+        });
     });
 });

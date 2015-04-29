@@ -6,7 +6,7 @@ define([
     function demoState ($stateProvider, $urlRouterProvider) {
         $stateProvider.state('rb-page-title', {
             url: '/rb-page-title',
-            controller: 'header-ctrl as demoCtrl',
+            controller: 'header-ctrl as pageTitleDemoCtrl',
             template: template
         });
     }

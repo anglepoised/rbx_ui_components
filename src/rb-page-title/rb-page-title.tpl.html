@@ -17,4 +17,7 @@
             {{ subheading }}
         </p>
     </div>
+    <div class="PageTitle-button" ng-if="buttonShow">
+        <rb-button state="{{ buttonState }}" ng-click="buttonClick()">{{ buttonLabel }}</rb-button>
+    </div>
 </div>
