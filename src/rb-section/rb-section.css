@@ -1,0 +1,16 @@
+/** @define Section; use strict */
+
+/**
+ * The `.Section` component...
+ */
+
+:root {
+    --Section-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.Section {
+}
