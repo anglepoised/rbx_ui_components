@@ -1,14 +1,16 @@
 define([
     'components/rb-grid'
-], function (rbGrid) {
-    describe('rb-grid', function () {
+], function (rbGridCell) {
+    describe('rb-grid-cell', function () {
 
-        var $scope,
+        var $rootScope,
+            $scope,
+            isolatedScope,
             $compile,
-            textControl,
-            element;
+            element,
+            compileTemplate;
 
-        beforeEach(angular.mock.module(rbGrid.name));
+        beforeEach(angular.mock.module(rbGridCell.name));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $rootScope = _$rootScope_;
@@ -25,13 +27,12 @@ define([
 
         describe('rendering', function () {
             it('should render with class and transclude', function () {
-                compileTemplate('<rb-grid>TEST</rb-grid>');
+                compileTemplate('<rb-grid-cell>TEST</rb-grid-cell>');
 
-                expect(element.hasClass('Grid Grid--flexCells Grid--gutter')).toBe(true);
-                expect(element.hasClass('Grid--flexCells')).toBe(true);
-                expect(element.hasClass('Grid--gutter')).toBe(true);
+                expect(element.hasClass('Grid-cell')).toBe(true);
                 expect(element.text()).toBe('TEST');
             });
         });
+
     });
 });

@@ -1,7 +1,8 @@
 define([
     './rb-grid-directive',
+    './rb-grid-cell-directive',
     './rb-grid.css'
-], function (rbGridDirective, css) {
+], function (rbGridDirective, rbGridCellDirective, css) {
     /**
      * @ngdoc module
      * @name rb-grid
@@ -12,7 +13,8 @@ define([
      */
     var rbGrid = angular
         .module('rb-grid', [])
-        .directive('rbGrid', rbGridDirective);
+        .directive('rbGrid', rbGridDirective)
+        .directive('rbGridCell', rbGridCellDirective);
 
     return rbGrid;
 
