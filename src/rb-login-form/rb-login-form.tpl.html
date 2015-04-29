@@ -3,7 +3,6 @@
         <rb-icon icon="{{::icon}}"></rb-icon>
     </div>
     <form name="loginForm" class="Login-body">
-        <rb-form-message ng-if="message">{{ message }}</rb-form-message>
         <fieldset>
             <div class="Login-control">
                 <rb-text-control
@@ -28,6 +27,7 @@
                 </rb-text-control>
             </div>
         </fieldset>
+        <rb-form-message ng-if="message">{{ message }}</rb-form-message>
         <fieldset class="Login-button">
             <rb-button block="yes" state="positive" ng-disabled="loginForm.$invalid" ng-click="onLogin()">Login</rb-button>
         </fieldset>
