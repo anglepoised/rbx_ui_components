@@ -53,6 +53,15 @@ define([
 
                 expect(angular.element(ele).text()).toContain('0%');
             });
+
+            it('should render as N/A when denominator is null', function () {
+                template = '<rb-ratio numerator="50" denominator="{{null}}"></rb-ratio>';
+                ele = $compile(template)($scope);
+
+                $scope.$apply();
+
+                expect(angular.element(ele).text()).toContain('N/A');
+            });
         });
 
         describe('fraction', function () {
@@ -75,6 +84,16 @@ define([
 
                 expect(angular.element(ele).find('data').length).toBe(2);
             });
+
+            it('should render as N/A when denominator is null', function () {
+                template = '<rb-ratio numerator="50" denominator="{{null}}" ratio-type="fraction" ></rb-ratio>';
+                ele = $compile(template)($scope);
+
+                $scope.$apply();
+
+                expect(angular.element(ele).text()).toContain('50 ⁄  N/A');
+            });
+
         });
     });
 });
