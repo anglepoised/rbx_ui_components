@@ -14,47 +14,17 @@
             <li>An optional action, containing a button.</li>
         </ul>
         <h3>
-            Current Angular Version
+            Demo
         </h3>
     </div>
     <div class="ComponentView">
+        <button ng-click="pageTitleDemoCtrl.showButton = !pageTitleDemoCtrl.showButton">Hide the button from page title</button>
         <rb-page-title
             heading="My Test Page"
             subheading="This subheading rocks"
             back-text="Back to home" back-sref="app"
+            button-click="pageTitleDemoCtrl.clickButton('The page title button was clicked!')" button-label="Text Action" button-show="pageTitleDemoCtrl.showButton" button-state="positive"
             badge-status="statusPending">
         </rb-page-title>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Static Reference Version
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <div class="PageTitle">
-            <div class="PageTitle-inner">
-                <div class="PageTitle-navigation">
-                    <a class="u-linkClean" href="#">← Back somewhere</a>
-                </div>
-                <div class="PageTitle-body">
-                    <div class="PageTitle-heading">
-                        <h1 class="u-textHeading1">
-                            Page Title
-                        </h1>
-                    </div>
-                    <div class="PageTitle-badge">
-                        <rb-badge state="statusLive" collapsed="false"></rb-badge>
-                    </div>
-                </div>
-                <p class="PageTitle-sub">
-                    Subheading
-                </p>
-            </div>
-            <div class="PageTitle-button">
-                <rb-button>
-                    Action
-                </rb-button>
-            </div>
-        </div>
     </div>
 </section>
