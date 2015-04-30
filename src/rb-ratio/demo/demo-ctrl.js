@@ -25,6 +25,16 @@ define([
                 ratioType: 'fraction',
                 displayType: 'currency',
                 decimalPlaces: 0
+            },
+            {
+                numerator: 2598.23,
+                denominator: null,
+                ratioType: 'fraction'
+            },
+            {
+                numerator: 112230.00,
+                denominator: null,
+                ratioType: 'percentage'
             }
         ];
     }
