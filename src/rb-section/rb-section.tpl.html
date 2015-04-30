@@ -1,4 +1,4 @@
-<section class="Section" ng-class="{'Section--gutterless': gutterless}">
-    <h2 class="u-textHeading2" ng-class="{'u-hiddenVisually': hideTitle}">{{ title }}</h2>
+<section class="Section" ng-class="{'Section--gutterless': gutterless == 'true'}">
+    <h2 class="u-textHeading2" ng-class="{'u-hiddenVisually': hideTitle == 'true'}">{{ ::title }}</h2>
     <p ng-transclude></p>
 </section>
