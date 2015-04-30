@@ -57,16 +57,7 @@ define([
             it('should show message directive when passed a message', function () {
                 recompile({message: 'There was an error.'});
 
-                var rbMessageElement = element.find('rb-form-message');
-                expect(rbMessageElement.length).toEqual(1);
-                expect(rbMessageElement.text()).toEqual('There was an error.');
-            });
-
-            it('should hide message directive when not passed a message', function () {
-                recompile({message: undefined});
-
-                var rbMessageElement = element.find('rb-form-message');
-                expect(rbMessageElement.length).toEqual(0);
+                expect(element.html()).toContain('There was an error.');
             });
         });
 
