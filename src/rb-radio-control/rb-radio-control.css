@@ -5,7 +5,7 @@
  */
 
 :root {
-    --RadioControl-variable: var();
+    /*--RadioControl-variable: var();*/
 }
 
 /**
@@ -13,4 +13,13 @@
  */
 
 .RadioControl {
+}
+
+.RadioControl--row .RadioControl-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.RadioControl--row .RadioControl-item {
+    margin-right: 2em;
 }
