@@ -20,6 +20,7 @@ define([
      *             placeholder="Enter your name..."
      *             name="name"
      *             type="text"
+     *             is-elastic="true"
      *             ng-model="demoCtrl.data.name"
      *             is-required="true"
      *             help-message="This is what we will call you!">
@@ -34,6 +35,7 @@ define([
         return {
             scope: {
                 isDisabled: '@',
+                isElastic: '@',
                 isRequired: '@',
                 isReadonly: '@',
                 title: '@',

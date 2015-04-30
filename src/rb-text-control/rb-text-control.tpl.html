@@ -40,6 +40,7 @@
         ng-readonly="{{isReadonly}}"
         ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
         custom-validation
+        msd-elastic="{{ isElastic || false }}"
     />
 
     <div class="TextControl-message" ng-show="helpMessage">
