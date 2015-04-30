@@ -5,7 +5,7 @@
  *
  * Various states are available and can be stacked. The `disabled` state always takes visual priority over other states.
  *
- * A single is available for an entire instance: `TextControl--small`. This reduces the size of the field.
+ * A single modifier is available for an entire TextControl: `TextControl--small`. This reduces the size of the input field.
  */
 
 :root {
