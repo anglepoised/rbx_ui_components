@@ -1,0 +1,16 @@
+/** @define Fieldset; use strict */
+
+/**
+ * The `.Fieldset` component...
+ */
+
+:root {
+    --Fieldset-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.Fieldset {
+}
