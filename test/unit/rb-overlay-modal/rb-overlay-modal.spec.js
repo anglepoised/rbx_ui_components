@@ -6,7 +6,6 @@ define([
 
         var $scope,
             $compile,
-            $document,
             element;
 
         beforeEach(angular.mock.module('rb-overlay-modal'));
