@@ -8,21 +8,20 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <div class="Fieldset">
-            <div class="Fieldset-title">
-                <span class="u-textLegend">Default legend</span>
-            </div>
-            <div class="Fieldset-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-        </div>
+        <form name="userForm">
+            <rb-fieldset title="Default legend">
+                <rb-text-control
+                    form="userForm"
+                    title="Your Email"
+                    placeholder="Enter your email..."
+                    name="email"
+                    type="email"
+                    ng-model="demoCtrl.data.email"
+                    is-required="true"
+                    help-message="This is so we can harass you">
+                </rb-text-control>
+            </rb-fieldset>
+        </form>
     </div>
     <div class="RawHTML">
         <h3>
@@ -30,21 +29,16 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <div class="Fieldset Fieldset--campaignBasics">
-            <div class="Fieldset-title">
-                <span class="u-textLegend">Campaign Basics</span>
-            </div>
-            <div class="Fieldset-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-        </div>
+        <rb-fieldset type="campaignBasics" title="Campaign Basics">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </rb-fieldset>
     </div>
     <div class="RawHTML">
         <h3>
@@ -52,21 +46,16 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <div class="Fieldset Fieldset--finance">
-            <div class="Fieldset-title">
-                <span class="u-textLegend">Finance</span>
-            </div>
-            <div class="Fieldset-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-        </div>
+        <rb-fieldset type="finance" title="Finance">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </rb-fieldset>
     </div>
     <div class="RawHTML">
         <h3>
@@ -74,20 +63,15 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <div class="Fieldset Fieldset--additionalInfo">
-            <div class="Fieldset-title">
-                <span class="u-textLegend">Additional Info</span>
-            </div>
-            <div class="Fieldset-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-        </div>
+        <rb-fieldset type="additionalInfo" title="Additional Info">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </rb-fieldset>
     </div>
 </section>
