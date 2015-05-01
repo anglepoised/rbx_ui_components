@@ -1,0 +1,10 @@
+<div class="Fieldset" ng-class="{
+    'Fieldset--campaignBasics': type == 'campaignBasics',
+    'Fieldset--finance': type == 'finance',
+    'Fieldset--additionalInfo': type == 'additionalInfo'
+}">
+    <div class="Fieldset-title">
+        <span class="u-textLegend">{{ ::title }}</span>
+    </div>
+    <div class="Fieldset-body" ng-transclude></div>
+</div>

@@ -23,9 +23,12 @@ define([
 
         return {
             scope: {
+                type: '@',
+                title: '@'
             },
             restrict: 'E',
             replace: true,
+            transclude: true,
             template: template
         };
     }
