@@ -21,12 +21,12 @@ define([
     'components/rb-page-title/demo',
     'components/rb-ratio/demo',
     'components/rb-section/demo',
+    'components/rb-select/demo',
     'components/rb-site/demo',
     'components/rb-system-message/demo',
     'components/rb-text-control/demo',
     'components/rb-warning-messages/demo',
     'components/rb-progress-button/demo',
-    'components/rb-data-summary/demo',
     'rbx_style_guide'
 ], function (
     uiRouter,
@@ -51,12 +51,12 @@ define([
     rbPageTitleDemo,
     rbRatioDemo,
     rbSectionDemo,
+    rbSelectDemo,
     rbSiteDemo,
     rbSystemMessage,
     rbTextControlDemo,
     rbWarningMessagesDemo,
     rbProgressButtonDemo,
-    rbDataSummaryDemo,
     css
 ) {
     // @ngInject
@@ -83,12 +83,12 @@ define([
             rbPageTitleDemo.name,
             rbRatioDemo.name,
             rbSectionDemo.name,
+            rbSelectDemo.name,
             rbSiteDemo.name,
             rbSystemMessage.name,
             rbTextControlDemo.name,
             rbWarningMessagesDemo.name,
-            rbProgressButtonDemo.name,
-            rbDataSummaryDemo.name
+            rbProgressButtonDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 

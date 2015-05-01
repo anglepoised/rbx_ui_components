@@ -1,0 +1,16 @@
+/** @define rbSelect; use strict */
+
+/**
+ * The `.rbSelect` component...
+ */
+
+:root {
+    --rbSelect-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rbSelect {
+}

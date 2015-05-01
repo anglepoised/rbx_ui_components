@@ -1,0 +1,42 @@
+
+<section class="Section">
+    <div class="RawHTML">
+        <h2>
+            rb-select
+        </h2>
+        <h3>
+            Select field with a none previously selected item &amp; a placeholder
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-select value="name" items="demoRbSelectCtrl.items" selected="demoRbSelectCtrl.emptySelect" placeholder="Your favourite Car"></rb-select>
+        Selected: {{ demoRbSelectCtrl.emptySelect }}
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Select field with a previously selected item &amp; a placeholder
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-select value="name" items="demoRbSelectCtrl.items" selected="demoRbSelectCtrl.previouslySelected" placeholder="Your favourite Car"></rb-select>
+        Selected: {{ demoRbSelectCtrl.previouslySelected }}
+    </div>
+    <div class="RawHTML">
+        <h3>
+            No placeholder and not previously selected
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-select value="name" items="demoRbSelectCtrl.items" selected="demoRbSelectCtrl.emptySelect"></rb-select>
+        Selected: {{ demoRbSelectCtrl.emptySelect }}
+    </div>
+    <div class="RawHTML">
+        <h3>
+            No placeholder and previously selected
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-select value="name" items="demoRbSelectCtrl.items" selected="demoRbSelectCtrl.previouslySelected"></rb-select>
+        Selected: {{ demoRbSelectCtrl.previouslySelected }}
+    </div>
+</section>
