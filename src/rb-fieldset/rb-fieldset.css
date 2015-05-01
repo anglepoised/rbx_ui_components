@@ -1,0 +1,90 @@
+/** @define Fieldset; use strict */
+
+/**
+ * The `.Fieldset` component...
+ *
+ * This isn't using the correct tags at the moment, because Flexbox and fieldsets don't play well in Chrome.
+ *
+ * See: http://stackoverflow.com/questions/19679337/why-are-not-all-flexbox-elements-behaving-like-flexbox-divs
+ */
+
+:root {
+    --Fieldset-border-color: var(--color-gray-ghost);
+    --Fieldset-title-background-position: left 6px;
+}
+
+/**
+ * 1. Linearize for small viewports, columnify label and body.
+ * 2. Fieldset is technically a sectioning component, so margins allowed.
+ * 3. Account for exciting default legend positioning.
+ */
+
+.Fieldset {
+    display: flex;
+    flex-direction: column; /* 1 */
+    margin-bottom: 2.5em; /* 2 */
+}
+
+.Fieldset-title {
+    margin-top: 1.25em;
+    padding-top: 0.25em; /* 3 */
+}
+
+.Fieldset-body {
+    border-top: 1px solid var(--Fieldset-border-color);
+    padding: 1.25em 0;
+}
+
+/**
+ * Campaign Basics modifier
+ */
+
+.Fieldset--campaignBasics .Fieldset-title {
+    background-image: url("./images/campaignBasics.svg");
+    background-position: var(--Fieldset-title-background-position);
+    background-repeat: no-repeat;
+    padding-left: 32px;
+}
+
+/**
+ * Finance modifier
+ */
+
+.Fieldset--finance .Fieldset-title {
+    background-image: url("./images/finance.svg");
+    background-position: var(--Fieldset-title-background-position);
+    background-repeat: no-repeat;
+    padding-left: 32px;
+}
+
+/**
+ * Additional Info modifier
+ */
+
+.Fieldset--additionalInfo .Fieldset-title {
+    background-image: url("./images/additionalInfo.svg");
+    background-position: var(--Fieldset-title-background-position);
+    background-repeat: no-repeat;
+    padding-left: 32px;
+}
+
+@media (--md-viewport) {
+
+    .Fieldset {
+        display: flex;
+        flex-direction: row; /* 1 */
+        flex-wrap: nowrap; /* 1 */
+    }
+
+    .Fieldset-title {
+        width: 33.333333333%;
+    }
+
+    .Fieldset-body {
+        border-left: 1px solid var(--Fieldset-border-color);
+        border-top: 0;
+        padding: 1.25em 0 1.25em 2em;
+        width: 66.666666667%;
+    }
+
+}
