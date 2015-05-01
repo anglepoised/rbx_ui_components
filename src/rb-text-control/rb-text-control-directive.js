@@ -44,11 +44,21 @@ define([
                 ngModel: '=',
                 form: '=',
                 name: '@',
-                type: '@'
+                type: '@',
+                numberSteps: '@'
             },
             restrict: 'E',
             replace: true,
-            template: template
+            template: template,
+            link: function (scope, element, attributes) {
+                scope.numberSteps = scope.numberSteps || 0;
+                if (scope.type === 'currency') {
+                    scope.inputType = 'number';
+                    scope.numberSteps = scope.numberSteps || 0.01;
+                } else {
+                    scope.inputType = scope.type;
+                }
+            }
         };
     }
 
