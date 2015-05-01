@@ -28,6 +28,7 @@ define([
         return {
             restrict: 'E',
             transclude: true,
+            replace: true,
             template: template,
             link: link
         };
