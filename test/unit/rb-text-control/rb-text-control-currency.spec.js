@@ -67,6 +67,18 @@ define([
 
                     expect($scope.testForm.$invalid).toBe(false);
                 });
+
+                it('should allow one decimal', function () {
+                    recompile({'data': {'currency': 102.1}});
+
+                    expect($scope.testForm.$invalid).toBe(false);
+                });
+
+                it('should allow two decimals', function () {
+                    recompile({'data': {'currency': 102.12}});
+
+                    expect($scope.testForm.$invalid).toBe(false);
+                });
             });
 
             describe('rejects', function () {
