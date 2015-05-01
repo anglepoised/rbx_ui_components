@@ -8,7 +8,7 @@
 </p>
 
 <p>
-    The modal should capture focus. This <a href="#">link</a> should not be focussable when modal is present.
+    The modal should capture focus. This <rb-button ng-click="demoCtrl.log()">Button</rb-button> should not be focussable when modal is present.
 </p>
 
 <p>
@@ -128,33 +128,10 @@
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
-<div class="OverlayModal">
-    <div class="OverlayModal-inner">
-        <div class="ModalConfirm">
-            <div class="ModalConfirm-title">
-                <h2 class="u-textHeading2">
-                    Are you sure?
-                </h2>
-            </div>
-            <div class="ModalConfirm-body">
-                <div class="ModalConfirm-message">
-                    <p>
-                        You are about to ACTION this ITEM.
-                    </p>
-                </div>
-                <div class="ModalConfirm-action">
-                    <div class="ModalConfirm-actionItem">
-                        <rb-button outline="yes">
-                            Cancel
-                        </rb-button>
-                    </div>
-                    <div class="ModalConfirm-actionItem">
-                        <rb-button>
-                            Confirm
-                        </rb-button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<rb-overlay-modal>
+    <rb-modal-confirm title="Are you sure?">
+        <p>
+            You are about to ACTION this ITEM.
+        </p>
+    </rb-modal-confirm>
+</rb-overlay-modal>

@@ -1,6 +1,7 @@
 define([
-    'html!./rb-overlay-modal.tpl.html'
-], function (template) {
+    'html!./rb-overlay-modal.tpl.html',
+    './rb-overlay-modal-directive-link'
+], function (template, link) {
 
     /**
      * @ngdoc directive
@@ -10,11 +11,14 @@ define([
      * @restrict E
      *
      * @description
+     * `<rb-overlay-modal>` is an overlay directive that wraps a modal content
+     * and prevents interaction behind the modal window
      *
      * @usage
      * <hljs lang="html">
      *    <rb-overlay-modal>
-     *     </rb-overlay-modal>
+     *        Drop any content here
+     *    </rb-overlay-modal>
      * </hljs>
      *
      * @ngInject
@@ -22,11 +26,11 @@ define([
     function rbOverlayModalDirective () {
 
         return {
-            scope: {
-            },
             restrict: 'E',
+            transclude: true,
             replace: true,
-            template: template
+            template: template,
+            link: link
         };
     }
 
