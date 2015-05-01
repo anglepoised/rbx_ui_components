@@ -1,28 +1,7 @@
-<div class="ComponentView"  >
-    <div class="ModalConfirm">
-        <div class="ModalConfirm-title">
-            <h2 class="u-textHeading2">
-                Are you sure?
-            </h2>
-        </div>
-        <div class="ModalConfirm-body">
-            <div class="ModalConfirm-message">
-                <p>
-                    You are about to ACTION this ITEM.
-                </p>
-            </div>
-            <div class="ModalConfirm-action">
-                <div class="ModalConfirm-actionItem">
-                    <rb-button outline="yes">
-                        Cancel
-                    </rb-button>
-                </div>
-                <div class="ModalConfirm-actionItem">
-                    <rb-button>
-                        Confirm
-                    </rb-button>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="ComponentView">
+    <rb-modal-confirm title="Are you sure?" on-confirm="demoCtrl.confirm()" on-cancel="demoCtrl.cancel()">
+        <p>
+            You are about to ACTION this ITEM.
+        </p>
+    </rb-modal-confirm>
 </div>

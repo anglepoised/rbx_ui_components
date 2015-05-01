@@ -23,9 +23,13 @@ define([
 
         return {
             scope: {
+                title: '@',
+                onConfirm: '&',
+                onCancel: '&'
             },
             restrict: 'E',
             replace: true,
+            transclude: true,
             template: template
         };
     }
