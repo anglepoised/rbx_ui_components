@@ -12,6 +12,17 @@ define([
                         var result = ctrl.$isEmpty(modelValue) || EMAIL_REGEXP.test(modelValue);
                         return result;
                     };
+                } else if (scope.type === 'currency') {
+
+                    ctrl.$validators.currency = function (modelValue, viewValue) {
+                        var splitSteps = (scope.numberSteps) ? scope.numberSteps.toString().split('.') : [],
+                            maxDecimals = (splitSteps[1]) ? splitSteps[1].length : 0,
+                            splitValue = (viewValue) ? viewValue.split('.') : [],
+                            decimalsPlaces = (splitValue[1]) ? splitValue[1].length : 0,
+                            result = ctrl.$isEmpty(modelValue) || (decimalsPlaces <= maxDecimals);
+
+                        return result;
+                    };
                 }
             }
         };

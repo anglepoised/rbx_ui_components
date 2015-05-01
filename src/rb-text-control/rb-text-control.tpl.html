@@ -4,7 +4,8 @@
     'TextControl--password': type==='password',
     'TextControl--number': type==='number',
     'TextControl--search': type==='search',
-    'TextControl--textarea': type==='textarea'
+    'TextControl--textarea': type==='textarea',
+    'TextControl--currency': type==='currency'
 }">
 
     <label
@@ -19,7 +20,8 @@
         class="TextControl-field"
         name="{{name}}"
         placeholder="{{placeholder}}"
-        type="{{type}}"
+        step="{{ numberSteps }}"
+        type="{{ inputType }}"
         ng-model="$parent.ngModel"
         ng-required="{{isRequired}}"
         ng-disabled="{{isDisabled}}"
@@ -56,6 +58,9 @@
         </div>
         <div class="TextControl-message is-invalid" ng-if="form[name].$error.number">
             Please enter a valid number.
+        </div>
+        <div class="TextControl-message is-invalid" ng-if="form[name].$error.currency">
+            Please enter a valid monetary value.
         </div>
     </div>
 
