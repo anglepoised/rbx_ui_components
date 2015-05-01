@@ -1,53 +1,51 @@
 define([
-    'components/rb-overlay-modeless',
-    'html!./rb-overlay-modeless.tpl.html'
-], function (rbOverlayModeless, template) {
+    'components/rb-overlay-modeless'
+], function (rbOverlayModeless) {
     describe('rb-overlay-modeless', function () {
 
         var $scope,
             $compile,
-            textControl,
             element;
 
-        beforeEach(angular.mock.module('rb-overlay-modeless'));
+        beforeEach(angular.mock.module(rbOverlayModeless.name));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
+            $rootScope = _$rootScope_;
             $scope = _$rootScope_.$new({});
             $compile = _$compile_;
-            rbOverlayModeless = angular.element(template);
-            element = $compile(rbOverlayModeless)($scope);
-            $scope.$apply();
+
+            // Compile directive, apply scope and fetch new isolated scope
+            compileTemplate = function (template) {
+                element = $compile(template)($scope);
+                $scope.$apply();
+                isolatedScope = element.isolateScope();
+            };
         }));
 
         describe('attribute generation', function () {
 
             it('should convert attributes on a rb-overlay-modeless to attributes on the generated overlay',
                 function () {
-                    var overlay = $compile('<rb-overlay-modeless anyattr any-attr></rb-overlay-modeless>')($scope);
+                    compileTemplate('<rb-overlay-modeless anyattr any-attr></rb-overlay-modeless>');
 
-                    expect(overlay[0].hasAttribute('anyattr')).toBe(true);
-                    expect(overlay[0].hasAttribute('any-attr')).toBe(true);
+                    expect(element[0].hasAttribute('anyattr')).toBe(true);
+                    expect(element[0].hasAttribute('any-attr')).toBe(true);
                 });
         });
 
         describe('rendering', function () {
 
             it('should render with a "div" tagname', function () {
-                var overlay = angular.element(template),
-                    element = $compile(overlay)($scope);
+                compileTemplate('<rb-overlay-modeless></rb-overlay-modeless>');
 
-                $scope.$apply();
                 expect(element[0].tagName.toLowerCase()).toEqual('div');
             });
 
             it('should render transcluded elements', function () {
+                compileTemplate('<rb-overlay-modeless><span>Some transcluded element</span></rb-overlay-modeless>');
 
-                var overlay = angular.element(template),
-                    element = $compile(overlay)($scope),
-                    span = angular.element(element.find('span'));
-
-                $scope.$apply();
-                expect(span[0].innerHTML).toEqual('Some transcluded element');
+                var span = angular.element(element.find('span'));
+                expect(span.text()).toEqual('Some transcluded element');
             });
 
         });
