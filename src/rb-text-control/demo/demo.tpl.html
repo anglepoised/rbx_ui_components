@@ -9,28 +9,10 @@
     </div>
     <div class="ComponentView">
         <form name="userForm">
-            <rb-text-control
-                form="userForm"
-                title="Currency"
-                placeholder="Enter amount"
-                name="currency"
-                type="currency"
-                number-steps="0.01"
-                ng-model="demoCtrl.data.amount"
-                is-required="true">
-            </rb-text-control>
 
-            <rb-text-control
-                form="userForm"
-                title="Your Email"
-                placeholder="Enter your email..."
-                name="email"
-                type="email"
-                ng-model="demoCtrl.data.email"
-                is-required="true"
-                help-message="This is so we can harass you">
-            </rb-text-control>
-
+            <h2>
+                Text (type="text")
+            </h2>
             <rb-text-control
                 form="userForm"
                 title="Pet Name"
@@ -42,6 +24,23 @@
                 help-message="i.e. Purple Prawn">
             </rb-text-control>
 
+            <h2>
+                Email (type="email")
+            </h2>
+            <rb-text-control
+                form="userForm"
+                title="Your Email"
+                placeholder="Enter your email..."
+                name="email"
+                type="email"
+                ng-model="demoCtrl.data.email"
+                is-required="true"
+                help-message="This is so we can harass you">
+            </rb-text-control>
+
+            <h2>
+                Password (type="password")
+            </h2>
             <rb-text-control
                 form="userForm"
                 title="Your favorite password"
@@ -52,6 +51,9 @@
                 is-required="true">
             </rb-text-control>
 
+            <h2>
+                Number (type="number")
+            </h2>
             <rb-text-control
                 form="userForm"
                 title="How cool is Nick on a scale of 1-10?"
@@ -62,6 +64,23 @@
                 is-required="true">
             </rb-text-control>
 
+            <h2>
+                Currency (type="currency")
+            </h2>
+            <rb-text-control
+                form="userForm"
+                title="Currency"
+                placeholder="Enter amount"
+                name="currency"
+                type="currency"
+                number-steps="0.01"
+                ng-model="demoCtrl.data.amount"
+                is-required="true">
+            </rb-text-control>
+
+            <h2>
+                Textarea (type="textarea")
+            </h2>
             <rb-text-control
                 form="userForm"
                 title="Description (non-elastic textarea)"
@@ -81,15 +100,9 @@
                 ng-model="demoCtrl.data.elasticDescription">
             </rb-text-control>
 
-            <rb-text-control
-                form="userForm"
-                title="Readonly control"
-                name="readonly_message"
-                type="textarea"
-                is-readonly="true"
-                ng-model="demoCtrl.data.readonlyMessage">
-            </rb-text-control>
-
+            <h2>
+                Search (type="search")
+            </h2>
             <rb-text-control
                 form="userForm"
                 title="What are you looking for?"
@@ -98,6 +111,43 @@
                 type="search"
                 ng-model="demoCtrl.data.query">
             </rb-text-control>
+
+            <h2>
+                Readonly textarea (is-readonly="true")
+            </h2>
+            <rb-text-control
+                form="userForm"
+                name="readonly_message"
+                type="textarea"
+                is-readonly="true"
+                ng-model="demoCtrl.data.readonlyMessage">
+            </rb-text-control>
+
+            <h2>
+                Server Validation
+            </h2>
+
+            <rb-text-control
+                form="userForm"
+                title="Validated on server"
+                placeholder="This field has a custom server validation message (enter below)..."
+                name="somethingElse"
+                type="text"
+                ng-model="demoCtrl.data.somethingElse">
+            </rb-text-control>
+
+            <rb-text-control
+                title="Server validation:"
+                placeholder="This is the validation message for the above field"
+                name="serverMessage"
+                type="text"
+                help-message="This exists since controller is ignorant to form until template has rendered"
+                ng-model="userForm.somethingElse.$error.server">
+            </rb-text-control>
+
+            <h2>
+                Form Summary
+            </h2>
 
             <div ng-if="userForm.$valid">
                 Form is valid

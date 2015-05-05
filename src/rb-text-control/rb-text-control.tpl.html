@@ -49,6 +49,10 @@
         {{helpMessage}}
     </div>
 
+    <div class="TextControl-message is-invalid" ng-if="form[name].$error.server">
+        {{ form[name].$error.server }}
+    </div>
+
     <div ng-if="form[name].$touched">
         <div class="TextControl-message is-invalid" ng-if="form[name].$error.required">
             This field is required.
