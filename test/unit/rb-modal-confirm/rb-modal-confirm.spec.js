@@ -24,9 +24,10 @@ define([
                 $scope.$apply();
                 isolatedScope = element.isolateScope();
 
-                overlay = element.find('rb-overlay-modal');
+                // Overlay element so we can check that's rendered
+                overlay = angular.element(element[0].getElementsByClassName('OverlayModal-inner'));
                 // Set element to root with 'ModalConfirm' class
-                element = angular.element(element.find('rb-overlay-modal').children()[0]);
+                element = angular.element(overlay.children()[0]);
             };
         }));
 
