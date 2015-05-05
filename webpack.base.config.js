@@ -58,14 +58,15 @@ config = {
                 loader: 'file-loader?name=images/[hash].[ext]'
             },
             {
-                test: /\.((woff2)|(woff)|(ttf))$/,
+                test: /\.((woff2)|(woff)|(ttf)|(eot))$/,
                 loader: 'file-loader?name=fonts/[hash].[ext]'
             }
         ],
         noParse: [
             // We don't need to webpack "parse" pre-packaged Angular modules
             path.join(bowerRoot, '/angular'),
-            path.join(bowerRoot, '/angular-ui-router')
+            path.join(bowerRoot, '/angular-ui-router'),
+            path.join(bowerRoot, '/angular-strap')
         ]
     },
     postcss: [
