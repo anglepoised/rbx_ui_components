@@ -1,20 +1,24 @@
-<div class="ModalConfirm">
-    <div class="ModalConfirm-title">
-        <h2 class="u-textHeading2">{{ ::title }}</h2>
-    </div>
-    <div class="ModalConfirm-body">
-        <div class="ModalConfirm-message" ng-transclude></div>
-        <div class="ModalConfirm-action">
-            <div class="ModalConfirm-actionItem">
-                <rb-button outline="yes" ng-click="onCancel()">
-                    Cancel
-                </rb-button>
+<div>
+    <rb-overlay-modal>
+        <div class="ModalConfirm">
+            <div class="ModalConfirm-title">
+                <h2 class="u-textHeading2">{{ ::title }}</h2>
             </div>
-            <div class="ModalConfirm-actionItem">
-                <rb-button ng-click="onConfirm()">
-                    Confirm
-                </rb-button>
+            <div class="ModalConfirm-body">
+                <div class="ModalConfirm-message" ng-transclude></div>
+                <div class="ModalConfirm-action">
+                    <div class="ModalConfirm-actionItem">
+                        <rb-button outline="yes" ng-click="onCancel()">
+                            Cancel
+                        </rb-button>
+                    </div>
+                    <div class="ModalConfirm-actionItem">
+                        <rb-button ng-click="onConfirm()">
+                            Confirm
+                        </rb-button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </rb-overlay-modal>
 </div>

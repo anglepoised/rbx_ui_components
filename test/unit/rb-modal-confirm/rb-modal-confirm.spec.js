@@ -8,6 +8,7 @@ define([
             isolatedScope,
             $compile,
             element,
+            overlay,
             compileTemplate;
 
         beforeEach(angular.mock.module(modalConfirm.name));
@@ -22,10 +23,21 @@ define([
                 element = $compile(template)($scope);
                 $scope.$apply();
                 isolatedScope = element.isolateScope();
+
+                overlay = element.find('rb-overlay-modal');
+                // Set element to root with 'ModalConfirm' class
+                element = angular.element(element.find('rb-overlay-modal').children()[0]);
             };
         }));
 
         describe('rendering', function () {
+
+            it('should render overlay component', function () {
+                compileTemplate('<rb-modal-confirm></rb-modal-confirm>');
+
+                expect(overlay.length).toBe(1);
+            });
+
             it('should render root, title and body with classes', function () {
                 compileTemplate('<rb-modal-confirm></rb-modal-confirm>');
 
