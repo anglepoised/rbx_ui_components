@@ -124,6 +124,28 @@
             </rb-text-control>
 
             <h2>
+                Server Validation
+            </h2>
+
+            <rb-text-control
+                form="userForm"
+                title="Validated on server"
+                placeholder="This field has a custom server validation message (enter below)..."
+                name="somethingElse"
+                type="text"
+                ng-model="demoCtrl.data.somethingElse">
+            </rb-text-control>
+
+            <rb-text-control
+                title="Server validation:"
+                placeholder="This is the validation message for the above field"
+                name="serverMessage"
+                type="text"
+                help-message="This exists since controller is ignorant to form until template has rendered"
+                ng-model="userForm.somethingElse.$error.server">
+            </rb-text-control>
+
+            <h2>
                 Form Summary
             </h2>
 

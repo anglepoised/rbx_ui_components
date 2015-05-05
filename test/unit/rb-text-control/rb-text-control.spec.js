@@ -198,5 +198,19 @@ define([
 
         });
 
+        describe('server validation', function () {
+            describe('message', function () {
+                it('should show when a message is set to the $error.server parameter on the form', function () {
+                    $scope.testForm.firstName.$error.server = 'Something bad happened!';
+                    $scope.$apply(); // Can't use recomile as it will reset the testForm object
+
+                    // Get validation message
+                    element = angular.element(element[0].querySelector('.TextControl-message.is-invalid'));
+
+                    expect(element.html()).toContain('Something bad happened!');
+                });
+            });
+        });
+
     });
 });
