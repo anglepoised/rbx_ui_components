@@ -2,8 +2,9 @@ define([
     'angular-strap',
     './rb-datetime-control-directive',
     './rb-datetime-control-run',
+    './rb-datetime-control-config',
     './rb-datetime-control.css'
-], function (angularStrap, rbDatetimeControlDirective, rbDatetimeControlRun, css) {
+], function (angularStrap, rbDatetimeControlDirective, rbDatetimeControlRun, rbDatetimeControlConfig, css) {
     /**
      * @ngdoc module
      * @name rb-datetime-control
@@ -14,15 +15,7 @@ define([
      */
     var rbDatetimeControl = angular
         .module('rb-datetime-control', ['mgcrea.ngStrap'])
-        .config(function ($datepickerProvider, $timepickerProvider) {
-            angular.extend($datepickerProvider.defaults, {
-                dateFormat: 'dd/MM/yyyy'
-            });
-
-            angular.extend($timepickerProvider.defaults, {
-                timeFormat: 'HH:mm'
-            });
-        })
+        .config(rbDatetimeControlConfig)
         .run(rbDatetimeControlRun)
         .directive('rbDatetimeControl', rbDatetimeControlDirective);
 
