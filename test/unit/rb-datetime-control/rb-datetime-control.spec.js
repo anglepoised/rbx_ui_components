@@ -48,8 +48,9 @@ define([
                 compileTemplate('<rb-datetime-control help-message="Enter a date and time"></rb-datetime-control>');
 
                 messages = element[0].getElementsByClassName('TextControl-message');
-                expect(messages.length).toBe(1);
+                expect(messages.length).toBe(2);
                 expect(angular.element(messages[0]).text()).toContain('Enter a date and time');
+                expect(angular.element(messages[1]).text()).toContain('All times are shown in your local time.');
             });
         });
 

@@ -8,11 +8,13 @@ define([], function () {
      */
     function rbDateTimeControlConfig ($datepickerProvider, $timepickerProvider) {
         angular.extend($datepickerProvider.defaults, {
-            dateFormat: 'dd/MM/yyyy'
+            dateFormat: 'dd/MM/yyyy',
+            dataType: 'string'
         });
 
         angular.extend($timepickerProvider.defaults, {
-            timeFormat: 'HH:mm'
+            timeFormat: 'HH:mm',
+            dataType: 'string'
         });
     }
 

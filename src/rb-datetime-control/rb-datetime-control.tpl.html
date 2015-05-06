@@ -33,6 +33,10 @@
         {{helpMessage}}
     </div>
 
+    <div class="TextControl-message">
+        All times are shown in your local time.
+    </div>
+
     <div ng-if="form['date'].$touched || form['time'].$touched">
         <div class="TextControl-message is-invalid" ng-if="form['date'].$error.required || form['time'].$error.required">
             This field is required.
