@@ -9,7 +9,7 @@ define([
             rbPageTitle.name
         ])
         .config(demoState)
-        .controller('header-ctrl', demoCtrl);
+        .controller('page-title-ctrl', demoCtrl);
 
     return demo;
 });
