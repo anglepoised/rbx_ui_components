@@ -66,5 +66,63 @@ define([
             expect(optionEle.length).toBe(4);
             expect(firstOption.html()).toBe('Volvo');
         });
+
+        it('should add a label', function () {
+            var labelEle;
+
+            compileTemplate('<rb-select items="items" value="name" label="Some title"></rb-select>');
+
+            labelEle = element.find('label');
+
+            expect(labelEle.length).toBe(1);
+            expect(labelEle.html()).toContain('Some title');
+        });
+
+        it('should add a help message', function () {
+            var helpEle;
+
+            compileTemplate('<rb-select items="items" value="name" help-message="Some help text."></rb-select>');
+
+            helpEle = element[0].getElementsByClassName('TextControl-message')[0];
+
+            expect(angular.element(helpEle).html()).toContain('Some help text.');
+        });
+
+        describe('attributes', function () {
+            it('should add a ng-required attribute to the element with a value of true', function () {
+                var selectEle;
+                compileTemplate('<rb-select items="items" value="name" is-required="true"></rb-select>');
+
+                selectEle = element.find('select');
+
+                expect(selectEle.attr('ng-required')).toBe('true');
+            });
+
+            it('should add a ng-required attribute to the element with a value of false', function () {
+                var selectEle;
+                compileTemplate('<rb-select items="items" value="name" is-required="false"></rb-select>');
+
+                selectEle = element.find('select');
+
+                expect(selectEle.attr('ng-required')).toBe('false');
+            });
+
+            it('should add a disabled attribute to the element', function () {
+                compileTemplate('<rb-select items="items" value="name" is-disabled="true"></rb-select>');
+
+                var selectEle = element.find('select');
+
+                expect(selectEle.attr('ng-disabled')).toBe('true');
+            });
+
+            it('should add a ng-required attribute to the element with a value of false', function () {
+                var selectEle;
+                compileTemplate('<rb-select items="items" value="name" is-disabled="false"></rb-select>');
+
+                selectEle = element.find('select');
+
+                expect(selectEle.attr('ng-disabled')).toBe('false');
+            });
+        });
     });
 });

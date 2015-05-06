@@ -23,6 +23,17 @@
         <div class="ComponentView">
             <rb-select
                 form="userForm"
+                name="disabledSelect"
+                label="A disabled select field"
+                value="name"
+                is-disabled="true"
+                items="demoRbSelectCtrl.items"
+                selected="demoRbSelectCtrl.previouslySelected">
+            </rb-select>
+        </div>
+        <div class="ComponentView">
+            <rb-select
+                form="userForm"
                 name="previousPlaceholder"
                 label="Previously selected item (with a placeholder)"
                 value="name"

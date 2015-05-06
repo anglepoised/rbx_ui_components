@@ -36,6 +36,7 @@ define([
                 helpMessage: '@',
                 value: '@',
                 placeholder: '@',
+                isDisabled: '@',
                 isRequired: '@',
                 name: '@',
                 form: '='
