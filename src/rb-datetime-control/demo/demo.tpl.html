@@ -1,1 +1,50 @@
-<rb-datetime-control></rb-datetime-control>
+<section class="Section">
+    <div class="RawHTML">
+        <h2>
+            rb-datetime-control
+        </h2>
+        <h3>
+            Datetime Control Angular Version
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <h4>Basic usage</h4>
+        <form name="basicForm">
+            <rb-datetime-control form="basicForm" title="Date time" ng-model="demoCtrl.data.basic" name="datetime"></rb-datetime-control>
+
+            <div hljs language="json">
+                {{ demoCtrl.data.basic }}
+            </div>
+        </form>
+    </div>
+    <div class="ComponentView">
+        <h4>With required</h4>
+        <form name="requiredForm">
+            <rb-datetime-control form="requiredForm" is-required="true" title="Date time" ng-model="demoCtrl.data.required" name="datetime"></rb-datetime-control>
+
+            <div hljs language="json">
+                {{ demoCtrl.data.required }}
+            </div>
+        </form>
+    </div>
+    <div class="ComponentView">
+        <h4>With help message</h4>
+        <form name="messageForm">
+            <rb-datetime-control form="messageForm" help-message="Please enter a date and time" title="Date time" ng-model="demoCtrl.data.help" name="datetime"></rb-datetime-control>
+
+            <div hljs language="json">
+                {{ demoCtrl.data.help }}
+            </div>
+        </form>
+    </div>
+    <div class="ComponentView">
+        <h4>With placeholder</h4>
+        <form name="placeholderForm">
+            <rb-datetime-control form="placeholderForm" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" title="Date time" ng-model="demoCtrl.data.placeholder" name="datetime"></rb-datetime-control>
+
+            <div hljs language="json">
+                {{ demoCtrl.data.placeholder }}
+            </div>
+        </form>
+    </div>
+</section>

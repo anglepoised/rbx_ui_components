@@ -1,17 +1,37 @@
-<div>
-    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+<div class="TextControl">
+    <label
+        class="TextControl-label u-textLabel"
+        ng-class="{'is-invalid': form['date'].$touched && form['date'].$invalid || form['time'].$touched && form['time'].$invalid}">
+        {{title}}
+    </label>
     <input
         type="text"
         class="TextControl-field"
         name="date"
-        ng-model="date"
+        ng-model="ngModel"
+        ng-required="{{isRequired}}"
+        ng-class="{'is-invalid': form['date'].$touched && form['date'].$invalid}"
+        placeholder="{{placeholderDate}}"
         autocomplete="off"
         bs-datepicker>
-    <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
     <input
         type="text"
         class="TextControl-field"
         name="time"
-        ng-model="time"
+        ng-model="ngModel"
+        ng-required="{{isRequired}}"
+        ng-class="{'is-invalid': form['time'].$touched && form['time'].$invalid}"
+        placeholder="{{placeholderTime}}"
+        autocomplete="off"
         bs-timepicker>
+
+    <div class="TextControl-message" ng-show="helpMessage">
+        {{helpMessage}}
+    </div>
+
+    <div ng-if="form[name].$touched">
+        <div class="TextControl-message is-invalid" ng-if="form[name].$error.required">
+            This field is required.
+        </div>
+    </div>
 </div>

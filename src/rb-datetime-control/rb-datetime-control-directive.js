@@ -13,8 +13,18 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-datetime-control>
-     *     </rb-datetime-control>
+     *     <form name="userForm">
+     *         <rb-datetime-control
+     *             form="userForm"
+     *             title="Your Name"
+     *             placeholder-date="DD/MM/YYYY"
+     *             placeholder-time="HH:MM"
+     *             name="name"
+     *             ng-model="demoCtrl.data.name"
+     *             is-required="true"
+     *             help-message="This is what we will call you!">
+     *         </rb-datetime-control>
+     *     </form>
      * </hljs>
      *
      * @ngInject
@@ -23,6 +33,16 @@ define([
 
         return {
             scope: {
+                isDisabled: '@',
+                isRequired: '@',
+                isReadonly: '@',
+                title: '@',
+                placeholderDate: '@',
+                placeholderTime: '@',
+                helpMessage: '@',
+                ngModel: '=',
+                form: '=',
+                name: '@'
             },
             restrict: 'E',
             replace: true,
