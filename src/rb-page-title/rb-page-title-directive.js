@@ -4,13 +4,13 @@ define([
 
     /**
      * @ngdoc directive
-     * @name rbHeader
-     * @module rb-header
+     * @name rbPageTitle
+     * @module rb-page-title
      *
      * @restrict E
      *
      * @description
-     * `<rb-header>` is a directive that shows a header
+     * `<rb-page-title>` is a directive that shows a page title
      *
      * @usage
      * <hljs lang="html">
@@ -19,8 +19,7 @@ define([
      *    		subheading="This subheading rocks"
      *    		badge-status="statusFinished"
      *    		back-text="Back to home page"
-     *    		back-sref="home"
-     *    		button-click="" button-label="Text Action" button-show="true" button-state="positive">
+     *    		back-sref="home">
      *    </rb-page-title>
      * </hljs>
      *
@@ -32,15 +31,9 @@ define([
             scope: {
                 heading: '@',
                 subheading: '@',
-                button: '@',
                 badgeStatus: '@',
                 backText: '@',
-                backSref: '@',
-                buttonClick: '&',
-                buttonLabel: '@',
-                buttonShow: '=',
-                buttonState: '@',
-                status: '@'
+                backSref: '@'
             },
             restrict: 'E',
             replace: true,

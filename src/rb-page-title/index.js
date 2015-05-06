@@ -12,12 +12,12 @@ define([
      * RB Page Title
      *
      */
-    var rbHeader = angular
+    var rbPageTitle = angular
         .module('rb-page-title', [
             rbBadge.name,
             rbButton.name
         ])
         .directive('rbPageTitle', rbPageTitleDirective);
 
-    return rbHeader;
+    return rbPageTitle;
 });

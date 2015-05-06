@@ -2,12 +2,13 @@ define([
 ], function () {
 
     // @ngInject
-    function headerCtrl ($rootScope, $state, $injector) {
-        this.showButton = true;
-        this.clickButton = function (text) {
-            alert(text);
+    function pageTitleCtrl ($rootScope, $state, $injector) {
+        var $this = this;
+        this.status = 'statusPending';
+        this.changeStatus = function (status) {
+            $this.status = status;
         };
     }
 
-    return headerCtrl;
+    return pageTitleCtrl;
 });

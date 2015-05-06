@@ -11,20 +11,27 @@
             <li>A mandatory page body, containing a mandatory page heading.</li>
             <li>An optional badge, displayed near the page heading.</li>
             <li>An optional subheading.</li>
-            <li>An optional action, containing a button.</li>
+            <li>An optional action, containing a button or a set of buttons to fire it.</li>
         </ul>
         <h3>
             Demo
         </h3>
     </div>
     <div class="ComponentView">
-        <button ng-click="pageTitleDemoCtrl.showButton = !pageTitleDemoCtrl.showButton">Hide the button from page title</button>
         <rb-page-title
             heading="My Test Page"
             subheading="This subheading rocks"
             back-text="Back to home" back-sref="app"
-            button-click="pageTitleDemoCtrl.clickButton('The page title button was clicked!')" button-label="Text Action" button-show="pageTitleDemoCtrl.showButton" button-state="positive"
-            badge-status="statusPending">
+            badge-status="{{pageTitleDemoCtrl.status}}">
+                <rb-button state="positive"
+                    ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
+                    ng-if="pageTitleDemoCtrl.status==='statusPending'">Publish</rb-button>
+                <rb-button state="danger" outline="yes"
+                    ng-click="pageTitleDemoCtrl.changeStatus('statusPaused')"
+                    ng-if="pageTitleDemoCtrl.status==='statusLive'">Pause</rb-button>
+                <rb-button state="positive" outline="yes"
+                    ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
+                    ng-if="pageTitleDemoCtrl.status==='statusPaused'">Re-Publish</rb-button>
         </rb-page-title>
     </div>
 </section>

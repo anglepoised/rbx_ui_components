@@ -7,6 +7,7 @@ define([
             element,
             $scope,
             $compile,
+            compileTemplate,
             template = '<rb-page-title heading="My heading" subheading="My Subheading"></rb-page-title>';
 
         beforeEach(angular.mock.module(rbPageTitle.name));
@@ -15,6 +16,14 @@ define([
             $scope = _$rootScope_.$new({});
             $compile = _$compile_;
             pageTitle = angular.element(template);
+
+            // Compile directive, apply scope and fetch new isolated scope
+            compileTemplate = function (template) {
+                element = $compile(template)($scope);
+                $scope.$apply();
+                isolatedScope = element.isolateScope();
+            };
+
         }));
 
         it('should set the heading in accordance to the heading attribute', function () {
@@ -98,43 +107,13 @@ define([
             });
         });
 
-        describe('button', function () {
-            it('should add a button to the Page title', function () {
-                pageTitle.attr('button-show', true);
-                pageTitle.attr('button-label', 'Some text');
+        describe('button section', function () {
 
-                element = $compile(pageTitle)($scope);
+            it('should render transcluded buttons', function () {
+                compileTemplate('<rb-page-title><rb-button>Some button</rb-button></rb-page-title>');
 
-                $scope.$apply();
-
-                expect(element.html()).toContain('Some text');
-            });
-
-            it('should add a button section to the Page title', function () {
-                var buttonEle;
-
-                pageTitle.attr('button-show', true);
-                pageTitle.attr('button-label', 'Some text');
-
-                element = $compile(pageTitle)($scope);
-
-                $scope.$apply();
-
-                buttonEle = element[0].getElementsByClassName('PageTitle-button');
-
-                expect(buttonEle.length).toBe(1);
-            });
-
-            it('should not add a button section Page title', function () {
-                var buttonEle;
-
-                element = $compile(pageTitle)($scope);
-
-                $scope.$apply();
-
-                buttonEle = element[0].getElementsByClassName('PageTitle-button');
-
-                expect(buttonEle.length).toBe(0);
+                var button = angular.element(element.find('button'));
+                expect(button[0].innerHTML).toContain('Some button');
             });
         });
     });
