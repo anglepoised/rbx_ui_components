@@ -8,7 +8,7 @@ define([
             _options = [
                 {'text': 'Option 1'},
                 {'text': 'Option 2', 'state': 'test-state'},
-                {'text': 'Option 3', 'url': 'http://example.com'}
+                {'text': 'Option 3', 'url': 'http://example.com', 'target': '_self'}
             ],
             template = '<rb-nav-bar options="options"></rb-nav-bar>';
 
@@ -57,7 +57,7 @@ define([
                 expect(angular.element(options[1]).attr('ui-sref')).toBe('test-state');
             });
 
-            it('should set ui-sref if option has a state', function () {
+            it('should set href if option has a url', function () {
                 var navBar = angular.element(template),
                     element = $compile(navBar)($scope),
                     options;
@@ -65,6 +65,16 @@ define([
                 $scope.$apply();
                 options = angular.element(element.find('a'));
                 expect(angular.element(options[2]).attr('href')).toBe('http://example.com');
+            });
+
+            it('should set the target if set', function () {
+                var navBar = angular.element(template),
+                    element = $compile(navBar)($scope),
+                    options;
+
+                $scope.$apply();
+                options = angular.element(element.find('a'));
+                expect(angular.element(options[2]).attr('target')).toBe('_self');
             });
         });
     });
