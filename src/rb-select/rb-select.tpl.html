@@ -4,8 +4,12 @@
         ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}">
         {{ label }}
     </label>
-    <select ng-options="item[value] for item in items" ng-model="selected">
-        <option value="" ng-if="placeholder">{{ placeholder }}</option>
+    <select
+        name="{{name}}"
+        ng-options="item[value] for item in items"
+        ng-model="selected"
+        ng-required="true">
+            <option value="" ng-if="placeholder">{{ placeholder }}</option>
     </select>
 
     <div class="TextControl-message" ng-show="helpMessage">

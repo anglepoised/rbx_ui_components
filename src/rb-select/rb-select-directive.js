@@ -18,7 +18,7 @@ define([
      *    	selected="dataModel"
      *    	label="Select a car"
      *    	help-message="i.e. Your favourite type of car"
-     *    	value=""
+     *    	value="key"
      *    	placeholder="Car"
      *    >
      *    </rb-select>
@@ -35,7 +35,10 @@ define([
                 label: '@',
                 helpMessage: '@',
                 value: '@',
-                placeholder: '@'
+                placeholder: '@',
+                isRequired: '@',
+                name: '@',
+                form: '='
             },
             restrict: 'E',
             replace: true,
