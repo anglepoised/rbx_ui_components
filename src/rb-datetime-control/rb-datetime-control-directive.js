@@ -19,7 +19,6 @@ define([
      *             title="Your Name"
      *             placeholder-date="DD/MM/YYYY"
      *             placeholder-time="HH:MM"
-     *             name="name"
      *             ng-model="demoCtrl.data.name"
      *             is-required="true"
      *             help-message="This is what we will call you!">

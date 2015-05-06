@@ -1,4 +1,4 @@
-<div class="TextControl">
+<div class="TextControl DatetimeControl">
     <label
         class="TextControl-label u-textLabel"
         ng-class="{'is-invalid': form['date'].$touched && form['date'].$invalid || form['time'].$touched && form['time'].$invalid}">
@@ -10,6 +10,8 @@
         name="date"
         ng-model="ngModel"
         ng-required="{{isRequired}}"
+        ng-disabled="{{isDisabled}}"
+        ng-readonly="{{isReadonly}}"
         ng-class="{'is-invalid': form['date'].$touched && form['date'].$invalid}"
         placeholder="{{placeholderDate}}"
         autocomplete="off"
@@ -20,6 +22,8 @@
         name="time"
         ng-model="ngModel"
         ng-required="{{isRequired}}"
+        ng-disabled="{{isDisabled}}"
+        ng-readonly="{{isReadonly}}"
         ng-class="{'is-invalid': form['time'].$touched && form['time'].$invalid}"
         placeholder="{{placeholderTime}}"
         autocomplete="off"
@@ -29,9 +33,15 @@
         {{helpMessage}}
     </div>
 
-    <div ng-if="form[name].$touched">
-        <div class="TextControl-message is-invalid" ng-if="form[name].$error.required">
+    <div ng-if="form['date'].$touched || form['time'].$touched">
+        <div class="TextControl-message is-invalid" ng-if="form['date'].$error.required || form['time'].$error.required">
             This field is required.
+        </div>
+        <div class="TextControl-message is-invalid" ng-if="form['date'].$error.date">
+            Invalid date format
+        </div>
+        <div class="TextControl-message is-invalid" ng-if="form['time'].$error.date">
+            Invalid time format
         </div>
     </div>
 </div>
