@@ -1,3 +1,24 @@
-<select ng-options="item[value] for item in items" ng-model="selected">
-    <option value="" ng-if="placeholder">{{ placeholder }}</option>
-</select>
+<div class="TextControl TextControl--select">
+    <label
+        class="TextControl-label u-textLabel"
+        ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}">
+        {{ label }}
+    </label>
+    <select ng-options="item[value] for item in items" ng-model="selected">
+        <option value="" ng-if="placeholder">{{ placeholder }}</option>
+    </select>
+
+    <div class="TextControl-message" ng-show="helpMessage">
+        {{helpMessage}}
+    </div>
+
+    <div class="TextControl-message is-invalid" ng-if="form[name].$error.server">
+        {{ form[name].$error.server }}
+    </div>
+
+    <div ng-if="form[name].$touched">
+        <div class="TextControl-message is-invalid" ng-if="form[name].$error.required">
+            This field is required.
+        </div>
+    </div>
+</div>
