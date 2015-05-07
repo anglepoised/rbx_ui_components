@@ -45,7 +45,12 @@ define([
             },
             restrict: 'E',
             replace: true,
-            template: template
+            template: template,
+            link: function (scope, element, attrs) {
+                // Dynamic date/time field names
+                scope.dateName = scope.name + 'Date';
+                scope.timeName = scope.name + 'Time';
+            }
         };
     }
 

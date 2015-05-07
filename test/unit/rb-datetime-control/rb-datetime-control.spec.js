@@ -28,7 +28,7 @@ define([
 
         describe('rendering', function () {
             it('should render root, title and body with classes', function () {
-                compileTemplate('<rb-datetime-control></rb-datetime-control>');
+                compileTemplate('<rb-datetime-control name="test"></rb-datetime-control>');
 
                 expect(element.length).toBe(1);
                 expect(element.hasClass('TextControl')).toBe(true);
@@ -36,7 +36,7 @@ define([
             });
 
             it('should render two inputs with classes', function () {
-                compileTemplate('<rb-datetime-control></rb-datetime-control>');
+                compileTemplate('<rb-datetime-control name="test"></rb-datetime-control>');
 
                 var inputs = element.find('input');
                 expect(inputs.length).toBe(2);
@@ -45,18 +45,32 @@ define([
             });
 
             it('should render help message div', function () {
-                compileTemplate('<rb-datetime-control help-message="Enter a date and time"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" help-message="Enter a date and time"></rb-datetime-control>'
+                );
 
                 messages = element[0].getElementsByClassName('TextControl-message');
                 expect(messages.length).toBe(2);
                 expect(angular.element(messages[0]).text()).toContain('Enter a date and time');
                 expect(angular.element(messages[1]).text()).toContain('All times are shown in your local time.');
             });
+
+            it('should name two inputs with generated names', function () {
+                compileTemplate(
+                    '<rb-datetime-control name="test" help-message="Enter a date and time"></rb-datetime-control>'
+                );
+
+                var firstInput = angular.element(element.find('input')[0]),
+                    secondInput = angular.element(element.find('input')[1]);
+
+                expect(firstInput.attr('name')).toBe('testDate');
+                expect(secondInput.attr('name')).toBe('testTime');
+            });
         });
 
         describe('label', function () {
             it('should contain title', function () {
-                compileTemplate('<rb-datetime-control title="The date and time"></rb-datetime-control>');
+                compileTemplate('<rb-datetime-control name="test" title="The date and time"></rb-datetime-control>');
                 expect(element.find('label').text()).toContain('The date and time');
             });
 
@@ -71,7 +85,7 @@ define([
             });
 
             it('should not use invalid class when control invalid before touch', function () {
-                compileTemplate('<rb-datetime-control></rb-datetime-control>');
+                compileTemplate('<rb-datetime-control name="test"></rb-datetime-control>');
 
                 expect(element.find('label').hasClass('is-invalid')).toBe(false);
             });
@@ -80,7 +94,9 @@ define([
         describe('input', function () {
             it('should bind to the model', function () {
                 $scope.dateTime = '2015-04-27T11:29:05.474Z';
-                compileTemplate('<rb-datetime-control ng-model="dateTime" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" ng-model="dateTime" form="aForm"></rb-datetime-control>'
+                );
 
                 expect(element.find('input')[0].value).toBe('27/04/2015');
                 // Timezone should be set with TZ=UTC flag before running tests so phamtom doesn't use local timzone.
@@ -88,7 +104,9 @@ define([
             });
 
             it('should use invalid class when control invalid after touch', function () {
-                compileTemplate('<rb-datetime-control is-required="true" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-required="true" form="aForm"></rb-datetime-control>'
+                );
 
                 var firstInput = angular.element(element.find('input')[0]),
                     secondInput = angular.element(element.find('input')[1]);
@@ -103,7 +121,7 @@ define([
             });
 
             it('should not use invalid class when control invalid before touch', function () {
-                compileTemplate('<rb-datetime-control form="aForm"></rb-datetime-control>');
+                compileTemplate('<rb-datetime-control name="test" form="aForm"></rb-datetime-control>');
 
                 var firstInput = angular.element(element.find('input')[0]),
                     secondInput = angular.element(element.find('input')[1]);
@@ -113,7 +131,9 @@ define([
             });
 
             it('should be disabled when is-disabled is set', function () {
-                compileTemplate('<rb-datetime-control is-disabled="true" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-disabled="true" form="aForm"></rb-datetime-control>'
+                );
 
                 var firstInput = angular.element(element.find('input')[0]),
                     secondInput = angular.element(element.find('input')[1]);
@@ -123,12 +143,16 @@ define([
             });
 
             it('should not be disabled when is-disabled is set', function () {
-                compileTemplate('<rb-datetime-control is-disabled="false" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-disabled="false" form="aForm"></rb-datetime-control>'
+                );
                 expect(element.find('input').attr('disabled')).toBe(undefined);
             });
 
             it('should become required when is-required is true', function () {
-                compileTemplate('<rb-datetime-control is-required="true" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-required="true" form="aForm"></rb-datetime-control>'
+                );
 
                 var firstInput = angular.element(element.find('input')[0]),
                     secondInput = angular.element(element.find('input')[1]);
@@ -138,7 +162,9 @@ define([
             });
 
             it('should not be required when is-required is false', function () {
-                compileTemplate('<rb-datetime-control is-required="false" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-required="false" form="aForm"></rb-datetime-control>'
+                );
 
                 var firstInput = angular.element(element.find('input')[0]),
                     secondInput = angular.element(element.find('input')[1]);
@@ -148,7 +174,9 @@ define([
             });
 
             it('should be readonly when is-readonly is true', function () {
-                compileTemplate('<rb-datetime-control is-readonly="true" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-readonly="true" form="aForm"></rb-datetime-control>'
+                );
 
                 var firstInput = angular.element(element.find('input')[0]),
                     secondInput = angular.element(element.find('input')[1]);
@@ -158,7 +186,9 @@ define([
             });
 
             it('should not be readonly when is-readonly is false', function () {
-                compileTemplate('<rb-datetime-control is-readonly="false" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-readonly="false" form="aForm"></rb-datetime-control>'
+                );
 
                 var firstInput = angular.element(element.find('input')[0]),
                     secondInput = angular.element(element.find('input')[1]);
@@ -169,7 +199,8 @@ define([
 
             it('should accept a placeholder for time and date', function () {
                 compileTemplate(
-                    '<rb-datetime-control placeholder-date="DD/MM/YY" placeholder-time="HH:MM"></rb-datetime-control>'
+                    '<rb-datetime-control name="test" placeholder-date="DD/MM/YY" placeholder-time="HH:MM">' +
+                    '</rb-datetime-control>'
                 );
 
                 var firstInput = angular.element(element.find('input')[0]),
@@ -184,7 +215,9 @@ define([
         describe('validation', function () {
 
             it('should show validation messages when invalid after touch', function () {
-                compileTemplate('<rb-datetime-control is-required="true" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-required="true" form="aForm"></rb-datetime-control>'
+                );
 
                 // Focus and unfocus the input field to trigger validation messages
                 element.find('input').triggerHandler('focus');
@@ -197,7 +230,9 @@ define([
             });
 
             it('should not show validation messages when invalid before touch', function () {
-                compileTemplate('<rb-datetime-control is-required="true" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-required="true" form="aForm"></rb-datetime-control>'
+                );
 
                 // Get validation message
                 element = angular.element(element[0].querySelector('.TextControl-message.is-invalid'));
@@ -206,24 +241,28 @@ define([
             });
 
             it('should invalidate the form field when invalid', function () {
-                compileTemplate('<rb-datetime-control is-required="true" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-required="true" form="aForm"></rb-datetime-control>'
+                );
 
                 // Focus and unfocus the input field to trigger validation messages
                 element.find('input').triggerHandler('focus');
                 element.find('input').triggerHandler('blur');
 
-                expect($scope.aForm.date.$invalid).toBe(true);
+                expect($scope.aForm.testDate.$invalid).toBe(true);
                 expect($scope.aForm.$invalid).toBe(true);
             });
 
             it('should validate the form field when valid', function () {
-                compileTemplate('<rb-datetime-control is-required="false" form="aForm"></rb-datetime-control>');
+                compileTemplate(
+                    '<rb-datetime-control name="test" is-required="false" form="aForm"></rb-datetime-control>'
+                );
 
                 // Focus and unfocus the input field to trigger validation messages
                 element.find('input').triggerHandler('focus');
                 element.find('input').triggerHandler('blur');
 
-                expect($scope.aForm.date.$invalid).toBe(false);
+                expect($scope.aForm.testDate.$invalid).toBe(false);
                 expect($scope.aForm.$invalid).toBe(false);
             });
 
