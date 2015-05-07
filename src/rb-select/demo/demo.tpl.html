@@ -1,42 +1,77 @@
 
 <section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-select
-        </h2>
-        <h3>
-            Select field with a none previously selected item &amp; a placeholder
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-select value="name" items="demoRbSelectCtrl.items" selected="demoRbSelectCtrl.emptySelect" placeholder="Your favourite Car"></rb-select>
-        Selected: {{ demoRbSelectCtrl.emptySelect }}
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Select field with a previously selected item &amp; a placeholder
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-select value="name" items="demoRbSelectCtrl.items" selected="demoRbSelectCtrl.previouslySelected" placeholder="Your favourite Car"></rb-select>
-        Selected: {{ demoRbSelectCtrl.previouslySelected }}
-    </div>
-    <div class="RawHTML">
-        <h3>
-            No placeholder and not previously selected
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-select value="name" items="demoRbSelectCtrl.items" selected="demoRbSelectCtrl.emptySelect"></rb-select>
-        Selected: {{ demoRbSelectCtrl.emptySelect }}
-    </div>
-    <div class="RawHTML">
-        <h3>
-            No placeholder and previously selected
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-select value="name" items="demoRbSelectCtrl.items" selected="demoRbSelectCtrl.previouslySelected"></rb-select>
-        Selected: {{ demoRbSelectCtrl.previouslySelected }}
-    </div>
+    <form name="userForm">
+        <div class="RawHTML">
+            <h2>
+                rb-select
+            </h2>
+        </div>
+        <div class="ComponentView">
+            <rb-select
+                form="userForm"
+                label="Select field no previous (with a placeholder)"
+                value="name"
+                name="noPreviousPlaceholder"
+                is-required="true"
+                items="demoRbSelectCtrl.items"
+                selected="demoRbSelectCtrl.emptySelect"
+                help-message="i.e. Your favourite make"
+                placeholder="Car">
+            </rb-select>
+            Selected: {{ demoRbSelectCtrl.emptySelect }}
+        </div>
+        <div class="ComponentView">
+            <rb-select
+                form="userForm"
+                name="disabledSelect"
+                label="A disabled select field"
+                value="name"
+                is-disabled="true"
+                items="demoRbSelectCtrl.items"
+                selected="demoRbSelectCtrl.previouslySelected">
+            </rb-select>
+        </div>
+        <div class="ComponentView">
+            <rb-select
+                form="userForm"
+                name="previousPlaceholder"
+                label="Previously selected item (with a placeholder)"
+                value="name"
+                is-required="true"
+                items="demoRbSelectCtrl.items"
+                selected="demoRbSelectCtrl.previouslySelected"
+                placeholder="Your favourite Car">
+            </rb-select>
+            Selected: {{ demoRbSelectCtrl.previouslySelected }}
+        </div>
+        <div class="RawHTML">
+            <h3>
+                No placeholder and not previously selected
+            </h3>
+        </div>
+        <div class="ComponentView">
+            <rb-select
+                form="userForm"
+                name="noPreviousNoPlaceholder"
+                is-required="true"
+                label="Select field no previous selected (no placeholder)"
+                value="name"
+                items="demoRbSelectCtrl.items"
+                selected="demoRbSelectCtrl.emptySelect">
+            </rb-select>
+            Selected: {{ demoRbSelectCtrl.emptySelect }}
+        </div>
+        <div class="ComponentView">
+            <rb-select
+                form="userForm"
+                name="previousNoPlaceholder"
+                is-required="true"
+                label="Select field with a previous selected (no placeholder)"
+                value="name"
+                items="demoRbSelectCtrl.items"
+                selected="demoRbSelectCtrl.previouslySelected">
+            </rb-select>
+            Selected: {{ demoRbSelectCtrl.previouslySelected }}
+        </div>
+    </form>
 </section>

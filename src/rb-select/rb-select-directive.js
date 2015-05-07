@@ -13,8 +13,15 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-select>
-     *     </rb-select>
+     *    <rb-select
+     *    	items="[]"
+     *    	selected="dataModel"
+     *    	label="Select a car"
+     *    	help-message="i.e. Your favourite type of car"
+     *    	value="key"
+     *    	placeholder="Car"
+     *    >
+     *    </rb-select>
      * </hljs>
      *
      * @ngInject
@@ -25,8 +32,14 @@ define([
             scope: {
                 items: '=',
                 selected: '=',
+                label: '@',
+                helpMessage: '@',
                 value: '@',
-                placeholder: '@'
+                placeholder: '@',
+                isDisabled: '@',
+                isRequired: '@',
+                name: '@',
+                form: '='
             },
             restrict: 'E',
             replace: true,
