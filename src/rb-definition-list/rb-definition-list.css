@@ -1,4 +1,19 @@
-// TO BE REVIEWED
+/** @define rbDefinitionList; use strict */
+
+/**
+ * The `.rbDefinitionList` component...
+ */
+
+:root {
+    --rbDefinitionList-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rbDefinitionList {
+}
 
 dl.multicolumn {
     overflow: auto;
