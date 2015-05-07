@@ -28,8 +28,8 @@ define([
                 helpMessage: '@',
                 isDisabled: '@',
                 isRequired: '@',
-                name: '@',
-                isRow: '@'
+                isRow: '@',
+                name: '@'
             },
             restrict: 'E',
             replace: true,

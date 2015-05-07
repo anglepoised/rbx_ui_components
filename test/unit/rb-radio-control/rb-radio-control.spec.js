@@ -92,7 +92,7 @@ define([
                 expect(angular.element(element[0]).hasClass('RadioControl--row')).toBe(false);
             });
 
-            it('should have the RadioControl--row class', function () {
+            it('should have the radio control row class', function () {
                 compileTemplate('<rb-radio-control is-row=true></rb-radio-control>');
 
                 expect(angular.element(element[0]).hasClass('RadioControl--row')).toBe(true);
