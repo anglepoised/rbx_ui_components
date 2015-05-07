@@ -5,12 +5,10 @@ define([
     function demoCtrl ($rootScope, $state, $injector) {
         this.data = [
             {
-                label: 'Radio Label',
-                value: ''
+                label: 'Radio label'
             },
             {
-                label: 'Radio invalid',
-                invalid: true
+                label: 'Radio invalid'
             },
             {
                 label: 'Radio disabled',

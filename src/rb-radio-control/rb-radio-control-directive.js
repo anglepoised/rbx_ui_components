@@ -28,8 +28,7 @@ define([
                 isDisabled: '@',
                 isRequired: '@',
                 name: '@',
-                row: '@',
-                title: '@'
+                row: '@'
             },
             restrict: 'E',
             replace: true,

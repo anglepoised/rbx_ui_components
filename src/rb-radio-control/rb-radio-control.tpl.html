@@ -19,7 +19,8 @@
                 ng-checked="{{value.checked}}"
                 ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
                 ng-disabled="{{isDisabled || value.disabled}}"
-                ng-required="{{isRequired}}"
+                ng-required="{{isRequired || value.required}}"
+                value="{{value.value}}"
                 type="radio">
 
             <label
