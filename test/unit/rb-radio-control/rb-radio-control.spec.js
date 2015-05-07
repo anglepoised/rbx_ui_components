@@ -66,6 +66,39 @@ define([
             });
         });
 
+        describe('disabled', function () {
+            it('should enabled by default', function () {
+                compileTemplate('<rb-radio-control data="data"></rb-radio-control>');
+
+                var radio = element.find('input');
+
+                angular.forEach(radio, function (value, key) {
+                    expect(value.hasAttribute('disabled')).toBe(false);
+                });
+            });
+
+            it('should disable all radio inputs', function () {
+                compileTemplate('<rb-radio-control data="data" is-disabled=true></rb-radio-control>');
+
+                var radio = element.find('input');
+
+                angular.forEach(radio, function (value, key) {
+                    expect(value.hasAttribute('disabled')).toBe(true);
+                });
+            });
+
+            it('should only disable the first radio input', function () {
+                data[0].disabled = true;
+
+                compileTemplate('<rb-radio-control data="data"></rb-radio-control>');
+
+                var radio = element.find('input');
+
+                expect(radio[0].hasAttribute('disabled')).toBe(true);
+                expect(radio[1].hasAttribute('disabled')).toBe(false);
+            });
+        });
+
         describe('help message', function () {
             it('should show', function () {
                 compileTemplate('<rb-radio-control help-message="Radio Control Help Message"></rb-radio-control>');
