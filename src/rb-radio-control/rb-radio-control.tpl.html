@@ -1,13 +1,13 @@
 <div class="RadioControl" ng-class="{
-    'RadioControl--row': row
+    'RadioControl--row': isRow
 }">
 
     <div class="RadioControl-items">
         <div
             class="RadioControl-item"
             ng-class="{
-                'is-invalid': form[name].$touched && form[name].$invalid,
                 'is-disabled': isDisabled,
+                'is-invalid': form[name].$touched && form[name].$invalid,
                 'is-required': isRequired
             }"
             ng-repeat="(key, value) in data">
@@ -17,7 +17,11 @@
                 id="{{name}}-{{key}}"
                 name="{{name}}"
                 ng-checked="{{value.checked}}"
-                ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
+                ng-class="{
+                    'is-focused': value.focused,
+                    'is-invalid': form[name].$touched && form[name].$invalid,
+                    'is-pressed': value.pressed
+                }"
                 ng-disabled="{{isDisabled || value.disabled}}"
                 ng-required="{{isRequired || value.required}}"
                 value="{{value.value}}"

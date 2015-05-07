@@ -21,6 +21,14 @@ define([
             {
                 label: 'Radio checked',
                 checked: true
+            },
+            {
+                label: 'Radio pressed',
+                pressed: true
+            },
+            {
+                label: 'Radio focused',
+                focused: true
             }
         ];
 
@@ -30,6 +38,8 @@ define([
                 label: 'Radio label ' + (i + 1)
             });
         }
+
+        this.helpMessage = 'Optional group help message';
     }
 
     return demoCtrl;

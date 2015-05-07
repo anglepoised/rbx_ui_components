@@ -25,10 +25,11 @@ define([
             scope: {
                 data: '=',
                 form: '=',
+                helpMessage: '@',
                 isDisabled: '@',
                 isRequired: '@',
                 name: '@',
-                row: '@'
+                isRow: '@'
             },
             restrict: 'E',
             replace: true,
