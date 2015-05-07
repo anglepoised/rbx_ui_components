@@ -27,8 +27,44 @@
             <strong>Focused:</strong> distinct from pressed. Tab to control with keyboard, but don't hit space to activate.
         </p>
         <h3>
-            Default
+            Current Angular Version
         </h3>
+        <h4>
+            Default
+        </h4>
+    </div>
+    <div class="ComponentView">
+        <form name="radioForm">
+            <rb-radio-control
+                data="demoCtrl.data"
+                form="radioForm"
+                name="ng-radio-group">
+            </rb-radio-control>
+        </form>
+    </div>
+    <div class="RawHTML">
+        <h4>
+            Row modifier
+        </h4>
+    </div>
+    <div class="ComponentView">
+        <form name="radioRowForm">
+            <rb-radio-control
+                data="demoCtrl.dataRow"
+                form="radioRowForm"
+                name="ng-radio--row-group"
+                row=true>
+            </rb-radio-control>
+        </form>
+    </div>
+
+    <div class="RawHTML">
+        <h3>
+            Static Reference Version
+        </h3>
+        <h4>
+            Default
+        </h4>
     </div>
     <div class="ComponentView">
         <div class="RadioControl">
@@ -71,9 +107,9 @@
         </div>
     </div>
     <div class="RawHTML">
-        <h3>
+        <h4>
             Row modifier
-        </h3>
+        </h4>
     </div>
     <div class="ComponentView">
         <div class="RadioControl RadioControl--row">

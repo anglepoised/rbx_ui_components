@@ -1,0 +1,44 @@
+<div class="RadioControl" ng-class="{
+    'RadioControl--row': row
+}">
+
+    <div class="RadioControl-items">
+        <div
+            class="RadioControl-item"
+            ng-class="{
+                'is-invalid': form[name].$touched && form[name].$invalid,
+                'is-disabled': isDisabled,
+                'is-required': isRequired
+            }"
+            ng-repeat="(key, value) in data">
+
+            <input
+                class="RadioControl-field"
+                id="{{name}}-{{key}}"
+                name="{{name}}"
+                ng-checked="{{value.checked}}"
+                ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
+                ng-disabled="{{isDisabled || value.disabled}}"
+                ng-required="{{isRequired}}"
+                type="radio">
+
+            <label
+                class="RadioControl-label u-textLabel"
+                for="{{name}}-{{key}}">
+                {{value.label}}
+            </label>
+        </div>
+    </div>
+
+    <div
+        class="RadioControl-message"
+        ng-show="helpMessage">
+        {{helpMessage}}
+    </div>
+
+    <div
+        class="RadioControl-message is-invalid"
+        ng-if="form[name].$touched && form[name].$error.required">
+        This field is required.
+    </div>
+</div>
