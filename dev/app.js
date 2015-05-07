@@ -29,6 +29,7 @@ define([
     'components/rb-text-control/demo',
     'components/rb-warning-messages/demo',
     'components/rb-progress-button/demo',
+    'components/rb-definition-list/demo',
     'rbx_style_guide'
 ], function (
     uiRouter,
@@ -61,6 +62,7 @@ define([
     rbTextControlDemo,
     rbWarningMessagesDemo,
     rbProgressButtonDemo,
+    rbDefinitionListDemo,
     css
 ) {
     // @ngInject
@@ -94,7 +96,8 @@ define([
             rbSystemMessage.name,
             rbTextControlDemo.name,
             rbWarningMessagesDemo.name,
-            rbProgressButtonDemo.name
+            rbProgressButtonDemo.name,
+            rbDefinitionListDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
