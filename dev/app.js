@@ -7,6 +7,7 @@ define([
     'components/rb-data-summary/demo',
     'components/rb-datetime-control/demo',
     'components/rb-date-time/demo',
+    'components/rb-definition-list/demo',
     'components/rb-fieldset/demo',
     'components/rb-footer/demo',
     'components/rb-form-message/demo',
@@ -21,6 +22,7 @@ define([
     'components/rb-overlay-panel/demo',
     'components/rb-page-header/demo',
     'components/rb-page-title/demo',
+    'components/rb-progress-button/demo',
     'components/rb-ratio/demo',
     'components/rb-section/demo',
     'components/rb-select/demo',
@@ -28,8 +30,6 @@ define([
     'components/rb-system-message/demo',
     'components/rb-text-control/demo',
     'components/rb-warning-messages/demo',
-    'components/rb-progress-button/demo',
-    'components/rb-definition-list/demo',
     'rbx_style_guide'
 ], function (
     uiRouter,
@@ -40,6 +40,7 @@ define([
     rbDataSummaryDemo,
     rbDatetimeControlDemo,
     rbDateTimeDemo,
+    rbDefinitionListDemo,
     rbFieldsetDemo,
     rbFooterDemo,
     rbFormMessageDemo,
@@ -54,6 +55,7 @@ define([
     rbOverlayPanelDemo,
     rbPageHeaderDemo,
     rbPageTitleDemo,
+    rbProgressButtonDemo,
     rbRatioDemo,
     rbSectionDemo,
     rbSelectDemo,
@@ -61,8 +63,6 @@ define([
     rbSystemMessage,
     rbTextControlDemo,
     rbWarningMessagesDemo,
-    rbProgressButtonDemo,
-    rbDefinitionListDemo,
     css
 ) {
     // @ngInject
@@ -75,6 +75,7 @@ define([
             rbDataSummaryDemo.name,
             rbDatetimeControlDemo.name,
             rbDateTimeDemo.name,
+            rbDefinitionListDemo.name,
             rbFieldsetDemo.name,
             rbFooterDemo.name,
             rbFormMessageDemo.name,
@@ -89,15 +90,14 @@ define([
             rbOverlayPanelDemo.name,
             rbPageHeaderDemo.name,
             rbPageTitleDemo.name,
+            rbProgressButtonDemo.name,
             rbRatioDemo.name,
             rbSectionDemo.name,
             rbSelectDemo.name,
             rbSiteDemo.name,
             rbSystemMessage.name,
             rbTextControlDemo.name,
-            rbWarningMessagesDemo.name,
-            rbProgressButtonDemo.name,
-            rbDefinitionListDemo.name
+            rbWarningMessagesDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
