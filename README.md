@@ -22,7 +22,6 @@ A set of angular components.
 * Run `npm start`.
 
 ## Running unit tests
-
 Use grunt to run unit tests:
 
 	grunt unit
@@ -35,3 +34,20 @@ It's important that you run the unit tests via this command and not direclty wit
   https://www.npmjs.com/package/selenium-standalone
 * Make sure you point to the Selenium .jar in the protractor config file (protractor-base.conf.js)
 * Run `gulp func-tests`
+
+## Guidelines for making components
+
+We should always aim to keep consistency in the structure and the design pattern for each component. **Always** use the Yeoman generator when starting a new component:
+[https://github.com/rockabox/generator-rb-component](https://github.com/rockabox/generator-rb-component)
+
+### Angular directive guidelines
+
+- Use attributes to pass modifiers and single line contents (titles, labels etc) into an isolated scope. For an example look at the header attribute in `rb-data-summary-item`
+	
+- Use transclusion where the main content of a directive needs to be flexible enough to handle an unkown structure. For an example see the transclusion in `rb-data-summary-item`.
+
+- Follow a wrapper & item pattern for components that need multiple transclusion. For an example see the `rb-data-summary` and `rb-data-summary-item` directives.
+
+- Split large functions (like link functions) into separate webpack modules to keep things simple. For an example see `rb-currency-link.js`
+
+- Provide demos for all iterations of the component with different modifiers and settings.
