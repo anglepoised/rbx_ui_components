@@ -7,6 +7,8 @@ define([
      * rb-datetime-control Run function. Setup for directive, loads in angular strap templates and caches them.
      * @param  {object} $templateCache Angular templatecache
      * @return void
+     *
+     * @ngInject
      */
     function rbDateTimeControlRun ($templateCache) {
         $templateCache.put('datepicker/datepicker.tpl.html', datepickerTemplate);
