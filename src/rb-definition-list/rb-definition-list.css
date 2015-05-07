@@ -1,0 +1,33 @@
+/** @define rbDefinitionList; use strict */
+
+/**
+ * The `.rbDefinitionList` component...
+ */
+
+:root {
+    --rbDefinitionList-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rbDefinitionList {
+}
+
+dl.multicolumn {
+    overflow: auto;
+}
+dl.multicolumn dt, dl.multicolumn dd {
+    float: left;
+}
+dl.multicolumn dt {
+    clear: left;
+    width: 13%;
+    margin-right: 2%;
+    font-weight: bold;
+}
+dl.multicolumn dd {
+    width: 85%;
+    margin-left: 0;
+}
