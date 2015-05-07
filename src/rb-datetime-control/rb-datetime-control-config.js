@@ -5,6 +5,8 @@ define([], function () {
      * @param  {object} $datepickerProvider Angular-strap $datepicker provider
      * @param  {object} $timepickerProvider Angular-strap $timepickerProvider provider
      * @return void
+     *
+     * @ngInject
      */
     function rbDateTimeControlConfig ($datepickerProvider, $timepickerProvider) {
         angular.extend($datepickerProvider.defaults, {
