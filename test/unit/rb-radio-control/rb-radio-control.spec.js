@@ -8,7 +8,15 @@ define([
             isolatedScope,
             $compile,
             element,
-            compileTemplate;
+            compileTemplate,
+            data = [
+                {
+                    label: 'Radio One'
+                },
+                {
+                    label: 'Radio Two'
+                }
+            ];
 
         beforeEach(angular.mock.module(rbRadioControl.name));
 
@@ -19,11 +27,44 @@ define([
 
             // Compile directive, apply scope and fetch new isolated scope
             compileTemplate = function (template) {
+                $scope.data = data;
                 element = $compile(template)($scope);
                 $scope.$apply();
                 isolatedScope = element.isolateScope();
             };
         }));
+
+        it('should have a name attribute', function () {
+            compileTemplate('<rb-radio-control data="data" name="radio-group"></rb-radio-control>');
+
+            var radio = element.find('input');
+
+            angular.forEach(radio, function (value, key) {
+                expect(value.name).toBe('radio-group');
+            });
+        });
+
+        describe('is required', function () {
+            it('should not be there by default', function () {
+                compileTemplate('<rb-radio-control data="data"></rb-radio-control>');
+
+                var radio = element.find('input');
+
+                angular.forEach(radio, function (value, key) {
+                    expect(value.hasAttribute('required')).toBe(false);
+                });
+            });
+
+            it('should be applied to all radio inputs', function () {
+                compileTemplate('<rb-radio-control data="data" is-required=true></rb-radio-control>');
+
+                var radio = element.find('input');
+
+                angular.forEach(radio, function (value, key) {
+                    expect(value.hasAttribute('required')).toBe(true);
+                });
+            });
+        });
 
         describe('help message', function () {
             it('should show', function () {

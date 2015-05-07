@@ -38,8 +38,6 @@ define([
                 label: 'Radio label ' + (i + 1)
             });
         }
-
-        this.helpMessage = 'Optional group help message';
     }
 
     return demoCtrl;
