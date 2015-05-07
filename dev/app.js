@@ -111,6 +111,9 @@ define([
                 template: template,
                 controller: function ($scope, $state) {
                     $scope.states = $state.get();
+
+                    // First element is abstract route of ''
+                    $scope.states.shift();
                 }
             });
 
