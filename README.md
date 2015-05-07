@@ -21,6 +21,14 @@ A set of angular components.
 * Install bower packages: `bower install`.
 * Run `npm start`.
 
+## Running unit tests
+
+Use grunt to run unit tests:
+
+	grunt unit
+
+It's important that you run the unit tests via this command and not direclty with Karma as the grunt will set the enviromental timezone for phantomJS browser.
+
 ## Running functional tests with Protractor
 
 * Make sure you have installed a Selenium Server and chromedriver. Follow the instructions at:
