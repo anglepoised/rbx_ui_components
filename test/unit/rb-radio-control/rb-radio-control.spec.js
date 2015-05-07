@@ -25,11 +25,37 @@ define([
             };
         }));
 
-        describe('', function () {
-            it('should ', function () {
+        describe('help message', function () {
+            it('should show', function () {
+                compileTemplate('<rb-radio-control help-message="Radio Control Help Message"></rb-radio-control>');
+
+                var messages = element[0].getElementsByClassName('RadioControl-message');
+
+                expect(messages.length).toBe(1);
+                expect(angular.element(messages[0]).text()).toContain('Radio Control Help Message');
+            });
+
+            it('should be hidden if help-message is not specified', function () {
                 compileTemplate('<rb-radio-control></rb-radio-control>');
+
+                var messages = element[0].getElementsByClassName('RadioControl-message');
+
+                expect(angular.element(messages[0]).hasClass('ng-hide')).toBe(true);
             });
         });
 
+        describe('row modifier', function () {
+            it('should not be applied by default', function () {
+                compileTemplate('<rb-radio-control></rb-radio-control>');
+
+                expect(angular.element(element[0]).hasClass('RadioControl--row')).toBe(false);
+            });
+
+            it('should have the RadioControl--row class', function () {
+                compileTemplate('<rb-radio-control is-row=true></rb-radio-control>');
+
+                expect(angular.element(element[0]).hasClass('RadioControl--row')).toBe(true);
+            });
+        });
     });
 });
