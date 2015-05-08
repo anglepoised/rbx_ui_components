@@ -1,0 +1,16 @@
+/** @define rbCheckControl; use strict */
+
+/**
+ * The `.rbCheckControl` component...
+ */
+
+:root {
+    --rbCheckControl-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rbCheckControl {
+}
