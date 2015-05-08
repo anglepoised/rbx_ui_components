@@ -6,7 +6,7 @@
     </label>
     <select
         name="{{name}}"
-        ng-options="item[value] for item in items"
+        ng-options="item[value] as item[display] for item in items"
         ng-model="selected"
         ng-disabled="{{ isDisabled }}"
         ng-required="{{ isRequired }}">

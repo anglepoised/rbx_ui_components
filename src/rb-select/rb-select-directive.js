@@ -19,6 +19,7 @@ define([
      *    	label="Select a car"
      *    	help-message="i.e. Your favourite type of car"
      *    	value="key"
+     *    	display="keyOfLabel"
      *    	placeholder="Car"
      *    >
      *    </rb-select>
@@ -35,6 +36,7 @@ define([
                 label: '@',
                 helpMessage: '@',
                 value: '@',
+                display: '@',
                 placeholder: '@',
                 isDisabled: '@',
                 isRequired: '@',
