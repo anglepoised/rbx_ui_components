@@ -23,7 +23,7 @@ define([
         ];
 
         this.emptySelect = null;
-        this.previouslySelected = this.items[1];
+        this.previouslySelected = this.items[1].id;
     }
 
     return demoCtrl;

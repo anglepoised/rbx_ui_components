@@ -10,7 +10,8 @@
             <rb-select
                 form="userForm"
                 label="Select field no previous (with a placeholder)"
-                value="name"
+                value="id"
+                display="name"
                 name="noPreviousPlaceholder"
                 is-required="true"
                 items="demoRbSelectCtrl.items"
@@ -25,7 +26,8 @@
                 form="userForm"
                 name="disabledSelect"
                 label="A disabled select field"
-                value="name"
+                value="id"
+                display="name"
                 is-disabled="true"
                 items="demoRbSelectCtrl.items"
                 selected="demoRbSelectCtrl.previouslySelected">
@@ -36,7 +38,8 @@
                 form="userForm"
                 name="previousPlaceholder"
                 label="Previously selected item (with a placeholder)"
-                value="name"
+                value="id"
+                display="name"
                 is-required="true"
                 items="demoRbSelectCtrl.items"
                 selected="demoRbSelectCtrl.previouslySelected"
@@ -55,7 +58,8 @@
                 name="noPreviousNoPlaceholder"
                 is-required="true"
                 label="Select field no previous selected (no placeholder)"
-                value="name"
+                value="id"
+                display="name"
                 items="demoRbSelectCtrl.items"
                 selected="demoRbSelectCtrl.emptySelect">
             </rb-select>
@@ -67,7 +71,8 @@
                 name="previousNoPlaceholder"
                 is-required="true"
                 label="Select field with a previous selected (no placeholder)"
-                value="name"
+                value="id"
+                display="name"
                 items="demoRbSelectCtrl.items"
                 selected="demoRbSelectCtrl.previouslySelected">
             </rb-select>

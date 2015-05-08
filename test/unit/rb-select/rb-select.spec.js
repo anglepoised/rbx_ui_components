@@ -58,7 +58,7 @@ define([
             var optionEle,
                 firstOption;
 
-            compileTemplate('<rb-select items="items" value="name"></rb-select>');
+            compileTemplate('<rb-select items="items" value="id" display="name"></rb-select>');
 
             optionEle = element.find('option');
             firstOption = angular.element(optionEle[0]);
@@ -70,7 +70,7 @@ define([
         it('should add a label', function () {
             var labelEle;
 
-            compileTemplate('<rb-select items="items" value="name" label="Some title"></rb-select>');
+            compileTemplate('<rb-select items="items" value="id" display="name" label="Some title"></rb-select>');
 
             labelEle = element.find('label');
 
@@ -81,7 +81,8 @@ define([
         it('should add a help message', function () {
             var helpEle;
 
-            compileTemplate('<rb-select items="items" value="name" help-message="Some help text."></rb-select>');
+            compileTemplate('<rb-select items="items" value="id" display="name" help-message="Some help text.">' +
+                '</rb-select>');
 
             helpEle = element[0].getElementsByClassName('TextControl-message')[0];
 
@@ -91,7 +92,7 @@ define([
         describe('attributes', function () {
             it('should add a ng-required attribute to the element with a value of true', function () {
                 var selectEle;
-                compileTemplate('<rb-select items="items" value="name" is-required="true"></rb-select>');
+                compileTemplate('<rb-select items="items" value="id" display="name" is-required="true"></rb-select>');
 
                 selectEle = element.find('select');
 
@@ -100,7 +101,7 @@ define([
 
             it('should add a ng-required attribute to the element with a value of false', function () {
                 var selectEle;
-                compileTemplate('<rb-select items="items" value="name" is-required="false"></rb-select>');
+                compileTemplate('<rb-select items="items" value="id" display="name" is-required="false"></rb-select>');
 
                 selectEle = element.find('select');
 
@@ -108,7 +109,7 @@ define([
             });
 
             it('should add a disabled attribute to the element', function () {
-                compileTemplate('<rb-select items="items" value="name" is-disabled="true"></rb-select>');
+                compileTemplate('<rb-select items="items" value="id" display="name" is-disabled="true"></rb-select>');
 
                 var selectEle = element.find('select');
 
@@ -117,7 +118,7 @@ define([
 
             it('should add a ng-required attribute to the element with a value of false', function () {
                 var selectEle;
-                compileTemplate('<rb-select items="items" value="name" is-disabled="false"></rb-select>');
+                compileTemplate('<rb-select items="items" value="id" display="name" is-disabled="false"></rb-select>');
 
                 selectEle = element.find('select');
 
