@@ -21,14 +21,6 @@ define([
             {
                 label: 'Radio checked',
                 checked: true
-            },
-            {
-                label: 'Radio pressed',
-                pressed: true
-            },
-            {
-                label: 'Radio focused',
-                focused: true
             }
         ];
 
