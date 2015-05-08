@@ -42,6 +42,8 @@ define([
             var check = element.find('input');
 
             expect(check.length).toBe(2);
+            expect(check[0].type).toBe('checkbox');
+            expect(check[1].type).toBe('checkbox');
         });
 
         it('should have a name attribute', function () {
