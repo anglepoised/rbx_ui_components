@@ -4,7 +4,7 @@ define([
     './demo-state'
 ], function (rbDateTime, demoCtrl, demoState) {
     var demo = angular
-        .module('rb-date-time-demo', [
+        .module('rb-datetime-demo', [
             rbDateTime.name
         ])
         .config(demoState)
