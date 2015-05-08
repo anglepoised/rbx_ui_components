@@ -23,6 +23,13 @@ define([
 
         return {
             scope: {
+                data: '=',
+                form: '=',
+                helpMessage: '@',
+                isDisabled: '@',
+                isRequired: '@',
+                isRow: '@',
+                name: '@'
             },
             restrict: 'E',
             replace: true,

@@ -27,8 +27,47 @@
             <strong>Focused:</strong> distinct from pressed. Tab to control with keyboard, but don't hit space to activate.
         </p>
         <h3>
-            Default
+            Current Angular Version
         </h3>
+        <h4>
+            Default
+        </h4>
+    </div>
+    <div class="ComponentView">
+        <form name="radioForm">
+            <rb-radio-control
+                data="demoCtrl.data"
+                form="radioForm"
+                help-message="Optional group help message"
+                is-required=true
+                name="ng-radio-group">
+            </rb-radio-control>
+        </form>
+    </div>
+    <div class="RawHTML">
+        <h4>
+            Row modifier
+        </h4>
+    </div>
+    <div class="ComponentView">
+        <form name="radioRowForm">
+            <rb-radio-control
+                data="demoCtrl.dataRow"
+                form="radioRowForm"
+                help-message="Optional group help message"
+                is-row=true
+                name="ng-radio--row-group">
+            </rb-radio-control>
+        </form>
+    </div>
+
+    <div class="RawHTML">
+        <h3>
+            Static Reference Version
+        </h3>
+        <h4>
+            Default
+        </h4>
     </div>
     <div class="ComponentView">
         <div class="RadioControl">
@@ -58,8 +97,8 @@
                     <label class="RadioControl-label is-pressed u-textLabel" for="radio6">Radio pressed</label>
                 </div>
                 <div class="RadioControl-item is-focused">
-                    <input class="RadioControl-field is-focused" id="radio6" name="radio-group" type="radio">
-                    <label class="RadioControl-label is-focused u-textLabel" for="radio6">Radio focused</label>
+                    <input class="RadioControl-field is-focused" id="radio7" name="radio-group" type="radio">
+                    <label class="RadioControl-label is-focused u-textLabel" for="radio7">Radio focused</label>
                 </div>
             </div>
             <div class="RadioControl-message">
@@ -71,9 +110,9 @@
         </div>
     </div>
     <div class="RawHTML">
-        <h3>
+        <h4>
             Row modifier
-        </h3>
+        </h4>
     </div>
     <div class="ComponentView">
         <div class="RadioControl RadioControl--row">
