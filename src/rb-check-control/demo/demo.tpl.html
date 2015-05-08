@@ -13,10 +13,81 @@
             Help and invalid messages for individual and groups of CheckControls should be surfaced on a fieldset level.
         </p>
     </div>
+
     <div class="RawHTML">
         <h3>
-            Default
+            Current Angular Version
         </h3>
+        <h4>
+            Default
+        </h4>
+    </div>
+    <div class="ComponentView">
+        <form name="defaultForm">
+            <rb-check-control
+                data="demoCtrl.data.default"
+                form="form"
+                name="check-control-default">
+            </rb-check-control>
+        </form>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Invalid
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <form name="invalidForm">
+            <rb-check-control
+                data="demoCtrl.data.invalid"
+                form="form"
+                name="check-control-invalid">
+            </rb-check-control>
+        </form>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Disabled
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-check-control
+            data="demoCtrl.data.disabled"
+            is-disabled=true
+            name="check-control-disabled">
+        </rb-check-control>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Required
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-check-control
+            data="demoCtrl.data.required"
+            is-required=true
+            name="check-control-required">
+        </rb-check-control>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Checked
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-check-control
+            data="demoCtrl.data.checked"
+            name="check-control-checked">
+        </rb-check-control>
+    </div>
+
+    <div class="RawHTML">
+        <h3>
+            Static Reference Version
+        </h3>
+        <h4>
+            Default
+        </h4>
     </div>
     <div class="ComponentView">
         <div class="CheckControl">
