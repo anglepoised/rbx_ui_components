@@ -1,18 +1,18 @@
-/** @define rbOverlayPanel; use strict */
+/** @define OverlayPanel; use strict */
 
 /**
- * The `.rbOverlayPanel` component...
+ * The `.OverlayPanel` component...
  */
 
 :root {
-    --rbOverlayPanel-variable: var();
+    --OverlayPanel-variable: var();
 }
 
 /**
  * 1. Comment
  */
 
-.rbOverlayPanel {
+.OverlayPanel {
     position: absolute;
     left: 0;
     top: 0;
@@ -20,9 +20,10 @@
     height: 100%;
     background: var(--color-base-background);
     color: var(--color-base-font);
+    overflow-y: scroll;
 }
 
-.rbOverlayPanel-close {
+.OverlayPanel-close {
     position: absolute;
     display: block;
     left: 90%;
@@ -30,4 +31,5 @@
     height: 60px;
     background-color: red;
     color: white;
+    cursor: pointer;
 }
