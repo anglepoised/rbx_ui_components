@@ -27,7 +27,9 @@ define([
                 form: '=',
                 isDisabled: '@',
                 isRequired: '@',
-                name: '@'
+                name: '@',
+                selectAll: '@',
+                title: '@'
             },
             restrict: 'E',
             replace: true,

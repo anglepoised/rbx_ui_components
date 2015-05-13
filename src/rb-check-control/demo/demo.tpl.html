@@ -18,66 +18,56 @@
         <h3>
             Current Angular Version
         </h3>
-        <h4>
-            Default
-        </h4>
     </div>
     <div class="ComponentView">
         <form name="defaultForm">
             <rb-check-control
                 data="demoCtrl.data.default"
                 form="form"
-                name="check-control-default">
+                name="check-control-default"
+                title="Default">
             </rb-check-control>
         </form>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Invalid
-        </h3>
     </div>
     <div class="ComponentView">
         <form name="invalidForm">
             <rb-check-control
                 data="demoCtrl.data.invalid"
                 form="form"
-                name="check-control-invalid">
+                name="check-control-invalid"
+                title="Invalid">
             </rb-check-control>
         </form>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Disabled
-        </h3>
     </div>
     <div class="ComponentView">
         <rb-check-control
             data="demoCtrl.data.disabled"
             is-disabled=true
-            name="check-control-disabled">
+            name="check-control-disabled"
+            title="Disabled">
         </rb-check-control>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Required
-        </h3>
     </div>
     <div class="ComponentView">
         <rb-check-control
             data="demoCtrl.data.required"
             is-required=true
-            name="check-control-required">
+            name="check-control-required"
+            title="Required">
         </rb-check-control>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Checked
-        </h3>
     </div>
     <div class="ComponentView">
         <rb-check-control
             data="demoCtrl.data.checked"
-            name="check-control-checked">
+            name="check-control-checked"
+            title="Checked">
+        </rb-check-control>
+    </div>
+    <div class="ComponentView">
+        <rb-check-control
+            data="demoCtrl.data.checked"
+            name="check-control-checked"
+            title="Select All"
+            select-all=true>
         </rb-check-control>
     </div>
 

@@ -1,4 +1,12 @@
 <div>
+
+    <input
+        ng-if="selectAll"
+        ng-disabled="{{::isDisabled}}"
+        type="checkbox">
+    </input>
+    <h3>{{::title}}</h3>
+
     <div
         class="CheckControl"
         ng-class="{
