@@ -23,10 +23,20 @@
         <form name="checkControlForm">
             <rb-check-control
                 form="checkControlForm"
-                ng-model="demoCtrl.ngModel"
-                name="check-control-ngmodel"
-                title="Select All"
-                select-all=true>
+                ng-model="demoCtrl.default"
+                name="check-control-default"
+                title="Default">
+            </rb-check-control>
+        </form>
+    </div>
+    <div class="ComponentView">
+        <form name="checkControlSelectAllForm">
+            <rb-check-control
+                form="checkControlSelectAllForm"
+                ng-model="demoCtrl.selectAll"
+                name="check-control-select-all"
+                select-all=true
+                title="Select All">
             </rb-check-control>
         </form>
     </div>

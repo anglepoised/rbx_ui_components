@@ -1,8 +1,10 @@
 <div>
     <rb-check-control-select-all
         name="{{::name}}"
-        ng-disabled="{{isDisabled}}"
+        is-disabled="{{::isDisabled}}"
+        is-required="{{::isRequired}}"
         ng-model="ngModel"
+        select-all="{{::selectAll}}"
         title="{{::title}}">
     </rb-check-control-select-all>
 
@@ -19,10 +21,11 @@
             class="CheckControl-field"
             id="{{::name}}-{{::key}}"
             name="{{::name}}"
-            ng-model="value.checked"
+            ng-checked="value.checked"
             ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
             ng-disabled="{{::isDisabled || value.disabled}}"
             ng-required="{{::isRequired || value.required}}"
+            ng-model="value.checked"
             value="{{::value.value}}"
             type="checkbox">
 

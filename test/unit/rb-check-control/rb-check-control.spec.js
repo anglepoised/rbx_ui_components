@@ -36,37 +36,46 @@ define([
             };
         }));
 
-        it('should have two checkboxes', function () {
-            compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
+        it('should show select all checkbox', function () {
+            compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
 
             var check = element.find('input');
 
-            expect(check.length).toBe(2);
-            expect(check[0].type).toBe('checkbox');
+            expect(check[0].getAttribute('ng-show')).toBe('true');
+        });
+
+        it('should have two checkboxes', function () {
+            compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
+
+            var check = element.find('input');
+
+            expect(check.length).toBe(3);
             expect(check[1].type).toBe('checkbox');
+            expect(check[2].type).toBe('checkbox');
         });
 
         it('should have a name attribute', function () {
-            compileTemplate('<rb-check-control ng-model="ngModel" name="check-group"></rb-check-control>');
+            compileTemplate('<rb-check-control ng-model="ngModel" name="check-group" ' +
+                'select-all=true></rb-check-control>');
 
             var check = element.find('input');
 
-            expect(check[0].name).toBe('check-group');
             expect(check[1].name).toBe('check-group');
+            expect(check[2].name).toBe('check-group');
         });
 
         it('should have the correct value assigned', function () {
-            compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
+            compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
 
             var check = element.find('input');
 
-            expect(check[0].value).toBe('one');
-            expect(check[1].value).toBe('two');
+            expect(check[1].value).toBe('one');
+            expect(check[2].value).toBe('two');
         });
 
         describe('is required', function () {
             it('should not be there by default', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -76,7 +85,8 @@ define([
             });
 
             it('should be applied to all check inputs', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel" is-required=true></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel" is-required=true ' +
+                    'select-all=true></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -88,7 +98,7 @@ define([
 
         describe('disabled', function () {
             it('should enabled by default', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -98,7 +108,8 @@ define([
             });
 
             it('should disable all check inputs', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel" is-disabled=true></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel" is-disabled=true ' +
+                    'select-all=true></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -110,12 +121,23 @@ define([
             it('should only disable the first check input', function () {
                 ngModel[0].disabled = true;
 
+                compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
+
+                var check = element.find('input');
+
+                // index 0 is the select all checkbox
+                expect(check[1].hasAttribute('disabled')).toBe(true);
+                expect(check[2].hasAttribute('disabled')).toBe(false);
+            });
+        });
+
+        describe('select all as false', function () {
+            it('should not show', function () {
                 compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
 
                 var check = element.find('input');
 
-                expect(check[0].hasAttribute('disabled')).toBe(true);
-                expect(check[1].hasAttribute('disabled')).toBe(false);
+                expect(check[0].getAttribute('ng-show')).toBe('');
             });
         });
     });

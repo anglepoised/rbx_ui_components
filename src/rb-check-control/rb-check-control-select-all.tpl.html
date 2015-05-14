@@ -2,9 +2,10 @@
     <input
         id="{{::name}}-title"
         ng-change="change()"
-        ng-disabled="{{isDisabled}}"
-        ng-if="selectAll"
+        ng-disabled="{{::isDisabled}}"
+        ng-show="{{::selectAll}}"
         ng-model="master"
+        ng-required="{{::isRequired}}"
         type="checkbox">
     </input>
     <label for="{{::name}}-title">{{::title}}</label>

@@ -25,8 +25,10 @@ define([
             scope: {
                 form: '=',
                 isDisabled: '@',
+                isRequired: '@',
                 name: '@',
                 ngModel: '=',
+                selectAll: '@',
                 title: '@'
             },
             restrict: 'E',
