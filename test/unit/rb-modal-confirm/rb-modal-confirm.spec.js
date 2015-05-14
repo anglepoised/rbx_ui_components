@@ -82,19 +82,19 @@ define([
                     bodyChildren = body.children(),
                     actionsDiv = angular.element(bodyChildren[1]),
                     actions = actionsDiv.children(),
-                    fristAction = angular.element(actions[0]),
+                    firstAction = angular.element(actions[0]),
                     secondAction = angular.element(actions[1]);
 
                 expect(actions.length).toBe(2);
-                expect(fristAction.hasClass('ModalConfirm-actionItem')).toBe(true);
+                expect(firstAction.hasClass('ModalConfirm-actionItem')).toBe(true);
                 expect(secondAction.hasClass('ModalConfirm-actionItem')).toBe(true);
-                expect(fristAction.find('rb-button').length).toBe(1);
-                expect(secondAction.find('rb-button').length).toBe(1);
-                expect(angular.element(fristAction.find('rb-button')[0]).attr('outline')).toBe('yes');
-                expect(angular.element(fristAction.find('rb-button')[0]).attr('ng-click')).toBe('onCancel()');
-                expect(angular.element(fristAction.find('rb-button')[0]).text().trim()).toBe('Cancel');
-                expect(angular.element(secondAction.find('rb-button')[0]).text().trim()).toBe('Confirm');
-                expect(angular.element(secondAction.find('rb-button')[0]).attr('ng-click')).toBe('onConfirm()');
+                expect(firstAction.find('button').length).toBe(1);
+                expect(secondAction.find('button').length).toBe(1);
+                expect(angular.element(firstAction.find('button')[0]).attr('outline')).toBe('yes');
+                expect(angular.element(firstAction.find('button')[0]).attr('ng-click')).toBe('onCancel()');
+                expect(angular.element(firstAction.find('button')[0]).text().trim()).toBe('Cancel');
+                expect(angular.element(secondAction.find('button')[0]).text().trim()).toBe('Confirm');
+                expect(angular.element(secondAction.find('button')[0]).attr('ng-click')).toBe('onConfirm()');
             });
         });
 
