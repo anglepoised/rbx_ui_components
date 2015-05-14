@@ -10,7 +10,7 @@
         ng-model="selected"
         ng-disabled="{{ isDisabled }}"
         ng-required="{{ isRequired }}">
-            <option value="" ng-if="placeholder">{{ placeholder }}</option>
+            <option value="" ng-show="placeholder">{{ placeholder }}</option>
     </select>
 
     <div class="TextControl-message" ng-show="helpMessage">

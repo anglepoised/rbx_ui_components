@@ -61,9 +61,9 @@ define([
             compileTemplate('<rb-select items="items" value="id" display="name"></rb-select>');
 
             optionEle = element.find('option');
-            firstOption = angular.element(optionEle[0]);
+            firstOption = angular.element(optionEle[1]);
 
-            expect(optionEle.length).toBe(4);
+            expect(optionEle.length).toBe(5);
             expect(firstOption.html()).toBe('Volvo');
         });
 
