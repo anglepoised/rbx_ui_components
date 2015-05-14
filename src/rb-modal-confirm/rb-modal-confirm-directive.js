@@ -25,7 +25,9 @@ define([
             scope: {
                 title: '@',
                 onConfirm: '&',
-                onCancel: '&'
+                onCancel: '&',
+                cancelLabel: '@',
+                confirmLabel: '@'
             },
             restrict: 'E',
             replace: true,

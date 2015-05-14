@@ -9,12 +9,12 @@
                 <div class="ModalConfirm-action">
                     <div class="ModalConfirm-actionItem">
                         <rb-button outline="yes" ng-click="onCancel()">
-                            Cancel
+                            {{ ::cancelLabel || "Cancel" }}
                         </rb-button>
                     </div>
                     <div class="ModalConfirm-actionItem">
                         <rb-button ng-click="onConfirm()">
-                            Confirm
+                            {{ ::confirmLabel || "Confirm" }}
                         </rb-button>
                     </div>
                 </div>

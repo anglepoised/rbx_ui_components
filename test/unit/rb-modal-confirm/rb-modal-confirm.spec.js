@@ -146,6 +146,16 @@ define([
                 isolatedScope.onCancel();
                 expect($scope.myCancelCallback).toHaveBeenCalled();
             });
+
+            it('should take confirm label from the confirm-label attribute', function () {
+                compileTemplate('<rb-modal-confirm confirm-label="Go!"></rb-modal-confirm>');
+                expect(angular.element(element.find('button')[1]).text().trim()).toBe('Go!');
+            });
+
+            it('should take cancel label from the cancel-label attribute', function () {
+                compileTemplate('<rb-modal-confirm cancel-label="Abort!"></rb-modal-confirm>');
+                expect(angular.element(element.find('button')[0]).text().trim()).toBe('Abort!');
+            });
         });
 
     });

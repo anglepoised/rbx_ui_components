@@ -1,7 +1,17 @@
 <div class="ComponentView">
+
+    <h2>ModalConfirm with default button labels</h2>
     <rb-modal-confirm title="Are you sure?" on-confirm="demoCtrl.confirm()" on-cancel="demoCtrl.cancel()">
         <p>
             You are about to ACTION this ITEM.
         </p>
+    </rb-modal-confirm>
+
+    <h2>ModalConfirm with custom button labels</h2>
+    <rb-modal-confirm title="Are you sure?" on-confirm="demoCtrl.confirm()" on-cancel="demoCtrl.cancel()"
+        confirm-label="Hell yeah!!" cancel-label="Get me outta here!">
+            <p>
+                You are about to ACTION this ITEM.
+            </p>
     </rb-modal-confirm>
 </div>
