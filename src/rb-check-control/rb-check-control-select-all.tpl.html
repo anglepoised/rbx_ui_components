@@ -1,0 +1,11 @@
+<div>
+    <input
+        id="{{::name}}-title"
+        ng-change="change()"
+        ng-disabled="{{isDisabled}}"
+        ng-if="selectAll"
+        ng-model="master"
+        type="checkbox">
+    </input>
+    <label for="{{::name}}-title">{{::title}}</label>
+</div>

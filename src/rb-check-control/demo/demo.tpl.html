@@ -20,55 +20,15 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <form name="defaultForm">
+        <form name="checkControlForm">
             <rb-check-control
-                data="demoCtrl.data.default"
-                form="form"
-                name="check-control-default"
-                title="Default">
+                form="checkControlForm"
+                ng-model="demoCtrl.ngModel"
+                name="check-control-ngmodel"
+                title="Select All"
+                select-all=true>
             </rb-check-control>
         </form>
-    </div>
-    <div class="ComponentView">
-        <form name="invalidForm">
-            <rb-check-control
-                data="demoCtrl.data.invalid"
-                form="form"
-                name="check-control-invalid"
-                title="Invalid">
-            </rb-check-control>
-        </form>
-    </div>
-    <div class="ComponentView">
-        <rb-check-control
-            data="demoCtrl.data.disabled"
-            is-disabled=true
-            name="check-control-disabled"
-            title="Disabled">
-        </rb-check-control>
-    </div>
-    <div class="ComponentView">
-        <rb-check-control
-            data="demoCtrl.data.required"
-            is-required=true
-            name="check-control-required"
-            title="Required">
-        </rb-check-control>
-    </div>
-    <div class="ComponentView">
-        <rb-check-control
-            data="demoCtrl.data.checked"
-            name="check-control-checked"
-            title="Checked">
-        </rb-check-control>
-    </div>
-    <div class="ComponentView">
-        <rb-check-control
-            data="demoCtrl.data.checked"
-            name="check-control-checked"
-            title="Select All"
-            select-all=true>
-        </rb-check-control>
     </div>
 
     <div class="RawHTML">

@@ -23,7 +23,7 @@ define([
 
         return {
             scope: {
-                data: '=',
+                ngModel: '=',
                 form: '=',
                 isDisabled: '@',
                 isRequired: '@',

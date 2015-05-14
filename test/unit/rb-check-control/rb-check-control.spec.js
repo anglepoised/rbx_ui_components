@@ -9,7 +9,7 @@ define([
             $compile,
             element,
             compileTemplate,
-            data = [
+            ngModel = [
                 {
                     label: 'check One',
                     value: 'one'
@@ -29,7 +29,7 @@ define([
 
             // Compile directive, apply scope and fetch new isolated scope
             compileTemplate = function (template) {
-                $scope.data = data;
+                $scope.ngModel = ngModel;
                 element = $compile(template)($scope);
                 $scope.$apply();
                 isolatedScope = element.isolateScope();
@@ -37,7 +37,7 @@ define([
         }));
 
         it('should have two checkboxes', function () {
-            compileTemplate('<rb-check-control data="data"></rb-check-control>');
+            compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
 
             var check = element.find('input');
 
@@ -47,7 +47,7 @@ define([
         });
 
         it('should have a name attribute', function () {
-            compileTemplate('<rb-check-control data="data" name="check-group"></rb-check-control>');
+            compileTemplate('<rb-check-control ng-model="ngModel" name="check-group"></rb-check-control>');
 
             var check = element.find('input');
 
@@ -56,7 +56,7 @@ define([
         });
 
         it('should have the correct value assigned', function () {
-            compileTemplate('<rb-check-control data="data"></rb-check-control>');
+            compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
 
             var check = element.find('input');
 
@@ -66,7 +66,7 @@ define([
 
         describe('is required', function () {
             it('should not be there by default', function () {
-                compileTemplate('<rb-check-control data="data"></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -76,7 +76,7 @@ define([
             });
 
             it('should be applied to all check inputs', function () {
-                compileTemplate('<rb-check-control data="data" is-required=true></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel" is-required=true></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -88,7 +88,7 @@ define([
 
         describe('disabled', function () {
             it('should enabled by default', function () {
-                compileTemplate('<rb-check-control data="data"></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -98,7 +98,7 @@ define([
             });
 
             it('should disable all check inputs', function () {
-                compileTemplate('<rb-check-control data="data" is-disabled=true></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel" is-disabled=true></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -108,9 +108,9 @@ define([
             });
 
             it('should only disable the first check input', function () {
-                data[0].disabled = true;
+                ngModel[0].disabled = true;
 
-                compileTemplate('<rb-check-control data="data"></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
 
                 var check = element.find('input');
 
