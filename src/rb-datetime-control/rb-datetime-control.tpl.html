@@ -29,6 +29,11 @@
         autocomplete="off"
         bs-timepicker>
 
+    <div class="DatetimeControl-inherit" ng-show="inherit">
+        <label>{{ inheritLabel }}</label>
+        <input ng-model="inherited" ng-change="toggleInherited(inherit)" type="checkbox">
+    </div>
+
     <div class="TextControl-message" ng-show="helpMessage">
         {{helpMessage}}
     </div>

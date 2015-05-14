@@ -41,7 +41,9 @@ define([
                 helpMessage: '@',
                 ngModel: '=',
                 form: '=',
-                name: '@'
+                name: '@',
+                inherit: '@',
+                inheritLabel: '@'
             },
             restrict: 'E',
             replace: true,
@@ -50,6 +52,14 @@ define([
                 // Dynamic date/time field names
                 scope.dateName = scope.name + 'Date';
                 scope.timeName = scope.name + 'Time';
+
+                scope.toggleInherited = function (inheritedDateTime) {
+                    if (scope.inherited) {
+                        scope.ngModel = inheritedDateTime;
+                    } else {
+                        scope.ngModel = '';
+                    }
+                };
             }
         };
     }
