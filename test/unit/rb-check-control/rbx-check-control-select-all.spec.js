@@ -76,5 +76,38 @@ define([
                 expect(ngModel[1].checked).toBe(false);
             });
         });
+
+        describe('indeterminate', function () {
+            beforeEach(function () {
+                compileTemplate('<rb-check-control-select-all ng-model="ngModel"></rb-check-control-select-all>');
+            });
+
+            it('should be false if all checked', function () {
+                ngModel[0].checked = true;
+                ngModel[1].checked = true;
+
+                var input = isolatedScope.update();
+
+                expect(input[0].indeterminate).toBe(false);
+            });
+
+            it('should be false if all clear', function () {
+                ngModel[0].checked = false;
+                ngModel[1].checked = false;
+
+                var input = isolatedScope.update();
+
+                expect(input[0].indeterminate).toBe(false);
+            });
+
+            it('should be true any are checked', function () {
+                ngModel[0].checked = false;
+                ngModel[1].checked = true;
+
+                var input = isolatedScope.update();
+
+                expect(input[0].indeterminate).toBe(true);
+            });
+        });
     });
 });

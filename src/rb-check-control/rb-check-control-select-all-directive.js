@@ -72,6 +72,8 @@ define([
                         $scope.master = false;
                         input.prop('indeterminate', true);
                     }
+
+                    return input;
                 };
 
                 $scope.$watch('ngModel', function () {
