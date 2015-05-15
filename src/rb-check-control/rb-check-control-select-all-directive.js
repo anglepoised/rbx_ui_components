@@ -5,7 +5,7 @@ define([
     /**
      * @ngdoc directive
      * @name rbCheckControlSelectAll
-     * @module rb-check-control0-
+     * @module rb-check-control-select-all
      *
      * @restrict E
      *
@@ -13,13 +13,20 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-check-control>
-     *     </rb-check-control>
+     *     <rb-check-control-select-all
+     *         form="form"
+     *         is-disabled="false"
+     *         is-required="false"
+     *         name="name"
+     *         ng-model="ngModel"
+     *         select-all="false"
+     *         title="Your Title">
+     *     </rb-check-control-select-all>
      * </hljs>
      *
      * @ngInject
      */
-    function rbCheckControlDirective () {
+    function rbCheckControlSelectAllDirective () {
 
         return {
             scope: {
@@ -83,5 +90,5 @@ define([
         };
     }
 
-    return rbCheckControlDirective;
+    return rbCheckControlSelectAllDirective;
 });

@@ -13,8 +13,17 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-check-control>
-     *     </rb-check-control>
+     *    <form name="form">
+     *        <rb-check-control
+     *            form="form"
+     *            is-disabled="false"
+     *            is-required="false"
+     *            name="name"
+     *            ng-model="ngModel"
+     *            select-all="false"
+     *            title="Your Title">
+     *        </rb-check-control>
+     *    </form>
      * </hljs>
      *
      * @ngInject
@@ -23,11 +32,11 @@ define([
 
         return {
             scope: {
-                ngModel: '=',
                 form: '=',
                 isDisabled: '@',
                 isRequired: '@',
                 name: '@',
+                ngModel: '=',
                 selectAll: '@',
                 title: '@'
             },
