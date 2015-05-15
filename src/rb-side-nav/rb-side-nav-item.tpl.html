@@ -1,0 +1,10 @@
+<li class="SideNav-item" ng-class="{'is-active': active}">
+    <a ui-sref="{{ ::uiSref }}">
+        <rb-icon ng-if="icon" icon="{{ ::icon }}"></rb-icon>
+        {{ ::label }}
+        <span class="SideNav-item-status">
+            <span class="SideNav-item-count" ng-if="count && !invalid">{{ count }}</span>
+            <rb-icon ng-if="invalid" icon="black-20-status-warning"></rb-icon>
+        </span>
+    </a>
+</li>

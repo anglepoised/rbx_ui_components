@@ -1,0 +1,11 @@
+<div class="SideNav">
+    <h3>{{ ::title }}</h3>
+
+    <ul ng-transclude></ul>
+
+    <div class="SideNav-actions">
+        <p>{{ ::actionHelpText }}</p>
+        <rb-button ng-click="onSave()">{{ ::saveLabel || 'Save' }}</rb-button>
+        <rb-button outline="yes" ng-click="onCancel()">Cancel</rb-button>
+    </div>
+</div>
