@@ -37,7 +37,7 @@ define([
         }));
 
         it('should show select all checkbox', function () {
-            compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
+            compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
 
             var check = element.find('input');
 
@@ -45,7 +45,7 @@ define([
         });
 
         it('should have two checkboxes', function () {
-            compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
+            compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
 
             var check = element.find('input');
 
@@ -56,7 +56,7 @@ define([
 
         it('should have a name attribute', function () {
             compileTemplate('<rb-check-control ng-model="ngModel" name="check-group" ' +
-                'select-all=true></rb-check-control>');
+                'enable-select-all=true></rb-check-control>');
 
             var check = element.find('input');
 
@@ -65,7 +65,7 @@ define([
         });
 
         it('should have the correct value assigned', function () {
-            compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
+            compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
 
             var check = element.find('input');
 
@@ -75,7 +75,7 @@ define([
 
         describe('is required', function () {
             it('should not be there by default', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -86,7 +86,7 @@ define([
 
             it('should be applied to all check inputs', function () {
                 compileTemplate('<rb-check-control ng-model="ngModel" is-required=true ' +
-                    'select-all=true></rb-check-control>');
+                    'enable-select-all=true></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -98,7 +98,7 @@ define([
 
         describe('disabled', function () {
             it('should enabled by default', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -109,7 +109,7 @@ define([
 
             it('should disable all check inputs', function () {
                 compileTemplate('<rb-check-control ng-model="ngModel" is-disabled=true ' +
-                    'select-all=true></rb-check-control>');
+                    'enable-select-all=true></rb-check-control>');
 
                 var check = element.find('input');
 
@@ -121,7 +121,7 @@ define([
             it('should only disable the first check input', function () {
                 ngModel[0].disabled = true;
 
-                compileTemplate('<rb-check-control ng-model="ngModel" select-all=true></rb-check-control>');
+                compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
 
                 var check = element.find('input');
 

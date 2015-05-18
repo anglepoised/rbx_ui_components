@@ -22,7 +22,7 @@ define([
      *            is-required="false"
      *            name="name"
      *            ng-model="ngModel"
-     *            select-all="false"
+     *            enable-select-all="false"
      *            title="Your Title">
      *        </rb-check-control>
      *    </form>
@@ -39,7 +39,7 @@ define([
                 isRequired: '@',
                 name: '@',
                 ngModel: '=',
-                selectAll: '@',
+                enableSelectAll: '@',
                 title: '@'
             },
             restrict: 'E',
