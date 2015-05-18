@@ -30,8 +30,11 @@ define([
                 compileTemplate('<rb-section>Great!</rb-section>');
 
                 expect(element.hasClass('Section')).toBe(true);
-                expect(element.find('p').length).toBe(1);
-                expect(element.find('p').text()).toBe('Great!');
+
+                var ele = angular.element(element[0].querySelector('.Section-body'));
+
+                expect(ele.length).toBe(1);
+                expect(ele.text()).toBe('Great!');
             });
 
             it('should set title from attribute', function () {
