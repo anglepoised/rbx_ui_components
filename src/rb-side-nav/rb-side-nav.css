@@ -1,0 +1,24 @@
+/** @define rbSideNav; use strict */
+
+/**
+ * The `.rbSideNav` component...
+ */
+
+:root {
+    --rbSideNav-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.SideNav {
+}
+
+.SideNav-item {
+
+}
+
+.SideNav-item-warning {
+
+}

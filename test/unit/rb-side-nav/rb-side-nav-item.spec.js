@@ -1,0 +1,136 @@
+define([
+    'components/rb-side-nav'
+], function (rbSideNav) {
+    describe('rb-side-nav-item', function () {
+
+        var $rootScope,
+            $scope,
+            isolatedScope,
+            $compile,
+            element,
+            compileTemplate;
+
+        beforeEach(angular.mock.module(rbSideNav.name));
+
+        beforeEach(inject(function (_$compile_, _$rootScope_) {
+            $rootScope = _$rootScope_;
+            $scope = _$rootScope_.$new({});
+            $compile = _$compile_;
+
+            // Compile directive, apply scope and fetch new isolated scope
+            compileTemplate = function (template) {
+                element = $compile(template)($scope);
+                $scope.$apply();
+                isolatedScope = element.isolateScope();
+            };
+        }));
+
+        describe('rendering', function () {
+            it('should render with claass', function () {
+                compileTemplate('<rb-side-nav-item></rb-side-nav-item>');
+
+                expect(element.hasClass('SideNav-item')).toBe(true);
+            });
+        });
+
+        describe('label attribute', function () {
+            it('should render label attribute', function () {
+                compileTemplate('<rb-side-nav-item label="Menu item 1"></rb-side-nav-item>');
+
+                expect(element.text()).toContain('Menu item 1');
+            });
+        });
+
+        describe('count attribute', function () {
+            it('should render count from attribute', function () {
+                $scope.countValue = 10;
+                compileTemplate('<rb-side-nav-item count="countValue"></rb-side-nav-item>');
+
+                var statusSpan = angular.element(element[0].getElementsByClassName('SideNav-item-status')[0]),
+                    countSpan = angular.element(statusSpan.find('span')[0]);
+
+                expect(statusSpan[0].getElementsByClassName('SideNav-item-count').length).toBe(1);
+                expect(countSpan.text()).toContain('10');
+
+                // Check change in value updates DOM.
+                $scope.countValue = 20;
+                $scope.$apply();
+                expect(countSpan.text()).toContain('20');
+            });
+
+            it('should not render count element if attribute missing', function () {
+                compileTemplate('<rb-side-nav-item></rb-side-nav-item>');
+
+                var statusSpan = angular.element(element[0].getElementsByClassName('SideNav-item-status')[0]);
+
+                expect(statusSpan[0].getElementsByClassName('SideNav-item-count').length).toBe(0);
+            });
+
+            it('should not render count element if invalid attribute is true', function () {
+                $scope.countValue = 10;
+                $scope.isInvalid = true;
+                compileTemplate('<rb-side-nav-item invalid="isInvalid" count="countValue"></rb-side-nav-item>');
+
+                var statusSpan = angular.element(element[0].getElementsByClassName('SideNav-item-status')[0]);
+
+                expect(statusSpan[0].getElementsByClassName('SideNav-item-count').length).toBe(0);
+            });
+        });
+
+        describe('invalid attribute', function () {
+            it('should render invalid icon if invalid attribute is value is true', function () {
+                $scope.isInvalid = true;
+                compileTemplate('<rb-side-nav-item invalid="isInvalid"></rb-side-nav-item>');
+
+                var statusSpan = element[0].getElementsByClassName('SideNav-item-status')[0],
+                    icon = statusSpan.getElementsByClassName('Icon');
+
+                expect(icon.length).toBe(1);
+
+                // Check change in value updates DOM.
+                $scope.isInvalid = false;
+                $scope.$apply();
+                expect(icon.length).toBe(0);
+            });
+        });
+
+        describe('icon attribute', function () {
+
+            it('should use icon form icon attribute', function () {
+                compileTemplate('<rb-side-nav-item icon="blue-base-16-geo"></rb-side-nav-item>');
+
+                var icon = angular.element(element[0].getElementsByClassName('Icon')[0]);
+
+                expect(icon.hasClass('Icon--blue-base-16-geo')).toBe(true);
+            });
+
+        });
+
+        describe('active attribute', function () {
+
+            it('should set active class if active attribute true', function () {
+                $scope.isActive = true;
+                compileTemplate('<rb-side-nav-item active="isActive"></rb-side-nav-item>');
+
+                expect(element.hasClass('is-active')).toBe(true);
+
+                // Check change in value updates DOM.
+                $scope.isActive = false;
+                $scope.$apply();
+
+                expect(element.hasClass('is-active')).toBe(false);
+            });
+
+        });
+
+        describe('ui-sref attribute', function () {
+            it('should set ui-sref of anchor tag', function () {
+                compileTemplate('<rb-side-nav-item ui-sref="state-a"></rb-side-nav-item>');
+
+                var anchor = angular.element(element.find('a')[0]);
+
+                expect(anchor.attr('ui-sref')).toBe('state-a');
+            });
+        });
+    });
+});
