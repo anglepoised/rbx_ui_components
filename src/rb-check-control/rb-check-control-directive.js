@@ -10,6 +10,8 @@ define([
      * @restrict E
      *
      * @description
+     * `<rb-check-control/>` Is a directive for creating multiple checkboxes with
+     * an optional select all title.
      *
      * @usage
      * <hljs lang="html">

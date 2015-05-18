@@ -43,14 +43,14 @@ define([
             });
 
             it('should check all if the title is checked', function () {
-                isolatedScope.master = true;
+                isolatedScope.isSelected = true;
                 isolatedScope.change();
 
                 expect(isolatedScope.checkAll).toHaveBeenCalledWith(true);
             });
 
             it('should un check all if the title is not checked', function () {
-                isolatedScope.master = false;
+                isolatedScope.isSelected = false;
                 isolatedScope.change();
 
                 expect(isolatedScope.checkAll).toHaveBeenCalledWith(false);

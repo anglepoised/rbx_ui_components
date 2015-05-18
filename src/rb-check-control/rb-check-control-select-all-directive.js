@@ -43,7 +43,7 @@ define([
             template: template,
             link: function ($scope, $element, $attributes) {
                 $scope.change = function () {
-                    if ($scope.master) {
+                    if ($scope.isSelected) {
                         $scope.checkAll(true);
                     } else {
                         $scope.checkAll(false);
@@ -70,13 +70,13 @@ define([
                     });
 
                     if (checked) {
-                        $scope.master = true;
+                        $scope.isSelected = true;
                         input.prop('indeterminate', false);
                     } else if (cleared) {
-                        $scope.master = false;
+                        $scope.isSelected = false;
                         input.prop('indeterminate', false);
                     } else {
-                        $scope.master = false;
+                        $scope.isSelected = false;
                         input.prop('indeterminate', true);
                     }
 
