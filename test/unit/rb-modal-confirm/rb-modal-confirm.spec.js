@@ -156,6 +156,12 @@ define([
                 compileTemplate('<rb-modal-confirm cancel-label="Abort!"></rb-modal-confirm>');
                 expect(angular.element(element.find('button')[0]).text().trim()).toBe('Abort!');
             });
+
+            it('should set confirm button state from the confirm-state attribute', function () {
+                compileTemplate('<rb-modal-confirm confirm-state="danger"></rb-modal-confirm>');
+                expect(angular.element(element.find('button')[1]).hasClass('Button--danger')).toBe(true);
+            });
+
         });
 
     });

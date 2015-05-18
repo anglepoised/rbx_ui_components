@@ -8,9 +8,6 @@ define([
             console.log('CONFIRM');
         };
 
-        this.cancel = function () {
-            console.log('CANCEL');
-        };
     }
 
     return demoCtrl;

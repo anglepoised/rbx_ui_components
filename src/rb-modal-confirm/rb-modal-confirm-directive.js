@@ -27,7 +27,8 @@ define([
                 onConfirm: '&',
                 onCancel: '&',
                 cancelLabel: '@',
-                confirmLabel: '@'
+                confirmLabel: '@',
+                confirmState: '@'
             },
             restrict: 'E',
             replace: true,

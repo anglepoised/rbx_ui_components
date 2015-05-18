@@ -1,15 +1,31 @@
 <div class="ComponentView">
 
     <h2>ModalConfirm with default button labels</h2>
-    <rb-modal-confirm title="Are you sure?" on-confirm="demoCtrl.confirm()" on-cancel="demoCtrl.cancel()">
+    <rb-button ng-click="demoCtrl.showModal1 = true">Show Modal 1</rb-button>
+    <rb-modal-confirm ng-if="demoCtrl.showModal1" title="Are you sure?" on-confirm="demoCtrl.confirm()" on-cancel="demoCtrl.showModal1 = false">
         <p>
             You are about to ACTION this ITEM.
         </p>
     </rb-modal-confirm>
 
     <h2>ModalConfirm with custom button labels</h2>
-    <rb-modal-confirm title="Are you sure?" on-confirm="demoCtrl.confirm()" on-cancel="demoCtrl.cancel()"
+    <rb-button ng-click="demoCtrl.showModal2 = true">Show Modal 1</rb-button>
+    <rb-modal-confirm ng-if="demoCtrl.showModal2" title="Are you sure?" on-confirm="demoCtrl.confirm()" on-cancel="demoCtrl.showModal2 = false"
         confirm-label="Hell yeah!!" cancel-label="Get me outta here!">
+            <p>
+                You are about to ACTION this ITEM.
+            </p>
+    </rb-modal-confirm>
+
+    <h2>ModalConfirm with custom confirm button state</h2>
+    <rb-button ng-click="demoCtrl.showModal3 = true">Show Modal 3</rb-button>
+    <rb-modal-confirm
+        ng-if="demoCtrl.showModal3"
+        title="Are you sure?"
+        on-confirm="demoCtrl.confirm()"
+        on-cancel="demoCtrl.showModal3 = false"
+        confirm-label="Dangerous action!"
+        confirm-state="danger">
             <p>
                 You are about to ACTION this ITEM.
             </p>
