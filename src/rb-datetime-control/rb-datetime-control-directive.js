@@ -53,12 +53,21 @@ define([
                 scope.dateName = scope.name + 'Date';
                 scope.timeName = scope.name + 'Time';
 
+                scope.disableInputs = false;
+
                 scope.toggleInherited = function (inheritedDateTime) {
                     if (scope.inherited) {
                         scope.ngModel = inheritedDateTime;
+                        scope.disableInputs = true;
                     } else {
                         scope.ngModel = '';
+                        scope.disableInputs = false;
                     }
+                };
+
+                scope.disabledTextInputs = function () {
+                    // This doesn't seem to work inside ng-disabled?
+                    return scope.disableInputs || scope.isDisabled === 'true';
                 };
             }
         };

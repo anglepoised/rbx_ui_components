@@ -260,9 +260,14 @@ define([
                 isolatedScope.toggleInherited($scope.inherited);
                 isolatedScope.$apply();
 
-                expect(element.find('input')[0].value).toBe('27/04/2015');
+                var inputOne = angular.element(element.find('input')[0]),
+                    inputTwo = angular.element(element.find('input')[1]);
+
+                expect(inputOne[0].value).toBe('27/04/2015');
+                expect(inputOne.attr('disabled')).toBe('disabled');
                 // Timezone should be set with TZ=UTC flag before running tests so phamtom doesn't use local timzone.
-                expect(element.find('input')[1].value).toBe('11:29');
+                expect(inputTwo[0].value).toBe('11:29');
+                expect(inputTwo.attr('disabled')).toBe('disabled');
             });
 
             it('should set date to a emtpy value on checkbox deselect', function () {
