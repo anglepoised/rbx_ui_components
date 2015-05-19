@@ -1,0 +1,23 @@
+<section class="Section">
+    <div class="RawHTML">
+        <h2>
+            rb-check-control-group
+        </h2>
+        <p>
+            A check control group displays a group of check controls
+        </p>
+    </div>
+    <form name="checkControlForm">
+    <div class="ComponentView">
+        <rb-check-control-group
+            form="checkControlForm"
+            options="demoCtrl.defaultOptions"
+            ng-model="demoCtrl.default"
+            name="check-control-default"
+            title="Basic Usage">
+        </rb-check-control-group>
+        Value: <pre>{{ demoCtrl.default }}</pre>
+    </div>
+
+    </form>
+</section>

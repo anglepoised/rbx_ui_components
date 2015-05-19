@@ -42,6 +42,7 @@ define([
             replace: true,
             template: template,
             link: function ($scope, $element, $attributes) {
+
                 $scope.change = function () {
                     if ($scope.isSelected) {
                         $scope.checkAll(true);

@@ -36,108 +36,83 @@ define([
             };
         }));
 
-        it('should show select all checkbox', function () {
-            compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
+        it('should render a single input & label', function () {
+            compileTemplate('<rb-check-control name="check-group"></rb-check-control>');
 
-            var check = element.find('input');
-
-            expect(check[0].getAttribute('ng-show')).toBe('true');
+            expect(element.find('input').length).toBe(1);
+            expect(element.find('label').length).toBe(1);
         });
 
-        it('should have two checkboxes', function () {
-            compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
+        describe('label attribute', function () {
+            it('should take label from attribute', function () {
+                compileTemplate('<rb-check-control label="Check label"></rb-check-control>');
 
-            var check = element.find('input');
+                var label = angular.element(element.find('label')[0]);
 
-            expect(check.length).toBe(3);
-            expect(check[1].type).toBe('checkbox');
-            expect(check[2].type).toBe('checkbox');
+                expect(label.text()).toContain('Check label');
+            });
         });
 
         it('should have a name attribute', function () {
-            compileTemplate('<rb-check-control ng-model="ngModel" name="check-group" ' +
-                'enable-select-all=true></rb-check-control>');
+            compileTemplate('<rb-check-control name="check-group"></rb-check-control>');
 
             var check = element.find('input');
 
-            expect(check[1].name).toBe('check-group');
-            expect(check[2].name).toBe('check-group');
+            expect(check[0].name).toBe('check-group');
         });
 
         it('should have the correct value assigned', function () {
-            compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
+            compileTemplate('<rb-check-control value="one"></rb-check-control>');
 
             var check = element.find('input');
 
-            expect(check[1].value).toBe('one');
-            expect(check[2].value).toBe('two');
+            expect(check[0].value).toBe('one');
         });
 
         describe('is required', function () {
             it('should not be there by default', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
+                compileTemplate('<rb-check-control></rb-check-control>');
 
                 var check = element.find('input');
 
-                angular.forEach(check, function (value, key) {
-                    expect(value.hasAttribute('required')).toBe(false);
-                });
+                expect(check[0].hasAttribute('required')).toBe(false);
             });
 
             it('should be applied to all check inputs', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel" is-required=true ' +
-                    'enable-select-all=true></rb-check-control>');
+                compileTemplate('<rb-check-control is-required="true"></rb-check-control>');
 
                 var check = element.find('input');
 
-                angular.forEach(check, function (value, key) {
-                    expect(value.hasAttribute('required')).toBe(true);
-                });
+                expect(check[0].hasAttribute('required')).toBe(true);
             });
         });
 
         describe('disabled', function () {
             it('should enabled by default', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
+                compileTemplate('<rb-check-control></rb-check-control>');
 
                 var check = element.find('input');
 
-                angular.forEach(check, function (value, key) {
-                    expect(value.hasAttribute('disabled')).toBe(false);
-                });
+                expect(check[0].hasAttribute('disabled')).toBe(false);
             });
 
             it('should disable all check inputs', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel" is-disabled=true ' +
-                    'enable-select-all=true></rb-check-control>');
+                compileTemplate('<rb-check-control is-disabled="true"></rb-check-control>');
 
                 var check = element.find('input');
 
-                angular.forEach(check, function (value, key) {
-                    expect(value.hasAttribute('disabled')).toBe(true);
-                });
-            });
-
-            it('should only disable the first check input', function () {
-                ngModel[0].disabled = true;
-
-                compileTemplate('<rb-check-control ng-model="ngModel" enable-select-all=true></rb-check-control>');
-
-                var check = element.find('input');
-
-                // index 0 is the select all checkbox
-                expect(check[1].hasAttribute('disabled')).toBe(true);
-                expect(check[2].hasAttribute('disabled')).toBe(false);
+                expect(check[0].hasAttribute('disabled')).toBe(true);
             });
         });
 
-        describe('select all as false', function () {
-            it('should not show', function () {
-                compileTemplate('<rb-check-control ng-model="ngModel"></rb-check-control>');
+        describe('icon attribute', function () {
+            it('should add icon modifier to classes and display icon if passed', function () {
+                compileTemplate('<rb-check-control icon="blue-base-16-geo"></rb-check-control>');
 
-                var check = element.find('input');
+                var icon = element[0].querySelectorAll('.Icon');
 
-                expect(check[0].getAttribute('ng-show')).toBe('');
+                expect(element.hasClass('CheckControl--icon')).toBe(true);
+                expect(icon.length).toBe(1);
             });
         });
     });

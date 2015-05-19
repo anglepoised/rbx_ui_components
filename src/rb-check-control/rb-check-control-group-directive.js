@@ -1,5 +1,5 @@
 define([
-    'html!./rb-check-control.tpl.html'
+    'html!./rb-check-control-group.tpl.html'
 ], function (template) {
 
     /**
@@ -31,18 +31,19 @@ define([
      *
      * @ngInject
      */
-    function rbCheckControlDirective () {
+    function rbCheckControlGroupDirective () {
 
         return {
             scope: {
+                options: '=',
                 form: '=',
-                icon: '@',
                 isDisabled: '@',
                 isRequired: '@',
-                label: '@',
+                icon: '@',
                 name: '@',
                 ngModel: '=',
-                value:'@'
+                enableSelectAll: '@',
+                title: '@'
             },
             restrict: 'E',
             replace: true,
@@ -50,5 +51,5 @@ define([
         };
     }
 
-    return rbCheckControlDirective;
+    return rbCheckControlGroupDirective;
 });

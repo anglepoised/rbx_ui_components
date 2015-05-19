@@ -1,0 +1,23 @@
+<div>
+    <rb-check-control-select-all
+        name="{{::name}}"
+        is-disabled="{{::isDisabled}}"
+        is-required="{{::isRequired}}"
+        ng-model="options"
+        enable-select-all="{{::enableSelectAll}}"
+        title="{{::title}}">
+    </rb-check-control-select-all>
+
+
+    <div ng-repeat="(key, value) in ::options">
+        <rb-check-control
+            is-disabled="{{::isDisabled}}"
+            is-required="{{::isRequired}}"
+            label="{{::value.label}}"
+            name="{{::name}}-{{::key}}"
+            ng-click="updateModel"
+            ng-model="value.checked"
+            value="{{::value}}">
+        </rb-check-control>
+    </div>
+</div>
