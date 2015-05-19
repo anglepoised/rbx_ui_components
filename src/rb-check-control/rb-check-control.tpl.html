@@ -1,0 +1,39 @@
+<div>
+    <rb-check-control-select-all
+        name="{{::name}}"
+        is-disabled="{{::isDisabled}}"
+        is-required="{{::isRequired}}"
+        ng-model="ngModel"
+        enable-select-all="{{::enableSelectAll}}"
+        title="{{::title}}">
+    </rb-check-control-select-all>
+
+    <div
+        class="CheckControl"
+        ng-class="{
+            'is-disabled': isDisabled,
+            'is-invalid': form[name].$touched && form[name].$invalid,
+            'is-required': isRequired
+        }"
+        ng-repeat="(key, value) in ::ngModel">
+
+        <input
+            class="CheckControl-field"
+            id="{{::name}}-{{::key}}"
+            name="{{::name}}"
+            ng-checked="value.checked"
+            ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
+            ng-disabled="{{::isDisabled || value.disabled}}"
+            ng-required="{{::isRequired || value.required}}"
+            ng-model="value.checked"
+            value="{{::value.value}}"
+            type="checkbox">
+
+        <label
+            class="CheckControl-label u-textLabel"
+            for="{{::name}}-{{::key}}">
+            {{::value.label}}
+        </label>
+
+    </div>
+</div>

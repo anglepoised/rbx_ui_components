@@ -10,11 +10,22 @@ define([
      * @restrict E
      *
      * @description
+     * `<rb-check-control/>` Is a directive for creating multiple checkboxes with
+     * an optional select all title.
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-check-control>
-     *     </rb-check-control>
+     *    <form name="form">
+     *        <rb-check-control
+     *            form="form"
+     *            is-disabled="false"
+     *            is-required="false"
+     *            name="name"
+     *            ng-model="ngModel"
+     *            enable-select-all="false"
+     *            title="Your Title">
+     *        </rb-check-control>
+     *    </form>
      * </hljs>
      *
      * @ngInject
@@ -23,6 +34,13 @@ define([
 
         return {
             scope: {
+                form: '=',
+                isDisabled: '@',
+                isRequired: '@',
+                name: '@',
+                ngModel: '=',
+                enableSelectAll: '@',
+                title: '@'
             },
             restrict: 'E',
             replace: true,

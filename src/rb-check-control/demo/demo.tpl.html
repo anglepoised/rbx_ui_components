@@ -13,10 +13,41 @@
             Help and invalid messages for individual and groups of CheckControls should be surfaced on a fieldset level.
         </p>
     </div>
+
     <div class="RawHTML">
         <h3>
-            Default
+            Current Angular Version
         </h3>
+    </div>
+    <div class="ComponentView">
+        <form name="checkControlForm">
+            <rb-check-control
+                form="checkControlForm"
+                ng-model="demoCtrl.default"
+                name="check-control-default"
+                title="Default">
+            </rb-check-control>
+        </form>
+    </div>
+    <div class="ComponentView">
+        <form name="checkControlSelectAllForm">
+            <rb-check-control
+                form="checkControlSelectAllForm"
+                ng-model="demoCtrl.selectAll"
+                name="check-control-select-all"
+                enable-select-all="true"
+                title="Select All">
+            </rb-check-control>
+        </form>
+    </div>
+
+    <div class="RawHTML">
+        <h3>
+            Static Reference Version
+        </h3>
+        <h4>
+            Default
+        </h4>
     </div>
     <div class="ComponentView">
         <div class="CheckControl">
