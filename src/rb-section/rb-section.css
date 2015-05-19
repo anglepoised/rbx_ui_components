@@ -32,3 +32,7 @@
 .Section--gutterless {
     padding: 0; /* 2 */
 }
+
+.Section--gutterless .Section-title {
+    padding: 0 var(--layout-gutter);
+}
