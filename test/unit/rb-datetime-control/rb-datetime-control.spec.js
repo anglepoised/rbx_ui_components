@@ -39,7 +39,7 @@ define([
                 compileTemplate('<rb-datetime-control name="test"></rb-datetime-control>');
 
                 var inputs = element.find('input');
-                expect(inputs.length).toBe(2);
+                expect(inputs.length).toBe(3); // Include inherit checkbox too!
                 expect(angular.element(inputs[0]).hasClass('TextControl-field')).toBe(true);
                 expect(angular.element(inputs[1]).hasClass('TextControl-field')).toBe(true);
             });
@@ -210,6 +210,82 @@ define([
                 expect(secondInput.attr('placeholder')).toBe('HH:MM');
             });
 
+        });
+
+        describe('inherited date time', function () {
+
+            it('should not show inherited date time checkbox when attribute is missing', function () {
+                compileTemplate(
+                        '<rb-datetime-control name="test" is-required="true" form="aForm"></rb-datetime-control>'
+                    );
+
+                var inheritDiv = element[0].getElementsByClassName('DatetimeControl-inherit')[0];
+
+                expect(angular.element(inheritDiv).hasClass('ng-hide')).toBe(true);
+            });
+
+            it('should show inherited date time checkbox when attribute is specified', function () {
+                $scope.inherited = '2015-04-27T11:29:05.474Z';
+                compileTemplate(
+                    '<rb-datetime-control name="test" inherit="{{inherited}}" is-required="true" form="aForm">' +
+                    '</rb-datetime-control>'
+                );
+
+                var inheritDiv = element[0].getElementsByClassName('DatetimeControl-inherit')[0];
+
+                expect(angular.element(inheritDiv).hasClass('ng-hide')).toBe(false);
+            });
+
+            it('should set inherit label passed from attribute', function () {
+                $scope.inherited = '2015-04-27T11:29:05.474Z';
+                compileTemplate(
+                    '<rb-datetime-control name="test" inherit-label="Inherit date/time" inherit="{{inherited}}"' +
+                    ' is-required="true" form="aForm"></rb-datetime-control>'
+                );
+
+                var inheritDiv = element[0].getElementsByClassName('DatetimeControl-inherit')[0];
+
+                expect(angular.element(inheritDiv).find('label').text()).toContain('Inherit date/time');
+            });
+
+            it('should set date to inherited date value on checkbox select', function () {
+                $scope.inherited = '2015-04-27T11:29:05.474Z';
+                $scope.dt = '';
+                compileTemplate(
+                    '<rb-datetime-control name="test" ng-model="dt" inherit="{{inherited}}" is-required="true"' +
+                    ' form="aForm"></rb-datetime-control>'
+                );
+
+                isolatedScope.inherited = true;
+                isolatedScope.toggleInherited($scope.inherited);
+                isolatedScope.$apply();
+
+                var inputOne = angular.element(element.find('input')[0]),
+                    inputTwo = angular.element(element.find('input')[1]);
+
+                expect(inputOne[0].value).toBe('27/04/2015');
+                expect(inputOne.attr('disabled')).toBe('disabled');
+                // Timezone should be set with TZ=UTC flag before running tests so phamtom doesn't use local timzone.
+                expect(inputTwo[0].value).toBe('11:29');
+                expect(inputTwo.attr('disabled')).toBe('disabled');
+            });
+
+            it('should set date to a emtpy value on checkbox deselect', function () {
+                $scope.inherited = '2015-04-27T11:29:05.474Z';
+                $scope.dt = '';
+                compileTemplate(
+                    '<rb-datetime-control name="test" ng-model="dt" inherit="{{inherited}}" is-required="true"' +
+                    ' form="aForm"></rb-datetime-control>'
+                );
+
+                isolatedScope.inherited = false;
+                isolatedScope.toggleInherited($scope.inherited);
+                isolatedScope.$apply();
+
+                expect(element.find('input')[0].value).toBe('');
+                // Timezone should be set with TZ=UTC flag before running tests so phamtom doesn't use local timzone.
+                expect(element.find('input')[1].value).toBe('');
+            });
         });
 
         describe('validation', function () {

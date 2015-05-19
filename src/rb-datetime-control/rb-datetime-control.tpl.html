@@ -10,7 +10,7 @@
         name="{{dateName}}"
         ng-model="ngModel"
         ng-required="{{isRequired}}"
-        ng-disabled="{{isDisabled}}"
+        ng-disabled="disabledTextInputs()"
         ng-readonly="{{isReadonly}}"
         ng-class="{'is-invalid': form[dateName].$touched && form[dateName].$invalid}"
         placeholder="{{placeholderDate}}"
@@ -22,12 +22,17 @@
         name="{{timeName}}"
         ng-model="ngModel"
         ng-required="{{isRequired}}"
-        ng-disabled="{{isDisabled}}"
+        ng-disabled="disabledTextInputs()"
         ng-readonly="{{isReadonly}}"
         ng-class="{'is-invalid': form[timeName].$touched && form[timeName].$invalid}"
         placeholder="{{placeholderTime}}"
         autocomplete="off"
         bs-timepicker>
+
+    <div class="DatetimeControl-inherit" ng-show="inherit">
+        <label>{{ inheritLabel }}</label>
+        <input ng-model="inherited" ng-change="toggleInherited(inherit)" type="checkbox" ng-disabled="{{ isDisabled }}">
+    </div>
 
     <div class="TextControl-message" ng-show="helpMessage">
         {{helpMessage}}

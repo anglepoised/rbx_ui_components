@@ -11,6 +11,8 @@ define([
             'placeholder': ''
         };
 
+        this.inheritDateTime = '2015-04-27T11:29:05.474Z';
+
     }
 
     return demoCtrl;
