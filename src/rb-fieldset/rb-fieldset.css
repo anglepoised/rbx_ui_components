@@ -68,6 +68,17 @@
     padding-left: 32px;
 }
 
+/**
+ * Goals modifier
+ */
+
+.Fieldset--goals .Fieldset-title {
+    background-image: url("./images/goals.svg");
+    background-position: var(--Fieldset-title-background-position);
+    background-repeat: no-repeat;
+    padding-left: 32px;
+}
+
 @media (--md-viewport) {
 
     .Fieldset {
