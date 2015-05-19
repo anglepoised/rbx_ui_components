@@ -72,7 +72,9 @@ define([
             it('should hide title when the value is true', function () {
                 compileTemplate('<rb-section hide-title="true"></rb-section>');
 
-                expect(element.find('h2').hasClass('u-hiddenVisually')).toBe(true);
+                var ele = angular.element(element[0].querySelector('.Section-title'));
+
+                expect(ele.hasClass('u-hiddenVisually')).toBe(true);
             });
 
             it('should not hide title when the value is false', function () {
