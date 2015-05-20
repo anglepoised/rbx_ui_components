@@ -1,0 +1,12 @@
+<div>
+    <ul>
+        <li ng-repeat="item in ::list track by $index">
+            <a ng-if="::!item.anchor">
+                <span ng-class="::{'categoryClass': item.category}">{{::item.label}}</span>
+            </a>
+            <a ng-if="::item.anchor" href="#{{::item.anchor}}" bs-scrollspy data-target="#{{::item.anchor}}" data-offset="{{::offset || 0}}">
+                <span ng-class="::{'categoryClass': item.category}">{{::item.label}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,35 @@
+/** @define rbSidebarScrollspy; use strict */
+
+/**
+ * The `.rbSidebarScrollspy` component...
+ */
+
+:root {
+    --rbSidebarScrollspy-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rbSidebarScrollspy {
+}
+
+/**
+* This mandatory class is for the active links in the sidebar.
+* It can be changed but NEVER renamed as the bs-scrollspy
+* directive uses this class to work internally.
+*/
+.active {
+    background-color:#FF0;
+}
+
+/**
+* This class is for the category links in the sidebar.
+* If renamed, the directive template and tests should
+* reflect this change as well in order to work properly.
+*/
+.categoryClass {
+    color:orange;
+    font-weight:bold;
+}
