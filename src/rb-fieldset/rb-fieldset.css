@@ -36,6 +36,17 @@
 }
 
 /**
+ * Additional Info modifier
+ */
+
+.Fieldset--additionalInfo .Fieldset-title {
+    background-image: url("./images/additionalInfo.svg");
+    background-position: var(--Fieldset-title-background-position);
+    background-repeat: no-repeat;
+    padding-left: 32px;
+}
+
+/**
  * Campaign Basics modifier
  */
 
@@ -58,11 +69,11 @@
 }
 
 /**
- * Additional Info modifier
+ * Goals modifier
  */
 
-.Fieldset--additionalInfo .Fieldset-title {
-    background-image: url("./images/additionalInfo.svg");
+.Fieldset--goals .Fieldset-title {
+    background-image: url("./images/goals.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
     padding-left: 32px;

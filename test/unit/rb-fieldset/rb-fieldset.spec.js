@@ -56,6 +56,12 @@ define([
                 expect(element.hasClass('Fieldset--additionalInfo')).toBeTruthy();
             });
 
+            it('should use the goals type', function () {
+                compileTemplate('<rb-fieldset title="Default Text" type="goals"></rb-fieldset>');
+
+                expect(element.hasClass('Fieldset--goals')).toBeTruthy();
+            });
+
             it('should use the campaign basics type', function () {
                 compileTemplate('<rb-fieldset title="Default Text" type="campaignBasics"></rb-fieldset>');
 
