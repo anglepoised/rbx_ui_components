@@ -14,12 +14,12 @@
                 display="name"
                 name="noPreviousPlaceholder"
                 is-required="true"
-                items="demoRbSelectCtrl.items"
-                selected="demoRbSelectCtrl.emptySelect"
+                items="demoRbSelectControlCtrl.items"
+                selected="demoRbSelectControlCtrl.emptySelect"
                 help-message="i.e. Your favourite make"
                 placeholder="Car">
             </rb-select-control>
-            Selected: {{ demoRbSelectCtrl.emptySelect }}
+            Selected: {{ demoRbSelectControlCtrl.emptySelect }}
         </div>
         <div class="ComponentView">
             <rb-select-control
@@ -29,8 +29,8 @@
                 value="id"
                 display="name"
                 is-disabled="true"
-                items="demoRbSelectCtrl.items"
-                selected="demoRbSelectCtrl.previouslySelected">
+                items="demoRbSelectControlCtrl.items"
+                selected="demoRbSelectControlCtrl.previouslySelected">
             </rb-select-control>
         </div>
         <div class="ComponentView">
@@ -41,11 +41,11 @@
                 value="id"
                 display="name"
                 is-required="true"
-                items="demoRbSelectCtrl.items"
-                selected="demoRbSelectCtrl.previouslySelected"
+                items="demoRbSelectControlCtrl.items"
+                selected="demoRbSelectControlCtrl.previouslySelected"
                 placeholder="Your favourite Car">
             </rb-select-control>
-            Selected: {{ demoRbSelectCtrl.previouslySelected }}
+            Selected: {{ demoRbSelectControlCtrl.previouslySelected }}
         </div>
         <div class="RawHTML">
             <h3>
@@ -60,10 +60,10 @@
                 label="Select field no previous selected (no placeholder)"
                 value="id"
                 display="name"
-                items="demoRbSelectCtrl.items"
-                selected="demoRbSelectCtrl.emptySelect">
+                items="demoRbSelectControlCtrl.items"
+                selected="demoRbSelectControlCtrl.emptySelect">
             </rb-select-control>
-            Selected: {{ demoRbSelectCtrl.emptySelect }}
+            Selected: {{ demoRbSelectControlCtrl.emptySelect }}
         </div>
         <div class="ComponentView">
             <rb-select-control
@@ -73,10 +73,10 @@
                 label="Select field with a previous selected (no placeholder)"
                 value="id"
                 display="name"
-                items="demoRbSelectCtrl.items"
-                selected="demoRbSelectCtrl.previouslySelected">
+                items="demoRbSelectControlCtrl.items"
+                selected="demoRbSelectControlCtrl.previouslySelected">
             </rb-select-control>
-            Selected: {{ demoRbSelectCtrl.previouslySelected }}
+            Selected: {{ demoRbSelectControlCtrl.previouslySelected }}
         </div>
     </form>
 </section>
