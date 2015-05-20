@@ -10,23 +10,24 @@
                 'is-invalid': form[name].$touched && form[name].$invalid,
                 'is-required': isRequired
             }"
-            ng-repeat="(key, value) in ::data">
+            ng-repeat="(id, choice) in ::choices">
 
             <input
                 class="RadioControl-field"
-                id="{{::name}}-{{::key}}"
+                id="{{::name}}-{{::id}}"
                 name="{{::name}}"
-                ng-checked="{{value.checked}}"
+                ng-click="setChoice(choice)"
                 ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
-                ng-disabled="{{::isDisabled || value.disabled}}"
-                ng-required="{{::isRequired || value.required}}"
-                value="{{::value.value}}"
+                ng-disabled="{{::isDisabled || choice.disabled}}"
+                ng-required="{{::isRequired || choice.required}}"
+                ng-checked="isChecked(choice)"
+                value="{{::choice.value}}"
                 type="radio">
 
             <label
                 class="RadioControl-label u-textLabel"
-                for="{{::name}}-{{::key}}">
-                {{::value.label}}
+                for="{{::name}}-{{::id}}">
+                {{::choice.label}}
             </label>
         </div>
     </div>

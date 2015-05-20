@@ -38,12 +38,15 @@
     <div class="ComponentView">
         <form name="radioForm">
             <rb-radio-control
-                data="demoCtrl.data"
+                choices="demoCtrl.choices"
+                ng-model="demoCtrl.selected"
                 form="radioForm"
                 help-message="Optional group help message"
                 is-required=true
                 name="ng-radio-group">
             </rb-radio-control>
+
+            Model: {{ demoCtrl.selected }}
         </form>
     </div>
     <div class="RawHTML">
@@ -54,12 +57,15 @@
     <div class="ComponentView">
         <form name="radioRowForm">
             <rb-radio-control
-                data="demoCtrl.dataRow"
+                choices="demoCtrl.choicesRow"
+                ng-model="demoCtrl.selectedRow"
                 form="radioRowForm"
                 help-message="Optional group help message"
                 is-row=true
                 name="ng-radio--row-group">
             </rb-radio-control>
+
+            Model: {{ demoCtrl.selectedRow }}
         </form>
     </div>
 
