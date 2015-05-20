@@ -1,0 +1,16 @@
+/** @define SelectControl; use strict */
+
+/**
+ * The `.SelectControl` component...
+ */
+
+:root {
+    --SelectControl-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.SelectControl {
+}
