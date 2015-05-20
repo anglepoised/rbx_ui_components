@@ -23,7 +23,8 @@ define([
 
         return {
             scope: {
-                data: '=',
+                choices: '=',
+                ngModel: '=',
                 form: '=',
                 helpMessage: '@',
                 isDisabled: '@',
@@ -33,7 +34,16 @@ define([
             },
             restrict: 'E',
             replace: true,
-            template: template
+            template: template,
+            link: function (scope) {
+                scope.setChoice = function (choice) {
+                    scope.ngModel = choice.value;
+                };
+
+                scope.isChecked = function (choice) {
+                    return scope.ngModel === choice.value;
+                };
+            }
         };
     }
 

@@ -3,33 +3,43 @@ define([
 
     // @ngInject
     function demoCtrl ($rootScope, $state, $injector) {
-        this.data = [
+        this.choices = [
             {
-                label: 'Radio label'
+                label: 'Radio label',
+                value: 'radio_label'
             },
             {
-                label: 'Radio invalid'
+                label: 'Radio invalid',
+                value: 'radio_invalid'
             },
             {
                 label: 'Radio disabled',
+                value: 'radio_disabled',
                 disabled: true
             },
             {
                 label: 'Radio required',
+                value: 'radio_required',
                 required: true
             },
             {
                 label: 'Radio checked',
-                checked: true
+                value: 'radio_checked'
             }
         ];
 
-        this.dataRow = [];
+        this.selected = 'radio_checked';
+
+        this.choicesRow = [];
         for (var i = 0; i < 6; i++) {
-            this.dataRow.push({
-                label: 'Radio label ' + (i + 1)
+            this.choicesRow.push({
+                label: 'Radio label ' + (i + 1),
+                value: 'radio_label_' + (i + 1)
             });
         }
+
+        this.selectedRow = '';
+
     }
 
     return demoCtrl;

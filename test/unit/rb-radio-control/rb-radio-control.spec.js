@@ -9,14 +9,8 @@ define([
             $compile,
             element,
             compileTemplate,
-            data = [
-                {
-                    label: 'Radio One'
-                },
-                {
-                    label: 'Radio Two'
-                }
-            ];
+            choices,
+            model;
 
         beforeEach(angular.mock.module(rbRadioControl.name));
 
@@ -25,9 +19,21 @@ define([
             $scope = _$rootScope_.$new({});
             $compile = _$compile_;
 
+            choices = [
+                {
+                    label: 'Radio One',
+                    value: 'radio_one'
+                },
+                {
+                    label: 'Radio Two',
+                    value: 'radio_two'
+                }
+            ];
+
             // Compile directive, apply scope and fetch new isolated scope
             compileTemplate = function (template) {
-                $scope.data = data;
+                $scope.choices = choices;
+                $scope.model = model;
                 element = $compile(template)($scope);
                 $scope.$apply();
                 isolatedScope = element.isolateScope();
@@ -35,7 +41,7 @@ define([
         }));
 
         it('should have a name attribute', function () {
-            compileTemplate('<rb-radio-control data="data" name="radio-group"></rb-radio-control>');
+            compileTemplate('<rb-radio-control choices="choices" name="radio-group"></rb-radio-control>');
 
             var radio = element.find('input');
 
@@ -46,7 +52,7 @@ define([
 
         describe('is required', function () {
             it('should not be there by default', function () {
-                compileTemplate('<rb-radio-control data="data"></rb-radio-control>');
+                compileTemplate('<rb-radio-control choices="choices"></rb-radio-control>');
 
                 var radio = element.find('input');
 
@@ -56,7 +62,7 @@ define([
             });
 
             it('should be applied to all radio inputs', function () {
-                compileTemplate('<rb-radio-control data="data" is-required=true></rb-radio-control>');
+                compileTemplate('<rb-radio-control choices="choices" is-required=true></rb-radio-control>');
 
                 var radio = element.find('input');
 
@@ -67,8 +73,8 @@ define([
         });
 
         describe('disabled', function () {
-            it('should enabled by default', function () {
-                compileTemplate('<rb-radio-control data="data"></rb-radio-control>');
+            it('should be enabled by default', function () {
+                compileTemplate('<rb-radio-control choices="choices"></rb-radio-control>');
 
                 var radio = element.find('input');
 
@@ -78,7 +84,7 @@ define([
             });
 
             it('should disable all radio inputs', function () {
-                compileTemplate('<rb-radio-control data="data" is-disabled=true></rb-radio-control>');
+                compileTemplate('<rb-radio-control choices="choices" is-disabled=true></rb-radio-control>');
 
                 var radio = element.find('input');
 
@@ -88,9 +94,9 @@ define([
             });
 
             it('should only disable the first radio input', function () {
-                data[0].disabled = true;
+                choices[0].disabled = true;
 
-                compileTemplate('<rb-radio-control data="data"></rb-radio-control>');
+                compileTemplate('<rb-radio-control choices="choices"></rb-radio-control>');
 
                 var radio = element.find('input');
 
@@ -129,6 +135,24 @@ define([
                 compileTemplate('<rb-radio-control is-row=true></rb-radio-control>');
 
                 expect(angular.element(element[0]).hasClass('RadioControl--row')).toBe(true);
+            });
+        });
+
+        describe('model', function () {
+            it('should be the value of the selected radio control', function () {
+                compileTemplate('<rb-radio-control ng-model="model" choices="choices"></rb-radio-control>');
+
+                isolatedScope.setChoice($scope.choices[0]);
+                $scope.$digest();
+
+                expect($scope.model).toBe(element.find('input')[0].value);
+            });
+
+            it('should select a radio control when already has a value', function () {
+                model = 'radio_two';
+                compileTemplate('<rb-radio-control ng-model="model" choices="choices"></rb-radio-control>');
+
+                expect(isolatedScope.isChecked($scope.choices[1])).toBe(true);
             });
         });
     });
