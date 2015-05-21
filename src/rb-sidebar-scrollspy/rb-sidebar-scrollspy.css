@@ -21,7 +21,7 @@
 * directive uses this class to work internally.
 */
 .active {
-    background-color:#FF0;
+    background-color:#CCC;
 }
 
 /**
@@ -29,7 +29,7 @@
 * If renamed, the directive template and tests should
 * reflect this change as well in order to work properly.
 */
-.categoryClass {
-    color:orange;
+.ScrollSpy-Category {
+    text-transform:uppercase;
     font-weight:bold;
 }

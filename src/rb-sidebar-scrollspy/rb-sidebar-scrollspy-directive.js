@@ -38,7 +38,7 @@ define([
 
         return {
             scope: {
-                list: '=',
+                categories: '=',
                 offset: '@'
             },
             restrict: 'E',

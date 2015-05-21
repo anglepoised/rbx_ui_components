@@ -2,270 +2,259 @@ define([
 ], function () {
 
     // @ngInject
-    function demoCtrl ($rootScope, $state, $injector) {
+    function demoCtrl ($rootScope, $scope, $state, $injector) {
         var $this = this;
-        this.search = '';
 
-        this.azList = [
-            {label:'A', anchor:'A', category: true},
-            {label:'B', anchor:'B'},
-            {label:'C', anchor:'C'},
-            {label:'D', anchor:'D'},
-            {label:'E', anchor:'E'},
-            {label:'F', anchor:'F'},
-            {label:'G', anchor:'G'},
-            {label:'H', anchor:'H'},
-            {label:'I', anchor:'I'},
-            {label:'J', anchor:'J'},
-            {label:'K', anchor:'K'},
-            {label:'L', anchor:'L'},
-            {label:'M', anchor:'M'},
-            {label:'N', anchor:'N'},
-            {label:'O', anchor:'O'},
-            {label:'P', anchor:'P'},
-            {label:'Q', anchor:'Q'},
-            {label:'R', anchor:'R'},
-            {label:'S', anchor:'S'},
-            {label:'T', anchor:'T'},
-            {label:'U', anchor:'U'},
-            {label:'V', anchor:'V'},
-            {label:'W', anchor:''},
-            {label:'X', anchor:''},
-            {label:'Y', anchor:'Y'},
-            {label:'Z', anchor:'Z'}
+        $scope.search = '';
+
+        $scope.$watch('search', function (val) {
+
+            var filteredCategory,
+                filteredSection,
+                categoryMatch,
+                filteredCategoryIndex,
+                filteredSectionIndex,
+                sectionMatch,
+                itmeMatch,
+                filteredCategories = [];
+
+            // For each category
+            angular.forEach($this.categories, function (category) {
+                filteredCategory = angular.copy(category);
+                filteredCategory.sections = [];
+
+                categoryMatch = false;
+
+                // and each section within that category
+                angular.forEach(category.sections, function (section) {
+
+                    filteredSection = angular.copy(section);
+                    filteredSection.items = [];
+
+                    sectionMatch = false;
+
+                    // Check each item for matches
+                    angular.forEach(section.items, function (item) {
+                        itemMatch = item.label.toLowerCase().indexOf(val.toLowerCase()) >= 0;
+
+                        // If there is a match
+                        if (itemMatch) {
+
+                            // and this is first match in this category
+                            if (categoryMatch === false) {
+                                // add empty category to filteredCategories
+                                filteredCategoryIndex = filteredCategories.push(filteredCategory) - 1;
+                                categoryMatch = true;
+                            }
+
+                            // and/or this is first match in this section
+                            if (sectionMatch === false) {
+                                // add empty section to the category added above
+                                filteredSectionIndex = filteredCategories[filteredCategoryIndex]
+                                    .sections
+                                    .push(filteredSection);
+
+                                sectionMatch = true;
+                            }
+
+                            filteredSection.items.push(item);
+                        }
+                    });
+                });
+            });
+
+            // Update scope filteredCategories
+            $this.filteredCategories = filteredCategories;
+        }, true);
+
+        this.categories = [
+            {
+                label: 'Countries',
+                anchor: 'countries',
+                hidden: true,
+                sections: [
+                    {
+                        label: 'A',
+                        anchor: 'A',
+                        items: [
+                            {label:'Afghanistan'},
+                            {label:'Albania'},
+                            {label:'Algeria'},
+                            {label:'Andorra'},
+                            {label:'Angola'},
+                            {label:'Antigua and Barbuda'},
+                            {label:'Argentina'},
+                            {label:'Armenia'},
+                            {label:'Aruba'},
+                            {label:'Australia'},
+                            {label:'Austria'},
+                            {label:'Azerbaijan'}
+                        ]
+                    },
+                    {
+                        label: 'B',
+                        anchor: 'B',
+                        items: [
+                            {label:'Bahamas, The'},
+                            {label:'Bahrain'},
+                            {label:'Bangladesh'},
+                            {label:'Barbados'},
+                            {label:'Belarus'},
+                            {label:'Belgium'},
+                            {label:'Belize'},
+                            {label:'Benin'},
+                            {label:'Bhutan'},
+                            {label:'Bolivia'},
+                            {label:'Bosnia and Herzegovina'},
+                            {label:'Botswana'},
+                            {label:'Brazil'},
+                            {label:'Brunei'},
+                            {label:'Bulgaria'},
+                            {label:'Burkina Faso'},
+                            {label:'Burma'},
+                            {label:'Burundi'}
+                        ]
+                    },
+                    {
+                        label: 'C',
+                        anchor: 'C',
+                        items: [
+                            {label:'Cambodia'},
+                            {label:'Cameroon'},
+                            {label:'Canada'},
+                            {label:'Cape Verde'},
+                            {label:'Central African Republic'},
+                            {label:'Chad'},
+                            {label:'Chile'},
+                            {label:'China'},
+                            {label:'Colombia'},
+                            {label:'Comoros'},
+                            {label:'Congo, Democratic Republic of the'},
+                            {label:'Congo, Republic of the'},
+                            {label:'Costa Rica'},
+                            {label:'Cote d\'Ivoire'},
+                            {label:'Croatia'},
+                            {label:'Cuba'},
+                            {label:'Curacao'},
+                            {label:'Cyprus'},
+                            {label:'Czech Republic'}
+                        ]
+                    },
+                    {
+                        label: 'D',
+                        anchor: 'D',
+                        items: [
+                            {label:'Denmark'},
+                            {label:'Djibouti'},
+                            {label:'Dominica'},
+                            {label:'Dominican Republic'}
+                        ]
+                    },
+                    {
+                        label: 'E',
+                        anchor: 'E',
+                        items: [
+                            {label:'East Timor'},
+                            {label:'Ecuador'},
+                            {label:'Egypt'},
+                            {label:'El Salvador'},
+                            {label:'Equatorial Guinea'},
+                            {label:'Eritrea'},
+                            {label:'Estonia'},
+                            {label:'Ethiopia'}
+                        ]
+                    },
+                    {
+                        label: 'F',
+                        anchor: 'F',
+                        items: [
+                            {label:'Fiji'},
+                            {label:'Finland'},
+                            {label:'France'}
+                        ]
+                    },
+                    {
+                        label:'G',
+                        anchor:'G',
+                        items: [
+                            {label:'Gabon'},
+                            {label:'Gambia, The'},
+                            {label:'Georgia'},
+                            {label:'Germany'},
+                            {label:'Ghana'},
+                            {label:'Greece'},
+                            {label:'Grenada'},
+                            {label:'Guatemala'},
+                            {label:'Guinea'},
+                            {label:'Guinea-Bissau'},
+                            {label:'Guyana'}
+                        ]
+                    },
+                    {
+                        label: 'H',
+                        anchor: 'H',
+                        items: [
+                            {label:'Haiti'},
+                            {label:'Holy See'},
+                            {label:'Honduras'},
+                            {label:'Hong Kong'},
+                            {label:'Hungary'}
+                        ]
+                    },
+                    {
+                        label: 'I',
+                        anchor: 'I',
+                        items: [
+                            {label:'Iceland'},
+                            {label:'India'},
+                            {label:'Indonesia'},
+                            {label:'Iran'},
+                            {label:'Iraq'},
+                            {label:'Ireland'},
+                            {label:'Israel'},
+                            {label:'Italy'}
+                        ]
+                    },
+                    {
+                        label: 'J',
+                        anchor: 'J',
+                        items: [
+                            {label:'Jamaica'},
+                            {label:'Japan'},
+                            {label:'Jordan'}
+                        ]
+                    },
+                    {
+                        label: 'K',
+                        anchor: 'K',
+                        items: [
+                            {label:'Kazakhstan'},
+                            {label:'Kenya'},
+                            {label:'Kiribati'},
+                            {label:'Korea, North'},
+                            {label:'Korea, South'},
+                            {label:'Kosovo'},
+                            {label:'Kuwait'},
+                            {label:'Kyrgyzstan'}
+                        ]
+                    },
+                    {
+                        label: 'L',
+                        anchor: 'L',
+                        items: [
+                            {label:'Laos'},
+                            {label:'Latvia'},
+                            {label:'Lebanon'},
+                            {label:'Lesotho'},
+                            {label:'Liberia'},
+                            {label:'Libya'}
+                        ]
+                    }
+                ]
+            }
         ];
-        this.someCountries = [
-            {label:'A', id:'A'},
-            {label:'Afghanistan'},
-            {label:'Albania'},
-            {label:'Algeria'},
-            {label:'Andorra'},
-            {label:'Angola'},
-            {label:'Antigua and Barbuda'},
-            {label:'Argentina'},
-            {label:'Armenia'},
-            {label:'Aruba'},
-            {label:'Australia'},
-            {label:'Austria'},
-            {label:'Azerbaijan'},
-            {label:'B', id:'B'},
-            {label:'Bahamas, The'},
-            {label:'Bahrain'},
-            {label:'Bangladesh'},
-            {label:'Barbados'},
-            {label:'Belarus'},
-            {label:'Belgium'},
-            {label:'Belize'},
-            {label:'Benin'},
-            {label:'Bhutan'},
-            {label:'Bolivia'},
-            {label:'Bosnia and Herzegovina'},
-            {label:'Botswana'},
-            {label:'Brazil'},
-            {label:'Brunei'},
-            {label:'Bulgaria'},
-            {label:'Burkina Faso'},
-            {label:'Burma'},
-            {label:'Burundi'},
-            {label:'C', id:'C'},
-            {label:'Cambodia'},
-            {label:'Cameroon'},
-            {label:'Canada'},
-            {label:'Cape Verde'},
-            {label:'Central African Republic'},
-            {label:'Chad'},
-            {label:'Chile'},
-            {label:'China'},
-            {label:'Colombia'},
-            {label:'Comoros'},
-            {label:'Congo, Democratic Republic of the'},
-            {label:'Congo, Republic of the'},
-            {label:'Costa Rica'},
-            {label:'Cote d\'Ivoire'},
-            {label:'Croatia'},
-            {label:'Cuba'},
-            {label:'Curacao'},
-            {label:'Cyprus'},
-            {label:'Czech Republic'},
-            {label:'D', id:'D'},
-            {label:'Denmark'},
-            {label:'Djibouti'},
-            {label:'Dominica'},
-            {label:'Dominican Republic'},
-            {label:'E', id:'E'},
-            {label:'East Timor'},
-            {label:'Ecuador'},
-            {label:'Egypt'},
-            {label:'El Salvador'},
-            {label:'Equatorial Guinea'},
-            {label:'Eritrea'},
-            {label:'Estonia'},
-            {label:'Ethiopia'},
-            {label:'F', id:'F'},
-            {label:'Fiji'},
-            {label:'Finland'},
-            {label:'France'},
-            {label:'G', id:'G'},
-            {label:'Gabon'},
-            {label:'Gambia, The'},
-            {label:'Georgia'},
-            {label:'Germany'},
-            {label:'Ghana'},
-            {label:'Greece'},
-            {label:'Grenada'},
-            {label:'Guatemala'},
-            {label:'Guinea'},
-            {label:'Guinea-Bissau'},
-            {label:'Guyana'},
-            {label:'H', id:'H'},
-            {label:'Haiti'},
-            {label:'Holy See'},
-            {label:'Honduras'},
-            {label:'Hong Kong'},
-            {label:'Hungary'},
-            {label:'I', id:'I'},
-            {label:'Iceland'},
-            {label:'India'},
-            {label:'Indonesia'},
-            {label:'Iran'},
-            {label:'Iraq'},
-            {label:'Ireland'},
-            {label:'Israel'},
-            {label:'Italy'},
-            {label:'J', id:'J'},
-            {label:'Jamaica'},
-            {label:'Japan'},
-            {label:'Jordan'},
-            {label:'K', id:'K'},
-            {label:'Kazakhstan'},
-            {label:'Kenya'},
-            {label:'Kiribati'},
-            {label:'Korea, North'},
-            {label:'Korea, South'},
-            {label:'Kosovo'},
-            {label:'Kuwait'},
-            {label:'Kyrgyzstan'},
-            {label:'L', id:'L'},
-            {label:'Laos'},
-            {label:'Latvia'},
-            {label:'Lebanon'},
-            {label:'Lesotho'},
-            {label:'Liberia'},
-            {label:'Libya'},
-            {label:'Liechtenstein'},
-            {label:'Lithuania'},
-            {label:'Luxembourg'},
-            {label:'M', id:'M'},
-            {label:'Macau'},
-            {label:'Macedonia'},
-            {label:'Madagascar'},
-            {label:'Malawi'},
-            {label:'Malaysia'},
-            {label:'Maldives'},
-            {label:'Mali'},
-            {label:'Malta'},
-            {label:'Marshall Islands'},
-            {label:'Mauritania'},
-            {label:'Mauritius'},
-            {label:'Mexico'},
-            {label:'Micronesia'},
-            {label:'Moldova'},
-            {label:'Monaco'},
-            {label:'Mongolia'},
-            {label:'Montenegro'},
-            {label:'Morocco'},
-            {label:'Mozambique'},
-            {label:'N', id:'N'},
-            {label:'Namibia'},
-            {label:'Nauru'},
-            {label:'Nepal'},
-            {label:'Netherlands'},
-            {label:'Netherlands Antilles'},
-            {label:'New Zealand'},
-            {label:'Nicaragua'},
-            {label:'Niger'},
-            {label:'Nigeria'},
-            {label:'North Korea'},
-            {label:'Norway'},
-            {label:'O', id:'O'},
-            {label:'Oman'},
-            {label:'P', id:'P'},
-            {label:'Pakistan'},
-            {label:'Palau'},
-            {label:'Palestinian Territories'},
-            {label:'Panama'},
-            {label:'Papua New Guinea'},
-            {label:'Paraguay'},
-            {label:'Peru'},
-            {label:'Philippines'},
-            {label:'Poland'},
-            {label:'Portugal'},
-            {label:'Q', id:'Q'},
-            {label:'Qatar'},
-            {label:'R', id:'R'},
-            {label:'Romania'},
-            {label:'Russia'},
-            {label:'Rwanda'},
-            {label:'S', id:'S'},
-            {label:'Saint Kitts and Nevis'},
-            {label:'Saint Lucia'},
-            {label:'Saint Vincent and the Grenadines'},
-            {label:'Samoa'},
-            {label:'San Marino'},
-            {label:'Sao Tome and Principe'},
-            {label:'Saudi Arabia'},
-            {label:'Senegal'},
-            {label:'Serbia'},
-            {label:'Seychelles'},
-            {label:'Sierra Leone'},
-            {label:'Singapore'},
-            {label:'Sint Maarten'},
-            {label:'Slovakia'},
-            {label:'Slovenia'},
-            {label:'Solomon Islands'},
-            {label:'Somalia'},
-            {label:'South Africa'},
-            {label:'South Korea'},
-            {label:'South Sudan'},
-            {label:'Spain'},
-            {label:'Sri Lanka'},
-            {label:'Sudan'},
-            {label:'Suriname'},
-            {label:'Swaziland'},
-            {label:'Sweden'},
-            {label:'Switzerland'},
-            {label:'Syria'},
-            {label:'T', id:'T'},
-            {label:'Taiwan'},
-            {label:'Tajikistan'},
-            {label:'Tanzania'},
-            {label:'Thailand'},
-            {label:'Timor-Leste'},
-            {label:'Togo'},
-            {label:'Tonga'},
-            {label:'Trinidad and Tobago'},
-            {label:'Tunisia'},
-            {label:'Turkey'},
-            {label:'Turkmenistan'},
-            {label:'Tuvalu'},
-            {label:'U', id:'U'},
-            {label:'Uganda'},
-            {label:'Ukraine'},
-            {label:'United Arab Emirates'},
-            {label:'United Kingdom'},
-            {label:'United States of America'},
-            {label:'Uruguay'},
-            {label:'Uzbekistan'},
-            {label:'V', id:'V'},
-            {label:'Vanuatu'},
-            {label:'Venezuela'},
-            {label:'Vietnam'},
-            {label:'Y', id:'Y'},
-            {label:'Yemen'},
-            {label:'Z', id:'Z'},
-            {label:'Zambia'},
-            {label:'Zimbabwe'}
-        ];
+
+        this.filteredCategories = angular.copy(this.categories);
     }
 
     return demoCtrl;

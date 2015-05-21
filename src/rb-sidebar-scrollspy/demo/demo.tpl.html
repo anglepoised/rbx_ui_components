@@ -1,24 +1,32 @@
 <div>
-    <div ng-if="!demoCtrl.search" style="position: fixed;top: 0;bottom: 0;margin-left: 50px;background-color:#FFF;overflow: auto">
-        <rb-sidebar-scrollspy list="demoCtrl.azList" offset="10"></rb-sidebar-scrollspy>
+    <div style="position: fixed; top: 10px; left: 50px">
+        <rb-sidebar-scrollspy categories="demoCtrl.filteredCategories" offset="10"></rb-sidebar-scrollspy>
     </div>
-    <div style="position: relative;margin-left: 180px">
+
+    <div style="position: absolute;top:0; left: 180px">
         <div>
-            <p>Just for DEMO purposes</p>
-            <p>The 'A' category in the scrollspy has a different style to reflect how categories might be displayed.</p>
-            <p>The scrollspy sidebar is removed on searching</p>
-            Search:<input type="text" ng-model="demoCtrl.search"> &rarr; The search filter is the simplest (not the ideal).
-            <hr>
+            <input type="text" ng-model="search" placeholder="Search list...">
+            <hr />
         <div>
-        <ul>
-            <li ng-repeat="country in demoCtrl.someCountries | filter:demoCtrl.search track by $index">
-                <h1 ng-if="country.id" id="{{country.id}}">
-                    {{country.label}}
-                </h1>
-                <span ng-if="!country.id">
-                    {{country.label}}
-                </span>
-            </li>
-        </ul>
+            <span ng-repeat="category in demoCtrl.filteredCategories">
+                <h2 id="{{ category.anchor }}" class="ListyThing-Category">
+                    {{ category.label }}
+                </h2>
+
+                <ul class="ListyThing ListyThing--columns">
+                    <li ng-repeat="section in category.sections"  id="{{ section.anchor }}" class="ListyThing-section">
+                        <h3>
+                            {{ section.label }}
+                        </h3>
+                        <ul class="ListyThing-items">
+                            <li ng-repeat="item in section.items" class="ListyThing-item">
+                                {{ item.label }}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </span>
+        </div>
     </div>
 </div>
