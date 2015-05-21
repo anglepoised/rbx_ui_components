@@ -1,6 +1,6 @@
 define([
     'components/rb-sidebar-scrollspy'
-], function (rbSidebarScrollspy) {
+], function (rbSidebarscrollspy) {
     describe('rb-sidebar-scrollspy', function () {
 
         var $rootScope,
@@ -23,7 +23,7 @@ define([
             template = '<rb-sidebar-scrollspy list="list"></rb-sidebar-scrollspy>',
             templateWithOffset = '<rb-sidebar-scrollspy list="list" offset="100"></rb-sidebar-scrollspy>';
 
-        beforeEach(angular.mock.module(rbSidebarScrollspy.name));
+        beforeEach(angular.mock.module(rbSidebarscrollspy.name));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $rootScope = _$rootScope_;

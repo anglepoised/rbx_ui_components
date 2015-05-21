@@ -4,9 +4,9 @@ define([
 
     // @ngInject
     function demoState ($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('rb-sidebar-scrollspy', {
-            url: '/rb-sidebar-scrollspy',
-            controller: 'demo-rb-sidebar-scrollspy-ctrl as demoCtrl',
+        $stateProvider.state('rb-scrollspy', {
+            url: '/rb-scrollspy',
+            controller: 'demo-rb-scrollspy-ctrl as demoCtrl',
             template: template
         });
     }
