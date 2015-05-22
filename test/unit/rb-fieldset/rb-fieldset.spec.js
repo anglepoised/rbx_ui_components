@@ -62,10 +62,10 @@ define([
                 expect(element.hasClass('Fieldset--goals')).toBeTruthy();
             });
 
-            it('should use the campaign basics type', function () {
-                compileTemplate('<rb-fieldset title="Default Text" type="campaignBasics"></rb-fieldset>');
+            it('should use the basics type', function () {
+                compileTemplate('<rb-fieldset title="Default Text" type="basics"></rb-fieldset>');
 
-                expect(element.hasClass('Fieldset--campaignBasics')).toBeTruthy();
+                expect(element.hasClass('Fieldset--basics')).toBeTruthy();
             });
 
             it('should use the finance type', function () {
