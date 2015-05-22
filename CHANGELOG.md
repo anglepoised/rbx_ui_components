@@ -8,7 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- Nothing.
+- [Basic `.SelectControl` styles](https://github.com/rockabox/rbx_ui_components/pull/146)
 
 ## [1.1.0] - 2015-05-21
 
