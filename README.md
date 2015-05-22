@@ -1,53 +1,57 @@
-# RBX UI Components
+# RBX UI Components [![Build Status](https://travis-ci.org/rockabox/rbx_ui_components.svg?branch=master)](https://travis-ci.org/rockabox/rbx_ui_components)
 
-A set of angular components.
+Rockabox's [AngularJS](https://angularjs.org/) and [PostCSS](https://github.com/postcss/postcss) UI components.
 
-## Dependencies
+## Getting Started
 
-* [Git](http://git-scm.com)
-* [Grunt](http://gruntjs.com/): `npm install -g grunt`.
-* [Bower](http://bower.io): `npm install -g bower`.
-* [Selenium Server](https:/* [Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
-/www.npmjs.com/package/selenium-standalone): `npm install -g selenium-standalone`.
-* [Protractor](https://www.npmjs.com/package/protractor): `npm install -g protractor`.
-* [Webpack](http://webpack.github.io): `npm install -g webpack`.
-* [Webpack-dev-server](http://webpack.github.io): `npm install -g webpack-dev-server`.
+1. [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
+2. Install global packages ([Bower](http://bower.io/), [Grunt](http://gruntjs.com/), [Webpack](http://webpack.github.io/) and [Webpack-dev-server](http://webpack.github.io/docs/webpack-dev-server.html)):
 
-## Getting started
+    ```sh
+    npm install -g bower grunt-cli webpack webpack-dev-server
+    ```
 
-* Install git: (http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-* Checkout the repo: `git clone git@github.com:rockabox/rbx_ui_components && cd rbx_ui_components`
-* Install project dependencies: `npm install`.
-* Install bower packages: `bower install`.
-* Run `npm start`.
+3. Clone project and install dependencies:
 
-## Running unit tests
-Use grunt to run unit tests:
+    ```sh
+    git clone git@github.com:rockabox/rbx_ui_components
+    cd rbx_ui_components
+    npm install && bower install
+    ```
 
-	grunt unit
+4. Run the dev server:
 
-It's important that you run the unit tests via this command and not direclty with Karma as the grunt will set the enviromental timezone for phantomJS browser.
+    ```sh
+    npm start
+    ```
 
-## Running functional tests with Protractor
+5. Browse to <http://localhost:7000/>.
 
-* Make sure you have installed a Selenium Server and chromedriver. Follow the instructions at:
-  https://www.npmjs.com/package/selenium-standalone
-* Make sure you point to the Selenium .jar in the protractor config file (protractor-base.conf.js)
-* Run `gulp func-tests`
+## Running Unit Tests
 
-## Guidelines for making components
+Run with:
 
-We should always aim to keep consistency in the structure and the design pattern for each component. **Always** use the Yeoman generator when starting a new component:
-[https://github.com/rockabox/generator-rb-component](https://github.com/rockabox/generator-rb-component)
+```sh
+grunt unit
+```
 
-### Angular directive guidelines
+Do not run unit tests directly with Karma; the grunt tasks are required
+to set the timezone correctly for PhantomJS.
 
-- Use attributes to pass modifiers and single line contents (titles, labels etc) into an isolated scope. For an example look at the header attribute in `rb-data-summary-item`
-	
-- Use transclusion where the main content of a directive needs to be flexible enough to handle an unkown structure. For an example see the transclusion in `rb-data-summary-item`.
+## Guidelines For Making New Components
 
-- Follow a wrapper & item pattern for components that need multiple transclusion. For an example see the `rb-data-summary` and `rb-data-summary-item` directives.
+Use the [rb-component Yeoman generator](https://github.com/rockabox/generator-rb-component) when starting a new component.
 
-- Split large functions (like link functions) into separate webpack modules to keep things simple. For an example see `rb-currency-link.js`
+Keep the structure and design pattern of new components consistent with those that have come before.
 
-- Provide demos for all iterations of the component with different modifiers and settings.
+### Angular Directive Guidelines
+
+* Use attributes to pass modifiers and single line contents (titles, labels etc.) into an isolated scope.
+  For an example, look at the header attribute in `rb-data-summary-item`
+* Use transclusion where the main content of a directive needs to be flexible enough to handle an unknown structure.
+  For an example, see the transclusion in `rb-data-summary-item`.
+* Follow a wrapper & item pattern for components that need multiple transclusion. For an example see the
+  `rb-data-summary` and `rb-data-summary-item` directives.
+* Split large functions (like link functions) into separate Webpack modules to keep things simple. For an example see
+  `rb-currency-link.js`
+* Provide a component demo that shows all combinations of different modifiers and settings.
