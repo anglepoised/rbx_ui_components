@@ -23,6 +23,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [All section headings now have a keyline](https://github.com/rockabox/rbx_ui_components/pull/138)
 - [`rb-radio-control` refactored to bind to a model](https://github.com/rockabox/rbx_ui_components/pull/137)
 
+### Fixed
+
+- [TextControl required state is blue](https://github.com/rockabox/rbx_ui_components/pull/142)
+
 ## 1.0.0 - 2015-05-19
 
 - Initial release.
