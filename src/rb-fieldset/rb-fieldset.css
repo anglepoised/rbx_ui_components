@@ -47,11 +47,11 @@
 }
 
 /**
- * Campaign Basics modifier
+ * Basics modifier
  */
 
-.Fieldset--campaignBasics .Fieldset-title {
-    background-image: url("./images/campaignBasics.svg");
+.Fieldset--basics .Fieldset-title {
+    background-image: url("./images/basics.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
     padding-left: 32px;
