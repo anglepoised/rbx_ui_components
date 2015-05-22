@@ -20,7 +20,7 @@
     --TextControl-field-disabled-color: var(--color-gray-regent);
     --TextControl-field-disabled-image: "./images/Control-disabled.svg";
     --TextControl-field-disabled-image-position: calc(100% - 12px) center;
-    --TextControl-field-focus-border-color: var(--color-green-base);
+    --TextControl-field-focus-border-color: var(--color-blue-base);
     --TextControl-field-image-padding: 2.5em;
     --TextControl-field-invalid-border-color: var(--color-red-base);
     --TextControl-field-invalid-color: var(--color-red-base);
