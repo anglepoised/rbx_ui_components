@@ -55,6 +55,15 @@
     padding: 0.75em 0.75em 0.5em;
 }
 
+/**
+ * Disable Mozilla focusring styles, use custom focus styles.
+ */
+
+.SelectControl-field:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 var(--color-gray-shark);
+}
+
 .SelectControl-field:focus,
 .SelectControl-field.is-focused {
     border-color: var(--SelectControl-field-focus-border-color);
