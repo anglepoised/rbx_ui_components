@@ -68,6 +68,12 @@ define([
                 expect(element.hasClass('Fieldset--basics')).toBeTruthy();
             });
 
+            it('should use the campaignBasics type [DEPRECATED]', function () {
+                compileTemplate('<rb-fieldset title="Default Text" type="campaignBasics"></rb-fieldset>');
+
+                expect(element.hasClass('Fieldset--basics')).toBeTruthy();
+            });
+
             it('should use the finance type', function () {
                 compileTemplate('<rb-fieldset title="Default Text" type="finance"></rb-fieldset>');
 
