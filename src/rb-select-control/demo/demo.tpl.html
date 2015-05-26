@@ -1,10 +1,94 @@
-
 <section class="Section">
     <form name="userForm">
         <div class="RawHTML">
             <h2>
                 rb-select-control
             </h2>
+            <h3>
+                Static Test
+            </h3>
+        </div>
+        <div class="ComponentView">
+            <div class="SelectControl">
+                <label class="SelectControl-label u-textLabel" for="SelectDemo">
+                    Normal
+                </label>
+                <select class="SelectControl-field" id="SelectDemo">
+                    <option value="">Car</option>
+                    <option value="0" label="Volvo">Volvo</option>
+                    <option value="1" label="Audi">Audi</option>
+                    <option value="2" label="BMW">BMW</option>
+                    <option value="3" label="Mercedes">Mercedes</option>
+                </select>
+                <div class="SelectControl-message">
+                    i.e. Your favourite make
+                </div>
+            </div>
+            <div class="SelectControl SelectControl--small">
+                <label class="SelectControl-label u-textLabel" for="SelectDemo">
+                    Small
+                </label>
+                <select class="SelectControl-field" id="SelectDemo">
+                    <option value="">Car</option>
+                    <option value="0" label="Volvo">Volvo</option>
+                    <option value="1" label="Audi">Audi</option>
+                    <option value="2" label="BMW">BMW</option>
+                    <option value="3" label="Mercedes">Mercedes</option>
+                </select>
+                <div class="SelectControl-message">
+                    i.e. Your favourite make
+                </div>
+            </div>
+            <div class="SelectControl is-required">
+                <label class="SelectControl-label is-required u-textLabel" for="SelectDemoInvalid">
+                    Required
+                </label>
+                <select class="SelectControl-field is-required" id="SelectDemoInvalid" required>
+                    <option value="">Car</option>
+                    <option value="0" label="Volvo">Volvo</option>
+                    <option value="1" label="Audi">Audi</option>
+                    <option value="2" label="BMW">BMW</option>
+                    <option value="3" label="Mercedes">Mercedes</option>
+                </select>
+                <div class="SelectControl-message is-required">
+                    i.e. Your favourite make
+                </div>
+            </div>
+            <div class="SelectControl is-invalid">
+                <label class="SelectControl-label is-invalid u-textLabel" for="SelectDemoInvalid">
+                    Invalid
+                </label>
+                <select class="SelectControl-field is-invalid" id="SelectDemoInvalid">
+                    <option value="">Car</option>
+                    <option value="0" label="Volvo">Volvo</option>
+                    <option value="1" label="Audi">Audi</option>
+                    <option value="2" label="BMW">BMW</option>
+                    <option value="3" label="Mercedes">Mercedes</option>
+                </select>
+                <div class="SelectControl-message is-invalid">
+                    This field is required.
+                </div>
+            </div>
+            <div class="SelectControl is-disabled">
+                <label class="SelectControl-label is-disabled u-textLabel" for="SelectDemoInvalid">
+                    Invalid
+                </label>
+                <select class="SelectControl-field is-disabled" id="SelectDemoInvalid" disabled>
+                    <option value="">Car</option>
+                    <option value="0" label="Volvo">Volvo</option>
+                    <option value="1" label="Audi">Audi</option>
+                    <option value="2" label="BMW">BMW</option>
+                    <option value="3" label="Mercedes">Mercedes</option>
+                </select>
+                <div class="SelectControl-message is-disabled">
+                    i.e. Your favourite make
+                </div>
+            </div>
+        </div>
+        <div class="RawHTML">
+            <h3>
+                Current Angular Version
+            </h3>
         </div>
         <div class="ComponentView">
             <rb-select-control

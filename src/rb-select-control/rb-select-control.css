@@ -5,12 +5,126 @@
  */
 
 :root {
-    --SelectControl-variable: var();
+    --SelectControl-field-background-color: var(--color-form-field-background);
+    --SelectControl-field-border-color: var(--color-gray-ghost);
+    --SelectControl-field-border-radius: 4px;
+    --SelectControl-field-color: var(--color-gray-tuna);
+    --SelectControl-field-disabled-background-color: var(--color-white-catskill);
+    --SelectControl-field-disabled-color: var(--color-gray-regent);
+    --SelectControl-field-disabled-image: "./images/Control-disabled.svg";
+    --SelectControl-field-disabled-image-position: right center;
+    --SelectControl-field-focus-border-color: var(--color-blue-base);
+    --SelectControl-field-image: "./images/Control.svg";
+    --SelectControl-field-invalid-border-color: var(--color-red-base);
+    --SelectControl-field-required-image: "./images/Control-required.svg";
+    --SelectControl-field-required-image-position: right 45px top 6px;
+    --SelectControl-field-required-invalid-image: "./images/Control-required-invalid.svg";
+    --SelectControl-label-invalid-color: var(--color-red-base);
+    --SelectControl-message-invalid-background-color: var(--color-red-base);
+    --SelectControl-message-invalid-color: var(--color-white);
 }
 
 /**
- * 1. Comment
+ * 1. Remove default appearance. Prefixed versions necessary, see: http://git.io/vTwoV
+ * 2. Set consistent spacing after every field.
+ * 3. Remove `outline` in favour of `border`.
+ * 4. Nudge `required` indicator from top right corner.
+ * 5. Disabled state always overrides other states.
+ * 6. Prevent text selection on disabled field.
  */
 
 .SelectControl {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/**
+ * Default
+ */
+
+.SelectControl-field {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none; /* 1 */
+    background: var(--SelectControl-field-background-color) url(var(--SelectControl-field-image)) no-repeat center right;
+    border: 1px solid var(--SelectControl-field-border-color);
+    border-radius: var(--SelectControl-field-border-radius);
+    color: var(--SelectControl-field-color);
+    margin-bottom: 0.5em; /* 2 */
+    padding: 0.75em 0.75em 0.5em;
+}
+
+/**
+ * Disable Mozilla focusring styles, use custom focus styles.
+ */
+
+.SelectControl-field:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 var(--color-gray-shark);
+}
+
+.SelectControl-field:focus,
+.SelectControl-field.is-focused {
+    border-color: var(--SelectControl-field-focus-border-color);
+    outline: none; /* 3 */
+}
+
+.SelectControl-message {
+    display: block;
+    font-size: var(--font-size-x-small);
+}
+
+/**
+ * Invalid
+ */
+
+.SelectControl-label.is-invalid {
+    color: var(--SelectControl-label-invalid-color);
+}
+
+.SelectControl-field:invalid:focus,
+.SelectControl-field.is-invalid {
+    border-color: var(--SelectControl-field-invalid-border-color);
+}
+
+.SelectControl-message.is-invalid {
+    background: var(--SelectControl-message-invalid-background-color);
+    border-radius: var(--SelectControl-field-border-radius);
+    color: var(--SelectControl-message-invalid-color);
+    padding: 0.75em 0.75em 0.5em;
+}
+
+/**
+ * Required
+ */
+
+.SelectControl-field:required,
+.SelectControl-field.is-required {
+    background-image: url(var(--SelectControl-field-image)), url(var(--SelectControl-field-required-image));
+    background-position: center right, var(--SelectControl-field-required-image-position); /* 4 */
+    outline: none; /* 2 */
+}
+
+/**
+ * Disabled
+ */
+
+.SelectControl-field:disabled,
+.SelectControl-field.is-disabled {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--SelectControl-field-disabled-background-color) url(var(--SelectControl-field-disabled-image)) no-repeat var(--SelectControl-field-disabled-image-position) !important; /* 5 */
+    border: 1px solid var(--SelectControl-field-border-color) !important; /* 5 */
+    color: var(--SelectControl-field-disabled-color) !important; /* 5 */
+    user-select: none; /* 6 */
+}
+
+/**
+ * Small
+ */
+
+.SelectControl--small .SelectControl-field {
+    font-size: var(--font-size-x-small);
 }

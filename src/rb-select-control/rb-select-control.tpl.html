@@ -1,10 +1,11 @@
-<div class="TextControl TextControl--select">
+<div class="SelectControl">
     <label
-        class="TextControl-label u-textLabel"
+        class="SelectControl-label u-textLabel"
         ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}">
         {{ label }}
     </label>
     <select
+        class="SelectControl-field"
         name="{{name}}"
         ng-options="item[value] as item[display] for item in items"
         ng-model="selected"
@@ -13,16 +14,16 @@
             <option value="" ng-show="placeholder">{{ placeholder }}</option>
     </select>
 
-    <div class="TextControl-message" ng-show="helpMessage">
+    <div class="SelectControl-message" ng-show="helpMessage">
         {{helpMessage}}
     </div>
 
-    <div class="TextControl-message is-invalid" ng-if="form[name].$error.server">
+    <div class="SelectControl-message is-invalid" ng-if="form[name].$error.server">
         {{ form[name].$error.server }}
     </div>
 
     <div ng-if="form[name].$touched">
-        <div class="TextControl-message is-invalid" ng-if="form[name].$error.required">
+        <div class="SelectControl-message is-invalid" ng-if="form[name].$error.required">
             This field is required.
         </div>
     </div>
