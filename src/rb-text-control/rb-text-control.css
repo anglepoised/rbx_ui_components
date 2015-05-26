@@ -23,7 +23,6 @@
     --TextControl-field-focus-border-color: var(--color-blue-base);
     --TextControl-field-image-padding: 2.5em;
     --TextControl-field-invalid-border-color: var(--color-red-base);
-    --TextControl-field-invalid-color: var(--color-red-base);
     --TextControl-field-placeholder-color: var(--color-gray-ghost);
     --TextControl-field-required-image: "./images/Control-required.svg";
     --TextControl-field-required-image-position: right 6px top 6px;
