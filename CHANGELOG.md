@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+- [`rb-scrollspy` component](https://github.com/rockabox/rbx_ui_components/pull/140)
 - [Basic `.SelectControl` styles](https://github.com/rockabox/rbx_ui_components/pull/146)
 - [Add `basics` modifier to `rb-fieldset` component](https://github.com/rockabox/rbx_ui_components/pull/144). Use instead of `campaignBasics`, which will be removed in a future release.
 
