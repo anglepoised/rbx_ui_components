@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [Basic `.SelectControl` styles](https://github.com/rockabox/rbx_ui_components/pull/146)
 - [Add `basics` modifier to `rb-fieldset` component](https://github.com/rockabox/rbx_ui_components/pull/144). Use instead of `campaignBasics`, which will be removed in a future release.
+- [`breakdown and `metrics` modifiers for `rb-fieldset` component](https://github.com/rockabox/rbx_ui_components/pull/155). Intended for use in Reporting UI.
 
 ### Fixed
 
