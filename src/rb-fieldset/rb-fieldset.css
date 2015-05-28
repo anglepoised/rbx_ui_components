@@ -58,6 +58,17 @@
 }
 
 /**
+ * Breakdown modifier
+ */
+
+.Fieldset--breakdown .Fieldset-title {
+    background-image: url("./images/breakdown.svg");
+    background-position: var(--Fieldset-title-background-position);
+    background-repeat: no-repeat;
+    padding-left: 32px;
+}
+
+/**
  * Finance modifier
  */
 
