@@ -1,0 +1,16 @@
+/** @define GenericForm; use strict */
+
+/**
+ * The `.GenericForm` component...
+ */
+
+:root {
+    --GenericForm-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.GenericForm {
+}
