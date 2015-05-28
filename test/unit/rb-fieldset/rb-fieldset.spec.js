@@ -85,6 +85,12 @@ define([
 
                 expect(element.hasClass('Fieldset--finance')).toBeTruthy();
             });
+
+            it('should use the metrics type', function () {
+                compileTemplate('<rb-fieldset title="Default Text" type="metrics"></rb-fieldset>');
+
+                expect(element.hasClass('Fieldset--metrics')).toBeTruthy();
+            });
         });
     });
 });

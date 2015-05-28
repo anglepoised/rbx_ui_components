@@ -90,6 +90,17 @@
     padding-left: 32px;
 }
 
+/**
+ * Metrics modifier
+ */
+
+.Fieldset--metrics .Fieldset-title {
+    background-image: url("./images/metrics.svg");
+    background-position: var(--Fieldset-title-background-position);
+    background-repeat: no-repeat;
+    padding-left: 32px;
+}
+
 @media (--md-viewport) {
 
     .Fieldset {
