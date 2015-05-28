@@ -28,6 +28,19 @@ define([
             }
         ];
 
+        this.iconChoices = [
+            {
+                label: 'Radio with icon red-base-16-refresh',
+                value: 'red-base-16-refresh',
+                icon: 'red-base-16-refresh'
+            },
+            {
+                label: 'Radio with icon black-12-arrow-left',
+                value: 'black-12-arrow-left',
+                icon: 'black-12-arrow-left'
+            }
+        ];
+
         this.selected = 'radio_checked';
 
         this.choicesRow = [];
