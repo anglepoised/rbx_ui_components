@@ -1,0 +1,22 @@
+<div>
+    <ul>
+        <li ng-repeat="category in categories track by $index">
+            <a class="Scrollspy-Category"
+               href="#{{::category.anchor}}"
+               bs-scrollspy
+               data-target="#{{::category.anchor}}"
+               data-offset="{{::offset || 0}}"
+               ng-class="{'Scrollspy-Category--hidden': category.hidden}">
+                <span>{{::category.label}}</span>
+            </a>
+
+            <ul>
+                <li ng-repeat="section in category.sections track by $index">
+                    <a class="Scrollspy-Section" href="#{{::section.anchor}}" bs-scrollspy data-target="#{{::section.anchor}}" data-offset="{{::offset || 0}}">
+                        <span>{{::section.label}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,32 @@
+<div>
+    <div style="position: fixed; top: 10px; left: 50px">
+        <rb-scrollspy categories="demoCtrl.filteredCategories" offset="10"></rb-scrollspy>
+    </div>
+
+    <div style="position: absolute;top:0; left: 180px">
+        <div>
+            <input type="text" ng-model="search" placeholder="Search list...">
+            <hr />
+        <div>
+            <span ng-repeat="category in demoCtrl.filteredCategories">
+                <h2 id="{{ category.anchor }}" class="ListyThing-Category">
+                    {{ category.label }}
+                </h2>
+
+                <ul class="ListyThing ListyThing--columns">
+                    <li ng-repeat="section in category.sections"  id="{{ section.anchor }}" class="ListyThing-section">
+                        <h3>
+                            {{ section.label }}
+                        </h3>
+                        <ul class="ListyThing-items">
+                            <li ng-repeat="item in section.items" class="ListyThing-item">
+                                {{ item.label }}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </span>
+        </div>
+    </div>
+</div>
