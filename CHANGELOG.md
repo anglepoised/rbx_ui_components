@@ -15,6 +15,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - [Bumped `karma-jasmine` version to use newer version of `jasmine`](https://github.com/rockabox/rbx_ui_components/pull/154)
+- [Icon parameter for radio control choices](https://github.com/rockabox/rbx_ui_components/pull/153)
 
 ### Fixed
 

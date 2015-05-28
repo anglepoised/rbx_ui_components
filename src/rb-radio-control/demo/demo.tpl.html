@@ -70,6 +70,24 @@
     </div>
 
     <div class="RawHTML">
+        <h4>
+            Icon modifier
+        </h4>
+    </div>
+    <div class="ComponentView">
+        <form name="iconRadioForm">
+            <rb-radio-control
+                choices="demoCtrl.iconChoices"
+                ng-model="demoCtrl.selectedIcon"
+                form="iconRadioForm"
+                name="ng-radio--icon">
+            </rb-radio-control>
+
+            Model: {{ demoCtrl.selectedIcon }}
+        </form>
+    </div>
+
+    <div class="RawHTML">
         <h3>
             Static Reference Version
         </h3>

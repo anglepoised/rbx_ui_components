@@ -12,6 +12,8 @@
             }"
             ng-repeat="(id, choice) in ::choices">
 
+            <rb-icon ng-if="choice.icon" icon="{{ ::choice.icon }}"></rb-icon>
+
             <input
                 class="RadioControl-field"
                 id="{{::name}}-{{::id}}"

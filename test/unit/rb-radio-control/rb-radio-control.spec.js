@@ -155,5 +155,33 @@ define([
                 expect(isolatedScope.isChecked($scope.choices[1])).toBe(true);
             });
         });
+
+        describe('icon', function () {
+            it('should take value from icon property in choices', function () {
+
+                $scope.iconChoices = [
+                    {
+                        label: 'Radio One',
+                        value: 'radio_one',
+                        icon: 'AnIconClass'
+                    },
+                    {
+                        label: 'Radio Two',
+                        value: 'radio_two',
+                        icon: 'AnSecondIconClass'
+                    }
+                ];
+
+                compileTemplate('<rb-radio-control choices="iconChoices"></rb-radio-control>');
+
+                var icons = element[0].getElementsByClassName('Icon'),
+                    iconOne = angular.element(icons[0]),
+                    iconTwo = angular.element(icons[1]);
+
+                expect(icons.length).toBe(2);
+                expect(iconOne.hasClass('Icon--AnIconClass')).toBe(true);
+                expect(iconTwo.hasClass('Icon--AnSecondIconClass')).toBe(true);
+            });
+        });
     });
 });
