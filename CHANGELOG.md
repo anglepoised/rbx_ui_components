@@ -11,6 +11,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [Basic `.SelectControl` styles](https://github.com/rockabox/rbx_ui_components/pull/146)
 - [Add `basics` modifier to `rb-fieldset` component](https://github.com/rockabox/rbx_ui_components/pull/144). Use instead of `campaignBasics`, which will be removed in a future release.
 
+### Changed
+- [Bumped `karma-jasmine` version to use newer version of `jasmine`](https://github.com/rockabox/rbx_ui_components/pull/154)
+
 ### Fixed
 
 - [Update README](https://github.com/rockabox/rbx_ui_components/pull/145). Tidy up, including accurate dependencies and steps to build.

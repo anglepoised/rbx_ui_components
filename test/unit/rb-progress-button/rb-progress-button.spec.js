@@ -35,7 +35,7 @@ define([
                 });
             };
             isolatedScope.$apply();
-            spyOn(isolatedScope, 'onExecute').andReturn(deferredResolution.promise);
+            spyOn(isolatedScope, 'onExecute').and.returnValue(deferredResolution.promise);
         }));
 
         describe('attribute generation', function () {
