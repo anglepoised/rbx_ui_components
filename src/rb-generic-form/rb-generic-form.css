@@ -1,16 +1,18 @@
 /** @define GenericForm; use strict */
 
 /**
- * The `.GenericForm` component...
+ * The `.GenericForm` component should be used to wrap generic forms. Custom forms have their own wrappers (e.g.
+ * rb-login-form) and should not use this component.
  */
 
-:root {
-    --GenericForm-variable: var();
+.GenericForm-message {
+    font-size: var(--font-size-x-small);
+    padding: 1em 0;
+    text-align: right;
 }
 
-/**
- * 1. Comment
- */
-
-.GenericForm {
+.GenericForm-messageInner {
+    background: url("./images/Required.svg") no-repeat left 4px;
+    display: inline-block;
+    padding-left: 7px;
 }
