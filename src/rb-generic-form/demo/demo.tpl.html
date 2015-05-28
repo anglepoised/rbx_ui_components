@@ -1,0 +1,48 @@
+<section class="Section">
+    <div class="RawHTML">
+        <h2>
+            rb-generic form
+        </h2>
+        <p>
+            The <code>rb-generic-form</code> component should be used to wrap generic forms. Custom forms have their own
+            wrappers (e.g. <code>rb-login-form</code>) and should not use this component.
+        </p>
+        <p>
+            <code>rb-generic-form</code> has two variants: "with message" and "without message".
+        </p>
+        <p>
+            Only one message currently exists: "Required Field".
+        </p>
+        <h3>
+            With Message
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <form class="GenericForm">
+            <div class="GenericForm-message">
+                <span class="GenericForm-messageInner">
+                    Required Field
+                </span>
+            </div>
+            <div class="GenericForm-body">
+                <rb-fieldset title="Legend">
+                    Control Group
+                </rb-fieldset>
+            </div>
+        </form>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Without Message
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <form class="GenericForm">
+            <div class="GenericForm-body">
+                <rb-fieldset title="Legend">
+                    Control Group
+                </rb-fieldset>
+            </div>
+        </form>
+    </div>
+</section>
