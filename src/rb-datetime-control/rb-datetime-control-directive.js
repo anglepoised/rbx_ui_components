@@ -42,7 +42,7 @@ define([
                 ngModel: '=?',
                 form: '=',
                 name: '@',
-                inherit: '@',
+                inheritDatetime: '@',
                 inheritLabel: '@',
                 inheritModel: '=?'
             },
@@ -58,7 +58,7 @@ define([
 
                 scope.toggleInherited = function () {
                     if (scope.inheritModel === true) {
-                        scope.ngModel = scope.inherit;
+                        scope.ngModel = scope.inheritDatetime;
                         scope.disableInputs = true;
                     } else if (scope.inheritModel === false) {
                         scope.ngModel = '';
