@@ -1,4 +1,4 @@
-# RBX UI Components [![Build Status](https://travis-ci.org/rockabox/rbx_ui_components.svg?branch=master)](https://travis-ci.org/rockabox/rbx_ui_components)
+# RBX UI Components [![Build Status](https://travis-ci.org/rockabox/rbx_ui_components.svg?branch=master)](https://travis-ci.org/rockabox/rbx_ui_components) [![Dependency Status](https://david-dm.org/rockabox/rbx_ui_components.svg)](https://david-dm.org/rockabox/rbx_ui_components)
 
 Rockabox's UI components, built using [AngularJS](https://angularjs.org/), [PostCSS](https://github.com/postcss/postcss), [SUIT CSS](http://suitcss.github.io/) and [webpack](http://webpack.github.io/).
 
