@@ -16,7 +16,7 @@ define([
      * @usage
      * <hljs lang="html">
      *    <form name="form">
-     *        <rb-check-control
+     *        <rb-check-control-group
      *            form="form"
      *            is-disabled="false"
      *            is-required="false"
@@ -25,7 +25,7 @@ define([
      *            ng-model="ngModel"
      *            enable-select-all="false"
      *            title="Your Title">
-     *        </rb-check-control>
+     *        </rb-check-control-group>
      *    </form>
      * </hljs>
      *
@@ -50,9 +50,9 @@ define([
             template: template,
             link: function ($scope, $element, $attributes) {
 
-                $scope.$watch('options|filter:{checked:true}', function (newValue) {
-                    $scope.ngModel = newValue.map(function (value) {
-                        return value.value;
+                $scope.$watch('options|filter:{checked:true}', function (newOptions) {
+                    $scope.ngModel = newOptions.map(function (option) {
+                        return option.value;
                     });
                 }, true);
 
