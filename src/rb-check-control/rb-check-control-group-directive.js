@@ -31,7 +31,7 @@ define([
      *
      * @ngInject
      */
-    function rbCheckControlGroupDirective () {
+    function rbCheckControlGroupDirective (filterFilter) {
 
         return {
             scope: {
@@ -47,7 +47,16 @@ define([
             },
             restrict: 'E',
             replace: true,
-            template: template
+            template: template,
+            link: function ($scope, $element, $attributes) {
+
+                $scope.$watch('options|filter:{checked:true}', function (newValue) {
+                    $scope.ngModel = newValue.map(function (value) {
+                        return value.value;
+                    });
+                }, true);
+
+            }
         };
     }
 

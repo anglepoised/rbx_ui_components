@@ -7,17 +7,29 @@
             A check control group displays a group of check controls
         </p>
     </div>
-    <form name="checkControlForm">
     <div class="ComponentView">
-        <rb-check-control-group
-            form="checkControlForm"
-            options="demoCtrl.defaultOptions"
-            ng-model="demoCtrl.default"
-            name="check-control-default"
-            title="Basic Usage">
-        </rb-check-control-group>
-        Value: <pre>{{ demoCtrl.default }}</pre>
+        <form name="checkControlForm">
+            <rb-check-control-group
+                form="checkControlForm"
+                name="check-control-default"
+                ng-model="ngModelDefault"
+                options="demoCtrl.defaultOptions"
+                title="Basic Usage">
+            </rb-check-control-group>
+            <pre>{{ ngModelDefault }}</pre>
+        </form>
     </div>
-
-    </form>
+    <div class="ComponentView">
+        <form name="checkControlSelectAllForm">
+            <rb-check-control-group
+                enable-select-all=true
+                form="checkControlSelectAllForm"
+                name="check-control-select-all"
+                ng-model="ngModelSelectAll"
+                options="demoCtrl.selectAllOptions"
+                title="Select All">
+            </rb-check-control-group>
+            <pre>{{ ngModelSelectAll }}</pre>
+        </form>
+    </div>
 </section>
