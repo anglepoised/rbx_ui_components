@@ -8,17 +8,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+- [`rb-fieldset` `basics` modifier](https://github.com/rockabox/rbx_ui_components/pull/144). Replaces now-deprecated `campaignBasics` modifier.
+- [`rb-fieldset` `breakdown` and `metrics` modifiers](https://github.com/rockabox/rbx_ui_components/pull/155). Intended for use in Reporting UI.
+- [`rb-generic-form` component](https://github.com/rockabox/rbx_ui_components/pull/152). Sets "Required Field" message, should wrap all generic forms.
+- [`rb-radio-control` `icon` parameter](https://github.com/rockabox/rbx_ui_components/pull/153). Displays icon with radio button.
 - [`rb-scrollspy` component](https://github.com/rockabox/rbx_ui_components/pull/140)
-- [Basic `.SelectControl` styles](https://github.com/rockabox/rbx_ui_components/pull/146)
-- [Add `basics` modifier to `rb-fieldset` component](https://github.com/rockabox/rbx_ui_components/pull/144). Use instead of `campaignBasics`, which will be removed in a future release.
-- [`breakdown and `metrics` modifiers for `rb-fieldset` component](https://github.com/rockabox/rbx_ui_components/pull/155). Intended for use in Reporting UI.
-
-### Changed
-- [Bumped `karma-jasmine` version to use newer version of `jasmine`](https://github.com/rockabox/rbx_ui_components/pull/154)
-- [Icon parameter for radio control choices](https://github.com/rockabox/rbx_ui_components/pull/153)
+- [`rb-select-control` styles](https://github.com/rockabox/rbx_ui_components/pull/146)
 
 ### Fixed
 
+- [Bump `karma-jasmine` version to use newer version of `jasmine`](https://github.com/rockabox/rbx_ui_components/pull/154)
+- [Prevent PhantomJS timeouts when running tests on Travis CI](https://github.com/rockabox/rbx_ui_components/pull/157)
 - [Update README](https://github.com/rockabox/rbx_ui_components/pull/145). Tidy up, including accurate dependencies and steps to build.
 
 ## [1.1.0] - 2015-05-21
