@@ -8,6 +8,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+- Nothing.
+
+## [1.2.0] - 2015-05-29
+
+### Added
+
 - [`rb-fieldset` `basics` modifier](https://github.com/rockabox/rbx_ui_components/pull/144). Replaces now-deprecated `campaignBasics` modifier.
 - [`rb-fieldset` `breakdown` and `metrics` modifiers](https://github.com/rockabox/rbx_ui_components/pull/155). Intended for use in Reporting UI.
 - [`rb-generic-form` component](https://github.com/rockabox/rbx_ui_components/pull/152). Sets "Required Field" message, should wrap all generic forms.
@@ -42,5 +48,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Initial release.
 
-[unreleased]: https://github.com/rockabox/rbx_ui_components/compare/1.1.0...HEAD
+[unreleased]: https://github.com/rockabox/rbx_ui_components/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/rockabox/rbx_ui_components/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/rockabox/rbx_ui_components/compare/1.0.0...1.1.0
