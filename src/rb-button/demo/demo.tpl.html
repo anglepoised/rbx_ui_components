@@ -1,12 +1,123 @@
-<rb-button>Simple</rb-button>
-<rb-button type="button" state="danger">Button</rb-button>
-<rb-button type="submit" state="warning" block="yes">Submit</rb-button>
-<rb-button type="button">Button</rb-button>
-<rb-button state="positive" href="http://www.xe.com" size="small">Link</rb-button>
-<rb-button href="http://www.xe.com" size="large">Link</rb-button>
-<rb-button type="submit" state="danger" block="yes" size="large">Submit</rb-button>
-<rb-button type="button" state="positive" size="small" ng-disabled="true">Button</rb-button>
-<rb-button type="button" state="warning" size="large" ng-disabled="true" ng-href="http://www.xe.com">Link</rb-button>
-<rb-button type="button" state="positive" outline="yes">Outline button</rb-button>
-<rb-button outline="yes">Simple outline</rb-button>
-<rb-button outline="yes" href="http://www.xe.com">Simple outline link</rb-button>
+<section class="Section">
+    <div class="RawHTML">
+        <h2>
+            rb-button
+        </h2>
+        <p>
+            The <code>rb-button</code> component defines button styles for <code>&lt;button&gt;</code> and
+            <code>&lt;a&gt;</code> elements.
+        </p>
+        <p>
+            Solid buttons are the default style. Add an <code>outline="yes"</code> attribute for outline buttons. When
+            in doubt, use a standard, solid button.
+        </p>
+        <h3>
+            Default
+        </h3>
+    </div>
+    <div class="ComponentView ComponentView--grid">
+        <rb-button>Standard Button</rb-button>
+        <rb-button outline="yes">Outline Button</rb-button>
+        <rb-button type="submit">Standard Submit</rb-button>
+        <rb-button outline="yes" type="submit">Outline Submit</rb-button>
+        <rb-button href="http://example.com/">Standard Link</rb-button>
+        <rb-button href="http://example.com/" outline="yes">Outline Link</rb-button>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Disabled State
+        </h3>
+    </div>
+    <div class="ComponentView ComponentView--grid">
+        <rb-button ng-disabled="true" type="button">Disabled Button</rb-button>
+        <rb-button ng-disabled="true" outline="yes" type="button">Disabled Button</rb-button>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Secondary Modifiers
+        </h3>
+        <p>
+            Change the size or colour of a button.
+        </p>
+        <h4>
+            Large Modifier
+        </h4>
+        <p>
+            Large buttons should be used for primary save actions.
+        </p>
+    </div>
+    <div class="ComponentView ComponentView--grid">
+        <rb-button size="large">Large Button</rb-button>
+        <rb-button outline="yes" size="large">Large Button</rb-button>
+    </div>
+    <div class="RawHTML">
+        <h4>
+            Small Modifier
+        </h4>
+        <p>
+            Small buttons should be used for secondary save actions.
+        </p>
+    </div>
+    <div class="ComponentView ComponentView--grid">
+        <rb-button size="small">Small Button</rb-button>
+        <rb-button outline="yes" size="small">Small Button</rb-button>
+    </div>
+    <div class="RawHTML">
+        <h4>
+            Block Modifier
+        </h4>
+        <p>
+            The block modifier should be used to make a button full-width. It adds <code>width: 100%;</code>, changes
+            the display from <code>inline-block</code> to <code>block</code>, and centers the button text.
+        </p>
+    </div>
+    <div class="ComponentView">
+        <rb-button block="yes">Block Button</rb-button>
+    </div>
+    <div class="ComponentView">
+        <rb-button block="yes" outline="yes">Block Button</rb-button>
+    </div>
+    <div class="RawHTML">
+        <h4>
+            Action Modifiers
+        </h4>
+        <p>
+            Standard buttons are blue. Action modifiers change the colour of buttons and can be used to help indicate
+            the likely consequences of different types of action.
+        </p>
+        <h5>
+            Positive
+        </h5>
+        <p>
+            Positive buttons are green. They indicate a successful or positive action.
+        </p>
+    </div>
+    <div class="ComponentView ComponentView--grid">
+        <rb-button state="positive">Positive Button</rb-button>
+        <rb-button outline="yes" state="positive">Positive Button</rb-button>
+    </div>
+    <div class="RawHTML">
+        <h5>
+            Warning
+        </h5>
+        <p>
+            Warning buttons are orange. They indicate that care should be taken with this action.
+        </p>
+    </div>
+    <div class="ComponentView ComponentView--grid">
+        <rb-button state="warning">Warning Button</rb-button>
+        <rb-button outline="yes" state="warning">Warning Button</rb-button>
+    </div>
+    <div class="RawHTML">
+        <h5>
+            Danger
+        </h5>
+        <p>
+            Danger buttons are red. They indicate a potentially destructive action.
+        </p>
+    </div>
+    <div class="ComponentView ComponentView--grid">
+        <rb-button state="danger">Danger Button</rb-button>
+        <rb-button outline="yes" state="danger">Danger Button</rb-button>
+    </div>
+</section>
