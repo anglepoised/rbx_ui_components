@@ -1,40 +1,46 @@
-<div class="ComponentView">
-    <rb-badge body="6" state="warning" collapsed="false"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge state="statusIncomplete" collapsed="false"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge state="statusLive" collapsed="false"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge state="statusPaused" collapsed="false"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge state="statusPending" collapsed="false"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge state="statusFinished" collapsed="false"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge body="6" state="warning" collapsed="true"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge state="statusIncomplete" collapsed="true"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge state="statusLive" collapsed="true"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge state="statusPaused" collapsed="true"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge state="statusPending" collapsed="true"></rb-badge>
-</div>
-<div class="ComponentView">
-    <rb-badge state="statusFinished" collapsed="true"></rb-badge>
-</div>
-<div class="ComponentView">
-    <!-- Demo of not rendering when no state given -->
-    <rb-badge></rb-badge>
-</div>
+<section class="Section">
+    <div class="RawHTML">
+        <h2>
+            rb-badge
+        </h2>
+        <p>
+            The <code>rb-badge</code> component displays Badge-style messaging for <code>warning</code> and
+            <code>status</code> types.
+        </p>
+        <p>
+            One display attribute is available: <code>collapsed</code>, which moves the detail to a <code>title</code>
+            attribute to the component's root element.
+        </p>
+        <p>
+            The <code>rb-badge</code> component must never be used without a state.
+        </p>
+        <h3>
+            Warning
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-badge body="6" state="warning" collapsed="true"></rb-badge>
+    </div>
+    <div class="ComponentView">
+        <rb-badge body="6" state="warning" collapsed="false"></rb-badge>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Status
+        </h3>
+    </div>
+    <div class="ComponentView ComponentView--grid">
+        <rb-badge state="statusIncomplete" collapsed="true"></rb-badge>
+        <rb-badge state="statusLive" collapsed="true"></rb-badge>
+        <rb-badge state="statusPaused" collapsed="true"></rb-badge>
+        <rb-badge state="statusPending" collapsed="true"></rb-badge>
+        <rb-badge state="statusFinished" collapsed="true"></rb-badge>
+    </div>
+    <div class="ComponentView ComponentView--grid">
+        <rb-badge state="statusIncomplete" collapsed="false"></rb-badge>
+        <rb-badge state="statusLive" collapsed="false"></rb-badge>
+        <rb-badge state="statusPaused" collapsed="false"></rb-badge>
+        <rb-badge state="statusPending" collapsed="false"></rb-badge>
+        <rb-badge state="statusFinished" collapsed="false"></rb-badge>
+    </div>
+</section>
