@@ -4,26 +4,26 @@ define([
 
     /**
      * @ngdoc directive
-     * @name rbCheckControl
-     * @module rb-check-control
+     * @name rbCheckControlGroup
+     * @module rb-check-control-group
      *
      * @restrict E
      *
      * @description
-     * `<rb-check-control/>` Is a directive for creating multiple checkboxes with
+     * `<rb-check-control-group/>` Is a directive for creating multiple checkboxes with
      * an optional select all title.
      *
      * @usage
      * <hljs lang="html">
      *    <form name="form">
      *        <rb-check-control-group
+     *            enable-select-all="false"
      *            form="form"
      *            is-disabled="false"
      *            is-required="false"
-     *            icon="blue-base-16-geo"
      *            name="name"
      *            ng-model="ngModel"
-     *            enable-select-all="false"
+     *            options="options"
      *            title="Your Title">
      *        </rb-check-control-group>
      *    </form>
@@ -35,14 +35,13 @@ define([
 
         return {
             scope: {
-                options: '=',
+                enableSelectAll: '@',
                 form: '=',
                 isDisabled: '@',
                 isRequired: '@',
-                icon: '@',
                 name: '@',
                 ngModel: '=',
-                enableSelectAll: '@',
+                options: '=',
                 title: '@'
             },
             restrict: 'E',

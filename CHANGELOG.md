@@ -11,7 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [`rb-datetime-control` `inherit-datetime` attribute](https://github.com/rockabox/rbx_ui_components/pull/156). Supercedes `inherit` attribute.
 - [`rb-datetime-control` `inherit-model` optional property attribute](https://github.com/rockabox/rbx_ui_components/pull/156). Date inheritence should be treated as a model.
 
-## Changed
+### Changed
 
 - [`rb-check-control` component](https://github.com/rockabox/rbx_ui_components/pull/165).
 For multiple checkboxes use `rb-check-control-group` instead of `rb-check-control`. The `rb-check-control-group` directive will use attribute `options` to render your checkboxes and `ng-model` will now return an array of currently checked string values.

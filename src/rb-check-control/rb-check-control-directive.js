@@ -18,13 +18,13 @@ define([
      *    <form name="form">
      *        <rb-check-control
      *            form="form"
+     *            icon="blue-base-16-geo"
      *            is-disabled="false"
      *            is-required="false"
-     *            icon="blue-base-16-geo"
+     *            label="Label"
      *            name="name"
      *            ng-model="ngModel"
-     *            enable-select-all="false"
-     *            title="Your Title">
+     *            value="value">
      *        </rb-check-control>
      *    </form>
      * </hljs>
