@@ -290,6 +290,28 @@ define([
                 // Timezone should be set with TZ=UTC flag before running tests so phamtom doesn't use local timzone.
                 expect(element.find('input')[1].value).toBe('');
             });
+
+            it('should bind as a boolean to the inherit-model attribute', function () {
+                $scope.inheritModel = true;
+                $scope.inheritDateTime = '2015-04-27T11:29:05.474Z';
+                $scope.dt = '';
+                compileTemplate(
+                    '<rb-datetime-control name="test" ng-model="dt" inherit-datetime="{{inheritDateTime}}"' +
+                    ' is-required="true" inherit-model="inheritModel" form="aForm"></rb-datetime-control>'
+                );
+
+                isolatedScope.toggleInherited();
+                isolatedScope.$apply();
+
+                var inputOne = angular.element(element.find('input')[0]),
+                    inputTwo = angular.element(element.find('input')[1]);
+
+                expect(inputOne[0].value).toBe('27/04/2015');
+                expect(inputOne.attr('disabled')).toBe('disabled');
+                // Timezone should be set with TZ=UTC flag before running tests so phamtom doesn't use local timzone.
+                expect(inputTwo[0].value).toBe('11:29');
+                expect(inputTwo.attr('disabled')).toBe('disabled');
+            });
         });
 
         describe('validation', function () {
