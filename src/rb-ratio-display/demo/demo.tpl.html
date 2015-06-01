@@ -1,9 +1,9 @@
 <div ng-repeat="ratio in ::demoCtrl.ratios track by $index">
-    <rb-ratio
+    <rb-ratio-display
         denominator="{{::ratio.denominator}}"
         display-type="{{::ratio.displayType }}"
         decimal-places="{{::ratio.decimalPlaces}}"
         numerator="{{::ratio.numerator}}"
         ratio-type="{{::ratio.ratioType }}">
-    </rb-ratio>
+    </rb-ratio-display>
 </div>

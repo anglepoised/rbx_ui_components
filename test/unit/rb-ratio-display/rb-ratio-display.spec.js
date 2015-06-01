@@ -1,14 +1,14 @@
 define([
-    'components/rb-ratio'
-], function (rbRatio) {
-    describe('rb-ratio', function () {
+    'components/rb-ratio-display'
+], function (rbRatioDisplay) {
+    describe('rb-ratio-display', function () {
 
         var ele,
             $scope,
             $compile,
             template = '';
 
-        beforeEach(angular.mock.module('rb-ratio'));
+        beforeEach(angular.mock.module('rb-ratio-display'));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $scope = _$rootScope_.$new({});
@@ -18,7 +18,7 @@ define([
 
         describe('percentage', function () {
             it('should render a percentage', function () {
-                template = '<rb-ratio numerator="50" denominator="50"></rb-ratio>';
+                template = '<rb-ratio-display numerator="50" denominator="50"></rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
@@ -27,7 +27,7 @@ define([
             });
 
             it('should render the percentage of a numerator and denominator', function () {
-                template = '<rb-ratio numerator="25" denominator="50"></rb-ratio>';
+                template = '<rb-ratio-display numerator="25" denominator="50"></rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
@@ -36,7 +36,7 @@ define([
             });
 
             it('should round to zero decimal places', function () {
-                template = '<rb-ratio numerator="2500" denominator="3000"></rb-ratio>';
+                template = '<rb-ratio-display numerator="2500" denominator="3000"></rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
@@ -46,7 +46,7 @@ define([
             });
 
             it('should default to zero if NaN', function () {
-                template = '<rb-ratio numerator="0" denominator="0"></rb-ratio>';
+                template = '<rb-ratio-display numerator="0" denominator="0"></rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
@@ -55,7 +55,7 @@ define([
             });
 
             it('should render as N/A when denominator is null', function () {
-                template = '<rb-ratio numerator="50" denominator="{{null}}"></rb-ratio>';
+                template = '<rb-ratio-display numerator="50" denominator="{{null}}"></rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
@@ -66,7 +66,8 @@ define([
 
         describe('fraction', function () {
             it('should render a fraction', function () {
-                template = '<rb-ratio numerator="50" denominator="100" ratio-type="fraction"></rb-ratio>';
+                template = '<rb-ratio-display numerator="50" denominator="100" ratio-type="fraction">' +
+                    '</rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
@@ -76,8 +77,8 @@ define([
             });
 
             it('should render two currency components', function () {
-                template = '<rb-ratio numerator="50" denominator="100" ratio-type="fraction" display-type="currency">' +
-                    '</rb-ratio>';
+                template = '<rb-ratio-display numerator="50" denominator="100" ratio-type="fraction"' +
+                    ' display-type="currency"></rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
@@ -86,7 +87,8 @@ define([
             });
 
             it('should render as N/A when denominator is null', function () {
-                template = '<rb-ratio numerator="50" denominator="{{null}}" ratio-type="fraction" ></rb-ratio>';
+                template = '<rb-ratio-display numerator="50" denominator="{{null}}" ratio-type="fraction">' +
+                    '</rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
