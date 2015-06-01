@@ -15,6 +15,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [`rb-check-control` component](https://github.com/rockabox/rbx_ui_components/pull/165).
 For multiple checkboxes use `rb-check-control-group` instead of `rb-check-control`. The `rb-check-control-group` directive will use attribute `options` to render your checkboxes and `ng-model` will now return an array of currently checked string values.
+- [`rb-scrollspy` now builds top level list from `items` property not `sections`](https://github.com/rockabox/rbx_ui_components/pull/172)
 
 ### Removed
 
@@ -23,6 +24,7 @@ For multiple checkboxes use `rb-check-control-group` instead of `rb-check-contro
 - [`rb-select` component](https://github.com/rockabox/rbx_ui_components/pull/170). Superceded by `rb-select-control` component.
 
 ### Fixed
+
 - [`rb-datetime-control` `ng-model` preservation when inheriting datetime](https://github.com/rockabox/rbx_ui_components/pull/173).
 
 ## [1.2.0] - 2015-05-29
