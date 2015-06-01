@@ -312,6 +312,27 @@ define([
                 expect(inputTwo[0].value).toBe('11:29');
                 expect(inputTwo.attr('disabled')).toBe('disabled');
             });
+
+            it('should restore original ng-model when inherit-model is false', function () {
+                $scope.inheritModel = true;
+                $scope.inheritDateTime = '2015-04-27T11:29:05.474Z';
+                $scope.dt = '2015-05-10T09:15:02.474Z';
+                compileTemplate(
+                    '<rb-datetime-control name="test" ng-model="dt" inherit-datetime="{{inheritDateTime}}"' +
+                    ' is-required="true" inherit-model="inheritModel" form="aForm"></rb-datetime-control>'
+                );
+
+                expect($scope.dt).toBe('2015-04-27T11:29:05.474Z');
+
+                $scope.inheritModel = false;
+                $scope.$apply();
+                isolatedScope.toggleInherited();
+                isolatedScope.$apply();
+                $scope.$apply();
+
+                expect($scope.dt).toBe('2015-05-10T09:15:02.474Z');
+
+            });
         });
 
         describe('validation', function () {

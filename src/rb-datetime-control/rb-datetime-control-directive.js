@@ -56,12 +56,15 @@ define([
 
                 scope.disableInputs = false;
 
+                var originalNgModel = angular.copy(scope.ngModel);
+
                 scope.toggleInherited = function () {
                     if (scope.inheritModel === true) {
+                        originalNgModel = angular.copy(scope.ngModel);
                         scope.ngModel = scope.inheritDatetime;
                         scope.disableInputs = true;
                     } else if (scope.inheritModel === false) {
-                        scope.ngModel = '';
+                        scope.ngModel = originalNgModel;
                         scope.disableInputs = false;
                     }
                 };
