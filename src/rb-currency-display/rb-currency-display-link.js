@@ -3,20 +3,20 @@ define([
 
     /**
      * @ngdoc link
-     * @name rbCurrencyLink
-     * @module rb-currency
+     * @name rbCurrencyDisplayLink
+     * @module rb-currency-display
      *
      * @restrict E
      *
      * @description
-     * The link function for the `<rb-currency>` directive
+     * The link function for the `<rb-currency-display>` directive
      *
      * @scope
      *  'fullAmount': contains the full amount in which to display as currency
      *
      * @ngInject
      */
-    function rbCurrencyLink (scope, element, attributes) {
+    function rbCurrencyDisplayLink (scope, element, attributes) {
         var value,
             decimalPlaces = attributes.decimalPlaces || 2;
 
@@ -29,6 +29,6 @@ define([
         });
     }
 
-    return rbCurrencyLink;
+    return rbCurrencyDisplayLink;
 
 });

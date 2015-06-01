@@ -4,9 +4,9 @@ define([
 
     // @ngInject
     function demoState ($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('rb-currency', {
-            url: '/rb-currency',
-            controller: 'demo-currency-ctrl as demoCtrl',
+        $stateProvider.state('rb-currency-display', {
+            url: '/rb-currency-display',
+            controller: 'demo-currency-display-ctrl as demoCtrl',
             template: template
         });
     }

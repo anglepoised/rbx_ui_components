@@ -1,13 +1,13 @@
 define([
-    'components/rb-currency'
-], function (rbCurrency) {
-    describe('rb-currency', function () {
+    'components/rb-currency-display'
+], function (rbCurrencyDisplay) {
+    describe('rb-currency-display', function () {
 
         var $scope,
             $compile,
             template = '';
 
-        beforeEach(angular.mock.module('rb-currency'));
+        beforeEach(angular.mock.module('rb-currency-display'));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $scope = _$rootScope_.$new({});
@@ -17,7 +17,7 @@ define([
         it('should render the currency in dollars', function () {
             $scope.amount = '9999.99';
 
-            var currency = angular.element('<rb-currency amount="{{ amount }}"></rb-currency>'),
+            var currency = angular.element('<rb-currency-display amount="{{ amount }}"></rb-currency-display>'),
                 element = $compile(currency)($scope),
                 ele,
                 text;
@@ -33,7 +33,7 @@ define([
         it('should render with comma\'s', function () {
             $scope.amount = '9999.99';
 
-            var currency = angular.element('<rb-currency amount="{{ amount }}"></rb-currency>'),
+            var currency = angular.element('<rb-currency-display amount="{{ amount }}"></rb-currency-display>'),
                 element = $compile(currency)($scope),
                 ele,
                 text;
@@ -49,7 +49,7 @@ define([
         it('should render with with decimal place seperated', function () {
             $scope.amount = '9999.99';
 
-            var currency = angular.element('<rb-currency amount="{{ amount }}"></rb-currency>'),
+            var currency = angular.element('<rb-currency-display amount="{{ amount }}"></rb-currency-display>'),
                 element = $compile(currency)($scope),
                 ele,
                 text;

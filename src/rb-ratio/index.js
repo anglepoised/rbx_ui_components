@@ -1,8 +1,8 @@
 define([
     './rb-ratio-directive',
-    'components/rb-currency',
+    'components/rb-currency-display',
     './rb-ratio.css'
-], function (rbRatioDirective, rbCurrency, css) {
+], function (rbRatioDirective, rbCurrencyDisplay, css) {
     /**
      * @ngdoc module
      * @name rb-ratio
@@ -13,7 +13,7 @@ define([
      */
     var rbRatio = angular
         .module('rb-ratio', [
-            rbCurrency.name
+            rbCurrencyDisplay.name
         ])
         .directive('rbRatio', rbRatioDirective);
 

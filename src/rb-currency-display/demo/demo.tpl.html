@@ -1,18 +1,18 @@
 <section class="Section">
     <div class="RawHTML">
         <h2>
-            rb-currency
+            rb-currency-display
         </h2>
         <p>
-            The <code>rb-currency</code> component must be used to render all representations of a currency. It should
-            not be used for any other type of number.
+            The <code>rb-currency-display</code> component must be used to render all representations of a currency. It
+            should not be used for any other type of number.
         </p>
         <h3>
             Currency With Decimal Passed
         </h3>
     </div>
     <div class="ComponentView">
-        <rb-currency amount="{{ demoCtrl.currency.withDec }}"></rb-currency>
+        <rb-currency-display amount="{{ demoCtrl.currency.withDec }}"></rb-currency-display>
     </div>
     <div class="RawHTML">
         <h3>
@@ -20,7 +20,7 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <rb-currency amount="{{ demoCtrl.currency.withoutDec }}"></rb-currency>
+        <rb-currency-display amount="{{ demoCtrl.currency.withoutDec }}"></rb-currency-display>
     </div>
     <div class="RawHTML">
         <h3>
@@ -28,7 +28,7 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <rb-currency decimal-places="0" amount="{{ demoCtrl.currency.withDec }}"></rb-currency>
+        <rb-currency-display decimal-places="0" amount="{{ demoCtrl.currency.withDec }}"></rb-currency-display>
     </div>
     <div class="RawHTML">
         <h3>
@@ -36,7 +36,7 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <rb-currency decimal-places="1" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency>
+        <rb-currency-display decimal-places="1" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
     </div>
     <div class="RawHTML">
         <h3>
@@ -44,7 +44,7 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <rb-currency decimal-places="2" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency>
+        <rb-currency-display decimal-places="2" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
     </div>
     <div class="RawHTML">
         <h3>
@@ -52,6 +52,6 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <rb-currency decimal-places="3" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency>
+        <rb-currency-display decimal-places="3" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
     </div>
 </section>

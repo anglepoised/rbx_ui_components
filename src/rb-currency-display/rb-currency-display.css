@@ -1,0 +1,24 @@
+/** @define CurrencyDisplay; use strict */
+
+/**
+ * The `.CurrencyDisplay` component must be used for all representations of a currency and consists of a unit part and
+ * an optional decimal part.
+ */
+
+:root {
+    --CurrencyDisplay-cent-font-size: 0.75em;
+    --CurrencyDisplay-unit-font-size: inherit;
+}
+
+/**
+ * 1. Inherit context font-size.
+ * 2. Proportionally reduce cent font size.
+ */
+
+.CurrencyDisplay-unit {
+    font-size: var(--CurrencyDisplay-unit-font-size); /* 1 */
+}
+
+.CurrencyDisplay-cent {
+    font-size: var(--CurrencyDisplay-cent-font-size); /* 2 */
+}

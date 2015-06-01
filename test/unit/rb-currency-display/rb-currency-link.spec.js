@@ -1,8 +1,8 @@
 define([
-    'components/rb-currency/rb-currency-link'
-], function (rbCurrencyLink) {
+    'components/rb-currency-display/rb-currency-display-link'
+], function (rbCurrencyDisplayLink) {
 
-    describe('The link function for the rb-currency directive', function () {
+    describe('The link function for the rb-currency-display directive', function () {
         var scope,
             attributes,
             watcher = function (item, callback) {
@@ -24,7 +24,7 @@ define([
                 decimalPlaces: 1
             };
 
-            rbCurrencyLink(scope, {}, attributes);
+            rbCurrencyDisplayLink(scope, {}, attributes);
 
             expect(scope.integerPart).toBe('100000');
             expect(scope.fractionalPart).toBe('0');
@@ -36,7 +36,7 @@ define([
                 $watch: watcher
             };
 
-            rbCurrencyLink(scope, {}, attributes);
+            rbCurrencyDisplayLink(scope, {}, attributes);
 
             expect(scope.integerPart).toBe('1219182');
             expect(scope.fractionalPart).toBe('00');

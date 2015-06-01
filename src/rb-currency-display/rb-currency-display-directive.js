@@ -1,29 +1,29 @@
 define([
-    './rb-currency-link',
-    'html!./rb-currency.tpl.html'
-], function (rbCurrencyLink, template) {
+    './rb-currency-display-link',
+    'html!./rb-currency-display.tpl.html'
+], function (rbCurrencyDisplayLink, template) {
 
     /**
      * @ngdoc directive
-     * @name rbCurrency
-     * @module rb-currency
+     * @name rbCurrencyDisplay
+     * @module rb-currency-display
      *
      * @restrict E
      *
      * @description
-     * The link function for the `<rb-currency>` directive
+     * The link function for the `<rb-currency-display>` directive
      *
      * @scope
      *  'amount': contains the full amount in which to display as currency
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-currency amount="9999.99"></rb-currency>
+     *    <rb-currency-displa amount="9999.99"></rb-currency-display>
      * </hljs>
      *
      * @ngInject
      */
-    function rbCurrencyDirective () {
+    function rbCurrencyDisplayDirective () {
 
         return {
             scope: {
@@ -32,9 +32,9 @@ define([
             restrict: 'E',
             replace: true,
             template: template,
-            link: rbCurrencyLink
+            link: rbCurrencyDisplayLink
         };
     }
 
-    return rbCurrencyDirective;
+    return rbCurrencyDisplayDirective;
 });
