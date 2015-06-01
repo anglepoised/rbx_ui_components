@@ -1,13 +1,13 @@
 define([
-    'components/rb-datetime'
-], function (rbDateTime) {
-    describe('rb-datetime directive', function () {
+    'components/rb-datetime-display'
+], function (rbDateTimeDisplay) {
+    describe('rb-datetime-display directive', function () {
 
         var $scope,
             $compile,
             template = '';
 
-        beforeEach(angular.mock.module('rb-datetime'));
+        beforeEach(angular.mock.module('rb-datetime-display'));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $scope = _$rootScope_.$new({});
@@ -15,7 +15,7 @@ define([
         }));
 
         it('should render the date and time', function () {
-            var dateTime = $compile('<rb-datetime date-time="1970-01-10T15:59"></rb-datetime>')($scope),
+            var dateTime = $compile('<rb-datetime-display date-time="1970-01-10T15:59"></rb-datetime-display>')($scope),
                 ele;
 
             $scope.$apply();
@@ -27,7 +27,8 @@ define([
         });
 
         it('should render only the date', function () {
-            var dateTime = $compile('<rb-datetime date-time="1970-09-01T01:00" show-time="false"></rb-datetime>')
+            var dateTime = $compile('<rb-datetime-display date-time="1970-09-01T01:00"' +
+                'show-time="false"></rb-datetime-display>')
                     ($scope),
                 ele;
 
@@ -41,7 +42,8 @@ define([
         });
 
         it('should render the date and time with the time understated', function () {
-            var dateTime = $compile('<rb-datetime date-time="1970-09-01T00:00" understate-time="true"></rb-datetime>')
+            var dateTime = $compile('<rb-datetime-display date-time="1970-09-01T00:00" ' +
+                'understate-time="true"></rb-datetime-display>')
                     ($scope),
                 ele;
 
@@ -49,7 +51,7 @@ define([
 
             ele = angular.element(dateTime);
 
-            expect(ele.hasClass('DateTime--understateTime')).toBeTruthy();
+            expect(ele.hasClass('DateTimeDisplay--understateTime')).toBeTruthy();
         });
     });
 });
