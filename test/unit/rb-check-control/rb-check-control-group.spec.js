@@ -52,6 +52,23 @@ define([
                     '</rb-check-control-group>');
             });
 
+            it('should render three inputs with correct values', function () {
+                var inputs = element.find('input');
+
+                expect(inputs.length).toBe(3);
+                expect(inputs.eq(0).attr('value')).toBe('one');
+                expect(inputs.eq(1).attr('value')).toBe('two');
+                expect(inputs.eq(2).attr('value')).toBe('three');
+            });
+
+            it('should render three labels with correct values', function () {
+                var labels = element.find('label');
+
+                expect(labels.eq(0).html()).toContain('One');
+                expect(labels.eq(1).html()).toContain('Two');
+                expect(labels.eq(2).html()).toContain('Three');
+            });
+
             it('should return an array with two items', function () {
                 expect($scope.ngModel.length).toBe(2);
             });

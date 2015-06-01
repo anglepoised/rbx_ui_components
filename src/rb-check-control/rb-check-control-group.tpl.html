@@ -4,9 +4,11 @@
         is-disabled="{{::isDisabled}}"
         is-required="{{::isRequired}}"
         ng-model="options"
-        enable-select-all="{{::enableSelectAll}}"
+        ng-if="enableSelectAll"
         title="{{::title}}">
     </rb-check-control-select-all>
+
+    <label ng-if="!enableSelectAll && title">{{::title}}</label>
 
     <div ng-repeat="(key, value) in ::options">
         <rb-check-control
@@ -15,7 +17,7 @@
             label="{{::value.label}}"
             name="{{::name}}-{{::key}}"
             ng-model="value.checked"
-            value="{{::value}}">
+            value="{{::value.value}}">
         </rb-check-control>
     </div>
 </div>

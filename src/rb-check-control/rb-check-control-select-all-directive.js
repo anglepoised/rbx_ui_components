@@ -30,7 +30,6 @@ define([
 
         return {
             scope: {
-                enableSelectAll: '@',
                 form: '=',
                 isDisabled: '@',
                 isRequired: '@',
