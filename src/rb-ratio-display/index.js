@@ -8,7 +8,7 @@ define([
      * @name rb-ratio-display
      * @description
      *
-     * rbRatio
+     * rbRatioDisplay
      *
      */
     var rbRatioDisplay = angular

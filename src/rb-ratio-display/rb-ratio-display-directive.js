@@ -4,7 +4,7 @@ define([
 
     /**
      * @ngdoc directive
-     * @name rbRatio
+     * @name rbRatioDisplay
      * @module rb-ratio-display
      *
      * @restrict E
