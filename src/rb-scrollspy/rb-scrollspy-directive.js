@@ -37,6 +37,7 @@ define([
      *          }
      *  'offset': Pixels to offset from top of screen when calculating position of
      *            scroll. Defaults to '0'.
+     *  'scroll-id': The element id to monitor for scroll changes.
      *
      * @usage
      * <hljs lang="html">
@@ -50,7 +51,8 @@ define([
         return {
             scope: {
                 categories: '=',
-                offset: '@'
+                offset: '@',
+                scrollId: '@'
             },
             restrict: 'E',
             replace: true,

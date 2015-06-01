@@ -120,7 +120,7 @@ define([
                 expect(angular.element(spans[4]).html()).toEqual('D');
             });
 
-            describe('anchors and bs-scrollspy attribute directive', function () {
+            describe('anchors and du-scrollspy attribute directive', function () {
 
                 it('should place an href attr per item with its anchor value', function () {
                     compileTemplate(template);
@@ -133,37 +133,34 @@ define([
                     expect(angular.element(anchors[4]).attr('href')).toEqual('#D');
                 });
 
-                it('should attach a bs-scrollspy attribute directive per item', function () {
+                it('should attach a du-scrollspy attribute directive per item', function () {
                     compileTemplate(template);
                     anchors = element.find('a');
 
-                    expect(anchors[0].hasAttribute('bs-scrollspy')).toBe(true);
-                    expect(anchors[1].hasAttribute('bs-scrollspy')).toBe(true);
-                    expect(anchors[2].hasAttribute('bs-scrollspy')).toBe(true);
-                    expect(anchors[3].hasAttribute('bs-scrollspy')).toBe(true);
-                    expect(anchors[4].hasAttribute('bs-scrollspy')).toBe(true);
+                    expect(anchors[0].hasAttribute('du-scrollspy')).toBe(true);
+                    expect(anchors[1].hasAttribute('du-scrollspy')).toBe(true);
+                    expect(anchors[2].hasAttribute('du-scrollspy')).toBe(true);
+                    expect(anchors[3].hasAttribute('du-scrollspy')).toBe(true);
+                    expect(anchors[4].hasAttribute('du-scrollspy')).toBe(true);
                 });
 
-                it('should place a bs-scrollspy `data-target` attribute per item', function () {
-                    compileTemplate(template);
-                    anchors = element.find('a');
-
-                    expect(angular.element(anchors[0]).attr('data-target')).toEqual('#countries');
-                    expect(angular.element(anchors[1]).attr('data-target')).toEqual('#A');
-                    expect(angular.element(anchors[2]).attr('data-target')).toEqual('#B');
-                    expect(angular.element(anchors[3]).attr('data-target')).toEqual('#C');
-                    expect(angular.element(anchors[4]).attr('data-target')).toEqual('#D');
-                });
-
-                it('should place a bs-scrollspy `data-offset` attribute when offset is present in scope', function () {
+                it('should place a du-scrollspy `offset` attribute when offset is present in scope', function () {
                     compileTemplate(templateWithOffset);
                     anchors = element.find('a');
 
-                    expect(angular.element(anchors[0]).attr('data-offset')).toEqual('100');
-                    expect(angular.element(anchors[1]).attr('data-offset')).toEqual('100');
-                    expect(angular.element(anchors[2]).attr('data-offset')).toEqual('100');
-                    expect(angular.element(anchors[3]).attr('data-offset')).toEqual('100');
-                    expect(angular.element(anchors[4]).attr('data-offset')).toEqual('100');
+                    expect(angular.element(anchors[0]).attr('offset')).toEqual('100');
+                    expect(angular.element(anchors[1]).attr('offset')).toEqual('100');
+                    expect(angular.element(anchors[2]).attr('offset')).toEqual('100');
+                    expect(angular.element(anchors[3]).attr('offset')).toEqual('100');
+                    expect(angular.element(anchors[4]).attr('offset')).toEqual('100');
+                });
+
+                it('should attach `du-scroll-container` to <a> elems with val of scroll-id attribute', function () {
+                    compileTemplate('<rb-scrollspy categories="categories" offset="100" scroll-id="test-id">' +
+                        '</rb-scrollspy>');
+                    list = angular.element(element.find('ul')[0]);
+
+                    expect(list.attr('du-scroll-container')).toEqual('test-id');
                 });
             });
 
