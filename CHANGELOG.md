@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 - [`rb-fieldset` `campaignBasics` modifier](https://github.com/rockabox/rbx_ui_components/pull/169). Superceded by `basics` modifier.
+- [`rb-select` component](https://github.com/rockabox/rbx_ui_components/pull/170). Superceded by `rb-select-control` component.
 
 ## [1.2.0] - 2015-05-29
 
