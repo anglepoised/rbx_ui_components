@@ -53,5 +53,5 @@ Keep the structure and design pattern of new components consistent with those th
 * Follow a wrapper & item pattern for components that need multiple transclusion. For an example see the
   `rb-data-summary` and `rb-data-summary-item` directives.
 * Split large functions (like link functions) into separate Webpack modules to keep things simple. For an example see
-  `rb-currency-link.js`
+  `rb-currency-display-link.js`
 * Provide a component demo that shows all combinations of different modifiers and settings.
