@@ -21,12 +21,12 @@ define([
             // For each category
             angular.forEach($this.categories, function (category) {
                 filteredCategory = angular.copy(category);
-                filteredCategory.sections = [];
+                filteredCategory.items = [];
 
                 categoryMatch = false;
 
                 // and each section within that category
-                angular.forEach(category.sections, function (section) {
+                angular.forEach(category.items, function (section) {
 
                     filteredSection = angular.copy(section);
                     filteredSection.items = [];
@@ -51,7 +51,7 @@ define([
                             if (sectionMatch === false) {
                                 // add empty section to the category added above
                                 filteredSectionIndex = filteredCategories[filteredCategoryIndex]
-                                    .sections
+                                    .items
                                     .push(filteredSection);
 
                                 sectionMatch = true;
@@ -72,7 +72,7 @@ define([
                 label: 'Countries',
                 anchor: 'countries',
                 hidden: true,
-                sections: [
+                items: [
                     {
                         label: 'A',
                         anchor: 'A',
