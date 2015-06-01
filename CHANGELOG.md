@@ -8,33 +8,38 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+- Nothing.
+
+## [2.0.0] - 2015-05-02
+
+### Added
+
 - [`rb-datetime-control` `inherit-datetime` attribute](https://github.com/rockabox/rbx_ui_components/pull/156). Supercedes `inherit` attribute.
 - [`rb-datetime-control` `inherit-model` optional property attribute](https://github.com/rockabox/rbx_ui_components/pull/156). Date inheritence should be treated as a model.
 - [`rb-scrollspy` `scroll-id` attribute](https://github.com/rockabox/rbx_ui_components/pull/183). For observing scroll changes on custom elements.
 
 ### Changed
 
-- [`rb-check-control` component](https://github.com/rockabox/rbx_ui_components/pull/165).
-For multiple checkboxes use `rb-check-control-group` instead of `rb-check-control`. The `rb-check-control-group` directive will use attribute `options` to render your checkboxes and `ng-model` will now return an array of currently checked string values.
+- [`rb-check-control` component](https://github.com/rockabox/rbx_ui_components/pull/165). For multiple checkboxes use `rb-check-control-group` instead of `rb-check-control`. The `rb-check-control-group` directive will use attribute `options` to render your checkboxes and `ng-model` will now return an array of currently checked string values.
 - [`rb-currency` component renamed `rb-currency-display`](https://github.com/rockabox/rbx_ui_components/pull/174)
 - [`rb-datetime` component renamed `rb-datetime-display`](https://github.com/rockabox/rbx_ui_components/pull/177)
-- [`rb-fieldset` title attribute changed to label](https://github.com/rockabox/rbx_ui_components/pull/184).
+- [`rb-fieldset` `title` attribute changed to `label`](https://github.com/rockabox/rbx_ui_components/pull/184).
 - [`rb-ratio` component renamed `rb-ratio-display`](https://github.com/rockabox/rbx_ui_components/pull/175)
+- [`rb-scrollspy` now animates](https://github.com/rockabox/rbx_ui_components/pull/183). Part of `angular-strap` integration.
 - [`rb-scrollspy` now builds top level list from `items` property not `sections`](https://github.com/rockabox/rbx_ui_components/pull/172)
-- [`rb-scrollspy` now animates](https://github.com/rockabox/rbx_ui_components/pull/183). As part of `angular-strap` integration.
-- [`rb-scrollspy` now uses `angular-scroll` instead of `angular-strap` scrollspy](https://github.com/rockabox/rbx_ui_components/pull/183). To enable observation of scroll positioning in custom elements such as modals.
-- [`rb-text-control` and `rb-datetime-control` title attribute changed to label](https://github.com/rockabox/rbx_ui_components/pull/179).
+- [`rb-scrollspy` now uses `angular-scroll` instead of `angular-strap` scrollspy](https://github.com/rockabox/rbx_ui_components/pull/183). Enables observation of scroll positioning in custom elements (e.g. modals).
+- [`rb-text-control` and `rb-datetime-control` `title` attribute changed to `label`](https://github.com/rockabox/rbx_ui_components/pull/179)
+
+### Fixed
+
+- [`rb-data-summary-item` improperly closed tag](https://github.com/rockabox/rbx_ui_components/pull/182)
+- [`rb-datetime-control` `ng-model` preservation when inheriting datetime](https://github.com/rockabox/rbx_ui_components/pull/173)
 
 ### Removed
 
 - [`rb-datetime-control` `inherit` attribute](https://github.com/rockabox/rbx_ui_components/pull/156). Superceded by `inherit-datetime` attribute.
 - [`rb-fieldset` `campaignBasics` modifier](https://github.com/rockabox/rbx_ui_components/pull/169). Superceded by `basics` modifier.
 - [`rb-select` component](https://github.com/rockabox/rbx_ui_components/pull/170). Superceded by `rb-select-control` component.
-
-### Fixed
-
-- [`rb-datetime-control` `ng-model` preservation when inheriting datetime](https://github.com/rockabox/rbx_ui_components/pull/173).
-- [`rb-data-summary-item` improperly closed tag](https://github.com/rockabox/rbx_ui_components/pull/182)
 
 ## [1.2.0] - 2015-05-29
 
@@ -74,6 +79,7 @@ For multiple checkboxes use `rb-check-control-group` instead of `rb-check-contro
 
 - Initial release.
 
-[unreleased]: https://github.com/rockabox/rbx_ui_components/compare/1.2.0...HEAD
+[unreleased]: https://github.com/rockabox/rbx_ui_components/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/rockabox/rbx_ui_components/compare/1.2.0...2.0.0
 [1.2.0]: https://github.com/rockabox/rbx_ui_components/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/rockabox/rbx_ui_components/compare/1.0.0...1.1.0
