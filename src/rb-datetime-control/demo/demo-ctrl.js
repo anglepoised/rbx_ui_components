@@ -8,10 +8,12 @@ define([
             'basic': '2015-04-27T11:29:05.474Z',
             'required': '',
             'help': '',
-            'placeholder': ''
+            'placeholder': '',
+            'inheritModelTrue': true,
+            'inheritModel': false
         };
 
-        this.inheritDateTime = '2015-04-27T11:29:05.474Z';
+        this.inheritDatetime = '2015-04-27T11:29:05.474Z';
 
     }
 

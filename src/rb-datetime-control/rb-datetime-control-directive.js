@@ -39,11 +39,12 @@ define([
                 placeholderDate: '@',
                 placeholderTime: '@',
                 helpMessage: '@',
-                ngModel: '=',
+                ngModel: '=?',
                 form: '=',
                 name: '@',
-                inherit: '@',
-                inheritLabel: '@'
+                inheritDatetime: '@',
+                inheritLabel: '@',
+                inheritModel: '=?'
             },
             restrict: 'E',
             replace: true,
@@ -55,11 +56,11 @@ define([
 
                 scope.disableInputs = false;
 
-                scope.toggleInherited = function (inheritedDateTime) {
-                    if (scope.inherited) {
-                        scope.ngModel = inheritedDateTime;
+                scope.toggleInherited = function () {
+                    if (scope.inheritModel === true) {
+                        scope.ngModel = scope.inheritDatetime;
                         scope.disableInputs = true;
-                    } else {
+                    } else if (scope.inheritModel === false) {
                         scope.ngModel = '';
                         scope.disableInputs = false;
                     }
@@ -69,6 +70,11 @@ define([
                     // This doesn't seem to work inside ng-disabled?
                     return scope.disableInputs || scope.isDisabled === 'true';
                 };
+
+                scope.$watch('inheritModel', function (newVal) {
+                    scope.toggleInherited();
+                }, true);
+
             }
         };
     }

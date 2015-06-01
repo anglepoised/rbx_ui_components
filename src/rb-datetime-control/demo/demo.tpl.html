@@ -46,7 +46,7 @@
         </div>
         <div class="ComponentView">
             <h4>With inherited date time</h4>
-            <rb-datetime-control name="placeholder" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit="{{demoCtrl.inheritDateTime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" title="Date time" ng-model="demoCtrl.data.inherit"></rb-datetime-control>
+            <rb-datetime-control name="placeholder" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" title="Date time" ng-model="demoCtrl.data.inherit" inherit-model='demoCtrl.data.inheritModel'></rb-datetime-control>
 
             <h5>Scope value (UTC):</h5>
             <div hljs language="json">
@@ -54,8 +54,17 @@
             </div>
         </div>
         <div class="ComponentView">
+            <h4>With preset inherited date time</h4>
+            <rb-datetime-control name="placeholder" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" title="Date time" ng-model="demoCtrl.data.presetInherit" inherit-model='demoCtrl.data.inheritModelTrue'></rb-datetime-control>
+
+            <h5>Scope value (UTC):</h5>
+            <div hljs language="json">
+                {{ demoCtrl.data.presetInherit }}
+            </div>
+        </div>
+        <div class="ComponentView">
             <h4>With inherited date and isDisabled</h4>
-            <rb-datetime-control name="placeholder" is-disabled="true" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit="{{demoCtrl.inheritDateTime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" title="Date time" ng-model="demoCtrl.data.disabled"></rb-datetime-control>
+            <rb-datetime-control name="placeholder" is-disabled="true" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" title="Date time" ng-model="demoCtrl.data.disabled"></rb-datetime-control>
 
             <h5>Scope value (UTC):</h5>
             <div hljs language="json">

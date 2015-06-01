@@ -224,11 +224,11 @@ define([
                 expect(angular.element(inheritDiv).hasClass('ng-hide')).toBe(true);
             });
 
-            it('should show inherited date time checkbox when attribute is specified', function () {
-                $scope.inherited = '2015-04-27T11:29:05.474Z';
+            it('should show inherited date time checkbox when inherit-datetime attribute is specified', function () {
+                $scope.inheritDateTime = '2015-04-27T11:29:05.474Z';
                 compileTemplate(
-                    '<rb-datetime-control name="test" inherit="{{inherited}}" is-required="true" form="aForm">' +
-                    '</rb-datetime-control>'
+                    '<rb-datetime-control name="test" inherit-datetime="{{inheritDateTime}}" is-required="true" ' +
+                    'form="aForm"></rb-datetime-control>'
                 );
 
                 var inheritDiv = element[0].getElementsByClassName('DatetimeControl-inherit')[0];
@@ -237,10 +237,10 @@ define([
             });
 
             it('should set inherit label passed from attribute', function () {
-                $scope.inherited = '2015-04-27T11:29:05.474Z';
+                $scope.inheritDateTime = '2015-04-27T11:29:05.474Z';
                 compileTemplate(
-                    '<rb-datetime-control name="test" inherit-label="Inherit date/time" inherit="{{inherited}}"' +
-                    ' is-required="true" form="aForm"></rb-datetime-control>'
+                    '<rb-datetime-control name="test" inherit-label="Inherit date/time" ' +
+                    'inherit-datetime="{{inheritDateTime}}" is-required="true" form="aForm"></rb-datetime-control>'
                 );
 
                 var inheritDiv = element[0].getElementsByClassName('DatetimeControl-inherit')[0];
@@ -249,15 +249,17 @@ define([
             });
 
             it('should set date to inherited date value on checkbox select', function () {
-                $scope.inherited = '2015-04-27T11:29:05.474Z';
+                $scope.inheritModel = false;
+                $scope.inheritDateTime = '2015-04-27T11:29:05.474Z';
                 $scope.dt = '';
                 compileTemplate(
-                    '<rb-datetime-control name="test" ng-model="dt" inherit="{{inherited}}" is-required="true"' +
-                    ' form="aForm"></rb-datetime-control>'
+                    '<rb-datetime-control name="test" ng-model="dt" inherit-datetime="{{inheritDateTime}}" ' +
+                    'is-required="true" inherit-model="inheritModel" form="aForm"></rb-datetime-control>'
                 );
 
-                isolatedScope.inherited = true;
-                isolatedScope.toggleInherited($scope.inherited);
+                $scope.inheritModel = true;
+                $scope.$apply();
+                isolatedScope.toggleInherited();
                 isolatedScope.$apply();
 
                 var inputOne = angular.element(element.find('input')[0]),
@@ -271,20 +273,44 @@ define([
             });
 
             it('should set date to a emtpy value on checkbox deselect', function () {
-                $scope.inherited = '2015-04-27T11:29:05.474Z';
+                $scope.inheritModel = true;
+                $scope.inheritDateTime = '2015-04-27T11:29:05.474Z';
                 $scope.dt = '';
                 compileTemplate(
-                    '<rb-datetime-control name="test" ng-model="dt" inherit="{{inherited}}" is-required="true"' +
-                    ' form="aForm"></rb-datetime-control>'
+                    '<rb-datetime-control name="test" ng-model="dt" inherit-datetime="{{inheritDateTime}}" ' +
+                    'is-required="true" inherit-model="inheritModel" form="aForm"></rb-datetime-control>'
                 );
 
-                isolatedScope.inherited = false;
-                isolatedScope.toggleInherited($scope.inherited);
+                $scope.inheritModel = false;
+                $scope.$apply();
+                isolatedScope.toggleInherited();
                 isolatedScope.$apply();
 
                 expect(element.find('input')[0].value).toBe('');
                 // Timezone should be set with TZ=UTC flag before running tests so phamtom doesn't use local timzone.
                 expect(element.find('input')[1].value).toBe('');
+            });
+
+            it('should bind as a boolean to the inherit-model attribute', function () {
+                $scope.inheritModel = true;
+                $scope.inheritDateTime = '2015-04-27T11:29:05.474Z';
+                $scope.dt = '';
+                compileTemplate(
+                    '<rb-datetime-control name="test" ng-model="dt" inherit-datetime="{{inheritDateTime}}"' +
+                    ' is-required="true" inherit-model="inheritModel" form="aForm"></rb-datetime-control>'
+                );
+
+                isolatedScope.toggleInherited();
+                isolatedScope.$apply();
+
+                var inputOne = angular.element(element.find('input')[0]),
+                    inputTwo = angular.element(element.find('input')[1]);
+
+                expect(inputOne[0].value).toBe('27/04/2015');
+                expect(inputOne.attr('disabled')).toBe('disabled');
+                // Timezone should be set with TZ=UTC flag before running tests so phamtom doesn't use local timzone.
+                expect(inputTwo[0].value).toBe('11:29');
+                expect(inputTwo.attr('disabled')).toBe('disabled');
             });
         });
 

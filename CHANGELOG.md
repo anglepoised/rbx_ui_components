@@ -6,8 +6,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 
-### Removed
+### Added
+- [`rb-datetime-control` `inherit-datetime` attribute](https://github.com/rockabox/rbx_ui_components/pull/156). Supercedes `inherit` attribute.
+- [`rb-datetime-control` `inherit-model` optional property attribute](https://github.com/rockabox/rbx_ui_components/pull/156). Date inheritence should be treated as a model.
 
+### Removed
+- [`rb-datetime-control` `inherit` attribute](https://github.com/rockabox/rbx_ui_components/pull/156). Superceded by `inherit-datetime` attribute.
 - [`rb-fieldset` `campaignBasics` modifier](https://github.com/rockabox/rbx_ui_components/pull/169). Superceded by `basics` modifier.
 - [`rb-select` component](https://github.com/rockabox/rbx_ui_components/pull/170). Superceded by `rb-select-control` component.
 
