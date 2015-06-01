@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [`rb-datetime-control` `inherit-datetime` attribute](https://github.com/rockabox/rbx_ui_components/pull/156). Supercedes `inherit` attribute.
 - [`rb-datetime-control` `inherit-model` optional property attribute](https://github.com/rockabox/rbx_ui_components/pull/156). Date inheritence should be treated as a model.
+- [`rb-scrollspy` `scroll-id` attribute](https://github.com/rockabox/rbx_ui_components/pull/183). For observing scroll changes on custom elements.
 
 ### Changed
 
@@ -19,6 +20,8 @@ For multiple checkboxes use `rb-check-control-group` instead of `rb-check-contro
 - [`rb-datetime` component renamed `rb-datetime-display`](https://github.com/rockabox/rbx_ui_components/pull/177)
 - [`rb-ratio` component renamed `rb-ratio-display`](https://github.com/rockabox/rbx_ui_components/pull/175)
 - [`rb-scrollspy` now builds top level list from `items` property not `sections`](https://github.com/rockabox/rbx_ui_components/pull/172)
+- [`rb-scrollspy` now animates](https://github.com/rockabox/rbx_ui_components/pull/183). As part of `angular-strap` integration.
+- [`rb-scrollspy` now uses `angular-scroll` instead of `angular-strap` scrollspy](https://github.com/rockabox/rbx_ui_components/pull/183). To enable observation of scroll positioning in custom elements such as modals.
 
 ### Removed
 
