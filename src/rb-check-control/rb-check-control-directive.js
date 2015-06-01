@@ -18,12 +18,13 @@ define([
      *    <form name="form">
      *        <rb-check-control
      *            form="form"
+     *            icon="blue-base-16-geo"
      *            is-disabled="false"
      *            is-required="false"
+     *            label="Label"
      *            name="name"
      *            ng-model="ngModel"
-     *            enable-select-all="false"
-     *            title="Your Title">
+     *            value="value">
      *        </rb-check-control>
      *    </form>
      * </hljs>
@@ -35,12 +36,13 @@ define([
         return {
             scope: {
                 form: '=',
+                icon: '@',
                 isDisabled: '@',
                 isRequired: '@',
+                label: '@',
                 name: '@',
                 ngModel: '=',
-                enableSelectAll: '@',
-                title: '@'
+                value:'@'
             },
             restrict: 'E',
             replace: true,

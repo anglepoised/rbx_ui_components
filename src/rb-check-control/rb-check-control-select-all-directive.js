@@ -14,12 +14,12 @@ define([
      * @usage
      * <hljs lang="html">
      *     <rb-check-control-select-all
+     *         enable-select-all="false"
      *         form="form"
      *         is-disabled="false"
      *         is-required="false"
      *         name="name"
      *         ng-model="ngModel"
-     *         enable-select-all="false"
      *         title="Your Title">
      *     </rb-check-control-select-all>
      * </hljs>
@@ -35,7 +35,6 @@ define([
                 isRequired: '@',
                 name: '@',
                 ngModel: '=',
-                enableSelectAll: '@',
                 title: '@'
             },
             restrict: 'E',

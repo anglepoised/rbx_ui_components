@@ -1,0 +1,35 @@
+<section class="Section">
+    <div class="RawHTML">
+        <h2>
+            rb-check-control-group
+        </h2>
+        <p>
+            A check control group displays a group of check controls
+        </p>
+    </div>
+    <div class="ComponentView">
+        <form name="checkControlForm">
+            <rb-check-control-group
+                form="checkControlForm"
+                name="check-control-default"
+                ng-model="ngModelDefault"
+                options="demoCtrl.defaultOptions"
+                title="Basic Usage">
+            </rb-check-control-group>
+            <pre>{{ ngModelDefault }}</pre>
+        </form>
+    </div>
+    <div class="ComponentView">
+        <form name="checkControlSelectAllForm">
+            <rb-check-control-group
+                enable-select-all=true
+                form="checkControlSelectAllForm"
+                name="check-control-select-all"
+                ng-model="ngModelSelectAll"
+                options="demoCtrl.selectAllOptions"
+                title="Select All">
+            </rb-check-control-group>
+            <pre>{{ ngModelSelectAll }}</pre>
+        </form>
+    </div>
+</section>

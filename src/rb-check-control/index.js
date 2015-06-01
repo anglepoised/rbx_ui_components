@@ -1,8 +1,10 @@
 define([
+    'components/rb-icon',
     './rb-check-control-directive',
+    './rb-check-control-group-directive',
     './rb-check-control-select-all-directive',
     './rb-check-control.css'
-], function (rbCheckControlDirective, rbCheckControlSelectAllDirective, css) {
+], function (rbIcon, rbCheckControlDirective, rbCheckControlGroupDirective, rbCheckControlSelectAllDirective, css) {
     /**
      * @ngdoc module
      * @name rb-check-control
@@ -12,8 +14,9 @@ define([
      *
      */
     var rbCheckControl = angular
-        .module('rb-check-control', [])
+        .module('rb-check-control', [rbIcon.name])
         .directive('rbCheckControl', rbCheckControlDirective)
+        .directive('rbCheckControlGroup', rbCheckControlGroupDirective)
         .directive('rbCheckControlSelectAll', rbCheckControlSelectAllDirective);
 
     return rbCheckControl;

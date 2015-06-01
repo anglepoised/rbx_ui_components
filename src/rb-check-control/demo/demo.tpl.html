@@ -13,34 +13,76 @@
             Help and invalid messages for individual and groups of CheckControls should be surfaced on a fieldset level.
         </p>
     </div>
-
-    <div class="RawHTML">
-        <h3>
-            Current Angular Version
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <form name="checkControlForm">
+    <hr>
+    <form name="checkControlForm">
+        <div class="RawHTML">
+            <h3>
+                Current Angular Version
+            </h3>
+            <h4>Default</h4>
+        </div>
+        <div class="ComponentView">
             <rb-check-control
                 form="checkControlForm"
-                ng-model="demoCtrl.default"
+                label="Default"
                 name="check-control-default"
-                title="Default">
+                ng-model="demoCtrl.default">
             </rb-check-control>
-        </form>
-    </div>
-    <div class="ComponentView">
-        <form name="checkControlSelectAllForm">
+        </div>
+        <div class="RawHTML">
+            <h3>Disabled</h3>
+        </div>
+        <div class="ComponentView">
             <rb-check-control
-                form="checkControlSelectAllForm"
-                ng-model="demoCtrl.selectAll"
-                name="check-control-select-all"
-                enable-select-all="true"
-                title="Select All">
+                label="Disabled"
+                is-disabled="true"
+                name="check-control-disabled"
+                ng-model="demoCtrl.disabled">
             </rb-check-control>
-        </form>
-    </div>
+        </div>
+        <div class="RawHTML">
+            <h3>Required</h3>
+        </div>
+        <div class="ComponentView">
+            <rb-check-control
+                label="Required"
+                is-required="true"
+                name="check-control-required"
+                ng-model="demoCtrl.required">
+            </rb-check-control>
 
+        </div>
+        <div class="RawHTML">
+            <h3>Pre Checked in scope</h3>
+        </div>
+        <div class="ComponentView">
+            <rb-check-control
+                label="Pre Checked"
+                name="check-control.preChecked"
+                ng-model="demoCtrl.preChecked">
+            </rb-check-control>
+        </div>
+        <div class="RawHTML">
+            <h3>With Icon modifier</h3>
+        </div>
+        <div class="ComponentView">
+            <rb-check-control
+                form="checkControlSelectIconForm"
+                ng-model="demoCtrl.icon"
+                name="check-control-icon"
+                label="With Icon"
+                icon="black-12-arrow-right">
+            </rb-check-control>
+        </div>
+        <div class="RawHTML">
+            <pre>default: {{ demoCtrl.default }}</pre>
+            <pre>disabled: {{ demoCtrl.disabled }}</pre>
+            <pre>required: {{ demoCtrl.required }}</pre>
+            <pre>prechecked: {{ demoCtrl.preChecked }}</pre>
+            <pre>icon: {{ demoCtrl.icon }}</pre>
+        </div>
+    </form>
+    <hr>
     <div class="RawHTML">
         <h3>
             Static Reference Version
