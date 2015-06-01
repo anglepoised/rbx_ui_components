@@ -27,7 +27,7 @@ define([
         }));
 
         describe('rendering', function () {
-            it('should render root, title and body with classes', function () {
+            it('should render root, label and body with classes', function () {
                 compileTemplate('<rb-datetime-control name="test"></rb-datetime-control>');
 
                 expect(element.length).toBe(1);
@@ -69,8 +69,8 @@ define([
         });
 
         describe('label', function () {
-            it('should contain title', function () {
-                compileTemplate('<rb-datetime-control name="test" title="The date and time"></rb-datetime-control>');
+            it('should contain label', function () {
+                compileTemplate('<rb-datetime-control name="test" label="The date and time"></rb-datetime-control>');
                 expect(element.find('label').text()).toContain('The date and time');
             });
 

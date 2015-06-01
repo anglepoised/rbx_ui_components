@@ -16,7 +16,7 @@ define([
      *     <form name="userForm">
      *         <rb-datetime-control
      *             form="userForm"
-     *             title="Your Name"
+     *             label="Your Name"
      *             placeholder-date="DD/MM/YYYY"
      *             placeholder-time="HH:MM"
      *             ng-model="demoCtrl.data.name"
@@ -35,7 +35,7 @@ define([
                 isDisabled: '@',
                 isRequired: '@',
                 isReadonly: '@',
-                title: '@',
+                label: '@',
                 placeholderDate: '@',
                 placeholderTime: '@',
                 helpMessage: '@',

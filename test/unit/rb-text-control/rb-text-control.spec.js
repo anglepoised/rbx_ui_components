@@ -45,7 +45,7 @@ define([
         });
 
         describe('label', function () {
-            it('should contain title', function () {
+            it('should contain label', function () {
                 expect(element.find('label').html()).toContain('Your Name');
             });
 
