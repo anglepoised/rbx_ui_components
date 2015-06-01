@@ -1,10 +1,10 @@
-<div class="Login">
-    <div class="Login-icon">
+<div class="LoginForm">
+    <div class="LoginForm-icon">
         <rb-icon icon="{{::icon}}"></rb-icon>
     </div>
-    <form name="loginForm" class="Login-body">
+    <form name="loginForm" class="LoginForm-body">
         <fieldset>
-            <div class="Login-control">
+            <div class="LoginForm-control">
                 <rb-text-control
                     form="loginForm"
                     title="Email"
@@ -15,7 +15,7 @@
                     is-required="true">
                 </rb-text-control>
             </div>
-            <div class="Login-control">
+            <div class="LoginForm-control">
                 <rb-text-control
                     form="loginForm"
                     title="Password"
@@ -28,7 +28,7 @@
             </div>
         </fieldset>
         <rb-form-message ng-if="message">{{ message }}</rb-form-message>
-        <fieldset class="Login-button">
+        <fieldset class="LoginForm-button">
             <rb-button block="yes" state="positive" ng-disabled="loginForm.$invalid" ng-click="onLogin()">Login</rb-button>
         </fieldset>
     </form>
