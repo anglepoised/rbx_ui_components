@@ -14,7 +14,7 @@ define([
                     'label': 'Countries',
                     'anchor': 'countries',
                     'hidden': true,
-                    'sections': [
+                    'items': [
                         {
                             'label': 'A',
                             'anchor': 'A',

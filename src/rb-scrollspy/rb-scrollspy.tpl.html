@@ -11,7 +11,7 @@
             </a>
 
             <ul>
-                <li ng-repeat="section in category.sections track by $index">
+                <li ng-repeat="section in category.items track by $index">
                     <a class="Scrollspy-Section" href="#{{::section.anchor}}" bs-scrollspy data-target="#{{::section.anchor}}" data-offset="{{::offset || 0}}">
                         <span>{{::section.label}}</span>
                     </a>
