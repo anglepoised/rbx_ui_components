@@ -25,7 +25,7 @@
 }
 
 /**
- * 1. Remove default appearance. Prefixed versions necessary, see: http://git.io/vTwoV
+ * 1. Remove default appearance.
  * 2. Set consistent spacing after every field.
  * 3. Remove `outline` in favour of `border`.
  * 4. Nudge `required` indicator from top right corner.
@@ -44,8 +44,6 @@
  */
 
 .SelectControl-field {
-    -moz-appearance: none;
-    -webkit-appearance: none;
     appearance: none; /* 1 */
     background: var(--SelectControl-field-background-color) url(var(--SelectControl-field-image)) no-repeat center right;
     border: 1px solid var(--SelectControl-field-border-color);
@@ -112,8 +110,6 @@
 
 .SelectControl-field:disabled,
 .SelectControl-field.is-disabled {
-    -moz-appearance: none;
-    -webkit-appearance: none;
     appearance: none;
     background: var(--SelectControl-field-disabled-background-color) url(var(--SelectControl-field-disabled-image)) no-repeat var(--SelectControl-field-disabled-image-position) !important; /* 5 */
     border: 1px solid var(--SelectControl-field-border-color) !important; /* 5 */
