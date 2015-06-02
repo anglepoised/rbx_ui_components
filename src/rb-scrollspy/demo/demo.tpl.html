@@ -1,12 +1,31 @@
+<style type="text/css">
+  #container {
+    overflow: scroll;
+    height: 500px;
+    position: absolute;
+    top: 50px;
+    left: 180px;
+  }
+
+  .search {
+      position:absolute;
+      left:180px;
+      top:0;
+      height:50px;
+  }
+</style>
+
 <div>
     <div style="position: fixed; top: 10px; left: 50px">
-        <rb-scrollspy categories="demoCtrl.filteredCategories" offset="10"></rb-scrollspy>
+        <rb-scrollspy categories="demoCtrl.filteredCategories" offset="0" scroll-id="container"></rb-scrollspy>
     </div>
 
-    <div style="position: absolute;top:0; left: 180px">
-        <div>
-            <input type="text" ng-model="search" placeholder="Search list...">
-            <hr />
+    <div class="search">
+        <input type="text" ng-model="search" placeholder="Search list...">
+        <hr />
+    </div>
+
+    <div id="container">
         <div>
             <span ng-repeat="category in demoCtrl.filteredCategories">
                 <h2 id="{{ category.anchor }}" class="ListyThing-Category">
