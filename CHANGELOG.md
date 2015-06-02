@@ -22,6 +22,7 @@ For multiple checkboxes use `rb-check-control-group` instead of `rb-check-contro
 - [`rb-scrollspy` now builds top level list from `items` property not `sections`](https://github.com/rockabox/rbx_ui_components/pull/172)
 - [`rb-scrollspy` now animates](https://github.com/rockabox/rbx_ui_components/pull/183). As part of `angular-strap` integration.
 - [`rb-scrollspy` now uses `angular-scroll` instead of `angular-strap` scrollspy](https://github.com/rockabox/rbx_ui_components/pull/183). To enable observation of scroll positioning in custom elements such as modals.
+- [`rb-text-control` and `rb-datetime-control` title attribute changed to label](https://github.com/rockabox/rbx_ui_components/pull/179).
 
 ### Removed
 

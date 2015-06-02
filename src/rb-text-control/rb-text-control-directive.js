@@ -16,7 +16,7 @@ define([
      *     <form name="userForm">
      *         <rb-text-control
      *             form="userForm"
-     *             title="Your Name"
+     *             label="Your Name"
      *             placeholder="Enter your name..."
      *             name="name"
      *             type="text"
@@ -38,7 +38,7 @@ define([
                 isElastic: '@',
                 isRequired: '@',
                 isReadonly: '@',
-                title: '@',
+                label: '@',
                 placeholder: '@',
                 helpMessage: '@',
                 ngModel: '=',
