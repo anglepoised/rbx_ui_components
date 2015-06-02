@@ -35,6 +35,27 @@
     padding: 1.25em 0;
 }
 
+@media (--md-viewport) {
+
+    .Fieldset {
+        display: flex;
+        flex-direction: row; /* 1 */
+        flex-wrap: nowrap; /* 1 */
+    }
+
+    .Fieldset-title {
+        width: 33.333333333%;
+    }
+
+    .Fieldset-body {
+        border-left: 1px solid var(--Fieldset-border-color);
+        border-top: 0;
+        padding: 1.25em 0 1.25em 2em;
+        width: 66.666666667%;
+    }
+
+}
+
 /**
  * Additional Info modifier
  */
@@ -99,25 +120,4 @@
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
     padding-left: 32px;
-}
-
-@media (--md-viewport) {
-
-    .Fieldset {
-        display: flex;
-        flex-direction: row; /* 1 */
-        flex-wrap: nowrap; /* 1 */
-    }
-
-    .Fieldset-title {
-        width: 33.333333333%;
-    }
-
-    .Fieldset-body {
-        border-left: 1px solid var(--Fieldset-border-color);
-        border-top: 0;
-        padding: 1.25em 0 1.25em 2em;
-        width: 66.666666667%;
-    }
-
 }
