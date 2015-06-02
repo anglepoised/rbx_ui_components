@@ -10,6 +10,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [`rb-generic-form` `-buttons` descendent](https://github.com/rockabox/rbx_ui_components/pull/186)
 
+### Fixed
+
+- [`appearance` property no longer requires manual prefixing](https://github.com/rockabox/rbx_ui_components/pull/187). Run `npm update` after updating to prevent breakage.
+
 ## [2.0.0] - 2015-05-02
 
 ### Added
