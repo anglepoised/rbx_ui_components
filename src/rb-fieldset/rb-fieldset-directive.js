@@ -24,7 +24,7 @@ define([
         return {
             scope: {
                 type: '@',
-                title: '@'
+                label: '@'
             },
             restrict: 'E',
             replace: true,
