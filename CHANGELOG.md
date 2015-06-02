@@ -29,6 +29,7 @@ For multiple checkboxes use `rb-check-control-group` instead of `rb-check-contro
 ### Fixed
 
 - [`rb-datetime-control` `ng-model` preservation when inheriting datetime](https://github.com/rockabox/rbx_ui_components/pull/173).
+- [`rb-data-summary-item` improperly closed tag](https://github.com/rockabox/rbx_ui_components/pull/182)
 
 ## [1.2.0] - 2015-05-29
 
