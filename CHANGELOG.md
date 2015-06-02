@@ -8,7 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- Nothing.
+- [`rb-generic-form` `-buttons` descendent](https://github.com/rockabox/rbx_ui_components/pull/186)
 
 ## [2.0.0] - 2015-05-02
 
