@@ -18,6 +18,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 For multiple checkboxes use `rb-check-control-group` instead of `rb-check-control`. The `rb-check-control-group` directive will use attribute `options` to render your checkboxes and `ng-model` will now return an array of currently checked string values.
 - [`rb-currency` component renamed `rb-currency-display`](https://github.com/rockabox/rbx_ui_components/pull/174)
 - [`rb-datetime` component renamed `rb-datetime-display`](https://github.com/rockabox/rbx_ui_components/pull/177)
+- [`rb-fieldset` title attribute changed to label](https://github.com/rockabox/rbx_ui_components/pull/184).
 - [`rb-ratio` component renamed `rb-ratio-display`](https://github.com/rockabox/rbx_ui_components/pull/175)
 - [`rb-scrollspy` now builds top level list from `items` property not `sections`](https://github.com/rockabox/rbx_ui_components/pull/172)
 - [`rb-scrollspy` now animates](https://github.com/rockabox/rbx_ui_components/pull/183). As part of `angular-strap` integration.
