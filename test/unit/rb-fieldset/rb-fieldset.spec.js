@@ -25,9 +25,9 @@ define([
             };
         }));
 
-        it('should add a title to the component', function () {
+        it('should add a label to the component', function () {
             var bodyText;
-            compileTemplate('<rb-fieldset title="Default Text"></rb-fieldset>');
+            compileTemplate('<rb-fieldset label="Default Text"></rb-fieldset>');
 
             bodyText = element[0].getElementsByClassName('Fieldset-title');
 
@@ -36,7 +36,7 @@ define([
 
         it('should add content to the body of the component', function () {
             var bodyText;
-            compileTemplate('<rb-fieldset title="Default Text">Some content</rb-fieldset>');
+            compileTemplate('<rb-fieldset label="Default Text">Some content</rb-fieldset>');
 
             bodyText = element[0].getElementsByClassName('Fieldset-body');
 
@@ -45,43 +45,43 @@ define([
 
         describe('types', function () {
             it('should not register an arbituary type', function () {
-                compileTemplate('<rb-fieldset title="Default Text" type="barneyStinson"></rb-fieldset>');
+                compileTemplate('<rb-fieldset label="Default Text" type="barneyStinson"></rb-fieldset>');
 
                 expect(element.hasClass('Fieldset--barneyStinson')).toBeFalsy();
             });
 
             it('should use the additional information type', function () {
-                compileTemplate('<rb-fieldset title="Default Text" type="additionalInfo"></rb-fieldset>');
+                compileTemplate('<rb-fieldset label="Default Text" type="additionalInfo"></rb-fieldset>');
 
                 expect(element.hasClass('Fieldset--additionalInfo')).toBeTruthy();
             });
 
             it('should use the goals type', function () {
-                compileTemplate('<rb-fieldset title="Default Text" type="goals"></rb-fieldset>');
+                compileTemplate('<rb-fieldset label="Default Text" type="goals"></rb-fieldset>');
 
                 expect(element.hasClass('Fieldset--goals')).toBeTruthy();
             });
 
             it('should use the basics type', function () {
-                compileTemplate('<rb-fieldset title="Default Text" type="basics"></rb-fieldset>');
+                compileTemplate('<rb-fieldset label="Default Text" type="basics"></rb-fieldset>');
 
                 expect(element.hasClass('Fieldset--basics')).toBeTruthy();
             });
 
             it('should use the breakdown type', function () {
-                compileTemplate('<rb-fieldset title="Default Text" type="breakdown"></rb-fieldset>');
+                compileTemplate('<rb-fieldset label="Default Text" type="breakdown"></rb-fieldset>');
 
                 expect(element.hasClass('Fieldset--breakdown')).toBeTruthy();
             });
 
             it('should use the finance type', function () {
-                compileTemplate('<rb-fieldset title="Default Text" type="finance"></rb-fieldset>');
+                compileTemplate('<rb-fieldset label="Default Text" type="finance"></rb-fieldset>');
 
                 expect(element.hasClass('Fieldset--finance')).toBeTruthy();
             });
 
             it('should use the metrics type', function () {
-                compileTemplate('<rb-fieldset title="Default Text" type="metrics"></rb-fieldset>');
+                compileTemplate('<rb-fieldset label="Default Text" type="metrics"></rb-fieldset>');
 
                 expect(element.hasClass('Fieldset--metrics')).toBeTruthy();
             });
