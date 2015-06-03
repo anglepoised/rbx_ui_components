@@ -33,6 +33,7 @@ define([
                 'icon': '@',
                 'label': '@'
             },
+            replace: true,
             restrict: 'E',
             transclude: true,
             template: template
