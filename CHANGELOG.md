@@ -12,6 +12,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+- [`rb-check-control-group` can use shared model and watches external model changes](https://github.com/rockabox/rbx_ui_components/pull/191)
 - [`rb-definition-list` style and structure](https://github.com/rockabox/rbx_ui_components/pull/192)
 
 ### Fixed
