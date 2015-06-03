@@ -1,7 +1,7 @@
 <div class="DefinitionList">
     <div class="DefinitionList-toolbar">
         <div class="DataActionTable-action">
-            <rb-button>Edit Targeting</rb-button>
+            <rb-button ng-if="buttonText" ng-click="buttonClick()">{{ ::buttonText }}</rb-button>
         </div>
     </div>
     <ul class="DefinitionList-main" ng-transclude></ul>
