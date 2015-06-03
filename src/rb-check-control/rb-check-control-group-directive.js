@@ -1,6 +1,7 @@
 define([
-    'html!./rb-check-control-group.tpl.html'
-], function (template) {
+    'html!./rb-check-control-group.tpl.html',
+    './rb-check-control-group-link'
+], function (template, linkFunc) {
 
     /**
      * @ngdoc directive
@@ -47,15 +48,7 @@ define([
             restrict: 'E',
             replace: true,
             template: template,
-            link: function ($scope, $element, $attributes) {
-
-                $scope.$watch('options|filter:{checked:true}', function (newOptions) {
-                    $scope.ngModel = newOptions.map(function (option) {
-                        return option.value;
-                    });
-                }, true);
-
-            }
+            link: linkFunc
         };
     }
 
