@@ -38,6 +38,19 @@ grunt unit
 Do not run unit tests directly with Karma; the grunt tasks are required
 to set the timezone correctly for PhantomJS.
 
+## Release Process
+
+1. Ensure all pull requests intended for next version have been merged to `master`
+2. Determine [semantic version](https://docs.npmjs.com/getting-started/semantic-versioning) number (MAJOR.MINOR.PATCH)
+3. Create release branch (as MAJOR.MINOR.PATCH) from `master`
+4. Open pull request from release branch to `master`
+5. Bump version in `bower.json` and `package.json` on release branch
+6. Update Changelog on release branch
+7. Approve and merge, but keep release branch
+8. Create release
+9. Delete release branch
+10. :tada:
+
 ## Guidelines For Making New Components
 
 Use the [rb-component Yeoman generator](https://github.com/rockabox/generator-rb-component) when starting a new component.
