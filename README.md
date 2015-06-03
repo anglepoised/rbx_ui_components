@@ -11,11 +11,9 @@ Rockabox's UI components, built using [AngularJS](https://angularjs.org/), [Post
     npm install -g bower grunt-cli webpack webpack-dev-server
     ```
 
-3. Clone project and install dependencies:
+3. Install dependencies:
 
     ```sh
-    git clone git@github.com:rockabox/rbx_ui_components
-    cd rbx_ui_components
     npm install && bower install
     ```
 
