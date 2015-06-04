@@ -1,33 +1,64 @@
-/** @define rbDefinitionList; use strict */
+/** @define DefinitionList; use strict */
 
 /**
- * The `.rbDefinitionList` component...
+ * The `.DefinitionList` component should be used for displaying name-value structures.
  */
 
 :root {
-    --rbDefinitionList-variable: var();
+    --DefinitionList-border: var(--color-gray-ghost);
 }
 
 /**
- * 1. Comment
+ * 1. Linearize layout for small viewport
+ * 2. Stripe odd items
  */
 
-.rbDefinitionList {
+.DefinitionList-toolbar {
+    margin-bottom: 1.5em;
 }
 
-dl.multicolumn {
-    overflow: auto;
+.DefinitionList-main {
+    border-top: 1px solid var(--DefinitionList-border);
+    width: 100%;
 }
-dl.multicolumn dt, dl.multicolumn dd {
-    float: left;
+
+.DefinitionList-item {
+    background: var(--color-white-alabaster);
+    display: flex;
+    flex-direction: column; /* 1 */
+    padding: 1.5em 0;
 }
-dl.multicolumn dt {
-    clear: left;
-    width: 13%;
-    margin-right: 2%;
-    font-weight: bold;
+
+@media (--md-viewport) {
+
+    .DefinitionList-item {
+        flex-direction: row;  /* 1 */
+    }
+
 }
-dl.multicolumn dd {
-    width: 85%;
-    margin-left: 0;
+
+.DefinitionList-item:nth-child(odd) {
+    background: var(--color-white-catskill); /* 2 */
+}
+
+.DefinitionList-title {
+    display: flex;
+    padding: 0 2em;
+    width: 14em;
+}
+
+.DefinitionList-icon {
+    margin-right: 1em;
+}
+
+.DefinitionList-body {
+    padding: 0 2em;
+}
+
+@media (--md-viewport) {
+
+    .DefinitionList-body {
+        border-left: 1px solid var(--DefinitionList-border);
+    }
+
 }

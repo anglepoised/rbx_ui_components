@@ -1,2 +1,10 @@
-<dt><rb-icon ng-if="icon" icon="{{icon}}">{{label}}</rb-icon>{{label}}</dt>
-<dd ng-transclude></dd>
+<li class="DefinitionList-item">
+    <div class="DefinitionList-title">
+        <div class="DefinitionList-icon">
+            <rb-icon ng-if="icon" icon="{{icon}}">{{label}}</rb-icon>
+        </div>
+        <h3>{{label}}</h3>
+    </div>
+    <div class="DefinitionList-body u-textSmall" ng-transclude>
+    </div>
+</li>

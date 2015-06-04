@@ -1,8 +1,10 @@
 define([
+    'components/rb-button',
+    'components/rb-icon',
     './rb-definition-list-directive',
     './rb-definition-list-item-directive',
     './rb-definition-list.css'
-], function (rbDefinitionListDirective, rbDefinitionListItemDirective, css) {
+], function (rbButton, rbIcon, rbDefinitionListDirective, rbDefinitionListItemDirective, css) {
     /**
      * @ngdoc module
      * @name rb-definition-list
@@ -12,7 +14,7 @@ define([
      *
      */
     var rbDefinitionList = angular
-        .module('rb-definition-list', [])
+        .module('rb-definition-list', [rbButton.name, rbIcon.name])
         .directive('rbDefinitionList', rbDefinitionListDirective)
         .directive('rbDefinitionListItem', rbDefinitionListItemDirective);
 

@@ -23,6 +23,10 @@ define([
     function rbDefinitionListDirective () {
 
         return {
+            scope: {
+                buttonText: '@',
+                buttonClick: '&'
+            },
             restrict: 'E',
             replace: true,
             transclude: true,

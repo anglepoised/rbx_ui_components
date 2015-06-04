@@ -27,37 +27,42 @@ define([
 
         describe('rendering', function () {
 
-            it('should render with a "rb-definition-list-item" tagname', function () {
+            it('should render with a "li" tagname', function () {
                 compileTemplate('<rb-definition-list-item></rb-definition-list-item>');
 
-                expect(element[0].tagName.toLowerCase()).toEqual('rb-definition-list-item');
+                expect(element[0].tagName.toLowerCase()).toEqual('li');
             });
 
-            it('should attach an icon to the dt when present', function () {
+            it('should attach an icon to the li when present', function () {
                 compileTemplate('<rb-definition-list-item icon="any-icon"></rb-definition-list-item>');
 
-                expect(element.find('dt').html()).toContain('icon="any-icon"');
+                var icons = element[0].getElementsByClassName('Icon'),
+                    icon = angular.element(icons[0]);
+
+                expect(icons.length).toBe(1);
+                expect(icon.hasClass('Icon--any-icon')).toBe(true);
             });
 
             it('should not attach an icon to the dt when not present', function () {
                 compileTemplate('<rb-definition-list-item></rb-definition-list-item>');
 
-                expect(element.find('dt').html()).not.toContain('rb-icon');
+                expect(element.find('icon').length).toBe(0);
             });
 
             it('should display a label for the dt', function () {
                 compileTemplate('<rb-definition-list-item label="any-label"></rb-definition-list-item>');
 
-                expect(element.find('dt').html()).toContain('any-label');
+                expect(element.find('h3').text()).toContain('any-label');
             });
 
             it('should render transcluded elements into the details', function () {
                 compileTemplate('<rb-definition-list-item><span>Transcluded detail</span></rb-definition-list-item>');
 
-                expect(element.find('dd').html()).toContain('Transcluded detail');
+                var body = angular.element(element[0].getElementsByClassName('DefinitionList-body')[0]);
+
+                expect(body.html()).toContain('Transcluded detail');
             });
 
         });
-
     });
 });
