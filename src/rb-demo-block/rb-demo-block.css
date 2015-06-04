@@ -1,0 +1,16 @@
+/** @define DemoBlock; use strict */
+
+/**
+ * The `.DemoBlock` component...
+ */
+
+:root {
+    --DemoBlock-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.DemoBlock {
+}
