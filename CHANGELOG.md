@@ -6,9 +6,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 
-### Added
+### Fixed
 
-Nothing.
+- [`rb-definition-list` layout bug](https://github.com/rockabox/rbx_ui_components/pull/200)
 
 ## [2.1.0] - 2015-06-05
 
