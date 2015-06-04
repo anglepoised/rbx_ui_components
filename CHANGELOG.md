@@ -8,6 +8,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+Nothing.
+
+## [2.1.0] - 2015-06-05
+
+### Added
+
 - [`rb-generic-form` `-buttons` descendent](https://github.com/rockabox/rbx_ui_components/pull/186)
 
 ### Changed
@@ -19,7 +25,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [`appearance` property no longer requires manual prefixing](https://github.com/rockabox/rbx_ui_components/pull/187). Run `npm update` after updating to prevent breakage.
 
-## [2.0.0] - 2015-05-02
+## [2.0.0] - 2015-06-02
 
 ### Added
 
@@ -88,7 +94,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Initial release.
 
-[unreleased]: https://github.com/rockabox/rbx_ui_components/compare/2.0.0...HEAD
+[unreleased]: https://github.com/rockabox/rbx_ui_components/compare/2.1.0...HEAD
+[2.1.0]: https://github.com/rockabox/rbx_ui_components/compare/2.0.0...2.1.0
 [2.0.0]: https://github.com/rockabox/rbx_ui_components/compare/1.2.0...2.0.0
 [1.2.0]: https://github.com/rockabox/rbx_ui_components/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/rockabox/rbx_ui_components/compare/1.0.0...1.1.0
