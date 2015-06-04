@@ -12,11 +12,32 @@
             <rb-check-control-group
                 form="checkControlForm"
                 name="check-control-default"
-                ng-model="ngModelDefault"
+                ng-model="demoCtrl.ngModelDefault"
                 options="demoCtrl.defaultOptions"
                 title="Basic Usage">
             </rb-check-control-group>
-            <pre>{{ ngModelDefault }}</pre>
+            <pre>{{ demoCtrl.ngModelDefault }}</pre>
+        </form>
+    </div>
+    <div class="ComponentView">
+        <form name="checkControlForm">
+            <rb-check-control-group
+                form="checkControlForm"
+                name="check-control-shared-one"
+                ng-model="demoCtrl.ngModelShared"
+                options="demoCtrl.sharedOptions"
+                title="Shared model">
+            </rb-check-control-group>
+
+            <rb-check-control-group
+                enable-select-all=true
+                form="checkControlForm"
+                name="check-control-shared-two"
+                ng-model="demoCtrl.ngModelShared"
+                options="demoCtrl.moreOptions"
+                title="Shared model with select all">
+            </rb-check-control-group>
+            <pre>{{ demoCtrl.ngModelShared }}</pre>
         </form>
     </div>
     <div class="ComponentView">
@@ -25,11 +46,11 @@
                 enable-select-all=true
                 form="checkControlSelectAllForm"
                 name="check-control-select-all"
-                ng-model="ngModelSelectAll"
+                ng-model="demoCtrl.ngModelSelectAll"
                 options="demoCtrl.selectAllOptions"
                 title="Select All">
             </rb-check-control-group>
-            <pre>{{ ngModelSelectAll }}</pre>
+            <pre>{{ demoCtrl.ngModelSelectAll }}</pre>
         </form>
     </div>
 </section>

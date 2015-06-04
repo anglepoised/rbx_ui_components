@@ -11,22 +11,18 @@ define([
             isolatedScope,
             options = [
                 {
-                    checked: false,
                     label: 'One',
                     value: 'one'
                 },
                 {
-                    checked: true,
                     label: 'Two',
                     value: 'two'
                 },
                 {
-                    checked: true,
                     label: 'Three',
                     value: 'three'
                 }
-            ],
-            ngModel = [];
+            ];
 
         beforeEach(angular.mock.module(
             rbCheckControl.name
@@ -38,21 +34,17 @@ define([
             $scope = _$rootScope_.$new({});
 
             compileTemplate = function (template) {
-                $scope.options = options;
-                $scope.ngModel = ngModel;
                 element = $compile(template)($scope);
                 $scope.$apply();
                 isolatedScope = element.isolateScope();
             };
         }));
 
-        describe('checkedOptions', function () {
-            beforeEach(function () {
-                compileTemplate('<rb-check-control-group options="options" ng-model="ngModel">' +
-                    '</rb-check-control-group>');
-            });
-
+        describe('option', function () {
             it('should render three inputs with correct values', function () {
+                $scope.options = options;
+                compileTemplate('<rb-check-control-group options="options" ng-model="model"></rb-check-control-group>');
+
                 var inputs = element.find('input');
 
                 expect(inputs.length).toBe(3);
@@ -62,20 +54,149 @@ define([
             });
 
             it('should render three labels with correct values', function () {
+                $scope.options = options;
+                compileTemplate('<rb-check-control-group options="options" ng-model="model"></rb-check-control-group>');
+
                 var labels = element.find('label');
 
                 expect(labels.eq(0).html()).toContain('One');
                 expect(labels.eq(1).html()).toContain('Two');
                 expect(labels.eq(2).html()).toContain('Three');
             });
+        });
 
-            it('should return an array with two items', function () {
-                expect($scope.ngModel.length).toBe(2);
+        describe('model binding', function () {
+
+            it('should check any values in ngModel', function () {
+                // Before render
+                $scope.options = options;
+                $scope.ngModel = ['two'];
+                compileTemplate(
+                    '<rb-check-control-group options="options" ng-model="ngModel"></rb-check-control-group>'
+                );
+
+                var inputs = element.find('input');
+                expect(inputs.eq(1).attr('checked')).toBe('checked');
             });
 
-            it('should contain string values', function () {
-                expect($scope.ngModel[0]).toBe('two');
-                expect($scope.ngModel[1]).toBe('three');
+            it('should update checked when ngModel changes', function () {
+                $scope.options = options;
+                $scope.ngModel = [];
+                compileTemplate(
+                    '<rb-check-control-group options="options" ng-model="ngModel"></rb-check-control-group>'
+                );
+
+                //After render
+                $scope.ngModel.push('one');
+                $scope.$apply();
+
+                var inputs = element.find('input');
+                expect(inputs.eq(0).attr('checked')).toBe('checked');
+            });
+
+            it('should only have one instance of a value in the model', function () {
+                // Before render
+                $scope.ngModel = [];
+                $scope.options = [
+                    {
+                        label: 'One',
+                        value: 'one'
+                    },
+                    {
+                        label: 'One One',
+                        value: 'one'
+                    },
+                    {
+                        label: 'Two',
+                        value: 'two'
+                    }
+                ];
+                compileTemplate(
+                    '<rb-check-control-group options="options" ng-model="ngModel"></rb-check-control-group>'
+                );
+
+                isolatedScope.options[0].checked = true;
+                isolatedScope.options[1].checked = true;
+                $scope.$apply();
+
+                expect($scope.ngModel).toEqual(['one']);
+            });
+        });
+
+        describe('checkbox state', function () {
+
+            it('should update model when state changes', function () {
+                // Before render
+                $scope.ngModel = [];
+                $scope.options = [
+                    {
+                        label: 'One',
+                        value: 'one'
+                    },
+                    {
+                        label: 'Two',
+                        value: 'two'
+                    }
+                ];
+                compileTemplate(
+                    '<rb-check-control-group options="options" ng-model="ngModel"></rb-check-control-group>'
+                );
+
+                isolatedScope.options[0].checked = true;
+                $scope.$apply();
+
+                expect($scope.ngModel).toEqual(['one']);
+            });
+
+            it('should update model when state changes and preseve model from other groups', function () {
+                // Before render
+                $scope.ngModel = ['three'];
+                $scope.options = [
+                    {
+                        label: 'One',
+                        value: 'one'
+                    },
+                    {
+                        label: 'Two',
+                        value: 'two'
+                    }
+                ];
+                compileTemplate(
+                    '<rb-check-control-group options="options" ng-model="ngModel"></rb-check-control-group>'
+                );
+
+                isolatedScope.options[0].checked = true;
+                $scope.$apply();
+
+                expect($scope.ngModel).toEqual(['three', 'one']);
+            });
+
+            it('should update model and not remove values from other checkbox groups', function () {
+                // Before render
+                $scope.ngModel = ['test'];
+                $scope.options = [
+                    {
+                        label: 'One',
+                        value: 'one'
+                    },
+                    {
+                        label: 'Two',
+                        value: 'two'
+                    }
+                ];
+                compileTemplate(
+                    '<rb-check-control-group options="options" ng-model="ngModel"></rb-check-control-group>'
+                );
+
+                // Simulate model changing externally and removing something that was checked before.
+                isolatedScope.options[0].checked = true;
+                $scope.$apply();
+                $scope.ngModel = ['test'];
+                isolatedScope.options[0].checked = false;
+                isolatedScope.options[1].checked = true;
+                $scope.$apply();
+
+                expect($scope.ngModel).toEqual(['test', 'two']);
             });
         });
     });
