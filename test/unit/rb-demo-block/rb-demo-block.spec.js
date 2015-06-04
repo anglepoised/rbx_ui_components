@@ -25,9 +25,17 @@ define([
             };
         }));
 
-        describe('', function () {
-            it('should ', function () {
+        describe('rendering', function () {
+            it('should render root element with class', function () {
                 compileTemplate('<rb-demo-block></rb-demo-block>');
+
+                expect(element.hasClass('DemoBlock')).toBe(true);
+            });
+
+            it('should transclude content', function () {
+                compileTemplate('<rb-demo-block>Some content</rb-demo-block>');
+
+                expect(element.html()).toContain('Some content');
             });
         });
 
