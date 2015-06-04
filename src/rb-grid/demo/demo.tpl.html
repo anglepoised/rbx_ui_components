@@ -3,70 +3,74 @@
         <h1>
             rb-grid
         </h1>
-        <h2>
-            DataSummary example
-        </h2>
+        <p>
+            The <code>rb-grid</code> component arranges other components in a grid layout at medium viewport and above.
+            Use a new <code>rb-grid</code> for each row.
+        </p>
+        <h3>
+            Basic Grids
+        </h3>
+        <p>
+            Each <code>rb-grid-cell</code> in a row will have the same width.
+        </p>
     </div>
     <div class="ComponentView">
         <rb-grid>
             <rb-grid-cell>
-                <div class="DataSummary DataSummary--financials">
-                    <h2 class="u-hiddenVisually">
-                        Summary
-                    </h2>
-                    <div class="DataSummary-inner">
-                        <div class="DataSummary-item">
-                            <h3 class="u-textRegular u-textXSmall">
-                                Total Campaign Spend ⁄ Budget
-                            </h3>
-                            <p class="u-textLight u-textXLarge">
-                                <span class="Ratio"><data class="Currency" value="$99999999.99"><span class="Currency-unit">$99,999,999<span class="Currency-cent">.99</span></span></data> ⁄ <data class="Currency" value="$99999999.99"><span class="Currency-unit">$99,999,999<span class="Currency-cent">.99</span></span></data></span>
-                            </p>
-                            <p class="u-textRegular u-textXSmall">
-                                Unassigned Budget: <data class="Currency" value="$99999999.99"><span class="Currency-unit">$99,999,999<span class="Currency-cent">.99</span></span></data>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </rb-grid-cell>
-            <rb-grid-cell>
-                <rb-data-summary type="timings">
-                    <rb-data-summary-item header="Campaign Start">
-                        <div class="u-textLight u-textXLarge">
-                            <rb-datetime-display date-time="1970-09-01T00:00" understate-time="true"></rb-datetime-display>
-                        </div>
-                    </rb-data-summary-item>
-                    <rb-data-summary-item header="Campaign End">
-                        <div class="u-textLight u-textXLarge">
-                            <rb-datetime-display date-time="1970-09-01T00:00" understate-time="true"></rb-datetime-display>
-                        </div>
-                    </rb-data-summary-item>
-                </rb-data-summary>
+                <rb-demo-block>
+                    1/1
+                </rb-demo-block>
             </rb-grid-cell>
         </rb-grid>
         <rb-grid>
             <rb-grid-cell>
-                <rb-data-summary type="notes">
-                    <rb-data-summary-item header="Sector">
-                        <p>
-                            Retail
-                        </p>
-                    </rb-data-summary-item>
-                    <rb-data-summary-item header="External ID">
-                        <p>
-                            ABC123
-                        </p>
-                    </rb-data-summary-item>
-                    <rb-data-summary-item header="Notes">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </rb-data-summary-item>
-                </rb-data-summary>
+                <rb-demo-block>
+                    1/2
+                </rb-demo-block>
+            </rb-grid-cell>
+            <rb-grid-cell>
+                <rb-demo-block>
+                    1/2
+                </rb-demo-block>
+            </rb-grid-cell>
+        </rb-grid>
+        <rb-grid>
+            <rb-grid-cell>
+                <rb-demo-block>
+                    1/3
+                </rb-demo-block>
+            </rb-grid-cell>
+            <rb-grid-cell>
+                <rb-demo-block>
+                    1/3
+                </rb-demo-block>
+            </rb-grid-cell>
+            <rb-grid-cell>
+                <rb-demo-block>
+                    1/3
+                </rb-demo-block>
+            </rb-grid-cell>
+        </rb-grid>
+        <rb-grid>
+            <rb-grid-cell>
+                <rb-demo-block>
+                    1/4
+                </rb-demo-block>
+            </rb-grid-cell>
+            <rb-grid-cell>
+                <rb-demo-block>
+                    1/4
+                </rb-demo-block>
+            </rb-grid-cell>
+            <rb-grid-cell>
+                <rb-demo-block>
+                    1/4
+                </rb-demo-block>
+            </rb-grid-cell>
+            <rb-grid-cell>
+                <rb-demo-block>
+                    1/4
+                </rb-demo-block>
             </rb-grid-cell>
         </rb-grid>
     </div>
