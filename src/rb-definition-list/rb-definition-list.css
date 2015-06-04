@@ -43,8 +43,8 @@
 
 .DefinitionList-title {
     display: flex;
+    min-width: 14em;
     padding: 0 2em;
-    width: 14em;
 }
 
 .DefinitionList-icon {
