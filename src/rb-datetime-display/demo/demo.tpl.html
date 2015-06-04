@@ -1,14 +1,33 @@
-<div>
-    Date Time with time:
-    <rb-datetime-display date-time="{{ demoCtrl.date }}"></rb-datetime-display>
-</div>
-
-<div>
-    Date Time with understated time:
-    <rb-datetime-display date-time="{{ demoCtrl.date }}" understate-time="true"></rb-datetime-display>
-</div>
-
-<div>
-    Date Time no time:
-    <rb-datetime-display date-time="{{ demoCtrl.date }}" show-time="false"></rb-datetime-display>
-</div>
+<section class="Section">
+    <div class="RawHTML">
+        <h2>
+            rb-datetime-display
+        </h2>
+        <p>
+            The <code>rb-datetime-display</code> component must be used to render all representations of dates and
+            times.
+        </p>
+        <h3>
+            <code>rb-date-time-display</code> With Time
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-datetime-display date-time="{{ demoCtrl.date }}"></rb-datetime-display>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            <code>rb-date-time-display</code> With Understated Time
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-datetime-display date-time="{{ demoCtrl.date }}" understate-time="true"></rb-datetime-display>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            <code>rb-date-time-display</code> Without Time
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <rb-datetime-display date-time="{{ demoCtrl.date }}" show-time="false"></rb-datetime-display>
+    </div>
+</section>
