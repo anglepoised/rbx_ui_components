@@ -1,7 +1,9 @@
 define([
+    'components/rb-check-control',
+    'components/rb-text-control',
     './rb-check-with-text-control-directive',
     './rb-check-with-text-control.css'
-], function (rbCheckWithTextControlDirective, css) {
+], function (rbCheckControl, rbTextControl, rbCheckWithTextControlDirective, css) {
     /**
      * @ngdoc module
      * @name rb-check-with-text-control
@@ -11,7 +13,10 @@ define([
      *
      */
     var rbCheckWithTextControl = angular
-        .module('rb-check-with-text-control', [])
+        .module('rb-check-with-text-control', [
+            rbCheckControl.name,
+            rbTextControl.name
+        ])
         .directive('rbCheckWithTextControl', rbCheckWithTextControlDirective);
 
     return rbCheckWithTextControl;
