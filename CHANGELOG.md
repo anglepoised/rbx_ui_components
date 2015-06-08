@@ -6,15 +6,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 
-- Nothing.
+### Fixed
+
+- [`rb-definition-list` toolbar alignment](https://github.com/rockabox/rbx_ui_components/pull/203)
+- [`rb-overlay-panel` style](https://github.com/rockabox/rbx_ui_components/pull/206)
 
 ## [2.1.1] - 2015-06-04
 
 ### Fixed
 
 - [`rb-definition-list` layout bug](https://github.com/rockabox/rbx_ui_components/pull/200)
-- [`rb-definition-list` toolbar alignment](https://github.com/rockabox/rbx_ui_components/pull/203)
-- [`rb-overlay-panel` style](https://github.com/rockabox/rbx_ui_components/pull/206)
 
 ## [2.1.0] - 2015-06-04
 
