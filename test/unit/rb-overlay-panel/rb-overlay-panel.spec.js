@@ -44,7 +44,7 @@ define([
         it('should render a close button in the overlay', function () {
             compileTemplate('<rb-overlay-panel></rb-overlay-panel>');
 
-            expect(element[0].getElementsByClassName('OverlayPanel-close').length).toBe(1);
+            expect(element[0].getElementsByClassName('OverlayPanel-button').length).toBe(1);
         });
 
         it('should fire a function on the click of the close button', function () {
@@ -57,7 +57,7 @@ define([
 
             compileTemplate('<rb-overlay-panel overlay-close="closing()">Some content</rb-overlay-panel>');
 
-            closeEle = angular.element(element[0].getElementsByClassName('OverlayPanel-close')[0]);
+            closeEle = angular.element(element[0].getElementsByClassName('OverlayPanel-button')[0]);
 
             // Click on the close button
             closeEle.triggerHandler('click');

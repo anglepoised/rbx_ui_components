@@ -5,7 +5,7 @@
  */
 
 :root {
-    --OverlayPanel-variable: var();
+    --OverlayPanel-close-border-radius: 3px;
 }
 
 /**
@@ -13,23 +13,28 @@
  */
 
 .OverlayPanel {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 90%;
-    height: 100%;
     background: var(--color-base-background);
     color: var(--color-base-font);
+    height: 100%;
+    left: 0;
     overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    width: 85%;
 }
 
 .OverlayPanel-close {
+    left: 85%;
     position: absolute;
-    display: block;
-    left: 90%;
-    width: 60px;
-    height: 60px;
-    background-color: red;
-    color: white;
+}
+
+.OverlayPanel-button {
+    background: var(--color-red-base) url("./images/close.svg") no-repeat center;
+    border-bottom-right-radius: var(--OverlayPanel-close-border-radius);
+    border-top-right-radius: var(--OverlayPanel-close-border-radius);
+    color: var(--color-white-alabaster);
     cursor: pointer;
+    display: block;
+    height: 3em;
+    width: 3em;
 }
