@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 
+### Added
+
+- [`rb-datetime-control` show date only](https://github.com/rockabox/rbx_ui_components/pull/205)
+
 ### Fixed
 
 - [`rb-definition-list` toolbar alignment](https://github.com/rockabox/rbx_ui_components/pull/203)
