@@ -1,10 +1,22 @@
-<div>
-    Some content might go here ...
-</div>
-<rb-warning-messages warnings="demoCtrl.warningList"
-    on-issue-click="demoCtrl.clicky(warning)"
-    on-dismiss="demoCtrl.dismissy(id)">
-</rb-warning-messages>
-<div>
-    ... and other content might go here ...
-</div>
+<section class="Section">
+    <div class="RawHTML">
+        <h2>
+            rb-warning-messages
+        </h2>
+        <p>
+            The <code>rb-warning-messages</code> component can be used wherever a list of warning messages is required.
+        </p>
+    </div>
+    <div class="ComponentView">
+        <p>
+            Content before.
+        </p>
+        <rb-warning-messages warnings="demoCtrl.warningList"
+            on-issue-click="demoCtrl.clicky(warning)"
+            on-dismiss="demoCtrl.dismissy(id)">
+        </rb-warning-messages>
+        <p>
+            Content after.
+        </p>
+    </div>
+</section>
