@@ -18,6 +18,21 @@
             </div>
         </div>
         <div class="ComponentView">
+            <h4>Date Only</h4>
+            <rb-datetime-control
+                disable-time="true"
+                name="dateOnly"
+                form="basicForm"
+                label="Date"
+                ng-model="demoCtrl.data.dateOnly">
+            </rb-datetime-control>
+
+            <h5>Scope value (UTC):</h5>
+            <div hljs language="json">
+                {{ demoCtrl.data.dateOnly }}
+            </div>
+        </div>
+        <div class="ComponentView">
             <h4>With required</h4>
             <rb-datetime-control name="required" form="basicForm" is-required="true" label="Date time" ng-model="demoCtrl.data.required"></rb-datetime-control>
 

@@ -212,6 +212,24 @@ define([
 
         });
 
+        describe('disable-time attribute', function () {
+            it('should show time picker by default', function () {
+                compileTemplate('<rb-datetime-control disable-time="false"></rb-datetime-control>');
+
+                var timePicker = element[0].querySelector('input[bs-timepicker]');
+
+                expect(timePicker).toBeDefined();
+            });
+
+            it('should not show time picker when true', function () {
+                compileTemplate('<rb-datetime-control disable-time="true"></rb-datetime-control>');
+
+                var timePicker = element[0].querySelector('input[bs-timepicker]');
+
+                expect(timePicker).toBe(null);
+            });
+        });
+
         describe('inherited date time', function () {
 
             it('should not show inherited date time checkbox when attribute is missing', function () {

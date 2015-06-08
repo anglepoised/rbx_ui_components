@@ -15,6 +15,7 @@ define([
      * <hljs lang="html">
      *     <form name="userForm">
      *         <rb-datetime-control
+     *             disable-time="false"
      *             form="userForm"
      *             label="Your Name"
      *             placeholder-date="DD/MM/YYYY"
@@ -32,6 +33,7 @@ define([
 
         return {
             scope: {
+                disableTime: '@',
                 isDisabled: '@',
                 isRequired: '@',
                 isReadonly: '@',
