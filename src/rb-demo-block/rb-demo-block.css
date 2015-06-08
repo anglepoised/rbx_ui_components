@@ -1,0 +1,26 @@
+/** @define DemoBlock; use strict */
+
+/**
+ * The `.DemoBlock` component is a block-level placeholder component, used for testing grid layouts.
+ *
+ * Based on the demo component at: http://philipwalton.github.io/solved-by-flexbox/demos/grids/
+ */
+
+:root {
+    --DemoBlock-background: var(--color-gray-ghost);
+}
+
+.DemoBlock {
+    background: var(--DemoBlock-background);
+    border-radius: 3px;
+    padding: .8em 1em 0;
+    width: 100%;
+}
+
+.DemoBlock::after {
+    content: "\00a0"; /* &nbsp; */
+    display: block;
+    height: 0;
+    margin-top: 1em;
+    visibility: hidden;
+}
