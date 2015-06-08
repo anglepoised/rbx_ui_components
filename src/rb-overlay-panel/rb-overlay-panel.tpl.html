@@ -1,6 +1,10 @@
 <div>
     <rb-overlay-modal>
         <div class="OverlayPanel" ng-transclude></div>
-        <div class="OverlayPanel-close" ng-click="overlayClose()">Close</div>
+        <div class="OverlayPanel-close">
+            <div class="OverlayPanel-button" ng-click="overlayClose()">
+                <span class="u-hiddenVisually">Close</span>
+            </div>
+        </div>
     </rb-overlay-modal>
 </div>
