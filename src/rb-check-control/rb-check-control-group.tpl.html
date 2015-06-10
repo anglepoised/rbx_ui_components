@@ -1,23 +1,29 @@
-<div>
-    <rb-check-control-select-all
-        name="{{::name}}"
-        is-disabled="{{::isDisabled}}"
-        is-required="{{::isRequired}}"
-        ng-model="options"
-        ng-if="enableSelectAll"
-        title="{{::title}}">
-    </rb-check-control-select-all>
+<div class="CheckControlGroup">
 
-    <label ng-if="!enableSelectAll && title">{{::title}}</label>
+    <div class="CheckControlGroup-title u-textSemibold">
 
-    <div ng-repeat="(key, value) in options">
-        <rb-check-control
+        <rb-check-control-select-all
+            name="{{::name}}"
             is-disabled="{{::isDisabled}}"
             is-required="{{::isRequired}}"
-            label="{{::value.label}}"
-            name="{{::name}}-{{::key}}"
-            ng-model="value.checked"
-            value="{{::value.value}}">
-        </rb-check-control>
+            ng-model="options"
+            ng-if="enableSelectAll"
+            title="{{::title}}">
+        </rb-check-control-select-all>
+
+        <label ng-if="!enableSelectAll && title">{{::title}}</label>
+    </div>
+
+    <div class="CheckControlGroup-body">
+        <div ng-repeat="(key, value) in options">
+            <rb-check-control
+                is-disabled="{{::isDisabled}}"
+                is-required="{{::isRequired}}"
+                label="{{::value.label}}"
+                name="{{::name}}-{{::key}}"
+                ng-model="value.checked"
+                value="{{::value.value}}">
+            </rb-check-control>
+        </div>
     </div>
 </div>
