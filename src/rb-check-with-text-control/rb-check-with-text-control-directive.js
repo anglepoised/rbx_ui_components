@@ -77,6 +77,7 @@ define([
 
                 scope.updateCheckedOnModelChange = function (modelVal) {
                     if (scope.modelIsValid()) {
+                        scope.cachedModel = scope.ngModel;
                         scope.checked = true;
                     } else {
                         scope.checked = false;
