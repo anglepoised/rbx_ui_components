@@ -1,56 +1,61 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-check-control-group
-        </h2>
-        <p>
-            A check control group displays a group of check controls
-        </p>
-    </div>
-    <div class="ComponentView">
-        <form name="checkControlForm">
-            <rb-check-control-group
-                form="checkControlForm"
-                name="check-control-default"
-                ng-model="demoCtrl.ngModelDefault"
-                options="demoCtrl.defaultOptions"
-                title="Basic Usage">
-            </rb-check-control-group>
-            <pre>{{ demoCtrl.ngModelDefault }}</pre>
-        </form>
-    </div>
-    <div class="ComponentView">
-        <form name="checkControlForm">
-            <rb-check-control-group
-                form="checkControlForm"
-                name="check-control-shared-one"
-                ng-model="demoCtrl.ngModelShared"
-                options="demoCtrl.sharedOptions"
-                title="Shared model">
-            </rb-check-control-group>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-check-control-group">
+        </rb-page-title>
+        <rb-section title="Introduction" hide-title="true">
+            <div class="RawHTML">
+                <p>
+                    A check control group displays a group of check controls
+                </p>
+            </div>
+        </rb-section>
+        <rb-section title="Examples" hide-title="true">
+            <div class="ComponentView">
+                <form name="checkControlForm">
+                    <rb-check-control-group
+                        form="checkControlForm"
+                        name="check-control-default"
+                        ng-model="demoCtrl.ngModelDefault"
+                        options="demoCtrl.defaultOptions"
+                        title="Basic Usage">
+                    </rb-check-control-group>
+                    <pre>{{ demoCtrl.ngModelDefault }}</pre>
+                </form>
+            </div>
+            <div class="ComponentView">
+                <form name="checkControlForm">
+                    <rb-check-control-group
+                        form="checkControlForm"
+                        name="check-control-shared-one"
+                        ng-model="demoCtrl.ngModelShared"
+                        options="demoCtrl.sharedOptions"
+                        title="Shared model">
+                    </rb-check-control-group>
 
-            <rb-check-control-group
-                enable-select-all=true
-                form="checkControlForm"
-                name="check-control-shared-two"
-                ng-model="demoCtrl.ngModelShared"
-                options="demoCtrl.moreOptions"
-                title="Shared model with select all">
-            </rb-check-control-group>
-            <pre>{{ demoCtrl.ngModelShared }}</pre>
-        </form>
-    </div>
-    <div class="ComponentView">
-        <form name="checkControlSelectAllForm">
-            <rb-check-control-group
-                enable-select-all=true
-                form="checkControlSelectAllForm"
-                name="check-control-select-all"
-                ng-model="demoCtrl.ngModelSelectAll"
-                options="demoCtrl.selectAllOptions"
-                title="Select All">
-            </rb-check-control-group>
-            <pre>{{ demoCtrl.ngModelSelectAll }}</pre>
-        </form>
-    </div>
-</section>
+                    <rb-check-control-group
+                        enable-select-all=true
+                        form="checkControlForm"
+                        name="check-control-shared-two"
+                        ng-model="demoCtrl.ngModelShared"
+                        options="demoCtrl.moreOptions"
+                        title="Shared model with select all">
+                    </rb-check-control-group>
+                    <pre>{{ demoCtrl.ngModelShared }}</pre>
+                </form>
+            </div>
+            <div class="ComponentView">
+                <form name="checkControlSelectAllForm">
+                    <rb-check-control-group
+                        enable-select-all=true
+                        form="checkControlSelectAllForm"
+                        name="check-control-select-all"
+                        ng-model="demoCtrl.ngModelSelectAll"
+                        options="demoCtrl.selectAllOptions"
+                        title="Select All">
+                    </rb-check-control-group>
+                    <pre>{{ demoCtrl.ngModelSelectAll }}</pre>
+                </form>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>

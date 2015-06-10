@@ -1,57 +1,44 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-currency-display
-        </h2>
-        <p>
-            The <code>rb-currency-display</code> component must be used to render all representations of a currency. It
-            should not be used for any other type of number.
-        </p>
-        <h3>
-            Currency With Decimal Passed
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-currency-display amount="{{ demoCtrl.currency.withDec }}"></rb-currency-display>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Currency With No Decimal Passed
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-currency-display amount="{{ demoCtrl.currency.withoutDec }}"></rb-currency-display>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Currency With 0 Passed As Decimal (Rounded)
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-currency-display decimal-places="0" amount="{{ demoCtrl.currency.withDec }}"></rb-currency-display>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Currency With 1 Decimal Place
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-currency-display decimal-places="1" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Currency With 2 Decimal Places
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-currency-display decimal-places="2" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Currency With 3 Decimal Places
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-currency-display decimal-places="3" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
-    </div>
-</section>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-currency-display">
+        </rb-page-title>
+        <rb-section title="Introduction" hide-title="true">
+            <div class="RawHTML">
+                <p>
+                    The <code>rb-currency-display</code> component must be used to render all representations of a currency. It
+                    should not be used for any other type of number.
+                </p>
+            </div>
+        </rb-section>
+        <rb-section title="Currency With Decimal Passed">
+            <div class="ComponentView">
+                <rb-currency-display amount="{{ demoCtrl.currency.withDec }}"></rb-currency-display>
+            </div>
+        </rb-section>
+        <rb-section title="Currency With No Decimal Passed">
+            <div class="ComponentView">
+                <rb-currency-display amount="{{ demoCtrl.currency.withoutDec }}"></rb-currency-display>
+            </div>
+        </rb-section>
+        <rb-section title="Currency With 0 Passed As Decimal (Rounded)">
+            <div class="ComponentView">
+                <rb-currency-display decimal-places="0" amount="{{ demoCtrl.currency.withDec }}"></rb-currency-display>
+            </div>
+        </rb-section>
+        <rb-section title="Currency With 1 Decimal Place">
+            <div class="ComponentView">
+                <rb-currency-display decimal-places="1" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
+            </div>
+        </rb-section>
+        <rb-section title="Currency With 2 Decimal Places">
+            <div class="ComponentView">
+                <rb-currency-display decimal-places="2" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
+            </div>
+        </rb-section>
+        <rb-section title="Currency With 3 Decimal Places">
+            <div class="ComponentView">
+                <rb-currency-display decimal-places="3" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>

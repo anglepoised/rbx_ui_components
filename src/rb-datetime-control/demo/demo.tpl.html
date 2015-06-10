@@ -1,90 +1,100 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-datetime-control
-        </h2>
-        <h3>
-            Datetime Control Angular Version
-        </h3>
-    </div>
-    <form name="basicForm">
-        <div class="ComponentView">
-            <h4>Basic usage</h4>
-            <rb-datetime-control name="basic" form="basicForm" label="Date time" ng-model="demoCtrl.data.basic"></rb-datetime-control>
-
-            <h5>Scope value (UTC):</h5>
-            <div hljs language="json">
-                {{ demoCtrl.data.basic }}
-            </div>
-        </div>
-        <div class="ComponentView">
-            <h4>Date Only</h4>
-            <rb-datetime-control
-                disable-time="true"
-                name="dateOnly"
-                form="basicForm"
-                label="Date"
-                ng-model="demoCtrl.data.dateOnly">
-            </rb-datetime-control>
-
-            <h5>Scope value (UTC):</h5>
-            <div hljs language="json">
-                {{ demoCtrl.data.dateOnly }}
-            </div>
-        </div>
-        <div class="ComponentView">
-            <h4>With required</h4>
-            <rb-datetime-control name="required" form="basicForm" is-required="true" label="Date time" ng-model="demoCtrl.data.required"></rb-datetime-control>
-
-            <h5>Scope value (UTC):</h5>
-            <div hljs language="json">
-                {{ demoCtrl.data.required }}
-            </div>
-        </div>
-        <div class="ComponentView">
-            <h4>With help message</h4>
-            <rb-datetime-control name="help" form="basicForm" help-message="Please enter a date and time" label="Date time" ng-model="demoCtrl.data.help"></rb-datetime-control>
-
-            <h5>Scope value (UTC):</h5>
-            <div hljs language="json">
-                {{ demoCtrl.data.help }}
-            </div>
-        </div>
-        <div class="ComponentView">
-            <h4>With placeholder</h4>
-            <rb-datetime-control name="placeholder" form="basicForm" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.placeholder"></rb-datetime-control>
-
-            <h5>Scope value (UTC):</h5>
-            <div hljs language="json">
-                {{ demoCtrl.data.placeholder }}
-            </div>
-        </div>
-        <div class="ComponentView">
-            <h4>With inherited date time</h4>
-            <rb-datetime-control name="placeholder" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.inherit" inherit-model='demoCtrl.data.inheritModel'></rb-datetime-control>
-
-            <h5>Scope value (UTC):</h5>
-            <div hljs language="json">
-                {{ demoCtrl.data.inherit }}
-            </div>
-        </div>
-        <div class="ComponentView">
-            <h4>With preset inherited date time</h4>
-            <rb-datetime-control name="placeholder" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.presetInherit" inherit-model='demoCtrl.data.inheritModelTrue'></rb-datetime-control>
-
-            <h5>Scope value (UTC):</h5>
-            <div hljs language="json">
-                {{ demoCtrl.data.presetInherit }}
-            </div>
-        </div>
-        <div class="ComponentView">
-            <h4>With inherited date and isDisabled</h4>
-            <rb-datetime-control name="placeholder" is-disabled="true" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.disabled"></rb-datetime-control>
-
-            <h5>Scope value (UTC):</h5>
-            <div hljs language="json">
-                {{ demoCtrl.data.disabled }}
-            </div>
-        </div>
-    </form>
-</section>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-datetime-control">
+        </rb-page-title>
+        <form name="basicForm">
+            <rb-section title="Basic Usage">
+                <div class="ComponentView">
+                    <rb-datetime-control name="basic" form="basicForm" label="Date time" ng-model="demoCtrl.data.basic"></rb-datetime-control>
+                    <h3>
+                        Scope value (UTC):
+                    </h3>
+                    <div hljs language="json">
+                        {{ demoCtrl.data.basic }}
+                    </div>
+                </div>
+            </rb-section>
+            <rb-section title="Date Only">
+                <div class="ComponentView">
+                    <rb-datetime-control
+                        disable-time="true"
+                        name="dateOnly"
+                        form="basicForm"
+                        label="Date"
+                        ng-model="demoCtrl.data.dateOnly">
+                    </rb-datetime-control>
+                    <h3>
+                        Scope value (UTC):
+                    </h3>
+                    <div hljs language="json">
+                        {{ demoCtrl.data.dateOnly }}
+                    </div>
+                </div>
+            </rb-section>
+            <rb-section title="With Required">
+                <div class="ComponentView">
+                    <rb-datetime-control name="required" form="basicForm" is-required="true" label="Date time" ng-model="demoCtrl.data.required"></rb-datetime-control>
+                    <h3>Scope value (UTC):</h3>
+                    <div hljs language="json">
+                        {{ demoCtrl.data.required }}
+                    </div>
+                </div>
+            </rb-section>
+            <rb-section title="With Help Message">
+                <div class="ComponentView">
+                    <rb-datetime-control name="help" form="basicForm" help-message="Please enter a date and time" label="Date time" ng-model="demoCtrl.data.help"></rb-datetime-control>
+                    <h3>
+                        Scope value (UTC):
+                    </h3>
+                    <div hljs language="json">
+                        {{ demoCtrl.data.help }}
+                    </div>
+                </div>
+            </rb-section>
+            <rb-section title="With Placeholder">
+                <div class="ComponentView">
+                    <rb-datetime-control name="placeholder" form="basicForm" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.placeholder"></rb-datetime-control>
+                    <h3>
+                        Scope value (UTC):
+                    </h3>
+                    <div hljs language="json">
+                        {{ demoCtrl.data.placeholder }}
+                    </div>
+                </div>
+            </rb-section>
+            <rb-section title="With Inherited Date Time">
+                <div class="ComponentView">
+                    <rb-datetime-control name="placeholder" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.inherit" inherit-model='demoCtrl.data.inheritModel'></rb-datetime-control>
+                    <h3>
+                        Scope value (UTC):
+                    </h3>
+                    <div hljs language="json">
+                        {{ demoCtrl.data.inherit }}
+                    </div>
+                </div>
+            </rb-section>
+            <rb-section title="With Preset Inherited Date Time">
+                <div class="ComponentView">
+                    <rb-datetime-control name="placeholder" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.presetInherit" inherit-model='demoCtrl.data.inheritModelTrue'></rb-datetime-control>
+                    <h3>
+                        Scope value (UTC):
+                    </h3>
+                    <div hljs language="json">
+                        {{ demoCtrl.data.presetInherit }}
+                    </div>
+                </div>
+            </rb-section>
+            <rb-section title="With Inherited Date And is-disabled">
+                <div class="ComponentView">
+                    <rb-datetime-control name="placeholder" is-disabled="true" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.disabled"></rb-datetime-control>
+                    <h3>
+                        Scope value (UTC):
+                    </h3>
+                    <div hljs language="json">
+                        {{ demoCtrl.data.disabled }}
+                    </div>
+                </div>
+            </rb-section>
+        </form>
+    </rb-main>
+</rb-site>
