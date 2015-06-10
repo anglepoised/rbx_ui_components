@@ -17,11 +17,6 @@ define([
      *           Option objects should be defined as follows:
      *           {id: '<an identifier for the option>',
      *           text: 'Text to be displayed'}
-     *  'clickfunction': a custom function to be executed on every option when clicked
-     *                   The function receives the 'id' from the option object as param
-     *  'isactivefunction': a custom function that returns if an option should be displayed
-     *                   with an `is-active` class.
-     *                   The function receives the 'id' from the option object as param
      *
      * @usage
      * <hljs lang="html">
