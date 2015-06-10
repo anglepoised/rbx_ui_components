@@ -40,7 +40,17 @@ define([
             },
             restrict: 'E',
             replace: true,
-            template: template
+            template: template,
+            controller: function ($scope, $state) {
+                /**
+                 * Currently a workaround for an issue where ui-sref-active
+                 * does not work with abstract and child states.
+                 * Ref: https://github.com/angular-ui/ui-router/issues/1431
+                 */
+                $scope.isActive = function (root) {
+                    return $state.includes(root);
+                };
+            }
         };
     }
 

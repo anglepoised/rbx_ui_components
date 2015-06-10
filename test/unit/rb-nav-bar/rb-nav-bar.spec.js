@@ -5,6 +5,9 @@ define([
 
         var $compile,
             $scope,
+            $state = {
+                includes: jasmine.createSpy('includes')
+            },
             _options = [
                 {'text': 'Option 1'},
                 {'text': 'Option 2', 'state': 'test-state'},
@@ -15,7 +18,9 @@ define([
             template = '<rb-nav-bar options="options"></rb-nav-bar>';
 
         beforeEach(function () {
-            angular.mock.module(rbNavBar.name);
+            angular.mock.module(rbNavBar.name, function ($provide) {
+                $provide.value('$state', $state);
+            });
 
             inject(function (_$compile_, _$rootScope_) {
                 $scope = _$rootScope_.$new({});
@@ -37,6 +42,17 @@ define([
                 expect(element[0].hasAttribute('anyattr')).toBe(true);
                 expect(element[0].hasAttribute('any-attr')).toBe(true);
             });
+
+        describe('isActive', function () {
+            it('should call $state.includes', function () {
+                var stateName = 'some.state';
+                compileTemplate(template);
+
+                isolateScope.isActive(stateName);
+
+                expect($state.includes).toHaveBeenCalledWith(stateName);
+            });
+        });
 
         describe('rendering', function () {
 
