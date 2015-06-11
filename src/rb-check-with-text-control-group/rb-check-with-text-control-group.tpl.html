@@ -1,0 +1,13 @@
+<div class="CheckWithTextControlGroup">
+    <rb-check-with-text-control
+        ng-repeat="option in options"
+        form="form"
+        name="{{ ::name }}_{{ ::option.value }}"
+        label="{{ ::option.label }}"
+        ng-model="internalModel[option.value]"
+        checkbox-value="{{ ::option.value }}"
+        text-placeholder="{{ ::textPlaceholder }}"
+        checkbox-key="{{ ::checkboxKey }}"
+        text-key="{{ ::textKey }}"
+    ></rb-check-with-text-control>
+</div>

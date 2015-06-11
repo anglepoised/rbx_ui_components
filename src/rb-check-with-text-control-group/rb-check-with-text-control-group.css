@@ -1,0 +1,16 @@
+/** @define CheckWithTextControlGroup; use strict */
+
+/**
+ * The `.CheckWithTextControlGroup` component...
+ */
+
+:root {
+    --CheckWithTextControlGroup-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.CheckWithTextControlGroup {
+}
