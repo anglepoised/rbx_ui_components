@@ -1,1 +1,7 @@
-<div class="Grid-cell" ng-transclude></div>
+<div class="Grid-cell" ng-transclude ng-class="{
+    'u-size1of2': size==='1of2',
+    'u-size1of3': size==='1of3',
+    'u-size2of3': size==='2of3',
+    'u-size1of4': size==='1of4',
+    'u-size3of4': size==='3of4'
+}"></div>
