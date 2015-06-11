@@ -10,6 +10,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [`rb-datetime-control` show date only](https://github.com/rockabox/rbx_ui_components/pull/205)
 - [`rb-nav-bar` sets `is-active` based on state](https://github.com/rockabox/rbx_ui_components/pull/210) Add is-active class when the related ui-sref directive's state is active and remove when it is inactive.
+- [`rb-check-with-text-control`](https://github.com/rockabox/rbx_ui_components/pull/209)
+- [`rb-check-with-text-control-group`](https://github.com/rockabox/rbx_ui_components/pull/212)
 
 ### Changed
 
