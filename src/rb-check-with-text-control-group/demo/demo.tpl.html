@@ -1,69 +1,67 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-check-with-text-control
-        </h2>
-        <h3>
-            CheckWithText Control Angular Version
-        </h3>
-    </div>
-
-    <div class="ComponentView">
-        <h4>Normal</h4>
-
-        <form name="myForm">
-            <rb-check-with-text-control-group
-                form="myForm"
-                name="mail_clients"
-                options="demoCtrl.options"
-                text-placeholder="Optional description"
-                ng-model="demoCtrl.myModel.normal"
-                checkbox-key="id"
-                text-key="description"
-            >
-            </rb-check-with-text-control-group>
-            Model: {{demoCtrl.myModel.normal}}
-        </form>
-    </div>
-
-    <div class="ComponentView">
-        <h4>Prepopulated</h4>
-
-        <form name="myForm">
-            <rb-check-with-text-control-group
-                form="myForm"
-                name="prepopulated_mail_clients"
-                options="demoCtrl.options"
-                text-placeholder="Optional description"
-                ng-model="demoCtrl.myModel.prepopulated"
-                checkbox-key="id"
-                text-key="description"
-            >
-            </rb-check-with-text-control-group>
-            Model: {{demoCtrl.myModel.prepopulated}}
-        </form>
-    </div>
-
-    <div class="ComponentView">
-        <h4>Watching external changes</h4>
-
-        <form name="myForm">
-            <rb-check-with-text-control-group
-                form="myForm"
-                name="external_mail_clients"
-                options="demoCtrl.options"
-                text-placeholder="Optional description"
-                ng-model="demoCtrl.myModel.external"
-                checkbox-key="id"
-                text-key="description"
-            >
-            </rb-check-with-text-control-group>
-            <rb-button ng-click="demoCtrl.myModel.external = []">Clear Model</rb-button>
-            <rb-button ng-click="demoCtrl.modifyExternalModel()">Modify Model</rb-button>
-            <div>
-                Model: {{demoCtrl.myModel.external}}
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-check-with-text-control-group">
+        </rb-page-title>
+        <rb-section title="Introduction" hide-title="true">
+            <div class="RawHTML">
+                The <code>rb-check-with-text-control-group</code> component renders a group of
+                <code>rb-check-with-text-control</code> components.
             </div>
-        </form>
-    </div>
-
-</section>
+        </rb-section>
+        <rb-section title="Normal">
+            <div class="ComponentView">
+                <form name="myForm">
+                    <rb-check-with-text-control-group
+                        form="myForm"
+                        name="mail_clients"
+                        options="demoCtrl.options"
+                        text-placeholder="Optional description"
+                        ng-model="demoCtrl.myModel.normal"
+                        checkbox-key="id"
+                        text-key="description"
+                    >
+                    </rb-check-with-text-control-group>
+                    Model: {{demoCtrl.myModel.normal}}
+                </form>
+            </div>
+        </rb-section>
+        <rb-section title="Pre-populated">
+            <div class="ComponentView">
+                <form name="myForm">
+                    <rb-check-with-text-control-group
+                        form="myForm"
+                        name="prepopulated_mail_clients"
+                        options="demoCtrl.options"
+                        text-placeholder="Optional description"
+                        ng-model="demoCtrl.myModel.prepopulated"
+                        checkbox-key="id"
+                        text-key="description"
+                    >
+                    </rb-check-with-text-control-group>
+                    Model: {{demoCtrl.myModel.prepopulated}}
+                </form>
+            </div>
+        </rb-section>
+        <rb-section title="Watching External Changes">
+            <div class="ComponentView">
+                <form name="myForm">
+                    <rb-check-with-text-control-group
+                        form="myForm"
+                        name="external_mail_clients"
+                        options="demoCtrl.options"
+                        text-placeholder="Optional description"
+                        ng-model="demoCtrl.myModel.external"
+                        checkbox-key="id"
+                        text-key="description"
+                    >
+                    </rb-check-with-text-control-group>
+                    <rb-button ng-click="demoCtrl.myModel.external = []">Clear Model</rb-button>
+                    <rb-button ng-click="demoCtrl.modifyExternalModel()">Modify Model</rb-button>
+                    <div>
+                        Model: {{demoCtrl.myModel.external}}
+                    </div>
+                </form>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
