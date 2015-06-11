@@ -17,11 +17,6 @@ define([
      *           Option objects should be defined as follows:
      *           {id: '<an identifier for the option>',
      *           text: 'Text to be displayed'}
-     *  'clickfunction': a custom function to be executed on every option when clicked
-     *                   The function receives the 'id' from the option object as param
-     *  'isactivefunction': a custom function that returns if an option should be displayed
-     *                   with an `is-active` class.
-     *                   The function receives the 'id' from the option object as param
      *
      * @usage
      * <hljs lang="html">
@@ -40,7 +35,17 @@ define([
             },
             restrict: 'E',
             replace: true,
-            template: template
+            template: template,
+            controller: function ($scope, $state) {
+                /**
+                 * Currently a workaround for an issue where ui-sref-active
+                 * does not work with abstract and child states.
+                 * Ref: https://github.com/angular-ui/ui-router/issues/1431
+                 */
+                $scope.isActive = function (root) {
+                    return $state.includes(root);
+                };
+            }
         };
     }
 
