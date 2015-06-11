@@ -25,11 +25,14 @@ define([
             };
         }));
 
-        describe('rendering', function () {
-            it('should render with class and transclude', function () {
-                compileTemplate('<rb-grid-cell>TEST</rb-grid-cell>');
-
+        describe('compiled template', function () {
+            it('should render with the expected SUIT class', function () {
+                compileTemplate('<rb-grid-cell></rb-grid-cell>');
                 expect(element.hasClass('Grid-cell')).toBe(true);
+            });
+
+            it('should transclude content', function () {
+                compileTemplate('<rb-grid-cell>TEST</rb-grid-cell>');
                 expect(element.text()).toBe('TEST');
             });
         });
