@@ -52,7 +52,7 @@
     font-size: var(--font-size-small);
 }
 
-.PageTitle-button {
+.PageTitle-action {
     flex: none;
     margin: auto 0 auto auto; /* 3 */
     padding-left: 1em;
