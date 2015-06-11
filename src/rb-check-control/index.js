@@ -3,8 +3,16 @@ define([
     './rb-check-control-directive',
     './rb-check-control-group-directive',
     './rb-check-control-select-all-directive',
-    './rb-check-control.css'
-], function (rbIcon, rbCheckControlDirective, rbCheckControlGroupDirective, rbCheckControlSelectAllDirective, css) {
+    './rb-check-control.css',
+    './rb-check-control-group.css'
+], function (
+        rbIcon,
+        rbCheckControlDirective,
+        rbCheckControlGroupDirective,
+        rbCheckControlSelectAllDirective,
+        css,
+        groupCss
+    ) {
     /**
      * @ngdoc module
      * @name rb-check-control

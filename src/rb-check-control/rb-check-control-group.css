@@ -1,0 +1,9 @@
+/** @define CheckControlGroup; use strict */
+
+/**
+ * The `.CheckControlGroup` component should be used for creating groups of `.CheckControl` components.
+ */
+
+.CheckControlGroup-body {
+    margin-left: 1em;
+}
