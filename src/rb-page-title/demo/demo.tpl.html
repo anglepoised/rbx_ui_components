@@ -13,8 +13,11 @@
             <li>An optional subheading.</li>
             <li>An optional action descendent.</li>
         </ul>
+        <p>
+           A compact modifier is available for use in overlay panels.
+        </p>
         <h3>
-            Demo
+            Standard
         </h3>
     </div>
     <div class="ComponentView">
@@ -33,5 +36,34 @@
                     ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
                     ng-if="pageTitleDemoCtrl.status==='statusPaused'">Re-Publish</rb-button>
         </rb-page-title>
+    </div>
+    <div class="RawHTML">
+        <h3>
+            Compact
+        </h3>
+    </div>
+    <div class="ComponentView">
+        <div class="PageTitle PageTitle--compact">
+            <div class="PageTitle-inner">
+                <div class="PageTitle-body">
+                    <div class="PageTitle-heading">
+                        <h1 class="u-textHeading2">
+                            Title of section
+                        </h1>
+                    </div>
+                </div>
+                <p class="PageTitle-sub u-textDefault">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+            </div>
+            <div class="PageTitle-action">
+                <rb-text-control
+                    placeholder="Search"
+                    name="query"
+                    type="search"
+                    ng-model="demoCtrl.data.query">
+                </rb-text-control>
+            </div>
+        </div>
     </div>
 </section>
