@@ -33,10 +33,6 @@
     flex-direction: column; /* 1 */
 }
 
-.PageTitle-navigation {
-    font-size: var(--font-size-small);
-}
-
 .PageTitle-body {
     align-items: center;
     display: flex;
@@ -46,10 +42,6 @@
 
 .PageTitle-heading {
     margin-right: 1em;
-}
-
-.PageTitle-sub {
-    font-size: var(--font-size-small);
 }
 
 .PageTitle-action {
