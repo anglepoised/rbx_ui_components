@@ -1,0 +1,73 @@
+<section class="Section">
+    <div class="RawHTML">
+        <h2>
+            rb-check-with-text-control
+        </h2>
+        <h3>
+            CheckWithText Control Angular Version
+        </h3>
+    </div>
+
+    <div class="ComponentView">
+
+        <h4>Empty</h4>
+        <rb-check-with-text-control
+            name="empty"
+            ng-model="demoCtrl.models.empty"
+            checkbox-value="google_adx"
+            label="Google Adx"
+            checkbox-key="SSP"
+            text-key="deal_ids"
+        ></rb-check-with-text-control>
+        Model: {{demoCtrl.models.empty}}
+
+    </div>
+
+    <div class="ComponentView">
+        <h4>Prepopulated</h4>
+        <rb-check-with-text-control
+            name="prepopulated"
+            ng-model="demoCtrl.models.prepopulated"
+            checkbox-value="google_adx"
+            label="Google Adx"
+            checkbox-key="SSP"
+            text-key="deal_ids"
+        ></rb-check-with-text-control>
+        Model: {{demoCtrl.models.prepopulated}}
+    </div>
+
+    <div class="ComponentView">
+        <h4>With Placeholder</h4>
+        <rb-check-with-text-control
+            name="placeholder"
+            text-placeholder="Optional Deal ID"
+            ng-model="demoCtrl.models.placeholder"
+            checkbox-value="google_adx"
+            label="Google Adx"
+            checkbox-key="SSP"
+            text-key="deal_ids"
+        ></rb-check-with-text-control>
+        Model: {{demoCtrl.models.placeholder}}
+    </div>
+
+    <div class="ComponentView">
+        <h4>With Form Validation</h4>
+        <form name="demoCtrl.myForm">
+            <rb-check-with-text-control
+                form="demoCtrl.myForm"
+                name="validation"
+                text-placeholder="Optional Deal ID"
+                ng-model="demoCtrl.models.validation"
+                checkbox-value="google_adx"
+                label="Google Adx"
+                checkbox-key="SSP"
+                text-key="deal_ids"
+            ></rb-check-with-text-control>
+
+            <rb-button ng-click="demoCtrl.invalidateCheckbox()">Invalidate checkbox!</rb-button>
+            <rb-button ng-click="demoCtrl.invalidateText()">Invalidate textbox!</rb-button>
+        </form>
+        Model: {{demoCtrl.models.validation}}
+    </div>
+
+</section>

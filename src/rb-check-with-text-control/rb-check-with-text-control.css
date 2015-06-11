@@ -1,0 +1,16 @@
+/** @define CheckWithTextControl; use strict */
+
+/**
+ * The `.CheckWithTextControl` component...
+ */
+
+:root {
+    --CheckWithTextControl-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.CheckWithTextControl {
+}

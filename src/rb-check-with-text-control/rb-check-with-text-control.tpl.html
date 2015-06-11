@@ -1,0 +1,16 @@
+<div class="CheckWithTextControl">
+    <rb-check-control
+        form="form"
+        name="{{ name }}_{{ checkboxKey }}"
+        ng-model="checked"
+        label="{{ ::label }}"
+    ></rb-check-control>
+
+    <rb-text-control
+        form="form"
+        name="{{ name }}_{{ textKey }}"
+        ng-model="ngModel[textKey]"
+        ng-show="checked"
+        placeholder="{{ ::textPlaceholder }}"
+    ></rb-text-control>
+</div>
