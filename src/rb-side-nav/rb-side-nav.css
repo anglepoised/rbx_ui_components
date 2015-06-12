@@ -1,11 +1,11 @@
-/** @define rbSideNav; use strict */
+/** @define SideNav; use strict */
 
 /**
- * The `.rbSideNav` component...
+ * The `.SideNav` component...
  */
 
 :root {
-    --rbSideNav-variable: var();
+    --SideNav-variable: var();
 }
 
 /**
