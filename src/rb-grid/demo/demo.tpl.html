@@ -80,19 +80,57 @@
         <rb-section title="Individual Sizing">
             <div class="RawHTML">
                 <p>
-                    Add the <code>size</code> attribute to individual cells for specific widths. Cells without sizing classes divide up the
-                    remaining space. The available sizes are:
-                    <ul>
-                     <li>1of2</li>
-                     <li>1of3</li>
-                     <li>2of3</li>
-                     <li>1of4</li>
-                     <li>3of4</li>
-                    </ul>
+                    Add the <code>size</code> attribute to individual cells for specific widths. Sized cells can be
+                    used in any position within a row. Other cells in a row without sizing divide up the remaining
+                    space.
                 </p>
+                <p>
+                    The available sizes are:
+                </p>
+                <ul>
+                    <li>1of2</li>
+                    <li>1of3</li>
+                    <li>2of3</li>
+                    <li>1of4</li>
+                    <li>3of4</li>
+                </ul>
             </div>
             <div class="ComponentView">
                 <rb-grid>
+                    <rb-grid-cell size="1of2">
+                        <rb-demo-block>
+                            1 of 2
+                        </rb-demo-block>
+                    </rb-grid-cell>
+                    <rb-grid-cell>
+                        <rb-demo-block>
+                            auto
+                        </rb-demo-block>
+                    </rb-grid-cell>
+                </rb-grid>
+                <rb-grid>
+                    <rb-grid-cell>
+                        <rb-demo-block>
+                            auto
+                        </rb-demo-block>
+                    </rb-grid-cell>
+                    <rb-grid-cell>
+                        <rb-demo-block>
+                            auto
+                        </rb-demo-block>
+                    </rb-grid-cell>
+                    <rb-grid-cell size="1of2">
+                        <rb-demo-block>
+                            1 of 2
+                        </rb-demo-block>
+                    </rb-grid-cell>
+                </rb-grid>
+                <rb-grid>
+                    <rb-grid-cell>
+                        <rb-demo-block>
+                            auto
+                        </rb-demo-block>
+                    </rb-grid-cell>
                     <rb-grid-cell size="1of2">
                         <rb-demo-block>
                             1 of 2
