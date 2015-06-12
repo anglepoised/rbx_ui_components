@@ -1,16 +1,13 @@
-/** @define rbCheckControl; use strict */
+/** @define CheckControl; use strict */
 
 /**
- * The `.rbCheckControl` component...
+ * The `.CheckControl` component...
  */
-
-:root {
-    --rbCheckControl-variable: var();
-}
 
 /**
- * 1. Comment
+ * 1. Hide default text selection style.
  */
 
-.rbCheckControl {
+.CheckControl::selection {
+    background: none; /* 1 */
 }
