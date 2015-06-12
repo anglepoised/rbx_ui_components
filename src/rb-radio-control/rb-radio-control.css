@@ -9,10 +9,11 @@
 }
 
 /**
- * 1. Comment
+ * 1. Hide default text selection style.
  */
 
-.RadioControl {
+.RadioControl::selection {
+    background: none; /* 1 */
 }
 
 .RadioControl--row .RadioControl-items {
