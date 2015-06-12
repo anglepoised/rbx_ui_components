@@ -79,13 +79,20 @@
             Individual Sizing
         </h3>
         <p>
-             Add sizing classes to individual cells for specific widths. Cells without sizing classes divide up the
-             remaining space.
+            Add the <code>size</code> attribute to individual cells for specific widths. Cells without sizing classes divide up the
+            remaining space. The available sizes are:
+            <ul>
+             <li>1of2</li>
+             <li>1of3</li>
+             <li>2of3</li>
+             <li>1of4</li>
+             <li>3of4</li>
+            </ul>
         </p>
     </div>
     <div class="ComponentView">
         <rb-grid>
-            <rb-grid-cell class="u-size1of2">
+            <rb-grid-cell size="1of2">
                 <rb-demo-block>
                     1 of 2
                 </rb-demo-block>
@@ -97,7 +104,7 @@
             </rb-grid-cell>
         </rb-grid>
         <rb-grid>
-            <rb-grid-cell class="u-size1of3">
+            <rb-grid-cell size="1of3">
                 <rb-demo-block>
                     1 of 3
                 </rb-demo-block>
@@ -109,7 +116,7 @@
             </rb-grid-cell>
         </rb-grid>
         <rb-grid>
-            <rb-grid-cell class="u-size2of3">
+            <rb-grid-cell size="2of3">
                 <rb-demo-block>
                     2 of 3
                 </rb-demo-block>
@@ -121,7 +128,7 @@
             </rb-grid-cell>
         </rb-grid>
         <rb-grid>
-            <rb-grid-cell class="u-size1of4">
+            <rb-grid-cell size="1of4">
                 <rb-demo-block>
                     1 of 4
                 </rb-demo-block>
@@ -133,7 +140,7 @@
             </rb-grid-cell>
         </rb-grid>
         <rb-grid>
-            <rb-grid-cell class="u-size3of4">
+            <rb-grid-cell size="3of4">
                 <rb-demo-block>
                     3 of 4
                 </rb-demo-block>

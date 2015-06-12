@@ -23,6 +23,7 @@ define([
 
         return {
             scope: {
+                size: '@'
             },
             restrict: 'E',
             replace: true,
