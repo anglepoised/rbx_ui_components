@@ -1,24 +1,66 @@
 /** @define SideNav; use strict */
 
 /**
- * The `.SideNav` component...
+ * The `.SideNav` component creates a vertical navigation list with an associated action part, primarly for use in
+ * overlay panels.
  */
 
 :root {
-    --SideNav-variable: var();
+    --SideNav-background: var(--color-gray-tuna);
+    --SideNav-gutter: 1.25em;
 }
 
-/**
- * 1. Comment
- */
-
 .SideNav {
+    background: var(--SideNav-background);
+    width: 100%;
+}
+
+.SideNav-heading {
+    color: var(--color-white-alabaster);
+    padding: 2.25em var(--SideNav-gutter) 0;
+}
+
+.SideNav-body {
+    padding-top: 1.25em;
 }
 
 .SideNav-item {
-
+    background: var(--SideNav-background) url("./images/item.svg") no-repeat calc(100% - var(--SideNav-gutter)) center;
+    padding: 0.75em var(--SideNav-gutter);
 }
 
-.SideNav-item-warning {
+.SideNav-item:hover {
+    background-color: var(--color-gray-shark);
+    background-image: url("./images/item-hover.svg");
+    cursor: pointer;
+}
 
+.SideNav-item.is-active {
+    background-color: var(--color-green-base);
+    background-image: url("./images/item-is-active.svg");
+}
+
+.SideNav-item.is-active .SideNav-itemInner {
+    color: var(--color-white-alabaster);
+}
+
+.SideNav-itemInner {
+    color: var(--color-gray-ghost);
+    display: block;
+    margin-right: 1.5em;
+    text-decoration: none;
+}
+
+.SideNav-item:hover .SideNav-itemInner {
+    color: var(--color-white-alabaster);
+}
+
+.SideNav-actions {
+    background: var(--color-gray-shark);
+    padding: 0.5em var(--SideNav-gutter);
+}
+
+.SideNav-actionsMessage {
+    color: var(--color-gray-regent);
+    margin: 1em 0;
 }
