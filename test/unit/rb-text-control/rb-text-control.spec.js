@@ -42,6 +42,24 @@ define([
             it('should have the TextControl--text class', function () {
                 expect(element.find('div').hasClass('TextControl--text')).toBe(true);
             });
+
+            it('should have TextControl--small class when `small` is `true`', function () {
+                element = $compile('<rb-text-control small="true"></rb-text-control>')($scope);
+                $scope.$apply();
+                expect(element.hasClass('TextControl--small')).toBe(true);
+            });
+
+            it('should not have TextControl--small class when `small` is `false`', function () {
+                element = $compile('<rb-text-control small="false"></rb-text-control>')($scope);
+                $scope.$apply();
+                expect(element.hasClass('TextControl--small')).toBe(false);
+            });
+
+            it('should not have TextControl--small class when `small` is undefined', function () {
+                element = $compile('<rb-text-control></rb-text-control>')($scope);
+                $scope.$apply();
+                expect(element.hasClass('TextControl--small')).toBe(false);
+            });
         });
 
         describe('label', function () {
