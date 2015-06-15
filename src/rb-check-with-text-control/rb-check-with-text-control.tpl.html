@@ -1,16 +1,21 @@
 <div class="CheckWithTextControl">
-    <rb-check-control
-        form="form"
-        name="{{ name }}_{{ checkboxKey }}"
-        ng-model="checked"
-        label="{{ ::label }}"
-    ></rb-check-control>
+    <div class="CheckWithTextControl-checkControl">
+        <rb-check-control
+            form="form"
+            name="{{ name }}_{{ checkboxKey }}"
+            ng-model="checked"
+            label="{{ ::label }}"
+        ></rb-check-control>
+    </div>
 
-    <rb-text-control
-        form="form"
-        name="{{ name }}_{{ textKey }}"
-        ng-model="ngModel[textKey]"
-        ng-show="checked"
-        placeholder="{{ ::textPlaceholder }}"
-    ></rb-text-control>
+    <div class="CheckWithTextControl-textControl">
+        <rb-text-control
+            form="form"
+            name="{{ name }}_{{ textKey }}"
+            ng-model="ngModel[textKey]"
+            ng-show="checked"
+            placeholder="{{ ::textPlaceholder }}"
+            small="true"
+        ></rb-text-control>
+    </div>
 </div>

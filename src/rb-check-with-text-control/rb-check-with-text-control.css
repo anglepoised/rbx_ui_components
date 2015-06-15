@@ -1,16 +1,27 @@
 /** @define CheckWithTextControl; use strict */
 
 /**
- * The `.CheckWithTextControl` component...
+ * The `.CheckWithTextControl` component is a composite control component, formed of an inline check control and
+ * text control.
  */
 
-:root {
-    --CheckWithTextControl-variable: var();
-}
 
 /**
- * 1. Comment
+ * 1. Display descendents with flex.
  */
 
 .CheckWithTextControl {
+    align-items: auto;
+    display: flex; /* 1 */
+    height: 2em;
+    justify-content: flex-start;
+}
+
+.CheckWithTextControl-checkControl {
+    margin-top: 0.25em;
+}
+
+.CheckWithTextControl-textControl {
+    margin-left: 1em;
+    width: 10.5em;
 }
