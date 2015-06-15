@@ -42,6 +42,21 @@ define([
             expect(element.html()).toContain('My Subheading');
         });
 
+        it('should set the PageTitle--compact class if the compact attribute is `true`', function () {
+            compileTemplate('<rb-page-title heading="My heading" compact="true"></rb-page-title>');
+            expect(element.hasClass('PageTitle--compact')).toBe(true);
+        });
+
+        it('should not set the PageTitle--compact class if the compact attribute is `false`', function () {
+            compileTemplate('<rb-page-title heading="My heading" compact="false"></rb-page-title>');
+            expect(element.hasClass('PageTitle--compact')).toBe(false);
+        });
+
+        it('should not set the PageTitle--compact class by default', function () {
+            compileTemplate('<rb-page-title heading="My heading"></rb-page-title>');
+            expect(element.hasClass('PageTitle--compact')).toBe(false);
+        });
+
         describe('badge', function () {
             it('should attach a badge to the page title', function () {
                 var pageTitleBadgeWrapper,

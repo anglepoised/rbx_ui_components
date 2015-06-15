@@ -33,7 +33,8 @@ define([
                 subheading: '@',
                 badgeStatus: '@',
                 backText: '@',
-                backSref: '@'
+                backSref: '@',
+                compact: '@'
             },
             restrict: 'E',
             replace: true,
