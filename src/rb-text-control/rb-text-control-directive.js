@@ -45,7 +45,8 @@ define([
                 form: '=',
                 name: '@',
                 type: '@',
-                numberSteps: '@'
+                numberSteps: '@',
+                small: '@'
             },
             restrict: 'E',
             replace: true,
