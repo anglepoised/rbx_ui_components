@@ -23,11 +23,17 @@ define([
 
         return {
             scope: {
+                gutter: '@'
             },
             restrict: 'E',
             replace: true,
             transclude: true,
-            template: template
+            template: template,
+            link: function (scope, ele, attrs) {
+                if (angular.isUndefined(scope.gutter)) {
+                    scope.gutter = true;
+                }
+            }
         };
     }
 
