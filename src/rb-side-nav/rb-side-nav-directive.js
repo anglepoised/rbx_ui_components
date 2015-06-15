@@ -25,6 +25,7 @@ define([
      *        on-save="onSave()"
      *        on-cancel="onCancel"
      *        save-label="Save & Republish"
+     *        save-button-disabled="true"
      *        acetion-help-text="Be careful saving!">
      *     </rb-side-nav>
      * </hljs>
@@ -39,7 +40,8 @@ define([
                 saveLabel: '@',
                 actionHelpText: '@',
                 onSave: '&',
-                onCancel: '&'
+                onCancel: '&',
+                saveButtonDisabled: '@'
             },
             restrict: 'E',
             replace: true,
