@@ -4,13 +4,6 @@
  * The `.CheckWithTextControlGroup` component...
  */
 
-:root {
-    --CheckWithTextControlGroup-variable: var();
-}
-
-/**
- * 1. Comment
- */
-
-.CheckWithTextControlGroup {
+.CheckWithTextControlGroup-item {
+    margin: 0.625em 0;
 }
