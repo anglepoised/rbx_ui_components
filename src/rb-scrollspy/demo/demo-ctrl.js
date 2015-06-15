@@ -3,69 +3,6 @@ define([
 
     // @ngInject
     function demoCtrl ($rootScope, $scope, $state, $injector) {
-        var $this = this;
-
-        $scope.search = '';
-
-        $scope.$watch('search', function (val) {
-
-            var filteredCategory,
-                filteredSection,
-                categoryMatch,
-                filteredCategoryIndex,
-                filteredSectionIndex,
-                sectionMatch,
-                itmeMatch,
-                filteredCategories = [];
-
-            // For each category
-            angular.forEach($this.categories, function (category) {
-                filteredCategory = angular.copy(category);
-                filteredCategory.items = [];
-
-                categoryMatch = false;
-
-                // and each section within that category
-                angular.forEach(category.items, function (section) {
-
-                    filteredSection = angular.copy(section);
-                    filteredSection.items = [];
-
-                    sectionMatch = false;
-
-                    // Check each item for matches
-                    angular.forEach(section.items, function (item) {
-                        itemMatch = item.label.toLowerCase().indexOf(val.toLowerCase()) >= 0;
-
-                        // If there is a match
-                        if (itemMatch) {
-
-                            // and this is first match in this category
-                            if (categoryMatch === false) {
-                                // add empty category to filteredCategories
-                                filteredCategoryIndex = filteredCategories.push(filteredCategory) - 1;
-                                categoryMatch = true;
-                            }
-
-                            // and/or this is first match in this section
-                            if (sectionMatch === false) {
-                                // add empty section to the category added above
-                                filteredSectionIndex = filteredCategories[filteredCategoryIndex]
-                                    .items
-                                    .push(filteredSection);
-
-                                sectionMatch = true;
-                            }
-
-                            filteredSection.items.push(item);
-                        }
-                    });
-                });
-            });
-
-            // Update scope filteredCategories
-            $this.filteredCategories = filteredCategories;
-        }, true);
 
         this.categories = [
             {
@@ -254,7 +191,6 @@ define([
             }
         ];
 
-        this.filteredCategories = angular.copy(this.categories);
     }
 
     return demoCtrl;

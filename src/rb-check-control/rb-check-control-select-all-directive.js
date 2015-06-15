@@ -75,7 +75,7 @@ define([
                         $scope.isSelected = false;
                         input.prop('indeterminate', false);
                     } else {
-                        $scope.isSelected = false;
+                        $scope.isSelected = true;
                         input.prop('indeterminate', true);
                     }
 

@@ -3,7 +3,7 @@
     overflow: scroll;
     height: 500px;
     position: absolute;
-    top: 50px;
+    top: 80px;
     left: 180px;
   }
 
@@ -17,29 +17,29 @@
 
 <div>
     <div style="position: fixed; top: 10px; left: 50px">
-        <rb-scrollspy categories="demoCtrl.filteredCategories" offset="0" scroll-id="container"></rb-scrollspy>
+        <rb-scrollspy categories="demoCtrl.categories" offset="0" scroll-id="container"></rb-scrollspy>
     </div>
 
     <div class="search">
-        <input type="text" ng-model="search" placeholder="Search list...">
+        <rb-deep-search
+            ng-model="demoCtrl.categories"
+            placeholder="Search list...">
+        </rb-deep-search>
         <hr />
     </div>
 
     <div id="container">
         <div>
-            <span ng-repeat="category in demoCtrl.filteredCategories">
-                <h2 id="{{ category.anchor }}" class="ListyThing-Category">
-                    {{ category.label }}
-                </h2>
+            <span ng-repeat="category in demoCtrl.categories">
 
                 <ul class="ListyThing ListyThing--columns">
                     <li ng-repeat="section in category.items"  id="{{ section.anchor }}" class="ListyThing-section">
-                        <h3>
+                        <h3 ng-hide="section.hidden">
                             {{ section.label }}
                         </h3>
                         <ul class="ListyThing-items">
                             <li ng-repeat="item in section.items" class="ListyThing-item">
-                                {{ item.label }}
+                                <span ng-if="!item.hidden">{{ item.label }}</span>
                             </li>
                         </ul>
                     </li>
