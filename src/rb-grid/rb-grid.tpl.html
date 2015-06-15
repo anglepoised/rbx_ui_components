@@ -1,1 +1,4 @@
-<div class="Grid Grid--flexCells Grid--gutter" ng-transclude></div>
+<div class="Grid" ng-transclude ng-class="{
+    'Grid--gutter': gutter==='true',
+    'Grid--flexCells': flexCells==='true'
+}"></div>

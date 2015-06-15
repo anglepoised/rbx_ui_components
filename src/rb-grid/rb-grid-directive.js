@@ -23,11 +23,22 @@ define([
 
         return {
             scope: {
+                gutter: '@',
+                flexCells: '@'
             },
             restrict: 'E',
             replace: true,
             transclude: true,
-            template: template
+            template: template,
+            link: function (scope, ele, attrs) {
+                if (angular.isUndefined(scope.gutter)) {
+                    scope.gutter = true;
+                }
+
+                if (angular.isUndefined(scope.flexCells)) {
+                    scope.flexCells = true;
+                }
+            }
         };
     }
 
