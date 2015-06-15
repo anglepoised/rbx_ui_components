@@ -43,27 +43,19 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <div class="PageTitle PageTitle--compact">
-            <div class="PageTitle-inner">
-                <div class="PageTitle-body">
-                    <div class="PageTitle-heading">
-                        <h1 class="u-textHeading2">
-                            Title of section
-                        </h1>
-                    </div>
-                </div>
-                <p class="PageTitle-sub u-textDefault">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
-            </div>
-            <div class="PageTitle-action">
-                <rb-text-control
-                    placeholder="Search"
-                    name="query"
-                    type="search"
-                    ng-model="demoCtrl.data.query">
-                </rb-text-control>
-            </div>
-        </div>
+        <rb-page-title
+            heading="My Compact Page"
+            compact="true"
+            badge-status="{{pageTitleDemoCtrl.status}}">
+                <rb-button state="positive"
+                    ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
+                    ng-if="pageTitleDemoCtrl.status==='statusPending'">Publish</rb-button>
+                <rb-button state="danger" outline="yes"
+                    ng-click="pageTitleDemoCtrl.changeStatus('statusPaused')"
+                    ng-if="pageTitleDemoCtrl.status==='statusLive'">Pause</rb-button>
+                <rb-button state="positive" outline="yes"
+                    ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
+                    ng-if="pageTitleDemoCtrl.status==='statusPaused'">Re-Publish</rb-button>
+        </rb-page-title>
     </div>
 </section>
