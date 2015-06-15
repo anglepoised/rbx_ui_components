@@ -1,11 +1,27 @@
 <div class="SideNav">
-    <h3>{{ ::title }}</h3>
-
-    <ul ng-transclude></ul>
-
-    <div class="SideNav-actions">
-        <p>{{ ::actionHelpText }}</p>
-        <rb-button ng-click="onSave()">{{ ::saveLabel || 'Save' }}</rb-button>
-        <rb-button outline="yes" ng-click="onCancel()">Cancel</rb-button>
+    <div class="SideNav-heading">
+        <h3 class="u-textHeading4">
+            {{ ::title }}
+        </h3>
+    </div>
+    <div class="SideNav-body">
+        <ul class="SideNav-items" ng-transclude></ul>
+    </div>
+    <div class="SideNav-actions u-textCenter">
+        <div class="SideNav-actionsMessage">
+            <p class="u-textSmall">
+                {{ ::actionHelpText }}
+            </p>
+        </div>
+        <div class="SideNav-actionsButtons">
+            <rb-grid>
+                <rb-grid-cell size="2of3">
+                    <rb-button block="yes" ng-click="onSave()">{{ ::saveLabel || 'Save' }}</rb-button>
+                </rb-grid-cell>
+                <rb-grid-cell>
+                    <rb-button block="yes" outline="yes" ng-click="onCancel()">Cancel</rb-button>
+                </rb-grid-cell>
+            </rb-grid>
+        </div>
     </div>
 </div>
