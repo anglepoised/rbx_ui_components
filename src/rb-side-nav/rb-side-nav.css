@@ -46,13 +46,41 @@
 
 .SideNav-itemInner {
     color: var(--color-gray-ghost);
-    display: block;
+    display: flex;
     margin-right: 1.5em;
     text-decoration: none;
 }
 
 .SideNav-item:hover .SideNav-itemInner {
     color: var(--color-white-alabaster);
+}
+
+.SideNav-icon {
+    margin-right: 1.5em;
+}
+
+.SideNav-status {
+    border-radius: 500px;
+    border-width: 1px;
+    color: var(--color-white-alabaster);
+    display: inline-block;
+    font-size: var(--font-size-x-small);
+    margin-left: auto;
+    min-width: 24.7143px;
+    padding: 4px 6px 3px;
+    text-align: center;
+}
+
+.SideNav-status--count {
+    background: var(--color-green-base);
+}
+
+.SideNav-item.is-active .SideNav-status--count {
+    background: var(--color-green-shadow);
+}
+
+.SideNav-status--invalid {
+    background: var(--color-orange-base);
 }
 
 .SideNav-actions {
