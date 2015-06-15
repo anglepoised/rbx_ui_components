@@ -23,15 +23,21 @@ define([
             };
         }));
 
-        describe('rendering', function () {
-            it('should render with class and transclude', function () {
-                compileTemplate('<rb-grid>TEST</rb-grid>');
+        describe('compiled template', function () {
+            it('should contain a root element with the appropriate SUIT class', function () {
+                compileTemplate('<rb-grid></rb-grid>');
 
-                expect(element.hasClass('Grid Grid--flexCells Grid--gutter')).toBe(true);
+                expect(element.hasClass('Grid')).toBe(true);
+
+                // Currently no toggle for flexCells
                 expect(element.hasClass('Grid--flexCells')).toBe(true);
-                expect(element.hasClass('Grid--gutter')).toBe(true);
+            });
+
+            it('should translude contents directly', function () {
+                compileTemplate('<rb-grid>TEST</rb-grid>');
                 expect(element.text()).toBe('TEST');
             });
         });
+
     });
 });
