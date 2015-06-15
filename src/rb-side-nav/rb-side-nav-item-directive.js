@@ -43,7 +43,8 @@ define([
                 invalid: '=',
                 icon: '@',
                 label: '@',
-                uiSref: '@'
+                uiSref: '@',
+                valid: '='
             },
             restrict: 'E',
             replace: true,

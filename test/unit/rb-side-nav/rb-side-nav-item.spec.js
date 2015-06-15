@@ -92,6 +92,22 @@ define([
             });
         });
 
+        describe('valid attribute', function () {
+            it('should render a status with SideNav-status--valid if true', function () {
+                $scope.isValid = true;
+                compileTemplate('<rb-side-nav-item valid="isValid"></rb-side-nav-item>');
+
+                var statusSpan = element[0].getElementsByClassName('SideNav-status--valid');
+
+                expect(statusSpan.length).toBe(1);
+
+                // Check change in value updates DOM.
+                $scope.isValid = false;
+                $scope.$apply();
+                expect(statusSpan.length).toBe(0);
+            });
+        });
+
         describe('icon attribute', function () {
 
             it('should use icon form icon attribute', function () {

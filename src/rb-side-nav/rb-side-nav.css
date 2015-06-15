@@ -83,6 +83,10 @@
     background: var(--color-orange-base);
 }
 
+.SideNav-status--valid {
+    background: var(--color-green-base);
+}
+
 .SideNav-actions {
     background: var(--color-gray-shark);
     padding: 0.5em var(--SideNav-gutter);
