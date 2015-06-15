@@ -65,6 +65,30 @@ define([
             });
         });
 
+        describe('columns', function () {
+            it('should set the group to display in columns to be 2', function () {
+                $scope.options = options;
+
+                compileTemplate('<rb-check-control-group options="options" ng-model="model" columns="2">' +
+                    '</rb-check-control-group>');
+
+                var groupBody = angular.element(element.find('div')[1]);
+
+                expect(groupBody.hasClass('u-columnCount2')).toBeTruthy();
+            });
+
+            it('should set the group to display in columns to be 3', function () {
+                $scope.options = options;
+
+                compileTemplate('<rb-check-control-group options="options" ng-model="model" columns="3">' +
+                    '</rb-check-control-group>');
+
+                var groupBody = angular.element(element.find('div')[1]);
+
+                expect(groupBody.hasClass('u-columnCount3')).toBeTruthy();
+            });
+        });
+
         describe('model binding', function () {
 
             it('should check any values in ngModel', function () {

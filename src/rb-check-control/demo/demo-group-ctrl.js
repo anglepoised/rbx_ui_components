@@ -52,6 +52,57 @@ define([
                 value: 'checked_label2'
             }
         ];
+
+        this.columnOptions = [
+            {
+                label: 'Barney Stinson',
+                value: 'barney_stinson'
+            },
+            {
+                label: 'Bart Simpson',
+                value: 'bart_simpson'
+            },
+            {
+                label: 'Lisa Simpson',
+                value: 'lisa_simpson'
+            },
+            {
+                label: 'Maggie Simpson',
+                value: 'maggie_simpson'
+            },
+            {
+                label: 'Marge Simpson',
+                value: 'marge_simpson'
+            },
+            {
+                label: 'Ted Mosby',
+                value: 'ted_mosby'
+            },
+            {
+                label: 'Peter Griffin',
+                value: 'peter_griffin'
+            },
+            {
+                label: 'Stewie Griffin',
+                value: 'stewie_griffin'
+            },
+            {
+                label: 'Meg Griffin',
+                value: 'meg_griffin'
+            },
+            {
+                label: 'Lois Griffin',
+                value: 'lois_griffin'
+            },
+            {
+                label: 'Chris Griffin',
+                value: 'chris_griffin'
+            },
+            {
+                label: 'Brian Griffin',
+                value: 'brian_griffin'
+            }
+        ];
     }
 
     return demoGroupCtrl;

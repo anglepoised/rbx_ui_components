@@ -14,7 +14,11 @@
         <label ng-if="!enableSelectAll && title">{{::title}}</label>
     </div>
 
-    <div class="CheckControlGroup-body">
+    <div class="CheckControlGroup-body"
+        ng-class="{
+            'u-columnCount2': columns === '2',
+            'u-columnCount3': columns === '3'
+        }">
         <div ng-repeat="(key, value) in options">
             <rb-check-control
                 is-disabled="{{::isDisabled}}"
