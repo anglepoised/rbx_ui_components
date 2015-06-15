@@ -13,6 +13,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [`rb-check-with-text-control`](https://github.com/rockabox/rbx_ui_components/pull/209)
 - [`rb-check-with-text-control-group`](https://github.com/rockabox/rbx_ui_components/pull/212)
 - [`rb-grid-cell` `size` attribute for cell sizing](https://github.com/rockabox/rbx_ui_components/pull/222)
+- [`rb-page-title` `compact` modifier](https://github.com/rockabox/rbx_ui_components/pull/230)
 
 ### Changed
 
