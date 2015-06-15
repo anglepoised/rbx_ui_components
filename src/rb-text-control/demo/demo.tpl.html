@@ -1,165 +1,148 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-text-control
-        </h2>
-        <h3>
-            Current Angular Version
-        </h3>
-    </div>
-    <div class="ComponentView">
+<rb-site>
+    <rb-main>
         <form name="userForm">
 
-            <h2>
-                Text (type="text")
-            </h2>
-            <rb-text-control
-                form="userForm"
-                label="Pet Name"
-                placeholder="Enter the name of your pet..."
-                name="pet"
-                type="text"
-                ng-model="demoCtrl.data.pet"
-                is-required="true"
-                help-message="i.e. Purple Prawn">
-            </rb-text-control>
+            <rb-page-title heading="rb-text-control">
+            </rb-page-title>
 
-            <h2>
-                Email (type="email")
-            </h2>
-            <rb-text-control
-                form="userForm"
-                label="Your Email"
-                placeholder="Enter your email..."
-                name="email"
-                type="email"
-                ng-model="demoCtrl.data.email"
-                is-required="true"
-                help-message="This is so we can harass you">
-            </rb-text-control>
+            <rb-section title="Text (type='text')">
+                <rb-text-control
+                    form="userForm"
+                    label="Pet Name"
+                    placeholder="Enter the name of your pet..."
+                    name="pet"
+                    type="text"
+                    ng-model="demoCtrl.data.pet"
+                    is-required="true"
+                    help-message="i.e. Purple Prawn">
+                </rb-text-control>
+            </rb-section>
 
-            <h2>
-                Password (type="password")
-            </h2>
-            <rb-text-control
-                form="userForm"
-                label="Your favorite password"
-                placeholder="I want to steal your things..."
-                name="password"
-                type="password"
-                ng-model="demoCtrl.data.password"
-                is-required="true">
-            </rb-text-control>
+            <rb-section title="Email (type='email')">
+                <rb-text-control
+                    form="userForm"
+                    label="Your Email"
+                    placeholder="Enter your email..."
+                    name="email"
+                    type="email"
+                    ng-model="demoCtrl.data.email"
+                    is-required="true"
+                    help-message="This is so we can harass you">
+                </rb-text-control>
+            </rb-section>
 
-            <h2>
-                Number (type="number")
-            </h2>
-            <rb-text-control
-                form="userForm"
-                label="How cool is Nick on a scale of 1-10?"
-                placeholder="0"
-                name="rating"
-                type="number"
-                ng-model="demoCtrl.data.rating"
-                is-required="true">
-            </rb-text-control>
+            <rb-section title="Password (type='password')">
+                <rb-text-control
+                    form="userForm"
+                    label="Your favorite password"
+                    placeholder="I want to steal your things..."
+                    name="password"
+                    type="password"
+                    ng-model="demoCtrl.data.password"
+                    is-required="true">
+                </rb-text-control>
+            </rb-section>
 
-            <h2>
-                Currency (type="currency")
-            </h2>
-            <rb-text-control
-                form="userForm"
-                label="Currency"
-                placeholder="Enter amount"
-                name="currency"
-                type="currency"
-                number-steps="0.01"
-                ng-model="demoCtrl.data.amount"
-                is-required="true">
-            </rb-text-control>
+            <rb-section title="Number (type='number')">
+                <rb-text-control
+                    form="userForm"
+                    label="How cool is Nick on a scale of 1-10?"
+                    placeholder="0"
+                    name="rating"
+                    type="number"
+                    ng-model="demoCtrl.data.rating"
+                    is-required="true">
+                </rb-text-control>
+            </rb-section>
 
-            <h2>
-                Textarea (type="textarea")
-            </h2>
-            <rb-text-control
-                form="userForm"
-                label="Description (non-elastic textarea)"
-                placeholder="Gimme a description..."
-                name="description"
-                type="textarea"
-                ng-model="demoCtrl.data.description">
-            </rb-text-control>
+            <rb-section title="Currency (type='currency')">
+                <rb-text-control
+                    form="userForm"
+                    label="Currency"
+                    placeholder="Enter amount"
+                    name="currency"
+                    type="currency"
+                    number-steps="0.01"
+                    ng-model="demoCtrl.data.amount"
+                    is-required="true">
+                </rb-text-control>
+            </rb-section>
 
-            <rb-text-control
-                form="userForm"
-                label="Description (elastic textarea)"
-                is-elastic="true"
-                placeholder="Gimme a description..."
-                name="description"
-                type="textarea"
-                ng-model="demoCtrl.data.elasticDescription">
-            </rb-text-control>
+            <rb-section title="Textarea (type='textarea')">
+                <rb-text-control
+                    form="userForm"
+                    label="Description (non-elastic textarea)"
+                    placeholder="Gimme a description..."
+                    name="description"
+                    type="textarea"
+                    ng-model="demoCtrl.data.description">
+                </rb-text-control>
 
-            <h2>
-                Search (type="search")
-            </h2>
-            <rb-text-control
-                form="userForm"
-                label="What are you looking for?"
-                placeholder="Search me"
-                name="query"
-                type="search"
-                ng-model="demoCtrl.data.query">
-            </rb-text-control>
+                <rb-text-control
+                    form="userForm"
+                    label="Description (elastic textarea)"
+                    is-elastic="true"
+                    placeholder="Gimme a description..."
+                    name="description"
+                    type="textarea"
+                    ng-model="demoCtrl.data.elasticDescription">
+                </rb-text-control>
+            </rb-section>
 
-            <h2>
-                Readonly textarea (is-readonly="true")
-            </h2>
-            <rb-text-control
-                form="userForm"
-                name="readonly_message"
-                type="textarea"
-                is-readonly="true"
-                ng-model="demoCtrl.data.readonlyMessage">
-            </rb-text-control>
+            <rb-section title="Search (type='search')">
+                <rb-text-control
+                    form="userForm"
+                    label="What are you looking for?"
+                    placeholder="Search me"
+                    name="query"
+                    type="search"
+                    ng-model="demoCtrl.data.query">
+                </rb-text-control>
+            </rb-section>
 
-            <h2>
-                Server Validation
-            </h2>
+            <rb-section title="Readonly textarea (is-readonly='true')">
+                <rb-text-control
+                    form="userForm"
+                    name="readonly_message"
+                    type="textarea"
+                    is-readonly="true"
+                    ng-model="demoCtrl.data.readonlyMessage">
+                </rb-text-control>
+            </rb-section>
 
-            <rb-text-control
-                form="userForm"
-                label="Validated on server"
-                placeholder="This field has a custom server validation message (enter below)..."
-                name="somethingElse"
-                type="text"
-                ng-model="demoCtrl.data.somethingElse">
-            </rb-text-control>
+            <rb-section title="Server Validation">
+                <rb-text-control
+                    form="userForm"
+                    label="Validated on server"
+                    placeholder="This field has a custom server validation message (enter below)..."
+                    name="somethingElse"
+                    type="text"
+                    ng-model="demoCtrl.data.somethingElse">
+                </rb-text-control>
 
-            <rb-text-control
-                label="Server validation:"
-                placeholder="This is the validation message for the above field"
-                name="serverMessage"
-                type="text"
-                help-message="This exists since controller is ignorant to form until template has rendered"
-                ng-model="userForm.somethingElse.$error.server">
-            </rb-text-control>
+                <rb-text-control
+                    label="Server validation:"
+                    placeholder="This is the validation message for the above field"
+                    name="serverMessage"
+                    type="text"
+                    help-message="This exists since controller is ignorant to form until template has rendered"
+                    ng-model="userForm.somethingElse.$error.server">
+                </rb-text-control>
+            </rb-section>
 
-            <h2>
-                Form Summary
-            </h2>
+            <rb-section title="Demo Form Summary">
+                <div ng-if="userForm.$valid">
+                    Form is valid
+                </div>
+                <div ng-if="userForm.$invalid">
+                    Form is invalid
+                </div>
 
-            <div ng-if="userForm.$valid">
-                Form is valid
-            </div>
-            <div ng-if="userForm.$invalid">
-                Form is invalid
-            </div>
-
-            <div hljs language="json">
-                {{ demoCtrl.data }}
-            </div>
+                <div hljs language="json">
+                    {{ demoCtrl.data }}
+                </div>
+            </rb-section>
 
         </form>
-    </div>
-</section>
+    </rb-main>
+</rb-site>
