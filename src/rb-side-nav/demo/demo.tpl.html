@@ -11,6 +11,11 @@
                 </rb-side-nav>
             </div>
         </rb-section>
+        <rb-section title="Sidenav With Disabled Save">
+            <div class="ComponentView">
+                <rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()" save-button-disabled="true"></rb-side-nav>
+            </div>
+        </rb-section>
         <rb-section title="Sidenav With Save Label">
             <div class="ComponentView">
                 <rb-side-nav title="A Menu" save-label="Save &amp; Republish"></rb-side-nav>
