@@ -25,6 +25,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [`rb-overlay-panel` style](https://github.com/rockabox/rbx_ui_components/pull/206)
 - [`rb-check-control-group` style](https://github.com/rockabox/rbx_ui_components/pull/211)
 - [`rb-side-nav` style](https://github.com/rockabox/rbx_ui_components/pull/227)
+- [`rb-check-with-text-control-group` style](https://github.com/rockabox/rbx_ui_components/pull/235)
 
 ## [2.1.1] - 2015-06-04
 
