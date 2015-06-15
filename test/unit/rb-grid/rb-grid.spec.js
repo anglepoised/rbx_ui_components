@@ -25,14 +25,22 @@ define([
 
         describe('isolatedScope', function () {
             it('should contain variables for all expected attributes', function () {
-                compileTemplate('<rb-grid gutter="false"></rb-grid>');
+                compileTemplate('<rb-grid gutter="false" flex-cells="true"></rb-grid>');
                 expect(isolatedScope.gutter).toBe('false');
+                expect(isolatedScope.flexCells).toBe('true');
             });
 
             describe('gutter variable', function () {
                 it('should default to true', function () {
                     compileTemplate('<rb-grid></rb-grid>');
                     expect(isolatedScope.gutter).toBe(true);
+                });
+            });
+
+            describe('flexCells variable', function () {
+                it('should default to true', function () {
+                    compileTemplate('<rb-grid></rb-grid>');
+                    expect(isolatedScope.flexCells).toBe(true);
                 });
             });
         });
@@ -42,7 +50,6 @@ define([
                 compileTemplate('<rb-grid></rb-grid>');
 
                 expect(element.hasClass('Grid')).toBe(true);
-                expect(element.hasClass('Grid--flexCells')).toBe(true); // Currently no toggle for flexCells
             });
 
             it('should translude contents directly', function () {
@@ -58,6 +65,16 @@ define([
             it('should not have appropriate SUIT class set if `gutter` is `false`', function () {
                 compileTemplate('<rb-grid gutter="false"></rb-grid>');
                 expect(element.hasClass('Grid--gutter')).toBe(false);
+            });
+
+            it('should have appropriate SUIT class set if `flexCells` is `true`', function () {
+                compileTemplate('<rb-grid flex-cells="true"></rb-grid>');
+                expect(element.hasClass('Grid--flexCells')).toBe(true);
+            });
+
+            it('should not have appropriate SUIT class set if `flexCells` is `false`', function () {
+                compileTemplate('<rb-grid flex-cells="false"></rb-grid>');
+                expect(element.hasClass('Grid--flexCells')).toBe(false);
             });
         });
 

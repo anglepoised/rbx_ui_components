@@ -23,7 +23,8 @@ define([
 
         return {
             scope: {
-                gutter: '@'
+                gutter: '@',
+                flexCells: '@'
             },
             restrict: 'E',
             replace: true,
@@ -32,6 +33,10 @@ define([
             link: function (scope, ele, attrs) {
                 if (angular.isUndefined(scope.gutter)) {
                     scope.gutter = true;
+                }
+
+                if (angular.isUndefined(scope.flexCells)) {
+                    scope.flexCells = true;
                 }
             }
         };
