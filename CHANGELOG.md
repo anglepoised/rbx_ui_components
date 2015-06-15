@@ -8,14 +8,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- [`rb-datetime-control` show date only](https://github.com/rockabox/rbx_ui_components/pull/205)
-- [`rb-nav-bar` sets `is-active` based on state](https://github.com/rockabox/rbx_ui_components/pull/210) Add is-active class when the related ui-sref directive's state is active and remove when it is inactive.
 - [`rb-check-with-text-control`](https://github.com/rockabox/rbx_ui_components/pull/209)
 - [`rb-check-with-text-control-group`](https://github.com/rockabox/rbx_ui_components/pull/212)
+- [`rb-datetime-control` show date only](https://github.com/rockabox/rbx_ui_components/pull/205)
 - [`rb-grid` `gutter` attribute](https://github.com/rockabox/rbx_ui_components/pull/236) Defaults to true.
 - [`rb-grid` `flex-cells` attribute](https://github.com/rockabox/rbx_ui_components/pull/236) Controls flex of cells. Defaults to true.
 - [`rb-grid-cell` `size` attribute for cell sizing](https://github.com/rockabox/rbx_ui_components/pull/222)
+- [`rb-nav-bar` sets `is-active` based on state](https://github.com/rockabox/rbx_ui_components/pull/210) Add is-active class when the related ui-sref directive's state is active and remove when it is inactive.
 - [`rb-page-title` `compact` modifier](https://github.com/rockabox/rbx_ui_components/pull/230)
+- [`rb-side-nav` `save-button-disabled` attribute allows for disabling the save button](https://github.com/rockabox/rbx_ui_components/pull/237)
 
 ### Changed
 
