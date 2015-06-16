@@ -13,7 +13,7 @@ define([
                 {
                     'label': 'Countries',
                     'anchor': 'countries',
-                    'hidden': true,
+                    'hidden': false,
                     'items': [
                         {
                             'label': 'A',
@@ -170,6 +170,15 @@ define([
                     compileTemplate(template);
 
                     expect(angular.element(element.find('a')[0]).hasClass('Scrollspy-Category')).toBe(true);
+                });
+
+                it('should not display the top category if set as hidden', function () {
+                    // Ensure not to amend the categories for other tests therefor copy the main list and re-assign
+                    $scope.categories = angular.copy(_categories);
+                    $scope.categories[0].hidden = true;
+                    compileTemplate(template);
+
+                    expect(angular.element(element.find('a')[0]).hasClass('Scrollspy-Category')).toBeFalsy();
                 });
 
                 it('should attach a section class when an item is not a category', function () {

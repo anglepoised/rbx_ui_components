@@ -1,12 +1,12 @@
 <div>
     <ul du-scroll-container="{{scrollId}}" du-spy-context>
         <li ng-repeat="category in categories">
-            <a class="Scrollspy-Category"
-               href="#{{::category.anchor}}"
-               du-scrollspy
-               du-smooth-scroll
-               offset="{{offset || 0}}"
-               ng-class="{'Scrollspy-Category--hidden': category.hidden}"
+            <a ng-if="!category.hidden"
+                class="Scrollspy-Category"
+                href="#{{::category.anchor}}"
+                du-scrollspy
+                du-smooth-scroll
+                offset="{{offset || 0}}"
             >
                 <span>{{::category.label}}</span>
             </a>
