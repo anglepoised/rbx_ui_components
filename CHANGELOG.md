@@ -18,6 +18,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [`rb-nav-bar` sets `is-active` based on state](https://github.com/rockabox/rbx_ui_components/pull/210) Add is-active class when the related ui-sref directive's state is active and remove when it is inactive.
 - [`rb-page-title` `compact` modifier](https://github.com/rockabox/rbx_ui_components/pull/230)
 - [`rb-side-nav` `save-button-disabled` attribute allows for disabling the save button](https://github.com/rockabox/rbx_ui_components/pull/237)
+- [`rb-side-nav` `valid` and `invalid` will display a status badge of a tick or ! when true](https://github.com/rockabox/rbx_ui_components/pull/231)
 
 ### Changed
 
