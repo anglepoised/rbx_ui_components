@@ -46,24 +46,23 @@ define([
                 $scope.countValue = 10;
                 compileTemplate('<rb-side-nav-item count="countValue"></rb-side-nav-item>');
 
-                var statusSpan = angular.element(element[0].getElementsByClassName('SideNav-item-status')[0]),
-                    countSpan = angular.element(statusSpan.find('span')[0]);
+                var statusSpan = angular.element(element[0].getElementsByClassName('SideNav-status')[0]);
 
-                expect(statusSpan[0].getElementsByClassName('SideNav-item-count').length).toBe(1);
-                expect(countSpan.text()).toContain('10');
+                expect(statusSpan.length).toBe(1);
+                expect(statusSpan.text()).toContain('10');
 
                 // Check change in value updates DOM.
                 $scope.countValue = 20;
                 $scope.$apply();
-                expect(countSpan.text()).toContain('20');
+                expect(statusSpan.text()).toContain('20');
             });
 
             it('should not render count element if attribute missing', function () {
                 compileTemplate('<rb-side-nav-item></rb-side-nav-item>');
 
-                var statusSpan = angular.element(element[0].getElementsByClassName('SideNav-item-status')[0]);
+                var statusSpan = angular.element(element[0].getElementsByClassName('SideNav-status')[0]);
 
-                expect(statusSpan[0].getElementsByClassName('SideNav-item-count').length).toBe(0);
+                expect(statusSpan.length).toBe(0);
             });
 
             it('should not render count element if invalid attribute is true', function () {
@@ -71,26 +70,41 @@ define([
                 $scope.isInvalid = true;
                 compileTemplate('<rb-side-nav-item invalid="isInvalid" count="countValue"></rb-side-nav-item>');
 
-                var statusSpan = angular.element(element[0].getElementsByClassName('SideNav-item-status')[0]);
+                var statusSpan = angular.element(element[0].getElementsByClassName('SideNav-status--count')[0]);
 
-                expect(statusSpan[0].getElementsByClassName('SideNav-item-count').length).toBe(0);
+                expect(statusSpan.length).toBe(0);
             });
         });
 
         describe('invalid attribute', function () {
-            it('should render invalid icon if invalid attribute is value is true', function () {
+            it('should render a status with SideNav-status--invalid if true', function () {
                 $scope.isInvalid = true;
                 compileTemplate('<rb-side-nav-item invalid="isInvalid"></rb-side-nav-item>');
 
-                var statusSpan = element[0].getElementsByClassName('SideNav-item-status')[0],
-                    icon = statusSpan.getElementsByClassName('Icon');
+                var statusSpan = element[0].getElementsByClassName('SideNav-status--invalid');
 
-                expect(icon.length).toBe(1);
+                expect(statusSpan.length).toBe(1);
 
                 // Check change in value updates DOM.
                 $scope.isInvalid = false;
                 $scope.$apply();
-                expect(icon.length).toBe(0);
+                expect(statusSpan.length).toBe(0);
+            });
+        });
+
+        describe('valid attribute', function () {
+            it('should render a status with SideNav-status--valid if true', function () {
+                $scope.isValid = true;
+                compileTemplate('<rb-side-nav-item valid="isValid"></rb-side-nav-item>');
+
+                var statusSpan = element[0].getElementsByClassName('SideNav-status--valid');
+
+                expect(statusSpan.length).toBe(1);
+
+                // Check change in value updates DOM.
+                $scope.isValid = false;
+                $scope.$apply();
+                expect(statusSpan.length).toBe(0);
             });
         });
 
