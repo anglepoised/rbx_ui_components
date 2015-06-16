@@ -32,11 +32,11 @@ define([
             template: template,
             link: function (scope, ele, attrs) {
                 if (angular.isUndefined(scope.gutter)) {
-                    scope.gutter = true;
+                    scope.gutter = 'true';
                 }
 
                 if (angular.isUndefined(scope.flexCells)) {
-                    scope.flexCells = true;
+                    scope.flexCells = 'true';
                 }
             }
         };

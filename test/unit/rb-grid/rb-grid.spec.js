@@ -33,14 +33,14 @@ define([
             describe('gutter variable', function () {
                 it('should default to true', function () {
                     compileTemplate('<rb-grid></rb-grid>');
-                    expect(isolatedScope.gutter).toBe(true);
+                    expect(isolatedScope.gutter).toBe('true');
                 });
             });
 
             describe('flexCells variable', function () {
                 it('should default to true', function () {
                     compileTemplate('<rb-grid></rb-grid>');
-                    expect(isolatedScope.flexCells).toBe(true);
+                    expect(isolatedScope.flexCells).toBe('true');
                 });
             });
         });
@@ -48,7 +48,6 @@ define([
         describe('compiled template', function () {
             it('should contain a root element with the appropriate SUIT class', function () {
                 compileTemplate('<rb-grid></rb-grid>');
-
                 expect(element.hasClass('Grid')).toBe(true);
             });
 
