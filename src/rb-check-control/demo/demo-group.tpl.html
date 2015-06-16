@@ -56,6 +56,32 @@
                     <pre>{{ demoCtrl.ngModelSelectAll }}</pre>
                 </form>
             </div>
+            <div class="ComponentView">
+                <form name="checkControlForm">
+                    <rb-check-control-group
+                        form="checkControlForm"
+                        name="check-control-two-col"
+                        ng-model="demoCtrl.ngModelTwoColumns"
+                        options="demoCtrl.columnOptions"
+                        columns="2"
+                        title="2 Columns">
+                    </rb-check-control-group>
+                    <pre>{{ demoCtrl.ngModelTwoColumns }}</pre>
+                </form>
+            </div>
+            <div class="ComponentView">
+                <form name="checkControlForm">
+                    <rb-check-control-group
+                        form="checkControlForm"
+                        name="check-control-three-col"
+                        ng-model="demoCtrl.ngModelThreeColumns"
+                        options="demoCtrl.columnOptions"
+                        columns="3"
+                        title="3 Columns">
+                    </rb-check-control-group>
+                    <pre>{{ demoCtrl.ngModelThreeColumns }}</pre>
+                </form>
+            </div>
         </rb-section>
     </rb-main>
 </rb-site>

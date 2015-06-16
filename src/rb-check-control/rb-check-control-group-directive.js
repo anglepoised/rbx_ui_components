@@ -43,7 +43,8 @@ define([
                 name: '@',
                 ngModel: '=',
                 options: '=',
-                title: '@'
+                title: '@',
+                columns: '@'
             },
             restrict: 'E',
             replace: true,
