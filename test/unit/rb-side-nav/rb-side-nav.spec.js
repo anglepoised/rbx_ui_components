@@ -111,13 +111,13 @@ define([
         });
 
         describe('submit button', function () {
-            it('should disable the button', function () {
+            it('should be disabled when save-button-disabled is true', function () {
                 compileTemplate('<rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()"' +
                     ' save-button-disabled="true"></rb-side-nav>');
 
                 var button = angular.element(element.find('button')[0]);
 
-                expect(button.attr('ng-disabled')).toBe('true');
+                expect(button.attr('disabled')).toBe('disabled');
             });
 
             it('should not disable when false', function () {
@@ -126,7 +126,7 @@ define([
 
                 var button = angular.element(element.find('button')[0]);
 
-                expect(button.attr('ng-disabled')).toBe('false');
+                expect(button.attr('disabled')).toBeUndefined();
             });
 
             it('should not disable when not passed', function () {
@@ -135,7 +135,7 @@ define([
 
                 var button = angular.element(element.find('button')[0]);
 
-                expect(button.attr('ng-disabled')).toBe('');
+                expect(button.attr('disabled')).toBeUndefined();
             });
         });
     });

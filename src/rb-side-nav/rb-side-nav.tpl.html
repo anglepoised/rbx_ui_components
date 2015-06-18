@@ -16,7 +16,7 @@
         <div class="SideNav-actionsButtons">
             <rb-grid>
                 <rb-grid-cell size="2of3">
-                    <rb-button ng-disabled="{{ saveButtonDisabled }}" block="yes" ng-click="onSave()">{{ ::saveLabel || 'Save' }}</rb-button>
+                    <rb-button ng-disabled="saveButtonDisabled === 'true'" block="yes" ng-click="onSave()">{{ ::saveLabel || 'Save' }}</rb-button>
                 </rb-grid-cell>
                 <rb-grid-cell>
                     <rb-button block="yes" outline="yes" ng-click="onCancel()">Cancel</rb-button>
