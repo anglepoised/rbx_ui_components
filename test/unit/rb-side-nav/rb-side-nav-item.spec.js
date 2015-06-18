@@ -146,34 +146,5 @@ define([
                 expect(anchor.attr('ui-sref')).toBe('state-a');
             });
         });
-
-        describe('submit button', function () {
-            it('should disable the button', function () {
-                compileTemplate('<rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()"' +
-                    ' save-button-disabled="true"></rb-side-nav>');
-
-                var button = angular.element(element.find('button')[0]);
-
-                expect(button.attr('ng-disabled')).toBe('true');
-            });
-
-            it('should not disable when false', function () {
-                compileTemplate('<rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()"' +
-                    ' save-button-disabled="false"></rb-side-nav>');
-
-                var button = angular.element(element.find('button')[0]);
-
-                expect(button.attr('ng-disabled')).toBe('false');
-            });
-
-            it('should not disable when not passed', function () {
-                compileTemplate('<rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()">' +
-                    '</rb-side-nav>');
-
-                var button = angular.element(element.find('button')[0]);
-
-                expect(button.attr('ng-disabled')).toBe('');
-            });
-        });
     });
 });
