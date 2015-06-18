@@ -110,5 +110,33 @@ define([
 
         });
 
+        describe('submit button', function () {
+            it('should be disabled when save-button-disabled is true', function () {
+                compileTemplate('<rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()"' +
+                    ' save-button-disabled="true"></rb-side-nav>');
+
+                var button = angular.element(element.find('button')[0]);
+
+                expect(button.attr('disabled')).toBe('disabled');
+            });
+
+            it('should not disable when false', function () {
+                compileTemplate('<rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()"' +
+                    ' save-button-disabled="false"></rb-side-nav>');
+
+                var button = angular.element(element.find('button')[0]);
+
+                expect(button.attr('disabled')).toBeUndefined();
+            });
+
+            it('should not disable when not passed', function () {
+                compileTemplate('<rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()">' +
+                    '</rb-side-nav>');
+
+                var button = angular.element(element.find('button')[0]);
+
+                expect(button.attr('disabled')).toBeUndefined();
+            });
+        });
     });
 });
