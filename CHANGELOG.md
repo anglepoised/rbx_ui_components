@@ -19,6 +19,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [`rb-page-title` `compact` modifier](https://github.com/rockabox/rbx_ui_components/pull/230)
 - [`rb-side-nav` `save-button-disabled` attribute allows for disabling the save button](https://github.com/rockabox/rbx_ui_components/pull/237)
 - [`rb-side-nav` `valid` and `invalid` will display a status badge of a tick or ! when true](https://github.com/rockabox/rbx_ui_components/pull/231)
+- [`rb-deep-search` component](https://github.com/rockabox/rbx_ui_components/pull/232)
+- ['rb-scrollspy' do not show hidden sections](https://github.com/rockabox/rbx_ui_components/pull/232)
 
 ### Changed
 

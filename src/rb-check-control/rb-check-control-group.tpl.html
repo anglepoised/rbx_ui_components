@@ -25,6 +25,7 @@
                 is-required="{{::isRequired}}"
                 label="{{::value.label}}"
                 name="{{::name}}-{{::key}}"
+                ng-hide="value.hidden"
                 ng-model="value.checked"
                 value="{{::value.value}}">
             </rb-check-control>

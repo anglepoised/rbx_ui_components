@@ -1,0 +1,49 @@
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-deep-search"></rb-page-title>
+        <rb-section title="Introduction" hide-title="true">
+            <div class="RawHTML">
+                <p>
+                    The <code>rb-deep-search</code> component search through an object and set
+                    <code>hidden=true</code> if the nested object label matches the given search query.
+                </p>
+
+                <p>
+                    Matching main categories show subcategories and can be selected
+                    and should hide main categories that do not match.
+                </p>
+            </div>
+        </rb-section>
+        <rb-section>
+            <div class="ComponentView">
+                <rb-deep-search
+                    ng-model="demoCtrl.categories">
+                </rb-deep-search>
+
+                <form name="form">
+                    <ul>
+                        <li ng-repeat="category in demoCtrl.categories">
+                            <ul>
+                                <li ng-repeat="section in category.items">
+                                    <rb-check-control-group
+                                        enable-select-all=true
+                                        form="form"
+                                        section="section"
+                                        name="{{::section.label}}"
+                                        ng-hide="section.hidden"
+                                        ng-model="demoCtrl.pokemon"
+                                        options="section.items"
+                                        title="{{::section.label}}">
+                                    </rb-check-control-group>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </form>
+                <div class="RawHTML">
+                    <pre>Selected: {{demoCtrl.pokemon}}</pre>
+                </div>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
