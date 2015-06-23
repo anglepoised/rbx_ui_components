@@ -9,28 +9,17 @@
 }
 
 /**
- * 1. Comment
+ * 1. Mandatory class used by du-scrollspy
  */
 
 .Scrollspy {
 }
 
-/**
-* This mandatory class is for the active links in the
-* scrollspy container.
-* It can be changed but NEVER renamed as the bs-Scrollspy
-* directive uses this class to work internally.
-*/
+/*1*/
 .active {
     background-color:#CCC;
 }
 
-/**
-* This class is for the category links in the scrollspy
-* container.
-* If renamed, the directive template and tests should
-* reflect this change as well, in order to work properly.
-*/
 .Scrollspy-Category {
     text-transform:uppercase;
     font-weight:bold;
