@@ -74,10 +74,24 @@
 </rb-site>
 
 <rb-overlay-panel ng-if="demoRbOverlayPanelCtrl.showOverlay" overlay-close="demoRbOverlayPanelCtrl.close()">
-    <rb-page-title
-        heading="My Overlay Page"
-        subheading="Overlays rule!"
-        back-text="Back to home" back-sref="app"
-        badge-status="statusPending">
-    </rb-page-title>
+    <rb-grid gutter="false" flex-cells="false">
+        <rb-grid-cell size="1of4">
+            <rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()">
+                <rb-side-nav-item ui-sref="rb-badge" label="Menu Item 1"></rb-side-nav-item>
+                <rb-side-nav-item ui-sref="rb-badge" label="Menu Item 2"></rb-side-nav-item>
+                <rb-side-nav-item ui-sref="rb-badge" label="Menu Item 3"></rb-side-nav-item>
+            </rb-side-nav>
+        </rb-grid-cell>
+        <rb-grid-cell>
+            <rb-page-title
+                heading="My Overlay Page"
+                subheading="Overlays rule!"
+                compact="true"
+            >
+            </rb-page-title>
+            <rb-demo>
+                Overlay panel contents.
+            </rb-demo>
+        </rb-grid-cell>
+    </rb-grid>
 </rb-overlay-panel>
