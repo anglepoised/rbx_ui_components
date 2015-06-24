@@ -58,15 +58,24 @@ define([
                 $scope.update = function () {
                     var cleared = true,
                         checked = true,
+                        disabled = true,
                         input = $element.find('input');
 
                     angular.forEach($scope.ngModel, function (value, key) {
+                        if (!value.disabled) {
+                            disabled = false;
+                        }
+
                         if (value.checked) {
                             cleared = false;
                         } else {
                             checked = false;
                         }
                     });
+
+                    if (disabled) {
+                        $scope.isDisabled = true;
+                    }
 
                     if (checked) {
                         $scope.isSelected = true;
