@@ -12,11 +12,13 @@ define([
             ngModel = [
                 {
                     label: 'check One',
-                    value: 'one'
+                    value: 'one',
+                    checked: false
                 },
                 {
                     label: 'check Two',
-                    value: 'two'
+                    value: 'two',
+                    checked: false
                 }
             ];
 
@@ -77,6 +79,16 @@ define([
                 isolatedScope.checkAll(false);
 
                 expect(isolatedScope.ngModel[0].checked).toBe(false);
+                expect(isolatedScope.ngModel[1].checked).toBe(false);
+            });
+
+            it('should not check disabled checkboxes', function () {
+                $scope.isSelected = true;
+                isolatedScope.ngModel[1].disabled = true;
+
+                isolatedScope.checkAll(true);
+
+                expect(isolatedScope.ngModel[0].checked).toBe(true);
                 expect(isolatedScope.ngModel[1].checked).toBe(false);
             });
         });

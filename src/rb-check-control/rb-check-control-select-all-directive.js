@@ -51,7 +51,9 @@ define([
 
                 $scope.checkAll = function (checked) {
                     angular.forEach($scope.ngModel, function (value, key) {
-                        value.checked = checked;
+                        if (!value.disabled) {
+                            value.checked = checked;
+                        }
                     });
                 };
 
