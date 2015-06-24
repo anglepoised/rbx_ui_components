@@ -12,11 +12,13 @@ define([
             ngModel = [
                 {
                     label: 'check One',
-                    value: 'one'
+                    value: 'one',
+                    checked: false
                 },
                 {
                     label: 'check Two',
-                    value: 'two'
+                    value: 'two',
+                    checked: false
                 }
             ];
 
@@ -29,7 +31,7 @@ define([
 
             // Compile directive, apply scope and fetch new isolated scope
             compileTemplate = function (template) {
-                $scope.ngModel = ngModel;
+                $scope.ngModel = angular.copy(ngModel);
                 element = $compile(template)($scope);
                 $scope.$apply();
                 isolatedScope = element.isolateScope();
@@ -63,17 +65,31 @@ define([
             });
 
             it('should set all checkboxes as checked', function () {
+                $scope.isSelected = true;
+
                 isolatedScope.checkAll(true);
 
-                expect(ngModel[0].checked).toBe(true);
-                expect(ngModel[1].checked).toBe(true);
+                expect(isolatedScope.ngModel[0].checked).toBe(true);
+                expect(isolatedScope.ngModel[1].checked).toBe(true);
             });
 
             it('should set all checkboxes as un checked', function () {
+                $scope.isSelected = false;
+
                 isolatedScope.checkAll(false);
 
-                expect(ngModel[0].checked).toBe(false);
-                expect(ngModel[1].checked).toBe(false);
+                expect(isolatedScope.ngModel[0].checked).toBe(false);
+                expect(isolatedScope.ngModel[1].checked).toBe(false);
+            });
+
+            it('should not check disabled checkboxes', function () {
+                $scope.isSelected = true;
+                isolatedScope.ngModel[1].disabled = true;
+
+                isolatedScope.checkAll(true);
+
+                expect(isolatedScope.ngModel[0].checked).toBe(true);
+                expect(isolatedScope.ngModel[1].checked).toBe(false);
             });
         });
 
@@ -83,8 +99,8 @@ define([
             });
 
             it('should be false if all checked', function () {
-                ngModel[0].checked = true;
-                ngModel[1].checked = true;
+                isolatedScope.ngModel[0].checked = true;
+                isolatedScope.ngModel[1].checked = true;
 
                 var input = isolatedScope.update();
 
@@ -92,8 +108,8 @@ define([
             });
 
             it('should be false if all clear', function () {
-                ngModel[0].checked = false;
-                ngModel[1].checked = false;
+                isolatedScope.ngModel[0].checked = false;
+                isolatedScope.ngModel[1].checked = false;
 
                 var input = isolatedScope.update();
 
@@ -101,13 +117,26 @@ define([
             });
 
             it('should be true any are checked', function () {
-                ngModel[0].checked = false;
-                ngModel[1].checked = true;
+                isolatedScope.ngModel[0].checked = false;
+                isolatedScope.ngModel[1].checked = true;
 
                 var input = isolatedScope.update();
 
                 expect(input[0].indeterminate).toBe(true);
             });
+        });
+
+        it('should be disabled if all children are disabled', function () {
+            compileTemplate('<rb-check-control-select-all ng-model="ngModel"></rb-check-control-select-all>');
+
+            // Set all options to be disabled
+            angular.forEach(isolatedScope.ngModel, function (value) {
+                value.disabled = true;
+            });
+
+            isolatedScope.update();
+
+            expect(isolatedScope.isDisabled).toBe(true);
         });
     });
 });

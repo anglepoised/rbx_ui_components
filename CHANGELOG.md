@@ -21,10 +21,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [`rb-side-nav` `valid` and `invalid` will display a status badge of a tick or ! when true](https://github.com/rockabox/rbx_ui_components/pull/231)
 - [`rb-deep-search` component](https://github.com/rockabox/rbx_ui_components/pull/232)
 - ['rb-scrollspy' do not show hidden sections](https://github.com/rockabox/rbx_ui_components/pull/232)
+- ['rb-check-control-select-all' disabled if all child options are disabled](https://github.com/rockabox/rbx_ui_components/pull/235)
 
 ### Changed
 
 - [`rb-page-title` supports transcluding any action component by convention, not just buttons](https://github.com/rockabox/rbx_ui_components/pull/217)
+- ['rb-check-control' expression based is-disabled attribute](https://github.com/rockabox/rbx_ui_components/pull/249)
 
 ### Fixed
 

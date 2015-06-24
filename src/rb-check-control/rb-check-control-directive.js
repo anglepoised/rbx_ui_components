@@ -19,7 +19,7 @@ define([
      *        <rb-check-control
      *            form="form"
      *            icon="blue-base-16-geo"
-     *            is-disabled="false"
+     *            is-disabled="expression"
      *            is-required="false"
      *            label="Label"
      *            name="name"
@@ -37,7 +37,7 @@ define([
             scope: {
                 form: '=',
                 icon: '@',
-                isDisabled: '@',
+                isDisabled: '=?',
                 isRequired: '@',
                 label: '@',
                 name: '@',

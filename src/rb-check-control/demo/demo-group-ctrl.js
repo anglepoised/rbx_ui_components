@@ -11,6 +11,11 @@ define([
                     value: 'default_label'
                 },
                 {
+                    label: 'Disabled label',
+                    value: 'disabled_label',
+                    disabled: true
+                },
+                {
                     label: 'Invalid label',
                     value: 'invalid_label'
                 },

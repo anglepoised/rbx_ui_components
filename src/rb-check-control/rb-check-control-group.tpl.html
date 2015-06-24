@@ -4,7 +4,7 @@
 
         <rb-check-control-select-all
             name="{{::name}}"
-            is-disabled="{{::isDisabled}}"
+            is-disabled="isDisabled"
             is-required="{{::isRequired}}"
             ng-model="options"
             ng-if="enableSelectAll"
@@ -21,7 +21,7 @@
         }">
         <div ng-repeat="(key, value) in options">
             <rb-check-control
-                is-disabled="{{::isDisabled}}"
+                is-disabled="value.disabled"
                 is-required="{{::isRequired}}"
                 label="{{::value.label}}"
                 name="{{::name}}-{{::key}}"

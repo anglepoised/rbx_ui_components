@@ -16,7 +16,7 @@ define([
      *     <rb-check-control-select-all
      *         enable-select-all="false"
      *         form="form"
-     *         is-disabled="false"
+     *         is-disabled="expression"
      *         is-required="false"
      *         name="name"
      *         ng-model="ngModel"
@@ -31,7 +31,7 @@ define([
         return {
             scope: {
                 form: '=',
-                isDisabled: '@',
+                isDisabled: '=?',
                 isRequired: '@',
                 name: '@',
                 ngModel: '=',
@@ -51,22 +51,33 @@ define([
 
                 $scope.checkAll = function (checked) {
                     angular.forEach($scope.ngModel, function (value, key) {
-                        value.checked = checked;
+                        if (!value.disabled) {
+                            value.checked = checked;
+                        }
                     });
                 };
 
                 $scope.update = function () {
                     var cleared = true,
                         checked = true,
+                        disabled = true,
                         input = $element.find('input');
 
                     angular.forEach($scope.ngModel, function (value, key) {
+                        if (!value.disabled) {
+                            disabled = false;
+                        }
+
                         if (value.checked) {
                             cleared = false;
                         } else {
                             checked = false;
                         }
                     });
+
+                    if (disabled) {
+                        $scope.isDisabled = true;
+                    }
 
                     if (checked) {
                         $scope.isSelected = true;
