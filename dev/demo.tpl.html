@@ -1,8 +1,13 @@
 <div ui-view>
-    <div style="margin:50px">
-        <h1>Rockabox UI Components</h1>
-        <ul>
-            <li ng-repeat="state in states" ng-if="state.name != 'app'"><a ui-sref="{{ state.name }}">{{ state.name }}</a></li>
-        </ul>
-    </div>
+    <rb-site>
+        <rb-main>
+            <rb-page-title heading="Rockabox UI Components">
+            </rb-page-title>
+            <rb-section title="Components" hide-title="true">
+                <ul>
+                    <li ng-repeat="state in states" ng-if="state.name != 'app'"><a class="u-linkDefault" ui-sref="{{ state.name }}">{{ state.name }}</a></li>
+                </ul>
+            </rb-section>
+        </rb-main>
+    </rb-site>
 </div>
