@@ -20,7 +20,7 @@ define([
      *        <rb-check-control-group
      *            enable-select-all="false"
      *            form="form"
-     *            is-disabled="false"
+     *            is-disabled="expression"
      *            is-required="false"
      *            name="name"
      *            ng-model="ngModel"
@@ -38,7 +38,7 @@ define([
             scope: {
                 enableSelectAll: '@',
                 form: '=',
-                isDisabled: '@',
+                isDisabled: '=?',
                 isRequired: '@',
                 name: '@',
                 ngModel: '=',
