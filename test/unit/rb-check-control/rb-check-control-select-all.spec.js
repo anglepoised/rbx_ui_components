@@ -126,17 +126,29 @@ define([
             });
         });
 
-        it('should be disabled if all children are disabled', function () {
-            compileTemplate('<rb-check-control-select-all ng-model="ngModel"></rb-check-control-select-all>');
+        describe('isDisabled', function () {
+            beforeEach(function () {
+                compileTemplate('<rb-check-control-select-all ng-model="ngModel"></rb-check-control-select-all>');
 
-            // Set all options to be disabled
-            angular.forEach(isolatedScope.ngModel, function (value) {
-                value.disabled = true;
+                // Set all options to be disabled
+                angular.forEach(isolatedScope.ngModel, function (value) {
+                    value.disabled = true;
+                });
+
+                isolatedScope.update();
             });
 
-            isolatedScope.update();
+            it('should be true if all children are disabled', function () {
+                expect(isolatedScope.isDisabled).toBe(true);
+            });
 
-            expect(isolatedScope.isDisabled).toBe(true);
+            it('should be false if any children are not disabled', function () {
+                isolatedScope.ngModel[1].disabled = false;
+
+                isolatedScope.update();
+
+                expect(isolatedScope.isDisabled).toBe(false);
+            });
         });
     });
 });
