@@ -5,6 +5,10 @@
  * overlay panels.
  */
 
+/**
+ * 1. * Let height grow with content, not siblings. See: http://stackoverflow.com/a/27577119/2270732
+ */
+
 :root {
     --SideNav-background: var(--color-gray-tuna);
     --SideNav-gutter: 1.25em;
@@ -60,15 +64,18 @@
 }
 
 .SideNav-status {
+    align-self: center;
     border-radius: 500px;
     border-width: 1px;
     color: var(--color-white-alabaster);
     display: inline-block;
+    flex-shrink: 0;
     font-size: var(--font-size-x-small);
     margin-left: auto;
     min-width: 24.7143px;
     padding: 4px 6px 3px;
     text-align: center;
+    height: 0%; /* 1 */
 }
 
 .SideNav-status--count {
