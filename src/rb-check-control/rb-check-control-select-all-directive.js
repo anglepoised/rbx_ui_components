@@ -75,9 +75,7 @@ define([
                         }
                     });
 
-                    if (disabled) {
-                        $scope.isDisabled = true;
-                    }
+                    $scope.isDisabled = disabled;
 
                     if (checked) {
                         $scope.isSelected = true;
