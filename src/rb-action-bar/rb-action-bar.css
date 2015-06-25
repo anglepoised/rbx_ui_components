@@ -1,0 +1,16 @@
+/** @define ActionBar; use strict */
+
+/**
+ * The `.ActionBar` component...
+ */
+
+:root {
+    --ActionBar-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.ActionBar {
+}

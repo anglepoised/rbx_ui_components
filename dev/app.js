@@ -1,6 +1,7 @@
 define([
     'angular-ui-router',
     'html!./demo.tpl.html',
+    'components/rb-action-bar/demo',
     'components/rb-badge/demo',
     'components/rb-button/demo',
     'components/rb-check-control/demo',
@@ -44,6 +45,7 @@ define([
 ], function (
     uiRouter,
     template,
+    rbActionBarDemo,
     rbBadgeDemo,
     rbButtonDemo,
     rbCheckControlDemo,
@@ -89,6 +91,7 @@ define([
     angular
         .module('ui-demo', [
             'ui.router',
+            rbActionBarDemo.name,
             rbBadgeDemo.name,
             rbButtonDemo.name,
             rbCheckControlDemo.name,
