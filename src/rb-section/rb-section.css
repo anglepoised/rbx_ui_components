@@ -33,6 +33,6 @@
     padding: 0; /* 2 */
 }
 
-.Section--gutterless .Section-title {
+.Section--gutterless .Section-heading {
     padding: 0 var(--layout-gutter);
 }
