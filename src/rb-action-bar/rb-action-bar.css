@@ -1,0 +1,76 @@
+/** @define ActionBar; use strict */
+
+/**
+ * The `.ActionBar` component...
+ */
+
+:root {
+    --ActionBar-gutter: 1.25em;
+}
+
+/**
+ * 1. Space items with a sibling.
+ * 2. Double width of primary action where layout allows.
+ * 3. Prevent items shrinking below content width.
+ */
+
+.ActionBar {
+    background: var(--color-gray-shark);
+    padding: 1.5em var(--ActionBar-gutter);
+}
+
+.ActionBar-message {
+    color: var(--color-gray-regent);
+}
+
+.ActionBar-items {
+    display: flex;
+}
+
+.ActionBar-item + .ActionBar-item {
+    margin-left: 1em; /* 1 */
+}
+
+.ActionBar-itemPrimary {
+    flex: 2 1 auto; /* 2 */
+}
+
+/**
+ * Column modifier
+ */
+
+.ActionBar--column {
+    text-align: center;
+}
+
+.ActionBar--column .ActionBar-message {
+    margin-bottom: 1em;
+}
+
+.ActionBar--column .ActionBar-items {
+    justify-content: space-between;
+}
+
+/**
+ * Row modifier
+ */
+
+.ActionBar--row {
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: row-reverse wrap-reverse;
+}
+
+.ActionBar--row .ActionBar-message {
+    align-self: center;
+    flex-grow: 1;
+    padding: 0.5em 0;
+}
+
+.ActionBar--row .ActionBar-items {
+    margin-right: 1.25em;
+}
+
+.ActionBar--row .ActionBar-item {
+    flex: 0 0 auto; /* 3 */
+}
