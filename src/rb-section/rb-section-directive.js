@@ -23,9 +23,9 @@ define([
 
         return {
             scope: {
-                title: '@',
+                heading: '@',
                 gutterless: '@',
-                hideTitle: '@'
+                hideHeading: '@'
             },
             restrict: 'E',
             replace: true,

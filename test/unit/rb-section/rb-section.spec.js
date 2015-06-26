@@ -37,8 +37,8 @@ define([
                 expect(ele.text()).toBe('Great!');
             });
 
-            it('should set title from attribute', function () {
-                compileTemplate('<rb-section title="A great thing"></rb-section>');
+            it('should set heading from attribute', function () {
+                compileTemplate('<rb-section heading="A great thing"></rb-section>');
 
                 expect(element.find('h2').length).toBe(1);
                 expect(element.find('h2').hasClass('u-textHeading2')).toBe(true);
@@ -67,23 +67,23 @@ define([
             });
         });
 
-        describe('hide title attribute', function () {
+        describe('hide heading attribute', function () {
 
-            it('should hide title when the value is true', function () {
-                compileTemplate('<rb-section hide-title="true"></rb-section>');
+            it('should hide heading when the value is true', function () {
+                compileTemplate('<rb-section hide-heading="true"></rb-section>');
 
-                var ele = angular.element(element[0].querySelector('.Section-title'));
+                var ele = angular.element(element[0].querySelector('.Section-heading'));
 
                 expect(ele.hasClass('u-hiddenVisually')).toBe(true);
             });
 
-            it('should not hide title when the value is false', function () {
-                compileTemplate('<rb-section hide-title="false"></rb-section>');
+            it('should not hide heading when the value is false', function () {
+                compileTemplate('<rb-section hide-heading="false"></rb-section>');
 
                 expect(element.find('h2').hasClass('u-hiddenVisually')).toBe(false);
             });
 
-            it('should not hide title when no value', function () {
+            it('should not hide heading when no value', function () {
                 compileTemplate('<rb-section></rb-section>');
 
                 expect(element.find('h2').hasClass('u-hiddenVisually')).toBe(false);
