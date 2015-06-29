@@ -19,13 +19,13 @@
                                 <h2 id="{{ category.anchor }}" ng-hide="category.hidden">
                                     {{ category.label }}
                                 </h2>
-                                <ul class="ListyThing ListyThing--columns">
-                                    <li ng-repeat="section in category.items"  id="{{ section.anchor }}" class="ListyThing-section">
+                                <ul>
+                                    <li ng-repeat="section in category.items"  id="{{ section.anchor }}">
                                         <h3 ng-hide="section.hidden">
                                             {{ section.label }}
                                         </h3>
-                                        <ul class="ListyThing-items">
-                                            <li ng-repeat="item in section.items" class="ListyThing-item">
+                                        <ul>
+                                            <li ng-repeat="item in section.items">
                                                 <span ng-if="!item.hidden">{{ item.label }}</span>
                                             </li>
                                         </ul>
