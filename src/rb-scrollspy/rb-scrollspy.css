@@ -13,14 +13,55 @@
  */
 
 .Scrollspy {
+    background-color: var(--color-gray-mystic);
+    text-align: right;
+    width: 100%;
+}
+
+.Scrollspy-category {
+    margin-top: 0.5em;
+}
+
+.Scrollspy-categoryInner {
+    border-right: 0.25em solid transparent;
+    color: var(--color-gray-tuna);
+    font-weight: bold;
+    margin-right: 0.5em;
+    padding-right: 0.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.Scrollspy-categoryInner:hover {
+    color: var(--color-green-base);
 }
 
 /*1*/
-.active {
-    background-color:#CCC;
+.Scrollspy-categoryInner.active {
+    border-right: 0.25em solid var(--color-green-base);
+    color: var(--color-green-base);
+    font-family: var(--font-family-proportional-semibold);
 }
 
-.Scrollspy-Category {
-    text-transform:uppercase;
-    font-weight:bold;
+.Scrollspy-section {
+    margin-top: 0.5em;
+}
+
+.Scrollspy-sectionInner {
+    border-right: 0.25em solid transparent;
+    color: var(--color-gray-tuna);
+    margin-right: 0.5em;
+    padding-right: 0.5em;
+    text-decoration: none;
+}
+
+.Scrollspy-sectionInner:hover {
+    color: var(--color-green-base);
+}
+
+/*1*/
+.Scrollspy-sectionInner.active {
+    border-right: 0.25em solid var(--color-green-base);
+    color: var(--color-green-base);
+    font-family: var(--font-family-proportional-semibold);
 }

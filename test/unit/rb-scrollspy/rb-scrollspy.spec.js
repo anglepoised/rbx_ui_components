@@ -169,7 +169,7 @@ define([
                 it('should attach a category class when an item is a category', function () {
                     compileTemplate(template);
 
-                    expect(angular.element(element.find('a')[0]).hasClass('Scrollspy-Category')).toBe(true);
+                    expect(angular.element(element.find('a')[0]).hasClass('Scrollspy-categoryInner')).toBe(true);
                 });
 
                 it('should not display the top category if set as hidden', function () {
@@ -178,17 +178,17 @@ define([
                     $scope.categories[0].hidden = true;
                     compileTemplate(template);
 
-                    expect(angular.element(element.find('a')[0]).hasClass('Scrollspy-Category')).toBeFalsy();
+                    expect(angular.element(element.find('a')[0]).hasClass('Scrollspy-categoryInner')).toBeFalsy();
                 });
 
                 it('should attach a section class when an item is not a category', function () {
                     compileTemplate(template);
                     anchors = element.find('a');
 
-                    expect(angular.element(anchors[1]).hasClass('Scrollspy-Section')).toBe(true);
-                    expect(angular.element(anchors[2]).hasClass('Scrollspy-Section')).toBe(true);
-                    expect(angular.element(anchors[3]).hasClass('Scrollspy-Section')).toBe(true);
-                    expect(angular.element(anchors[4]).hasClass('Scrollspy-Section')).toBe(true);
+                    expect(angular.element(anchors[1]).hasClass('Scrollspy-sectionInner')).toBe(true);
+                    expect(angular.element(anchors[2]).hasClass('Scrollspy-sectionInner')).toBe(true);
+                    expect(angular.element(anchors[3]).hasClass('Scrollspy-sectionInner')).toBe(true);
+                    expect(angular.element(anchors[4]).hasClass('Scrollspy-sectionInner')).toBe(true);
                 });
             });
         });

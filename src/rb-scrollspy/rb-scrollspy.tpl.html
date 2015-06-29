@@ -1,8 +1,8 @@
-<div>
-    <ul du-scroll-container="{{scrollId}}" du-spy-context>
-        <li ng-repeat="category in categories">
+<div class="Scrollspy">
+    <ul class="Scrollspy-categories" du-scroll-container="{{scrollId}}" du-spy-context>
+        <li class="Scrollspy-category" ng-repeat="category in categories">
             <a ng-if="!category.hidden"
-                class="Scrollspy-Category"
+                class="Scrollspy-categoryInner"
                 href="#{{::category.anchor}}"
                 du-scrollspy
                 du-smooth-scroll
@@ -11,9 +11,9 @@
                 <span>{{::category.label}}</span>
             </a>
 
-            <ul>
-                <li ng-repeat="section in category.items">
-                    <a class="Scrollspy-Section"
+            <ul class="Scrollspy-sections">
+                <li class="Scrollspy-section" ng-repeat="section in category.items">
+                    <a class="Scrollspy-sectionInner"
                         href="#{{::section.anchor}}"
                         offset="{{offset || 0}}"
                         du-scrollspy
