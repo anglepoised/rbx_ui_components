@@ -22,7 +22,7 @@
 
 .SideNav-heading {
     color: var(--color-white-alabaster);
-    padding: 2.25em var(--SideNav-gutter) 0;
+    padding: 2.25em var(--SideNav-gutter) 0.75em;
 }
 
 .SideNav-body {
