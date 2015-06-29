@@ -1,0 +1,18 @@
+<div class="ActionBar" ng-class="{
+    'ActionBar--column': column==='true',
+    'ActionBar--row': row==='true'
+}">
+    <div class="ActionBar-message" ng-if="message">
+        <p class="u-textSmall">
+            {{ ::message }}
+        </p>
+    </div>
+    <ul class="ActionBar-items">
+        <li class="ActionBar-item ActionBar-itemPrimary">
+            <rb-button block="yes" ng-click="primaryAction()">{{ ::primaryLabel }}</rb-button>
+        </li>
+        <li class="ActionBar-item">
+            <rb-button block="yes" outline="yes" ng-click="cancelAction()">{{ ::cancelLabel }}</rb-button>
+        </li>
+    </ul>
+</div>
