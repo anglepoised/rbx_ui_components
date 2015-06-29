@@ -29,7 +29,7 @@
         </fieldset>
         <rb-form-message ng-if="message">{{ message }}</rb-form-message>
         <fieldset class="LoginForm-button">
-            <rb-button block="yes" state="positive" ng-disabled="loginForm.$invalid" ng-click="onLogin()">Login</rb-button>
+            <rb-button block="yes" state="positive" ng-disabled="loginForm.$invalid" ng-click="onLogin()" type="submit">Login</rb-button>
         </fieldset>
     </form>
 </div>
