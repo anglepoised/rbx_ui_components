@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+- [`rb-action-bar` component](https://github.com/rockabox/rbx_ui_components/pull/261)
 - [`rb-check-control-group` `column` attribute allows splitting groups into 2 or 3 columns](https://github.com/rockabox/rbx_ui_components/pull/238)
 - [`rb-check-with-text-control`](https://github.com/rockabox/rbx_ui_components/pull/209)
 - [`rb-check-with-text-control-group`](https://github.com/rockabox/rbx_ui_components/pull/212)
