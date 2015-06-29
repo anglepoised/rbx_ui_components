@@ -9,29 +9,59 @@
 }
 
 /**
- * 1. Comment
+ * 1. Mandatory class used by du-scrollspy
  */
 
 .Scrollspy {
+    background-color: var(--color-gray-mystic);
+    text-align: right;
+    width: 100%;
 }
 
-/**
-* This mandatory class is for the active links in the
-* scrollspy container.
-* It can be changed but NEVER renamed as the bs-Scrollspy
-* directive uses this class to work internally.
-*/
-.active {
-    background-color:#CCC;
+.Scrollspy-category {
+    margin-top: 0.5em;
 }
 
-/**
-* This class is for the category links in the scrollspy
-* container.
-* If renamed, the directive template and tests should
-* reflect this change as well, in order to work properly.
-*/
-.Scrollspy-Category {
-    text-transform:uppercase;
-    font-weight:bold;
+.Scrollspy-categoryInner {
+    border-right: 0.25em solid transparent;
+    color: var(--color-gray-tuna);
+    font-weight: bold;
+    margin-right: 0.5em;
+    padding-right: 0.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.Scrollspy-categoryInner:hover {
+    color: var(--color-green-base);
+}
+
+/*1*/
+.Scrollspy-categoryInner.active {
+    border-right: 0.25em solid var(--color-green-base);
+    color: var(--color-green-base);
+    font-family: var(--font-family-proportional-semibold);
+}
+
+.Scrollspy-section {
+    margin-top: 0.5em;
+}
+
+.Scrollspy-sectionInner {
+    border-right: 0.25em solid transparent;
+    color: var(--color-gray-tuna);
+    margin-right: 0.5em;
+    padding-right: 0.5em;
+    text-decoration: none;
+}
+
+.Scrollspy-sectionInner:hover {
+    color: var(--color-green-base);
+}
+
+/*1*/
+.Scrollspy-sectionInner.active {
+    border-right: 0.25em solid var(--color-green-base);
+    color: var(--color-green-base);
+    font-family: var(--font-family-proportional-semibold);
 }

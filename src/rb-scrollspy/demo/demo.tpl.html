@@ -1,51 +1,42 @@
-<style type="text/css">
-  #container {
-    overflow: scroll;
-    height: 500px;
-    position: absolute;
-    top: 80px;
-    left: 180px;
-  }
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-scrollspy">
+            <rb-deep-search
+                ng-model="demoCtrl.categories"
+                placeholder="Search list...">
+            </rb-deep-search>
+        </rb-page-title>
+        <rb-section heading="RbScrollspy" hide-heading="true">
+            <div>
+                <rb-grid gutter="false">
+                    <rb-grid-cell size="1of4">
+                        <rb-scrollspy categories="demoCtrl.categories" offset="0" scroll-id="container"></rb-scrollspy>
+                    </rb-grid-cell>
 
-  .search {
-      position:absolute;
-      left:180px;
-      top:0;
-      height:50px;
-  }
-</style>
+                    <rb-grid-cell>
+                        <rb-section id="container" heading="items" hide-heading="true" style="height:500px;width:100%;overflow:scroll;">
+                            <span ng-repeat="category in demoCtrl.categories">
+                                <h2 id="{{ category.anchor }}" ng-hide="category.hidden">
+                                    {{ category.label }}
+                                </h2>
+                                <ul>
+                                    <li ng-repeat="section in category.items"  id="{{ section.anchor }}">
+                                        <h3 ng-hide="section.hidden">
+                                            {{ section.label }}
+                                        </h3>
+                                        <ul>
+                                            <li ng-repeat="item in section.items">
+                                                <span ng-if="!item.hidden">{{ item.label }}</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </span>
+                        </rb-section>
+                    </rb-grid-cell>
 
-<div>
-    <div style="position: fixed; top: 10px; left: 50px">
-        <rb-scrollspy categories="demoCtrl.categories" offset="0" scroll-id="container"></rb-scrollspy>
-    </div>
-
-    <div class="search">
-        <rb-deep-search
-            ng-model="demoCtrl.categories"
-            placeholder="Search list...">
-        </rb-deep-search>
-        <hr />
-    </div>
-
-    <div id="container">
-        <div>
-            <span ng-repeat="category in demoCtrl.categories">
-
-                <ul class="ListyThing ListyThing--columns">
-                    <li ng-repeat="section in category.items"  id="{{ section.anchor }}" class="ListyThing-section">
-                        <h3 ng-hide="section.hidden">
-                            {{ section.label }}
-                        </h3>
-                        <ul class="ListyThing-items">
-                            <li ng-repeat="item in section.items" class="ListyThing-item">
-                                <span ng-if="!item.hidden">{{ item.label }}</span>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </span>
-        </div>
-    </div>
-</div>
+                </rb-grid>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
