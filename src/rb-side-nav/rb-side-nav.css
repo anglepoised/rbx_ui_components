@@ -16,8 +16,8 @@
 
 .SideNav {
     background: var(--SideNav-background);
-    position: relative;
     height: 100vh;
+    position: relative;
 }
 
 .SideNav-heading {
@@ -31,8 +31,8 @@
 }
 
 .SideNav-items {
-    overflow-y: auto;
     height: 100%;
+    overflow-y: auto;
     padding-bottom: 12.625em;
 }
 
@@ -79,11 +79,11 @@
     display: inline-block;
     flex-shrink: 0;
     font-size: var(--font-size-x-small);
+    height: 0%; /* 1 */
     margin-left: auto;
     min-width: 24.7143px;
     padding: 4px 6px 3px;
     text-align: center;
-    height: 0%; /* 1 */
 }
 
 .SideNav-status--count {
@@ -104,8 +104,8 @@
 
 .SideNav-actions {
     background: var(--color-gray-shark);
-    box-shadow: 0 -0.5em 1.5em -0.5em var(--color-gray-shark);
     bottom: 0;
+    box-shadow: 0 -0.5em 1.5em -0.5em var(--color-gray-shark);
     left: 0;
     padding: 0.5em var(--SideNav-gutter);
     position: absolute;
