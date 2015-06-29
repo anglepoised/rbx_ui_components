@@ -1,7 +1,8 @@
 define([
     './rb-action-bar-directive',
-    './rb-action-bar.css'
-], function (rbActionBarDirective, css) {
+    './rb-action-bar.css',
+    'components/rb-button'
+], function (rbActionBarDirective, css, rbButton) {
     /**
      * @ngdoc module
      * @name rb-action-bar
@@ -11,7 +12,9 @@ define([
      *
      */
     var rbActionBar = angular
-        .module('rb-action-bar', [])
+        .module('rb-action-bar', [
+            rbButton.name
+        ])
         .directive('rbActionBar', rbActionBarDirective);
 
     return rbActionBar;
