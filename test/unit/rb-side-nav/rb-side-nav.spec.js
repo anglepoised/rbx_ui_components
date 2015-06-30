@@ -26,25 +26,10 @@ define([
         }));
 
         describe('rendering', function () {
-            it('should render with claass', function () {
+            it('should render with class', function () {
                 compileTemplate('<rb-side-nav></rb-side-nav>');
 
                 expect(element.hasClass('SideNav')).toBe(true);
-            });
-
-            it('should render actions', function () {
-                compileTemplate('<rb-side-nav></rb-side-nav>');
-
-                var actiondDiv = element[0].getElementsByClassName('SideNav-actions'),
-                    buttons = angular.element(actiondDiv[0]).find('button');
-
-                expect(actiondDiv.length).toBe(1);
-                expect(buttons.length).toBe(2);
-                expect(angular.element(buttons[0]).text()).toContain('Save');
-                expect(angular.element(buttons[1]).text()).toContain('Cancel');
-                expect(angular.element(buttons[1]).attr('outline')).toBe('yes');
-                expect(angular.element(buttons[0]).attr('ng-click')).toBe('onSave()');
-                expect(angular.element(buttons[1]).attr('ng-click')).toBe('onCancel()');
             });
 
             it('should transclude content inside ul element', function () {
@@ -65,49 +50,36 @@ define([
             });
         });
 
-        describe('action attributes', function () {
-            it('should use save label from attribute', function () {
-                compileTemplate('<rb-side-nav save-label="Save & Republish"></rb-side-nav>');
-
-                var actiondDiv = element[0].getElementsByClassName('SideNav-actions'),
-                    buttons = angular.element(actiondDiv[0]).find('button');
-
-                expect(angular.element(buttons[0]).text()).toContain('Save & Republish');
+        describe('`rb-action-bar` subcomponent', function () {
+            it('should have `primaryAction` attr set by `rb-side-nav` `onSave`', function () {
+                compileTemplate('<rb-side-nav on-save="console.log(document.window)"></rb-side-nav>');
+                var rbActionBar = angular.element(element[0].getElementsByClassName('ActionBar'));
+                expect(rbActionBar.attr('primary-action')).toBe('onSave()');
             });
 
-            it('should use action help text from attribute', function () {
-                compileTemplate('<rb-side-nav action-help-text="Be careful when saving."></rb-side-nav>');
-
-                var actiondDiv = element[0].getElementsByClassName('SideNav-actions'),
-                    helpTextP = angular.element(actiondDiv[0]).find('p');
-
-                expect(angular.element(helpTextP[0]).text()).toContain('Be careful when saving.');
+            it('should have `primaryLabel` attr set by `rb-side-nav` `save-label`', function () {
+                compileTemplate('<rb-side-nav save-label="Save Me"></rb-side-nav>');
+                var rbActionBar = angular.element(element[0].getElementsByClassName('ActionBar'));
+                expect(rbActionBar.attr('primary-label')).toBe('Save Me');
             });
 
-            it('should take onSave callback from on-save attribute', function () {
-                $scope.mySaveCallback = function () {};
-                spyOn($scope, 'mySaveCallback');
-                compileTemplate('<rb-side-nav on-save="mySaveCallback()"></rb-side-nav>');
-
-                var childDivs = element.children(),
-                    firstChild = angular.element(childDivs[0]);
-
-                isolatedScope.onSave();
-                expect($scope.mySaveCallback).toHaveBeenCalled();
+            it('should have `primaryDisabled` attr set by `rb-side-nav` `save-button-disabled`', function () {
+                compileTemplate('<rb-side-nav save-button-disabled="true"></rb-side-nav>');
+                var rbActionBar = angular.element(element[0].getElementsByClassName('ActionBar'));
+                expect(rbActionBar.attr('primary-disabled')).toBe('true');
             });
 
-            it('should take onCancel callback from on-cancel attribute', function () {
-                $scope.myCancelCallback = function () {};
-                spyOn($scope, 'myCancelCallback');
-                compileTemplate('<rb-side-nav on-cancel="myCancelCallback()"></rb-side-nav>');
-
-                var childDivs = element.children(),
-                    firstChild = angular.element(childDivs[0]);
-
-                isolatedScope.onCancel();
-                expect($scope.myCancelCallback).toHaveBeenCalled();
+            it('should have `cancelAction` attr set by `rb-side-nav` `onCancel`', function () {
+                compileTemplate('<rb-side-nav on-cancel="console.log(document.window)"></rb-side-nav>');
+                var rbActionBar = angular.element(element[0].getElementsByClassName('ActionBar'));
+                expect(rbActionBar.attr('cancel-action')).toBe('onCancel()');
             });
 
+            it('should have `message` attr set by `rb-side-nav` `action-help-text`', function () {
+                compileTemplate('<rb-side-nav action-help-text="Be careful, now."></rb-side-nav>');
+                var rbActionBar = angular.element(element[0].getElementsByClassName('ActionBar'));
+                expect(rbActionBar.attr('message')).toBe('Be careful, now.');
+            });
         });
 
         describe('submit button', function () {

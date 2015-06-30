@@ -103,16 +103,9 @@
 }
 
 .SideNav-actions {
-    background: var(--color-gray-shark);
     bottom: 0;
     box-shadow: 0 -0.5em 1.5em -0.5em var(--color-gray-shark);
     left: 0;
-    padding: 0.5em var(--SideNav-gutter);
     position: absolute;
     width: 100%;
-}
-
-.SideNav-actionsMessage {
-    color: var(--color-gray-regent);
-    margin: 1em 0;
 }

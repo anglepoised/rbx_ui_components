@@ -7,21 +7,16 @@
     <div class="SideNav-body">
         <ul class="SideNav-items" ng-transclude></ul>
     </div>
-    <div class="SideNav-actions u-textCenter">
-        <div class="SideNav-actionsMessage">
-            <p class="u-textSmall">
-                {{ ::actionHelpText }}
-            </p>
-        </div>
-        <div class="SideNav-actionsButtons">
-            <rb-grid>
-                <rb-grid-cell size="2of3">
-                    <rb-button ng-disabled="saveButtonDisabled === 'true'" block="yes" ng-click="onSave()">{{ ::saveLabel || 'Save' }}</rb-button>
-                </rb-grid-cell>
-                <rb-grid-cell>
-                    <rb-button block="yes" outline="yes" ng-click="onCancel()">Cancel</rb-button>
-                </rb-grid-cell>
-            </rb-grid>
-        </div>
+
+    <div class="SideNav-actions">
+        <rb-action-bar
+            primary-action="onSave()"
+            primary-disabled="{{ saveButtonDisabled }}"
+            primary-label="{{ ::saveLabel || 'Save' }}"
+            cancel-action="onCancel()"
+            cancel-label="Cancel"
+            message="{{ ::actionHelpText }}"
+            column="true"
+        ></rb-action-bar>
     </div>
 </div>

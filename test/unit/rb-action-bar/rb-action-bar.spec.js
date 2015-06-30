@@ -34,6 +34,7 @@ define([
                         'cancel-label="Cancel" ' +
                         'column="true" ' +
                         'primary-action="alert(\'test\')" ' +
+                        'primary-disabled="false" ' +
                         'primary-label="Save" ' +
                         'row="false" ' +
                     '></rb-action-bar>'
@@ -42,6 +43,7 @@ define([
                 expect(isolatedScope.cancelLabel).toBe('Cancel');
                 expect(isolatedScope.column).toBe('true');
                 expect(isolatedScope.primaryAction).toBeDefined();
+                expect(isolatedScope.primaryDisabled).toBe('false');
                 expect(isolatedScope.primaryLabel).toBe('Save');
                 expect(isolatedScope.row).toBe('false');
             });
@@ -57,6 +59,11 @@ define([
                 it('should default to true', function () {
                     compileTemplate('<rb-action-bar></rb-action-bar>');
                     expect(isolatedScope.column).toBe('true');
+                });
+
+                it('should not default to true if row is true', function () {
+                    compileTemplate('<rb-action-bar row="true"></rb-action-bar>');
+                    expect(isolatedScope.column).not.toBe('true');
                 });
             });
 
@@ -101,6 +108,12 @@ define([
                     compileTemplate('<rb-action-bar primary-action="alert(\'test\')"></rb-action-bar>');
                     var rbButton = angular.element(element[0].querySelectorAll('.Button')[0]);
                     expect(rbButton.attr('ng-click')).toEqual('primaryAction()');
+                });
+
+                it('should have `disabled` attr set by `primaryDisabled`', function () {
+                    compileTemplate('<rb-action-bar primary-disabled="true"></rb-action-bar>');
+                    var rbButton = angular.element(element[0].querySelectorAll('.Button')[0]);
+                    expect(rbButton.attr('disabled')).toEqual('disabled');
                 });
 
                 it('should have contents set by `primaryLabel`', function () {

@@ -33,5 +33,17 @@
                 ></rb-action-bar>
             </div>
         </rb-section>
+        <rb-section heading="PrimaryDisabled Modifier">
+            <div class="ComponentView">
+                <rb-action-bar
+                    cancel-action="demoCtrl.cancel()"
+                    cancel-label="Cancel"
+                    message="This line item is live. All changes will be published!"
+                    primary-action="demoCtrl.primary()"
+                    primary-disabled="true"
+                    primary-label="Save & Republish"
+                ></rb-action-bar>
+            </div>
+        </rb-section>
     </rb-main>
 </rb-site>

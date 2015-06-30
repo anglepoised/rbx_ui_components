@@ -28,6 +28,7 @@ define([
                 'cancelLabel': '@',
                 'message': '@',
                 'primaryAction': '&',
+                'primaryDisabled': '@',
                 'primaryLabel': '@',
                 'row': '@'
             },
@@ -39,7 +40,7 @@ define([
                     scope.cancelLabel = 'Cancel';
                 }
 
-                if (angular.isUndefined(scope.column)) {
+                if (angular.isUndefined(scope.column) && scope.row !== 'true') {
                     scope.column = 'true';
                 }
 
