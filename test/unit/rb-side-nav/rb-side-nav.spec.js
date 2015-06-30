@@ -26,7 +26,7 @@ define([
         }));
 
         describe('rendering', function () {
-            it('should render with claass', function () {
+            it('should render with class', function () {
                 compileTemplate('<rb-side-nav></rb-side-nav>');
 
                 expect(element.hasClass('SideNav')).toBe(true);
