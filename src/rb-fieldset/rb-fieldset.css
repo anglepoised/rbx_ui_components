@@ -17,6 +17,7 @@
  * 1. Linearize for small viewports, columnify label and body.
  * 2. Fieldset is technically a sectioning component, so margins allowed.
  * 3. Account for exciting default legend positioning.
+ * 4. Remove border when using actions modifier.
  */
 
 .Fieldset {
@@ -129,4 +130,28 @@
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
     padding-left: 32px;
+}
+
+/**
+ * Actions modifier
+ */
+
+.Fieldset--actions .Fieldset-body {
+    border: 0; /* 4 */
+}
+
+@media (--md-viewport) {
+
+    .Fieldset--actions .Fieldset-body {
+        border: 0; /* 4 */
+    }
+
+}
+
+.Fieldset--actions .Fieldset-items {
+    display: flex;
+}
+
+.Fieldset--actions .Fieldset-item + .Fieldset-item {
+    margin-left: 1em;
 }
