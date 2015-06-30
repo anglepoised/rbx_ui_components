@@ -58,6 +58,11 @@ define([
                     compileTemplate('<rb-action-bar></rb-action-bar>');
                     expect(isolatedScope.column).toBe('true');
                 });
+
+                it('should not default to true if row is true', function () {
+                    compileTemplate('<rb-action-bar row="true"></rb-action-bar>');
+                    expect(isolatedScope.column).not.toBe('true');
+                });
             });
 
             describe('primaryLabel variable', function () {
