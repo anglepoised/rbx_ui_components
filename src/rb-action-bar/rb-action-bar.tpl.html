@@ -9,7 +9,7 @@
     </div>
     <ul class="ActionBar-items">
         <li class="ActionBar-item ActionBar-itemPrimary">
-            <rb-button block="yes" ng-click="primaryAction()">{{ ::primaryLabel }}</rb-button>
+            <rb-button block="yes" ng-click="primaryAction()" ng-disabled="primaryDisabled === 'true'">{{ ::primaryLabel }}</rb-button>
         </li>
         <li class="ActionBar-item">
             <rb-button block="yes" outline="yes" ng-click="cancelAction()">{{ ::cancelLabel }}</rb-button>

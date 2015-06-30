@@ -28,6 +28,7 @@ define([
                 'cancelLabel': '@',
                 'message': '@',
                 'primaryAction': '&',
+                'primaryDisabled': '@',
                 'primaryLabel': '@',
                 'row': '@'
             },
