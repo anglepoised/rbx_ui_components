@@ -33,6 +33,15 @@
     flex-direction: column; /* 1 */
 }
 
+.PageTitle-navigationInner {
+    color: var(--color-base-link-default);
+    text-decoration: none;
+}
+
+.PageTitle-navigationInner:hover {
+    color: var(--color-base-link-hover);
+}
+
 .PageTitle-body {
     align-items: center;
     display: flex;
