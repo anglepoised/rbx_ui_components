@@ -22,7 +22,7 @@
         name="{{timeName}}"
         ng-class="{'is-invalid': form[timeName].$touched && form[timeName].$invalid}"
         ng-disabled="disabledTextInputs()"
-        ng-if="disableTime !== 'true'"
+        ng-show="disableTime !== 'true'"
         ng-model="ngModel"
         ng-required="{{isRequired}}"
         ng-readonly="{{isReadonly}}"
@@ -43,7 +43,7 @@
         {{ form[name].$error.server }}
     </div>
 
-    <div class="TextControl-message">
+    <div class="TextControl-message" ng-if="disableTime !== 'true'">
         All times are shown in your local time.
     </div>
 
