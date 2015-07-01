@@ -25,6 +25,10 @@
     padding: 0 var(--layout-gutter);
 }
 
+.Section-heading {
+    padding-bottom: 2em;
+}
+
 /**
  * Gutterless modifier
  */
@@ -34,5 +38,6 @@
 }
 
 .Section--gutterless .Section-heading {
-    padding: 0 var(--layout-gutter);
+    padding-left: var(--layout-gutter);
+    padding-right: var(--layout-gutter);
 }
