@@ -224,9 +224,10 @@ define([
             it('should not show time picker when true', function () {
                 compileTemplate('<rb-datetime-control disable-time="true"></rb-datetime-control>');
 
-                var timePicker = element[0].querySelector('input[bs-timepicker]');
+                var timePicker = angular.element(element[0].querySelector('input[bs-timepicker]'));
 
-                expect(timePicker).toBe(null);
+                // Using ng-show so still renders, but with ng-hide class
+                expect(timePicker.hasClass('ng-hide')).toBe(true);
             });
         });
 

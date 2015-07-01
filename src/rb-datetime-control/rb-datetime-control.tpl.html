@@ -22,7 +22,7 @@
         name="{{timeName}}"
         ng-class="{'is-invalid': form[timeName].$touched && form[timeName].$invalid}"
         ng-disabled="disabledTextInputs()"
-        ng-if="disableTime !== 'true'"
+        ng-show="disableTime !== 'true'"
         ng-model="ngModel"
         ng-required="{{isRequired}}"
         ng-readonly="{{isReadonly}}"
