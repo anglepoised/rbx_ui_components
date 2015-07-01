@@ -43,7 +43,7 @@
         {{ form[name].$error.server }}
     </div>
 
-    <div class="TextControl-message">
+    <div class="TextControl-message" ng-if="disableTime !== 'true'">
         All times are shown in your local time.
     </div>
 

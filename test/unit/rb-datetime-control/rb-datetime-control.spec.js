@@ -229,6 +229,13 @@ define([
                 // Using ng-show so still renders, but with ng-hide class
                 expect(timePicker.hasClass('ng-hide')).toBe(true);
             });
+
+            it('should not render local time message when true', function () {
+                compileTemplate('<rb-datetime-control disable-time="true"></rb-datetime-control>');
+
+                // Using ng-if, so does not render
+                expect(element.html()).not.toContain('All times are shown in your local time.');
+            });
         });
 
         describe('inherited date time', function () {
