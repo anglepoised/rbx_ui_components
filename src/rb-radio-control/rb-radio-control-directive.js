@@ -35,13 +35,13 @@ define([
             restrict: 'E',
             replace: true,
             template: template,
-            link: function (scope) {
-                scope.setChoice = function (choice) {
-                    scope.ngModel = choice.value;
+            link: function ($scope) {
+                $scope.setChoice = function (choice) {
+                    $scope.ngModel = choice.value;
                 };
 
-                scope.isChecked = function (choice) {
-                    return scope.ngModel === choice.value;
+                $scope.isChecked = function (choice) {
+                    return $scope.ngModel === choice.value;
                 };
             }
         };
