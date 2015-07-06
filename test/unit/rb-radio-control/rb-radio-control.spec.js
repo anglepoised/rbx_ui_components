@@ -10,6 +10,7 @@ define([
             element,
             compileTemplate,
             choices,
+            form,
             model;
 
         beforeEach(angular.mock.module(rbRadioControl.name));
@@ -30,9 +31,14 @@ define([
                 }
             ];
 
+            form = {
+                $pristine: true
+            };
+
             // Compile directive, apply scope and fetch new isolated scope
             compileTemplate = function (template) {
                 $scope.choices = choices;
+                $scope.form = form;
                 $scope.model = model;
                 element = $compile(template)($scope);
                 $scope.$apply();
@@ -140,13 +146,22 @@ define([
 
         describe('model', function () {
             describe('setChoice', function () {
-                it('should be the value of the selected radio control', function () {
-                    compileTemplate('<rb-radio-control ng-model="model" choices="choices"></rb-radio-control>');
+                beforeEach(function () {
+                    compileTemplate('<rb-radio-control choices="choices" form="form" ' +
+                        'ng-model="model"></rb-radio-control>');
+                });
 
+                it('should be the value of the selected radio control', function () {
                     isolatedScope.setChoice($scope.choices[0]);
                     $scope.$digest();
 
                     expect($scope.model).toBe(element.find('input')[0].value);
+                });
+
+                it('should set form.$pristine as false when setting choice', function () {
+                    isolatedScope.setChoice($scope.choices[0]);
+
+                    expect($scope.form.$pristine).toBe(false);
                 });
             });
 

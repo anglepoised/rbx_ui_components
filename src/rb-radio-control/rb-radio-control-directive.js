@@ -38,6 +38,9 @@ define([
             link: function ($scope) {
                 $scope.setChoice = function (choice) {
                     $scope.ngModel = choice.value;
+
+                    // Notify form that it has been updated
+                    $scope.form.$pristine = false;
                 };
 
                 $scope.isChecked = function (choice) {
