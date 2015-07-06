@@ -10,6 +10,7 @@ define([
             element,
             compileTemplate,
             choices,
+            form,
             model;
 
         beforeEach(angular.mock.module(rbRadioControl.name));
@@ -30,9 +31,14 @@ define([
                 }
             ];
 
+            form = {
+                $pristine: true
+            };
+
             // Compile directive, apply scope and fetch new isolated scope
             compileTemplate = function (template) {
                 $scope.choices = choices;
+                $scope.form = form;
                 $scope.model = model;
                 element = $compile(template)($scope);
                 $scope.$apply();
@@ -139,20 +145,33 @@ define([
         });
 
         describe('model', function () {
-            it('should be the value of the selected radio control', function () {
-                compileTemplate('<rb-radio-control ng-model="model" choices="choices"></rb-radio-control>');
+            describe('setChoice', function () {
+                beforeEach(function () {
+                    compileTemplate('<rb-radio-control choices="choices" form="form" ' +
+                        'ng-model="model"></rb-radio-control>');
+                });
 
-                isolatedScope.setChoice($scope.choices[0]);
-                $scope.$digest();
+                it('should be the value of the selected radio control', function () {
+                    isolatedScope.setChoice($scope.choices[0]);
+                    $scope.$digest();
 
-                expect($scope.model).toBe(element.find('input')[0].value);
+                    expect($scope.model).toBe(element.find('input')[0].value);
+                });
+
+                it('should set form.$pristine as false when setting choice', function () {
+                    isolatedScope.setChoice($scope.choices[0]);
+
+                    expect($scope.form.$pristine).toBe(false);
+                });
             });
 
-            it('should select a radio control when already has a value', function () {
-                model = 'radio_two';
-                compileTemplate('<rb-radio-control ng-model="model" choices="choices"></rb-radio-control>');
+            describe('isChecked', function () {
+                it('should select a radio control when already has a value', function () {
+                    model = 'radio_two';
+                    compileTemplate('<rb-radio-control ng-model="model" choices="choices"></rb-radio-control>');
 
-                expect(isolatedScope.isChecked($scope.choices[1])).toBe(true);
+                    expect(isolatedScope.isChecked($scope.choices[1])).toBe(true);
+                });
             });
         });
 
