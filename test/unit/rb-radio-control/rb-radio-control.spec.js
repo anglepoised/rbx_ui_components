@@ -139,20 +139,24 @@ define([
         });
 
         describe('model', function () {
-            it('should be the value of the selected radio control', function () {
-                compileTemplate('<rb-radio-control ng-model="model" choices="choices"></rb-radio-control>');
+            describe('setChoice', function () {
+                it('should be the value of the selected radio control', function () {
+                    compileTemplate('<rb-radio-control ng-model="model" choices="choices"></rb-radio-control>');
 
-                isolatedScope.setChoice($scope.choices[0]);
-                $scope.$digest();
+                    isolatedScope.setChoice($scope.choices[0]);
+                    $scope.$digest();
 
-                expect($scope.model).toBe(element.find('input')[0].value);
+                    expect($scope.model).toBe(element.find('input')[0].value);
+                });
             });
 
-            it('should select a radio control when already has a value', function () {
-                model = 'radio_two';
-                compileTemplate('<rb-radio-control ng-model="model" choices="choices"></rb-radio-control>');
+            describe('isChecked', function () {
+                it('should select a radio control when already has a value', function () {
+                    model = 'radio_two';
+                    compileTemplate('<rb-radio-control ng-model="model" choices="choices"></rb-radio-control>');
 
-                expect(isolatedScope.isChecked($scope.choices[1])).toBe(true);
+                    expect(isolatedScope.isChecked($scope.choices[1])).toBe(true);
+                });
             });
         });
 
