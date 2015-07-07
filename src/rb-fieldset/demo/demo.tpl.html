@@ -131,18 +131,14 @@
         </h3>
     </div>
     <div class="ComponentView">
-        <div class="Fieldset Fieldset--actions">
-            <div class="Fieldset-title"></div>
-            <div class="Fieldset-body">
-                <div class="Fieldset-items">
-                    <div class="Fieldset-item">
-                        <rb-button>Action 1</rb-button>
-                    </div>
-                    <div class="Fieldset-item">
-                        <rb-button outline="yes">Action 2</rb-button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        Model: {{demoCtrl.action}}
+        <rb-fieldset type="actions">
+            <rb-fieldset-item>
+                <rb-button ng-click="demoCtrl.action=1">Action 1</rb-button>
+            </rb-fieldset-item>
+            <rb-fieldset-item>
+                <rb-button ng-click="demoCtrl.action=2" outline="yes">Action 2</rb-button>
+            </rb-fieldset-item>
+        </rb-fieldset>
     </div>
 </section>
