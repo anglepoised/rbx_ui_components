@@ -1,11 +1,11 @@
 define([
-    'html!./rb-fieldset.tpl.html'
+    'html!./rb-fieldset-item.tpl.html'
 ], function (template) {
 
     /**
      * @ngdoc directive
-     * @name rbFieldset
-     * @module rb-fieldset
+     * @name rbFieldsetItem
+     * @module rb-fieldset-item
      *
      * @restrict E
      *
@@ -13,18 +13,16 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-fieldset>
-     *     </rb-fieldset>
+     *    <rb-fieldset-item>
+     *     </rb-fieldset-item>
      * </hljs>
      *
      * @ngInject
      */
-    function rbFieldsetDirective () {
+    function rbFieldsetItemDirective () {
 
         return {
             scope: {
-                label: '@',
-                type: '@'
             },
             restrict: 'E',
             replace: true,
@@ -33,5 +31,5 @@ define([
         };
     }
 
-    return rbFieldsetDirective;
+    return rbFieldsetItemDirective;
 });

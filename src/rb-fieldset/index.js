@@ -1,7 +1,8 @@
 define([
     './rb-fieldset-directive',
+    './rb-fieldset-item-directive',
     './rb-fieldset.css'
-], function (rbFieldsetDirective, css) {
+], function (rbFieldsetDirective, rbFieldsetItemDirective, css) {
     /**
      * @ngdoc module
      * @name rb-fieldset
@@ -12,7 +13,8 @@ define([
      */
     var rbFieldset = angular
         .module('rb-fieldset', [])
-        .directive('rbFieldset', rbFieldsetDirective);
+        .directive('rbFieldset', rbFieldsetDirective)
+        .directive('rbFieldsetItem', rbFieldsetItemDirective);
 
     return rbFieldset;
 

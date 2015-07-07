@@ -85,6 +85,12 @@ define([
 
                 expect(element.hasClass('Fieldset--metrics')).toBeTruthy();
             });
+
+            it('should use the actions type', function () {
+                compileTemplate('<rb-fieldset label="Default Text" type="actions"></rb-fieldset>');
+
+                expect(element.hasClass('Fieldset--actions')).toBeTruthy();
+            });
         });
     });
 });

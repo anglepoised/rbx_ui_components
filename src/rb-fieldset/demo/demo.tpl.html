@@ -125,4 +125,20 @@
             </p>
         </rb-fieldset>
     </div>
+    <div class="RawHTML">
+        <h3>
+            Actions modifier
+        </h3>
+    </div>
+    <div class="ComponentView">
+        Model: {{demoCtrl.action}}
+        <rb-fieldset type="actions">
+            <rb-fieldset-item>
+                <rb-button ng-click="demoCtrl.action=1">Action 1</rb-button>
+            </rb-fieldset-item>
+            <rb-fieldset-item>
+                <rb-button ng-click="demoCtrl.action=2" outline="yes">Action 2</rb-button>
+            </rb-fieldset-item>
+        </rb-fieldset>
+    </div>
 </section>

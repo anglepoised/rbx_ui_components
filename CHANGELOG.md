@@ -23,6 +23,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [`rb-deep-search` component](https://github.com/rockabox/rbx_ui_components/pull/232)
 - ['rb-scrollspy' do not show hidden sections](https://github.com/rockabox/rbx_ui_components/pull/232)
 - ['rb-check-control-select-all' disabled if all child options are disabled](https://github.com/rockabox/rbx_ui_components/pull/235)
+- ['rb-fieldset' actions modifier](https://github.com/rockabox/rbx_ui_components/pull/271)
+- ['rb-fieldset-item' component](https://github.com/rockabox/rbx_ui_components/pull/271)
 
 ### Changed
 

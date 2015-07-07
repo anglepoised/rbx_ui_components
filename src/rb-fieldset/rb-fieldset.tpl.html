@@ -1,13 +1,19 @@
 <div class="Fieldset" ng-class="{
+    'Fieldset--actions': type == 'actions',
     'Fieldset--additionalInfo': type == 'additionalInfo',
     'Fieldset--basics': type == 'basics',
     'Fieldset--breakdown': type == 'breakdown',
-    'Fieldset--goals': type == 'goals',
     'Fieldset--finance': type == 'finance',
+    'Fieldset--goals': type == 'goals',
     'Fieldset--metrics': type == 'metrics'
 }">
     <div class="Fieldset-title">
         <span class="u-textLegend">{{ ::label }}</span>
     </div>
-    <div class="Fieldset-body" ng-transclude></div>
+
+    <div class="Fieldset-body" ng-if="type != 'actions'" ng-transclude></div>
+
+    <div class="Fieldset-body" ng-if="type == 'actions'">
+        <div class="Fieldset-items" ng-transclude></div>
+    </div>
 </div>
