@@ -61,6 +61,18 @@ define([
             });
         });
 
+        describe('compiled `rb-panel-scroll-unscrollable` template', function () {
+            it('should contain a root element with the appropriate SUIT class', function () {
+                compileTemplate('<rb-panel-scroll-unscrollable></rb-panel-scroll-unscrollable>');
+                expect(element.hasClass('PanelScroll-unscrollable')).toBe(true);
+            });
+
+            it('should transclude content', function () {
+                compileTemplate('<rb-panel-scroll-unscrollable>My Content</rb-panel-scroll-unscrollable>');
+                expect(element.html()).toContain('My Content');
+            });
+        });
+
         describe('compiled `rb-panel-scroll-top` template', function () {
             it('should contain a root element with the appropriate SUIT class', function () {
                 compileTemplate('<rb-panel-scroll-top></rb-panel-scroll-top>');
