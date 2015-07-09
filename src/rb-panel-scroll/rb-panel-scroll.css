@@ -20,5 +20,6 @@
 }
 
 .PanelScroll-unscrollable {
+    display: flex;
     flex: 1;
 }
