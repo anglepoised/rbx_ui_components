@@ -24,6 +24,10 @@ define([
 
         this.emptySelect = null;
         this.previouslySelected = this.items[1].id;
+
+        this.printChange = function (id) {
+            console.log(id);
+        };
     }
 
     return demoCtrl;

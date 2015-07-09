@@ -131,6 +131,22 @@
             </rb-select-control>
             Selected: {{ demoRbSelectControlCtrl.previouslySelected }}
         </div>
+        <div class="ComponentView">
+            <rb-select-control
+                form="userForm"
+                label="Calling a function on-change --> see browser console"
+                value="id"
+                display="name"
+                name="noPreviousPlaceholder"
+                is-required="true"
+                items="demoRbSelectControlCtrl.items"
+                selected="demoRbSelectControlCtrl.emptySelect"
+                help-message="i.e. Your favourite make"
+                placeholder="Car"
+                on-change="demoRbSelectControlCtrl.printChange(id)">
+            </rb-select-control>
+            Selected: {{ demoRbSelectControlCtrl.emptySelect }}
+        </div>
         <div class="RawHTML">
             <h3>
                 No placeholder and not previously selected
