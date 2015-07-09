@@ -31,5 +31,15 @@ define([
             });
         });
 
+        describe('with size', function () {
+
+            it('should be a small select control if small size attr is supplied',
+                inject(function ($compile, $rootScope) {
+                    var select = angular.element('<rb-select-control size="small"></rb-select-control>'),
+                        element = $compile(select)($rootScope.$new());
+                    $rootScope.$apply();
+                    expect(select.hasClass('SelectControl--small')).toBe(true);
+                }));
+        });
     });
 });
