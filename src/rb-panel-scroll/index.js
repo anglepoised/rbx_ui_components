@@ -3,10 +3,11 @@ define([
     './rb-panel-scroll-bottom-directive',
     './rb-panel-scroll-scrollable-directive',
     './rb-panel-scroll-top-directive',
+    './rb-panel-scroll-unscrollable-directive',
     './rb-panel-scroll.css'
 ], function (
         rbPanelScrollDirective, rbPanelScrollBottomDirective, rbPanelScrollScrollableDirective,
-        rbPanelScrollTopDirective, css) {
+        rbPanelScrollTopDirective, rbPanelScrollUnscrollableDirective, css) {
     /**
      * @ngdoc module
      * @name rb-panel-scroll
@@ -20,7 +21,8 @@ define([
         .directive('rbPanelScroll', rbPanelScrollDirective)
         .directive('rbPanelScrollBottom', rbPanelScrollBottomDirective)
         .directive('rbPanelScrollScrollable', rbPanelScrollScrollableDirective)
-        .directive('rbPanelScrollTop', rbPanelScrollTopDirective);
+        .directive('rbPanelScrollTop', rbPanelScrollTopDirective)
+        .directive('rbPanelScrollUnscrollable', rbPanelScrollUnscrollableDirective);
 
     return rbPanelScroll;
 
