@@ -10,6 +10,10 @@ define([
      * @restrict E
      *
      * @description
+     * `<rb-select-control>` is a plain select control directive
+     *
+     * If you supply a `size` attribute with `small` value, it will become
+     * a select control with smaller dimensions.
      *
      * @usage
      * <hljs lang="html">
@@ -45,8 +49,17 @@ define([
             },
             restrict: 'E',
             replace: true,
-            template: template
+            template: template,
+            link: link
         };
+
+        function link (scope, elem, attr) {
+
+            // Defaults to default size when no size is supplied
+            if (angular.isDefined(attr.size)) {
+                elem.addClass('SelectControl--' + attr.size);
+            }
+        }
     }
 
     return rbSelectControlDirective;
