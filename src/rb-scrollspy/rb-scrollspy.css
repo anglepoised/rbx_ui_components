@@ -13,8 +13,19 @@
  */
 
 .Scrollspy {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.Scrollspy-spy {
     background-color: var(--color-gray-mystic);
+    overflow: auto;
     text-align: right;
+}
+
+.Scrollspy-content {
+    overflow: auto;
     width: 100%;
 }
 

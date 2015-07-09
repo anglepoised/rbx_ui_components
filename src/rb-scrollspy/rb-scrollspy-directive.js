@@ -56,7 +56,8 @@ define([
             },
             restrict: 'E',
             replace: true,
-            template: template
+            template: template,
+            transclude: true
         };
     }
     return rbScrollspyDirective;

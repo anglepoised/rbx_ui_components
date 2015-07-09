@@ -1,29 +1,33 @@
 <div class="Scrollspy">
-    <ul class="Scrollspy-categories" du-scroll-container="{{scrollId}}" du-spy-context>
-        <li class="Scrollspy-category" ng-repeat="category in categories">
-            <a ng-if="!category.hidden"
-                class="Scrollspy-categoryInner"
-                href="#{{::category.anchor}}"
-                du-scrollspy
-                du-smooth-scroll
-                offset="{{offset || 0}}"
-            >
-                <span>{{::category.label}}</span>
-            </a>
+    <div class="Scrollspy-spy">
+        <ul class="Scrollspy-categories" du-scroll-container="{{scrollId}}" du-spy-context>
+            <li class="Scrollspy-category" ng-repeat="category in categories">
+                <a ng-if="!category.hidden"
+                    class="Scrollspy-categoryInner"
+                    href="#{{::category.anchor}}"
+                    du-scrollspy
+                    du-smooth-scroll
+                    offset="{{offset || 0}}"
+                >
+                    <span>{{::category.label}}</span>
+                </a>
 
-            <ul class="Scrollspy-sections">
-                <li class="Scrollspy-section" ng-repeat="section in category.items">
-                    <a class="Scrollspy-sectionInner"
-                        href="#{{::section.anchor}}"
-                        offset="{{offset || 0}}"
-                        du-scrollspy
-                        du-smooth-scroll
-                        ng-hide="section.hidden"
-                    >
-                        <span>{{::section.label}}</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-    </ul>
+                <ul class="Scrollspy-sections">
+                    <li class="Scrollspy-section" ng-repeat="section in category.items">
+                        <a class="Scrollspy-sectionInner"
+                            href="#{{::section.anchor}}"
+                            offset="{{offset || 0}}"
+                            du-scrollspy
+                            du-smooth-scroll
+                            ng-hide="section.hidden"
+                        >
+                            <span>{{::section.label}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="Scrollspy-content" ng-transclude id="{{ scrollId }}">
+    </div>
 </div>
