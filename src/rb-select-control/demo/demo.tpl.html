@@ -108,6 +108,21 @@
         <div class="ComponentView">
             <rb-select-control
                 form="userForm"
+                label="A small-size Select field"
+                value="id"
+                display="name"
+                name="noPreviousPlaceholder"
+                items="demoRbSelectControlCtrl.items"
+                selected="demoRbSelectControlCtrl.emptySelect"
+                help-message="i.e. Your favourite make"
+                placeholder="Car"
+                size="small">
+            </rb-select-control>
+            Selected: {{ demoRbSelectControlCtrl.emptySelect }}
+        </div>
+        <div class="ComponentView">
+            <rb-select-control
+                form="userForm"
                 name="disabledSelect"
                 label="A disabled select field"
                 value="id"
