@@ -41,7 +41,8 @@ define([
                 isDisabled: '@',
                 isRequired: '@',
                 name: '@',
-                form: '='
+                form: '=',
+                onChange: '&'
             },
             restrict: 'E',
             replace: true,

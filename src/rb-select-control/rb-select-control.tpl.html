@@ -9,6 +9,7 @@
         name="{{name}}"
         ng-options="item[value] as item[display] for item in items"
         ng-model="selected"
+        ng-change="onChange({id:selected})"
         ng-disabled="{{ isDisabled }}"
         ng-required="{{ isRequired }}">
             <option value="" ng-show="placeholder">{{ placeholder }}</option>
