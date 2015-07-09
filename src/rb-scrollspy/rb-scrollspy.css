@@ -1,15 +1,17 @@
-/** @define rbScrollspy; use strict */
+/** @define Scrollspy; use strict */
 
 /**
- * The `.rbScrollspy` component...
+ * The `.Scrollspy` component...
  */
 
 :root {
-    --Scrollspy-variable: var();
+    --Scrollspy-border-width: 0.25em;
+    --Scrollspy-color-active: var(--color-green-base);
 }
 
 /**
- * 1. Mandatory class used by du-scrollspy
+ * 1. Prevent shrink bug: https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored
+ * 2. Mandatory class used by du-scrollspy
  */
 
 .Scrollspy {
@@ -20,25 +22,25 @@
 
 .Scrollspy-spy {
     background-color: var(--color-gray-mystic);
-    overflow: auto;
+    flex: 0 0 auto;
+    overflow-y: auto;
+    padding: 1.5em 0.5em 2em 2em;
     text-align: right;
 }
 
 .Scrollspy-content {
-    overflow: auto;
+    overflow-y: auto;
+    padding: 1.75em 1.25em;
     width: 100%;
 }
 
-.Scrollspy-category {
-    margin-top: 0.5em;
-}
-
 .Scrollspy-categoryInner {
-    border-right: 0.25em solid transparent;
+    border-right: var(--Scrollspy-border-width) solid var(--color-transparent);
     color: var(--color-gray-tuna);
+    display: inline-block;
     font-weight: bold;
     margin-right: 0.5em;
-    padding-right: 0.5em;
+    padding: 0.25em 0.25em 0.25em 0;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -47,11 +49,9 @@
     color: var(--color-green-base);
 }
 
-/*1*/
-.Scrollspy-categoryInner.active {
-    border-right: 0.25em solid var(--color-green-base);
-    color: var(--color-green-base);
-    font-family: var(--font-family-proportional-semibold);
+.Scrollspy-categoryInner.active { /* 2 */
+    border-right-color: var(--Scrollspy-color-active);
+    color: var(--Scrollspy-color-active);
 }
 
 .Scrollspy-section {
@@ -59,20 +59,21 @@
 }
 
 .Scrollspy-sectionInner {
-    border-right: 0.25em solid transparent;
+    border-right: var(--Scrollspy-border-width) solid var(--color-transparent);
     color: var(--color-gray-tuna);
+    display: inline-block;
     margin-right: 0.5em;
-    padding-right: 0.5em;
+    padding: 0.25em 0.25em 0.25em 0;
     text-decoration: none;
 }
 
 .Scrollspy-sectionInner:hover {
-    color: var(--color-green-base);
+    border-right: var(--Scrollspy-border-width) solid var(--color-transparent);
+    color: var(--Scrollspy-color-active);
 }
 
-/*1*/
-.Scrollspy-sectionInner.active {
-    border-right: 0.25em solid var(--color-green-base);
-    color: var(--color-green-base);
+.Scrollspy-sectionInner.active { /* 2 */
+    border-right-color: var(--Scrollspy-color-active);
+    color: var(--Scrollspy-color-active);
     font-family: var(--font-family-proportional-semibold);
 }
