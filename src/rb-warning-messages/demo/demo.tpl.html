@@ -1,22 +1,21 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-warning-messages
-        </h2>
-        <p>
-            The <code>rb-warning-messages</code> component can be used wherever a list of warning messages is required.
-        </p>
-    </div>
-    <div class="ComponentView">
-        <p>
-            Content before.
-        </p>
-        <rb-warning-messages warnings="demoCtrl.warningList"
-            on-issue-click="demoCtrl.clicky(warning)"
-            on-dismiss="demoCtrl.dismissy(id)">
-        </rb-warning-messages>
-        <p>
-            Content after.
-        </p>
-    </div>
-</section>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-warning-messages">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
+                <p>
+                    The <code>rb-warning-messages</code> component can be used wherever a list of warning messages is required.
+                </p>
+            </div>
+        </rb-section>
+        <rb-section heading="Default">
+            <div class="ComponentView">
+                <rb-warning-messages warnings="demoCtrl.warningList"
+                    on-issue-click="demoCtrl.clicky(warning)"
+                    on-dismiss="demoCtrl.dismissy(id)">
+                </rb-warning-messages>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
