@@ -31,6 +31,18 @@
                 </rb-text-control>
             </rb-section>
 
+            <rb-section heading="URL (type='url')">
+                <rb-text-control
+                    form="userForm"
+                    label="Your URL"
+                    placeholder="Enter your URL..."
+                    name="url"
+                    type="url"
+                    ng-model="demoCtrl.data.url"
+                    is-required="true">
+                </rb-text-control>
+            </rb-section>
+
             <rb-section heading="Password (type='password')">
                 <rb-text-control
                     form="userForm"
