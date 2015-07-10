@@ -1,57 +1,73 @@
-<h1 class="u-textHeading1">
-    .SystemMessage
-</h1>
-
-<h3>
-    API
-</h3>
-
-<p>
-    <ul>
-        <li><code>title</code>: Title atop the component.</li>
-        <li><code>message</code>: System message in layman's terms.</li>
-        <li><code>technical-details</code>: Technical message for more information.</li>
-        <li><code>on-dismiss</code>: An expression evaluated when dismiss button is clicked.</li>
-        <li><code>contact [optional]</code>: Contact email address.</li>
-        <li><code>modifier [optional]</code>: Change the mode of the system message. Can be <code>danger</code> or <code>positive</code>.</li>
-        <li><code>dismiss-message [optional]</code>: Custom message for the dismiss button. Defaults to "Okay I Understand".</li>
-    </ul>
-</p>
-
-<br/>
-
-<h4>
-    NO MODIFIER
-</h4>
-
-<rb-system-message
-    title="Something happened"
-    message="Here is the message"
-    technical-details="HUH"
-    dismiss-message="Custom onDismiss function"
-    on-dismiss="demoCtrl.dismiss(1)">
-</rb-system-message>
-
-<h4>
-    DANGER MODIFIER
-</h4>
-
-<rb-system-message
-    title="500 Server Error"
-    message="error_description: Couldn't connect to the servers. Please try again later."
-    technical-details="status_code: 500 url: https://www.example.com/api/v1/users/"
-    modifier="danger"
-    contact="support@example.com"
-    dismiss-message="Save me!">
-</rb-system-message>
-
-<h4>
-    POSITIVE MODIFIER
-</h4>
-
-<rb-system-message
-    title="Something good happened"
-    message="Here is the message"
-    technical-details="FIVE KITTENS WERE BORN"
-    modifier="positive">
-</rb-system-message>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-system-message">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
+                <p>
+                    The <code>rb-system-message</code> component can be used for displaying low-level system error messages.
+                </p>
+            </div>
+        </rb-section>
+        <rb-section heading="API">
+            <div class="RawHTML">
+                <ul>
+                    <li>
+                        <code>title</code>: Title atop the component.
+                    </li>
+                    <li>
+                        <code>message</code>: System message in layman's terms.
+                    </li>
+                    <li>
+                        <code>technical-details</code>: Technical message for more information.
+                    </li>
+                    <li>
+                        <code>on-dismiss</code>: An expression evaluated when dismiss button is clicked.
+                    </li>
+                    <li>
+                        <code>contact [optional]</code>: Contact email address.
+                    </li>
+                    <li>
+                        <code>modifier [optional]</code>: Change the mode of the system message. Can be <code>danger</code> or <code>positive</code>.
+                    </li>
+                    <li>
+                        <code>dismiss-message [optional]</code>: Custom message for the dismiss button. Defaults to "Okay I Understand".
+                    </li>
+                </ul>
+            </div>
+        </rb-section>
+        <rb-section heading="Default">
+            <div class="ComponentView">
+                <rb-system-message
+                    title="Something happened"
+                    message="Here is the message"
+                    technical-details="HUH"
+                    dismiss-message="Custom onDismiss function"
+                    on-dismiss="demoCtrl.dismiss(1)">
+                </rb-system-message>
+            </div>
+        </rb-section>
+        <rb-section heading="Danger Modifier">
+            <div class="ComponentView">
+                <rb-system-message
+                    title="500 Server Error"
+                    message="error_description: Couldn't connect to the servers. Please try again later."
+                    technical-details="status_code: 500 url: https://www.example.com/api/v1/users/"
+                    modifier="danger"
+                    contact="support@example.com"
+                    dismiss-message="Save me!">
+                </rb-system-message>
+            </div>
+        </rb-section>
+        <rb-section heading="Positive Modifier">
+            <div class="ComponentView">
+                <rb-system-message
+                    title="Something good happened"
+                    message="Here is the message"
+                    technical-details="FIVE KITTENS WERE BORN"
+                    modifier="positive">
+                </rb-system-message>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
