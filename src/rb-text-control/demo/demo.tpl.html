@@ -92,6 +92,20 @@
                 </rb-text-control>
             </rb-section>
 
+            <rb-section heading="Text (type='text', Calls a function on change --> see browser console)">
+                <rb-text-control
+                    form="userForm"
+                    label="Pet Name"
+                    placeholder="Enter the name of your pet..."
+                    name="pet"
+                    type="text"
+                    ng-model="demoCtrl.data.pet"
+                    is-required="true"
+                    on-change="demoCtrl.printChange(value)"
+                    help-message="i.e. Purple Prawn">
+                </rb-text-control>
+            </rb-section>
+
             <rb-section heading="Textarea (type='textarea')">
                 <rb-text-control
                     form="userForm"
@@ -111,6 +125,17 @@
                     type="textarea"
                     ng-model="demoCtrl.data.elasticDescription">
                 </rb-text-control>
+
+                <rb-text-control
+                    form="userForm"
+                    label="Description (Calls a function on change --> see browser console)"
+                    placeholder="Gimme a description..."
+                    name="description"
+                    type="textarea"
+                    on-change="demoCtrl.printChange(value)"
+                    ng-model="demoCtrl.data.description">
+                </rb-text-control>
+
             </rb-section>
 
             <rb-section heading="Search (type='search')">
