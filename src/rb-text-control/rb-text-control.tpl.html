@@ -25,9 +25,11 @@
         step="{{ numberSteps }}"
         type="{{ inputType }}"
         ng-model="$parent.ngModel"
+        ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 700, 'blur': 0 } }"
         ng-required="{{isRequired}}"
         ng-disabled="{{isDisabled}}"
         ng-readonly="{{isReadonly}}"
+        ng-change="onChange({value:$parent.ngModel})"
         ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
         custom-validation
     />
@@ -39,9 +41,12 @@
         placeholder="{{placeholder}}"
         type="{{type}}"
         ng-model="$parent.ngModel"
+        ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 700, 'blur': 0 } }"
+        ng-required="{{isRequired}}"
         ng-required="{{isRequired}}"
         ng-disabled="{{isDisabled}}"
         ng-readonly="{{isReadonly}}"
+        ng-change="onChange({value:$parent.ngModel})"
         ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
         custom-validation
         msd-elastic="{{ isElastic || false }}"

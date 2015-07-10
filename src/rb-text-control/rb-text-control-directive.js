@@ -22,6 +22,7 @@ define([
      *             type="text"
      *             is-elastic="true"
      *             ng-model="demoCtrl.data.name"
+     *             on-change="demoCtrl.anyFunction(value)"
      *             is-required="true"
      *             help-message="This is what we will call you!">
      *         </rb-text-control>
@@ -46,7 +47,8 @@ define([
                 name: '@',
                 type: '@',
                 numberSteps: '@',
-                small: '@'
+                small: '@',
+                onChange: '&'
             },
             restrict: 'E',
             replace: true,
