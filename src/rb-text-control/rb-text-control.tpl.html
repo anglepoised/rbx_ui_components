@@ -6,6 +6,7 @@
     'TextControl--search': type==='search',
     'TextControl--textarea': type==='textarea',
     'TextControl--currency': type==='currency',
+    'TextControl--url': type==='url',
     'TextControl--small': small==='true'
 }">
 
@@ -66,6 +67,9 @@
         </div>
         <div class="TextControl-message is-invalid" ng-if="form[name].$error.currency">
             Please enter a valid monetary value.
+        </div>
+        <div class="TextControl-message is-invalid" ng-if="form[name].$error.url">
+            Please enter a valid URL.
         </div>
     </div>
 
