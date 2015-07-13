@@ -4,9 +4,26 @@
         </rb-page-title>
         <rb-section heading="Introduction" hide-heading="true">
             <div class="RawHTML">
+                <p>
+                    The <code>rb-page-header</code> component should be used across all products. It consists of:
+                </p>
+                <ul>
+                    <li>
+                        A mandatory logo
+                    </li>
+                    <li>
+                        An optional <code>rb-nav-bar</code> subcomponent
+                    </li>
+                    <li>
+                        An optional <code>rb-user</code> subcomponent
+                    </li>
+                </ul>
+                <p>
+                    It must be enclosed within the primary page <code>rb-header</code> element.
+                </p>
             </div>
         </rb-section>
-        <rb-section heading="Default">
+        <rb-section heading="Full">
             <div class="ComponentView">
                 <rb-header>
                     <rb-page-header>
@@ -23,6 +40,37 @@
                                 Sign out
                             </rb-user>
                         </div>
+                    </rb-page-header>
+                </rb-header>
+            </div>
+        </rb-section>
+        <rb-section heading="Logo and User Only">
+            <div class="ComponentView">
+                <rb-header>
+                    <rb-page-header>
+                        <a class="PageHeader-logo" ng-click="demoCtrl.logoHeaderFunction()" ng-aria>
+                            <rb-icon icon="white-alabaster-100-logo-rockabox">
+                                Rockabox
+                            </rb-icon>
+                        </a>
+                        <div class="PageHeader-user">
+                            <rb-user username="demoCtrl.user" logoutfunction="demoCtrl.logout()">
+                                Sign out
+                            </rb-user>
+                        </div>
+                    </rb-page-header>
+                </rb-header>
+            </div>
+        </rb-section>
+        <rb-section heading="Logo only">
+            <div class="ComponentView">
+                <rb-header>
+                    <rb-page-header>
+                        <a class="PageHeader-logo" ng-click="demoCtrl.logoHeaderFunction()" ng-aria>
+                            <rb-icon icon="white-alabaster-100-logo-rockabox">
+                                Rockabox
+                            </rb-icon>
+                        </a>
                     </rb-page-header>
                 </rb-header>
             </div>
