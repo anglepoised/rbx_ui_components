@@ -1,144 +1,129 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-fieldset
-        </h2>
-        <h3>
-            Default
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <form name="userForm">
-            <rb-fieldset label="Default legend">
-                <rb-text-control
-                    form="userForm"
-                    label="Your Email"
-                    placeholder="Enter your email..."
-                    name="email"
-                    type="email"
-                    ng-model="demoCtrl.data.email"
-                    is-required="true"
-                    help-message="This is so we can harass you">
-                </rb-text-control>
-            </rb-fieldset>
-        </form>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Additional Info modifier
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-fieldset type="additionalInfo" label="Additional Info">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </rb-fieldset>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Basics modifier
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-fieldset type="basics" label="Basics">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </rb-fieldset>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Breakdown modifier
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-fieldset type="breakdown" label="Breakdown">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </rb-fieldset>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Goals modifier
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-fieldset type="goals" label="Goals">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </rb-fieldset>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Finance modifier
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-fieldset type="finance" label="Finance">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </rb-fieldset>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Metrics modifier
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-fieldset type="metrics" label="Metrics">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </rb-fieldset>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Actions modifier
-        </h3>
-    </div>
-    <div class="ComponentView">
-        Model: {{demoCtrl.action}}
-        <rb-fieldset type="actions">
-            <rb-fieldset-item>
-                <rb-button ng-click="demoCtrl.action=1">Action 1</rb-button>
-            </rb-fieldset-item>
-            <rb-fieldset-item>
-                <rb-button ng-click="demoCtrl.action=2" outline="yes">Action 2</rb-button>
-            </rb-fieldset-item>
-        </rb-fieldset>
-    </div>
-</section>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-fieldset">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
+                <p>
+                    The <code>rb-fieldset</code> component wraps fieldset-like sections in
+                    <code><a ui-sref="rb-generic-form">rb-generic-form</a></code>.
+                </p>
+            </div>
+        </rb-section>
+        <rb-section heading="Default">
+            <div class="ComponentView">
+                <form name="userForm">
+                    <rb-fieldset label="Default legend">
+                        <rb-text-control
+                            form="userForm"
+                            label="Your Email"
+                            placeholder="Enter your email..."
+                            name="email"
+                            type="email"
+                            ng-model="demoCtrl.data.email"
+                            is-required="true"
+                            help-message="This is so we can harass you">
+                        </rb-text-control>
+                    </rb-fieldset>
+                </form>
+            </div>
+        </rb-section>
+        <rb-section heading="Additional Info">
+            <div class="ComponentView">
+                <rb-fieldset type="additionalInfo" label="Additional Info">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </rb-fieldset>
+            </div>
+        </rb-section>
+        <rb-section heading="Basics">
+            <div class="ComponentView">
+                <rb-fieldset type="basics" label="Basics">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </rb-fieldset>
+            </div>
+        </rb-section>
+        <rb-section heading="Breakdown">
+            <div class="ComponentView">
+                <rb-fieldset type="breakdown" label="Breakdown">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </rb-fieldset>
+            </div>
+        </rb-section>
+        <rb-section heading="Goals">
+            <div class="ComponentView">
+                <rb-fieldset type="goals" label="Goals">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </rb-fieldset>
+            </div>
+        </rb-section>
+        <rb-section heading="Finance">
+            <div class="ComponentView">
+                <rb-fieldset type="finance" label="Finance">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </rb-fieldset>
+            </div>
+        </rb-section>
+        <rb-section heading="Metrics">
+            <div class="ComponentView">
+                <rb-fieldset type="metrics" label="Metrics">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </rb-fieldset>
+            </div>
+        </rb-section>
+        <rb-section heading="Actions">
+            <div class="ComponentView">
+                Model: {{demoCtrl.action}}
+                <rb-fieldset type="actions">
+                    <rb-fieldset-item>
+                        <rb-button ng-click="demoCtrl.action=1">Action 1</rb-button>
+                    </rb-fieldset-item>
+                    <rb-fieldset-item>
+                        <rb-button ng-click="demoCtrl.action=2" outline="yes">Action 2</rb-button>
+                    </rb-fieldset-item>
+                </rb-fieldset>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
