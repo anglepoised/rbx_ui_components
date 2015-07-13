@@ -1,31 +1,36 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-definition-list
-        </h2>
-        <p>
-            The <code>rb-definition-list</code> component should be used for displaying name-value structures.
-        </p>
-    </div>
-    <div class="ComponentView">
-        <rb-definition-list button-text="Edit targeting" button-click="demoCtrl.onButtonClick()">
-            <rb-definition-list-item icon="black-16-frequency" label="Frequency Cap">
-                <span>No targeting</span>
-            </rb-definition-list-item>
-            <rb-definition-list-item icon="black-16-geo" label="Geo">
-                <span>France, Germany, United Kingdom</span>
-            </rb-definition-list-item>
-            <rb-definition-list-item icon="black-16-segmentation" label="Segmentation">
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-definition-list">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
                 <p>
-                    <strong>Exclude:</strong> List of categories to exclude
+                    The <code>rb-definition-list</code> component should be used for displaying name-value structures.
                 </p>
-                <p>
-                    <strong>Include:</strong> List of categories to include
-                </p>
-            </rb-definition-list-item>
-            <rb-definition-list-item icon="black-16-categories" label="Categories">
-                <span>Arts &amp; Entertainment (16/16), Education (2/8)</span>
-            </rb-definition-list-item>
-        </rb-definition-list>
-    </div>
-</section>
+            </div>
+        </rb-section>
+        <rb-section heading="Default">
+            <div class="ComponentView">
+                <rb-definition-list button-text="Edit targeting" button-click="demoCtrl.onButtonClick()">
+                    <rb-definition-list-item icon="black-16-frequency" label="Frequency Cap">
+                        <span>No targeting</span>
+                    </rb-definition-list-item>
+                    <rb-definition-list-item icon="black-16-geo" label="Geo">
+                        <span>France, Germany, United Kingdom</span>
+                    </rb-definition-list-item>
+                    <rb-definition-list-item icon="black-16-segmentation" label="Segmentation">
+                        <p>
+                            <strong>Exclude:</strong> List of categories to exclude
+                        </p>
+                        <p>
+                            <strong>Include:</strong> List of categories to include
+                        </p>
+                    </rb-definition-list-item>
+                    <rb-definition-list-item icon="black-16-categories" label="Categories">
+                        <span>Arts &amp; Entertainment (16/16), Education (2/8)</span>
+                    </rb-definition-list-item>
+                </rb-definition-list>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
