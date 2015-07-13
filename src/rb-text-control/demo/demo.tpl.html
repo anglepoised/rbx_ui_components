@@ -4,7 +4,26 @@
 
             <rb-page-title heading="rb-text-control">
             </rb-page-title>
-
+            <rb-section heading="Introduction" hide-heading="true">
+                <div class="RawHTML">
+                    <p>
+                        The <code>rb-text-control</code> component groups simple, text-based fields that share a set of
+                        common states. Status and modifier classes can be applied to any field type and can be stacked.
+                    </p>
+                    <p>
+                        The <code>placeholder</code> attribute should be used where this will aid usability but should
+                        <strong>not</strong> be used in place of a <code>label</code> element.
+                    </p>
+                    <p>
+                        The <code>autocomplete="off"</code> attribute should <strong>not</strong> be used for password
+                        fields, but should be used for other sensitive data types (e.g. credit card information).
+                    </p>
+                    <p>
+                        The <code>autofocus</code> attribute should only be used <strong>once per page</strong>, and
+                        only on the <strong>first</strong> field on a composed page that has a single, simple form
+                        (e.g. <code><a ui-sref="rb-login-form">rb-login-form</a></code>).
+                    </p>
+            </rb-section>
             <rb-section heading="Text (type='text')">
                 <rb-text-control
                     form="userForm"
