@@ -13,11 +13,11 @@ define([
      * `<rb-data-summary>` is a directive that wraps data items for summaries
      *
      * You can supply an optional `type` attribute with value `financials`,
-     * `timings` or `notes` to show a related icon in the left column.
+     * `timings` or `additional` to show a related icon in the left column.
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-data-summary type="financials | timings | notes">
+     *    <rb-data-summary type="financials | timings | additional">
      *    </rb-data-summary>
      * </hljs>
      *
