@@ -148,7 +148,7 @@ define([
                     compileTemplate(templateWithOffset);
                     anchors = element.find('a');
 
-                    expect(angular.element(anchors[0]).attr('offset')).toEqual('100');
+                    expect(angular.element(anchors[0]).attr('offset')).toEqual('128');
                     expect(angular.element(anchors[1]).attr('offset')).toEqual('100');
                     expect(angular.element(anchors[2]).attr('offset')).toEqual('100');
                     expect(angular.element(anchors[3]).attr('offset')).toEqual('100');

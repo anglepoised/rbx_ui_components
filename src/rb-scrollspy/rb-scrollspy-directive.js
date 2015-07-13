@@ -57,7 +57,11 @@ define([
             restrict: 'E',
             replace: true,
             template: template,
-            transclude: true
+            transclude: true,
+            controller: function ($scope) {
+                // Offset to correctly trigger top scrollspy item
+                $scope.categoryInnerOffset = parseInt($scope.offset, 10) + 28;
+            }
         };
     }
     return rbScrollspyDirective;
