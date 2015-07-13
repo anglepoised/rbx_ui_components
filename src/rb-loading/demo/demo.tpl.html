@@ -1,16 +1,18 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-loading
-        </h2>
-        <p>
-            The <code>rb-loading</code> component should be used whenever the application is waiting for data.
-        </p>
-    </div>
-    <div class="ComponentView">
-        <rb-loading item-label="Teams"></rb-loading>
-        <rb-loading item-label="Users"></rb-loading>
-        <rb-loading item-label="Joke Book"></rb-loading>
-        <rb-loading item-label="Hats"></rb-loading>
-    </div>
-</section>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-loading">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
+                <p>
+                    The <code>rb-loading</code> component should be used whenever the application is waiting for data.
+                </p>
+            </div>
+        </rb-section>
+        <rb-section heading="Default">
+            <div class="ComponentView">
+                <rb-loading item-label="Things"></rb-loading>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
