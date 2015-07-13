@@ -1,17 +1,31 @@
-<rb-header>
-    <rb-page-header>
-        <a class="PageHeader-logo" ng-click="demoCtrl.logoHeaderFunction()" ng-aria>
-            <rb-icon icon="white-alabaster-100-logo-rockabox">
-                Rockabox
-            </rb-icon>
-        </a>
-        <div class="PageHeader-nav">
-            <rb-nav-bar options="demoCtrl.options"></rb-nav-bar>
-        </div>
-        <div class="PageHeader-user">
-            <rb-user username="demoCtrl.user" logoutfunction="demoCtrl.logout()">
-                Sign out
-            </rb-user>
-        </div>
-    </rb-page-header>
-</rb-header>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-page-header">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
+            </div>
+        </rb-section>
+        <rb-section heading="Default">
+            <div class="ComponentView">
+                <rb-header>
+                    <rb-page-header>
+                        <a class="PageHeader-logo" ng-click="demoCtrl.logoHeaderFunction()" ng-aria>
+                            <rb-icon icon="white-alabaster-100-logo-rockabox">
+                                Rockabox
+                            </rb-icon>
+                        </a>
+                        <div class="PageHeader-nav">
+                            <rb-nav-bar options="demoCtrl.options"></rb-nav-bar>
+                        </div>
+                        <div class="PageHeader-user">
+                            <rb-user username="demoCtrl.user" logoutfunction="demoCtrl.logout()">
+                                Sign out
+                            </rb-user>
+                        </div>
+                    </rb-page-header>
+                </rb-header>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
