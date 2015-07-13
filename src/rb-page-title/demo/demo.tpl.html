@@ -1,61 +1,60 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-page-title
-        </h2>
-        <p>
-            The <code>rb-page-title</code> component can be used across all products. It consists of:
-        </p>
-        <ul>
-            <li>An optional navigation descendent, generally pointing back to an index.</li>
-            <li>A mandatory page body, containing a mandatory page heading.</li>
-            <li>An optional badge, displayed near the page heading.</li>
-            <li>An optional subheading.</li>
-            <li>An optional action descendent.</li>
-        </ul>
-        <p>
-           A compact modifier is available for use in overlay panels.
-        </p>
-        <h3>
-            Standard
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-page-title
-            heading="My Test Page"
-            subheading="This subheading rocks"
-            back-text="Back to home" back-sref="app"
-            badge-status="{{pageTitleDemoCtrl.status}}">
-                <rb-button state="positive"
-                    ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
-                    ng-if="pageTitleDemoCtrl.status==='statusPending'">Publish</rb-button>
-                <rb-button state="danger" outline="yes"
-                    ng-click="pageTitleDemoCtrl.changeStatus('statusPaused')"
-                    ng-if="pageTitleDemoCtrl.status==='statusLive'">Pause</rb-button>
-                <rb-button state="positive" outline="yes"
-                    ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
-                    ng-if="pageTitleDemoCtrl.status==='statusPaused'">Re-Publish</rb-button>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-page-title">
         </rb-page-title>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Compact
-        </h3>
-    </div>
-    <div class="ComponentView">
-        <rb-page-title
-            heading="My Compact Page"
-            compact="true"
-            badge-status="{{pageTitleDemoCtrl.status}}">
-                <rb-button state="positive"
-                    ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
-                    ng-if="pageTitleDemoCtrl.status==='statusPending'">Publish</rb-button>
-                <rb-button state="danger" outline="yes"
-                    ng-click="pageTitleDemoCtrl.changeStatus('statusPaused')"
-                    ng-if="pageTitleDemoCtrl.status==='statusLive'">Pause</rb-button>
-                <rb-button state="positive" outline="yes"
-                    ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
-                    ng-if="pageTitleDemoCtrl.status==='statusPaused'">Re-Publish</rb-button>
-        </rb-page-title>
-    </div>
-</section>
+        <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
+                <p>
+                    The <code>rb-page-title</code> component can be used across all products. It consists of:
+                </p>
+                <ul>
+                    <li>An optional navigation descendent, generally pointing back to an index.</li>
+                    <li>A mandatory page body, containing a mandatory page heading.</li>
+                    <li>An optional badge, displayed near the page heading.</li>
+                    <li>An optional subheading.</li>
+                    <li>An optional action descendent.</li>
+                </ul>
+                <p>
+                   A compact modifier is available for use in <code><a ui-sref="rb-overlay-panel">rb-overlay-panel</a></code>.
+                </p>
+            </div>
+        </rb-section>
+        <rb-section heading="Default">
+            <div class="ComponentView">
+                <rb-page-title
+                    heading="My Test Page"
+                    subheading="This subheading rocks"
+                    back-text="Back to home" back-sref="app"
+                    badge-status="{{pageTitleDemoCtrl.status}}">
+                        <rb-button state="positive"
+                            ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
+                            ng-if="pageTitleDemoCtrl.status==='statusPending'">Publish</rb-button>
+                        <rb-button state="danger" outline="yes"
+                            ng-click="pageTitleDemoCtrl.changeStatus('statusPaused')"
+                            ng-if="pageTitleDemoCtrl.status==='statusLive'">Pause</rb-button>
+                        <rb-button state="positive" outline="yes"
+                            ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
+                            ng-if="pageTitleDemoCtrl.status==='statusPaused'">Re-Publish</rb-button>
+                </rb-page-title>
+            </div>
+        </rb-section>
+        <rb-section heading="Compact">
+            <div class="ComponentView">
+                <rb-page-title
+                    heading="My Compact Page"
+                    compact="true"
+                    badge-status="{{pageTitleDemoCtrl.status}}">
+                        <rb-button state="positive"
+                            ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
+                            ng-if="pageTitleDemoCtrl.status==='statusPending'">Publish</rb-button>
+                        <rb-button state="danger" outline="yes"
+                            ng-click="pageTitleDemoCtrl.changeStatus('statusPaused')"
+                            ng-if="pageTitleDemoCtrl.status==='statusLive'">Pause</rb-button>
+                        <rb-button state="positive" outline="yes"
+                            ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
+                            ng-if="pageTitleDemoCtrl.status==='statusPaused'">Re-Publish</rb-button>
+                </rb-page-title>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
