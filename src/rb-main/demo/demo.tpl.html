@@ -3,11 +3,60 @@
         <rb-page-title heading="rb-main">
         </rb-page-title>
         <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
+                <p>
+                    The <code>rb-main</code> component should be used to wrap the main content of the page i.e. any
+                    components not contained in <code>rb-header</code> or <code>rb-footer</code>.
+                </p>
+                <p>
+                    Two stackable modifiers are available:
+                </p>
+                <ul>
+                    <li>
+                        <code>.Main--background</code>: sets a covering background image.
+                    </li>
+                    <li>
+                        <code>.Main--center</code>: vertically and horizontally centers all children.
+                    </li>
+                </ul>
+                <p>
+                    When modifiers are used:
+                </p>
+                <ul>
+                    <li>
+                        <code>rb-main</code> must be a direct child of the <code><a ui-sref="rb-site">rb-site</a></code>
+                        component.
+                    </li>
+                    <li>
+                        <code>.Main--background</code> should not be used without also using <code>.Main--center</code>.
+                    </li>
+                    <li>
+                        When used, both <code>rb-header</code> and <code>rb-footer</code> must be direct children of the
+                        <code>rb-site</code> component.
+                    </li>
+                </ul>
+            </div>
         </rb-section>
         <rb-section heading="Default">
-            <rb-main class="Main--background Main--center">
-                Your main content might go here...
-            </rb-main>
+            <rb-site>
+                <rb-main>
+                    Main content
+                </rb-main>
+            </rb-site>
+        </rb-section>
+        <rb-section heading="Centered">
+            <rb-site>
+                <rb-main class="Main--center">
+                    Main content
+                </rb-main>
+            </rb-site>
+        </rb-section>
+        <rb-section heading="Background And Centered">
+            <rb-site>
+                <rb-main class="Main--background Main--center">
+                    Main content
+                </rb-main>
+            </rb-site>
         </rb-section>
     </rb-main>
 </rb-site>
