@@ -1,14 +1,19 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-footer
-        </h2>
-        <p>
-            The <code>rb-footer</code> component appears at the bottom of all pages and consists of a mandatory
-            information section and an optional block containing links.
-        </p>
-    </div>
-    <div class="ComponentView">
-        <rb-footer copyright="demoCtrl.copyright" links="demoCtrl.links"></rb-footer>
-    </div>
-</section>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-footer">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
+                <p>
+                    The <code>rb-footer</code> component appears at the bottom of all pages and consists of a mandatory
+                    information section and an optional block containing links.
+                </p>
+            </div>
+        </rb-section>
+        <rb-section heading="Default">
+            <div class="ComponentView">
+                <rb-footer copyright="demoCtrl.copyright" links="demoCtrl.links"></rb-footer>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
