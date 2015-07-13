@@ -1,24 +1,29 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-site
-        </h2>
-        <p>
-            The <code>rb-site</code> component should wrap all content on a page and is used in conjunction with
-            <code>rb-main</code> to create sticky footer and centred content effects.
-        </p>
-    </div>
-    <div class="ComponentView">
-        <rb-site>
-            <rb-header>
-                Header
-            </rb-header>
-            <rb-main class="Main--background Main--center">
-                Main
-            </rb-main>
-            <rb-footer>
-                Footer
-            </rb-footer>
-        </rb-site>
-    </div>
-</section>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-site">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
+                <p>
+                    The <code>rb-site</code> component should wrap all content on a page and is used in conjunction with
+                    <code><a ui-sref="rb-main">rb-main</a></code> to create sticky footer and centred content effects.
+                </p>
+            </div>
+        </rb-section>
+        <rb-section heading="Default">
+            <div class="ComponentView">
+                <rb-site>
+                    <rb-header>
+                        Header
+                    </rb-header>
+                    <rb-main class="Main--background Main--center">
+                        Main
+                    </rb-main>
+                    <rb-footer>
+                        Footer
+                    </rb-footer>
+                </rb-site>
+            </div>
+        </rb-section>
+    </rb-main>
+</rb-site>
