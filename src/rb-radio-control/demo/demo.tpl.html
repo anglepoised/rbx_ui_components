@@ -1,179 +1,79 @@
-<section class="Section">
-    <div class="RawHTML">
-        <h2>
-            rb-radio-control
-        </h2>
-        <p>
-            A radio control must always display more than one radio button and label pair.
-        </p>
-        <p>
-            When using the `RadioControl--row` modifier, exactly two radio button and label pairs.
-        </p>
-        <p>
-            <strong>We may not need (or be able to use) all of these states as we're swapping out native controls for
-            custom styled controls.</strong>
-        </p>
-        <p>
-            <strong>Required:</strong> "If any radio button in a same named group of radio buttons has the required
-            attribute set, the user must select one of the radio buttons in that group, but not necessarily the one that
-            has the attribute set. The one occurrence of the required attribute is applied to the whole group of same
-            named radio buttons." See:
-            <a href="http://www.wufoo.com/html5/types/15-radio.html">http://www.wufoo.com/html5/types/15-radio.html</a>
-        </p>
-        <p>
-            <strong>Pressed:</strong> distinct from checked. Click and hold but don't release to activate.
-        </p>
-        <p>
-            <strong>Focused:</strong> distinct from pressed. Tab to control with keyboard, but don't hit space to activate.
-        </p>
-    </div>
-    <div class="RawHTML">
-        <h3>
-            Current Angular Version
-        </h3>
-        <h4>
-            Default
-        </h4>
-    </div>
-    <div class="ComponentView">
-        <form name="radioForm">
-            <rb-radio-control
-                choices="demoCtrl.choices"
-                ng-model="demoCtrl.selected"
-                form="radioForm"
-                help-message="Optional group help message"
-                is-required=true
-                name="ng-radio-group">
-            </rb-radio-control>
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-radio-control">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <div class="RawHTML">
+                <p>
+                    A radio control must always display more than one radio button and label pair.
+                </p>
+                <p>
+                    When using the `RadioControl--row` modifier, exactly two radio button and label pairs.
+                </p>
+                <p>
+                    <strong>We may not need (or be able to use) all of these states as we're swapping out native controls for
+                    custom styled controls.</strong>
+                </p>
+                <p>
+                    <strong>Required:</strong> "If any radio button in a same named group of radio buttons has the required
+                    attribute set, the user must select one of the radio buttons in that group, but not necessarily the one that
+                    has the attribute set. The one occurrence of the required attribute is applied to the whole group of same
+                    named radio buttons." See:
+                    <a href="http://www.wufoo.com/html5/types/15-radio.html">http://www.wufoo.com/html5/types/15-radio.html</a>
+                </p>
+                <p>
+                    <strong>Pressed:</strong> distinct from checked. Click and hold but don't release to activate.
+                </p>
+                <p>
+                    <strong>Focused:</strong> distinct from pressed. Tab to control with keyboard, but don't hit space to activate.
+                </p>
+            </div>
+        </rb-section>
+        <rb-section heading="Default">
+            <div class="ComponentView">
+                <form name="radioForm">
+                    <rb-radio-control
+                        choices="demoCtrl.choices"
+                        ng-model="demoCtrl.selected"
+                        form="radioForm"
+                        help-message="Optional group help message"
+                        is-required=true
+                        name="ng-radio-group">
+                    </rb-radio-control>
 
-            Model: {{ demoCtrl.selected }}
-        </form>
-    </div>
-    <div class="RawHTML">
-        <h4>
-            Row modifier
-        </h4>
-    </div>
-    <div class="ComponentView">
-        <form name="radioRowForm">
-            <rb-radio-control
-                choices="demoCtrl.choicesRow"
-                ng-model="demoCtrl.selectedRow"
-                form="radioRowForm"
-                help-message="Optional group help message"
-                is-row=true
-                name="ng-radio--row-group">
-            </rb-radio-control>
+                    Model: {{ demoCtrl.selected }}
+                </form>
+            </div>
+        </rb-section>
+        <rb-section heading="Row Modifier">
+            <div class="ComponentView">
+                <form name="radioRowForm">
+                    <rb-radio-control
+                        choices="demoCtrl.choicesRow"
+                        ng-model="demoCtrl.selectedRow"
+                        form="radioRowForm"
+                        help-message="Optional group help message"
+                        is-row=true
+                        name="ng-radio--row-group">
+                    </rb-radio-control>
 
-            Model: {{ demoCtrl.selectedRow }}
-        </form>
-    </div>
+                    Model: {{ demoCtrl.selectedRow }}
+                </form>
+            </div>
+        </rb-section>
+        <rb-section heading="Icon Modifier">
+            <div class="ComponentView">
+                <form name="iconRadioForm">
+                    <rb-radio-control
+                        choices="demoCtrl.iconChoices"
+                        ng-model="demoCtrl.selectedIcon"
+                        form="iconRadioForm"
+                        name="ng-radio--icon">
+                    </rb-radio-control>
 
-    <div class="RawHTML">
-        <h4>
-            Icon modifier
-        </h4>
-    </div>
-    <div class="ComponentView">
-        <form name="iconRadioForm">
-            <rb-radio-control
-                choices="demoCtrl.iconChoices"
-                ng-model="demoCtrl.selectedIcon"
-                form="iconRadioForm"
-                name="ng-radio--icon">
-            </rb-radio-control>
-
-            Model: {{ demoCtrl.selectedIcon }}
-        </form>
-    </div>
-
-    <div class="RawHTML">
-        <h3>
-            Static Reference Version
-        </h3>
-        <h4>
-            Default
-        </h4>
-    </div>
-    <div class="ComponentView">
-        <div class="RadioControl">
-            <div class="RadioControl-items">
-                <div class="RadioControl-item">
-                    <input class="RadioControl-field" id="radio1" name="radio-group" type="radio">
-                    <label class="RadioControl-label u-textLabel" for="radio1">Radio label</label>
-                </div>
-                <div class="RadioControl-item is-invalid">
-                    <input class="RadioControl-field is-invalid" id="radio2" name="radio-group" type="radio">
-                    <label class="RadioControl-label is-invalid u-textLabel" for="radio2">Radio invalid</label>
-                </div>
-                <div class="RadioControl-item is-disabled">
-                    <input class="RadioControl-field is-disabled" id="radio3" name="radio-group" type="radio" disabled>
-                    <label class="RadioControl-label is-disabled u-textLabel" for="radio3">Radio disabled</label>
-                </div>
-                <div class="RadioControl-item is-required">
-                    <input class="RadioControl-field is-required" id="radio4" name="radio-group" type="radio" required>
-                    <label class="RadioControl-label is-required u-textLabel" for="radio4">Radio required</label>
-                </div>
-                <div class="RadioControl-item is-checked">
-                    <input class="RadioControl-field is-checked" id="radio5" name="radio-group" type="radio" checked>
-                    <label class="RadioControl-label is-checked u-textLabel" for="radio5">Radio checked</label>
-                </div>
-                <div class="RadioControl-item is-pressed">
-                    <input class="RadioControl-field is-pressed" id="radio6" name="radio-group" type="radio">
-                    <label class="RadioControl-label is-pressed u-textLabel" for="radio6">Radio pressed</label>
-                </div>
-                <div class="RadioControl-item is-focused">
-                    <input class="RadioControl-field is-focused" id="radio7" name="radio-group" type="radio">
-                    <label class="RadioControl-label is-focused u-textLabel" for="radio7">Radio focused</label>
-                </div>
+                    Model: {{ demoCtrl.selectedIcon }}
+                </form>
             </div>
-            <div class="RadioControl-message">
-                Optional group help message
-            </div>
-            <div class="RadioControl-message is-invalid">
-                Invalid message
-            </div>
-        </div>
-    </div>
-    <div class="RawHTML">
-        <h4>
-            Row modifier
-        </h4>
-    </div>
-    <div class="ComponentView">
-        <div class="RadioControl RadioControl--row">
-            <div class="RadioControl-items">
-                <div class="RadioControl-item">
-                    <input class="RadioControl-field" id="radio1--row" name="radio--row-group" type="radio">
-                    <label class="RadioControl-label u-textLabel" for="radio1--row">Radio label 1</label>
-                </div>
-                <div class="RadioControl-item">
-                    <input class="RadioControl-field" id="radio2--row" name="radio--row-group" type="radio">
-                    <label class="RadioControl-label u-textLabel" for="radio2--row">Radio label 2</label>
-                </div>
-                <div class="RadioControl-item">
-                    <input class="RadioControl-field" id="radio3--row" name="radio--row-group" type="radio">
-                    <label class="RadioControl-label u-textLabel" for="radio3--row">Radio label 3</label>
-                </div>
-                <div class="RadioControl-item">
-                    <input class="RadioControl-field" id="radio4--row" name="radio--row-group" type="radio">
-                    <label class="RadioControl-label u-textLabel" for="radio4--row">Radio label 4</label>
-                </div>
-                <div class="RadioControl-item">
-                    <input class="RadioControl-field" id="radio5--row" name="radio--row-group" type="radio">
-                    <label class="RadioControl-label u-textLabel" for="radio5--row">Radio label 5</label>
-                </div>
-                <div class="RadioControl-item">
-                    <input class="RadioControl-field" id="radio6--row" name="radio--row-group" type="radio">
-                    <label class="RadioControl-label u-textLabel" for="radio6--row">Radio label 6</label>
-                </div>
-            </div>
-            <div class="RadioControl-message">
-                Optional group help message
-            </div>
-            <div class="RadioControl-message is-invalid">
-                Invalid message
-            </div>
-        </div>
-    </div>
-</section>
+        </rb-section>
+    </rb-main>
+</rb-site>
