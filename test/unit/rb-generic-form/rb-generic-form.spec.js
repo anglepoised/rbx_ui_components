@@ -25,9 +25,20 @@ define([
             };
         }));
 
-        describe('', function () {
-            it('should ', function () {
+        describe('compiled template', function () {
+            it('should have the correct SUIT class "GenericForm"', function () {
                 compileTemplate('<rb-generic-form></rb-generic-form>');
+                expect(element.hasClass('GenericForm')).toBe(true);
+            });
+
+            it('should transclude content', function () {
+                compileTemplate('<rb-generic-form>hello</rb-generic-form>');
+                expect(element.html()).toContain('hello');
+            });
+
+            it('should contain "Required Field"', function () {
+                compileTemplate('<rb-generic-form></rb-generic-form>');
+                expect(element.html()).toContain('Required Field');
             });
         });
 

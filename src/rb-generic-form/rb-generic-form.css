@@ -21,21 +21,3 @@
     display: inline-block;
     padding-left: 7px;
 }
-
-.GenericForm-buttons {
-    display: flex; /* 1 */
-}
-
-@media (--md-viewport) {
-
-    .GenericForm-buttons {
-        margin-left: auto; /* 2 */
-        padding-left: 2em; /* 2 */
-        width: 66.666666667%; /* 2 */
-    }
-
-}
-
-.GenericForm-buttonsItem {
-    margin-right: 1em;
-}

@@ -5,66 +5,20 @@
         <rb-section heading="Introduction" hide-heading="true">
             <div class="RawHTML">
                 <p>
-                    The <code>rb-generic-form</code> component should be used to wrap generic forms. Custom forms have their own
-                    wrappers (e.g. <code>rb-login-form</code>) and should not use this component.
+                    The <code>rb-generic-form</code> component should be used to wrap generic forms. It displays the
+                    message "Required Field".
                 </p>
                 <p>
-                    <code>rb-generic-form</code> has two variants: "with message" and "without message".
-                </p>
-                <p>
-                    Only one message currently exists: "Required Field".
+                    Custom forms (e.g. <code><a ui-sref="rb-login-form">rb-login-form</a></code>) have their own
+                    wrappers and should not be wrapped with this component.
                 </p>
             </div>
         </rb-section>
-        <rb-section heading="With Message">
+        <rb-section heading="Default">
             <div class="ComponentView">
-                <form class="GenericForm">
-                    <div class="GenericForm-message">
-                        <span class="GenericForm-messageInner">
-                            Required Field
-                        </span>
-                    </div>
-                    <div class="GenericForm-body">
-                        <rb-fieldset label="Legend">
-                            Control Group
-                        </rb-fieldset>
-                    </div>
-                    <div class="GenericForm-buttons">
-                        <div class="GenericForm-buttonsItem">
-                            <rb-button>
-                                Button
-                            </rb-button>
-                        </div>
-                        <div class="GenericForm-buttonsItem">
-                            <rb-button outline="yes">
-                                Button
-                            </rb-button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </rb-section>
-        <rb-section heading="Without Message">
-            <div class="ComponentView">
-                <form class="GenericForm">
-                    <div class="GenericForm-body">
-                        <rb-fieldset label="Legend">
-                            Control Group
-                        </rb-fieldset>
-                    </div>
-                    <div class="GenericForm-buttons">
-                        <div class="GenericForm-buttonsItem">
-                            <rb-button>
-                                Button
-                            </rb-button>
-                        </div>
-                        <div class="GenericForm-buttonsItem">
-                            <rb-button outline="yes">
-                                Button
-                            </rb-button>
-                        </div>
-                    </div>
-                </form>
+                <rb-generic-form>
+                    Form content.
+                </rb-generic-form>
             </div>
         </rb-section>
     </rb-main>
