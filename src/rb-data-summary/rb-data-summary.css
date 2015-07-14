@@ -76,9 +76,9 @@
 }
 
 /**
- * Notes modifier
+ * Additional modifier
  */
 
-.DataSummary--notes {
-    background-image: url("./images/notes.svg");
+.DataSummary--additional {
+    background-image: url("./images/additional.svg");
 }
