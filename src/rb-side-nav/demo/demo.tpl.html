@@ -3,71 +3,71 @@
         <rb-page-title heading="rb-side-nav">
         </rb-page-title>
         <rb-section heading="With On Save And On Cancel">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()">
                     <rb-side-nav-item ui-sref="rb-badge" label="Menu Item 1"></rb-side-nav-item>
                     <rb-side-nav-item ui-sref="rb-badge" label="Menu Item 2"></rb-side-nav-item>
                     <rb-side-nav-item ui-sref="rb-badge" label="Menu Item 3"></rb-side-nav-item>
                 </rb-side-nav>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Sidenav With Disabled Save">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-side-nav title="A Menu" on-save="demoCtrl.save()" on-cancel="demoCtrl.cancel()" save-button-disabled="true"></rb-side-nav>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Sidenav With Save Label">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-side-nav title="A Menu" save-label="Save &amp; Republish"></rb-side-nav>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Sidenav With Action Help Text">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-side-nav title="A Menu" action-help-text="Be careful when hitting save!"></rb-side-nav>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Sidenav Item Basic">
-            <div class="ComponentView">
+            <rb-component-display>
                 <ul>
                     <rb-side-nav-item ui-sref="rb-badge" label="Menu Item 1"></rb-side-nav-item>
                 </ul>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Sidenav Item Active">
-            <div class="ComponentView">
+            <rb-component-display>
                 <ul>
                     <rb-side-nav-item ui-sref="rb-badge" active="true" label="Menu Item 1"></rb-side-nav-item>
                 </ul>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Sidenav Item With Count">
-            <div class="ComponentView">
+            <rb-component-display>
                 <ul>
                     <rb-side-nav-item ui-sref="rb-badge" count="20" label="Menu Item 1"></rb-side-nav-item>
                     <rb-side-nav-item ui-sref="rb-badge" active="true" count="200" label="Menu Item 2"></rb-side-nav-item>
                 </ul>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Sidenav Item With Icon">
-            <div class="ComponentView">
+            <rb-component-display>
                 <ul>
                     <rb-side-nav-item ui-sref="rb-badge" icon="gray-ghost-16-frequency" label="Menu Item 1"></rb-side-nav-item>
                 </ul>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Sidenav Item With Invalid">
-            <div class="ComponentView">
+            <rb-component-display>
                 <ul>
                     <rb-side-nav-item ui-sref="rb-badge" invalid="true" label="Menu Item 1"></rb-side-nav-item>
                 </ul>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Sidenav Item With Valid">
-            <div class="ComponentView">
+            <rb-component-display>
                 <ul>
                     <rb-side-nav-item ui-sref="rb-badge" valid="true" label="Menu Item 1"></rb-side-nav-item>
                 </ul>
-            </div>
+            </rb-component-display>
         </rb-section>
     </rb-main>
 </rb-site>

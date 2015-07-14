@@ -13,7 +13,7 @@
             </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Default">
-            <div class="ComponentView">
+            <rb-component-display>
                 <form name="radioForm">
                     <rb-radio-control
                         choices="demoCtrl.choices"
@@ -26,10 +26,10 @@
 
                     Model: {{ demoCtrl.selected }}
                 </form>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Row Modifier">
-            <div class="ComponentView">
+            <rb-component-display>
                 <form name="radioRowForm">
                     <rb-radio-control
                         choices="demoCtrl.choicesRow"
@@ -42,10 +42,10 @@
 
                     Model: {{ demoCtrl.selectedRow }}
                 </form>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Icon Modifier">
-            <div class="ComponentView">
+            <rb-component-display>
                 <form name="iconRadioForm">
                     <rb-radio-control
                         choices="demoCtrl.iconChoices"
@@ -56,7 +56,7 @@
 
                     Model: {{ demoCtrl.selectedIcon }}
                 </form>
-            </div>
+            </rb-component-display>
         </rb-section>
     </rb-main>
 </rb-site>

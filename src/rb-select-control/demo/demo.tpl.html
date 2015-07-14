@@ -4,7 +4,7 @@
             <rb-page-title heading="rb-select-control">
             </rb-page-title>
             <rb-section heading="Select field no previous (with a placeholder)">
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-select-control
                         form="userForm"
                         label="Select field no previous (with a placeholder)"
@@ -18,10 +18,10 @@
                         placeholder="Car">
                     </rb-select-control>
                     Selected: {{ demoRbSelectControlCtrl.emptySelect }}
-                </div>
+                </rb-component-display>
             </rb-section>
             <rb-section heading="Small">
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-select-control
                         form="userForm"
                         label="A small-size select-control"
@@ -35,10 +35,10 @@
                         size="small">
                     </rb-select-control>
                     Selected: {{ demoRbSelectControlCtrl.emptySelect }}
-                </div>
+                </rb-component-display>
             </rb-section>
             <rb-section heading="Disabled">
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-select-control
                         form="userForm"
                         name="disabledSelect"
@@ -49,10 +49,10 @@
                         items="demoRbSelectControlCtrl.items"
                         selected="demoRbSelectControlCtrl.previouslySelected">
                     </rb-select-control>
-                </div>
+                </rb-component-display>
             </rb-section>
             <rb-section heading="Previously selected item (with a placeholder)">
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-select-control
                         form="userForm"
                         name="previousPlaceholder"
@@ -65,13 +65,13 @@
                         placeholder="Your favourite Car">
                     </rb-select-control>
                     Selected: {{ demoRbSelectControlCtrl.previouslySelected }}
-                </div>
+                </rb-component-display>
             </rb-section>
             <rb-section heading="Calling a function on-change">
                 <rb-raw-html-display>
                     See browser console.
                 </rb-raw-html-display>
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-select-control
                         form="userForm"
                         label="Calling a function on-change"
@@ -86,10 +86,10 @@
                         on-change="demoRbSelectControlCtrl.printChange(id)">
                     </rb-select-control>
                     Selected: {{ demoRbSelectControlCtrl.emptySelect }}
-                </div>
+                </rb-component-display>
             </rb-section>
             <rb-section heading="No placeholder and not previously selected">
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-select-control
                         form="userForm"
                         name="noPreviousNoPlaceholder"
@@ -101,10 +101,10 @@
                         selected="demoRbSelectControlCtrl.emptySelect">
                     </rb-select-control>
                     Selected: {{ demoRbSelectControlCtrl.emptySelect }}
-                </div>
+                </rb-component-display>
             </rb-section>
             <rb-section heading="Select field with a previous selected (no placeholder)">
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-select-control
                         form="userForm"
                         name="previousNoPlaceholder"
@@ -116,7 +116,7 @@
                         selected="demoRbSelectControlCtrl.previouslySelected">
                     </rb-select-control>
                     Selected: {{ demoRbSelectControlCtrl.previouslySelected }}
-                </div>
+                </rb-component-display>
             </rb-section>
         </form>
     </rb-main>

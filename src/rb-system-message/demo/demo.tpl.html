@@ -37,7 +37,7 @@
             </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Default">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-system-message
                     title="Something happened"
                     message="Here is the message"
@@ -45,10 +45,10 @@
                     dismiss-message="Custom onDismiss function"
                     on-dismiss="demoCtrl.dismiss(1)">
                 </rb-system-message>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Danger Modifier">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-system-message
                     title="500 Server Error"
                     message="error_description: Couldn't connect to the servers. Please try again later."
@@ -57,17 +57,17 @@
                     contact="support@example.com"
                     dismiss-message="Save me!">
                 </rb-system-message>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Positive Modifier">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-system-message
                     title="Something good happened"
                     message="Here is the message"
                     technical-details="FIVE KITTENS WERE BORN"
                     modifier="positive">
                 </rb-system-message>
-            </div>
+            </rb-component-display>
         </rb-section>
     </rb-main>
 </rb-site>
