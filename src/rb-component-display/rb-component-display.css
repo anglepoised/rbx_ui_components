@@ -1,0 +1,16 @@
+/** @define ComponentDisplay; use strict */
+
+/**
+ * The `.ComponentDisplay` component...
+ */
+
+:root {
+    --ComponentDisplay-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.ComponentDisplay {
+}
