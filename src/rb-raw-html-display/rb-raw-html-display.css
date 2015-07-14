@@ -1,0 +1,16 @@
+/** @define RawHtmlDisplay; use strict */
+
+/**
+ * The `.RawHtmlDisplay` component...
+ */
+
+:root {
+    --RawHtmlDisplay-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.RawHtmlDisplay {
+}
