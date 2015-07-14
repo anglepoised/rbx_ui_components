@@ -2,7 +2,7 @@
     <rb-main>
         <rb-page-title heading="rb-deep-search"></rb-page-title>
         <rb-section heading="Introduction" hide-heading="true">
-            <div class="RawHTML">
+            <rb-raw-html-display>
                 <p>
                     The <code>rb-deep-search</code> component search through an object and set
                     <code>hidden=true</code> if the nested object label matches the given search query.
@@ -12,7 +12,7 @@
                     Matching main categories show subcategories and can be selected
                     and should hide main categories that do not match.
                 </p>
-            </div>
+            </rb-raw-html-display>
         </rb-section>
         <rb-section>
             <div class="ComponentView">
@@ -40,9 +40,9 @@
                         </li>
                     </ul>
                 </form>
-                <div class="RawHTML">
+                <rb-raw-html-display>
                     <pre>Selected: {{demoCtrl.pokemon}}</pre>
-                </div>
+                </rb-raw-html-display>
             </div>
         </rb-section>
     </rb-main>

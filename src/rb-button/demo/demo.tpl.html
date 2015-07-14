@@ -3,7 +3,7 @@
         <rb-page-title heading="rb-button">
         </rb-page-title>
         <rb-section heading="Introduction" hide-heading="true">
-            <div class="RawHTML">
+            <rb-raw-html-display>
                 <p>
                     The <code>rb-button</code> component defines button styles for <code>&lt;button&gt;</code> and
                     <code>&lt;a&gt;</code> elements.
@@ -12,7 +12,7 @@
                     Solid buttons are the default style. Add an <code>outline="yes"</code> attribute for outline buttons. When
                     in doubt, use a standard, solid button.
                 </p>
-            </div>
+            </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Default">
             <div class="ComponentView ComponentView--grid">
@@ -33,7 +33,7 @@
             </div>
         </rb-section>
         <rb-section heading="Secondary Modifiers">
-            <div class="RawHTML">
+            <rb-raw-html-display>
                 <p>
                     Change the size or colour of a button.
                 </p>
@@ -43,24 +43,24 @@
                 <p>
                     Large buttons should be used for primary save actions.
                 </p>
-            </div>
+            </rb-raw-html-display>
             <div class="ComponentView ComponentView--grid">
                 <rb-button size="large">Large Button</rb-button>
                 <rb-button outline="yes" size="large">Large Button</rb-button>
             </div>
-            <div class="RawHTML">
+            <rb-raw-html-display>
                 <h4>
                     Small Modifier
                 </h4>
                 <p>
                     Small buttons should be used for secondary save actions.
                 </p>
-            </div>
+            </rb-raw-html-display>
             <div class="ComponentView ComponentView--grid">
                 <rb-button size="small">Small Button</rb-button>
                 <rb-button outline="yes" size="small">Small Button</rb-button>
             </div>
-            <div class="RawHTML">
+            <rb-raw-html-display>
                 <h4>
                     Block Modifier
                 </h4>
@@ -68,14 +68,14 @@
                     The block modifier should be used to make a button full-width. It adds <code>width: 100%;</code>, changes
                     the display from <code>inline-block</code> to <code>block</code>, and centers the button text.
                 </p>
-            </div>
+            </rb-raw-html-display>
             <div class="ComponentView">
                 <rb-button block="yes">Block Button</rb-button>
             </div>
             <div class="ComponentView">
                 <rb-button block="yes" outline="yes">Block Button</rb-button>
             </div>
-            <div class="RawHTML">
+            <rb-raw-html-display>
                 <h4>
                     Action Modifiers
                 </h4>
@@ -89,31 +89,31 @@
                 <p>
                     Positive buttons are green. They indicate a successful or positive action.
                 </p>
-            </div>
+            </rb-raw-html-display>
             <div class="ComponentView ComponentView--grid">
                 <rb-button state="positive">Positive Button</rb-button>
                 <rb-button outline="yes" state="positive">Positive Button</rb-button>
             </div>
-            <div class="RawHTML">
+            <rb-raw-html-display>
                 <h5>
                     Warning
                 </h5>
                 <p>
                     Warning buttons are orange. They indicate that care should be taken with this action.
                 </p>
-            </div>
+            </rb-raw-html-display>
             <div class="ComponentView ComponentView--grid">
                 <rb-button state="warning">Warning Button</rb-button>
                 <rb-button outline="yes" state="warning">Warning Button</rb-button>
             </div>
-            <div class="RawHTML">
+            <rb-raw-html-display>
                 <h5>
                     Danger
                 </h5>
                 <p>
                     Danger buttons are red. They indicate a potentially destructive action.
                 </p>
-            </div>
+            </rb-raw-html-display>
             <div class="ComponentView ComponentView--grid">
                 <rb-button state="danger">Danger Button</rb-button>
                 <rb-button outline="yes" state="danger">Danger Button</rb-button>
