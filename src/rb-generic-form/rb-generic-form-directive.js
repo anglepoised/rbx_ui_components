@@ -23,6 +23,7 @@ define([
 
         return {
             scope: {
+                'hasRequiredFields':'@'
             },
             restrict: 'E',
             replace: true,

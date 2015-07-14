@@ -36,9 +36,19 @@ define([
                 expect(element.html()).toContain('hello');
             });
 
-            it('should contain "Required Field"', function () {
-                compileTemplate('<rb-generic-form></rb-generic-form>');
+            it('should contain "Required Field" when hasRequiredFields is true', function () {
+                compileTemplate('<rb-generic-form has-required-fields="true"></rb-generic-form>');
                 expect(element.html()).toContain('Required Field');
+            });
+
+            it('should not contain "Required Field" when hasRequiredFields is false', function () {
+                compileTemplate('<rb-generic-form has-required-fields="false"></rb-generic-form>');
+                expect(element.html()).not.toContain('Required Field');
+            });
+
+            it('should not contain "Required Field" when hasRequiredFields is not present', function () {
+                compileTemplate('<rb-generic-form></rb-generic-form>');
+                expect(element.html()).not.toContain('Required Field');
             });
         });
 
