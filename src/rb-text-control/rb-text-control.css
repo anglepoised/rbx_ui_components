@@ -69,6 +69,10 @@
     color: var(--TextControl-field-placeholder-color);
 }
 
+.TextControl-field::-moz-placeholder {
+    opacity: 1;
+}
+
 .TextControl-field:focus,
 .TextControl-field.is-focused {
     border-color: var(--TextControl-field-focus-border-color);
