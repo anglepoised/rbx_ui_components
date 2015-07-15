@@ -3,19 +3,19 @@
         <rb-page-title heading="rb-modal-confirm">
         </rb-page-title>
         <rb-section heading="Default Button Labels">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-button ng-click="demoCtrl.showModal1 = true">Show Modal 1</rb-button>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Custom Button Labels">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-button ng-click="demoCtrl.showModal2 = true">Show Modal 2</rb-button>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Custom Confirm Button State">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-button ng-click="demoCtrl.showModal3 = true">Show Modal 3</rb-button>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-modal-confirm ng-if="demoCtrl.showModal1" title="Are you sure?" on-confirm="demoCtrl.confirm()" on-cancel="demoCtrl.showModal1 = false">
             <p>

@@ -11,34 +11,34 @@
             </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Currency With Decimal Passed">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-currency-display amount="{{ demoCtrl.currency.withDec }}"></rb-currency-display>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Currency With No Decimal Passed">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-currency-display amount="{{ demoCtrl.currency.withoutDec }}"></rb-currency-display>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Currency With 0 Passed As Decimal (Rounded)">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-currency-display decimal-places="0" amount="{{ demoCtrl.currency.withDec }}"></rb-currency-display>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Currency With 1 Decimal Place">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-currency-display decimal-places="1" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Currency With 2 Decimal Places">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-currency-display decimal-places="2" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Currency With 3 Decimal Places">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-currency-display decimal-places="3" amount="{{ demoCtrl.currency.roundDec }}"></rb-currency-display>
-            </div>
+            </rb-component-display>
         </rb-section>
     </rb-main>
 </rb-site>

@@ -11,7 +11,7 @@
             </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Empty">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-check-with-text-control
                     name="empty"
                     ng-model="demoCtrl.models.empty"
@@ -21,10 +21,10 @@
                     text-key="deal_ids"
                 ></rb-check-with-text-control>
                 Model: {{demoCtrl.models.empty}}
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Pre-populated">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-check-with-text-control
                     name="prepopulated"
                     ng-model="demoCtrl.models.prepopulated"
@@ -34,10 +34,10 @@
                     text-key="deal_ids"
                 ></rb-check-with-text-control>
                 Model: {{demoCtrl.models.prepopulated}}
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="With Placeholder">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-check-with-text-control
                     name="placeholder"
                     text-placeholder="Optional Deal ID"
@@ -48,10 +48,10 @@
                     text-key="deal_ids"
                 ></rb-check-with-text-control>
                 Model: {{demoCtrl.models.placeholder}}
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="With Form Validation">
-            <div class="ComponentView">
+            <rb-component-display>
                 <form name="demoCtrl.myForm">
                     <rb-check-with-text-control
                         form="demoCtrl.myForm"
@@ -68,7 +68,7 @@
                     <rb-button ng-click="demoCtrl.invalidateText()">Invalidate textbox!</rb-button>
                 </form>
                 Model: {{demoCtrl.models.validation}}
-            </div>
+            </rb-component-display>
         </rb-section>
     </rb-main>
 </rb-site>

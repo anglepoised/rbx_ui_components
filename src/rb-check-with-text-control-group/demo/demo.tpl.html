@@ -9,7 +9,7 @@
             </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Normal">
-            <div class="ComponentView">
+            <rb-component-display>
                 <form name="myForm">
                     <rb-check-with-text-control-group
                         form="myForm"
@@ -23,10 +23,10 @@
                     </rb-check-with-text-control-group>
                     Model: {{demoCtrl.myModel.normal}}
                 </form>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Pre-populated">
-            <div class="ComponentView">
+            <rb-component-display>
                 <form name="myForm">
                     <rb-check-with-text-control-group
                         form="myForm"
@@ -40,10 +40,10 @@
                     </rb-check-with-text-control-group>
                     Model: {{demoCtrl.myModel.prepopulated}}
                 </form>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Watching External Changes">
-            <div class="ComponentView">
+            <rb-component-display>
                 <form name="myForm">
                     <rb-check-with-text-control-group
                         form="myForm"
@@ -61,7 +61,7 @@
                         Model: {{demoCtrl.myModel.external}}
                     </div>
                 </form>
-            </div>
+            </rb-component-display>
         </rb-section>
     </rb-main>
 </rb-site>

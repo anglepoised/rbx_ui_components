@@ -1,0 +1,17 @@
+/** @define ComponentDisplay; use strict */
+
+/**
+ * The `.ComponentDisplay` component...
+ */
+
+/**
+ * 1. Set resize for supported browsers (Firefox, basically).
+ */
+
+.ComponentDisplay {
+    background: var(--color-gray-mystic);
+    margin-bottom: 1em; /* temp */
+    overflow: auto; /* 1 */
+    padding: 1em;
+    resize: both; /* 1 */
+}

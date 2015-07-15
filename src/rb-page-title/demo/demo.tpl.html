@@ -20,7 +20,7 @@
             </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Default">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-page-title
                     heading="My Test Page"
                     subheading="This subheading rocks"
@@ -36,10 +36,10 @@
                             ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
                             ng-if="pageTitleDemoCtrl.status==='statusPaused'">Re-Publish</rb-button>
                 </rb-page-title>
-            </div>
+            </rb-component-display>
         </rb-section>
         <rb-section heading="Compact">
-            <div class="ComponentView">
+            <rb-component-display>
                 <rb-page-title
                     heading="My Compact Page"
                     compact="true"
@@ -54,7 +54,7 @@
                             ng-click="pageTitleDemoCtrl.changeStatus('statusLive')"
                             ng-if="pageTitleDemoCtrl.status==='statusPaused'">Re-Publish</rb-button>
                 </rb-page-title>
-            </div>
+            </rb-component-display>
         </rb-section>
     </rb-main>
 </rb-site>

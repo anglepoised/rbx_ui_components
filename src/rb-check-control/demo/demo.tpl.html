@@ -20,51 +20,50 @@
                 <rb-raw-html-display>
                     <h4>Default</h4>
                 </rb-raw-html-display>
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-check-control
                         form="checkControlForm"
                         label="Default"
                         name="check-control-default"
                         ng-model="demoCtrl.default">
                     </rb-check-control>
-                </div>
+                </rb-component-display>
                 <rb-raw-html-display>
                     <h3>Disabled</h3>
                 </rb-raw-html-display>
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-check-control
                         is-disabled="true"
                         label="Disabled"
                         name="check-control-disabled"
                         ng-model="demoCtrl.disabled">
                     </rb-check-control>
-                </div>
+                </rb-component-display>
                 <rb-raw-html-display>
                     <h3>Required</h3>
                 </rb-raw-html-display>
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-check-control
                         label="Required"
                         is-required="true"
                         name="check-control-required"
                         ng-model="demoCtrl.required">
                     </rb-check-control>
-
-                </div>
+                </rb-component-display>
                 <rb-raw-html-display>
                     <h3>Pre Checked in scope</h3>
                 </rb-raw-html-display>
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-check-control
                         label="Pre Checked"
                         name="check-control.preChecked"
                         ng-model="demoCtrl.preChecked">
                     </rb-check-control>
-                </div>
+                </rb-component-display>
                 <rb-raw-html-display>
                     <h3>With Icon modifier</h3>
                 </rb-raw-html-display>
-                <div class="ComponentView">
+                <rb-component-display>
                     <rb-check-control
                         form="checkControlSelectIconForm"
                         ng-model="demoCtrl.icon"
@@ -72,7 +71,7 @@
                         label="With Icon"
                         icon="black-12-arrow-right">
                     </rb-check-control>
-                </div>
+                </rb-component-display>
                 <rb-raw-html-display>
                     <pre>default: {{ demoCtrl.default }}</pre>
                     <pre>disabled: {{ demoCtrl.disabled }}</pre>
