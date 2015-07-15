@@ -35,15 +35,16 @@
 
 /**
  * 1. Set consistent spacing after every field.
- * 2. Remove `outline` in favour of `border`.
- * 3. Nudge `required` indicator from top right corner.
- * 4. Swap background when chained to match other state colours.
- * 5. Disabled state always overrides other states.
- * 6. Prevent text selection on disabled field.
- * 7. Remove spinner on number type field in disabled state, prevents conflict with padlock icon.
+ * 2. Reset opacity on Mozilla placeholders. See: http://stackoverflow.com/a/15586457/2270732
+ * 3. Remove `outline` in favour of `border`.
+ * 4. Nudge `required` indicator from top right corner.
+ * 5. Swap background when chained to match other state colours.
+ * 6. Disabled state always overrides other states.
+ * 7. Prevent text selection on disabled field.
+ * 8. Remove spinner on number type field in disabled state, prevents conflict with padlock icon.
  *      Mozilla: https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance
  *      WebKit: http://trac.webkit.org/wiki/Styling%20Form%20Controls#Removingspinbuttonsforinputtypenumber
- * 8. Make `.is-populated` match focus state to preserve background image colour.
+ * 9. Make `.is-populated` match focus state to preserve background image colour.
  */
 
 .TextControl {
@@ -70,13 +71,13 @@
 }
 
 .TextControl-field::-moz-placeholder {
-    opacity: 1;
+    opacity: 1; /* 2 */
 }
 
 .TextControl-field:focus,
 .TextControl-field.is-focused {
     border-color: var(--TextControl-field-focus-border-color);
-    outline: none; /* 2 */
+    outline: none; /* 3 */
 }
 
 .TextControl-message {
@@ -111,12 +112,12 @@
 .TextControl-field:required,
 .TextControl-field.is-required {
     background: var(--TextControl-field-background-color) url(var(--TextControl-field-required-image)) no-repeat;
-    background-position: var(--TextControl-field-required-image-position); /* 3 */
+    background-position: var(--TextControl-field-required-image-position); /* 4 */
     outline: none; /* 2 */
 }
 
 .TextControl-field:focus:required:invalid {
-    background-image: url(var(--TextControl-field-required-invalid-image)); /* 4 */
+    background-image: url(var(--TextControl-field-required-invalid-image)); /* 5 */
 }
 
 /**
@@ -126,26 +127,26 @@
 .TextControl-field:disabled,
 .TextControl-field.is-disabled {
     background: var(--TextControl-field-disabled-background-color) url(var(--TextControl-field-disabled-image)) no-repeat var(--TextControl-field-disabled-image-position) !important; /* 5 */
-    border: 1px solid var(--TextControl-field-border-color) !important; /* 5 */
-    color: var(--TextControl-field-disabled-color) !important; /* 5 */
-    user-select: none; /* 6 */
+    border: 1px solid var(--TextControl-field-border-color) !important; /* 6 */
+    color: var(--TextControl-field-disabled-color) !important; /* 6 */
+    user-select: none; /* 7 */
 }
 
 .TextControl-field:disabled::placeholder,
 .TextControl-field.is-disabled::placeholder {
-    color: var(--TextControl-field-disabled-color) !important; /* 5 */
+    color: var(--TextControl-field-disabled-color) !important; /* 6 */
 }
 
 .TextControl-field[type=number]:disabled,
 .TextControl-field[type=number].is-disabled {
-    -moz-appearance: textfield; /* 7 */
+    -moz-appearance: textfield; /* 8 */
 }
 
 .TextControl-field[type=number]::-webkit-inner-spin-button:disabled,
 .TextControl-field[type=number]::-webkit-outer-spin-button:disabled,
 .TextControl-field[type=number]::-webkit-inner-spin-button.is-disabled,
 .TextControl-field[type=number]::-webkit-outer-spin-button.is-disabled {
-    -webkit-appearance: none; /* 7 */
+    -webkit-appearance: none; /* 8 */
 }
 
 /**
@@ -184,7 +185,7 @@
 
 .TextControl--currency .TextControl-field:focus,
 .TextControl--currency .TextControl-field.is-populated {
-    background-image: url(var(--TextControl--currency-field-focus-image)); /* 8 */
+    background-image: url(var(--TextControl--currency-field-focus-image)); /* 9 */
 }
 
 .TextControl--currency .TextControl-field:invalid:focus,
