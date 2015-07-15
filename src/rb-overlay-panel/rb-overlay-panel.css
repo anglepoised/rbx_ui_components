@@ -25,6 +25,7 @@
 .OverlayPanel-close {
     left: 85%;
     position: absolute;
+    top: 0;
 }
 
 .OverlayPanel-button {
