@@ -75,6 +75,21 @@
 }
 
 /**
+ * Link
+ */
+
+.RawHtmlDisplay a {
+    color: var(--color-base-link-default);
+}
+
+.RawHtmlDisplay a:hover,
+.RawHtmlDisplay a:focus,
+.RawHtmlDisplay a:active {
+    color: var(--color-base-link-hover);
+}
+
+
+/**
  * Blockquote
  */
 
