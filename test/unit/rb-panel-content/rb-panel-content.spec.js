@@ -49,27 +49,27 @@ define([
             });
         });
 
-        describe('compiled `rb-panel-content-scrollable` template', function () {
+        describe('compiled `rb-panel-content-middle-scrollable` template', function () {
             it('should contain a root element with the appropriate SUIT class', function () {
-                compileTemplate('<rb-panel-content-scrollable></rb-panel-content-scrollable>');
+                compileTemplate('<rb-panel-content-middle-scrollable></rb-panel-content-middle-scrollable>');
                 expect(element.hasClass('PanelContent-scrollable')).toBe(true);
             });
 
             it('should transclude content', function () {
-                compileTemplate('<rb-panel-content-scrollable>My Content</rb-panel-content-scrollable>');
+                compileTemplate('<rb-panel-content-middle-scrollable>My Content</rb-panel-content-middle-scrollable>');
                 expect(element.html()).toContain('My Content');
             });
         });
 
-        describe('compiled `rb-panel-content-unscrollable` template', function () {
+        describe('compiled `rb-panel-content-middle-unscrollable` template', function () {
             it('should contain a root element with the appropriate SUIT class', function () {
-                compileTemplate('<rb-panel-content-unscrollable></rb-panel-content-unscrollable>');
+                compileTemplate('<rb-panel-content-middle-unscrollable></rb-panel-content-middle-unscrollable>');
                 expect(element.hasClass('PanelContent-unscrollable')).toBe(true);
             });
 
             it('should transclude content', function () {
-                compileTemplate('<rb-panel-content-unscrollable>My Content</rb-panel-content-unscrollable>');
-                expect(element.html()).toContain('My Content');
+                compileTemplate('<rb-panel-content-middle-unscrollable>Content</rb-panel-content-middle-unscrollable>');
+                expect(element.html()).toContain('Content');
             });
         });
 

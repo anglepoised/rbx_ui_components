@@ -1,13 +1,13 @@
 define([
     './rb-panel-content-directive',
     './rb-panel-content-bottom-directive',
-    './rb-panel-content-scrollable-directive',
+    './rb-panel-content-middle-scrollable-directive',
     './rb-panel-content-top-directive',
-    './rb-panel-content-unscrollable-directive',
+    './rb-panel-content-middle-unscrollable-directive',
     './rb-panel-content.css'
 ], function (
-        rbPanelContentDirective, rbPanelContentBottomDirective, rbPanelContentScrollableDirective,
-        rbPanelContentTopDirective, rbPanelContentUnscrollableDirective, css) {
+        rbPanelContentDirective, rbPanelContentBottomDirective, rbPanelContentMiddleScrollableDirective,
+        rbPanelContentTopDirective, rbPanelContentMiddleUnscrollableDirective, css) {
     /**
      * @ngdoc module
      * @name rb-panel-content
@@ -20,9 +20,9 @@ define([
         .module('rb-panel-content', [])
         .directive('rbPanelContent', rbPanelContentDirective)
         .directive('rbPanelContentBottom', rbPanelContentBottomDirective)
-        .directive('rbPanelContentScrollable', rbPanelContentScrollableDirective)
+        .directive('rbPanelContentMiddleScrollable', rbPanelContentMiddleScrollableDirective)
         .directive('rbPanelContentTop', rbPanelContentTopDirective)
-        .directive('rbPanelContentUnscrollable', rbPanelContentUnscrollableDirective);
+        .directive('rbPanelContentMiddleUnscrollable', rbPanelContentMiddleUnscrollableDirective);
 
     return rbPanelContent;
 
