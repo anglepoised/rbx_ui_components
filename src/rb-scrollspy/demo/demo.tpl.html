@@ -1,16 +1,16 @@
 <rb-site>
     <rb-main>
         <rb-overlay-panel>
-            <rb-panel-scroll>
-                <rb-panel-scroll-top>
+            <rb-panel-content>
+                <rb-panel-content-top>
                     <rb-page-title heading="rb-scrollspy">
                         <rb-deep-search
                             ng-model="demoCtrl.categories"
                             placeholder="Search list...">
                         </rb-deep-search>
                     </rb-page-title>
-                </rb-panel-scroll-top>
-                <rb-panel-scroll-unscrollable>
+                </rb-panel-content-top>
+                <rb-panel-content-unscrollable>
                     <rb-scrollspy categories="demoCtrl.categories" offset="0" scroll-id="container">
 
                         <div ng-repeat="category in demoCtrl.categories">
@@ -32,8 +32,8 @@
                         </div>
 
                     </rb-scrollspy>
-                </rb-panel-scroll-unscrollable>
-            </rb-panel-scroll>
+                </rb-panel-content-unscrollable>
+            </rb-panel-content>
         </rb-overlay-panel>
     </rb-main>
 </rb-site>

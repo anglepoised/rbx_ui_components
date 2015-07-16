@@ -4,9 +4,9 @@ define([
 
     // @ngInject
     function demoState ($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('rb-panel-scroll', {
-            url: '/rb-panel-scroll',
-            controller: 'demo-rb-panel-scroll-ctrl as demoCtrl',
+        $stateProvider.state('rb-panel-content', {
+            url: '/rb-panel-content',
+            controller: 'demo-rb-panel-content-ctrl as demoCtrl',
             template: template
         });
     }

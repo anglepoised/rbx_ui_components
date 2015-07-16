@@ -1,11 +1,11 @@
 <rb-site>
     <rb-main>
-        <rb-page-title heading="rb-panel-scroll">
+        <rb-page-title heading="rb-panel-content">
         </rb-page-title>
         <rb-section heading="Introduction" hide-heading="true">
             <rb-raw-html-display>
                 <p>
-                    The <code>rb-panel-scroll</code> component is a wrapper component that creates a scrollable area
+                    The <code>rb-panel-content</code> component is a wrapper component that creates a scrollable area
                     within a fixed height container (e.g. an overlay panel).
                 </p>
             </rb-raw-html-display>
@@ -14,25 +14,25 @@
 </rb-site>
 
 <rb-overlay-panel ng-if="demoCtrl.showOverlay" overlay-close="demoCtrl.close()">
-    <rb-panel-scroll>
-        <rb-panel-scroll-top>
+    <rb-panel-content>
+        <rb-panel-content-top>
             <rb-page-title
-                heading="Panel-scroll"
+                heading="Panel-content"
                 subheading="Fixed top part"
                 compact="true"
             >
             </rb-page-title>
-        </rb-panel-scroll-top>
-        <rb-panel-scroll-scrollable>
+        </rb-panel-content-top>
+        <rb-panel-content-scrollable>
             <rb-section heading="Section heading" hide-heading="true">
                 <p>
                     Scrollable contents.
                 </p>
                 <img ng-src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Shard_London_Bridge_May_2012.JPG" height=2592 />
             </rb-section>
-        </rb-panel-scroll-scrollable>
-        <rb-panel-scroll-bottom>
+        </rb-panel-content-scrollable>
+        <rb-panel-content-bottom>
             Fixed bottom part
-        </rb-panel-scroll-bottom>
-    </rb-panel-scroll>
+        </rb-panel-content-bottom>
+    </rb-panel-content>
 </rb-overlay-panel>
