@@ -127,6 +127,24 @@
 }
 
 /**
+ * Status PendingLive modifier
+ */
+
+:root {
+    --Badge--statusPendingLive-base: var(--color-status-pending-live-base);
+}
+
+.Badge--statusPendingLive .Badge-body {
+    background: var(--Badge--statusPendingLive-base) url("./images/Badge--statusPendingLive.svg") no-repeat center center;
+    border-color: var(--Badge--statusPendingLive-base);
+}
+
+.Badge--statusPendingLive .Badge-details {
+    border-color: var(--Badge--statusPendingLive-base);
+    color: var(--Badge--statusPendingLive-base);
+}
+
+/**
  * Status Paused modifier
  */
 
