@@ -1,11 +1,11 @@
 define([
-    'html!./rb-panel-scroll.tpl.html'
+    'html!./rb-panel-content-middle-unscrollable.tpl.html'
 ], function (template) {
 
     /**
      * @ngdoc directive
-     * @name rbPanelScroll
-     * @module rb-panel-scroll
+     * @name rbPanelContentMiddleUnscrollable
+     * @module rb-panel-content-middle-unscrollable
      *
      * @restrict E
      *
@@ -13,13 +13,13 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-panel-scroll>
-     *     </rb-panel-scroll>
+     *    <rb-panel-content-middle-unscrollable>
+     *     </rb-panel-content-middle-unscrollable>
      * </hljs>
      *
      * @ngInject
      */
-    function rbPanelScrollDirective () {
+    function rbPanelContentMiddleUnscrollableDirective () {
 
         return {
             scope: {
@@ -31,5 +31,5 @@ define([
         };
     }
 
-    return rbPanelScrollDirective;
+    return rbPanelContentMiddleUnscrollableDirective;
 });

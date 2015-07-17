@@ -1,11 +1,11 @@
 define([
-    'html!./rb-panel-scroll-top.tpl.html'
+    'html!./rb-panel-content.tpl.html'
 ], function (template) {
 
     /**
      * @ngdoc directive
-     * @name rbPanelScrollTop
-     * @module rb-panel-scroll-top
+     * @name rbPanelContent
+     * @module rb-panel-content
      *
      * @restrict E
      *
@@ -13,13 +13,13 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-panel-scroll-top>
-     *     </rb-panel-scroll-top>
+     *    <rb-panel-content>
+     *     </rb-panel-content>
      * </hljs>
      *
      * @ngInject
      */
-    function rbPanelScrollTopDirective () {
+    function rbPanelContentDirective () {
 
         return {
             scope: {
@@ -31,5 +31,5 @@ define([
         };
     }
 
-    return rbPanelScrollTopDirective;
+    return rbPanelContentDirective;
 });

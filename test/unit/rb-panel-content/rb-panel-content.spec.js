@@ -1,7 +1,7 @@
 define([
-    'components/rb-panel-scroll'
-], function (rbPanelScroll) {
-    describe('rb-panel-scroll', function () {
+    'components/rb-panel-content'
+], function (rbPanelContent) {
+    describe('rb-panel-content', function () {
 
         var $rootScope,
             $scope,
@@ -10,7 +10,7 @@ define([
             element,
             compileTemplate;
 
-        beforeEach(angular.mock.module(rbPanelScroll.name));
+        beforeEach(angular.mock.module(rbPanelContent.name));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $rootScope = _$rootScope_;
@@ -27,60 +27,60 @@ define([
 
         describe('compiled template', function () {
             it('should contain a root element with the appropriate SUIT class', function () {
-                compileTemplate('<rb-panel-scroll></rb-panel-scroll>');
-                expect(element.hasClass('PanelScroll')).toBe(true);
+                compileTemplate('<rb-panel-content></rb-panel-content>');
+                expect(element.hasClass('PanelContent')).toBe(true);
             });
 
             it('should transclude content', function () {
-                compileTemplate('<rb-panel-scroll>My Content</rb-panel-scroll>');
+                compileTemplate('<rb-panel-content>My Content</rb-panel-content>');
                 expect(element.html()).toContain('My Content');
             });
         });
 
-        describe('compiled `rb-panel-scroll-bottom` template', function () {
+        describe('compiled `rb-panel-content-bottom` template', function () {
             it('should contain a root element with the appropriate SUIT class', function () {
-                compileTemplate('<rb-panel-scroll-bottom></rb-panel-scroll-bottom>');
-                expect(element.hasClass('PanelScroll-bottom')).toBe(true);
+                compileTemplate('<rb-panel-content-bottom></rb-panel-content-bottom>');
+                expect(element.hasClass('PanelContent-bottom')).toBe(true);
             });
 
             it('should transclude content', function () {
-                compileTemplate('<rb-panel-scroll-bottom>My Content</rb-panel-scroll-bottom>');
+                compileTemplate('<rb-panel-content-bottom>My Content</rb-panel-content-bottom>');
                 expect(element.html()).toContain('My Content');
             });
         });
 
-        describe('compiled `rb-panel-scroll-scrollable` template', function () {
+        describe('compiled `rb-panel-content-middle-scrollable` template', function () {
             it('should contain a root element with the appropriate SUIT class', function () {
-                compileTemplate('<rb-panel-scroll-scrollable></rb-panel-scroll-scrollable>');
-                expect(element.hasClass('PanelScroll-scrollable')).toBe(true);
+                compileTemplate('<rb-panel-content-middle-scrollable></rb-panel-content-middle-scrollable>');
+                expect(element.hasClass('PanelContent-scrollable')).toBe(true);
             });
 
             it('should transclude content', function () {
-                compileTemplate('<rb-panel-scroll-scrollable>My Content</rb-panel-scroll-scrollable>');
+                compileTemplate('<rb-panel-content-middle-scrollable>My Content</rb-panel-content-middle-scrollable>');
                 expect(element.html()).toContain('My Content');
             });
         });
 
-        describe('compiled `rb-panel-scroll-unscrollable` template', function () {
+        describe('compiled `rb-panel-content-middle-unscrollable` template', function () {
             it('should contain a root element with the appropriate SUIT class', function () {
-                compileTemplate('<rb-panel-scroll-unscrollable></rb-panel-scroll-unscrollable>');
-                expect(element.hasClass('PanelScroll-unscrollable')).toBe(true);
+                compileTemplate('<rb-panel-content-middle-unscrollable></rb-panel-content-middle-unscrollable>');
+                expect(element.hasClass('PanelContent-unscrollable')).toBe(true);
             });
 
             it('should transclude content', function () {
-                compileTemplate('<rb-panel-scroll-unscrollable>My Content</rb-panel-scroll-unscrollable>');
-                expect(element.html()).toContain('My Content');
+                compileTemplate('<rb-panel-content-middle-unscrollable>Content</rb-panel-content-middle-unscrollable>');
+                expect(element.html()).toContain('Content');
             });
         });
 
-        describe('compiled `rb-panel-scroll-top` template', function () {
+        describe('compiled `rb-panel-content-top` template', function () {
             it('should contain a root element with the appropriate SUIT class', function () {
-                compileTemplate('<rb-panel-scroll-top></rb-panel-scroll-top>');
-                expect(element.hasClass('PanelScroll-top')).toBe(true);
+                compileTemplate('<rb-panel-content-top></rb-panel-content-top>');
+                expect(element.hasClass('PanelContent-top')).toBe(true);
             });
 
             it('should transclude content', function () {
-                compileTemplate('<rb-panel-scroll-top>My Content</rb-panel-scroll-top>');
+                compileTemplate('<rb-panel-content-top>My Content</rb-panel-content-top>');
                 expect(element.html()).toContain('My Content');
             });
         });

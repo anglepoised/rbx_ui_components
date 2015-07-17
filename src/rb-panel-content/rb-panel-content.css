@@ -1,25 +1,25 @@
-/** @define PanelScroll; use strict */
+/** @define PanelContent; use strict */
 
 /**
- * The `.PanelScroll` component creates a scrollable area within a fixed height container (e.g. an overlay panel).
+ * The `.PanelContent` component creates a scrollable area within a fixed height container (e.g. an overlay panel).
  */
 
 /**
  * 1. Set to viewport height (we can do this as overlay panel uses full viewport height).
  */
 
-.PanelScroll {
+.PanelContent {
     display: flex;
     flex-direction: column;
     height: 100vh; /* 1 */
 }
 
-.PanelScroll-scrollable {
+.PanelContent-scrollable {
     flex: 1;
     overflow: auto;
 }
 
-.PanelScroll-unscrollable {
+.PanelContent-unscrollable {
     display: flex;
     flex: 1;
 }
