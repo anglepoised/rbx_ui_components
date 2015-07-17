@@ -127,21 +127,21 @@
 }
 
 /**
- * Status PendingLive modifier
+ * Status Scheduled modifier
  */
 
 :root {
-    --Badge--statusPendingLive-base: var(--color-status-pending-live-base);
+    --Badge--statusScheduled-base: var(--color-status-scheduled-base);
 }
 
-.Badge--statusPendingLive .Badge-body {
-    background: var(--Badge--statusPendingLive-base) url("./images/Badge--statusPendingLive.svg") no-repeat center center;
-    border-color: var(--Badge--statusPendingLive-base);
+.Badge--statusScheduled .Badge-body {
+    background: var(--Badge--statusScheduled-base) url("./images/Badge--statusScheduled.svg") no-repeat center center;
+    border-color: var(--Badge--statusScheduled-base);
 }
 
-.Badge--statusPendingLive .Badge-details {
-    border-color: var(--Badge--statusPendingLive-base);
-    color: var(--Badge--statusPendingLive-base);
+.Badge--statusScheduled .Badge-details {
+    border-color: var(--Badge--statusScheduled-base);
+    color: var(--Badge--statusScheduled-base);
 }
 
 /**

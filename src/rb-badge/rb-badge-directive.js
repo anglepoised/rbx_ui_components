@@ -12,7 +12,7 @@ define([
         'statusLive': 'Live',
         'statusPaused': 'Paused',
         'statusPending': 'Pending',
-        'statusPendingLive': 'Pending/Live',
+        'statusScheduled': 'Scheduled',
         'statusFinished': 'Finished'
     };
 
@@ -80,7 +80,7 @@ define([
         if (scope.collapsed) {
             scope.title = STATE_DETAILS[scope.state];
 
-            if (scope.state == 'warning') {
+            if (scope.state === 'warning') {
                 // Prepend body e.g. '6 Warnings on this item'
                 scope.title = scope.body + ' ' + scope.title;
             }
