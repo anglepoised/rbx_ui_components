@@ -12,6 +12,7 @@ define([
         'statusLive': 'Live',
         'statusPaused': 'Paused',
         'statusPending': 'Pending',
+        'statusPendingLive': 'Pending/Live',
         'statusFinished': 'Finished'
     };
 
