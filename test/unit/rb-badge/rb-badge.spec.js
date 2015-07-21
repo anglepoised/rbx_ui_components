@@ -68,12 +68,12 @@ define([
             it('should be a statusPendingLive badge if statusPendingLive state attr is supplied' +
             'and set correct details',
                 inject(function ($compile, $rootScope) {
-                    var badge = angular.element('<rb-badge state="statusPendingLive"></rb-badge>'),
+                    var badge = angular.element('<rb-badge state="statusScheduled"></rb-badge>'),
                         element = $compile(badge)($rootScope.$new());
 
                     $rootScope.$apply();
-                    expect(badge.hasClass('Badge--statusPendingLive')).toBe(true);
-                    expect(angular.element(element.find('span')[1]).text()).toBe('Pending/Live');
+                    expect(badge.hasClass('Badge--statusScheduled')).toBe(true);
+                    expect(angular.element(element.find('span')[1]).text()).toBe('Scheduled');
                 }
             ));
 
