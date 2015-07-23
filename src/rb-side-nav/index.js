@@ -1,7 +1,7 @@
 define([
-    'components/rb-action-bar',
-    'components/rb-button',
-    'components/rb-icon',
+    '../rb-action-bar',
+    '../rb-button',
+    '../rb-icon',
     './rb-side-nav-directive',
     './rb-side-nav-item-directive',
     './rb-side-nav.css'

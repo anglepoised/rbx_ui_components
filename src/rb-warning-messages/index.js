@@ -1,8 +1,8 @@
 define([
+    '../rb-icon',
     './rb-warning-messages-directive',
-    'components/rb-icon',
     './rb-warning-messages.css'
-], function (rbWarningMessagesDirective, rbIcon, css) {
+], function (rbIcon, rbWarningMessagesDirective, css) {
     /**
      * @ngdoc module
      * @name rb-warning-messages

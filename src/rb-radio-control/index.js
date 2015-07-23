@@ -1,5 +1,5 @@
 define([
-    'components/rb-icon',
+    '../rb-icon',
     './rb-radio-control-directive',
     './rb-radio-control.css'
 ], function (rbIcon, rbRadioControlDirective, css) {

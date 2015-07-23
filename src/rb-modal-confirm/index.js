@@ -1,6 +1,6 @@
 define([
-    'components/rb-button',
-    'components/rb-overlay-modal',
+    '../rb-button',
+    '../rb-overlay-modal',
     './rb-modal-confirm-directive',
     './rb-modal-confirm.css'
 ], function (rbButton, rbOverlayModal, rbModalConfirmDirective, css) {

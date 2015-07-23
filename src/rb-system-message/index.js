@@ -1,9 +1,9 @@
 define([
+    '../rb-button',
+    '../rb-text-control',
     './rb-system-message-directive',
-    './rb-system-message.css',
-    'components/rb-button',
-    'components/rb-text-control'
-], function (rbSystemMessageDirective, css, rbButton, rbTextControl) {
+    './rb-system-message.css'
+], function (rbButton, rbTextControl, rbSystemMessageDirective, css) {
     /**
      * @ngdoc module
      * @name rb-system-message

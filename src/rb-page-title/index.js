@@ -1,9 +1,9 @@
 define([
+    '../rb-badge',
+    '../rb-button',
     './rb-page-title-directive',
-    'components/rb-badge',
-    'components/rb-button',
     './rb-page-title.css'
-], function (rbPageTitleDirective, rbBadge, rbButton, css) {
+], function (rbBadge, rbButton, rbPageTitleDirective, css) {
     /**
      * @ngdoc module
      * @name rb-page-title

@@ -1,11 +1,11 @@
 define([
+    '../rb-button',
+    '../rb-icon',
+    '../rb-form-message',
+    '../rb-text-control',
     './rb-login-form-directive',
-    'components/rb-button',
-    'components/rb-icon',
-    'components/rb-form-message',
-    'components/rb-text-control',
     './rb-login-form.css'
-], function (rbLoginFormDirective, rbButton, rbIcon, rbFormMessage, rbTextControl, css) {
+], function (rbButton, rbIcon, rbFormMessage, rbTextControl, rbLoginFormDirective, css) {
     /**
      * @ngdoc module
      * @name rb-login-form
