@@ -1,5 +1,5 @@
 define([
-    'components/rb-system-message'
+    'ui-components/rb-system-message'
 ], function (rbSystemMessage) {
     describe('rb-system-message', function () {
 

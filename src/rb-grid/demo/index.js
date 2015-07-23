@@ -1,9 +1,9 @@
 define([
+    'ui-components/rb-demo-block',
     '../index.js',
     './demo-ctrl',
-    './demo-state',
-    'components/rb-demo-block'
-], function (rbGrid, demoCtrl, demoState, rbDemoBlock) {
+    './demo-state'
+], function (rbDemoBlock, rbGrid, demoCtrl, demoState) {
     var demo = angular
         .module('rb-grid-demo', [
             rbDemoBlock.name,

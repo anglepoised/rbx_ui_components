@@ -1,5 +1,5 @@
 define([
-    'components/rb-button'
+    'ui-components/rb-button'
 ], function (rbButton) {
     describe('rb-button', function () {
 

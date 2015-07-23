@@ -1,9 +1,9 @@
 define([
+    'ui-components/rb-text-control',
     '../index.js',
     './demo-ctrl',
-    './demo-state',
-    'components/rb-text-control'
-], function (rbFieldset, demoCtrl, demoState, rbTextControl) {
+    './demo-state'
+], function (rbTextControl, rbFieldset, demoCtrl, demoState) {
     var demo = angular
         .module('rb-fieldset-demo', [
             rbFieldset.name,

@@ -1,5 +1,5 @@
 define([
-    'components/rb-currency-display'
+    'ui-components/rb-currency-display'
 ], function (rbCurrencyDisplay) {
     describe('rb-currency-display', function () {
 

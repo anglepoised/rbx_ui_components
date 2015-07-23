@@ -1,5 +1,5 @@
 define([
-    'components/rb-overlay-modal',
+    '../rb-overlay-modal',
     './rb-overlay-panel-directive',
     './rb-overlay-panel.css'
 ], function (rbOverlayModal, rbOverlayPanelDirective, css) {

@@ -1,5 +1,5 @@
 define([
-    'components/rb-badge'
+    'ui-components/rb-badge'
 ], function (rbBadge) {
     describe('rb-badge', function () {
         beforeEach(angular.mock.module('rb-badge'));

@@ -1,5 +1,5 @@
 define([
-    'components/rb-user'
+    'ui-components/rb-user'
 ], function (rbUser) {
     describe('rb-user', function () {
 

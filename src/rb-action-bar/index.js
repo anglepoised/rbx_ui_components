@@ -1,8 +1,8 @@
 define([
+    '../rb-button',
     './rb-action-bar-directive',
-    './rb-action-bar.css',
-    'components/rb-button'
-], function (rbActionBarDirective, css, rbButton) {
+    './rb-action-bar.css'
+], function (rbButton, rbActionBarDirective, css) {
     /**
      * @ngdoc module
      * @name rb-action-bar

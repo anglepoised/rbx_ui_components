@@ -1,9 +1,9 @@
 define([
+    'ui-components/rb-button',
     '../index.js',
     './demo-ctrl',
-    './demo-state',
-    'components/rb-button'
-], function (rbCheckWithTextControl, demoCtrl, demoState, rbButton) {
+    './demo-state'
+], function (rbButton, rbCheckWithTextControl, demoCtrl, demoState) {
     var demo = angular
         .module('rb-check-with-text-control-demo', [
             rbCheckWithTextControl.name,

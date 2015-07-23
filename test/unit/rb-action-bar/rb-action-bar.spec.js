@@ -1,5 +1,5 @@
 define([
-    'components/rb-action-bar'
+    'ui-components/rb-action-bar'
 ], function (rbActionBar) {
     describe('rb-action-bar', function () {
 

@@ -1,5 +1,5 @@
 define([
-    'components/rb-generic-form'
+    'ui-components/rb-generic-form'
 ], function (rbGenericForm) {
     describe('rb-generic-form', function () {
 

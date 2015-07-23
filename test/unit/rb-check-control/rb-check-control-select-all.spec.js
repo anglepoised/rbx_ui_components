@@ -1,5 +1,5 @@
 define([
-    'components/rb-check-control'
+    'ui-components/rb-check-control'
 ], function (rbCheckControlSelectAll) {
     describe('rb-check-control-select-all', function () {
 

@@ -1,5 +1,5 @@
 define([
-    'components/rb-overlay-modeless'
+    'ui-components/rb-overlay-modeless'
 ], function (rbOverlayModeless) {
     describe('rb-overlay-modeless', function () {
 

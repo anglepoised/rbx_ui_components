@@ -1,5 +1,5 @@
 define([
-    'components/rb-definition-list'
+    'ui-components/rb-definition-list'
 ], function (rbDefinitionList) {
     describe('rb-definition-list', function () {
 

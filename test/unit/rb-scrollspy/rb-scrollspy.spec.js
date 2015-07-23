@@ -1,5 +1,5 @@
 define([
-    'components/rb-scrollspy'
+    'ui-components/rb-scrollspy'
 ], function (rbScrollspy) {
     describe('rb-scrollspy', function () {
 

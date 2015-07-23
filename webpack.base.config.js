@@ -27,7 +27,7 @@ config = {
         ],
         alias: {
             dev: path.join(__dirname, 'dev'),
-            components: path.join(__dirname, 'src')
+            'ui-components': path.join(__dirname, 'src')
         }
     },
 

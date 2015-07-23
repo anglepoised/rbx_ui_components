@@ -1,5 +1,5 @@
 define([
-    'components/rb-nav-bar'
+    'ui-components/rb-nav-bar'
 ], function (rbNavBar) {
     describe('rb-nav-bar', function () {
 

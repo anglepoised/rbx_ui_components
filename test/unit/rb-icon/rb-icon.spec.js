@@ -1,5 +1,5 @@
 define([
-    'components/rb-icon'
+    'ui-components/rb-icon'
 ], function (rbIcon) {
     describe('rb-icon', function () {
 

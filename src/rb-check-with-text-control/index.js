@@ -1,6 +1,6 @@
 define([
-    'components/rb-check-control',
-    'components/rb-text-control',
+    '../rb-check-control',
+    '../rb-text-control',
     './rb-check-with-text-control-directive',
     './rb-check-with-text-control.css'
 ], function (rbCheckControl, rbTextControl, rbCheckWithTextControlDirective, css) {

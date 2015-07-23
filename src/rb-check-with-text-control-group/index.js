@@ -1,8 +1,8 @@
 define([
+    '../rb-check-with-text-control',
     './rb-check-with-text-control-group-directive',
-    './rb-check-with-text-control-group.css',
-    'components/rb-check-with-text-control'
-], function (rbCheckWithTextControlGroupDirective, css, rbCheckWithTextControl) {
+    './rb-check-with-text-control-group.css'
+], function (rbCheckWithTextControl, rbCheckWithTextControlGroupDirective, css) {
     /**
      * @ngdoc module
      * @name rb-check-with-text-control-group

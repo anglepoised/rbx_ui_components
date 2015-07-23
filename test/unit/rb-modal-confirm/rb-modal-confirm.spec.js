@@ -1,5 +1,5 @@
 define([
-    'components/rb-modal-confirm'
+    'ui-components/rb-modal-confirm'
 ], function (modalConfirm) {
     describe('rb-modal-confirm', function () {
 

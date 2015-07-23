@@ -1,6 +1,6 @@
 define([
-    'components/rb-deep-search/demo/demo-categories-pokedex',
-    'components/rb-deep-search/rb-deep-search-tree'
+    'ui-components/rb-deep-search/demo/demo-categories-pokedex',
+    'ui-components/rb-deep-search/rb-deep-search-tree'
 ], function (categories, Tree) {
     describe('rb-deep-search-tree', function () {
         var tree,

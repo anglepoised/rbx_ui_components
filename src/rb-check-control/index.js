@@ -1,5 +1,5 @@
 define([
-    'components/rb-icon',
+    '../rb-icon',
     './rb-check-control-directive',
     './rb-check-control-group-directive',
     './rb-check-control-select-all-directive',

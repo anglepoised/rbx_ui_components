@@ -1,5 +1,5 @@
 define([
-    'components/rb-check-with-text-control-group'
+    'ui-components/rb-check-with-text-control-group'
 ], function (rbCheckWithTextControlGroup) {
     describe('rb-check-with-text-control-group', function () {
 

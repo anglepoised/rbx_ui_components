@@ -1,6 +1,6 @@
 define([
-    'components/rb-button',
-    'components/rb-icon',
+    '../rb-button',
+    '../rb-icon',
     './rb-definition-list-directive',
     './rb-definition-list-item-directive',
     './rb-definition-list.css'

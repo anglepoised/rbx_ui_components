@@ -1,5 +1,5 @@
 define([
-    'components/rb-grid'
+    'ui-components/rb-grid'
 ], function (rbGrid) {
     describe('rb-grid', function () {
 

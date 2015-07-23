@@ -1,5 +1,5 @@
 define([
-    'components/rb-form-message'
+    'ui-components/rb-form-message'
 ], function (rbFormMessage, template) {
     describe('rb-form-message', function () {
 

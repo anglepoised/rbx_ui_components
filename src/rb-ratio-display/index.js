@@ -1,8 +1,8 @@
 define([
+    '../rb-currency-display',
     './rb-ratio-display-directive',
-    'components/rb-currency-display',
     './rb-ratio-display.css'
-], function (rbRatioDisplayDirective, rbCurrencyDisplay, css) {
+], function (rbCurrencyDisplay, rbRatioDisplayDirective, css) {
     /**
      * @ngdoc module
      * @name rb-ratio-display

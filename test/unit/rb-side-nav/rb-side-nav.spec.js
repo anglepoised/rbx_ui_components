@@ -1,5 +1,5 @@
 define([
-    'components/rb-side-nav'
+    'ui-components/rb-side-nav'
 ], function (rbSideNav) {
     describe('rb-side-nav', function () {
 

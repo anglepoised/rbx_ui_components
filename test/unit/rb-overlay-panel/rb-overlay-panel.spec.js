@@ -1,5 +1,5 @@
 define([
-    'components/rb-overlay-panel'
+    'ui-components/rb-overlay-panel'
 ], function (rbOverlayPanel) {
     describe('rb-overlay-panel', function () {
 

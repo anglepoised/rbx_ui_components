@@ -1,5 +1,5 @@
 define([
-    'components/rb-currency-display/rb-currency-display-link'
+    'ui-components/rb-currency-display/rb-currency-display-link'
 ], function (rbCurrencyDisplayLink) {
 
     describe('The link function for the rb-currency-display directive', function () {

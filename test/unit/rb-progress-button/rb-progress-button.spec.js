@@ -1,5 +1,5 @@
 define([
-    'components/rb-progress-button',
+    'ui-components/rb-progress-button',
     'html!./rb-progress-button.tpl.html',
     'html!./rb-progress-button-no-function.tpl.html'
 ], function (rbProgressButton, template, templateNoFunction) {

@@ -1,5 +1,5 @@
 define([
-    'components/rb-warning-messages'
+    'ui-components/rb-warning-messages'
 ], function (rbWarningMessages) {
     describe('rb-warning-messages', function () {
 

@@ -1,5 +1,5 @@
 define([
-    'components/rb-check-with-text-control'
+    'ui-components/rb-check-with-text-control'
 ], function (rbCheckWithTextControl) {
     describe('rb-check-with-text-control', function () {
 

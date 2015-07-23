@@ -1,5 +1,5 @@
 define([
-    'components/rb-radio-control'
+    'ui-components/rb-radio-control'
 ], function (rbRadioControl) {
     describe('rb-radio-control', function () {
 

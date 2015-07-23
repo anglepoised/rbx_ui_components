@@ -1,5 +1,5 @@
 define([
-    'components/rb-panel-content'
+    'ui-components/rb-panel-content'
 ], function (rbPanelContent) {
     describe('rb-panel-content', function () {
 
