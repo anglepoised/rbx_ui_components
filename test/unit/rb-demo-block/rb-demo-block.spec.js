@@ -1,5 +1,5 @@
 define([
-    'components/rb-demo-block'
+    'ui-components/rb-demo-block'
 ], function (rbDemoBlock) {
     describe('rb-demo-block', function () {
 

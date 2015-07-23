@@ -1,5 +1,5 @@
 define([
-    'components/rb-page-header'
+    'ui-components/rb-page-header'
 ], function (rbPageHeader) {
     describe('rb-page-header', function () {
 

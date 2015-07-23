@@ -1,5 +1,5 @@
 define([
-    'components/rb-footer'
+    'ui-components/rb-footer'
 ], function (rbFooter) {
     describe('rb-footer', function () {
 

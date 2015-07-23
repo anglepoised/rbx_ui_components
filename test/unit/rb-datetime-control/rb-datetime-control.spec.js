@@ -1,5 +1,5 @@
 define([
-    'components/rb-datetime-control'
+    'ui-components/rb-datetime-control'
 ], function (rbDatetimeControl) {
     describe('rb-datetime-control', function () {
 

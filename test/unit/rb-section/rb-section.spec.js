@@ -1,5 +1,5 @@
 define([
-    'components/rb-section'
+    'ui-components/rb-section'
 ], function (rbSection) {
     describe('rb-section', function () {
 

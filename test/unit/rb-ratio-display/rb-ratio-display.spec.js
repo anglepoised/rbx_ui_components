@@ -1,5 +1,5 @@
 define([
-    'components/rb-ratio-display'
+    'ui-components/rb-ratio-display'
 ], function (rbRatioDisplay) {
     describe('rb-ratio-display', function () {
 

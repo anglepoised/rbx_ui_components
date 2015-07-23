@@ -1,5 +1,5 @@
 define([
-    'components/rb-fieldset'
+    'ui-components/rb-fieldset'
 ], function (rbFieldset) {
     describe('rb-fieldset', function () {
 

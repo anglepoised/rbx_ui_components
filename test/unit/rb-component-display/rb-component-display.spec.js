@@ -1,5 +1,5 @@
 define([
-    'components/rb-component-display'
+    'ui-components/rb-component-display'
 ], function (rbComponentDisplay) {
     describe('rb-component-display', function () {
 

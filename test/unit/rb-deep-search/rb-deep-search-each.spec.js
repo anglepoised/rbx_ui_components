@@ -1,6 +1,6 @@
 define([
-    'components/rb-deep-search/demo/demo-categories-pokedex',
-    'components/rb-deep-search/rb-deep-search-each'
+    'ui-components/rb-deep-search/demo/demo-categories-pokedex',
+    'ui-components/rb-deep-search/rb-deep-search-each'
 ], function (categories, each) {
     describe('rb-deep-search-each', function () {
         var mockCategory = categories[0];

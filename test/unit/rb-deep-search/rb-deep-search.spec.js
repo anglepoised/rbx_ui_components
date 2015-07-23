@@ -1,5 +1,5 @@
 define([
-    'components/rb-deep-search'
+    'ui-components/rb-deep-search'
 ], function (rbDeepSearch) {
     describe('rb-deep-search', function () {
 

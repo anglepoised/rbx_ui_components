@@ -1,5 +1,5 @@
 define([
-    'components/rb-raw-html-display'
+    'ui-components/rb-raw-html-display'
 ], function (rbRawHtmlDisplay) {
     describe('rb-raw-html-display', function () {
 

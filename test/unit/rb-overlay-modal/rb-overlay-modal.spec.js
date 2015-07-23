@@ -1,5 +1,5 @@
 define([
-    'components/rb-overlay-modal'
+    'ui-components/rb-overlay-modal'
 ], function (rbOverlayModal) {
     describe('rb-overlay-modal', function () {
 

@@ -1,5 +1,5 @@
 define([
-    'components/rb-page-title'
+    'ui-components/rb-page-title'
 ], function (rbPageTitle) {
     describe('rb-page-title', function () {
 

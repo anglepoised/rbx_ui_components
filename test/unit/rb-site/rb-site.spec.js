@@ -1,5 +1,5 @@
 define([
-    'components/rb-site'
+    'ui-components/rb-site'
 ], function (rbSite) {
     describe('rb-site', function () {
 

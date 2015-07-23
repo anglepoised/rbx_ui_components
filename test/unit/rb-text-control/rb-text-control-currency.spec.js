@@ -1,5 +1,5 @@
 define([
-    'components/rb-text-control',
+    'ui-components/rb-text-control',
     'html!./rb-text-control-currency.tpl.html'
 ], function (rbTextControl, template) {
     describe('rb-text-control', function () {

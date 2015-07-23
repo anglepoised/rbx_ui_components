@@ -1,5 +1,5 @@
 define([
-    'components/rb-loading'
+    'ui-components/rb-loading'
 ], function (rbLoading) {
     describe('rb-loading', function () {
 

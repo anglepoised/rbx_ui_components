@@ -1,5 +1,5 @@
 define([
-    'components/rb-main'
+    'ui-components/rb-main'
 ], function (rbMain) {
     describe('rb-main', function () {
 

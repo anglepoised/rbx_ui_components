@@ -1,5 +1,5 @@
 define([
-    'components/rb-select-control'
+    'ui-components/rb-select-control'
 ], function (rbSelectControl) {
     describe('rb-select-control', function () {
 

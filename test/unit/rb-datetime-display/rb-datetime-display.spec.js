@@ -1,5 +1,5 @@
 define([
-    'components/rb-datetime-display'
+    'ui-components/rb-datetime-display'
 ], function (rbDateTimeDisplay) {
     describe('rb-datetime-display directive', function () {
 
