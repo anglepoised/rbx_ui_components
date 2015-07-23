@@ -86,7 +86,7 @@ define([
     rbSideNav,
     rbScrollspyDemo,
     rbSiteDemo,
-    rbSystemMessage,
+    rbSystemMessageDemo,
     rbTextControlDemo,
     rbWarningMessagesDemo,
     css
@@ -134,7 +134,7 @@ define([
             rbSideNav.name,
             rbScrollspyDemo.name,
             rbSiteDemo.name,
-            rbSystemMessage.name,
+            rbSystemMessageDemo.name,
             rbTextControlDemo.name,
             rbWarningMessagesDemo.name
         ])
