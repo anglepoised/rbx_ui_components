@@ -1,0 +1,22 @@
+/** @define Canvas; use strict */
+
+/**
+ * The `.Canvas` component sets a checkerboard background underneath a centered item.
+ */
+
+/**
+ * 1. Centre everything in the canvas.
+ * 2. Prevent canvas item running against edges.
+ */
+
+.Canvas {
+    align-items: center; /* 1 */
+    background: url("./images/checkered.svg");
+    display: flex; /* 1 */
+    flex-grow: 1;
+    justify-content: center; /* 1 */
+}
+
+.Canvas-inner {
+    padding: 1em; /* 2 */
+}
