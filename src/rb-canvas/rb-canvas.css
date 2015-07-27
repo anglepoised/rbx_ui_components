@@ -1,0 +1,16 @@
+/** @define Canvas; use strict */
+
+/**
+ * The `.Canvas` component...
+ */
+
+:root {
+    --Canvas-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.Canvas {
+}
