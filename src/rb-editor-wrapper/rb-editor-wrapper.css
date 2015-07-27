@@ -1,0 +1,16 @@
+/** @define EditorWrapper; use strict */
+
+/**
+ * The `.EditorWrapper` component...
+ */
+
+:root {
+    --EditorWrapper-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.EditorWrapper {
+}
