@@ -1,0 +1,16 @@
+/** @define Tabs; use strict */
+
+/**
+ * The `.Tabs` component...
+ */
+
+:root {
+    --Tabs-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.Tabs {
+}
