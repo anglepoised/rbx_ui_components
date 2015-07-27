@@ -1,0 +1,16 @@
+/** @define Divider; use strict */
+
+/**
+ * The `.Divider` component...
+ */
+
+:root {
+    --Divider-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.Divider {
+}
