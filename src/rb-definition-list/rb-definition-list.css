@@ -6,6 +6,7 @@
 
 :root {
     --DefinitionList-border: var(--color-gray-ghost);
+    --DefinitionList-item-border: var(--color-gray-mystic);
 }
 
 /**
@@ -23,7 +24,8 @@
 }
 
 .DefinitionList-item {
-    background: var(--color-white-alabaster);
+    background: var(--color-white-catskill);
+    border-bottom: 1px solid var(--DefinitionList-item-border);
     display: flex;
     flex-direction: column; /* 1 */
     padding: 1.5em 0;
@@ -38,7 +40,7 @@
 }
 
 .DefinitionList-item:nth-child(odd) {
-    background: var(--color-white-catskill); /* 2 */
+    background: var(--color-gray-haze); /* 2 */
 }
 
 .DefinitionList-title {
