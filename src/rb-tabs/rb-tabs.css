@@ -33,3 +33,7 @@
     border-top: 0.125em solid var(--Tabs-background-active);
     margin-top: 0;
 }
+
+.Tabs-panel {
+    background: var(--Tabs-background-active);
+}
