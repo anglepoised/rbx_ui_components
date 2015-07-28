@@ -63,7 +63,7 @@
     border-radius: var(--TextControl-field-border-radius);
     color: var(--TextControl-field-color);
     margin-bottom: 0.5em; /* 1 */
-    padding: 0.75em 0.75em 0.5em;
+    padding: 0.75em 0.75em 0.4375em;
 }
 
 .TextControl-field::placeholder {
