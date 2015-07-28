@@ -45,13 +45,13 @@ define([
                 expect(angular.element(ele).text()).toContain('83%');
             });
 
-            it('should default to zero if NaN', function () {
+            it('should be NaN when denominator is 0', function () {
                 template = '<rb-ratio-display numerator="0" denominator="0"></rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
 
-                expect(angular.element(ele).text()).toContain('0%');
+                expect(angular.element(ele).text()).toContain('N/A');
             });
 
             it('should render as N/A when denominator is null', function () {
@@ -93,7 +93,7 @@ define([
 
                 $scope.$apply();
 
-                expect(angular.element(ele).text()).toContain('50 ⁄  N/A');
+                expect(angular.element(ele).text()).toContain('N/A');
             });
 
         });
