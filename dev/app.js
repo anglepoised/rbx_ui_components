@@ -44,6 +44,7 @@ define([
     'ui-components/rb-scrollspy/demo',
     'ui-components/rb-site/demo',
     'ui-components/rb-system-message/demo',
+    'ui-components/rb-tabs/demo',
     'ui-components/rb-text-control/demo',
     'ui-components/rb-warning-messages/demo',
     'rbx_style_guide'
@@ -93,6 +94,7 @@ define([
     rbScrollspyDemo,
     rbSiteDemo,
     rbSystemMessageDemo,
+    rbTabsDemo,
     rbTextControlDemo,
     rbWarningMessagesDemo,
     css
@@ -144,6 +146,7 @@ define([
             rbScrollspyDemo.name,
             rbSiteDemo.name,
             rbSystemMessageDemo.name,
+            rbTabsDemo.name,
             rbTextControlDemo.name,
             rbWarningMessagesDemo.name
         ])

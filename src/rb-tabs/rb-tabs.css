@@ -1,0 +1,39 @@
+/** @define Tabs; use strict */
+
+/**
+ * The `.Tabs` component...
+ */
+
+:root {
+    --Tabs-background: var(--color-gray-mystic);
+    --Tabs-background-active: var(--color-white-alabaster);
+}
+
+/**
+ * 1. Comment
+ */
+
+
+.Tabs-items {
+    display: flex;
+}
+
+.Tabs-item {
+    background: var(--Tabs-background);
+    margin: 0.125em 0.125em 0 0;
+}
+
+.Tabs-itemInner {
+    cursor: pointer;
+    padding: 0.6875em 1.25em 0.4375em;
+}
+
+.Tabs-item.is-active {
+    background: var(--Tabs-background-active);
+    border-top: 0.125em solid var(--Tabs-background-active);
+    margin-top: 0;
+}
+
+.Tabs-panel {
+    background: var(--Tabs-background-active);
+}
