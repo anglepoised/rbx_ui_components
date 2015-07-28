@@ -24,11 +24,14 @@
 }
 
 .Tabs-itemInner {
+    color: var(--color-gray-tuna);
     cursor: pointer;
+    display: block;
     padding: 0.6875em 1.25em 0.4375em;
+    text-decoration: none;
 }
 
-.Tabs-item.is-active {
+.Tabs-item.active {
     background: var(--Tabs-background-active);
     border-top: 0.125em solid var(--Tabs-background-active);
     margin-top: 0;

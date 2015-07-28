@@ -1,7 +1,8 @@
 define([
-    './rb-tabs-directive',
+    './rb-tabset-directive',
+    './rb-tab-directive',
     './rb-tabs.css'
-], function (rbTabsDirective, css) {
+], function (rbTabset, rbTab, css) {
     /**
      * @ngdoc module
      * @name rb-tabs
@@ -12,7 +13,8 @@ define([
      */
     var rbTabs = angular
         .module('rb-tabs', [])
-        .directive('rbTabs', rbTabsDirective);
+        .directive('rbTabset', rbTabset)
+        .directive('rbTab', rbTab);
 
     return rbTabs;
 
