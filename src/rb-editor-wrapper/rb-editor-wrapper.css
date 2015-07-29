@@ -36,5 +36,5 @@
     background: var(--color-white-catskill);
     border-left: 1px solid var(--color-gray-ghost);
     overflow-y: auto;
-    width: 20em; /* 4 */
+    width: 25em; /* 4 */
 }
