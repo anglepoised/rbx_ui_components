@@ -34,12 +34,12 @@
 }
 
 .PageTitle-navigationInner {
-    color: var(--color-gray-regent);
+    color: var(--color-base-link-default);
     text-decoration: none;
 }
 
 .PageTitle-navigationInner:hover {
-    color: var(--color-gray-tuna);
+    color: var(--color-base-link-hover);
 }
 
 .PageTitle-body {
