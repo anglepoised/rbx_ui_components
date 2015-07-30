@@ -6,6 +6,8 @@
 
 /**
  * 1. Set to viewport height (we can do this as overlay panel uses full viewport height).
+ * 2. Fix implied `min-height` in Firefox. Affects contained components that manage their own overflow.
+ *      See: http://stackoverflow.com/a/26916542/2270732
  */
 
 .PanelContent {
@@ -22,4 +24,5 @@
 .PanelContent-unscrollable {
     display: flex;
     flex: 1;
+    min-height: 0;
 }
