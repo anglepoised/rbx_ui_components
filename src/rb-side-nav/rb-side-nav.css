@@ -37,7 +37,8 @@
 }
 
 .SideNav-item {
-    background: var(--SideNav-background) url("./images/arrow.svg") no-repeat calc(100% - var(--SideNav-gutter)) center;
+    background: var(--SideNav-background) url("./images/arrow.svg") calc(100% - var(--SideNav-gutter)) center;
+    background-repeat: no-repeat;
     padding: 0.75em var(--SideNav-gutter);
 }
 
