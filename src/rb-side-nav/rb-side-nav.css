@@ -37,19 +37,19 @@
 }
 
 .SideNav-item {
-    background: var(--SideNav-background) url("./images/item.svg") no-repeat calc(100% - var(--SideNav-gutter)) center;
+    background: var(--SideNav-background) url("./images/arrow.svg") no-repeat calc(100% - var(--SideNav-gutter)) center;
     padding: 0.75em var(--SideNav-gutter);
 }
 
 .SideNav-item:hover {
     background-color: var(--color-gray-shark);
-    background-image: url("./images/item-hover.svg");
+    background-image: url("./images/arrow-hover.svg");
     cursor: pointer;
 }
 
 .SideNav-item.is-active {
     background-color: var(--color-green-base);
-    background-image: url("./images/item-is-active.svg");
+    background-image: url("./images/arrow-is-active.svg");
 }
 
 .SideNav-item.is-active .SideNav-itemInner {
