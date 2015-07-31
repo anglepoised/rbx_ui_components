@@ -9,24 +9,24 @@
  */
 
 :root {
-    --TextControl--currency-field-focus-image: "./images/Control-currency-focus.svg";
-    --TextControl--currency-field-image: "./images/Control-currency.svg";
-    --TextControl--currency-field-invalid-image: "./images/Control-currency-invalid.svg";
+    --TextControl--currency-field-focus-image: "./images/currency-focus.svg";
+    --TextControl--currency-field-image: "./images/currency.svg";
+    --TextControl--currency-field-invalid-image: "./images/currency-invalid.svg";
     --TextControl-field-background-color: var(--color-form-field-background);
     --TextControl-field-border-color: var(--color-gray-ghost);
     --TextControl-field-border-radius: 4px;
     --TextControl-field-color: var(--color-gray-tuna);
     --TextControl-field-disabled-background-color: var(--color-white-catskill);
     --TextControl-field-disabled-color: var(--color-gray-regent);
-    --TextControl-field-disabled-image: "./images/Control-disabled.svg";
+    --TextControl-field-disabled-image: "./images/disabled.svg";
     --TextControl-field-disabled-image-position: calc(100% - 12px) center;
     --TextControl-field-focus-border-color: var(--color-blue-base);
     --TextControl-field-image-padding: 2.5em;
     --TextControl-field-invalid-border-color: var(--color-red-base);
     --TextControl-field-placeholder-color: var(--color-gray-ghost);
-    --TextControl-field-required-image: "./images/Control-required.svg";
+    --TextControl-field-required-image: "./images/required.svg";
     --TextControl-field-required-image-position: right 6px top 6px;
-    --TextControl-field-required-invalid-image: "./images/Control-required-invalid.svg";
+    --TextControl-field-required-invalid-image: "./images/required-invalid.svg";
     --TextControl-field-type-image-position: 12px center;
     --TextControl-label-invalid-color: var(--color-red-base);
     --TextControl-message-invalid-background-color: var(--color-red-base);
@@ -162,14 +162,14 @@
  */
 
 .TextControl--search .TextControl-field {
-    background-image: url("./images/Control-search.svg");
+    background-image: url("./images/search.svg");
     background-position: var(--TextControl-field-type-image-position);
     background-repeat: no-repeat;
     padding-left: var(--TextControl-field-image-padding);
 }
 
 .TextControl--search .TextControl-field:focus {
-    background-image: url("./images/Control-search-focus.svg");
+    background-image: url("./images/search-focus.svg");
 }
 
 /**
