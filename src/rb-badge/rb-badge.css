@@ -81,7 +81,7 @@
 }
 
 .Badge--statusIncomplete .Badge-body {
-    background: var(--Badge--statusIncomplete-base) url("./images/Badge--statusIncomplete.svg") no-repeat center center;
+    background: var(--Badge--statusIncomplete-base) url("./images/status-incomplete.svg") no-repeat center center;
     border-color: var(--Badge--statusIncomplete-base);
 }
 
@@ -99,7 +99,7 @@
 }
 
 .Badge--statusLive .Badge-body {
-    background: var(--Badge--statusLive-base) url("./images/Badge--statusLive.svg") no-repeat center center;
+    background: var(--Badge--statusLive-base) url("./images/status-live.svg") no-repeat center center;
     border-color: var(--Badge--statusLive-base);
 }
 
@@ -117,7 +117,7 @@
 }
 
 .Badge--statusPending .Badge-body {
-    background: var(--Badge--statusPending-base) url("./images/Badge--statusPending.svg") no-repeat center center;
+    background: var(--Badge--statusPending-base) url("./images/status-pending.svg") no-repeat center center;
     border-color: var(--Badge--statusPending-base);
 }
 
@@ -135,7 +135,7 @@
 }
 
 .Badge--statusScheduled .Badge-body {
-    background: var(--Badge--statusScheduled-base) url("./images/Badge--statusScheduled.svg") no-repeat center center;
+    background: var(--Badge--statusScheduled-base) url("./images/status-scheduled.svg") no-repeat center center;
     border-color: var(--Badge--statusScheduled-base);
 }
 
@@ -153,7 +153,7 @@
 }
 
 .Badge--statusPaused .Badge-body {
-    background: var(--Badge--statusPaused-base) url("./images/Badge--statusPaused.svg") no-repeat center center;
+    background: var(--Badge--statusPaused-base) url("./images/status-paused.svg") no-repeat center center;
     border-color: var(--Badge--statusPaused-base);
 }
 
@@ -171,7 +171,7 @@
 }
 
 .Badge--statusFinished .Badge-body {
-    background: var(--Badge--statusFinished-base) url("./images/Badge--statusFinished.svg") no-repeat center center;
+    background: var(--Badge--statusFinished-base) url("./images/status-finished.svg") no-repeat center center;
     border-color: var(--Badge--statusFinished-base);
 }
 
