@@ -17,7 +17,7 @@
 }
 
 .GenericForm-messageInner {
-    background: url("./images/Required.svg") no-repeat left 4px;
+    background: url("./images/required.svg") no-repeat left 4px;
     display: inline-block;
     padding-left: 7px;
 }
