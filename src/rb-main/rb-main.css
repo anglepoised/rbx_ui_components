@@ -21,7 +21,7 @@
 }
 
 .Main--background {
-    background: url("./images/Main--background.jpg") no-repeat center center; /* 1 */
+    background: url("./images/background.jpg") no-repeat center center; /* 1 */
     background-size: cover; /* 2 */
 }
 

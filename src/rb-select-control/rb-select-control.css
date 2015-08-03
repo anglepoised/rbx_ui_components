@@ -11,14 +11,14 @@
     --SelectControl-field-color: var(--color-gray-tuna);
     --SelectControl-field-disabled-background-color: var(--color-white-catskill);
     --SelectControl-field-disabled-color: var(--color-gray-regent);
-    --SelectControl-field-disabled-image: "./images/Control-disabled.svg";
+    --SelectControl-field-disabled-image: "./images/disabled.svg";
     --SelectControl-field-disabled-image-position: right center;
     --SelectControl-field-focus-border-color: var(--color-blue-base);
-    --SelectControl-field-image: "./images/Control.svg";
+    --SelectControl-field-image: "./images/arrow-down.svg";
     --SelectControl-field-invalid-border-color: var(--color-red-base);
-    --SelectControl-field-required-image: "./images/Control-required.svg";
+    --SelectControl-field-required-image: "./images/required.svg";
     --SelectControl-field-required-image-position: right 45px top 6px;
-    --SelectControl-field-required-invalid-image: "./images/Control-required-invalid.svg";
+    --SelectControl-field-required-invalid-image: "./images/required-invalid.svg";
     --SelectControl-label-invalid-color: var(--color-red-base);
     --SelectControl-message-invalid-background-color: var(--color-red-base);
     --SelectControl-message-invalid-color: var(--color-white);

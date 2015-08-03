@@ -71,7 +71,7 @@
  */
 
 .Fieldset--additionalInfo .Fieldset-title {
-    background-image: url("./images/additionalInfo.svg");
+    background-image: url("./images/additional-info.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
     padding-left: 32px;
