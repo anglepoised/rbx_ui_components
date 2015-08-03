@@ -39,9 +39,13 @@
 }
 
 .PageHeader-logo {
+    background: url("./images/logo-rockabox.svg") no-repeat center;
     cursor: pointer;
     margin: 0 var(--layout-gutter); /* 4 */
+    margin-bottom: 0.5em; /* 5 */
     margin-top: 0.5em; /* 5 */
+    min-height: 18px;
+    width: 100px;
 }
 
 .PageHeader-user {
@@ -65,6 +69,7 @@
         flex-direction: column; /* 10 */
         justify-content: center; /* 10 */
         margin-top: 0; /* 10 */
+        margin-bottom: 0; /* 10 */
     }
 
     .PageHeader-user {
