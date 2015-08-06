@@ -10,12 +10,16 @@
  */
 
 :root {
-    --SideNav-background: var(--color-gray-tuna);
+    --SideNav-background-color: var(--color-gray-tuna);
+    --SideNav-background-arrow: "./images/arrow.svg";
+    --SideNav-background-arrow-hover: "./images/arrow-hover.svg";
+    --SideNav-background-arrow-position: calc(100% - var(--SideNav-gutter)) center;
+    --SideNav-background-icon-position: var(--SideNav-gutter) center;
     --SideNav-gutter: 1.25em;
 }
 
 .SideNav {
-    background: var(--SideNav-background);
+    background: var(--SideNav-background-color);
     height: 100vh;
     position: relative;
 }
@@ -37,20 +41,21 @@
 }
 
 .SideNav-item {
-    background: var(--SideNav-background) url("./images/arrow.svg") calc(100% - var(--SideNav-gutter)) center;
+    background-color: var(--SideNav-background-color);
+    background-image: url(var(--SideNav-background-arrow));
+    background-position: var(--SideNav-background-arrow-position), var(--SideNav-background-icon-position);
     background-repeat: no-repeat;
     padding: 0.75em var(--SideNav-gutter);
 }
 
 .SideNav-item:hover {
     background-color: var(--color-gray-shark);
-    background-image: url("./images/arrow-hover.svg");
     cursor: pointer;
 }
 
 .SideNav-item.is-active {
     background-color: var(--color-green-base);
-    background-image: url("./images/arrow-is-active.svg");
+    background-image: url(var(--SideNav-background-arrow-hover));
 }
 
 .SideNav-item.is-active .SideNav-itemInner {
@@ -60,7 +65,7 @@
 .SideNav-itemInner {
     color: var(--color-gray-ghost);
     display: flex;
-    margin-right: 1.5em;
+    margin: 0 1.5em;
     text-decoration: none;
 }
 
@@ -75,7 +80,7 @@
     color: var(--color-white-alabaster);
     display: inline-block;
     flex-shrink: 0;
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-x-small);
     height: 0%; /* 1 */
     margin-left: auto;
     min-width: 23px;
@@ -105,4 +110,98 @@
     left: 0;
     position: absolute;
     width: 100%;
+}
+
+/**
+ * Modifiers
+ */
+
+.SideNav-item--geo {
+    background-image: url(var(--SideNav-background-arrow)), url("./images/geo.svg");
+}
+
+.SideNav-item--geo.is-active,
+.SideNav-item--geo:hover,
+.SideNav-item--geo:focus {
+    background-image: url(var(--SideNav-background-arrow-hover)), url("./images/geo-hover.svg");
+}
+
+.SideNav-item--categories {
+    background-image: url(var(--SideNav-background-arrow)), url("./images/categories.svg");
+}
+
+.SideNav-item--categories.is-active,
+.SideNav-item--categories:hover,
+.SideNav-item--categories:focus {
+    background-image: url(var(--SideNav-background-arrow-hover)), url("./images/categories-hover.svg");
+}
+
+.SideNav-item--devices {
+    background-image: url(var(--SideNav-background-arrow)), url("./images/devices.svg");
+}
+
+.SideNav-item--devices.is-active,
+.SideNav-item--devices:hover,
+.SideNav-item--devices:focus {
+    background-image: url(var(--SideNav-background-arrow-hover)), url("./images/devices-hover.svg");
+}
+
+.SideNav-item--osBrowsers {
+    background-image: url(var(--SideNav-background-arrow)), url("./images/os-browsers.svg");
+}
+
+.SideNav-item--osBrowsers.is-active,
+.SideNav-item--osBrowsers:hover,
+.SideNav-item--osBrowsers:focus {
+    background-image: url(var(--SideNav-background-arrow-hover)), url("./images/os-browsers-hover.svg");
+}
+
+.SideNav-item--ssp {
+    background-image: url(var(--SideNav-background-arrow)), url("./images/ssp.svg");
+}
+
+.SideNav-item--ssp.is-active,
+.SideNav-item--ssp:hover,
+.SideNav-item--ssp:focus {
+    background-image: url(var(--SideNav-background-arrow-hover)), url("./images/ssp-hover.svg");
+}
+
+.SideNav-item--domains {
+    background-image: url(var(--SideNav-background-arrow)), url("./images/domains.svg");
+}
+
+.SideNav-item--domains.is-active,
+.SideNav-item--domains:hover,
+.SideNav-item--domains:focus {
+    background-image: url(var(--SideNav-background-arrow-hover)), url("./images/domains-hover.svg");
+}
+
+.SideNav-item--frequency {
+    background-image: url(var(--SideNav-background-arrow)), url("./images/frequency.svg");
+}
+
+.SideNav-item--frequency.is-active,
+.SideNav-item--frequency:hover,
+.SideNav-item--frequency:focus {
+    background-image: url(var(--SideNav-background-arrow-hover)), url("./images/frequency-hover.svg");
+}
+
+.SideNav-item--visibility {
+    background-image: url(var(--SideNav-background-arrow)), url("./images/visibility.svg");
+}
+
+.SideNav-item--visibility.is-active,
+.SideNav-item--visibility:hover,
+.SideNav-item--visibility:focus {
+ background-image: url(var(--SideNav-background-arrow-hover)), url("./images/visibility-hover.svg");
+}
+
+.SideNav-item--segmentation {
+    background-image: url(var(--SideNav-background-arrow)), url("./images/segmentation.svg");
+}
+
+.SideNav-item--segmentation.is-active,
+.SideNav-item--segmentation:hover,
+.SideNav-item--segmentation:focus {
+    background-image: url(var(--SideNav-background-arrow-hover)), url("./images/segmentation-hover.svg");
 }
