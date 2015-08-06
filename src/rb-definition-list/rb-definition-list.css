@@ -45,7 +45,10 @@
 }
 
 .DefinitionList-icon {
+    background-repeat: no-repeat;
+    background-position: left 3px;
     margin-right: 1em;
+    padding-left: 2em;
 }
 
 .DefinitionList-body {
