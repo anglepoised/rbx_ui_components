@@ -65,6 +65,7 @@ define([
                         originalNgModel = angular.copy(scope.ngModel);
                         scope.ngModel = scope.inheritDatetime;
                         scope.disableInputs = true;
+                        scope.form.$setUntouched();
                     } else if (scope.inheritModel === false) {
                         scope.ngModel = originalNgModel;
                         scope.disableInputs = false;

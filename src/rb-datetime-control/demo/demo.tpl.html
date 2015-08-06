@@ -53,7 +53,7 @@
             </rb-section>
             <rb-section heading="With Placeholder">
                 <rb-component-display>
-                    <rb-datetime-control name="placeholder" form="basicForm" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.placeholder"></rb-datetime-control>
+                    <rb-datetime-control name="withPlaceholder" form="basicForm" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.placeholder"></rb-datetime-control>
                     <h3>
                         Scope value (UTC):
                     </h3>
@@ -64,7 +64,7 @@
             </rb-section>
             <rb-section heading="With Inherited Date Time">
                 <rb-component-display>
-                    <rb-datetime-control name="placeholder" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.inherit" inherit-model='demoCtrl.data.inheritModel'></rb-datetime-control>
+                    <rb-datetime-control name="InheriteDatetime" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.inherit" inherit-model='demoCtrl.data.inheritModel'></rb-datetime-control>
                     <h3>
                         Scope value (UTC):
                     </h3>
@@ -75,7 +75,7 @@
             </rb-section>
             <rb-section heading="With Preset Inherited Date Time">
                 <rb-component-display>
-                    <rb-datetime-control name="placeholder" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.presetInherit" inherit-model='demoCtrl.data.inheritModelTrue'></rb-datetime-control>
+                    <rb-datetime-control name="PresetInheritedDatetime" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.presetInherit" inherit-model='demoCtrl.data.inheritModelTrue'></rb-datetime-control>
                     <h3>
                         Scope value (UTC):
                     </h3>
@@ -86,7 +86,7 @@
             </rb-section>
             <rb-section heading="With Inherited Date And is-disabled">
                 <rb-component-display>
-                    <rb-datetime-control name="placeholder" is-disabled="true" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.disabled"></rb-datetime-control>
+                    <rb-datetime-control name="disabledInherited" is-disabled="true" form="basicForm" inherit-label="Inherit date/time from somehwere else." inherit-datetime="{{demoCtrl.inheritDatetime}}" placeholder-date="DD/MM/YY" placeholder-time="HH:MM" label="Date time" ng-model="demoCtrl.data.disabled"></rb-datetime-control>
                     <h3>
                         Scope value (UTC):
                     </h3>
