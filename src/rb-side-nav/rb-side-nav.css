@@ -68,10 +68,6 @@
     color: var(--color-white-alabaster);
 }
 
-.SideNav-icon {
-    margin-right: 1.5em;
-}
-
 .SideNav-status {
     align-self: center;
     border-radius: 500px;
