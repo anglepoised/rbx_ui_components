@@ -62,3 +62,43 @@
     }
 
 }
+
+/**
+ * Modifiers
+ */
+
+.DefinitionList-icon--geo {
+    background-image: url("./images/geo.svg");
+}
+
+.DefinitionList-icon--categories {
+    background-image: url("./images/categories.svg");
+}
+
+.DefinitionList-icon--devices {
+    background-image: url("./images/devices.svg");
+}
+
+.DefinitionList-icon--osBrowsers {
+    background-image: url("./images/os-browsers.svg");
+}
+
+.DefinitionList-icon--ssp {
+    background-image: url("./images/ssp.svg");
+}
+
+.DefinitionList-icon--domains {
+    background-image: url("./images/domains.svg");
+}
+
+.DefinitionList-icon--frequency {
+    background-image: url("./images/frequency.svg");
+}
+
+.DefinitionList-icon--visibility {
+    background-image: url("./images/visibility.svg");
+}
+
+.DefinitionList-icon--segmentation {
+    background-image: url("./images/segmentation.svg");
+}
