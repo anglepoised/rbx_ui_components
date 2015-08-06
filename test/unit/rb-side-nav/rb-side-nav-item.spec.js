@@ -108,18 +108,6 @@ define([
             });
         });
 
-        describe('icon attribute', function () {
-
-            it('should use icon form icon attribute', function () {
-                compileTemplate('<rb-side-nav-item icon="blue-base-16-geo"></rb-side-nav-item>');
-
-                var icon = angular.element(element[0].getElementsByClassName('Icon')[0]);
-
-                expect(icon.hasClass('Icon--blue-base-16-geo')).toBe(true);
-            });
-
-        });
-
         describe('active attribute', function () {
 
             it('should set active class if active attribute true', function () {
