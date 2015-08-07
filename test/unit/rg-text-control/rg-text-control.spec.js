@@ -1,5 +1,5 @@
 define([
-    'components/rg-text-control'
+    'ui-components/rg-text-control'
 ], function (rgTextControl) {
     describe('rg-text-control', function () {
 

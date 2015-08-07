@@ -1,7 +1,9 @@
 define([
     './rg-text-control-directive',
+    './custom-validation-directive',
+    'angular-elastic',
     './rg-text-control.css'
-], function (rgTextControlDirective, css) {
+], function (rgTextControlDirective, customValidationDirective, ngElastic, css) {
     /**
      * @ngdoc module
      * @name rg-text-control
@@ -11,8 +13,11 @@ define([
      *
      */
     var rgTextControl = angular
-        .module('rg-text-control', [])
-        .directive('rgTextControl', rgTextControlDirective);
+        .module('rg-text-control', [
+            'monospaced.elastic'
+        ])
+        .directive('rgTextControl', rgTextControlDirective)
+        .directive('customValidation', customValidationDirective);
 
     return rgTextControl;
 

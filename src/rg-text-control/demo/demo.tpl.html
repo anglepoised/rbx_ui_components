@@ -1,1 +1,58 @@
-<rg-text-control></rg-text-control>
+<rb-site>
+    <rb-main>
+        <rb-generic-form>
+            <form name="userForm">
+                <rb-page-title heading="rg-text-control">
+                </rb-page-title>
+                <rb-section heading="Introduction" hide-heading="true">
+                    <rb-raw-html-display>
+                        <p>
+                            The <code>rb-text-control</code> component wrap a native AngularJS <code>input</code> or <code>textarea</code> component.
+                        </p>
+                        <p>
+                            You can specify <code>label</code>, <code>helpMessage</code> and you can make it a <code>small</code>
+                        </p>
+                        <p>
+                            The <code>placeholder</code> attribute should be used where this will aid usability but should
+                            <strong>not</strong> be used in place of a <code>label</code> element.
+                        </p>
+                        <p>
+                            The <code>autocomplete="off"</code> attribute should <strong>not</strong> be used for password
+                            fields, but should be used for other sensitive data types (e.g. credit card information).
+                        </p>
+                        <p>
+                            The <code>autofocus</code> attribute should only be used <strong>once per page</strong>, and
+                            only on the <strong>first</strong> field on a composed page that has a single, simple form
+                            (e.g. <code><a ui-sref="rb-login-form">rb-login-form</a></code>).
+                        </p>
+                    </rb-raw-html-display>
+                </rb-section>
+                <rb-section heading="Default (type='text')">
+                    <rg-text-control
+                        form="userForm"
+                        label="Pet Name"
+                        help-message="i.e. Purple Prawn">
+                        <input type="text"
+                               ng-model="demoCtrl.data.pet"
+                               placeholder="Enter the name of your pet..."
+                               name="pet"
+                               ng-disabled="demoCtrl.data.isDisabled"
+                               required>
+                    </rg-text-control>
+                </rb-section>
+                <rb-section heading="URL (type='url')">
+                    <rg-text-control
+                    form="userForm"
+                    label="Your URL">
+                        <input
+                            type="url"
+                            placeholder="Enter your URL..."
+                            name="google"
+                            ng-model="demoCtrl.data.url"
+                            required>
+                    </rg-text-control>
+                </rb-section>
+            </form>
+        </rb-generic-form>
+    </rb-main>
+</rb-site>

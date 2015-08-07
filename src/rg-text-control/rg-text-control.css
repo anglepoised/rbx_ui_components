@@ -1,16 +1,220 @@
-/** @define rgTextControl; use strict */
+/** @define RgTextControl; use strict */
 
 /**
- * The `.rgTextControl` component...
+ * The `.RgTextControl` component groups simple, text-based fields that share a set of common states.
+ *
+ * Various states are available and can be stacked. The `disabled` state always takes visual priority over other states.
+ *
+ * A single modifier is available for an entire RgTextControl: `RgTextControl--small`. This reduces the size of the input field.
  */
 
 :root {
-    --rgTextControl-variable: var();
+    --RgTextControl--currency-field-focus-image: "./images/currency-focus.svg";
+    --RgTextControl--currency-field-image: "./images/currency.svg";
+    --RgTextControl--currency-field-invalid-image: "./images/currency-invalid.svg";
+    --RgTextControl-field-background-color: var(--color-form-field-background);
+    --RgTextControl-field-border-color: var(--color-gray-ghost);
+    --RgTextControl-field-border-radius: 4px;
+    --RgTextControl-field-color: var(--color-gray-tuna);
+    --RgTextControl-field-disabled-background-color: var(--color-white-catskill);
+    --RgTextControl-field-disabled-color: var(--color-gray-regent);
+    --RgTextControl-field-disabled-image: "./images/disabled.svg";
+    --RgTextControl-field-disabled-image-position: calc(100% - 12px) center;
+    --RgTextControl-field-focus-border-color: var(--color-blue-base);
+    --RgTextControl-field-image-padding: 2.5em;
+    --RgTextControl-field-invalid-border-color: var(--color-red-base);
+    --RgTextControl-field-placeholder-color: var(--color-gray-ghost);
+    --RgTextControl-field-required-image: "./images/required.svg";
+    --RgTextControl-field-required-image-position: right 6px top 6px;
+    --RgTextControl-field-required-invalid-image: "./images/required-invalid.svg";
+    --RgTextControl-field-type-image-position: 12px center;
+    --RgTextControl-label-invalid-color: var(--color-red-base);
+    --RgTextControl-message-invalid-background-color: var(--color-red-base);
+    --RgTextControl-message-invalid-color: var(--color-white);
 }
 
 /**
- * 1. Comment
+ * 1. Set consistent spacing after every field.
+ * 2. Reset opacity on Mozilla placeholders. See: http://stackoverflow.com/a/15586457/2270732
+ * 3. Remove `outline` in favour of `border`.
+ * 4. Nudge `required` indicator from top right corner.
+ * 5. Swap background when chained to match other state colours.
+ * 6. Disabled state always overrides other states.
+ * 7. Prevent text selection on disabled field.
+ * 8. Remove spinner on number type field in disabled state, prevents conflict with padlock icon.
+ *      Mozilla: https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance
+ *      WebKit: http://trac.webkit.org/wiki/Styling%20Form%20Controls#Removingspinbuttonsforinputtypenumber
+ * 9. Make `.is-populated` match focus state to preserve background image colour.
  */
 
-.rgTextControl {
+.RgTextControl {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/**
+ * Default
+ */
+
+.RgTextControl-field {
+    background: var(--RgTextControl-field-background-color);
+    border: 1px solid var(--RgTextControl-field-border-color);
+    border-radius: var(--RgTextControl-field-border-radius);
+    color: var(--RgTextControl-field-color);
+    margin-bottom: 0.5em; /* 1 */
+    padding: 0.75em 0.75em 0.4375em;
+    width: 100%;
+}
+
+.RgTextControl-field::placeholder {
+    color: var(--RgTextControl-field-placeholder-color);
+}
+
+.RgTextControl-field::-moz-placeholder {
+    opacity: 1; /* 2 */
+}
+
+.RgTextControl-field:focus,
+.RgTextControl-field.is-focused {
+    border-color: var(--RgTextControl-field-focus-border-color);
+    outline: none; /* 3 */
+}
+
+.RgTextControl-message {
+    display: block;
+    font-size: var(--font-size-x-small);
+}
+
+/**
+ * Invalid
+ */
+
+.RgTextControl-label.is-invalid {
+    color: var(--RgTextControl-label-invalid-color);
+}
+
+.RgTextControl-field:invalid:focus,
+.RgTextControl-field.is-invalid {
+    border-color: var(--RgTextControl-field-invalid-border-color);
+}
+
+.RgTextControl-message.is-invalid {
+    background: var(--RgTextControl-message-invalid-background-color);
+    border-radius: var(--RgTextControl-field-border-radius);
+    color: var(--RgTextControl-message-invalid-color);
+    padding: 0.75em 0.75em 0.5em;
+}
+
+/**
+ * Required
+ */
+
+.RgTextControl-field:required,
+.RgTextControl-field.is-required {
+    background: var(--RgTextControl-field-background-color) url(var(--RgTextControl-field-required-image)) no-repeat;
+    background-position: var(--RgTextControl-field-required-image-position); /* 4 */
+    outline: none; /* 2 */
+}
+
+.RgTextControl-field:focus:required:invalid {
+    background-image: url(var(--RgTextControl-field-required-invalid-image)); /* 5 */
+}
+
+/**
+ * Disabled
+ */
+
+.RgTextControl-field:disabled,
+.RgTextControl-field.is-disabled {
+    background: var(--RgTextControl-field-disabled-background-color) url(var(--RgTextControl-field-disabled-image)) no-repeat var(--RgTextControl-field-disabled-image-position) !important; /* 5 */
+    border: 1px solid var(--RgTextControl-field-border-color) !important; /* 6 */
+    color: var(--RgTextControl-field-disabled-color) !important; /* 6 */
+    user-select: none; /* 7 */
+}
+
+.RgTextControl-field:disabled::placeholder,
+.RgTextControl-field.is-disabled::placeholder {
+    color: var(--RgTextControl-field-disabled-color) !important; /* 6 */
+}
+
+.RgTextControl-field[type=number]:disabled,
+.RgTextControl-field[type=number].is-disabled {
+    -moz-appearance: textfield; /* 8 */
+}
+
+.RgTextControl-field[type=number]::-webkit-inner-spin-button:disabled,
+.RgTextControl-field[type=number]::-webkit-outer-spin-button:disabled,
+.RgTextControl-field[type=number]::-webkit-inner-spin-button.is-disabled,
+.RgTextControl-field[type=number]::-webkit-outer-spin-button.is-disabled {
+    -webkit-appearance: none; /* 8 */
+}
+
+/**
+ * Small
+ */
+
+.RgTextControl--small .RgTextControl-field {
+    font-size: var(--font-size-x-small);
+}
+
+/**
+ * Search
+ */
+
+.RgTextControl--search .RgTextControl-field {
+    background-image: url("./images/search.svg");
+    background-position: var(--RgTextControl-field-type-image-position);
+    background-repeat: no-repeat;
+    padding-left: var(--RgTextControl-field-image-padding);
+}
+
+.RgTextControl--search .RgTextControl-field:focus {
+    background-image: url("./images/search-focus.svg");
+}
+
+/**
+ * Currency
+ */
+
+.RgTextControl--currency .RgTextControl-field {
+    background-image: url(var(--RgTextControl--currency-field-image));
+    background-position: var(--RgTextControl-field-type-image-position);
+    background-repeat: no-repeat;
+    padding-left: var(--RgTextControl-field-image-padding);
+}
+
+.RgTextControl--currency .RgTextControl-field:focus,
+.RgTextControl--currency .RgTextControl-field.is-populated {
+    background-image: url(var(--RgTextControl--currency-field-focus-image)); /* 9 */
+}
+
+.RgTextControl--currency .RgTextControl-field:invalid:focus,
+.RgTextControl--currency .RgTextControl-field.is-invalid {
+    background-image: url(var(--RgTextControl--currency-field-invalid-image));
+}
+
+.RgTextControl--currency .RgTextControl-field:required,
+.RgTextControl--currency .RgTextControl-field.is-required {
+    background-image: url(var(--RgTextControl--currency-field-image)), url(var(--RgTextControl-field-required-image));
+    background-position: var(--RgTextControl-field-type-image-position), var(--RgTextControl-field-required-image-position);
+}
+
+.RgTextControl--currency .RgTextControl-field:required:focus,
+.RgTextControl--currency .RgTextControl-field.is-required:focus,
+.RgTextControl--currency .RgTextControl-field.is-populated:required,
+.RgTextControl--currency .RgTextControl-field.is-populated.is-required {
+    background-image: url(var(--RgTextControl--currency-field-focus-image)), url(var(--RgTextControl-field-required-image));
+    background-position: var(--RgTextControl-field-type-image-position), var(--RgTextControl-field-required-image-position);
+}
+
+.RgTextControl--currency .RgTextControl-field:focus:required:invalid {
+    background-image: url(var(--RgTextControl--currency-field-invalid-image)), url(var(--RgTextControl-field-required-invalid-image));
+    background-position: var(--RgTextControl-field-type-image-position), var(--RgTextControl-field-required-image-position);
+}
+
+.RgTextControl--currency .RgTextControl-field:disabled,
+.RgTextControl--currency .RgTextControl-field.is-disabled {
+    background-image: url(var(--RgTextControl--currency-field-image)), url(var(--RgTextControl-field-disabled-image)) !important;
+    background-position: var(--RgTextControl-field-type-image-position), var(--RgTextControl-field-disabled-image-position) !important;
 }

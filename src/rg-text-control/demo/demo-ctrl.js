@@ -2,7 +2,12 @@ define([
 ], function () {
 
     // @ngInject
-    function demoCtrl ($rootScope, $state, $injector) {
+    function demoCtrl () {
+        this.data = {
+            isDisabled: false,
+            readonlyMessage: 'This is read only! Aha!'
+        };
+
     }
 
     return demoCtrl;
