@@ -1,0 +1,16 @@
+/** @define rgTextControl; use strict */
+
+/**
+ * The `.rgTextControl` component...
+ */
+
+:root {
+    --rgTextControl-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.rgTextControl {
+}
