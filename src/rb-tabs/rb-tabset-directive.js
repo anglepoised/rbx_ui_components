@@ -29,7 +29,7 @@ define([
             template: template,
             bindToController: true,
             controllerAs: 'tabset',
-            controller: function () {
+            controller: function ($scope) {
                 var $this = this;
                 $this.tabs = [];
                 $this.addTab = function addTab (tab) {
@@ -46,6 +46,10 @@ define([
                             tab.active = false;
                         }
                     });
+                    // Everytime a tab change is succesful, an event is
+                    // broadcasted with the current tab object, following
+                    // a sort of the same philosophy of the ui-router
+                    $scope.$broadcast('$tabChangeSuccess', selectedTab);
 
                     selectedTab.active = true;
                 };
