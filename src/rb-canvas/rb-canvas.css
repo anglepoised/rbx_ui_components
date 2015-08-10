@@ -7,16 +7,46 @@
 /**
  * 1. Centre everything in the canvas.
  * 2. Prevent canvas item running against edges.
+ * 3. Position state label above displayed element.
  */
 
 .Canvas {
     align-items: center; /* 1 */
-    background: url("./images/checkered.svg");
+    background: var(--color-gray-ghost);
     display: flex; /* 1 */
     flex-grow: 1;
     justify-content: center; /* 1 */
+    position: relative;
 }
 
 .Canvas-inner {
     padding: 1em; /* 2 */
+}
+
+.Canvas-state {
+    background: var(--color-red-base) url("./images/locked.svg") no-repeat 1em center;
+    color: var(--color-white-alabaster);
+    left: 0;
+    min-height: 1.5em;
+    padding: 0.75em 1em 0.5em 2.75em;
+    position: absolute;
+    top: 0;
+    z-index: 10; /* 3 */
+}
+
+.Canvas-stateInner {
+    font-size: var(--font-size-small);
+}
+
+/**
+ * Edit modifier
+ */
+
+.Canvas--edit {
+    background: url("./images/checkered.svg");
+}
+
+.Canvas--edit .Canvas-state {
+    background: var(--color-green-base) url("./images/unlocked.svg") no-repeat 1em center;
+    color: var(--color-white-alabaster);
 }
