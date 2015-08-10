@@ -1,0 +1,16 @@
+<form name="testForm">
+
+    <rg-text-control
+        form="testForm"
+        label="Your Name"
+        help-message="{{helpMessage}}">
+        <input type="text"
+               name="firstName"
+               placeholder="{{placeholder}}"
+               ng-required="{{isRequired}}"
+               ng-model="data.firstName"
+               ng-readonly="{{isReadonly}}"
+               ng-disabled="{{isDisabled}}">
+    </rg-text-control>
+
+</form>
