@@ -41,7 +41,7 @@
         placeholder="{{placeholder}}"
         type="{{type}}"
         ng-model="$parent.ngModel"
-        ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 700, 'blur': 0 } }"
+        ng-model-options="modelOptions"
         ng-required="{{isRequired}}"
         ng-disabled="{{isDisabled}}"
         ng-readonly="{{isReadonly}}"

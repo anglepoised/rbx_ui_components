@@ -48,11 +48,25 @@ define([
                 type: '@',
                 numberSteps: '@',
                 small: '@',
-                onChange: '&'
+                onChange: '&',
+                modelOptions: '@'
             },
             restrict: 'E',
             replace: true,
             template: template,
+            controller: function ($scope, $element) {
+                $scope.modelOptions = {
+                    updateOnDefault: true,
+                    updateOn: 'default blur',
+                    debounce: {
+                        'default': 700,
+                        'blur': 0
+                    }
+                };
+                if ($scope.type === 'password') {
+                    $scope.modelOptions.debounce.default = 0;
+                }
+            },
             link: function (scope, element, attributes) {
                 scope.numberSteps = scope.numberSteps || 0;
                 if (scope.type === 'currency') {
