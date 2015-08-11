@@ -9,11 +9,32 @@
                 </p>
             </rb-raw-html-display>
         </rb-section>
-        <rb-section heading="Default">
+        <rb-section heading="Locked Mode">
             <rb-component-display>
-                <rb-canvas>
-                    Creative
-                </rb-canvas>
+                <div class="Canvas">
+                    <div class="Canvas-state">
+                        <div class="Canvas-stateInner">
+                            Locked Mode
+                        </div>
+                    </div>
+                    <div class="Canvas-inner" ng-transclude>
+                        Creative
+                    </div>
+                </div>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Edit Mode">
+            <rb-component-display>
+                <div class="Canvas Canvas--edit">
+                    <div class="Canvas-state">
+                        <div class="Canvas-stateInner">
+                            Edit Mode
+                        </div>
+                    </div>
+                    <div class="Canvas-inner" ng-transclude>
+                        Creative
+                    </div>
+                </div>
             </rb-component-display>
         </rb-section>
     </rb-main>
