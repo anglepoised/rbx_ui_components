@@ -11,3 +11,86 @@
 .CheckControl::selection {
     background: none; /* 1 */
 }
+
+/**
+ * Modifier: withIcon
+ */
+
+.CheckControl--withIcon {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.CheckControl--withIcon .CheckControl-label {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.CheckControl--withIcon .CheckControl-labelInner {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.CheckControl-icon {
+    background-repeat: no-repeat;
+    margin-bottom: 1em;
+}
+
+/**
+ * mediaCentre
+ */
+
+.CheckControl-icon--mediaCentre {
+    background-image: url("./images/media-centre.svg");
+    height: 100px;
+    width: 100px;
+}
+
+.CheckControl--withIcon.is-checked .CheckControl-icon--mediaCentre {
+    background-image: url("./images/media-centre-checked.svg");
+}
+
+/**
+ * desktopLaptop
+ */
+
+.CheckControl-icon--desktopLaptop {
+    background-image: url("./images/desktop-laptop.svg");
+    background-position: center;
+    height: 100px;
+    width: 150px;
+}
+
+.CheckControl--withIcon.is-checked .CheckControl-icon--desktopLaptop {
+    background-image: url("./images/desktop-laptop-checked.svg");
+}
+
+/**
+ * mobile
+ */
+
+.CheckControl-icon--mobile {
+    background-image: url("./images/mobile.svg");
+    height: 100px;
+    width: 40px;
+}
+
+.CheckControl--withIcon.is-checked .CheckControl-icon--mobile {
+    background-image: url("./images/mobile-checked.svg");
+}
+
+/**
+ * tablet
+ */
+
+.CheckControl-icon--tablet {
+    background-image: url("./images/tablet.svg");
+    height: 100px;
+    width: 60px;
+}
+
+.CheckControl--withIcon.is-checked .CheckControl-icon--tablet {
+    background-image: url("./images/tablet-checked.svg");
+}
