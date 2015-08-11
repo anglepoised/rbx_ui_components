@@ -35,14 +35,11 @@
 .EditorWrapper-sidebar {
     background: var(--color-white-catskill);
     border-left: 1px solid var(--color-gray-ghost);
-    overflow-y: auto;
-    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 25em; /* 4 */
 }
 
-.EditorWrapper-actions {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
+.EditorWrapper-form {
+    overflow-y: auto;
 }
