@@ -47,6 +47,7 @@ define([
     'ui-components/rb-tabs/demo',
     'ui-components/rb-text-control/demo',
     'ui-components/rb-warning-messages/demo',
+    'ui-components/rg-text-control/demo',
     'rbx_style_guide'
 ], function (
     uiRouter,
@@ -97,6 +98,7 @@ define([
     rbTabsDemo,
     rbTextControlDemo,
     rbWarningMessagesDemo,
+    rgTextControlDemo,
     css
 ) {
     // @ngInject
@@ -148,7 +150,8 @@ define([
             rbSystemMessageDemo.name,
             rbTabsDemo.name,
             rbTextControlDemo.name,
-            rbWarningMessagesDemo.name
+            rbWarningMessagesDemo.name,
+            rgTextControlDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 

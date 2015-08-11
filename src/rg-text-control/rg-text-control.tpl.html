@@ -1,0 +1,46 @@
+<div class="RgTextControl" ng-class="{
+    'RgTextControl--text': type==='text',
+    'RgTextControl--email': type==='email',
+    'RgTextControl--password': type==='password',
+    'RgTextControl--number': type==='number',
+    'RgTextControl--search': type==='search',
+    'RgTextControl--textarea': type==='textarea',
+    'RgTextControl--currency': type==='currency',
+    'RgTextControl--url': type==='url',
+    'RgTextControl--small': small==='true'
+}">
+    <label
+        class="RgTextControl-label u-textLabel"
+        ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}">
+        {{label}}
+    </label>
+    <ng-transclude></ng-transclude>
+    <div class="RgTextControl-message" ng-show="helpMessage">
+        {{helpMessage}}
+    </div>
+
+    <div class="RgTextControl-message is-invalid" ng-if="form[name].$error.server">
+        {{ form[name].$error.server }}
+    </div>
+
+    <div ng-if="form[name].$touched">
+        <div class="RgTextControl-message is-invalid" ng-if="form[name].$error.required">
+            This field is required.
+        </div>
+        <div class="RgTextControl-message is-invalid" ng-if="form[name].$error.email">
+            Please enter a valid email address.
+        </div>
+        <div class="RgTextControl-message is-invalid" ng-if="form[name].$error.number">
+            Please enter a valid number.
+        </div>
+        <div class="RgTextControl-message is-invalid" ng-if="form[name].$error.currency">
+            Please enter a valid monetary value.
+        </div>
+        <div class="RgTextControl-message is-invalid" ng-if="form[name].$error.url">
+            Please enter a valid URL.
+        </div>
+        <div class="RgTextControl-message is-invalid" ng-if="form[name].$error.tooManyDigits">
+            Ensure that there are no more than 18 digits before the decimal point.
+        </div>
+    </div>
+</div>
