@@ -23,7 +23,7 @@
 }
 
 .DefinitionList-item {
-    background: var(--color-white-alabaster);
+    background: var(--color-white-catskill);
     display: flex;
     flex-direction: column; /* 1 */
     padding: 1.5em 0;
@@ -38,7 +38,7 @@
 }
 
 .DefinitionList-item:nth-child(odd) {
-    background: var(--color-white-catskill); /* 2 */
+    background: var(--color-white-alabaster); /* 2 */
 }
 
 .DefinitionList-title {
