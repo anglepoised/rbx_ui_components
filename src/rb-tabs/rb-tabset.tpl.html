@@ -1,7 +1,8 @@
 <div class="Tabs">
     <ul class="Tabs-items" >
         <li class="Tabs-item" ng-repeat="tab in tabset.tabs" ng-class="{'active': tab.active}">
-            <a class="Tabs-itemInner" ng-click="tabset.select(tab)">{{::tab.heading}}</a>
+            <a ng-if="tab.uiSref" class="Tabs-itemInner"  ui-sref="{{tab.uiSref}}">{{::tab.heading}}</a>
+            <a ng-if="!tab.uiSref" class="Tabs-itemInner" ng-click="tabset.select(tab)">{{::tab.heading}}</a>
         </li>
     </ul>
     <ng-transclude class="Tabs-body"></ng-transclude>
