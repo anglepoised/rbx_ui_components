@@ -1,16 +1,39 @@
 /** @define ReleaseVersion; use strict */
 
-/**
- * The `.ReleaseVersion` component...
- */
-
 :root {
-    --ReleaseVersion-variable: var();
+    --ReleaseVersion-border-color: var(--color-gray-mystic);
+    --ReleaseVersion-padding: 1.25em;
 }
 
-/**
- * 1. Comment
- */
-
 .ReleaseVersion {
+    background: var(--color-white-alabaster);
+}
+
+.ReleaseVersion-create {
+    border-bottom: 1px solid var(--ReleaseVersion-border-color);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--ReleaseVersion-padding);
+}
+
+.ReleaseVersion-versions {
+    border-bottom: 1px solid var(--ReleaseVersion-border-color);
+    padding: var(--ReleaseVersion-padding);
+}
+
+.ReleaseVersion-item {
+    background: var(--color-white-alabaster);
+    border-bottom: 1px solid var(--ReleaseVersion-border-color);
+    padding: var(--ReleaseVersion-padding);
+}
+
+.ReleaseVersion-item:hover,
+.ReleaseVersion-item:focus,
+.ReleaseVersion-item.is-selected {
+    background: var(--color-white-catskill);
+    cursor: pointer;
+}
+
+.ReleaseVersion-itemInner {
+    font-size: var(--font-size-small);
 }
