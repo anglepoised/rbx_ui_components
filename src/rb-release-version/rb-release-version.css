@@ -1,0 +1,16 @@
+/** @define ReleaseVersion; use strict */
+
+/**
+ * The `.ReleaseVersion` component...
+ */
+
+:root {
+    --ReleaseVersion-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.ReleaseVersion {
+}
