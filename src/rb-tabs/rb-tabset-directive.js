@@ -34,8 +34,7 @@ define([
                 $this.tabs = [];
                 $this.addTab = function addTab (tab) {
                     $this.tabs.push(tab);
-
-                    if ($this.tabs.length === 1) {
+                    if (angular.isUndefined(tab.isActive) && $this.tabs.length === 1) {
                         tab.active = true;
                     }
                 };

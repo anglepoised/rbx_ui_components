@@ -10,25 +10,67 @@
             </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Default">
-            <!-- <rb-component-display> -->
-            <rb-tabset>
-                <rb-tab heading="Tab 1">
-                    Lorem ipsum dolor sit amet, ut eam nullam utroque liberavisse, ea
-                    graecis tractatos contentiones quo. Ipsum phaedrum scripserit sit id,
-                    eu insolens indoctum vel, eos eu offendit delectus tincidunt. Eum
-                    nostrum reprehendunt in, ullum nostrud legimus ei quo. Sed et elitr
-                    corrumpit. Nibh maiestatis voluptatum has no, at est inermis epicuri,
-                    omnis temporibus cu mei. Legere scriptorem voluptatibus et est, ea
-                    noluisse deterruisset sea.
-                </rb-tab>
-                <rb-tab heading="Tab 2">
-                    Just another tab!
-                </rb-tab>
-                <rb-tab heading="Tab 3">
-                    <h1>hello world dwodo</h1>
-                </rb-tab>
-            </rb-tabset>
-            <!-- </rb-component-display> -->
+            <rb-component-display>
+                <rb-tabset>
+                    <rb-tab heading="Tab 1">
+                        Lorem ipsum dolor sit amet, ut eam nullam utroque liberavisse, ea
+                        graecis tractatos contentiones quo. Ipsum phaedrum scripserit sit id,
+                        eu insolens indoctum vel, eos eu offendit delectus tincidunt. Eum
+                        nostrum reprehendunt in, ullum nostrud legimus ei quo. Sed et elitr
+                        corrumpit. Nibh maiestatis voluptatum has no, at est inermis epicuri,
+                        omnis temporibus cu mei. Legere scriptorem voluptatibus et est, ea
+                        noluisse deterruisset sea.
+                    </rb-tab>
+                    <rb-tab heading="Tab 2">
+                        Just another tab!
+                    </rb-tab>
+                    <rb-tab heading="Tab 3">
+                        <h1>hello world dwodo</h1>
+                    </rb-tab>
+                </rb-tabset>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="With is-active set">
+            <rb-component-display>
+                <rb-tabset>
+                    <rb-tab heading="Tab 1" is-active="false">
+                        Lorem ipsum dolor sit amet, ut eam nullam utroque liberavisse, ea
+                        graecis tractatos contentiones quo. Ipsum phaedrum scripserit sit id,
+                        eu insolens indoctum vel, eos eu offendit delectus tincidunt. Eum
+                        nostrum reprehendunt in, ullum nostrud legimus ei quo. Sed et elitr
+                        corrumpit. Nibh maiestatis voluptatum has no, at est inermis epicuri,
+                        omnis temporibus cu mei. Legere scriptorem voluptatibus et est, ea
+                        noluisse deterruisset sea.
+                    </rb-tab>
+                    <rb-tab heading="Tab 2" is-active="true">
+                        Just another tab!
+                    </rb-tab>
+                    <rb-tab heading="Tab 3" is-active="false">
+                        <h1>hello world dwodo</h1>
+                    </rb-tab>
+                </rb-tabset>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="With ui-sref set and link to somewhere else">
+            <rb-component-display>
+                <rb-tabset>
+                    <rb-tab heading="Tab 1" ui-sref="rb-tabs">
+                        Lorem ipsum dolor sit amet, ut eam nullam utroque liberavisse, ea
+                        graecis tractatos contentiones quo. Ipsum phaedrum scripserit sit id,
+                        eu insolens indoctum vel, eos eu offendit delectus tincidunt. Eum
+                        nostrum reprehendunt in, ullum nostrud legimus ei quo. Sed et elitr
+                        corrumpit. Nibh maiestatis voluptatum has no, at est inermis epicuri,
+                        omnis temporibus cu mei. Legere scriptorem voluptatibus et est, ea
+                        noluisse deterruisset sea.
+                    </rb-tab>
+                    <rb-tab heading="Tab 2" ui-sref="rb-site">
+                        Just another tab!
+                    </rb-tab>
+                    <rb-tab heading="Tab 3" ui-sref="rb-button">
+                        <h1>hello world dwodo</h1>
+                    </rb-tab>
+                </rb-tabset>
+            </rb-component-display>
         </rb-section>
     </rb-main>
 </rb-site>

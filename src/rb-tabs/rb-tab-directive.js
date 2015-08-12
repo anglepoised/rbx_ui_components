@@ -28,10 +28,16 @@ define([
             template: '<div ng-show="active" class="Tabs-panel" ng-transclude></div>',
             require: '^rbTabset',
             scope: {
-                heading: '@'
+                heading: '@',
+                isActive: '=?',
+                uiSref: '@'
             },
             link: function (scope, elem, attr, tabsetCtrl) {
-                scope.active = false;
+                if (angular.isUndefined(scope.isActive)) {
+                    scope.active = false;
+                } else {
+                    scope.active = scope.isActive;
+                }
                 tabsetCtrl.addTab(scope);
             }
         };
