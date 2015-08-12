@@ -63,9 +63,16 @@ define([
                 scope.toggleInherited = function () {
                     if (scope.inheritModel === true) {
                         originalNgModel = angular.copy(scope.ngModel);
-                        scope.ngModel = scope.inheritDatetime;
                         scope.disableInputs = true;
-                        scope.form.$setUntouched();
+
+                        if (scope.inheritDatetime) {
+                            // fixes case of refreshing on edit pane which sets ngModel to blank inheritDatetime
+                            scope.ngModel = scope.inheritDatetime;
+                        }
+                        // Once the model is set back to the default valid date, set input to valid
+                        scope.form[scope.dateName].$setValidity('date', true);
+                        scope.form[scope.dateName].$setValidity('required', true);
+                        scope.form[scope.dateName].$setUntouched();
                     } else if (scope.inheritModel === false) {
                         scope.ngModel = originalNgModel;
                         scope.disableInputs = false;
