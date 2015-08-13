@@ -20,8 +20,10 @@
                     checkbox-key="SSP"
                     text-key="deal_ids"
                 ></rb-check-with-text-control>
-                Model: {{demoCtrl.models.empty}}
             </rb-component-display>
+            <rb-raw-html-display>
+                Model: {{demoCtrl.models.empty}}
+            </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Pre-populated">
             <rb-component-display>
@@ -33,8 +35,12 @@
                     checkbox-key="SSP"
                     text-key="deal_ids"
                 ></rb-check-with-text-control>
-                Model: {{demoCtrl.models.prepopulated}}
             </rb-component-display>
+            <rb-raw-html-display>
+                <p>
+                    Model: {{demoCtrl.models.prepopulated}}
+                </p>
+            </rb-raw-html-display>
         </rb-section>
         <rb-section heading="With Placeholder">
             <rb-component-display>
@@ -47,8 +53,12 @@
                     checkbox-key="SSP"
                     text-key="deal_ids"
                 ></rb-check-with-text-control>
-                Model: {{demoCtrl.models.placeholder}}
             </rb-component-display>
+            <rb-raw-html-display>
+                <p>
+                    Model: {{demoCtrl.models.placeholder}}
+                </p>
+            </rb-raw-html-display>
         </rb-section>
         <rb-section heading="With Form Validation">
             <rb-component-display>
@@ -67,8 +77,12 @@
                     <rb-button ng-click="demoCtrl.invalidateCheckbox()">Invalidate checkbox!</rb-button>
                     <rb-button ng-click="demoCtrl.invalidateText()">Invalidate textbox!</rb-button>
                 </form>
-                Model: {{demoCtrl.models.validation}}
             </rb-component-display>
+            <rb-raw-html-display>
+                <p>
+                    Model: {{demoCtrl.models.validation}}
+                </p>
+            </rb-raw-html-display>
         </rb-section>
     </rb-main>
 </rb-site>

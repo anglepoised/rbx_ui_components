@@ -21,9 +21,13 @@
                         text-key="description"
                     >
                     </rb-check-with-text-control-group>
-                    Model: {{demoCtrl.myModel.normal}}
                 </form>
             </rb-component-display>
+            <rb-raw-html-display>
+                <p>
+                    Model: {{demoCtrl.myModel.normal}}
+                </p>
+            </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Pre-populated">
             <rb-component-display>
@@ -38,9 +42,13 @@
                         text-key="description"
                     >
                     </rb-check-with-text-control-group>
-                    Model: {{demoCtrl.myModel.prepopulated}}
                 </form>
             </rb-component-display>
+            <rb-raw-html-display>
+                <p>
+                    Model: {{demoCtrl.myModel.prepopulated}}
+                </p>
+            </rb-raw-html-display>
         </rb-section>
         <rb-section heading="Watching External Changes">
             <rb-component-display>
@@ -57,11 +65,13 @@
                     </rb-check-with-text-control-group>
                     <rb-button ng-click="demoCtrl.myModel.external = []">Clear Model</rb-button>
                     <rb-button ng-click="demoCtrl.modifyExternalModel()">Modify Model</rb-button>
-                    <div>
-                        Model: {{demoCtrl.myModel.external}}
-                    </div>
                 </form>
             </rb-component-display>
+            <rb-raw-html-display>
+                <p>
+                    Model: {{demoCtrl.myModel.external}}
+                </p>
+            </rb-raw-html-display>
         </rb-section>
     </rb-main>
 </rb-site>
