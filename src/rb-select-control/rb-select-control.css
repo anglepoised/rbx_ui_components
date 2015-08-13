@@ -70,7 +70,7 @@
 
 .SelectControl-message {
     display: block;
-    font-size: var(--font-size-x-small);
+    font-size: var(--font-size-small);
 }
 
 /**
@@ -122,5 +122,5 @@
  */
 
 .SelectControl--small .SelectControl-field {
-    font-size: var(--font-size-x-small);
+    font-size: var(--font-size-small);
 }

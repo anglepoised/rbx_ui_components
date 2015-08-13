@@ -86,7 +86,7 @@
 
 .TextControl-message {
     display: block;
-    font-size: var(--font-size-x-small);
+    font-size: var(--font-size-small);
 }
 
 /**
@@ -158,7 +158,7 @@
  */
 
 .TextControl--small .TextControl-field {
-    font-size: var(--font-size-x-small);
+    font-size: var(--font-size-small);
 }
 
 /**

@@ -83,7 +83,7 @@
 
 .RgTextControl-message {
     display: block;
-    font-size: var(--font-size-x-small);
+    font-size: var(--font-size-small);
 }
 
 /**
@@ -155,7 +155,7 @@
  */
 
 .RgTextControl--small .RgTextControl-field {
-    font-size: var(--font-size-x-small);
+    font-size: var(--font-size-small);
 }
 
 /**

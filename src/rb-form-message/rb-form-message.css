@@ -15,7 +15,7 @@
 .FormMessage {
     border-radius: var(--FormMessage-border-radius);
     display: block;
-    font-size: var(--font-size-x-small);
+    font-size: var(--font-size-small);
     padding: 0.75em 0.75em 0.5em;
 }
 
