@@ -29,6 +29,11 @@
                     </rb-check-control>
                 </rb-component-display>
                 <rb-raw-html-display>
+                    <p>
+                        default: {{ demoCtrl.default }}
+                    </p>
+                </rb-raw-html-display>
+                <rb-raw-html-display>
                     <h3>Disabled</h3>
                 </rb-raw-html-display>
                 <rb-component-display>
@@ -39,6 +44,11 @@
                         ng-model="demoCtrl.disabled">
                     </rb-check-control>
                 </rb-component-display>
+                <rb-raw-html-display>
+                    <p>
+                        disabled: {{ demoCtrl.disabled }}
+                    </p>
+                </rb-raw-html-display>
                 <rb-raw-html-display>
                     <h3>Required</h3>
                 </rb-raw-html-display>
@@ -51,6 +61,11 @@
                     </rb-check-control>
                 </rb-component-display>
                 <rb-raw-html-display>
+                    <p>
+                        required: {{ demoCtrl.required }}
+                    </p>
+                </rb-raw-html-display>
+                <rb-raw-html-display>
                     <h3>Pre Checked in scope</h3>
                 </rb-raw-html-display>
                 <rb-component-display>
@@ -60,6 +75,11 @@
                         ng-model="demoCtrl.preChecked">
                     </rb-check-control>
                 </rb-component-display>
+                <rb-raw-html-display>
+                    <p>
+                        prechecked: {{ demoCtrl.preChecked }}
+                    </p>
+                </rb-raw-html-display>
                 <rb-raw-html-display>
                     <h3>With Icon modifier</h3>
                 </rb-raw-html-display>
@@ -73,18 +93,6 @@
                     </rb-check-control>
                 </rb-component-display>
                 <rb-raw-html-display>
-                    <p>
-                        default: {{ demoCtrl.default }}
-                    </p>
-                    <p>
-                        disabled: {{ demoCtrl.disabled }}
-                    </p>
-                    <p>
-                        required: {{ demoCtrl.required }}
-                    </p>
-                    <p>
-                        prechecked: {{ demoCtrl.preChecked }}
-                    </p>
                     <p>
                         icon: {{ demoCtrl.icon }}
                     </p>
