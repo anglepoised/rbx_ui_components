@@ -166,44 +166,6 @@
 }
 
 /**
- * Large modifier
- */
-
-:root {
-    --Button--large-border-size: 3px;
-    --Button--large-font-size: var(--font-size-large);
-    --Button--large-line-height: 2.333333333;
-    --Button--large-padding: 0 0.944444444em;
-}
-
-.Button--large {
-    border-radius: var(--Button--large-border-size);
-    border-width: var(--Button--large-border-size);
-    font-size: var(--Button--large-font-size);
-    line-height: var(--Button--large-line-height);
-    padding: var(--Button--large-padding);
-}
-
-/**
- * Small modifier
- */
-
-:root {
-    --Button--small-border-size: 1px;
-    --Button--small-font-size: var(--font-size-small);
-    --Button--small-line-height: 2.142857143;
-    --Button--small-padding: 0 0.785714286em;
-}
-
-.Button--small {
-    border-radius: var(--Button--small-border-size);
-    border-width: var(--Button--small-border-size);
-    font-size: var(--Button--small-font-size);
-    line-height: var(--Button--small-line-height);
-    padding: var(--Button--small-padding);
-}
-
-/**
  * Block modifier
  */
 
