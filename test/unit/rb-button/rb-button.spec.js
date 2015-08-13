@@ -68,23 +68,7 @@ define([
 
         });
 
-        describe('with size, state, outline and block', function () {
-
-            it('should be a large button if large size attr is supplied', inject(function ($compile, $rootScope) {
-                var button = angular.element('<rb-button size="large"></rb-button>'),
-                    element = $compile(button)($rootScope.$new());
-
-                $rootScope.$apply();
-                expect(button.hasClass('Button--large')).toBe(true);
-            }));
-
-            it('should be a small button if small size attr is supplied', inject(function ($compile, $rootScope) {
-                var button = angular.element('<rb-button size="small"></rb-button>'),
-                    element = $compile(button)($rootScope.$new());
-
-                $rootScope.$apply();
-                expect(button.hasClass('Button--small')).toBe(true);
-            }));
+        describe('with state, outline and block', function () {
 
             it('should be a full-width button if block attr is supplied', inject(function ($compile, $rootScope) {
                 var button = angular.element('<rb-button block="yes"></rb-button>'),

@@ -47,16 +47,16 @@
                             </div>
                         </th>
                         <td>
-                            <rb-button size="small" state="positive" block="yes" ng-if="item.status==='Pending'"
+                            <rb-button state="positive" block="yes" ng-if="item.status==='Pending'"
                                 rb-progress-button on-execute="demoCtrl.start(item)"
                                 interval="2000"
                                 action-label="Publishing"
                                 progress-label="Please Wait">Publish</rb-button>
-                            <rb-button size="small" state="danger" outline="yes" block="yes" ng-if="item.status==='Live'"
+                            <rb-button state="danger" outline="yes" block="yes" ng-if="item.status==='Live'"
                                 rb-progress-button on-execute="demoCtrl.pause(item)"
                                 action-label="Pausing"
                                 progress-label="Please Wait">Pause</rb-button>
-                            <rb-button size="small" state="positive" outline="yes" block="yes" ng-if="item.status==='Paused'"
+                            <rb-button state="positive" outline="yes" block="yes" ng-if="item.status==='Paused'"
                                 rb-progress-button on-execute="demoCtrl.republish(item)"
                                 interval="300"
                                 action-label="Publishing"

@@ -19,9 +19,6 @@ define([
      * or `ui-sref` attribute, it will become an anchor element `<a>`. Otherwise
      * it will default to a `button` element.
      *
-     * If you supply a `size` attribute with `large` or `small` value, it will become
-     * a button with larger or smaller dimensions.
-     *
      * If you supply a `block` attribute with `yes` value, it will become
      * a button with full-width.
      *
@@ -39,9 +36,6 @@ define([
      * @usage
      * <hljs lang="html">
      *   <rb-button>
-     *     Button
-     *   </rb-button>
-     *   <rb-button href="http://www.xe.com" size="large">
      *     Button
      *   </rb-button>
      *   <rb-button type="submit" state="warning" block="yes">
@@ -102,12 +96,6 @@ define([
                 elem.addClass('Button--outline');
             } else {
                 elem.addClass('Button--standard');
-            }
-
-            // Defaults to default size when no
-            // size is supplied
-            if (angular.isDefined(attr.size)) {
-                elem.addClass('Button--' + attr.size);
             }
 
             // Defaults to blue colour when no

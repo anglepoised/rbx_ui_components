@@ -32,7 +32,7 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *   <rb-button size="small" state="positive" outline="yes"
+     *   <rb-button state="positive" outline="yes"
      *       rb-progress-button on-execute="demoCtrl.publish()"
      *       interval="500"
      *       action-label="Publishing"
