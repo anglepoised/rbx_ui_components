@@ -11,32 +11,17 @@
         </rb-section>
         <rb-section heading="Locked Mode">
             <rb-component-display>
-                <div class="Canvas">
-                    <div class="Canvas-state">
-                        <div class="Canvas-stateInner">
-                            Release #N
-                        </div>
-                    </div>
-                    <div class="Canvas-inner" ng-transclude>
-                        Creative
-                    </div>
-                </div>
+                <rb-canvas message="demoCtrl.releaseMessage">
+                    Creative
+                </rb-canvas>
             </rb-component-display>
         </rb-section>
         <rb-section heading="Edit Mode">
             <rb-component-display>
-                <div class="Canvas Canvas--edit">
-                    <div class="Canvas-state">
-                        <div class="Canvas-stateInner">
-                            Edit Mode
-                        </div>
-                    </div>
-                    <div class="Canvas-inner" ng-transclude>
-                        Creative
-                    </div>
-                </div>
+                <rb-canvas message="demoCtrl.editMessage" mode="demoCtrl.editMode">
+                    Creative
+                </rb-canvas>
             </rb-component-display>
         </rb-section>
     </rb-main>
 </rb-site>
-
