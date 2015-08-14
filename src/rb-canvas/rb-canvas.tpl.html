@@ -1,7 +1,7 @@
-<div class="Canvas">
+<div class="Canvas" ng-class="{'Canvas--edit': mode==='edit'}">
     <div class="Canvas-state">
         <div class="Canvas-stateInner">
-            Release #N
+            {{message}}
         </div>
     </div>
     <div class="Canvas-inner" ng-transclude>

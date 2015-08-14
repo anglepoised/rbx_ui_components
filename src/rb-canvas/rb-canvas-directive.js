@@ -23,6 +23,8 @@ define([
 
         return {
             scope: {
+                'mode': '=?',
+                'message': '=?'
             },
             restrict: 'E',
             replace: true,
