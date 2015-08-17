@@ -28,7 +28,7 @@ define([
 
                     $rootScope.$apply();
                     expect(element.hasClass('Badge--warning')).toBe(true);
-                    expect(angular.element(element.find('span')[1]).text()).toBe('Warnings on this item');
+                    expect(angular.element(element.find('span')[1]).text()).toBe('Warning(s) on this item');
                 }
             ));
 
@@ -177,7 +177,7 @@ define([
 
                     $rootScope.$apply();
                     expect(element.hasClass('is-collapsed')).toBe(true);
-                    expect(element.attr('title')).toBe('6 Warnings on this item');
+                    expect(element.attr('title')).toBe('6 Warning(s) on this item');
                 }
             ));
 

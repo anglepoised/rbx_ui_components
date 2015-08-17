@@ -7,7 +7,7 @@ define([
      * @type Object
      */
     var STATE_DETAILS = {
-        'warning': 'Warnings on this item',
+        'warning': 'Warning(s) on this item',
         'statusIncomplete': 'Incomplete',
         'statusLive': 'Live',
         'statusPaused': 'Paused',
