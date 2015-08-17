@@ -30,7 +30,7 @@ define([
             scope: {
                 heading: '@',
                 isActive: '=?',
-                uiSref: '@'
+                rbTabSref: '@'
             },
             link: function (scope, elem, attr, tabsetCtrl) {
                 if (angular.isUndefined(scope.isActive)) {

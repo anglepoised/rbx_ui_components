@@ -91,9 +91,9 @@ define([
 
             });
 
-            it('ui-sref should send the correct state name to the corrosponding tab scope', function () {
+            it('rb-tab-sref should send the correct state name to the corrosponding tab scope', function () {
                 template = '<rb-tabset>' +
-                                '<rb-tab heading="hello" ui-sref="rb-site">tab content</rb-tab>' +
+                                '<rb-tab heading="hello" rb-tab-sref="rb-site">tab content</rb-tab>' +
                                 '<rb-tab heading="tab2">tab2 content</rb-tab>' +
                                 '<rb-tab heading="tab3">tab3 content</rb-tab>' +
                             '</rb-tabset>';
@@ -101,7 +101,7 @@ define([
                 $scope.$apply();
                 var ctrl = $scope.$$childTail.tabset,
                     tabs = ctrl.tabs;
-                expect(tabs[0].uiSref).toBe('rb-site');
+                expect(tabs[0].rbTabSref).toBe('rb-site');
             });
 
         });
