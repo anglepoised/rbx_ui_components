@@ -107,11 +107,12 @@ define([
 
         describe('icon attribute', function () {
             it('should add icon modifier to classes and display icon if passed', function () {
-                compileTemplate('<rb-check-control icon="blue-base-16-geo"></rb-check-control>');
+                compileTemplate('<rb-check-control icon="mediaCentre"></rb-check-control>');
 
-                var icon = element[0].querySelectorAll('.Icon');
-
-                expect(element.hasClass('CheckControl--icon')).toBe(true);
+                var label = element.find('label'),
+                    icon = label.find('div');
+                console.log(icon);
+                expect(icon.hasClass('CheckControl-icon--mediaCentre')).toBe(true);
                 expect(icon.length).toBe(1);
             });
         });

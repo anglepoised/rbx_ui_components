@@ -4,10 +4,9 @@
         'is-disabled': isDisabled,
         'is-invalid': form[name].$touched && form[name].$invalid,
         'is-required': isRequired,
-        'CheckControl--icon': icon
+        'CheckControl--withIcon': icon,
+        'is-checked': ngModel
     }">
-
-    <rb-icon ng-if="icon" icon="{{::icon}}"></rb-icon>
 
     <input
         class="CheckControl-field"
@@ -24,6 +23,9 @@
     <label
         class="CheckControl-label u-textLabel"
         for="{{::name}}">
-        {{::label}}
+        <div ng-if="icon" class="CheckControl-icon"
+             ng-class="{'CheckControl-icon--{{icon}}': icon }">
+        </div>
+        <span class="CheckControl-labelInner">{{::label}}</span>
     </label>
 </div>
