@@ -12,7 +12,7 @@
 
 .Canvas {
     align-items: center; /* 1 */
-    background: var(--color-gray-ghost);
+    background: url("./images/checkered.svg");
     display: flex; /* 1 */
     flex-grow: 1;
     justify-content: center; /* 1 */
@@ -42,10 +42,6 @@
 /**
  * Edit modifier
  */
-
-.Canvas--edit {
-    background: url("./images/checkered.svg");
-}
 
 .Canvas--edit .Canvas-state {
     background: var(--color-green-base) url("./images/unlocked.svg") no-repeat 1em center;
