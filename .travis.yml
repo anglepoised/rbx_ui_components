@@ -1,3 +1,20 @@
 language: node_js
 node_js:
   - "0.10"
+
+before_deploy:
+  - webpack
+
+deploy:
+  provider: s3
+  access_key_id: $RBX_AWS_ACCESS_KEY
+  secret_access_key: $RBX_AWS_SECRET_ACCESS_KEY
+  bucket: rbxuicomponents
+  local_dir: dist
+  skip_cleanup: true
+  on:
+    branch: master
+env:
+  global:
+  - secure: c8zjUOwYZLHYBomXwlLyvHjXGSETzVhbFTOt+2A1ONnxlaDlk8zRcN6Ag1THRsPoq8h+Ne90kljiTWs3UPNA12PKw3oa0CMeXwn2Jkaik7bjcYd2kRYMAEsEHBmc26FMrL7Kc8DLDSbE8tvIDK36jYJxO5DKAUr73iDOBPEhsKs=
+  - secure: eArvpQdM0sB2w905lsE6WeytYLpWg9Gn4OmIgaj6Uhokqeka6hQC+lNILubAWl8VVvQS4bPayfRPN3Y8Ta75VKileq30JCgKS0oj1G3pVB4eQla77jk42eyBQurLk+y08Mi20VsNh8ihc90hgqKqo153cOsiYoCdpB65Bqf2d/0=
