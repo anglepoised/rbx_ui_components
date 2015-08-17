@@ -9,6 +9,9 @@
  * 1. Inline button group.
  * 2. Match fieldset spacing.
  */
+.GenericForm {
+    max-width: 60em;
+}
 
 .GenericForm-message {
     font-size: var(--font-size-x-small);
