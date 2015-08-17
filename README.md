@@ -2,6 +2,8 @@
 
 Rockabox's UI components, built using [AngularJS](https://angularjs.org/), [PostCSS](https://github.com/postcss/postcss), [SUIT CSS](http://suitcss.github.io/) and [webpack](http://webpack.github.io/).
 
+View them at http://rbxuicomponents.s3-website-eu-west-1.amazonaws.com.
+
 ## Getting Started
 
 1. [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
