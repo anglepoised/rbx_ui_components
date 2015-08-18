@@ -5,10 +5,6 @@
  * rb-login-form) and should not use this component.
  */
 
-.GenericForm {
-    max-width: 60em;
-}
-
 .GenericForm-message {
     font-size: var(--font-size-x-small);
     padding: 1em 0;
