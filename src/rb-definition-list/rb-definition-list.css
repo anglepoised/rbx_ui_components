@@ -5,12 +5,12 @@
  */
 
 :root {
-    --DefinitionList-border: var(--color-gray-ghost);
+    --DefinitionList-background: var(--color-white-catskill);
+    --DefinitionList-border: var(--color-gray-mystic);
 }
 
 /**
  * 1. Linearize layout for small viewport
- * 2. Stripe odd items
  */
 
 .DefinitionList-toolbar {
@@ -18,12 +18,13 @@
 }
 
 .DefinitionList-main {
+    background: var(--DefinitionList-background);
     border-top: 1px solid var(--DefinitionList-border);
     width: 100%;
 }
 
 .DefinitionList-item {
-    background: var(--color-white-catskill);
+    border-bottom: 1px solid var(--DefinitionList-border);
     display: flex;
     flex-direction: column; /* 1 */
     padding: 1.5em 0;
@@ -35,10 +36,6 @@
         flex-direction: row;  /* 1 */
     }
 
-}
-
-.DefinitionList-item:nth-child(odd) {
-    background: var(--color-white-alabaster); /* 2 */
 }
 
 .DefinitionList-title {
