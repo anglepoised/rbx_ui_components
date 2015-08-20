@@ -6,7 +6,7 @@
  */
 
 .GenericForm-message {
-    font-size: var(--font-size-x-small);
+    font-size: var(--font-size-small);
     padding: 1em 0;
     text-align: right;
 }
