@@ -19,14 +19,6 @@
  * 1. Set explicit foreground colour
  * 2. Linearize layout for small viewport
  * 3. Allow absolute positioning of `.RgPageHeader-user` child
- * 4. Set global gutter (not set on parent container to avoid breaking `.Navigation.is-active` state)
- * 5. Nudge down for fake centring and matching of `.RgPageHeader-user`
- * 6. Reset stacking order for `.User` subcomponent
- * 7. Horizontal layout for medium+ viewports
- * 8. Match design rhythm with consistent height
- * 9. Stop other subcomponents flowing into `.RgPageHeader-user` subcomponent, using child width + (2 * gutter).
- *    To spec, but triggers this parser bug at W3C CSS Validator: https://www.w3.org/Bugs/Public/show_bug.cgi?id=18913
- * 10. Kill margin and switch to flex layout for vertical centering of content
  */
 
 .RgPageHeader {
@@ -38,38 +30,58 @@
     position: relative; /* 3 */
 }
 
+/**
+ * 1. Set global gutter (not set on parent container to avoid breaking `.Navigation.is-active` state)
+ * 2. Nudge down for fake centring and matching of `.RgPageHeader-user`
+ */
+
 .RgPageHeader-logo {
     background: url("./images/logo-rockabox.svg") no-repeat center;
     cursor: pointer;
-    margin: 0 var(--layout-gutter); /* 4 */
-    margin-bottom: 0.5em; /* 5 */
-    margin-top: 0.5em; /* 5 */
+    margin: 0 var(--layout-gutter); /* 1 */
+    margin-bottom: 0.5em; /* 2 */
+    margin-top: 0.5em; /* 2 */
     min-height: 18px;
     width: 100px;
 }
+
+/**
+ * 1. Reset stacking order for `.User` subcomponent
+ */
 
 .RgPageHeader-user {
     position: absolute;
     right: var(--layout-gutter);
     top: 2px;
     width: var(--RgPageHeader-user-width);
-    z-index: 0; /* 6 */
+    z-index: 0; /* 1 */
 }
 
 @media (--md-viewport) {
 
+    /**
+     * 1. Horizontal layout for medium+ viewports
+     * 2. Match design rhythm with consistent height
+     * 3. Stop other subcomponents flowing into `.RgPageHeader-user` subcomponent, using child width + (2 * gutter).
+     *    To spec, but triggers this parser bug at W3C CSS Validator: https://www.w3.org/Bugs/Public/show_bug.cgi?id=18913
+     */
+
     .RgPageHeader {
-        flex-direction: row; /* 7 */
-        min-height: 4.5em; /* 8 */
-        padding-right: calc(var(--RgPageHeader-user-width) + (2 * var(--layout-gutter))); /* 9 */
+        flex-direction: row; /* 1 */
+        min-height: 4.5em; /* 2 */
+        padding-right: calc(var(--RgPageHeader-user-width) + (2 * var(--layout-gutter))); /* 3 */
     }
+
+    /**
+     * 1. Kill margin and switch to flex layout for vertical centering of content
+     */
 
     .RgPageHeader-logo {
         display: flex;
-        flex-direction: column; /* 10 */
-        justify-content: center; /* 10 */
-        margin-top: 0; /* 10 */
-        margin-bottom: 0; /* 10 */
+        flex-direction: column; /* 1 */
+        justify-content: center; /* 1 */
+        margin-top: 0; /* 1 */
+        margin-bottom: 0; /* 1 */
     }
 
     .RgPageHeader-user {
