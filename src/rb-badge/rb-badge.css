@@ -127,6 +127,24 @@
 }
 
 /**
+ * Status Ready modifier
+ */
+
+:root {
+    --Badge--statusReady-base: var(--color-status-ready-base);
+}
+
+.Badge--statusReady .Badge-body {
+    background: var(--Badge--statusReady-base) url("./images/status-ready.svg") no-repeat center center;
+    border-color: var(--Badge--statusReady-base);
+}
+
+.Badge--statusReady .Badge-details {
+    border-color: var(--Badge--statusReady-base);
+    color: var(--Badge--statusReady-base);
+}
+
+/**
  * Status Scheduled modifier
  */
 
