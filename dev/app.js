@@ -48,6 +48,7 @@ define([
     'ui-components/rb-tabs/demo',
     'ui-components/rb-text-control/demo',
     'ui-components/rb-warning-messages/demo',
+    'ui-components/rg-page-header/demo',
     'ui-components/rg-text-control/demo',
     'rbx_style_guide'
 ], function (
@@ -100,6 +101,7 @@ define([
     rbTabsDemo,
     rbTextControlDemo,
     rbWarningMessagesDemo,
+    rgPageHeaderDemo,
     rgTextControlDemo,
     css
 ) {
@@ -154,6 +156,7 @@ define([
             rbTabsDemo.name,
             rbTextControlDemo.name,
             rbWarningMessagesDemo.name,
+            rgPageHeaderDemo.name,
             rgTextControlDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
