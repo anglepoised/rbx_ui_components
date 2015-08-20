@@ -88,6 +88,17 @@ define([
                 }
             ));
 
+            it('should be a statusReady badge if statusReady state attr is supplied and set correct details',
+                inject(function ($compile, $rootScope) {
+                    var badge = angular.element('<rb-badge state="statusReady"></rb-badge>'),
+                        element = $compile(badge)($rootScope.$new());
+
+                    $rootScope.$apply();
+                    expect(badge.hasClass('Badge--statusReady')).toBe(true);
+                    expect(angular.element(element.find('span')[1]).text()).toBe('Ready');
+                }
+            ));
+
             it('should be a statusFinished badge if statusFinished state attr is supplied and set correct details',
                 inject(function ($compile, $rootScope) {
                     var badge = angular.element('<rb-badge state="statusFinished"></rb-badge>'),
