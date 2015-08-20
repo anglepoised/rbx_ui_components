@@ -1,0 +1,73 @@
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rg-page-header">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <rb-raw-html-display>
+                <p>
+                    The <code>rg-page-header</code> component should be used across all products. It consists of:
+                </p>
+                <ul>
+                    <li>
+                        A mandatory logo
+                    </li>
+                    <li>
+                        An optional <code>rb-nav-bar</code> subcomponent
+                    </li>
+                    <li>
+                        An optional <code>rb-user</code> subcomponent
+                    </li>
+                </ul>
+                <p>
+                    It must be enclosed within the primary page <code>rb-header</code> element.
+                </p>
+            <rb-raw-html-display>
+        </rb-section>
+        <rb-section heading="Full">
+            <rb-component-display>
+                <rb-header>
+                    <rg-page-header>
+                        <a class="RgPageHeader-logo" ng-click="demoCtrl.logoHeaderFunction()" ng-aria>
+                            <div class="u-hiddenVisually">Rockabox</div>
+                        </a>
+                        <div class="RgPageHeader-nav">
+                            <rb-nav-bar options="demoCtrl.options"></rb-nav-bar>
+                        </div>
+                        <div class="RgPageHeader-user">
+                            <rb-user username="demoCtrl.user" logoutfunction="demoCtrl.logout()">
+                                Sign out
+                            </rb-user>
+                        </div>
+                    </rg-page-header>
+                </rb-header>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Logo and User Only">
+            <rb-component-display>
+                <rb-header>
+                    <rg-page-header>
+                        <a class="RgPageHeader-logo" ng-click="demoCtrl.logoHeaderFunction()" ng-aria>
+                            <div class="u-hiddenVisually">Rockabox</div>
+                        </a>
+                        <div class="RgPageHeader-user">
+                            <rb-user username="demoCtrl.user" logoutfunction="demoCtrl.logout()">
+                                Sign out
+                            </rb-user>
+                        </div>
+                    </rg-page-header>
+                </rb-header>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Logo only">
+            <rb-component-display>
+                <rb-header>
+                    <rg-page-header>
+                        <a class="RgPageHeader-logo" ng-click="demoCtrl.logoHeaderFunction()" ng-aria>
+                            <div class="u-hiddenVisually">Rockabox</div>
+                        </a>
+                    </rg-page-header>
+                </rb-header>
+            </rb-component-display>
+        </rb-section>
+    </rb-main>
+</rb-site>
