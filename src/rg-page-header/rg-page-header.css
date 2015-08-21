@@ -16,23 +16,26 @@
     --RgPageHeader--pink-highlight-color: var(--color-brand-pink);
     --RgPageHeader-background: var(--color-gray-tuna);
     --RgPageHeader-color: var(--color-gray-ghost);
+    --RgPageHeader-highlight-color: var(--color-white-alabaster);
     --RgPageHeader-user-width: 2em;
 }
 
 /**
- * 1. Set explicit foreground colour
- * 2. Linearize layout for small viewport
- * 3. Allow absolute positioning of `.RgPageHeader-user` child
+ * 1. Set fallback highlight colour
+ * 2. Set explicit foreground colour
+ * 3. Linearize layout for small viewport
+ * 4. Allow absolute positioning of `.RgPageHeader-user` child
  */
 
 .RgPageHeader {
     background: var(--RgPageHeader-background);
+    border-bottom-color: var(--RgPageHeader-highlight-color); /* 1 */
     border-bottom-style: solid;
     border-bottom-width: 0.25em;
-    color: var(--RgPageHeader-color); /* 1 */
+    color: var(--RgPageHeader-color); /* 2 */
     display: flex;
-    flex-direction: column; /* 2 */
-    position: relative; /* 3 */
+    flex-direction: column; /* 3 */
+    position: relative; /* 4 */
 }
 
 /**
