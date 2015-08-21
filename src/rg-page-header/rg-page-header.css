@@ -36,7 +36,7 @@
  */
 
 .RgPageHeader-logo {
-    background: url("./images/logo-rockabox.svg") no-repeat center;
+    background: url("./images/logo-rockabox-blue.svg") no-repeat center;
     cursor: pointer;
     margin: 0 var(--layout-gutter); /* 1 */
     margin-bottom: 0.5em; /* 2 */
