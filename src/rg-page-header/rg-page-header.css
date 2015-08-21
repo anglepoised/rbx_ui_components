@@ -6,11 +6,15 @@
  * - A mandatory logo
  * - An optional `.Navigation` subcomponent
  * - An optional `.User` subcomponent
+ *
+ * Three mutually-exclusive colour modifiers are available.
  */
 
 :root {
+    --RgPageHeader--blue-highlight-color: var(--color-brand-blue);
+    --RgPageHeader--green-highlight-color: var(--color-brand-green);
+    --RgPageHeader--pink-highlight-color: var(--color-brand-pink);
     --RgPageHeader-background: var(--color-gray-tuna);
-    --RgPageHeader-border-color: var(--color-green-base);
     --RgPageHeader-color: var(--color-gray-ghost);
     --RgPageHeader-user-width: 2em;
 }
@@ -23,7 +27,8 @@
 
 .RgPageHeader {
     background: var(--RgPageHeader-background);
-    border-bottom: 0.25em solid var(--RgPageHeader-border-color);
+    border-bottom-style: solid;
+    border-bottom-width: 0.25em;
     color: var(--RgPageHeader-color); /* 1 */
     display: flex;
     flex-direction: column; /* 2 */
@@ -31,16 +36,19 @@
 }
 
 /**
- * 1. Set global gutter (not set on parent container to avoid breaking `.Navigation.is-active` state)
- * 2. Nudge down for fake centring and matching of `.RgPageHeader-user`
+ * 1. Set default logo so component is still usable with no modifier
+ * 2. Set global gutter (not set on parent container to avoid breaking `.Navigation.is-active` state)
+ * 3. Nudge down for fake centring and matching of `.RgPageHeader-user`
  */
 
 .RgPageHeader-logo {
-    background: url("./images/logo-rockabox-blue.svg") no-repeat center;
+    background-image: url("./images/logo-rockabox-blue.svg"); /* 1 */
+    background-position: center;
+    background-repeat: no-repeat;
     cursor: pointer;
-    margin: 0 var(--layout-gutter); /* 1 */
-    margin-bottom: 0.5em; /* 2 */
-    margin-top: 0.5em; /* 2 */
+    margin: 0 var(--layout-gutter); /* 2 */
+    margin-bottom: 0.5em; /* 3 */
+    margin-top: 0.5em; /* 3 */
     min-height: 18px;
     width: 100px;
 }
@@ -88,4 +96,40 @@
         top: 20px;
     }
 
+}
+
+/**
+ * Blue modifier
+ */
+
+.RgPageHeader--blue {
+    border-bottom-color: var(--RgPageHeader--blue-highlight-color);
+}
+
+.RgPageHeader--blue .RgPageHeader-logo {
+    background-image: url("./images/logo-rockabox-blue.svg");
+}
+
+/**
+ * Green modifier
+ */
+
+.RgPageHeader--green {
+    border-bottom-color: var(--RgPageHeader--green-highlight-color);
+}
+
+.RgPageHeader--green .RgPageHeader-logo {
+    background-image: url("./images/logo-rockabox-green.svg");
+}
+
+/**
+ * Pink modifier
+ */
+
+.RgPageHeader--pink {
+    border-bottom-color: var(--RgPageHeader--pink-highlight-color);
+}
+
+.RgPageHeader--green .RgPageHeader-logo {
+    background-image: url("./images/logo-rockabox-green.svg");
 }
