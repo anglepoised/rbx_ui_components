@@ -23,7 +23,6 @@
     --RgHeader-nav-color-active: var(--color-white-alabaster);
     --RgHeader-nav-color-hover: var(--color-white-alabaster);
     --RgHeader-nav-is-active-arrow-size: var(0.25em);
-    --RgHeader-nav-is-active-background: var(--color-green-base);
     --RgHeader-user-width: 2em;
 }
 
@@ -192,7 +191,7 @@
      */
 
     .RgHeader-navItemInner.is-active::after {
-        border-bottom: var(--RgHeader-nav-is-active-arrow-size) solid var(--RgHeader-nav-is-active-background); /* 1 */
+        border-bottom: var(--RgHeader-nav-is-active-arrow-size) solid var(--RgHeader-highlight-color); /* 1 */
         border-left: var(--RgHeader-nav-is-active-arrow-size) solid var(--color-transparent); /* 2 */
         border-right: var(--RgHeader-nav-is-active-arrow-size) solid var(--color-transparent); /* 3 */
         bottom: 0;
@@ -217,6 +216,10 @@
     background-image: url("./images/logo-rockabox-blue.svg");
 }
 
+.RgHeader--blue .RgHeader-navItemInner.is-active::after {
+    border-bottom-color: var(--RgHeader--blue-highlight-color);
+}
+
 /**
  * Green modifier
  */
@@ -229,6 +232,10 @@
     background-image: url("./images/logo-rockabox-green.svg");
 }
 
+.RgHeader--green .RgHeader-navItemInner.is-active::after {
+    border-bottom-color: var(--RgHeader--green-highlight-color);
+}
+
 /**
  * Pink modifier
  */
@@ -239,4 +246,8 @@
 
 .RgHeader--pink .RgHeader-logo {
     background-image: url("./images/logo-rockabox-pink.svg");
+}
+
+.RgHeader--pink .RgHeader-navItemInner.is-active::after {
+    border-bottom-color: var(--RgHeader--pink-highlight-color);
 }
