@@ -1,7 +1,8 @@
 define([
     './rg-header-directive',
+    './rg-header-item-directive',
     './rg-header.css'
-], function (rgHeaderDirective, css) {
+], function (rgHeaderDirective, rgHeaderItemDirective, css) {
     /**
      * @ngdoc module
      * @name rg-header
@@ -12,7 +13,8 @@ define([
      */
     var rgHeader = angular
         .module('rg-header', [])
-        .directive('rgHeader', rgHeaderDirective);
+        .directive('rgHeader', rgHeaderDirective)
+        .directive('rgHeaderItem', rgHeaderItemDirective);
 
     return rgHeader;
 });
