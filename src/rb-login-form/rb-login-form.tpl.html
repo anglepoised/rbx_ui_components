@@ -5,26 +5,27 @@
     <form name="loginForm" class="LoginForm-body">
         <fieldset>
             <div class="LoginForm-control">
-                <rb-text-control
+                <rg-text-control
                     form="loginForm"
-                    label="Email"
-                    placeholder="Email"
-                    name="email"
-                    type="email"
-                    ng-model="emailModel"
-                    is-required="true">
-                </rb-text-control>
+                    label="Email">
+                    <input type="email"
+                           name="email"
+                           placeholder="Email"
+                           ng-model="emailModel"
+                           ng-required="true"
+                           custom-validation>
+                </rg-text-control>
             </div>
             <div class="LoginForm-control">
-                <rb-text-control
+                <rg-text-control
                     form="loginForm"
-                    label="Password"
-                    placeholder="Password"
-                    name="password"
-                    type="password"
-                    ng-model="passwordModel"
-                    is-required="true">
-                </rb-text-control>
+                    label="Password">
+                    <input type="password"
+                           name="password"
+                           placeholder="Password"
+                           ng-model="passwordModel"
+                           ng-required="true">
+                </rg-text-control>
             </div>
         </fieldset>
         <rb-form-message ng-if="message">{{ message }}</rb-form-message>
