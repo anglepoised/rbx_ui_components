@@ -1,2 +1,9 @@
-<div class="RgHeader" role="banner" ng-transclude>
+<div class="RgHeader" role="banner">
+    <a class="RgHeader-logo" ng-click="demoCtrl.logoHeaderFunction()" ng-aria>
+        <div class="u-hiddenVisually">Rockabox</div>
+    </a>
+    <nav class="RgHeader-nav">
+        <ul class="RgHeader-navItems" ng-transclude>
+        </ul>
+    </nav>
 </div>

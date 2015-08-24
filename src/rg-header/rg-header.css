@@ -17,6 +17,13 @@
     --RgHeader-background: var(--color-gray-tuna);
     --RgHeader-color: var(--color-gray-ghost);
     --RgHeader-highlight-color: var(--color-white-alabaster);
+    --RgHeader-nav-background-active: var(--color-gray-shark);
+    --RgHeader-nav-background-hover: var(--color-gray-shark);
+    --RgHeader-nav-color: var(--color-gray-ghost);
+    --RgHeader-nav-color-active: var(--color-white-alabaster);
+    --RgHeader-nav-color-hover: var(--color-white-alabaster);
+    --RgHeader-nav-is-active-arrow-size: var(0.25em);
+    --RgHeader-nav-is-active-background: var(--color-green-base);
     --RgHeader-user-width: 2em;
 }
 
@@ -57,6 +64,48 @@
 }
 
 /**
+ * Navigation
+ */
+
+
+.RgHeader-nav {
+    background: var(--RgHeader-nav-background);
+    font-size: var(--RgHeader-nav-font-size);
+}
+
+.RgHeader-navItems {
+    flex-direction: column;
+}
+
+.RgHeader-navItem {
+    display: flex;
+}
+
+/**
+ * 1. Set horizontal padding to match global gutter on small viewport
+ * 2. Stretch full width to support `:focus` and `:hover` state
+ */
+
+.RgHeader-navItemInner {
+    color: var(--RgHeader-nav-color);
+    cursor: pointer;
+    padding: 0 var(--layout-gutter); /* 1 */
+    text-decoration: none;
+    width: 100%; /* 2 */
+}
+
+.RgHeader-navItemInner:hover,
+.RgHeader-navItemInner:focus {
+    background: var(--RgHeader-nav-background-hover);
+    color: var(--RgHeader-nav-color-hover);
+}
+
+.RgHeader-navItemInner.is-active {
+    background: var(--RgHeader-nav-background-active);
+    color: var(--RgHeader-nav-color-active);
+}
+
+/**
  * 1. Reset stacking order for `.User` subcomponent
  */
 
@@ -74,7 +123,7 @@
      * 1. Horizontal layout for medium+ viewports
      * 2. Match design rhythm with consistent height
      * 3. Stop other subcomponents flowing into `.RgHeader-user` subcomponent, using child width + (2 * gutter).
-     *    To spec, but triggers this parser bug at W3C CSS Validator: https://www.w3.org/Bugs/Public/show_bug.cgi?id=18913
+     *    To spec, but triggers parser bug at W3C CSS Validator: https://www.w3.org/Bugs/Public/show_bug.cgi?id=18913
      */
 
     .RgHeader {
@@ -97,6 +146,61 @@
 
     .RgHeader-user {
         top: 20px;
+    }
+
+    /**
+     * 1. Horizontal and full-height stretch layout for medium+ viewports
+     */
+
+    .RgHeader-navItems {
+        align-items: stretch; /* 1 */
+        display: flex; /* 1 */
+        flex-direction: row; /* 1 */
+        justify-content: flex-start;
+    }
+
+    .RgHeader-navItem {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /**
+     * 1. Vertically centre content
+     * 2. Prevent wrapping and avoid alignment issues
+     */
+
+    .RgHeader-navItemInner {
+        min-height: 4.25em; /* 1 */
+        padding: 1.6em 1.875em 1.4em; /* 1 */
+        text-align: center;
+        white-space: nowrap; /* 2 */
+        width: 100%;
+    }
+
+    /**
+     * 1. Allow absolute positioning of `.is-active` state
+     */
+
+    .RgHeader-navItemInner.is-active {
+        position: relative; /* 1 */
+    }
+
+    /**
+     * 1. Set `.is-active` arrow background colour
+     * 2. Active indicator left arrow slant
+     * 4. Active indicator right arrow slant
+     */
+
+    .RgHeader-navItemInner.is-active::after {
+        border-bottom: var(--RgHeader-nav-is-active-arrow-size) solid var(--RgHeader-nav-is-active-background); /* 1 */
+        border-left: var(--RgHeader-nav-is-active-arrow-size) solid var(--color-transparent); /* 2 */
+        border-right: var(--RgHeader-nav-is-active-arrow-size) solid var(--color-transparent); /* 3 */
+        bottom: 0;
+        content: "";
+        height: 0;
+        left: calc(50% - var(--RgHeader-nav-is-active-arrow-size));
+        position: absolute;
+        width: 0;
     }
 
 }
