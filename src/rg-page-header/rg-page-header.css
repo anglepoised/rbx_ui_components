@@ -133,6 +133,6 @@
     border-bottom-color: var(--RgPageHeader--pink-highlight-color);
 }
 
-.RgPageHeader--green .RgPageHeader-logo {
-    background-image: url("./images/logo-rockabox-green.svg");
+.RgPageHeader--pink .RgPageHeader-logo {
+    background-image: url("./images/logo-rockabox-pink.svg");
 }
