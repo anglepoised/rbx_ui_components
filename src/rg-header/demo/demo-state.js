@@ -4,8 +4,8 @@ define([
 
     // @ngInject
     function demoState ($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('rg-page-header', {
-            url: '/rg-page-header',
+        $stateProvider.state('rg-header', {
+            url: '/rg-header',
             controller: 'page-header-demo-ctrl as demoCtrl',
             template: template
         });
