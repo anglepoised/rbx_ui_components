@@ -6,10 +6,10 @@ define([
     '../../rb-nav-bar',
     '../../rb-icon',
     '../../rb-user'
-], function (rgPageHeader, demoCtrl, demoState, rbHeader, rbNavBar, rbIcon, rbUser) {
+], function (rgHeader, demoCtrl, demoState, rbHeader, rbNavBar, rbIcon, rbUser) {
     var demo = angular
-        .module('rg-page-header-demo', [
-            rgPageHeader.name,
+        .module('rg-header-demo', [
+            rgHeader.name,
             rbHeader.name,
             rbNavBar.name,
             rbIcon.name,

@@ -1,22 +1,22 @@
 define([
-    'ui-components/rg-page-header'
-], function (rgPageHeader) {
-    describe('rg-page-header', function () {
+    'ui-components/rg-header'
+], function (rgHeader) {
+    describe('rg-header', function () {
 
         var $scope,
             $compile,
-            template = '<rg-page-header></rg-page-header>';
+            template = '<rg-header></rg-header>';
 
-        beforeEach(angular.mock.module(rgPageHeader.name));
+        beforeEach(angular.mock.module(rgHeader.name));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $scope = _$rootScope_.$new({});
             $compile = _$compile_;
         }));
 
-        it('should convert attributes on a rg-page-header to attributes on the generated page header',
+        it('should convert attributes on a rg-header to attributes on the generated page header',
             function () {
-                var pageHeader = $compile('<rg-page-header anyattr any-attr></rg-page-header>')($scope);
+                var pageHeader = $compile('<rg-header anyattr any-attr></rg-header>')($scope);
 
                 $scope.$apply();
                 expect(pageHeader[0].hasAttribute('anyattr')).toBe(true);

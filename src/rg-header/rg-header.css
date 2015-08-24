@@ -1,7 +1,7 @@
-/** @define RgPageHeader; use strict */
+/** @define RgHeader; use strict */
 
 /**
- * The `.RgPageHeader` component should be used across all products. It consists of:
+ * The `.RgHeader` component should be used across all products. It consists of:
  *
  * - A mandatory logo
  * - An optional `.Navigation` subcomponent
@@ -11,28 +11,28 @@
  */
 
 :root {
-    --RgPageHeader--blue-highlight-color: var(--color-brand-blue);
-    --RgPageHeader--green-highlight-color: var(--color-brand-green);
-    --RgPageHeader--pink-highlight-color: var(--color-brand-pink);
-    --RgPageHeader-background: var(--color-gray-tuna);
-    --RgPageHeader-color: var(--color-gray-ghost);
-    --RgPageHeader-highlight-color: var(--color-white-alabaster);
-    --RgPageHeader-user-width: 2em;
+    --RgHeader--blue-highlight-color: var(--color-brand-blue);
+    --RgHeader--green-highlight-color: var(--color-brand-green);
+    --RgHeader--pink-highlight-color: var(--color-brand-pink);
+    --RgHeader-background: var(--color-gray-tuna);
+    --RgHeader-color: var(--color-gray-ghost);
+    --RgHeader-highlight-color: var(--color-white-alabaster);
+    --RgHeader-user-width: 2em;
 }
 
 /**
  * 1. Set fallback highlight colour
  * 2. Set explicit foreground colour
  * 3. Linearize layout for small viewport
- * 4. Allow absolute positioning of `.RgPageHeader-user` child
+ * 4. Allow absolute positioning of `.RgHeader-user` child
  */
 
-.RgPageHeader {
-    background: var(--RgPageHeader-background);
-    border-bottom-color: var(--RgPageHeader-highlight-color); /* 1 */
+.RgHeader {
+    background: var(--RgHeader-background);
+    border-bottom-color: var(--RgHeader-highlight-color); /* 1 */
     border-bottom-style: solid;
     border-bottom-width: 0.25em;
-    color: var(--RgPageHeader-color); /* 2 */
+    color: var(--RgHeader-color); /* 2 */
     display: flex;
     flex-direction: column; /* 3 */
     position: relative; /* 4 */
@@ -41,10 +41,10 @@
 /**
  * 1. Set default logo so component is still usable with no modifier
  * 2. Set global gutter (not set on parent container to avoid breaking `.Navigation.is-active` state)
- * 3. Nudge down for fake centring and matching of `.RgPageHeader-user`
+ * 3. Nudge down for fake centring and matching of `.RgHeader-user`
  */
 
-.RgPageHeader-logo {
+.RgHeader-logo {
     background-image: url("./images/logo-rockabox-blue.svg"); /* 1 */
     background-position: center;
     background-repeat: no-repeat;
@@ -60,11 +60,11 @@
  * 1. Reset stacking order for `.User` subcomponent
  */
 
-.RgPageHeader-user {
+.RgHeader-user {
     position: absolute;
     right: var(--layout-gutter);
     top: 2px;
-    width: var(--RgPageHeader-user-width);
+    width: var(--RgHeader-user-width);
     z-index: 0; /* 1 */
 }
 
@@ -73,21 +73,21 @@
     /**
      * 1. Horizontal layout for medium+ viewports
      * 2. Match design rhythm with consistent height
-     * 3. Stop other subcomponents flowing into `.RgPageHeader-user` subcomponent, using child width + (2 * gutter).
+     * 3. Stop other subcomponents flowing into `.RgHeader-user` subcomponent, using child width + (2 * gutter).
      *    To spec, but triggers this parser bug at W3C CSS Validator: https://www.w3.org/Bugs/Public/show_bug.cgi?id=18913
      */
 
-    .RgPageHeader {
+    .RgHeader {
         flex-direction: row; /* 1 */
         min-height: 4.5em; /* 2 */
-        padding-right: calc(var(--RgPageHeader-user-width) + (2 * var(--layout-gutter))); /* 3 */
+        padding-right: calc(var(--RgHeader-user-width) + (2 * var(--layout-gutter))); /* 3 */
     }
 
     /**
      * 1. Kill margin and switch to flex layout for vertical centering of content
      */
 
-    .RgPageHeader-logo {
+    .RgHeader-logo {
         display: flex;
         flex-direction: column; /* 1 */
         justify-content: center; /* 1 */
@@ -95,7 +95,7 @@
         margin-top: 0; /* 1 */
     }
 
-    .RgPageHeader-user {
+    .RgHeader-user {
         top: 20px;
     }
 
@@ -105,11 +105,11 @@
  * Blue modifier
  */
 
-.RgPageHeader--blue {
-    border-bottom-color: var(--RgPageHeader--blue-highlight-color);
+.RgHeader--blue {
+    border-bottom-color: var(--RgHeader--blue-highlight-color);
 }
 
-.RgPageHeader--blue .RgPageHeader-logo {
+.RgHeader--blue .RgHeader-logo {
     background-image: url("./images/logo-rockabox-blue.svg");
 }
 
@@ -117,11 +117,11 @@
  * Green modifier
  */
 
-.RgPageHeader--green {
-    border-bottom-color: var(--RgPageHeader--green-highlight-color);
+.RgHeader--green {
+    border-bottom-color: var(--RgHeader--green-highlight-color);
 }
 
-.RgPageHeader--green .RgPageHeader-logo {
+.RgHeader--green .RgHeader-logo {
     background-image: url("./images/logo-rockabox-green.svg");
 }
 
@@ -129,10 +129,10 @@
  * Pink modifier
  */
 
-.RgPageHeader--pink {
-    border-bottom-color: var(--RgPageHeader--pink-highlight-color);
+.RgHeader--pink {
+    border-bottom-color: var(--RgHeader--pink-highlight-color);
 }
 
-.RgPageHeader--pink .RgPageHeader-logo {
+.RgHeader--pink .RgHeader-logo {
     background-image: url("./images/logo-rockabox-pink.svg");
 }
