@@ -1,6 +1,5 @@
-<div class="CheckControlGroup">
-
-    <div class="CheckControlGroup-title u-textSemibold">
+<div class="CheckControlGroup" >
+    <div class="CheckControlGroup-title u-textSemibold" ng-if="!isDeviceChoice">
 
         <rb-check-control-select-all
             name="{{::name}}"
@@ -18,7 +17,8 @@
         ng-class="{
             'u-columnCount2': columns === '2',
             'u-columnCount3': columns === '3'
-        }">
+        }"
+        ng-if="!isDeviceChoice">
         <div ng-repeat="(key, value) in options">
             <rb-check-control
                 is-disabled="value.disabled"
@@ -28,6 +28,16 @@
                 ng-hide="value.hidden"
                 ng-model="value.checked"
                 value="{{::value.value}}">
+            </rb-check-control>
+        </div>
+    </div>
+    <div class="rbDeviceChoiceControl" ng-if="isDeviceChoice">
+        <div class="rbDeviceChoiceControl-item" ng-repeat="(key, value) in options">
+            <rb-check-control
+                name="check-control-icon"
+                label="{{::value.label}}"
+                icon="{{::value.value | lowercase}}"
+                ng-model="value.checked">
             </rb-check-control>
         </div>
     </div>

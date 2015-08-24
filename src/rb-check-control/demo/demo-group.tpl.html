@@ -21,6 +21,18 @@
                     </rb-check-control-group>
                 </form>
             </rb-component-display>
+            <rb-component-display>
+                <form name="checkControlForm">
+                    <rb-check-control-group
+                        form="checkControlForm"
+                        name="check-control-with-devices-image"
+                        ng-model="demoCtrl.devices"
+                        options="demoCtrl.devicesOptions"
+                        is-device-choice="true"
+                        title="Group Device Usage">
+                    </rb-check-control-group>
+                </form>
+            </rb-component-display>
             <rb-raw-html-display>
                 <p>
                     {{ demoCtrl.ngModelDefault }}
