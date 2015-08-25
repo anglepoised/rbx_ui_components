@@ -42,7 +42,13 @@ define([
             restrict: 'E',
             replace: true,
             transclude: true,
-            template: template
+            template: template,
+            link: function (scope, ele, attrs) {
+                scope.modifier = '';
+                if (angular.isDefined(attrs['color'])) {
+                    scope.modifier = 'RgHeader--' + attrs['color'];
+                }
+            }
         };
     }
 
