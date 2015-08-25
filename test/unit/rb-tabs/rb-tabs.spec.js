@@ -75,20 +75,37 @@ define([
                 expect(tabs[2].active).toBe(true);
             });
 
-            it('is-active attribute should set the correct tab active', function () {
-                template = '<rb-tabset>' +
-                                '<rb-tab heading="hello" is-active="false">tab content</rb-tab>' +
-                                '<rb-tab heading="tab2" is-active="true">tab2 content</rb-tab>' +
-                                '<rb-tab heading="tab3" is-active="false">tab3 content</rb-tab>' +
-                            '</rb-tabset>';
-                ele = $compile(template)($scope);
-                $scope.$apply();
-                var ctrl = $scope.$$childTail.tabset,
-                    tabs = ctrl.tabs;
-                expect(tabs[0].active).toBe(false);
-                expect(tabs[1].active).toBe(true);
-                expect(tabs[2].active).toBe(false);
+            describe('is-active', function () {
+                var isActiveTmpl;
 
+                beforeEach(function () {
+                    isActiveTmpl = '<rb-tabset>' +
+                                    '<rb-tab heading="hello" is-active="false">tab content</rb-tab>' +
+                                    '<rb-tab heading="tab2" is-active="true">tab2 content</rb-tab>' +
+                                    '<rb-tab heading="tab3" is-active="false">tab3 content</rb-tab>' +
+                                '</rb-tabset>';
+                });
+
+                it('should set the correct tab active when set via attribute', function () {
+                    ele = $compile(isActiveTmpl)($scope);
+                    $scope.$apply();
+                    var ctrl = $scope.$$childTail.tabset,
+                        tabs = ctrl.tabs;
+                    expect(tabs[0].active).toBe(false);
+                    expect(tabs[1].active).toBe(true);
+                    expect(tabs[2].active).toBe(false);
+                });
+
+                it('should set class of active', function () {
+                    ele = $compile(isActiveTmpl)($scope);
+
+                    $scope.$apply();
+
+                    var tabs = ele[0].getElementsByClassName('Tabs-item');
+
+                    expect(angular.element(tabs[0]).hasClass('active')).toBeFalsy();
+                    expect(angular.element(tabs[1]).hasClass('active')).toBeTruthy();
+                });
             });
 
             it('rb-tab-sref should send the correct state name to the corrosponding tab scope', function () {
