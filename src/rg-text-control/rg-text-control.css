@@ -95,7 +95,8 @@
 }
 
 .RgTextControl-field:invalid:focus,
-.RgTextControl-field.is-invalid {
+.RgTextControl-field.is-invalid,
+.RgTextControl-field.ng-invalid.ng-dirty {
     border-color: var(--RgTextControl-field-invalid-border-color);
 }
 

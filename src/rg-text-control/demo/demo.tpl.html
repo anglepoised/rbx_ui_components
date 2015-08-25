@@ -40,6 +40,20 @@
                                required>
                     </rg-text-control>
                 </rb-section>
+                <rb-section heading="Email (type='email')">
+                    <rg-text-control
+                        form="userForm"
+                        label="Your Email"
+                        help-message="This is so we can harass you">
+                        <input
+                            placeholder="Enter your email..."
+                            name="email"
+                            type="email"
+                            ng-model="demoCtrl.data.email"
+                            ng-required="true"
+                            custom-validation>
+                    </rg-text-control>
+                </rb-section>
                 <rb-section heading="URL (type='url')">
                     <rg-text-control
                     form="userForm"
@@ -49,7 +63,23 @@
                             placeholder="Enter your URL..."
                             name="google"
                             ng-model="demoCtrl.data.url"
-                            required>
+                            required
+                            custom-validation>
+                    </rg-text-control>
+                </rb-section>
+                <rb-section heading="Currency (type='currency')">
+                    <rg-text-control
+                        form="userForm"
+                        label="Currency"
+                        type="currency">
+                        <input
+                            placeholder="Enter amount"
+                            name="currency"
+                            type="currency"
+                            number-steps="0.01"
+                            ng-model="demoCtrl.data.amount"
+                            ng-required="true"
+                            custom-validation>
                     </rg-text-control>
                 </rb-section>
             </form>
