@@ -34,6 +34,10 @@ define([
         this.ngModelDefault = ['checked_label'];
         this.ngModelSelectAll = ['checked_label'];
         this.ngModelShared = ['checked_label', 'checked_label2'];
+        this.devicesOptions = [{'value': 'PC', 'label': 'Desktop / Laptop', 'hidden': false},
+            {'value': 'Phone', 'label':'Mobile Phone', 'hidden': false},
+            {'value': 'Tablet', 'label':'Tablet', 'hidden': false},
+        {'value': 'MediaCenter', 'label':'Media Centre', 'hidden': false}];
 
         this.defaultOptions = getOptions();
         this.selectAllOptions = getOptions();

@@ -38,6 +38,7 @@ define([
             scope: {
                 enableSelectAll: '@',
                 form: '=',
+                isDeviceChoice: '@',
                 isDisabled: '=?',
                 isRequired: '@',
                 name: '@',

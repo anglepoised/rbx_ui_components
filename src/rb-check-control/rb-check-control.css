@@ -42,43 +42,43 @@
  * mediaCentre
  */
 
-.CheckControl-icon--mediaCentre {
-    background-image: url("./images/media-centre.svg");
+.CheckControl-icon--mediacenter {
+    background-image: url("./images/mediacenter.svg");
     height: 100px;
     width: 100px;
 }
 
-.CheckControl--withIcon.is-checked .CheckControl-icon--mediaCentre {
-    background-image: url("./images/media-centre-checked.svg");
+.CheckControl--withIcon.is-checked .CheckControl-icon--mediacenter {
+    background-image: url("./images/mediacenter-checked.svg");
 }
 
 /**
- * desktopLaptop
+ * pc
  */
 
-.CheckControl-icon--desktopLaptop {
-    background-image: url("./images/desktop-laptop.svg");
+.CheckControl-icon--pc {
+    background-image: url("./images/pc.svg");
     background-position: center;
     height: 100px;
     width: 150px;
 }
 
-.CheckControl--withIcon.is-checked .CheckControl-icon--desktopLaptop {
-    background-image: url("./images/desktop-laptop-checked.svg");
+.CheckControl--withIcon.is-checked .CheckControl-icon--pc {
+    background-image: url("./images/pc-checked.svg");
 }
 
 /**
- * mobile
+ * phone
  */
 
-.CheckControl-icon--mobile {
-    background-image: url("./images/mobile.svg");
+.CheckControl-icon--phone {
+    background-image: url("./images/phone.svg");
     height: 100px;
     width: 40px;
 }
 
-.CheckControl--withIcon.is-checked .CheckControl-icon--mobile {
-    background-image: url("./images/mobile-checked.svg");
+.CheckControl--withIcon.is-checked .CheckControl-icon--phone {
+    background-image: url("./images/phone-checked.svg");
 }
 
 /**

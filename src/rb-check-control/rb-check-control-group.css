@@ -7,3 +7,12 @@
 .CheckControlGroup-body {
     margin-left: 1em;
 }
+
+/**
+ * Device Choice modifier
+ */
+
+.CheckControlGroup--deviceChoice .CheckControlGroup-body {
+    display: flex;
+    justify-content: space-between;
+}
