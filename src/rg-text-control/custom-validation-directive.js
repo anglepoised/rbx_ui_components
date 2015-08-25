@@ -20,10 +20,10 @@ define([
                         var result = ctrl.$isEmpty(modelValue) || new RegExp(DJANGO_URL, 'i').test(modelValue);
                         return result;
                     };
-                } else if (attrs.type === 'currency') {
-
+                } else if (scope.$parent.type === 'currency') {
                     ctrl.$validators.currency = function (modelValue, viewValue) {
-                        var splitSteps = (scope.numberSteps) ? scope.numberSteps.toString().split('.') : [],
+                        var splitSteps = (scope.$parent.numberSteps) ?
+                                         scope.$parent.numberSteps.toString().split('.') : [],
                             maxDecimals = (splitSteps[1]) ? splitSteps[1].length : 0,
                             splitValue = (viewValue) ? viewValue.split('.') : [],
                             decimalsPlaces = (splitValue[1]) ? splitValue[1].length : 0,
