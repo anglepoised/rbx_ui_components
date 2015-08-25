@@ -31,11 +31,10 @@
                         <rg-header-item href="">Create</rg-header-item>
                         <rg-header-item sref="">Distribute</rg-header-item>
                         <rg-header-item sref="">Analyse</rg-header-item>
-                        <div class="RgHeader-user">
-                            <rb-user username="demoCtrl.user" logoutfunction="demoCtrl.logout()">
-                                Sign out
-                            </rb-user>
-                        </div>
+                        <rg-header-user>
+                            <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
+                            <rg-header-user-item ng-click="demoCtrl.logout()">Sign out</rg-header-user-item>
+                        </rg-header-user>
                     </rg-header>
                 </rb-header>
             </rb-component-display>
@@ -48,11 +47,10 @@
                         <rg-header-item href="">Create</rg-header-item>
                         <rg-header-item sref="">Distribute</rg-header-item>
                         <rg-header-item sref="">Analyse</rg-header-item>
-                        <div class="RgHeader-user">
-                            <rb-user username="demoCtrl.user" logoutfunction="demoCtrl.logout()">
-                                Sign out
-                            </rb-user>
-                        </div>
+                        <rg-header-user>
+                            <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
+                            <rg-header-user-item ng-click="demoCtrl.logout()">Sign out</rg-header-user-item>
+                        </rg-header-user>
                     </rg-header>
                 </rb-header>
             </rb-component-display>
@@ -65,11 +63,10 @@
                         <rg-header-item href="">Create</rg-header-item>
                         <rg-header-item sref="">Distribute</rg-header-item>
                         <rg-header-item sref="">Analyse</rg-header-item>
-                        <div class="RgHeader-user">
-                            <rb-user username="demoCtrl.user" logoutfunction="demoCtrl.logout()">
-                                Sign out
-                            </rb-user>
-                        </div>
+                        <rg-header-user>
+                            <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
+                            <rg-header-user-item ng-click="demoCtrl.logout()">Sign out</rg-header-user-item>
+                        </rg-header-user>
                     </rg-header>
                 </rb-header>
             </rb-component-display>
@@ -78,11 +75,10 @@
             <rb-component-display>
                 <rb-header>
                     <rg-header>
-                        <div class="RgHeader-user">
-                            <rb-user username="demoCtrl.user" logoutfunction="demoCtrl.logout()">
-                                Sign out
-                            </rb-user>
-                        </div>
+                        <rg-header-user>
+                            <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
+                            <rg-header-user-item ng-click="demoCtrl.logout()">Sign out</rg-header-user-item>
+                        </rg-header-user>
                     </rg-header>
                 </rb-header>
             </rb-component-display>
@@ -91,6 +87,20 @@
             <rb-component-display>
                 <rb-header>
                     <rg-header>
+                    </rg-header>
+                </rb-header>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Composable User subcomponent">
+            <rb-component-display>
+                <rb-header>
+                    <!-- FIXME: don't hard-code colour modifier -->
+                    <rg-header>
+                        <rg-header-user>
+                            <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
+                            <rg-header-user-item ng-click="demoCtrl.logout()">Preferences</rg-header-user-item>
+                            <rg-header-user-item><rb-button ng-click="demoCtrl.logout()">Logout</rb-button></rg-header-user-item>
+                        </rg-header-user>
                     </rg-header>
                 </rb-header>
             </rb-component-display>
