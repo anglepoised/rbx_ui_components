@@ -1,0 +1,84 @@
+/** @define RgHeader-user; use strict */
+
+/**
+ * The `.RgHeader-user` component is a descendent of `.RgHeader`. 
+ */
+
+:root {
+    --RgHeader-user-background: var(--color-gray-tuna);
+    --RgHeader-userItem-color: var(--color-gray-tuna);
+}
+
+/**
+ * 1. Preserve spacing during inactive state
+ * 2. Move default outline from trigger to target
+ * 3. Move default cursor from trigger to target
+ * 4. Show items on `:focus` and `:hover`
+ * 5. Prevent individual items wrapping, so container expands to width of longest item
+ */
+
+.RgHeader-user {
+    background: var(--color-gray-tuna) url("./images/person.svg") no-repeat 50% 6px;
+    border: 1px solid transparent; /* 1 */
+    border-bottom: 0;
+    display: block;
+    height: 1.5em;
+    text-align: center;
+    width: 100%;
+}
+
+.RgHeader-user:hover,
+.RgHeader-user:focus {
+    background: var(--color-white-alabaster) url("./images/person-hover.svg") no-repeat 50% 6px;
+    border: 1px solid var(--color-gray-ghost);
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+    outline: none; /* 2 */
+}
+
+.RgHeader-userItems {
+    background: var(--color-white-alabaster);
+    border: 1px solid var(--color-gray-ghost);
+    border-radius: 3px 0 3px 3px;
+    cursor: default; /* 3 */
+    line-height: 1;
+    margin-top: -1px;
+    position: absolute;
+    right: 0;
+    top: 1.5em;
+    visibility: hidden; /* 4 */
+    white-space: nowrap; /* 5 */
+    z-index: -1;
+}
+
+.RgHeader-user:hover .RgHeader-userItems,
+.RgHeader-user:focus .RgHeader-userItems {
+    visibility: visible; /* 4 */
+}
+
+.RgHeader-user:focus .RgHeader-userItems {
+    outline: 1px dotted;  /* 2 */
+}
+
+@supports (-webkit-appearance:none) {
+    .RgHeader-user:focus .RgHeader-userItems {
+        outline: 5px auto -webkit-focus-ring-color; /* 2 */
+    }
+}
+
+.RgHeader-userItem {
+    color: var(--RgHeader-userItem-color);
+    font-size: var(--font-size-small);
+    padding: 1em 0.5em 0;
+    text-align: right;
+}
+
+.RgHeader-userItem:last-child {
+    padding-bottom: 0.714285714em;
+}
+
+.RgHeader-userItemInner {
+    cursor: pointer; /* 3 */
+    display: block;
+}
