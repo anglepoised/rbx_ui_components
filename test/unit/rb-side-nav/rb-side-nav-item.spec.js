@@ -110,12 +110,11 @@ define([
 
         describe('icon attribute', function () {
 
-            it('should use icon form icon attribute', function () {
-                compileTemplate('<rb-side-nav-item icon="blue-base-16-geo"></rb-side-nav-item>');
+            it('should use icon class from icon attribute', function () {
+                compileTemplate('<rb-side-nav-item icon="frequency">' +
+                    '</rb-side-nav-item>');
 
-                var icon = angular.element(element[0].getElementsByClassName('Icon')[0]);
-
-                expect(icon.hasClass('Icon--blue-base-16-geo')).toBe(true);
+                expect(angular.element(element).hasClass('SideNav-item--frequency')).toBe(true);
             });
 
         });
