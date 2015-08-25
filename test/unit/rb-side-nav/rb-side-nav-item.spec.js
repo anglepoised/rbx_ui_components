@@ -108,6 +108,17 @@ define([
             });
         });
 
+        describe('icon attribute', function () {
+
+            it('should use icon class from icon attribute', function () {
+                compileTemplate('<rb-side-nav-item icon="frequency">' +
+                    '</rb-side-nav-item>');
+
+                expect(angular.element(element).hasClass('SideNav-item--frequency')).toBe(true);
+            });
+
+        });
+
         describe('active attribute', function () {
 
             it('should set active class if active attribute true', function () {
