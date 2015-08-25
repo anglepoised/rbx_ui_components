@@ -7,13 +7,26 @@
 :root {
     --RgHeader-user-background: var(--color-gray-tuna);
     --RgHeader-userItem-color: var(--color-gray-tuna);
+    --RgHeader-user-width: 2em;
+}
+
+/**
+ * 1. Reset stacking order for `.RgHeader-user` subcomponent
+ */
+
+.RgHeader-user {
+    position: absolute;
+    right: var(--layout-gutter);
+    top: 2px;
+    width: var(--RgHeader-user-width);
+    z-index: 0; /* 1 */
 }
 
 /**
  * 1. Preserve spacing during inactive state
  */
 
-.RgHeader-user {
+.RgHeader-userInner {
     background: var(--color-gray-tuna) url("./images/person.svg") no-repeat 50% 6px;
     border: 1px solid transparent; /* 1 */
     border-bottom: 0;
@@ -27,8 +40,8 @@
  * 1. Move default outline from trigger to target
  */
 
-.RgHeader-user:hover,
-.RgHeader-user:focus {
+.RgHeader-userInner:hover,
+.RgHeader-userInner:focus {
     background: var(--color-white-alabaster) url("./images/person-hover.svg") no-repeat 50% 6px;
     border: 1px solid var(--color-gray-ghost);
     border-bottom: 0;
@@ -103,4 +116,12 @@
 .RgHeader-userItemInner {
     cursor: pointer; /* 1 */
     display: block;
+}
+
+@media (--md-viewport) {
+
+    .RgHeader-user {
+        top: 20px;
+    }
+
 }

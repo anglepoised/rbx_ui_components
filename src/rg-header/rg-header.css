@@ -23,7 +23,6 @@
     --RgHeader-nav-color-active: var(--color-white-alabaster);
     --RgHeader-nav-color-hover: var(--color-white-alabaster);
     --RgHeader-nav-is-active-arrow-size: var(0.25em);
-    --RgHeader-user-width: 2em;
 }
 
 /**
@@ -104,18 +103,6 @@
     color: var(--RgHeader-nav-color-active);
 }
 
-/**
- * 1. Reset stacking order for `.User` subcomponent
- */
-
-.RgHeader-user {
-    position: absolute;
-    right: var(--layout-gutter);
-    top: 2px;
-    width: var(--RgHeader-user-width);
-    z-index: 0; /* 1 */
-}
-
 @media (--md-viewport) {
 
     /**
@@ -141,10 +128,6 @@
         justify-content: center; /* 1 */
         margin-bottom: 0; /* 1 */
         margin-top: 0; /* 1 */
-    }
-
-    .RgHeader-user {
-        top: 20px;
     }
 
     /**
