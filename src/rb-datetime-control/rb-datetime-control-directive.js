@@ -88,6 +88,14 @@ define([
                     scope.toggleInherited();
                 }, true);
 
+                scope.$watch('ngModel', function (newVal) {
+                    // Watch the time date model and when it changes check if its valid or not
+                    if (newVal !== undefined) {
+                        scope.form[scope.dateName].$setValidity('date', true);
+                        scope.form[scope.timeName].$setValidity('date', true);
+                    }
+                }, true);
+
             }
         };
     }
