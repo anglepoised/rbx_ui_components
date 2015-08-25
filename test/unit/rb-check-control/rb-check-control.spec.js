@@ -111,7 +111,7 @@ define([
 
                 var label = element.find('label'),
                     icon = label.find('div');
-                console.log(icon);
+
                 expect(icon.hasClass('CheckControl-icon--mediaCentre')).toBe(true);
                 expect(icon.length).toBe(1);
             });
