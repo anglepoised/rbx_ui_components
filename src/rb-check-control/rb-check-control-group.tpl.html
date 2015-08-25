@@ -31,8 +31,8 @@
             </rb-check-control>
         </div>
     </div>
-    <div class="rbDeviceChoiceControl" ng-if="isDeviceChoice">
-        <div class="rbDeviceChoiceControl-item" ng-repeat="(key, value) in options">
+    <div class="CheckControlGroup-body" ng-if="isDeviceChoice">
+        <div ng-repeat="(key, value) in options">
             <rb-check-control
                 name="check-control-icon"
                 label="{{::value.label}}"
