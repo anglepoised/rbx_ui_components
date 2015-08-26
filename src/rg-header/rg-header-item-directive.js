@@ -1,6 +1,7 @@
 define([
-    'html!./rg-header-item.tpl.html'
-], function (template) {
+    'html!./rg-header-item.tpl.html',
+    'ui-components/utils/transclude-attrs'
+], function (template, transcludeAttrs) {
 
     /**
      * @ngdoc directive
@@ -24,6 +25,9 @@ define([
         return {
             scope: {
                 isActive: '@'
+            },
+            link: function (scope, elem, attrs) {
+                transcludeAttrs(elem, attrs, ['sref', 'href']);
             },
             restrict: 'E',
             replace: true,
