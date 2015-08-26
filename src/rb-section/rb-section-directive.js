@@ -30,7 +30,15 @@ define([
             restrict: 'E',
             replace: true,
             transclude: true,
-            template: template
+            template: template,
+            link: function (scope, ele, attrs) {
+                // Default centered to false
+                scope.centered = 'false';
+
+                if (angular.isDefined(attrs['centered'])) {
+                    scope.centered = attrs['centered'];
+                }
+            }
         };
     }
 
