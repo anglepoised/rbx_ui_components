@@ -1,0 +1,16 @@
+/** @define UploadStatus; use strict */
+
+/**
+ * The `.UploadStatus` component...
+ */
+
+:root {
+    --UploadStatus-variable: var();
+}
+
+/**
+ * 1. Comment
+ */
+
+.UploadStatus {
+}
