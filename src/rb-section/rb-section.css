@@ -41,3 +41,12 @@
     padding-left: var(--layout-gutter);
     padding-right: var(--layout-gutter);
 }
+
+
+/**
+ * Centered modifier
+ */
+
+.Section--centered .Section-body {
+    text-align: center;
+}
