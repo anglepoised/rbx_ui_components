@@ -1,0 +1,29 @@
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-site">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <rb-raw-html-display>
+                <p>
+                    The <code>rg-site</code> component should wrap all content on a page and is used in conjunction with
+                    <code><a ui-sref="rb-main">rb-main</a></code> to create sticky footer and centred content effects.
+                </p>
+            </rb-raw-html-display>
+        </rb-section>
+        <rb-section heading="Default">
+            <rb-component-display>
+                <rg-site>
+                    <rb-header>
+                        Header
+                    </rb-header>
+                    <rb-main class="Main--background Main--center">
+                        Main
+                    </rb-main>
+                    <rb-footer>
+                        Footer
+                    </rb-footer>
+                </rg-site>
+            </rb-component-display>
+        </rb-section>
+    </rb-main>
+</rb-site>
