@@ -23,6 +23,7 @@ define([
 
         return {
             scope: {
+                isActive: '@'
             },
             restrict: 'E',
             replace: true,
