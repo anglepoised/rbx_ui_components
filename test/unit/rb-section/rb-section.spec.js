@@ -90,5 +90,24 @@ define([
             });
         });
 
+        describe('centered attribute', function () {
+            it('should set a modifier of centered when the value is true', function () {
+                compileTemplate('<rb-section centered="true"></rb-section>');
+
+                expect(element.hasClass('Section--centered')).toBeTruthy();
+            });
+
+            it('should not set a modifier of centered when the value is false', function () {
+                compileTemplate('<rb-section centered="false"></rb-section>');
+
+                expect(element.hasClass('Section--centered')).toBeFalsy();
+            });
+
+            it('should not set a modifier of centered when no value is passed', function () {
+                compileTemplate('<rb-section></rb-section>');
+
+                expect(element.hasClass('Section--centered')).toBeFalsy();
+            });
+        });
     });
 });

@@ -1,4 +1,7 @@
-<section class="Section" ng-class="{'Section--gutterless': gutterless == 'true'}">
+<section class="Section" ng-class="{
+    'Section--gutterless': gutterless == 'true',
+    'Section--centered': centered == 'true'
+}">
     <div class="Section-heading" ng-class="{'u-hiddenVisually': hideHeading == 'true'}">
         <h2 class="u-textHeading2 u-textKeyline">{{ ::heading }}</h2>
     </div>
