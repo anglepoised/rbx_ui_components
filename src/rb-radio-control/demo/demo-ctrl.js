@@ -30,14 +30,14 @@ define([
 
         this.iconChoices = [
             {
-                label: 'Radio with icon red-base-16-refresh',
-                value: 'red-base-16-refresh',
-                icon: 'red-base-16-refresh'
+                label: 'Radio with blacklist icon',
+                value: 'blacklist',
+                icon: 'blacklist'
             },
             {
-                label: 'Radio with icon black-12-arrow-left',
-                value: 'black-12-arrow-left',
-                icon: 'black-12-arrow-left'
+                label: 'Radio with whitelist icon',
+                value: 'whitelist',
+                icon: 'whitelist'
             }
         ];
 

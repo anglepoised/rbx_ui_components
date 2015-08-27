@@ -18,7 +18,7 @@
     --Navigation-color-hover: var(--color-white-alabaster);
     --Navigation-font-size: var(--font-size);
     --Navigation-is-active-arrow-size: var(0.25em);
-    --Navigation-is-active-background: var(--color-brand-green);
+    --Navigation-is-active-background: var(--color-green-base);
 }
 
 /**

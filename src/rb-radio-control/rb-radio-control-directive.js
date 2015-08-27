@@ -36,9 +36,17 @@ define([
             replace: true,
             template: template,
             link: function ($scope) {
+
+                angular.forEach($scope.choices, function (choice) {
+                    // Loop through all the choices and see if any have an Icon key
+                    if (choice.icon) {
+                        $scope.hasIcon = true;
+                        return;
+                    }
+                });
+
                 $scope.setChoice = function (choice) {
                     $scope.ngModel = choice.value;
-
                     // Notify form that it has been updated
                     $scope.form.$pristine = false;
                 };

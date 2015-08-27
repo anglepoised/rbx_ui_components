@@ -10,7 +10,7 @@
 
 :root {
     --PageHeader-background: var(--color-gray-tuna);
-    --PageHeader-border-color: var(--color-brand-green);
+    --PageHeader-border-color: var(--color-green-base);
     --PageHeader-color: var(--color-gray-ghost);
     --PageHeader-user-width: 2em;
 }

@@ -24,3 +24,113 @@
 .RadioControl--row .RadioControl-item {
     margin-right: 2em;
 }
+
+/**
+ * Modifier: withIcon
+ */
+
+.RadioControl--withIcon .RadioControl-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.RadioControl--withIcon .RadioControl-label {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.RadioControl--withIcon .RadioControl-labelInner {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.RadioControl-icon {
+    background-repeat: no-repeat;
+    margin-bottom: 1em;
+}
+
+/**
+ * above
+ */
+
+.RadioControl-icon--above {
+    background-image: url("./images/above.svg");
+    height: 192px;
+    width: 112px;
+}
+
+.RadioControl-item.is-checked .RadioControl-icon--above {
+    background-image: url("./images/above-checked.svg");
+}
+
+/**
+ * anywhere
+ */
+
+.RadioControl-icon--anywhere {
+    background-image: url("./images/anywhere.svg");
+    height: 192px;
+    width: 112px;
+}
+
+.RadioControl-item.is-checked .RadioControl-icon--anywhere {
+    background-image: url("./images/anywhere-checked.svg");
+}
+
+/**
+ * below
+ */
+
+.RadioControl-icon--below {
+    background-image: url("./images/below.svg");
+    height: 192px;
+    width: 112px;
+}
+
+.RadioControl-item.is-checked .RadioControl-icon--below {
+    background-image: url("./images/below-checked.svg");
+}
+
+/**
+ * blacklist
+ */
+
+.RadioControl-icon--blacklist {
+    background-image: url("./images/blacklist.svg");
+    height: 80px;
+    width: 80px;
+}
+
+.RadioControl-item.is-checked .RadioControl-icon--blacklist {
+    background-image: url("./images/blacklist-checked.svg");
+}
+
+/**
+ * unrestricted
+ */
+
+.RadioControl-icon--unrestricted {
+    background-image: url("./images/unrestricted.svg");
+    height: 80px;
+    width: 80px;
+}
+
+.RadioControl-item.is-checked .RadioControl-icon--unrestricted {
+    background-image: url("./images/unrestricted-checked.svg");
+}
+
+/**
+ * whitelist
+ */
+
+.RadioControl-icon--whitelist {
+    background-image: url("./images/whitelist.svg");
+    height: 80px;
+    width: 80px;
+}
+
+.RadioControl-item.is-checked .RadioControl-icon--whitelist {
+    background-image: url("./images/whitelist-checked.svg");
+}
