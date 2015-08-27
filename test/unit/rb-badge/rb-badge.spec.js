@@ -213,5 +213,41 @@ define([
             ));
         });
 
+        describe('in build status', function () {
+            it('should map to the incomplete status', inject(function ($compile, $rootScope) {
+                var scope = $rootScope.$new(),
+                    badge,
+                    element;
+
+                scope.itemStatus = 'statusIn Build';
+                badge = angular.element('<rb-badge state="{{ itemStatus }}"></rb-badge>');
+                element = $compile(badge)(scope);
+
+                scope.$apply();
+
+                expect(element.hasClass('Badge--statusIncomplete')).toBeTruthy();
+            }));
+        });
+
+        it('should update after updating the status', inject(function ($compile, $rootScope) {
+            var scope = $rootScope.$new(),
+                badge,
+                element;
+
+            scope.itemStatus = 'statusIn Build';
+            badge = angular.element('<rb-badge state="{{ itemStatus }}"></rb-badge>');
+            element = $compile(badge)(scope);
+
+            scope.$apply();
+
+            expect(element.hasClass('Badge--statusIncomplete')).toBeTruthy();
+
+            scope.itemStatus = 'statusFinished';
+
+            scope.$apply();
+
+            expect(element.hasClass('Badge--statusIncomplete')).toBeFalsy();
+            expect(element.hasClass('Badge--statusFinished')).toBeTruthy();
+        }));
     });
 });
