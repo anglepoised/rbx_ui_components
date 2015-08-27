@@ -9,6 +9,9 @@ define([
      *
      * @restrict E
      *
+     * @deprecated
+     * Please use rg-site, which encompases functionality from this component.
+     *
      * @description
      * `<rb-site>` is a directive that wraps all content on a page
      *
