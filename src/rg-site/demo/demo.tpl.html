@@ -6,22 +6,99 @@
             <rb-raw-html-display>
                 <p>
                     The <code>rg-site</code> component should wrap all content on a page and is used in conjunction with
-                    <code><a ui-sref="rb-main">rb-main</a></code> to create sticky footer and centred content effects.
+                    the <code>rg-site-top</code> (top, sticky), <code>rg-site-middle</code> (middle, scrollable) and <code>rg-site-bottom</code> (bottom, sticky) descendents to create the desired layout.
+
+                    <code>rg-site-top</code> would ideally be used in conjunction with <code><a ui-sref='rb-main'>rb-main</a></code> to achieve centering content effects.
                 </p>
             </rb-raw-html-display>
         </rb-section>
-        <rb-section heading="Default">
+        <rb-section heading="Top, Middle and Bottom">
+            <rb-raw-html-display>
+                <p>
+                    Using all three subcomponents, the <code>rg-site-top</code> and <code>rg-site-bottom</code> sections will be sticky, and the scrollable <code>rg-site-middle</code> will fill the remainder of the space.
+                </p>
+            </rb-raw-html-display>
             <rb-component-display>
                 <rg-site>
-                    <rb-header>
-                        Header
-                    </rb-header>
-                    <rb-main class="Main--background Main--center">
-                        Main
-                    </rb-main>
-                    <rb-footer>
-                        Footer
-                    </rb-footer>
+                    <rg-site-top>
+                        <div>
+                            Header
+                        </div>
+                    </rg-site-top>
+                    <rg-site-middle>
+                        <rb-main class="Main--background Main--center">
+                            <div style="width: 25%; line-height:2em; padding: 5em;">
+                                <p>Bacon ipsum dolor amet andouille kielbasa doner tenderloin bresaola meatloaf shankle. Bacon pastrami picanha landjaeger ribeye jerky sausage kielbasa cupim ground round shank pork chop tenderloin shoulder pork. Turkey pastrami pig, pork loin beef shank filet mignon biltong hamburger andouille leberkas ham. Drumstick frankfurter meatball strip steak venison pancetta. Prosciutto fatback andouille turkey landjaeger spare ribs ham, sausage corned beef tenderloin. Bacon ham rump hamburger pastrami prosciutto short ribs tongue cupim boudin salami flank andouille kielbasa pancetta.</p>
+
+                                <p>Corned beef turducken filet mignon brisket capicola frankfurter beef ribs porchetta strip steak. Kielbasa biltong salami kevin sirloin turkey prosciutto alcatra picanha sausage drumstick. Shoulder venison pork loin pancetta kevin, ground round jowl meatloaf swine filet mignon frankfurter landjaeger tri-tip brisket meatball. Chuck turducken pork chop, bresaola bacon andouille landjaeger.</p>
+
+                                <p>Pork belly pork chop strip steak ground round porchetta pastrami short ribs shank rump ham salami filet mignon chuck pig bacon. Tri-tip hamburger biltong filet mignon pastrami kevin. Venison tongue pork loin, boudin pork belly filet mignon prosciutto turducken porchetta. Strip steak shankle jowl, bacon venison salami drumstick fatback hamburger capicola ham tenderloin picanha.</p>
+                            </div>
+                        </rb-main>
+                    </rg-site-middle>
+                    <rg-site-bottom>
+                        <div>
+                            Footer
+                        </div>
+                    </rg-site-bottom>
+                </rg-site>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Top and Middle">
+            <rb-raw-html-display>
+                <p>
+                    In this example, the footer content is placed in <code>rg-site-middle</code> and rather than sticking to the bottom of the viewport, it appears at the end of the middle content.
+                </p>
+            </rb-raw-html-display>
+            <rb-component-display>
+                <rg-site>
+                    <rg-site-top>
+                        <div>
+                            Header
+                        </div>
+                    </rg-site-top>
+                    <rg-site-middle>
+                        <rb-main class="Main--background Main--center">
+                            <div style="width: 25%; line-height:2em; padding: 5em;">
+                                <p>Bacon ipsum dolor amet andouille kielbasa doner tenderloin bresaola meatloaf shankle. Bacon pastrami picanha landjaeger ribeye jerky sausage kielbasa cupim ground round shank pork chop tenderloin shoulder pork. Turkey pastrami pig, pork loin beef shank filet mignon biltong hamburger andouille leberkas ham. Drumstick frankfurter meatball strip steak venison pancetta. Prosciutto fatback andouille turkey landjaeger spare ribs ham, sausage corned beef tenderloin. Bacon ham rump hamburger pastrami prosciutto short ribs tongue cupim boudin salami flank andouille kielbasa pancetta.</p>
+
+                                <p>Corned beef turducken filet mignon brisket capicola frankfurter beef ribs porchetta strip steak. Kielbasa biltong salami kevin sirloin turkey prosciutto alcatra picanha sausage drumstick. Shoulder venison pork loin pancetta kevin, ground round jowl meatloaf swine filet mignon frankfurter landjaeger tri-tip brisket meatball. Chuck turducken pork chop, bresaola bacon andouille landjaeger.</p>
+
+                                <p>Pork belly pork chop strip steak ground round porchetta pastrami short ribs shank rump ham salami filet mignon chuck pig bacon. Tri-tip hamburger biltong filet mignon pastrami kevin. Venison tongue pork loin, boudin pork belly filet mignon prosciutto turducken porchetta. Strip steak shankle jowl, bacon venison salami drumstick fatback hamburger capicola ham tenderloin picanha.</p>
+                            </div>
+                        </rb-main>
+                        <div>
+                            Footer
+                        </div>
+                    </rg-site-middle>
+                </rg-site>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Middle only">
+            <rb-raw-html-display>
+                <p>
+                    This time the header content is also placed in <code>rg-site-middle</code>. The header is now also no longer sticky, and will scroll out of the viewport as the middle content is scrolled.
+                </p>
+            </rb-raw-html-display>
+            <rb-component-display>
+                <rg-site>
+                    <rg-site-middle>
+                        <div>
+                            Header
+                        </div>
+                        <rb-main class="Main--background Main--center">
+                            <div style="width: 25%; line-height:2em; padding: 5em;">
+                                <p>Bacon ipsum dolor amet andouille kielbasa doner tenderloin bresaola meatloaf shankle. Bacon pastrami picanha landjaeger ribeye jerky sausage kielbasa cupim ground round shank pork chop tenderloin shoulder pork. Turkey pastrami pig, pork loin beef shank filet mignon biltong hamburger andouille leberkas ham. Drumstick frankfurter meatball strip steak venison pancetta. Prosciutto fatback andouille turkey landjaeger spare ribs ham, sausage corned beef tenderloin. Bacon ham rump hamburger pastrami prosciutto short ribs tongue cupim boudin salami flank andouille kielbasa pancetta.</p>
+
+                                <p>Corned beef turducken filet mignon brisket capicola frankfurter beef ribs porchetta strip steak. Kielbasa biltong salami kevin sirloin turkey prosciutto alcatra picanha sausage drumstick. Shoulder venison pork loin pancetta kevin, ground round jowl meatloaf swine filet mignon frankfurter landjaeger tri-tip brisket meatball. Chuck turducken pork chop, bresaola bacon andouille landjaeger.</p>
+
+                                <p>Pork belly pork chop strip steak ground round porchetta pastrami short ribs shank rump ham salami filet mignon chuck pig bacon. Tri-tip hamburger biltong filet mignon pastrami kevin. Venison tongue pork loin, boudin pork belly filet mignon prosciutto turducken porchetta. Strip steak shankle jowl, bacon venison salami drumstick fatback hamburger capicola ham tenderloin picanha.</p>
+                            </div>
+                        </rb-main>
+                        <div>
+                            Footer
+                        </div>
+                    </rg-site-middle>
                 </rg-site>
             </rb-component-display>
         </rb-section>

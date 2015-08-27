@@ -2,8 +2,8 @@
 
 /**
  * The `.RgSite` class is generally attached to the `<body>` element.
- * Used to create Sticky Footer in conjunction with `.Main`.
- * See: http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+ * Can be composed to create variants of stickiness using the `.RgSite-top`, `.RgSite-middle` and `.RgSite-bottom` descendents.
+ * Typically used in conjunction with `.Main`.
  */
 
 /**
@@ -13,5 +13,12 @@
 .RgSite {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* 1 */
+    height: 100vh; /* 1 */
+}
+
+.RgSite-middle {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow-y: auto;
 }
