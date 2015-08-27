@@ -34,13 +34,12 @@ define([
             });
 
             it('should attach an icon to the li when present', function () {
-                compileTemplate('<rb-definition-list-item icon="any-icon"></rb-definition-list-item>');
+                compileTemplate('<rb-definition-list-item icon="anyicon"></rb-definition-list-item>');
 
-                var icons = element[0].getElementsByClassName('Icon'),
+                var icons = element[0].getElementsByClassName('DefinitionList-icon'),
                     icon = angular.element(icons[0]);
-
                 expect(icons.length).toBe(1);
-                expect(icon.hasClass('Icon--any-icon')).toBe(true);
+                expect(icon.hasClass('DefinitionList-icon--anyicon')).toBe(true);
             });
 
             it('should not attach an icon to the dt when not present', function () {
@@ -50,9 +49,9 @@ define([
             });
 
             it('should display a label for the dt', function () {
-                compileTemplate('<rb-definition-list-item label="any-label"></rb-definition-list-item>');
+                compileTemplate('<rb-definition-list-item label="anylabel"></rb-definition-list-item>');
 
-                expect(element.find('h3').text()).toContain('any-label');
+                expect(element.find('h3').text()).toContain('anylabel');
             });
 
             it('should render transcluded elements into the details', function () {

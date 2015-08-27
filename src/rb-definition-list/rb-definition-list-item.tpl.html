@@ -1,9 +1,8 @@
 <li class="DefinitionList-item">
     <div class="DefinitionList-title">
-        <div class="DefinitionList-icon">
-            <rb-icon ng-if="icon" icon="{{icon}}">{{label}}</rb-icon>
+        <div class="DefinitionList-icon" ng-class="{'DefinitionList-icon--{{icon}}': icon}">
+            <h3 class="u-textRegular">{{label}}</h3>
         </div>
-        <h3 class="u-textRegular">{{label}}</h3>
     </div>
     <div class="DefinitionList-body" ng-transclude>
     </div>
