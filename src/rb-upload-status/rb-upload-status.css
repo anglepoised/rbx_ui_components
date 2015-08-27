@@ -1,16 +1,49 @@
 /** @define UploadStatus; use strict */
 
-/**
- * The `.UploadStatus` component...
- */
-
 :root {
-    --UploadStatus-variable: var();
+    --UploadStatus-dimensions: 82px;
+}
+
+.UploadStatus {
+    padding-bottom: 1.5em;
+    text-align: center;
 }
 
 /**
- * 1. Comment
+ * 1. Contain background image to make scalable.
  */
 
-.UploadStatus {
+.UploadStatus-icon {
+    background-size: contain; /* 1 */
+    height: var(--UploadStatus-dimensions);
+    margin: 0 auto 2.5em;
+    width: var(--UploadStatus-dimensions);
+}
+
+.UploadStatus-message {
+    font-size: var(--font-size-large);
+}
+
+/**
+ * Fail modifier
+ */
+
+.UploadStatus--fail .UploadStatus-icon {
+    background-image: url("./images/fail.svg");
+}
+
+/**
+ * Ready modifier
+ */
+
+.UploadStatus--ready .UploadStatus-icon {
+    background-image: url("./images/ready.svg");
+}
+
+/**
+ * Success modifier
+ */
+
+.UploadStatus--success .UploadStatus-icon {
+    background-image: url("./images/success.svg");
 }
