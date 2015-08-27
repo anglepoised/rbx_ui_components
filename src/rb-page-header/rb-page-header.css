@@ -1,6 +1,8 @@
 /** @define PageHeader; use strict */
 
 /**
+ * DEPRECATED. Please use rg-header, which encompases functionality from this component.
+ *
  * The `.PageHeader` component should be used across all products. It consists of:
  *
  * - A mandatory logo

@@ -8,7 +8,11 @@ define([
      *
      * @restrict E
      *
+     * @deprecated
+     * Please use rg-header, which encompases functionality from this component.
+     *
      * @description
+     *
      * `<rb-user>` is a directive that shows a username and logout component
      *
      * @scope

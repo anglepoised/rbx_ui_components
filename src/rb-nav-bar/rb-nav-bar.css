@@ -1,6 +1,8 @@
 /** @define Navigation; use strict */
 
 /**
+ * DEPRECATED. Please use rg-header, which encompases functionality from this component.
+ *
  * The `.Navigation` component is a subcomponent of `.PageHeader`.
  *
  * Links in this component should point to the root pages of discrete applications.
