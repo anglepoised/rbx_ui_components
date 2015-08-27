@@ -9,6 +9,7 @@ define([
     var STATE_DETAILS = {
         'warning': 'Warning(s) on this item',
         'statusIncomplete': 'Incomplete',
+        'statusIn Build': 'Incomplete',
         'statusLive': 'Live',
         'statusPaused': 'Paused',
         'statusPending': 'Pending',
@@ -73,6 +74,14 @@ define([
 
         // Pass details lookup to scope.
         scope.details = STATE_DETAILS;
+
+        scope.$watch('state', function (newVal, oldVal) {
+            scope.badge = scope.state;
+
+            if (scope.state === 'statusIn Build') {
+                scope.badge = 'statusIncomplete';
+            }
+        });
 
         // Evaluate 'collapsed' attribute as Boolean.
         scope.collapsed = scope.$eval(attr.collapsed);
