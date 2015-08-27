@@ -9,7 +9,11 @@ define([
      *
      * @restrict E
      *
+     * @deprecated
+     * Please use rg-header, which encompases functionality from this component.
+     *
      * @description
+     *
      * `<rb-page-header>` is a directive that shows a page header
      *
      * @usage
