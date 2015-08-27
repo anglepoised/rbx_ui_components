@@ -53,7 +53,6 @@
     background-image: url("./images/logo-rockabox-blue.svg"); /* 1 */
     background-position: center;
     background-repeat: no-repeat;
-    cursor: pointer;
     margin: 0 var(--layout-gutter); /* 2 */
     margin-bottom: 0.5em; /* 3 */
     margin-top: 0.5em; /* 3 */
