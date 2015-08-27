@@ -1,19 +1,17 @@
 <div class="RadioControl" ng-class="{
-    'RadioControl--row': isRow
-}">
-
+    'RadioControl--row': isRow,
+    'RadioControl--withIcon': hasIcon
+ }">
     <div class="RadioControl-items">
         <div
             class="RadioControl-item"
             ng-class="{
                 'is-disabled': isDisabled,
                 'is-invalid': form[name].$touched && form[name].$invalid,
-                'is-required': isRequired
+                'is-required': isRequired,
+                'is-checked' : ngModel === choice.value
             }"
             ng-repeat="(id, choice) in ::choices">
-
-            <rb-icon ng-if="choice.icon" icon="{{ ::choice.icon }}"></rb-icon>
-
             <input
                 class="RadioControl-field"
                 id="{{::name}}-{{::id}}"
@@ -25,21 +23,22 @@
                 ng-checked="isChecked(choice)"
                 value="{{::choice.value}}"
                 type="radio">
-
             <label
                 class="RadioControl-label u-textLabelLarge"
                 for="{{::name}}-{{::id}}">
+                <div ng-if="::choice.icon"
+                    icon="{{ ::choice.icon }}"
+                    class="RadioControl-icon RadioControl-icon--{{choice.icon}}">
+                </div>
                 {{::choice.label}}
             </label>
         </div>
     </div>
-
     <div
         class="RadioControl-message"
         ng-show="helpMessage">
         {{::helpMessage}}
     </div>
-
     <div
         class="RadioControl-message is-invalid"
         ng-if="form[name].$touched && form[name].$error.required">
