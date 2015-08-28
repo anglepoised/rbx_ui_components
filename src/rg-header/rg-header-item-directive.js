@@ -27,7 +27,7 @@ define([
                 isActive: '@'
             },
             link: function (scope, elem, attrs) {
-                transcludeAttrs(elem, attrs, ['sref', 'href']);
+                transcludeAttrs(elem, attrs, ['ui-sref', 'href']);
             },
             restrict: 'E',
             replace: true,
