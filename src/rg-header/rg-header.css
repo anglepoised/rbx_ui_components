@@ -17,12 +17,15 @@
     --RgHeader-background: var(--color-gray-tuna);
     --RgHeader-color: var(--color-gray-ghost);
     --RgHeader-highlight-color: var(--color-white-alabaster);
+    --RgHeader-nav-background: var(--color-gray-tuna);
     --RgHeader-nav-background-active: var(--color-gray-shark);
     --RgHeader-nav-background-hover: var(--color-gray-shark);
     --RgHeader-nav-color: var(--color-gray-ghost);
     --RgHeader-nav-color-active: var(--color-white-alabaster);
     --RgHeader-nav-color-hover: var(--color-white-alabaster);
+    --RgHeader-nav-font-size: var(--font-size);
     --RgHeader-nav-is-active-arrow-size: var(0.25em);
+    --RgHeader-user-width: 2em;
 }
 
 /**
