@@ -27,7 +27,8 @@ define([
                 helpMessage: '@',
                 form: '=',
                 numberSteps: '@',
-                small: '@'
+                small: '@',
+                type: '@'
             },
             transclude: true,
             restrict: 'E',
@@ -42,15 +43,13 @@ define([
                 } else {
                     $input.addClass('RgTextControl-field');
                 }
-                scope.type = $input.length ? $input.attr('type') : $textarea.attr('type');
-                scope.name = $input.length ? $input.attr('name') : $textarea.attr('name');
-                scope.numberSteps = scope.numberSteps || 0;
                 if (scope.type === 'currency') {
-                    scope.inputType = 'number';
                     scope.numberSteps = scope.numberSteps || 0.01;
                 } else {
-                    scope.inputType = scope.type;
+                    scope.type = $input.length ? $input.attr('type') : $textarea.attr('type');
+                    scope.numberSteps = scope.numberSteps || 0;
                 }
+                scope.name = $input.length ? $input.attr('name') : $textarea.attr('name');
             }
         };
     }
