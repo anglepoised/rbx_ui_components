@@ -80,7 +80,7 @@
     color: var(--color-white-alabaster);
     display: inline-block;
     flex-shrink: 0;
-    font-size: var(--font-size-x-small);
+    font-size: var(--font-size-small);
     height: 0%; /* 1 */
     margin-left: auto;
     min-width: 23px;
