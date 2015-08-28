@@ -1,30 +1,27 @@
 define([
-    'html!./rb-site.tpl.html'
+    'html!./rg-site-top.tpl.html'
 ], function (template) {
 
     /**
      * @ngdoc directive
-     * @name rbSite
-     * @module rb-site
+     * @name rgSiteTop
+     * @module rg-site-top
      *
      * @restrict E
      *
-     * @deprecated
-     * Please use rg-site, which encompases functionality from this component.
-     *
      * @description
-     * `<rb-site>` is a directive that wraps all content on a page
+     * `<rg-site-top>` is a directive that should be used inside rg-site, and sticks to the top of the page
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-site>
+     *    <rg-site-top>
      *        <any content>
-     *     </rb-site>
+     *     </rg-site-top>
      * </hljs>
      *
      * @ngInject
      */
-    function rbSiteDirective () {
+    function rgSiteTopDirective () {
 
         return {
             scope: {
@@ -36,5 +33,5 @@ define([
         };
     }
 
-    return rbSiteDirective;
+    return rgSiteTopDirective;
 });

@@ -1,30 +1,27 @@
 define([
-    'html!./rb-site.tpl.html'
+    'html!./rg-site-middle.tpl.html'
 ], function (template) {
 
     /**
      * @ngdoc directive
-     * @name rbSite
-     * @module rb-site
+     * @name rgSiteMiddle
+     * @module rg-site-middle
      *
      * @restrict E
      *
-     * @deprecated
-     * Please use rg-site, which encompases functionality from this component.
-     *
      * @description
-     * `<rb-site>` is a directive that wraps all content on a page
+     * `<rg-site-middle>` is a directive that should be used inside rg-site, and fills the flex and is scrollable.
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-site>
+     *    <rg-site-middle>
      *        <any content>
-     *     </rb-site>
+     *     </rg-site-middle>
      * </hljs>
      *
      * @ngInject
      */
-    function rbSiteDirective () {
+    function rgSiteMiddleDirective () {
 
         return {
             scope: {
@@ -36,5 +33,5 @@ define([
         };
     }
 
-    return rbSiteDirective;
+    return rgSiteMiddleDirective;
 });

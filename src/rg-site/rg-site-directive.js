@@ -1,30 +1,27 @@
 define([
-    'html!./rb-site.tpl.html'
+    'html!./rg-site.tpl.html'
 ], function (template) {
 
     /**
      * @ngdoc directive
-     * @name rbSite
-     * @module rb-site
+     * @name rgSite
+     * @module rg-site
      *
      * @restrict E
      *
-     * @deprecated
-     * Please use rg-site, which encompases functionality from this component.
-     *
      * @description
-     * `<rb-site>` is a directive that wraps all content on a page
+     * `<rg-site>` is a directive that wraps all content on a page
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-site>
+     *    <rg-site>
      *        <any content>
-     *     </rb-site>
+     *     </rg-site>
      * </hljs>
      *
      * @ngInject
      */
-    function rbSiteDirective () {
+    function rgSiteDirective () {
 
         return {
             scope: {
@@ -36,5 +33,5 @@ define([
         };
     }
 
-    return rbSiteDirective;
+    return rgSiteDirective;
 });

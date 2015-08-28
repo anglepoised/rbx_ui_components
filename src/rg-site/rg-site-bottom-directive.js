@@ -1,30 +1,27 @@
 define([
-    'html!./rb-site.tpl.html'
+    'html!./rg-site-bottom.tpl.html'
 ], function (template) {
 
     /**
      * @ngdoc directive
-     * @name rbSite
-     * @module rb-site
+     * @name rgSiteBottom
+     * @module rg-site-bottom
      *
      * @restrict E
      *
-     * @deprecated
-     * Please use rg-site, which encompases functionality from this component.
-     *
      * @description
-     * `<rb-site>` is a directive that wraps all content on a page
+     * `<rg-site-bottom>` is a directive that should be used inside rg-site, and sticks to the bottom of the page
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-site>
+     *    <rg-site-bottom>
      *        <any content>
-     *     </rb-site>
+     *     </rg-site-bottom>
      * </hljs>
      *
      * @ngInject
      */
-    function rbSiteDirective () {
+    function rgSiteBottomDirective () {
 
         return {
             scope: {
@@ -36,5 +33,5 @@ define([
         };
     }
 
-    return rbSiteDirective;
+    return rgSiteBottomDirective;
 });
