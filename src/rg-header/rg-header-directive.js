@@ -1,24 +1,20 @@
 define([
-    'html!./rb-page-header.tpl.html'
+    'html!./rg-header.tpl.html'
 ], function (template) {
 
     /**
      * @ngdoc directive
-     * @name rbPageHeader
-     * @module rb-page-header
+     * @name rgHeader
+     * @module rg-header
      *
      * @restrict E
      *
-     * @deprecated
-     * Please use rg-header, which encompases functionality from this component.
-     *
      * @description
-     *
-     * `<rb-page-header>` is a directive that shows a page header
+     * `<rg-header>` is a directive that shows a page header
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-page-header>
+     *    <rg-header>
      *        <a class="Header-logo" ng-click="ctrl.logoHeaderFunction()" ng-aria>
      *            <rb-icon icon="white-alabaster-100-logo-rockabox">
      *                Rockabox
@@ -33,12 +29,12 @@ define([
      *                Sign out
      *            </rb-user>
      *        </div>
-     *     </rb-page-header>
+     *     </rg-header>
      * </hljs>
      *
      * @ngInject
      */
-    function rbPageHeaderDirective () {
+    function rgHeaderDirective () {
 
         return {
             scope: {
@@ -46,9 +42,15 @@ define([
             restrict: 'E',
             replace: true,
             transclude: true,
-            template: template
+            template: template,
+            link: function (scope, ele, attrs) {
+                scope.modifier = '';
+                if (angular.isDefined(attrs['color'])) {
+                    scope.modifier = 'RgHeader--' + attrs['color'];
+                }
+            }
         };
     }
 
-    return rbPageHeaderDirective;
+    return rgHeaderDirective;
 });

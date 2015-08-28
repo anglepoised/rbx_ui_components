@@ -1,6 +1,8 @@
 /** @define User; use strict */
 
 /**
+ * DEPRECATED. Please use rg-header, which encompases functionality from this component.
+ *
  * The `.User` component is a subcomponent of `.PageHeader`.
  *
  * Can be used with any element, but should ideally be attached to a `<div>` element with attributes

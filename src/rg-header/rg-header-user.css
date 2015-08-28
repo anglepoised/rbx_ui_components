@@ -1,0 +1,127 @@
+/** @define RgHeader-user; use strict */
+
+/**
+ * The `.RgHeader-user` component is a descendent of `.RgHeader`. 
+ */
+
+:root {
+    --RgHeader-user-background: var(--color-gray-tuna);
+    --RgHeader-userItem-color: var(--color-gray-tuna);
+    --RgHeader-user-width: 2em;
+}
+
+/**
+ * 1. Reset stacking order for `.RgHeader-user` subcomponent
+ */
+
+.RgHeader-user {
+    position: absolute;
+    right: var(--layout-gutter);
+    top: 2px;
+    width: var(--RgHeader-user-width);
+    z-index: 0; /* 1 */
+}
+
+/**
+ * 1. Preserve spacing during inactive state
+ */
+
+.RgHeader-userInner {
+    background: var(--color-gray-tuna) url("./images/person.svg") no-repeat 50% 6px;
+    border: 1px solid transparent; /* 1 */
+    border-bottom: 0;
+    display: block;
+    height: 1.5em;
+    text-align: center;
+    width: 100%;
+}
+
+/**
+ * 1. Move default outline from trigger to target
+ */
+
+.RgHeader-userInner:hover,
+.RgHeader-userInner:focus {
+    background: var(--color-white-alabaster) url("./images/person-hover.svg") no-repeat 50% 6px;
+    border: 1px solid var(--color-gray-ghost);
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+    outline: none; /* 1 */
+}
+
+/**
+ * 1. Move default cursor from trigger to target
+ * 2. Show items on `:focus` and `:hover`
+ * 3. Prevent individual items wrapping, so container expands to width of longest item
+ */
+
+.RgHeader-userItems {
+    background: var(--color-white-alabaster);
+    border: 1px solid var(--color-gray-ghost);
+    border-radius: 3px 0 3px 3px;
+    cursor: default; /* 1 */
+    line-height: 1;
+    margin-top: -1px;
+    position: absolute;
+    right: 0;
+    top: 1.5em;
+    visibility: hidden; /* 2 */
+    white-space: nowrap; /* 3 */
+    z-index: -1;
+}
+
+/**
+ * 1. Show items on `:focus` and `:hover`
+ */
+
+.RgHeader-user:hover .RgHeader-userItems,
+.RgHeader-user:focus .RgHeader-userItems {
+    visibility: visible; /* 1 */
+}
+
+/**
+ * 1. Move default outline from trigger to target
+ */
+
+.RgHeader-user:focus .RgHeader-userItems {
+    outline: 1px dotted;  /* 1 */
+}
+
+/**
+ * 1. Move default outline from trigger to target
+ */
+
+@supports (-webkit-appearance:none) {
+    .RgHeader-user:focus .RgHeader-userItems {
+        outline: 5px auto -webkit-focus-ring-color; /* 1 */
+    }
+}
+
+.RgHeader-userItem {
+    color: var(--RgHeader-userItem-color);
+    font-size: var(--font-size-small);
+    padding: 1em 0.5em 0;
+    text-align: right;
+}
+
+.RgHeader-userItem:last-child {
+    padding-bottom: 0.714285714em;
+}
+
+/**
+ * 1. Move default cursor from trigger to target
+ */
+
+.RgHeader-userItemInner {
+    cursor: pointer; /* 1 */
+    display: block;
+}
+
+@media (--md-viewport) {
+
+    .RgHeader-user {
+        top: 20px;
+    }
+
+}

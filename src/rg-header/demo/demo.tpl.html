@@ -1,0 +1,106 @@
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rg-header">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <rb-raw-html-display>
+                <p>
+                    The <code>rg-header</code> component should be used across all products. It consists of:
+                </p>
+                <ul>
+                    <li>
+                        A mandatory logo
+                    </li>
+                    <li>
+                        An optional <code>rb-nav-bar</code> subcomponent
+                    </li>
+                    <li>
+                        An optional <code>rb-user</code> subcomponent
+                    </li>
+                </ul>
+                <p>
+                    It must be enclosed within the primary page <code>rb-header</code> element.
+                </p>
+            <rb-raw-html-display>
+        </rb-section>
+        <rb-section heading="Default / Blue Modifier">
+            <rb-component-display>
+                <rb-header>
+                    <rg-header color="blue">
+                        <rg-header-item href="" is-active="true">Create</rg-header-item>
+                        <rg-header-item sref="">Distribute</rg-header-item>
+                        <rg-header-item sref="">Analyse</rg-header-item>
+                        <rg-header-user>
+                            <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
+                            <rg-header-user-item ng-click="demoCtrl.logout()">Sign out</rg-header-user-item>
+                        </rg-header-user>
+                    </rg-header>
+                </rb-header>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Green Modifier">
+            <rb-component-display>
+                <rb-header>
+                    <rg-header color="green">
+                        <rg-header-item href="">Create</rg-header-item>
+                        <rg-header-item sref="" is-active="true">Distribute</rg-header-item>
+                        <rg-header-item sref="">Analyse</rg-header-item>
+                        <rg-header-user>
+                            <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
+                            <rg-header-user-item ng-click="demoCtrl.logout()">Sign out</rg-header-user-item>
+                        </rg-header-user>
+                    </rg-header>
+                </rb-header>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Pink Modifier">
+            <rb-component-display>
+                <rb-header>
+                    <rg-header color="pink">
+                        <rg-header-item href="">Create</rg-header-item>
+                        <rg-header-item sref="">Distribute</rg-header-item>
+                        <rg-header-item sref="" is-active="true">Analyse</rg-header-item>
+                        <rg-header-user>
+                            <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
+                            <rg-header-user-item ng-click="demoCtrl.logout()">Sign out</rg-header-user-item>
+                        </rg-header-user>
+                    </rg-header>
+                </rb-header>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Logo and User Only">
+            <rb-component-display>
+                <rb-header>
+                    <rg-header>
+                        <rg-header-user>
+                            <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
+                            <rg-header-user-item ng-click="demoCtrl.logout()">Sign out</rg-header-user-item>
+                        </rg-header-user>
+                    </rg-header>
+                </rb-header>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Logo only">
+            <rb-component-display>
+                <rb-header>
+                    <rg-header>
+                    </rg-header>
+                </rb-header>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Composable User subcomponent">
+            <rb-component-display>
+                <rb-header>
+                    <!-- FIXME: don't hard-code colour modifier -->
+                    <rg-header>
+                        <rg-header-user>
+                            <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
+                            <rg-header-user-item ng-click="demoCtrl.logout()">Preferences</rg-header-user-item>
+                            <rg-header-user-item><rb-button ng-click="demoCtrl.logout()">Logout</rb-button></rg-header-user-item>
+                        </rg-header-user>
+                    </rg-header>
+                </rb-header>
+            </rb-component-display>
+        </rb-section>
+    </rb-main>
+</rb-site>

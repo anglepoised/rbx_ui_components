@@ -9,6 +9,9 @@ define([
      *
      * @restrict E
      *
+     * @deprecated
+     * Please use rg-header, which encompases functionality from this component.
+     *
      * @description
      * `<rb-header>` is a directive that shows a header
      *

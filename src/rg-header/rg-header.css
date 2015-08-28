@@ -1,0 +1,235 @@
+/** @define RgHeader; use strict */
+
+/**
+ * The `.RgHeader` component should be used across all products. It consists of:
+ *
+ * - A mandatory logo
+ * - An optional `.Navigation` subcomponent
+ * - An optional `.User` subcomponent
+ *
+ * Three mutually-exclusive colour modifiers are available.
+ */
+
+:root {
+    --RgHeader--blue-highlight-color: var(--color-brand-blue);
+    --RgHeader--green-highlight-color: var(--color-brand-green);
+    --RgHeader--pink-highlight-color: var(--color-brand-pink);
+    --RgHeader-background: var(--color-gray-tuna);
+    --RgHeader-color: var(--color-gray-ghost);
+    --RgHeader-highlight-color: var(--color-white-alabaster);
+    --RgHeader-nav-background-active: var(--color-gray-shark);
+    --RgHeader-nav-background-hover: var(--color-gray-shark);
+    --RgHeader-nav-color: var(--color-gray-ghost);
+    --RgHeader-nav-color-active: var(--color-white-alabaster);
+    --RgHeader-nav-color-hover: var(--color-white-alabaster);
+    --RgHeader-nav-is-active-arrow-size: var(0.25em);
+}
+
+/**
+ * 1. Set fallback highlight colour
+ * 2. Set explicit foreground colour
+ * 3. Linearize layout for small viewport
+ * 4. Allow absolute positioning of `.RgHeader-user` child
+ */
+
+.RgHeader {
+    background: var(--RgHeader-background);
+    border-bottom-color: var(--RgHeader-highlight-color); /* 1 */
+    border-bottom-style: solid;
+    border-bottom-width: 0.25em;
+    color: var(--RgHeader-color); /* 2 */
+    display: flex;
+    flex-direction: column; /* 3 */
+    position: relative; /* 4 */
+}
+
+/**
+ * 1. Set default logo so component is still usable with no modifier
+ * 2. Set global gutter (not set on parent container to avoid breaking `.Navigation.is-active` state)
+ * 3. Nudge down for fake centring and matching of `.RgHeader-user`
+ */
+
+.RgHeader-logo {
+    background-image: url("./images/logo-rockabox-blue.svg"); /* 1 */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 var(--layout-gutter); /* 2 */
+    margin-bottom: 0.5em; /* 3 */
+    margin-top: 0.5em; /* 3 */
+    min-height: 18px;
+    width: 100px;
+}
+
+/**
+ * Navigation
+ */
+
+
+.RgHeader-nav {
+    background: var(--RgHeader-nav-background);
+    font-size: var(--RgHeader-nav-font-size);
+}
+
+.RgHeader-navItems {
+    flex-direction: column;
+}
+
+.RgHeader-navItem {
+    display: flex;
+}
+
+/**
+ * 1. Set horizontal padding to match global gutter on small viewport
+ * 2. Stretch full width to support `:focus` and `:hover` state
+ */
+
+.RgHeader-navItemInner {
+    color: var(--RgHeader-nav-color);
+    cursor: pointer;
+    padding: 0 var(--layout-gutter); /* 1 */
+    text-decoration: none;
+    width: 100%; /* 2 */
+}
+
+.RgHeader-navItemInner:hover,
+.RgHeader-navItemInner:focus {
+    background: var(--RgHeader-nav-background-hover);
+    color: var(--RgHeader-nav-color-hover);
+}
+
+.RgHeader-navItemInner.is-active {
+    background: var(--RgHeader-nav-background-active);
+    color: var(--RgHeader-nav-color-active);
+}
+
+@media (--md-viewport) {
+
+    /**
+     * 1. Horizontal layout for medium+ viewports
+     * 2. Match design rhythm with consistent height
+     * 3. Stop other subcomponents flowing into `.RgHeader-user` subcomponent, using child width + (2 * gutter).
+     *    To spec, but triggers parser bug at W3C CSS Validator: https://www.w3.org/Bugs/Public/show_bug.cgi?id=18913
+     */
+
+    .RgHeader {
+        flex-direction: row; /* 1 */
+        min-height: 4.5em; /* 2 */
+        padding-right: calc(var(--RgHeader-user-width) + (2 * var(--layout-gutter))); /* 3 */
+    }
+
+    /**
+     * 1. Kill margin and switch to flex layout for vertical centering of content
+     */
+
+    .RgHeader-logo {
+        display: flex;
+        flex-direction: column; /* 1 */
+        justify-content: center; /* 1 */
+        margin-bottom: 0; /* 1 */
+        margin-top: 0; /* 1 */
+    }
+
+    /**
+     * 1. Horizontal and full-height stretch layout for medium+ viewports
+     */
+
+    .RgHeader-navItems {
+        align-items: stretch; /* 1 */
+        display: flex; /* 1 */
+        flex-direction: row; /* 1 */
+        justify-content: flex-start;
+    }
+
+    .RgHeader-navItem {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /**
+     * 1. Vertically centre content
+     * 2. Prevent wrapping and avoid alignment issues
+     */
+
+    .RgHeader-navItemInner {
+        min-height: 4.25em; /* 1 */
+        padding: 1.6em 1.875em 1.4em; /* 1 */
+        text-align: center;
+        white-space: nowrap; /* 2 */
+        width: 100%;
+    }
+
+    /**
+     * 1. Allow absolute positioning of `.is-active` state
+     */
+
+    .RgHeader-navItemInner.is-active {
+        position: relative; /* 1 */
+    }
+
+    /**
+     * 1. Set `.is-active` arrow background colour
+     * 2. Active indicator left arrow slant
+     * 4. Active indicator right arrow slant
+     */
+
+    .RgHeader-navItemInner.is-active::after {
+        border-bottom: var(--RgHeader-nav-is-active-arrow-size) solid var(--RgHeader-highlight-color); /* 1 */
+        border-left: var(--RgHeader-nav-is-active-arrow-size) solid var(--color-transparent); /* 2 */
+        border-right: var(--RgHeader-nav-is-active-arrow-size) solid var(--color-transparent); /* 3 */
+        bottom: 0;
+        content: "";
+        height: 0;
+        left: calc(50% - var(--RgHeader-nav-is-active-arrow-size));
+        position: absolute;
+        width: 0;
+    }
+
+}
+
+/**
+ * Blue modifier
+ */
+
+.RgHeader--blue {
+    border-bottom-color: var(--RgHeader--blue-highlight-color);
+}
+
+.RgHeader--blue .RgHeader-logo {
+    background-image: url("./images/logo-rockabox-blue.svg");
+}
+
+.RgHeader--blue .RgHeader-navItemInner.is-active::after {
+    border-bottom-color: var(--RgHeader--blue-highlight-color);
+}
+
+/**
+ * Green modifier
+ */
+
+.RgHeader--green {
+    border-bottom-color: var(--RgHeader--green-highlight-color);
+}
+
+.RgHeader--green .RgHeader-logo {
+    background-image: url("./images/logo-rockabox-green.svg");
+}
+
+.RgHeader--green .RgHeader-navItemInner.is-active::after {
+    border-bottom-color: var(--RgHeader--green-highlight-color);
+}
+
+/**
+ * Pink modifier
+ */
+
+.RgHeader--pink {
+    border-bottom-color: var(--RgHeader--pink-highlight-color);
+}
+
+.RgHeader--pink .RgHeader-logo {
+    background-image: url("./images/logo-rockabox-pink.svg");
+}
+
+.RgHeader--pink .RgHeader-navItemInner.is-active::after {
+    border-bottom-color: var(--RgHeader--pink-highlight-color);
+}

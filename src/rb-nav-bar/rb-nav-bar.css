@@ -1,6 +1,8 @@
 /** @define Navigation; use strict */
 
 /**
+ * DEPRECATED. Please use rg-header, which encompases functionality from this component.
+ *
  * The `.Navigation` component is a subcomponent of `.PageHeader`.
  *
  * Links in this component should point to the root pages of discrete applications.
@@ -12,6 +14,7 @@
 
 :root {
     --Navigation-background: var(--color-gray-tuna);
+    --Navigation-background-active: var(--color-gray-shark);
     --Navigation-background-hover: var(--color-gray-shark);
     --Navigation-color: var(--color-gray-ghost);
     --Navigation-color-active: var(--color-white-alabaster);
@@ -62,6 +65,7 @@
 }
 
 .Navigation-itemInner.is-active {
+    background: var(--Navigation-background-active);
     color: var(--Navigation-color-active);
 }
 
