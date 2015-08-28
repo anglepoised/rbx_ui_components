@@ -9,6 +9,7 @@
  */
 
 :root {
+    --Loading--large-spinner-dimensions: 5.857142857em;
     --Loading-spinner-color: var(--color-green-base);
     --Loading-spinner-dimensions: 2em;
     --Loading-spinner-line-width: 0.125em;
@@ -35,4 +36,13 @@
     height: var(--Loading-spinner-dimensions);
     margin: var(--Loading-spinner-line-width);
     width: var(--Loading-spinner-dimensions);
+}
+
+/**
+ * Large modifier
+ */
+
+.Loading--large .Loading-spinner {
+    height: var(--Loading--large-spinner-dimensions);
+    width: var(--Loading--large-spinner-dimensions);
 }
