@@ -75,6 +75,10 @@
     opacity: 1; /* 2 */
 }
 
+.RgTextControl-field:-moz-ui-invalid {
+    box-shadow: none;
+}
+
 .RgTextControl-field:focus,
 .RgTextControl-field.is-focused {
     border-color: var(--RgTextControl-field-focus-border-color);
