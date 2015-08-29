@@ -7,11 +7,12 @@
             <div class="LoginForm-control">
                 <rg-text-control
                     form="loginForm"
-                    label="Email">
+                    label="Email"
+                    ng-model="emailModel">
                     <input type="email"
                            name="email"
                            placeholder="Email"
-                           ng-model="emailModel"
+                           ng-model="$parent.ngModel"
                            ng-required="true"
                            custom-validation>
                 </rg-text-control>
@@ -19,11 +20,12 @@
             <div class="LoginForm-control">
                 <rg-text-control
                     form="loginForm"
-                    label="Password">
+                    label="Password"
+                    ng-model="passwordModel">
                     <input type="password"
                            name="password"
                            placeholder="Password"
-                           ng-model="passwordModel"
+                           ng-model="$parent.ngModel"
                            ng-required="true">
                 </rg-text-control>
             </div>

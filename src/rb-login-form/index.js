@@ -2,10 +2,10 @@ define([
     '../rb-button',
     '../rb-icon',
     '../rb-form-message',
-    '../rb-text-control',
+    '../rg-text-control',
     './rb-login-form-directive',
     './rb-login-form.css'
-], function (rbButton, rbIcon, rbFormMessage, rbTextControl, rbLoginFormDirective, css) {
+], function (rbButton, rbIcon, rbFormMessage, rgTextControl, rbLoginFormDirective, css) {
     /**
      * @ngdoc module
      * @name rb-login-form
@@ -19,7 +19,7 @@ define([
             rbButton.name,
             rbIcon.name,
             rbFormMessage.name,
-            rbTextControl.name
+            rgTextControl.name
         ])
         .directive('rbLoginForm', rbLoginFormDirective);
 
