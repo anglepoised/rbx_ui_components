@@ -27,6 +27,7 @@ define([
                 helpMessage: '@',
                 form: '=',
                 numberSteps: '@',
+                ngModel: '=?',
                 small: '@',
                 type: '@'
             },
