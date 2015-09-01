@@ -19,6 +19,7 @@
 .RadioControl--row .RadioControl-items {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .RadioControl--row .RadioControl-item {
