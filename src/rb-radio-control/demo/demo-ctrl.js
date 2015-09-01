@@ -67,7 +67,7 @@ define([
         this.selected = 'radio_checked';
 
         this.choicesRow = [];
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 2; i++) {
             this.choicesRow.push({
                 label: 'Radio label ' + (i + 1),
                 value: 'radio_label_' + (i + 1)
