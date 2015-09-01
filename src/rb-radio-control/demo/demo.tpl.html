@@ -44,17 +44,33 @@
                 </form>
             </rb-component-display>
         </rb-section>
-        <rb-section heading="Icon Modifier">
+        <rb-section heading="Domain Targeting Choice Example">
             <rb-component-display>
-                <form name="iconRadioForm">
+                <form name="domainTargetingChoiceForm">
                     <rb-radio-control
-                        choices="demoCtrl.iconChoices"
-                        ng-model="demoCtrl.selectedIcon"
-                        form="iconRadioForm"
-                        name="ng-radio--icon">
+                        choices="demoCtrl.domainTargetingChoices"
+                        ng-model="demoCtrl.selectedDomain"
+                        form="domainTargetingChoiceForm"
+                        is-row=true
+                        name="domainTargetingChoices">
                     </rb-radio-control>
 
-                    Model: {{ demoCtrl.selectedIcon }}
+                    Model: {{ demoCtrl.selectedDomain }}
+                </form>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Visibility Choice Example">
+            <rb-component-display>
+                <form name="visibilityChoiceForm">
+                    <rb-radio-control
+                        choices="demoCtrl.visibilityChoices"
+                        ng-model="demoCtrl.selectedVisibility"
+                        form="visibilityChoiceForm"
+                        is-row=true
+                        name="visibilityChoices">
+                    </rb-radio-control>
+
+                    Model: {{ demoCtrl.selectedVisibility }}
                 </form>
             </rb-component-display>
         </rb-section>

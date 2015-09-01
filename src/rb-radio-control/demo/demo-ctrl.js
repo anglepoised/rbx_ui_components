@@ -28,16 +28,39 @@ define([
             }
         ];
 
-        this.iconChoices = [
+        this.domainTargetingChoices = [
             {
-                label: 'Radio with blacklist icon',
-                value: 'blacklist',
-                icon: 'blacklist'
+                label: 'Unrestricted',
+                value: 'unrestricted',
+                icon: 'unrestricted'
             },
             {
-                label: 'Radio with whitelist icon',
+                label: 'White List Only',
                 value: 'whitelist',
                 icon: 'whitelist'
+            },
+            {
+                label: 'Black List Only',
+                value: 'blacklist',
+                icon: 'blacklist'
+            }
+        ];
+
+        this.visibilityChoices = [
+            {
+                label: 'Anywhere',
+                value: 'anywhere',
+                icon: 'anywhere'
+            },
+            {
+                label: 'Above the fold',
+                value: 'above',
+                icon: 'above'
+            },
+            {
+                label: 'Below the fold',
+                value: 'below',
+                icon: 'below'
             }
         ];
 
