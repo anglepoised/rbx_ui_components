@@ -1,4 +1,6 @@
 <div class="UploadStatus {{ modifier }}">
-    <div class="UploadStatus-icon"></div>
+    <div class="UploadStatus-icon">
+        <rb-loading ng-if="loading" size="large" hide-text="true"></rb-loading>
+    </div>
     <div class="UploadStatus-message" ng-transclude></div>
 </div>

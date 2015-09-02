@@ -38,5 +38,14 @@ define([
 
             expect(angular.element(element).text()).toContain('Hi there');
         });
+
+        it('should use the rb-loading component when processing modifier used', function () {
+            template = '<rb-upload-status modifier="processing">We are processing</rb-upload-status>';
+            compileTemplate(template);
+
+            var ele = element[0].getElementsByClassName('Loading');
+
+            expect(ele.length).toBe(1);
+        });
     });
 });
