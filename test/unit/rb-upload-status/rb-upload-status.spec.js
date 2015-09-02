@@ -25,11 +25,18 @@ define([
             };
         }));
 
-        describe('', function () {
-            it('should ', function () {
-                compileTemplate('<rb-upload-status></rb-upload-status>');
-            });
+        it('should attach a modifier', function () {
+            template = '<rb-upload-status modifier="fail"></rb-upload-status>';
+            compileTemplate(template);
+
+            expect(angular.element(element).hasClass('UploadStatus--fail')).toBeTruthy();
         });
 
+        it('should pass through text', function () {
+            template = '<rb-upload-status modifier="fail">Hi there</rb-upload-status>';
+            compileTemplate(template);
+
+            expect(angular.element(element).text()).toContain('Hi there');
+        });
     });
 });

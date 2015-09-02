@@ -25,8 +25,16 @@ define([
             scope: {
             },
             restrict: 'E',
+            transclude: true,
             replace: true,
-            template: template
+            template: template,
+            link: function (scope, ele, attrs) {
+                scope.modifier = '';
+
+                if (angular.isDefined(attrs.modifier)) {
+                    scope.modifier = 'UploadStatus--' + attrs.modifier;
+                }
+            }
         };
     }
 
