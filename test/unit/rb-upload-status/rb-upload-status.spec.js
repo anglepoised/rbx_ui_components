@@ -25,11 +25,27 @@ define([
             };
         }));
 
-        describe('', function () {
-            it('should ', function () {
-                compileTemplate('<rb-upload-status></rb-upload-status>');
-            });
+        it('should attach a modifier', function () {
+            template = '<rb-upload-status modifier="fail"></rb-upload-status>';
+            compileTemplate(template);
+
+            expect(angular.element(element).hasClass('UploadStatus--fail')).toBeTruthy();
         });
 
+        it('should pass through text', function () {
+            template = '<rb-upload-status modifier="fail">Hi there</rb-upload-status>';
+            compileTemplate(template);
+
+            expect(angular.element(element).text()).toContain('Hi there');
+        });
+
+        it('should use the rb-loading component when processing modifier used', function () {
+            template = '<rb-upload-status modifier="processing">We are processing</rb-upload-status>';
+            compileTemplate(template);
+
+            var ele = element[0].getElementsByClassName('Loading');
+
+            expect(ele.length).toBe(1);
+        });
     });
 });
