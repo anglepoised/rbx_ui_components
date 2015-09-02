@@ -32,5 +32,25 @@ define([
 
             expect(angular.element(ele).text()).toContain('Loading Teams');
         });
+
+        describe('size modifier', function () {
+            it('should set no modifier', function () {
+                template = '<rb-loading item-label="Teams" size=""></rb-loading>';
+                ele = $compile(template)($scope);
+
+                $scope.$apply();
+
+                expect(angular.element(ele).hasClass('Loading--large')).toBeFalsy();
+            });
+
+            it('should set it to large', function () {
+                template = '<rb-loading item-label="Teams" size="large"></rb-loading>';
+                ele = $compile(template)($scope);
+
+                $scope.$apply();
+
+                expect(angular.element(ele).hasClass('Loading--large')).toBeTruthy();
+            });
+        });
     });
 });
