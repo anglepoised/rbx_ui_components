@@ -33,12 +33,6 @@ define([
             isolatedScope.$digest();
         }));
 
-        describe('icon', function () {
-            it('should be set by the icon attr', function () {
-                expect(element.html()).toContain('Icon--white-alabaster-175-logo-rockabox');
-            });
-        });
-
         describe('email input', function () {
             it('should bind to email model', function () {
                 recompile({email: 'test@test.com'});
