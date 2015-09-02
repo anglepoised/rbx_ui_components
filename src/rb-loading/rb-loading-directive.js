@@ -29,9 +29,14 @@ define([
             template: template,
             link: function (scope, elem, attr) {
                 scope.size = false;
+                scope.hideText = false;
 
                 if (angular.isDefined(attr.size)) {
                     scope.size = attr.size;
+                }
+
+                if (angular.isDefined(attr['hideText'])) {
+                    scope.hideText = attr.hideText;
                 }
             }
         };
