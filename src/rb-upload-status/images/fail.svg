@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="82px" height="82px" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="5.Upload-Fail" sketch:type="MSArtboardGroup" transform="translate(-559.000000, -205.000000)">
+            <g id="Icon" sketch:type="MSLayerGroup" transform="translate(560.000000, 206.000000)">
+                <path d="M79.334,59.535 C79.334,70.5816667 70.374,79.535 59.334,79.535 C48.284,79.535 39.334,70.5816667 39.334,59.535 C39.334,48.4916667 48.284,39.535 59.334,39.535 C70.374,39.535 79.334,48.4916667 79.334,59.535 L79.334,59.535 Z" id="Stroke-169" stroke="#D54F4F" stroke-width="2" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M50.33,68.5356667 L68.33,50.539" id="Stroke-170" stroke="#D54F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M68.3313333,68.5356667 L50.3313333,50.539" id="Stroke-171" stroke="#D54F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M36.9159398,77.2381554 L0.301322751,77.2381554 L0.301322751,0.518578644 L45.6337058,0.518578644 L59.5821313,14.4675926 L59.5821313,30.1602333" id="Stroke-155" stroke="#8D96A3" stroke-width="2" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M28.1993506,0.518578644 L28.1993506,7.49308562 L31.6866041,7.49308562 L31.6866041,24.9293531 L21.2248437,24.9293531 L21.2248437,7.49308562" id="Stroke-156" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M24.7120972,31.5151515 L28.1993506,31.5151515" id="Stroke-157" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M24.7120972,38.7878788 L28.1993506,38.7878788" id="Stroke-158" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M24.7120972,45.2525253 L28.1993506,45.2525253" id="Stroke-159" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M24.7120972,52.5252525 L28.1993506,52.5252525" id="Stroke-160" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M24.7120972,59.7979798 L28.1993506,59.7979798" id="Stroke-161" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M24.7120972,66.2626263 L28.1993506,66.2626263" id="Stroke-162" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M28.1993506,34.7474747 L31.6866041,34.7474747" id="Stroke-163" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M28.1993506,42.020202 L31.6866041,42.020202" id="Stroke-164" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M28.1993506,49.2929293 L31.6866041,49.2929293" id="Stroke-165" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M28.1993506,55.7575758 L31.6866041,55.7575758" id="Stroke-166" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M28.1993506,63.030303 L31.6866041,63.030303" id="Stroke-167" stroke="#8D96A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+                <path d="M26.4567701,16.2094757 L22.9695166,16.2094757 L22.9695166,19.6967292 L26.4567701,19.6967292 L26.4567701,16.2094757 Z" id="Fill-168" fill="#8D96A3" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

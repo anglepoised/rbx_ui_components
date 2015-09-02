@@ -47,6 +47,7 @@ define([
     'ui-components/rb-system-message/demo',
     'ui-components/rb-tabs/demo',
     'ui-components/rb-text-control/demo',
+    'ui-components/rb-upload-status/demo',
     'ui-components/rb-warning-messages/demo',
     'ui-components/rg-text-control/demo',
     'rbx_style_guide'
@@ -99,6 +100,7 @@ define([
     rbSystemMessageDemo,
     rbTabsDemo,
     rbTextControlDemo,
+    rbUploadStatusDemo,
     rbWarningMessagesDemo,
     rgTextControlDemo,
     css
@@ -153,6 +155,7 @@ define([
             rbSystemMessageDemo.name,
             rbTabsDemo.name,
             rbTextControlDemo.name,
+            rbUploadStatusDemo.name,
             rbWarningMessagesDemo.name,
             rgTextControlDemo.name
         ])
