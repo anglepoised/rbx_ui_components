@@ -34,7 +34,7 @@
     <div class="CheckControlGroup-body" ng-if="isDeviceChoice">
         <div ng-repeat="(key, value) in options">
             <rb-check-control
-                name="check-control-icon"
+                name="check-control-icon-{{::value.value}}"
                 label="{{::value.label}}"
                 icon="{{::value.value | lowercase}}"
                 ng-model="value.checked">
