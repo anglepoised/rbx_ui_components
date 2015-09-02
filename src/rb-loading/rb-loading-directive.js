@@ -13,7 +13,7 @@ define([
      *
      * @usage
      * <hljs lang="html">
-     *    <rb-loading item-label="People"></rb-loading>
+     *    <rb-loading item-label="People" ></rb-loading>
      * </hljs>
      *
      * @ngInject
@@ -26,7 +26,19 @@ define([
             },
             restrict: 'E',
             replace: true,
-            template: template
+            template: template,
+            link: function (scope, elem, attr) {
+                scope.size = false;
+                scope.hideText = false;
+
+                if (angular.isDefined(attr.size)) {
+                    scope.size = attr.size;
+                }
+
+                if (angular.isDefined(attr['hideText'])) {
+                    scope.hideText = attr.hideText;
+                }
+            }
         };
     }
 
