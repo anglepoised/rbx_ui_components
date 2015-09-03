@@ -10,7 +10,7 @@ define([
                 {'id': '37', 'text': 'Footer Link 2'},
                 {'id': '41', 'text': 'Footer Link 3'}
             ],
-            _copyright = 'Copyright 2015 Rockabox Limited',
+            _copyright = 'Copyright 2015 Scoota Limited',
             _clickfunction = function (id) {
                 return id;
             },
