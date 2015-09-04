@@ -22,3 +22,14 @@
     flex-direction: column;
     overflow-y: auto;
 }
+
+/**
+ * No Scroll Modifier
+ *
+ * Lets anything in middle manage it's own scrolling.
+ */
+
+.RgSite--noScroll .RgSite-middle {
+    overflow: hidden;
+    outline: 5px solid blue;
+}

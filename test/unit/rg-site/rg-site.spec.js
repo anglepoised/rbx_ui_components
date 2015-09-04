@@ -31,5 +31,24 @@ define([
             });
         });
 
+        describe('no scroll attribute on site', function () {
+            it('should attach a no scroll modifier to rg-site not passed', function () {
+                compileTemplate('<rg-site></rg-site>');
+
+                expect(element.hasClass('RgSite--noScroll')).toBeFalsy();
+            });
+
+            it('should attach a no scroll modifier to rg-site passed as false', function () {
+                compileTemplate('<rg-site no-scroll="false"></rg-site>');
+
+                expect(element.hasClass('RgSite--noScroll')).toBeFalsy();
+            });
+
+            it('should attach a scroll modifier to rg-site', function () {
+                compileTemplate('<rg-site no-scroll="true"></rg-site>');
+
+                expect(element.hasClass('RgSite--noScroll')).toBeTruthy();
+            });
+        });
     });
 });
