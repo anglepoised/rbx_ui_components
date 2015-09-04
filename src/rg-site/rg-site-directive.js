@@ -29,7 +29,14 @@ define([
             restrict: 'E',
             replace: true,
             transclude: true,
-            template: template
+            template: template,
+            link: function (scope, ele, attrs) {
+                scope.noScroll = false;
+
+                if (angular.isDefined(attrs.noScroll)) {
+                    scope.noScroll = attrs.noScroll;
+                }
+            }
         };
     }
 
