@@ -1,7 +1,6 @@
 define([
-    'html!./rg-header-item.tpl.html',
-    'ui-components/utils/transclude-attrs'
-], function (template, transcludeAttrs) {
+    'html!./rg-header-item.tpl.html'
+], function (template) {
 
     /**
      * @ngdoc directive
@@ -24,10 +23,10 @@ define([
 
         return {
             scope: {
-                isActive: '@'
-            },
-            link: function (scope, elem, attrs) {
-                transcludeAttrs(elem, attrs, ['ui-sref', 'href']);
+                rgUiSref: '@',
+                isActive: '@',
+                href: '@',
+                target: '@'
             },
             restrict: 'E',
             replace: true,

@@ -17,6 +17,9 @@
                     <li>
                         An optional <code>rb-user</code> subcomponent
                     </li>
+                    <li>
+                        The <code>rg-header-item</code> may contain an href or rg-ui-sref (resolved to ui-sref) property and an optional target attribute.
+                    </li>
                 </ul>
                 <p>
                     It must be enclosed within the primary page <code>rb-header</code> element.
@@ -27,9 +30,9 @@
             <rb-component-display>
                 <rb-header>
                     <rg-header color="blue">
-                        <rg-header-item href="" is-active="true">Create</rg-header-item>
-                        <rg-header-item sref="">Distribute</rg-header-item>
-                        <rg-header-item sref="">Analyse</rg-header-item>
+                        <rg-header-item is-active="true">Create</rg-header-item>
+                        <rg-header-item href="/" target="_self">Distribute</rg-header-item>
+                        <rg-header-item>Analyse</rg-header-item>
                         <rg-header-user>
                             <rg-header-user-item>Steve "Hats" Wozniak</rg-header-user-username>
                             <rg-header-user-item ng-click="demoCtrl.logout()">Sign out</rg-header-user-item>

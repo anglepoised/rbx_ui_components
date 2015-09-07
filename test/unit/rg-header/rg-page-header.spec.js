@@ -21,6 +21,7 @@ define([
                 $scope.$apply();
                 expect(pageHeader[0].hasAttribute('anyattr')).toBe(true);
                 expect(pageHeader[0].hasAttribute('any-attr')).toBe(true);
+                expect(pageHeader[0].hasAttribute('wrong-attr')).toBe(false);
             });
 
         describe('rendering', function () {

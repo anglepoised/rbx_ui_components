@@ -1,4 +1,18 @@
 <li class="RgHeader-navItem">
-    <a class="RgHeader-navItemInner" ng-transclude ng-class="{'is-active': isActive === 'true'}">
+    <a  class="RgHeader-navItemInner"
+        ng-if="!rgUiSref"
+        ui-sref-active="is-active"
+        ng-class="{'is-active' : isActive}"
+        ng-attr-target="{{target || undefined}}"
+        href="{{href}}"
+        ng-transclude>
+    </a>
+    <a  class="RgHeader-navItemInner"
+        ng-if="rgUiSref"
+        ui-sref="{{rgUiSref}}"
+        ui-sref-active="is-active"
+        ng-class="{'is-active' : isActive}"
+        ng-attr-target="{{target || undefined}}"
+        ng-transclude>
     </a>
 </li>
