@@ -2,7 +2,7 @@
     <a  class="RgHeader-navItemInner"
         ng-if="!rgUiSref"
         ui-sref-active="is-active"
-        ng-class="{'is-active' : isActive}"
+        ng-class="{'is-set-active' : isActive==='true'}"
         ng-attr-target="{{target || undefined}}"
         href="{{href}}"
         ng-transclude>
@@ -11,7 +11,7 @@
         ng-if="rgUiSref"
         ui-sref="{{rgUiSref}}"
         ui-sref-active="is-active"
-        ng-class="{'is-active' : isActive}"
+        ng-class="{'is-set-active' : isActive==='true'}"
         ng-attr-target="{{target || undefined}}"
         ng-transclude>
     </a>
