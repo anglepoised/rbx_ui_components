@@ -8,12 +8,13 @@
 
 /**
  * 1. Force height to 100% of viewport.
+ * 2. Force footer to be always visible.
  */
 
 .RgSite {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* 1 */
+    min-height: 100vh; /* 1 */
 }
 
 .RgSite-middle {
@@ -21,6 +22,13 @@
     flex: 1;
     flex-direction: column;
     overflow-y: auto;
+}
+
+.RgSite-bottom {
+    /* 2 */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /**
