@@ -17,11 +17,11 @@
 }
 
 .LoginForm-icon {
-    background: url("./images/logo-rockabox.svg") no-repeat;
+    background: url("./images/logo-scoota-blue.svg") no-repeat;
     margin: 0 2.75em 2.25em;
     text-align: center;
-    width: 175px;
-    height: 30px;
+    width: 100px;
+    height: 22px;
 }
 
 .LoginForm-control {
