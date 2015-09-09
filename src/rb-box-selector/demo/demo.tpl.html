@@ -1,0 +1,55 @@
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rb-box-selector">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <rb-raw-html-display>
+                <p>
+                    The <code>rb-box-selector</code> component
+                </p>
+                 <p>
+                    The component expects an array of objects containing a <code>title</code>, <code>body</code>, and <code>value</code> key.
+                </p>
+                <p>
+                    The component has an optional <code>label</code> and <code>required</code> field.
+                </p>
+                <p>
+                    The component is optimised for <strong>1</strong> to <strong>5</strong> options at present.
+                </p>
+            </rb-raw-html-display>
+        </rb-section>
+        <rb-section heading="Default">
+            <h4>With 3 items</h4>
+            <rb-component-display>
+                <rb-box-selector
+                    label="a label"
+                    selections="demoCtrl.selections"
+                    required="true"
+                    ng-model="demoCtrl.demoModel"></rb-box-selector>
+                <div>
+                    <br>
+                    selection value: {{demoCtrl.demoModel}}
+                </div>
+            </rb-component-display>
+
+            <h4>With 4 items</h4>
+            <rb-component-display>
+                 <rb-box-selector label="Label" selections="demoCtrl.selections2" ng-model="demoCtrl.demoModel2" required="true"></rb-box-selector>
+                 <div>
+                    <br>
+                    selection value: {{demoCtrl.demoModel2}}
+                </div>
+            </rb-component-display>
+
+            <h4>With 5 items</h4>
+            <rb-component-display>
+                 <rb-box-selector selections="demoCtrl.selections3" ng-model="demoCtrl.demoModel3"></rb-box-selector>
+                 <div>
+                    <br>
+                    selection value: {{demoCtrl.demoModel3}}
+                </div>
+            </rb-component-display>
+        </rb-section>
+    </rb-main>
+</rb-site>
+

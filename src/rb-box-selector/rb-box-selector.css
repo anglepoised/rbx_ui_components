@@ -1,0 +1,64 @@
+/** @define rbBoxSelector; use strict */
+
+/**
+ * The `.rbBoxSelector` component allows you to click and select a box
+ */
+
+:root {
+    --rbBoxSelector-background: var(--color-white-alabaster);
+    --rbBoxSelector-background-active: var(--color-green-accent);
+    --rbBoxSelector-border-color: var(--color-gray-mystic);
+    --rbBoxSelector-border-color-active: var(--color-green-base);
+    --rbBoxSelector-padding: 1em;
+    --rbBoxSelector-margin: 0 0.5em;
+    --rbBoxSelector-border-radius: 5px;
+    --rbBoxSelector-item-body: var(--color-gray-regent);
+    --rbBoxSelector-required-color: var(--color-orange-base);
+}
+
+/**
+ * 1. Comment
+ */
+
+.BoxSelector {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: no-wrap;
+    -ms-flex-wrap: no-wrap;
+    flex-wrap: no-wrap;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.BoxSelector-item {
+    border: 2px solid var(--rbBoxSelector-border-color);
+    background: var(--rbBoxSelector-background);
+    padding: var(--rbBoxSelector-padding);
+    border-radius: var(--rbBoxSelector-border-radius);
+    margin: var(--rbBoxSelector-margin);
+    flex-grow: 1;
+}
+
+.BoxSelector-item:hover {
+    cursor: pointer;
+    border-color: var(--rbBoxSelector-border-color-active);
+}
+
+.BoxSelector-item-body {
+    color: var(--rbBoxSelector-item-body);
+}
+
+.BoxSelector-item.is-active {
+    background: var(--rbBoxSelector-background-active);
+    border-color: var(--rbBoxSelector-border-color-active);
+}
+
+.BoxSelector-is-required {
+    top: -2px;
+    font-size: 1.5rem;
+    position: relative;
+    color: var(--rbBoxSelector-required-color);
+}
+
