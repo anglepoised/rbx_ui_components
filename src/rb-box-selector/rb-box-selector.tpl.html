@@ -1,0 +1,15 @@
+<div>
+    <label ng-if="::label" class="u-textLabel">
+        {{::label}}
+        <span ng-if="::required === true" class="BoxSelector-is-required">&bull;</span>
+    </label>
+    <ul class="BoxSelector">
+        <li class="BoxSelector-item"
+            ng-repeat="selection in selections track by selection.value"
+            ng-class="{'is-active' : ngModel.value === selection.value}"
+            ng-click="select(selection)">
+            <div class="BoxSelector-item-title">{{::selection.title}}</div>
+            <div class="BoxSelector-item-body">{{::selection.body}}</div>
+        </li>
+    </ul>
+</div>

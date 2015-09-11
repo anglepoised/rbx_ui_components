@@ -52,6 +52,7 @@ define([
     'ui-components/rg-header/demo',
     'ui-components/rg-site/demo',
     'ui-components/rg-text-control/demo',
+    'ui-components/rb-box-selector/demo',
     'rbx_style_guide'
 ], function (
     uiRouter,
@@ -107,6 +108,7 @@ define([
     rgHeaderDemo,
     rgSiteDemo,
     rgTextControlDemo,
+    rbBoxSelectorDemo,
     css
 ) {
     // @ngInject
@@ -163,7 +165,8 @@ define([
             rbWarningMessagesDemo.name,
             rgHeaderDemo.name,
             rgSiteDemo.name,
-            rgTextControlDemo.name
+            rgTextControlDemo.name,
+            rbBoxSelectorDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
