@@ -102,6 +102,28 @@
 }
 
 /**
+ * Datetime modifier
+ */
+
+.Fieldset--datetime .Fieldset-title {
+    background-image: url("./images/datetime.svg");
+    background-position: var(--Fieldset-title-background-position);
+    background-repeat: no-repeat;
+    padding-left: 32px;
+}
+
+/**
+ * DSP modifier
+ */
+
+.Fieldset--dsp .Fieldset-title {
+    background-image: url("./images/dsp.svg");
+    background-position: var(--Fieldset-title-background-position);
+    background-repeat: no-repeat;
+    padding-left: 32px;
+}
+
+/**
  * Finance modifier
  */
 
