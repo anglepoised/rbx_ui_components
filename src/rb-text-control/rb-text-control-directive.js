@@ -49,7 +49,8 @@ define([
                 numberSteps: '@',
                 small: '@',
                 onChange: '&',
-                modelOptions: '@'
+                modelOptions: '@',
+                maxDigits: '@'
             },
             restrict: 'E',
             replace: true,

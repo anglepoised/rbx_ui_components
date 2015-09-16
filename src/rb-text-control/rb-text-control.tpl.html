@@ -78,6 +78,9 @@
         <div class="TextControl-message is-invalid" ng-if="form[name].$error.tooManyDigits">
             Ensure that there are no more than 18 digits before the decimal point.
         </div>
+        <div class="TextControl-message is-invalid" ng-if="form[name].$error.maxDigits">
+            Ensure that there are no more than {{maxDigits}} digits before the decimal point.
+        </div>
     </div>
 
 </div>
