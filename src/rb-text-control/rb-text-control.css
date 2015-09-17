@@ -97,7 +97,7 @@
     color: var(--TextControl-label-invalid-color);
 }
 
-.TextControl-field:invalid:focus,
+.TextControl-field.is-touched:invalid:focus,
 .TextControl-field.is-invalid {
     border-color: var(--TextControl-field-invalid-border-color);
 }
@@ -211,7 +211,7 @@
     background-position: var(--TextControl-field-type-image-position), var(--TextControl-field-required-image-position);
 }
 
-.TextControl--currency .TextControl-field:focus:required:invalid {
+.TextControl--currency .TextControl-field.is-touched:focus:required:invalid {
     background-image: url(var(--TextControl--currency-field-invalid-image)), url(var(--TextControl-field-required-invalid-image));
     background-position: var(--TextControl-field-type-image-position), var(--TextControl-field-required-image-position);
 }
