@@ -44,6 +44,19 @@ define([
                         return result;
                     };
 
+                } if (scope.maxDigits) {
+                    ctrl.$validators.maxDigits = function (modelValue, viewValue) {
+                        var wholeNumberDigits, result;
+                        if (!modelValue) {
+                            wholeNumberDigits = 0;
+                        } else if (modelValue.toString().split('e+').length > 1) {
+                            wholeNumberDigits = modelValue.toString().split('e+')[1];
+                        } else {
+                            wholeNumberDigits = modelValue.toString().split('.')[0].length;
+                        }
+                        result = ctrl.$isEmpty(modelValue) || (wholeNumberDigits <= scope.maxDigits);
+                        return result;
+                    };
                 }
             }
         };
