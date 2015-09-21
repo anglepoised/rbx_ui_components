@@ -11,6 +11,18 @@ define([
             compileTemplate;
 
         beforeEach(angular.mock.module(rbSideNav.name));
+        beforeEach(angular.mock.module(function ($provide) {
+            // mock the entire $state provider
+            $provide.provider('$state', function () {
+                return {
+                    $get: function () {
+                        return {
+                            params: {}
+                        };
+                    }
+                };
+            });
+        }));
 
         beforeEach(inject(function (_$compile_, _$rootScope_) {
             $rootScope = _$rootScope_;

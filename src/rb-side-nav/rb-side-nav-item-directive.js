@@ -34,11 +34,12 @@ define([
      *
      * @ngInject
      */
-    function rbSideNavItemDirective () {
+    function rbSideNavItemDirective ($state) {
 
         return {
             scope: {
                 active: '=',
+                isActive: '@',
                 count: '=',
                 invalid: '=',
                 icon: '@',
@@ -48,7 +49,13 @@ define([
             },
             restrict: 'E',
             replace: true,
-            template: template
+            template: template,
+            link: function (scope) {
+                if ($state.current && scope.uiSref === $state.current.name) {
+                    // weird bug **created isActive to not conflict with existing active functionality
+                    scope.isActive = true;
+                }
+            }
         };
     }
 
