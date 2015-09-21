@@ -31,8 +31,8 @@
         bs-timepicker>
 
     <div class="DatetimeControl-inherit" ng-show="inheritDatetime">
-        <input ng-model="inheritModel" type="checkbox" ng-disabled="{{ isDisabled }}">
-        <label>{{ inheritLabel }}</label>
+        <input ng-model="inheritModel" id="{{::dateName}}" type="checkbox" ng-disabled="{{ isDisabled }}">
+        <label for="{{::dateName}}">{{ inheritLabel }}</label>
     </div>
 
     <div class="TextControl-message" ng-show="helpMessage">
