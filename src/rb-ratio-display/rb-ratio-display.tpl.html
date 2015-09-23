@@ -5,10 +5,10 @@
             <rb-currency-display amount="{{ numerator }}" decimal-places="{{ decimalPlaces }}"></rb-currency-display/>&nbsp;⁄ <rb-currency-display amount="{{ denominator }}" decimal-places="{{ decimalPlaces }}"></rb-currency-display>
         </span>
         <!-- Display the ratio as a fraction -->
-        <span ng-if="!denominator || (denominator == 0)" ng-switch-default>N/A</span>
+        <span ng-if="!denominator || (denominator == 0)" ng-switch-default>n/a</span>
         <span ng-if="denominator && (denominator != 0)" ng-switch-default>{{ numerator }} ⁄ {{ denominator }}</span>
     </span>
     <!-- Display the ratio using a percentage -->
-    <span ng-if="!denominator || (denominator == 0)" ng-switch-default>N/A</span>
+    <span ng-if="!denominator || (denominator == 0)" ng-switch-default>n/a</span>
     <span ng-if="denominator && (denominator != 0)" ng-switch-default>{{ ((numerator * 100) / denominator) || 0 | number:0 }}%</span>
 </span>
