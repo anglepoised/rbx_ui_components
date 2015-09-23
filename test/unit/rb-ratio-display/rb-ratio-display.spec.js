@@ -51,16 +51,16 @@ define([
 
                 $scope.$apply();
 
-                expect(angular.element(ele).text()).toContain('N/A');
+                expect(angular.element(ele).text()).toContain('n/a');
             });
 
-            it('should render as N/A when denominator is null', function () {
+            it('should render as n/a when denominator is null', function () {
                 template = '<rb-ratio-display numerator="50" denominator="{{null}}"></rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
 
-                expect(angular.element(ele).text()).toContain('N/A');
+                expect(angular.element(ele).text()).toContain('n/a');
             });
         });
 
@@ -86,14 +86,14 @@ define([
                 expect(angular.element(ele).find('data').length).toBe(2);
             });
 
-            it('should render as N/A when denominator is null', function () {
+            it('should render as n/a when denominator is null', function () {
                 template = '<rb-ratio-display numerator="50" denominator="{{null}}" ratio-type="fraction">' +
                     '</rb-ratio-display>';
                 ele = $compile(template)($scope);
 
                 $scope.$apply();
 
-                expect(angular.element(ele).text()).toContain('N/A');
+                expect(angular.element(ele).text()).toContain('n/a');
             });
 
         });
