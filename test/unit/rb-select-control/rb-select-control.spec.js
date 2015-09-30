@@ -41,5 +41,19 @@ define([
                     expect(select.hasClass('SelectControl--small')).toBe(true);
                 }));
         });
+
+        describe('disable dynamical', function () {
+
+            it('should be a small select control if small size attr is supplied',
+                inject(function ($compile, $rootScope) {
+                    var temp = '<rb-select-control is-dynamically-disabled="isDisabled"></rb-select-control>',
+                        select = angular.element(temp),
+                        element = $compile(select)($rootScope.$new());
+                    $rootScope.isDisabled = true;
+                    $rootScope.$apply();
+                    expect(select.find('select')[0].getAttribute('disabled')).toBe('disabled');
+                }));
+        });
+
     });
 });

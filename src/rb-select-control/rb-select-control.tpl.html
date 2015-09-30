@@ -5,12 +5,24 @@
         {{ label }}
     </label>
     <select
+        ng-if="!isDynamicallyDisabled"
         class="SelectControl-field"
         name="{{name}}"
         ng-options="item[value] as item[display] for item in items"
         ng-model="selected"
         ng-change="onChange({id:selected})"
         ng-disabled="{{ isDisabled }}"
+        ng-required="{{ isRequired }}">
+            <option value="" ng-show="placeholder">{{ placeholder }}</option>
+    </select>
+    <select
+        ng-if="isDynamicallyDisabled"
+        class="SelectControl-field"
+        name="{{name}}"
+        ng-options="item[value] as item[display] for item in items"
+        ng-model="selected"
+        ng-change="onChange({id:selected})"
+        ng-disabled="isDynamicallyDisabled"
         ng-required="{{ isRequired }}">
             <option value="" ng-show="placeholder">{{ placeholder }}</option>
     </select>
