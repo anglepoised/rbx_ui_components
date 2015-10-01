@@ -43,6 +43,7 @@ define([
                 display: '@',
                 placeholder: '@',
                 isDisabled: '@',
+                isDynamicallyDisabled: '=?',
                 isRequired: '@',
                 name: '@',
                 form: '=',
