@@ -27,7 +27,8 @@ define([
                             maxDecimals = (splitSteps[1]) ? splitSteps[1].length : 0,
                             splitValue = (viewValue) ? viewValue.split('.') : [],
                             decimalsPlaces = (splitValue[1]) ? splitValue[1].length : 0,
-                            result = ctrl.$isEmpty(modelValue) || (decimalsPlaces <= maxDecimals);
+                            result = ctrl.$isEmpty(modelValue) ||
+                                     (decimalsPlaces <= maxDecimals) && (viewValue >= 0.01);
                         return result;
                     };
 
@@ -43,6 +44,18 @@ define([
                         result = ctrl.$isEmpty(modelValue) || (wholeNumberDigits <= 18);
                         return result;
                     };
+
+                    if (scope.maxValue) {
+                        ctrl.$validators.overMaxValue = function (modelValue, viewValue) {
+                            return ctrl.$isEmpty(modelValue) || (modelValue <= Number(scope.maxValue, 10));
+                        };
+                    }
+
+                    if (scope.minValue) {
+                        ctrl.$validators.underMinValue = function (modelValue, viewValue) {
+                            return ctrl.$isEmpty(modelValue) || (modelValue >= Number(scope.minValue, 10));
+                        };
+                    }
 
                 } if (scope.maxDigits) {
                     ctrl.$validators.maxDigits = function (modelValue, viewValue) {

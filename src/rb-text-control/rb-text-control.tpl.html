@@ -84,6 +84,12 @@
         <div class="TextControl-message is-invalid" ng-if="form[name].$error.maxDigits">
             Ensure that there are no more than {{maxDigits}} digits before the decimal point.
         </div>
+        <div class="TextControl-message is-invalid" ng-if="form[name].$error.overMaxValue">
+            Ensure this value is less than or equal to {{maxValue}}.
+        </div>
+        <div class="TextControl-message is-invalid" ng-if="form[name].$error.underMinValue">
+            Ensure this value is more than or equal to {{minValue}}.
+        </div>
     </div>
 
 </div>

@@ -88,6 +88,20 @@ define([
 
                     expect($scope.testForm.$invalid).toBe(true);
                 });
+
+                it('should not allow a value that belows min value', function () {
+                    // below min value
+                    recompile({'data': {'currency': 3}});
+
+                    expect($scope.testForm.$invalid).toBe(true);
+                });
+
+                it('should not allow a value that above max value', function () {
+                    // below min value
+                    recompile({'data': {'currency': 2000}});
+
+                    expect($scope.testForm.$invalid).toBe(true);
+                });
             });
 
         });

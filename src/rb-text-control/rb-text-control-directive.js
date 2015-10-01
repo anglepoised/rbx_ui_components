@@ -50,7 +50,9 @@ define([
                 small: '@',
                 onChange: '&',
                 modelOptions: '@',
-                maxDigits: '@'
+                maxDigits: '@',
+                maxValue: '@?',
+                minValue: '@?'
             },
             restrict: 'E',
             replace: true,
