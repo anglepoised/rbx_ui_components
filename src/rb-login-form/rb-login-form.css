@@ -12,6 +12,11 @@
  * 1. Comment
  */
 
+/* Hack CSS */
+.hackLoginWidth {
+    min-width: 220px;
+}
+
 .LoginForm {
     color: var(--LoginForm-color);
 }
