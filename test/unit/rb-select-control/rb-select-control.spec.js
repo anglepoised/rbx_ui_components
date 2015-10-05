@@ -49,9 +49,12 @@ define([
                     var temp = '<rb-select-control is-dynamically-disabled="isDisabled"></rb-select-control>',
                         select = angular.element(temp),
                         element = $compile(select)($rootScope.$new());
+
                     $rootScope.isDisabled = true;
                     $rootScope.$apply();
-                    expect(select.find('select')[0].getAttribute('disabled')).toBe('disabled');
+
+                    expect(select.find('select')[0].getAttribute('disabled')).toBe(null);
+                    expect(select.find('select')[1].getAttribute('disabled')).toBe('disabled');
                 }));
         });
 
