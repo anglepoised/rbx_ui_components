@@ -14,11 +14,16 @@
  */
 
 .Grid-cell {
-    flex: 1;
+    display: inherit;
+}
+
+.Grid-cell--scroll {
+    overflow: scroll;
 }
 
 .Grid--flexCells > .Grid-cell {
     display: flex;
+    flex: 1;
 }
 
 .Grid--gutter {
