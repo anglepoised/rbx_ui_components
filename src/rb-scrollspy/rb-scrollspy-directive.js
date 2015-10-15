@@ -59,6 +59,7 @@ define([
             template: template,
             transclude: true,
             controller: function ($scope) {
+                $scope.offset = $scope.offset || 0;
                 // Offset to correctly trigger top scrollspy item
                 $scope.categoryInnerOffset = parseInt($scope.offset, 10) + 28;
             }
