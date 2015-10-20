@@ -8,7 +8,7 @@ define([
             {
                 label: 'Countries',
                 anchor: 'countries',
-                hidden: false,
+                hidden: true,
                 items: [
                     {
                         label: 'A',
