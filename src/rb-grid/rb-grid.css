@@ -18,7 +18,7 @@
 }
 
 .Grid-cell--scroll {
-    overflow: scroll;
+    overflow: auto;
 }
 
 .Grid--flexCells > .Grid-cell {
