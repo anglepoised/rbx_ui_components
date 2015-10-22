@@ -13,7 +13,7 @@
         ng-change="onChange({id:selected})"
         ng-disabled="{{ isDisabled }}"
         ng-required="{{ isRequired }}">
-            <option value="" ng-if="placeholder">{{ placeholder }}</option>
+            <option value="" ng-show="placeholder">{{ placeholder }}</option>
     </select>
     <select
         ng-show="isDynamicallyDisabled"
@@ -24,7 +24,7 @@
         ng-change="onChange({id:selected})"
         ng-disabled="isDynamicallyDisabled"
         ng-required="{{ isRequired }}">
-            <option value="" ng-if="placeholder">{{ placeholder }}</option>
+            <option value="" ng-show="placeholder">{{ placeholder }}</option>
     </select>
 
     <div class="SelectControl-message" ng-show="helpMessage">
