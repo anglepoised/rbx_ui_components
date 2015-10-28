@@ -82,7 +82,7 @@
                         items="demoRbSelectControlCtrl.items"
                         selected="demoRbSelectControlCtrl.emptySelect"
                         help-message="i.e. Your favourite make"
-                        placeholder="Car"
+                        placeholder="Select a Car"
                         on-change="demoRbSelectControlCtrl.printChange(id)">
                     </rb-select-control>
                     Selected: {{ demoRbSelectControlCtrl.emptySelect }}
@@ -98,9 +98,9 @@
                         value="id"
                         display="name"
                         items="demoRbSelectControlCtrl.items"
-                        selected="demoRbSelectControlCtrl.emptySelect">
+                        selected="demoRbSelectControlCtrl.noPlaceholderPreviouslySelected">
                     </rb-select-control>
-                    Selected: {{ demoRbSelectControlCtrl.emptySelect }}
+                    Selected: {{ demoRbSelectControlCtrl.noPlaceholderPreviouslySelected }}
                 </rb-component-display>
             </rb-section>
             <rb-section heading="Select field with a previous selected (no placeholder)">

@@ -24,6 +24,7 @@ define([
 
         this.emptySelect = null;
         this.previouslySelected = this.items[1].id;
+        this.noPlaceholderPreviouslySelected = null;
 
         this.printChange = function (id) {
             console.log(id);
