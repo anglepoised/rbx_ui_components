@@ -69,6 +69,13 @@ define([
                 if ($scope.type === 'password') {
                     $scope.modelOptions.debounce.default = 0;
                 }
+                $scope.$watch(function watchmen () {
+                    if (!$scope.ngModel) {
+                        $scope.isPopulated = '';
+                        return;
+                    }
+                    $scope.isPopulated = ($scope.ngModel.toString() !== '');
+                });
             },
             link: function (scope, element, attributes) {
                 scope.numberSteps = scope.numberSteps || 0;
