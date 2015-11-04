@@ -32,7 +32,8 @@
         ng-change="onChange({value:$parent.ngModel})"
         ng-class="{
             'is-invalid': form[name].$touched && form[name].$invalid,
-            'is-touched': form[name].$touched
+            'is-touched': form[name].$touched,
+            'is-populated' :  isPopulated
         }"
         custom-validation
     />
