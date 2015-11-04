@@ -52,16 +52,24 @@ define([
             restrict: 'E',
             replace: true,
             template: template,
-            link: link
-        };
+            link: {
+                pre: function (scope, iElement, iAttrs) {
+                    // Defaults to default size when no size is supplied
+                    if (angular.isDefined(iAttrs.size)) {
+                        iElement.addClass('SelectControl--' + iAttrs.size);
+                    }
 
-        function link (scope, elem, attr) {
-
-            // Defaults to default size when no size is supplied
-            if (angular.isDefined(attr.size)) {
-                elem.addClass('SelectControl--' + attr.size);
+                    if (angular.isDefined(iAttrs.placeholder)) {
+                        // Append an optional placeholder element
+                        iElement.find('select').append('<option value="">' + iAttrs.placeholder + '</option>');
+                    } else if ((angular.isUndefined(scope.selected) || scope.selected === null) &&
+                        (angular.isDefined(scope.items) && scope.items.length)) {
+                        // Preselect the first item
+                        scope.selected = scope.items[0].id;
+                    }
+                }
             }
-        }
+        };
     }
 
     return rbSelectControlDirective;
