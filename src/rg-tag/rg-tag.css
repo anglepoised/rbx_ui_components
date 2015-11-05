@@ -1,0 +1,71 @@
+/** @define rgTag; use strict */
+
+:root {
+    --Tag-background-color: var(--color-green-base);
+    --Tag-hover-color: var(--color-red-base);
+    --Tag-readonly-background-color: var(--color-gray-ghost);
+    --Tag-readonly-hover-color: var(--color-green-base);
+    --Tag-disabled-color: var(--color-gray-tuna);
+    --Tag-font-color: var(--color-white-catskill);
+    --Tag-font-size: var(--font-size);
+}
+
+.rgTag {
+    background: var(--Tag-background-color);
+    border-radius: 16px;
+    color: var(--Tag-font-color);
+    font-size: var(--Tag-font-size);
+    margin: 8px 8px 0 0;
+    padding: 0px 12px 0px 12px;
+    text-decoration: none;
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    float: left;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.rgTag:hover {
+    background: var(--Tag-hover-color);
+    text-decoration: none;
+}
+
+.rgTag--readonly {
+    background: var(--Tag-readonly-background-color);
+    border-radius: 16px;
+    color: var(--Tag-font-color);
+    font-size: var(--Tag-font-size);
+    margin: 8px 8px 0 0;
+    padding: 0px 12px 0px 12px;
+    text-decoration: none;
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    float: left;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.rgTag--readonly:hover {
+    background: var(--Tag-readonly-hover-color);
+    text-decoration: none;
+}
+
+.rgTag--disabled {
+    background: var(--Tag-disabled-color);
+}
+
+.rgTag--disabled:hover {
+    background: var(--Tag-hover-color);
+}
+
+.rgTag button:focus {
+    outline: none;
+}
