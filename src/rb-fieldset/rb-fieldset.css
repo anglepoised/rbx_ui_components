@@ -10,7 +10,7 @@
 
 :root {
     --Fieldset-border-color: var(--color-gray-ghost);
-    --Fieldset-title-background-position: left 6px;
+    --Fieldset-title-background-position: left 6px top 3px;
 }
 
 /**
@@ -76,7 +76,7 @@
     background-image: url("./images/additional-info.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
-    padding-left: 32px;
+    padding-left: 40px;
 }
 
 /**
@@ -87,7 +87,7 @@
     background-image: url("./images/basics.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
-    padding-left: 32px;
+    padding-left: 40px;
 }
 
 /**
@@ -98,7 +98,7 @@
     background-image: url("./images/breakdown.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
-    padding-left: 32px;
+    padding-left: 40px;
 }
 
 /**
@@ -109,7 +109,7 @@
     background-image: url("./images/datetime.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
-    padding-left: 32px;
+    padding-left: 40px;
 }
 
 /**
@@ -120,7 +120,7 @@
     background-image: url("./images/dsp.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
-    padding-left: 32px;
+    padding-left: 40px;
 }
 
 /**
@@ -131,7 +131,7 @@
     background-image: url("./images/finance.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
-    padding-left: 32px;
+    padding-left: 40px;
 }
 
 /**
@@ -142,7 +142,7 @@
     background-image: url("./images/goals.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
-    padding-left: 32px;
+    padding-left: 40px;
 }
 
 /**
@@ -153,7 +153,18 @@
     background-image: url("./images/metrics.svg");
     background-position: var(--Fieldset-title-background-position);
     background-repeat: no-repeat;
-    padding-left: 32px;
+    padding-left: 40px;
+}
+
+/**
+ * Save Scheduled modifier
+ */
+
+.Fieldset--saveScheduled .Fieldset-title {
+    background-image: url("./images/save-scheduled.svg");
+    background-position: var(--Fieldset-title-background-position);
+    background-repeat: no-repeat;
+    padding-left: 40px;
 }
 
 /**
