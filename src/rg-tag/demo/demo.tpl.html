@@ -1,0 +1,42 @@
+<rb-site>
+    <rb-main>
+        <rb-page-title heading="rg-tag">
+        </rb-page-title>
+        <rb-section heading="Introduction" hide-heading="true">
+            <rb-raw-html-display>
+                <p>
+                    The <code>rg-tag</code> component
+                </p>
+            </rb-raw-html-display>
+        </rb-section>
+        <rb-section heading="By Time (Readonly)">
+            <rb-component-display>
+                <rg-tag ng-repeat="breakdown in demoCtrl.timeList track by breakdown.value"
+                    ng-click="!breakdown.summary && demoCtrl.addToSummary(breakdown)"
+                    ng-class="{'rgTag--disabled': breakdown.summary}"
+                    readonly=true>
+                    {{breakdown.label}}
+                </rg-tag>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="By Breakdown (Readonly)">
+            <rb-component-display>
+                <rg-tag ng-repeat="breakdown in demoCtrl.breakdownList track by breakdown.value"
+                    ng-click="!breakdown.summary && demoCtrl.addToSummary(breakdown)"
+                    ng-class="{'rgTag--disabled': breakdown.summary}"
+                    readonly=true>
+                    {{breakdown.label}}
+                </rg-tag>
+            </rb-component-display>
+        </rb-section>
+        <rb-section heading="Summary (Default)">
+            <rb-component-display>
+                <rg-tag ng-repeat="breakdown in demoCtrl.summaryList track by breakdown.value"
+                    readonly="{{breakdown.type==='time'}}"
+                    on-remove="demoCtrl.removeFromSummary(breakdown, $index)">
+                    {{$index + 1}} - {{breakdown.label}}
+                </rg-tag>
+            </rb-component-display>
+        </rb-section>
+    </rb-main>
+</rb-site>
