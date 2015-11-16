@@ -3,7 +3,9 @@ define([
     function customValidationDirective () {
         var EMAIL_REGEXP = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i,
         DJANGO_URL = '^((?:http|ftp)s?:\/\/)(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\\.)+(?:[A-Z]{2,6}\\.?|' +
-        '[A-Z0-9-]{2,}\\.?)|localhost|\\d{1,3}\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})(?::\\d+)?(?:\/?|[\/?]\\S+)$';
+        '[A-Z0-9-]{2,}\\.?)|localhost|\\d{1,3}\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})(?::\\d+)?(?:\/?|[\/?]\\S+)$',
+        DJANGO_RELATIVE_URL = '^(((?:http|ftp)s?:)?\/\/)(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\\.)+(?:[A-Z]{2,6}' +
+        '\\.?|[A-Z0-9-]{2,}\\.?)|localhost|\\d{1,3}\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})(?::\\d+)?(?:\/?|[\/?]\\S+)$';
 
         return {
             require: 'ngModel',
@@ -16,10 +18,14 @@ define([
                     };
                 } else if (attrs.type === 'url') {
 
+                    var testRegExp = DJANGO_URL;
+                    if (angular.isDefined(attrs.relativeUrl)) {
+                        testRegExp = DJANGO_RELATIVE_URL;
+                    }
                     ctrl.$validators.url = function (modelValue, viewValue) {
-                        var result = ctrl.$isEmpty(modelValue) || new RegExp(DJANGO_URL, 'i').test(modelValue);
-                        return result;
+                        return ctrl.$isEmpty(modelValue) || new RegExp(testRegExp, 'i').test(modelValue);
                     };
+
                 } else if (scope.$parent.type === 'currency') {
                     ctrl.$validators.currency = function (modelValue, viewValue) {
                         var splitSteps = (scope.$parent.numberSteps) ?
