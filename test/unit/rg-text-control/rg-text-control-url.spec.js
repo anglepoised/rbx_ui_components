@@ -1,7 +1,8 @@
 define([
     'ui-components/rg-text-control',
-    'html!./rg-text-control-url.tpl.html'
-], function (rgRgTextControl, template) {
+    'html!./rg-text-control-url.tpl.html',
+    'html!./rg-text-control-relative-url.tpl.html'
+], function (rgRgTextControl, template, relativeUrlTemplate) {
     describe('rg-text-control', function () {
 
         var $rootScope,
@@ -58,6 +59,28 @@ define([
                     element = angular.element(element[0].querySelector('.RgTextControl-message.is-invalid'));
 
                     expect(element.html()).toContain('Please enter a valid URL.');
+                });
+            });
+
+            describe('relative URLs', function () {
+                it('should accept URLs with no protocol (optionally) when attr relativeURL is present', function () {
+
+                    // URL with no protocol
+                    angular.extend($scope, {'data': {'url': '//test.com'}});
+                    element = $compile(relativeUrlTemplate)($scope);
+                    $scope.$apply();
+
+                    expect($scope.testForm.$invalid).toBe(false);
+                });
+
+                it('should accept URLs with protocol (optionally) when attr relativeURL is present', function () {
+
+                    // URL with protocol
+                    angular.extend($scope, {'data': {'url': 'http://test.com'}});
+                    element = $compile(relativeUrlTemplate)($scope);
+                    $scope.$apply();
+
+                    expect($scope.testForm.$invalid).toBe(false);
                 });
             });
 
