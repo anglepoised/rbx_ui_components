@@ -18,12 +18,14 @@ define([
                     };
                 } else if (attrs.type === 'url') {
 
-                    var testRegExp = DJANGO_URL;
-                    if (angular.isDefined(attrs.relativeUrl)) {
-                        testRegExp = DJANGO_RELATIVE_URL;
-                    }
                     ctrl.$validators.url = function (modelValue, viewValue) {
-                        return ctrl.$isEmpty(modelValue) || new RegExp(testRegExp, 'i').test(modelValue);
+                        return (ctrl.$isEmpty(viewValue) || new RegExp(DJANGO_URL, 'i').test(viewValue));
+                    };
+
+                } else if (attrs.type === 'relative-url') {
+
+                    ctrl.$validators.url = function (modelValue, viewValue) {
+                        return (ctrl.$isEmpty(viewValue) || new RegExp(DJANGO_RELATIVE_URL, 'i').test(viewValue));
                     };
 
                 } else if (scope.$parent.type === 'currency') {

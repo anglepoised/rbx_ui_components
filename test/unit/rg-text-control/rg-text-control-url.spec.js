@@ -63,7 +63,7 @@ define([
             });
 
             describe('relative URLs', function () {
-                it('should accept URLs with no protocol (optionally) when attr relativeURL is present', function () {
+                it('should accept URLs with no protocol (optionally) when type attr is relative-url', function () {
 
                     // URL with no protocol
                     angular.extend($scope, {'data': {'url': '//test.com'}});
@@ -73,7 +73,7 @@ define([
                     expect($scope.testForm.$invalid).toBe(false);
                 });
 
-                it('should accept URLs with protocol (optionally) when attr relativeURL is present', function () {
+                it('should accept URLs with protocol (optionally) when type attr relative-url', function () {
 
                     // URL with protocol
                     angular.extend($scope, {'data': {'url': 'http://test.com'}});
