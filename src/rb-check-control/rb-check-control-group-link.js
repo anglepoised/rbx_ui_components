@@ -16,6 +16,10 @@ define([],
                             option.checked = true;
                         }
                     });
+                } else {
+                    angular.forEach($scope.options, function (option) {
+                        option.checked = false;
+                    });
                 }
             }
 
