@@ -21,7 +21,7 @@ define([
      */
     function rbTabsetDirective () {
 
-        return {
+        return /*@ngInject*/ {
             restrict: 'E',
             transclude: true,
             replace: true,

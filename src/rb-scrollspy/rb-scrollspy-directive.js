@@ -48,7 +48,7 @@ define([
      */
     function rbScrollspyDirective ($compile) {
 
-        return {
+        return /*@ngInject*/ {
             scope: {
                 categories: '=',
                 offset: '@',

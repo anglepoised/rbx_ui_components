@@ -62,6 +62,7 @@ define([
         };
     }
 
+    // @ngInject
     function controller ($scope) {
 
         // Allow template to check a state is valid.

@@ -22,7 +22,7 @@ define([
      */
     function rbDeepSearchDirective () {
 
-        return {
+        return /*@ngInject*/ {
             scope: {
                 form: '=',
                 label: '@',

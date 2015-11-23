@@ -33,7 +33,7 @@ define([
      */
     function rbTextControlDirective () {
 
-        return {
+        return /*@ngInject*/ {
             scope: {
                 isDisabled: '@',
                 isElastic: '@',

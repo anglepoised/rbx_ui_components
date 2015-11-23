@@ -33,7 +33,7 @@ define([
      */
     function rbNavBarDirective () {
 
-        return {
+        return /*@ngInject*/ {
             scope: {
                 'options': '='
             },
