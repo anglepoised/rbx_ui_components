@@ -1,5 +1,5 @@
 define([
-    'html!./rb-icon.tpl.html'
+    './rb-icon.tpl.html'
 ], function (template) {
     /**
      * @ngdoc directive

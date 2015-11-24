@@ -1,5 +1,5 @@
 define([
-    'html!./rb-footer.tpl.html'
+    './rb-footer.tpl.html'
 ], function (template) {
     /**
      * @ngdoc directive

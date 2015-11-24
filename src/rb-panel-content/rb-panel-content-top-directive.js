@@ -1,5 +1,5 @@
 define([
-    'html!./rb-panel-content-top.tpl.html'
+    './rb-panel-content-top.tpl.html'
 ], function (template) {
 
     /**

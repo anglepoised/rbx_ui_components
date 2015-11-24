@@ -1,5 +1,5 @@
 define([
-    'html!./rb-radio-control.tpl.html'
+    './rb-radio-control.tpl.html'
 ], function (template) {
 
     /**

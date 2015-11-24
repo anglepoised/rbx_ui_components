@@ -1,5 +1,5 @@
 define([
-    'html!./rb-release-version.tpl.html'
+    './rb-release-version.tpl.html'
 ], function (template) {
 
     /**

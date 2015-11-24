@@ -1,5 +1,5 @@
 define([
-    'html!./rb-datetime-display.tpl.html'
+    './rb-datetime-display.tpl.html'
 ], function (template) {
 
     /**

@@ -1,5 +1,5 @@
 define([
-    'html!./rb-check-with-text-control-group.tpl.html'
+    './rb-check-with-text-control-group.tpl.html'
 ], function (template) {
 
     /**

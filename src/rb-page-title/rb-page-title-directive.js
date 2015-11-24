@@ -1,5 +1,5 @@
 define([
-    'html!./rb-page-title.tpl.html'
+    './rb-page-title.tpl.html'
 ], function (template) {
 
     /**

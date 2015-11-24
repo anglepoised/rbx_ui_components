@@ -1,5 +1,5 @@
 define([
-    'html!./rb-scrollspy.tpl.html'
+    './rb-scrollspy.tpl.html'
 ], function (template) {
 
     /**

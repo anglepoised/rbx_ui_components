@@ -1,5 +1,5 @@
 define([
-    'html!./rb-grid-cell.tpl.html'
+    './rb-grid-cell.tpl.html'
 ], function (template) {
 
     /**

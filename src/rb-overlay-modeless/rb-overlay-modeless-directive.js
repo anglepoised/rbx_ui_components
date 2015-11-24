@@ -1,5 +1,5 @@
 define([
-    'html!./rb-overlay-modeless.tpl.html'
+    './rb-overlay-modeless.tpl.html'
 ], function (template) {
 
     /**

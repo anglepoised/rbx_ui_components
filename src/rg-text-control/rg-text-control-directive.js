@@ -1,5 +1,5 @@
 define([
-    'html!./rg-text-control.tpl.html'
+    './rg-text-control.tpl.html'
 ], function (template) {
 
     /**

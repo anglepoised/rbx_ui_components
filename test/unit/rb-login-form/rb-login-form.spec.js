@@ -1,6 +1,6 @@
 define([
     'ui-components/rb-login-form',
-    'html!./rb-login-form.tpl.html'
+    './rb-login-form.tpl.html'
 ], function (rbLoginForm, template) {
     describe('rb-login-form', function () {
 

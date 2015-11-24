@@ -1,6 +1,6 @@
 define([
     'ui-components/rg-text-control',
-    'html!./rg-text-control.tpl.html'
+    './rg-text-control.tpl.html'
 ], function (rgRgTextControl, template) {
     describe('rg-text-control', function () {
 

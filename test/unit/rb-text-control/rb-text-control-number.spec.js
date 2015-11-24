@@ -1,6 +1,6 @@
 define([
     'ui-components/rb-text-control',
-    'html!./rb-text-control-number.tpl.html'
+    './rb-text-control-number.tpl.html'
 ], function (rbTextControl, template) {
     describe('rb-text-control', function () {
 

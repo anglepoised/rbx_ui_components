@@ -1,7 +1,7 @@
 define([
     'ui-components/rg-text-control',
-    'html!./rg-text-control-url.tpl.html',
-    'html!./rg-text-control-relative-url.tpl.html'
+    './rg-text-control-url.tpl.html',
+    './rg-text-control-relative-url.tpl.html'
 ], function (rgRgTextControl, template, relativeUrlTemplate) {
     describe('rg-text-control', function () {
 

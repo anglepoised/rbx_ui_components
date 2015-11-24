@@ -1,5 +1,5 @@
 define([
-    'html!./rb-warning-messages.tpl.html'
+    './rb-warning-messages.tpl.html'
 ], function (template) {
     /**
      * @ngdoc directive

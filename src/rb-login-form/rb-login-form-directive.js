@@ -1,5 +1,5 @@
 define([
-    'html!./rb-login-form.tpl.html'
+    './rb-login-form.tpl.html'
 ], function (template) {
 
     /**

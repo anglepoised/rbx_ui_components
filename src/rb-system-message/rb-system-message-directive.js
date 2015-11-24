@@ -1,5 +1,5 @@
 define([
-    'html!./rb-system-message.tpl.html'
+    './rb-system-message.tpl.html'
 ], function (template) {
 
     /**

@@ -1,5 +1,5 @@
 define([
-    'html!./rb-panel-content-middle-scrollable.tpl.html'
+    './rb-panel-content-middle-scrollable.tpl.html'
 ], function (template) {
 
     /**

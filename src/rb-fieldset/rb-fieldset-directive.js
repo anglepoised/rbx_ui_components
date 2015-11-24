@@ -1,5 +1,5 @@
 define([
-    'html!./rb-fieldset.tpl.html'
+    './rb-fieldset.tpl.html'
 ], function (template) {
 
     /**

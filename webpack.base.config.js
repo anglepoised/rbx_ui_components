@@ -60,6 +60,10 @@ config = {
             {
                 test: /\.((woff2)|(woff)|(ttf)|(eot))$/,
                 loader: 'file-loader?name=fonts/[hash].[ext]'
+            },
+            {
+                test: /\.(html)$/,
+                loader: 'html-loader?collapseWhitespace=false'
             }
         ],
         noParse: [

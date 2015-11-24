@@ -1,5 +1,5 @@
 define([
-    'html!./rb-check-control-select-all.tpl.html'
+    './rb-check-control-select-all.tpl.html'
 ], function (template) {
 
     /**

@@ -1,5 +1,5 @@
 define([
-    'html!./rb-divider.tpl.html'
+    './rb-divider.tpl.html'
 ], function (template) {
 
     /**

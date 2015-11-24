@@ -1,5 +1,5 @@
 define([
-    'html!./rb-tabset.tpl.html'
+    './rb-tabset.tpl.html'
 ], function (template) {
 
     /**

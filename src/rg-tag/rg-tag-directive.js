@@ -1,6 +1,6 @@
 define([
-    'html!./rg-tag.tpl.html',
-    'html!./rg-tag-remove-button.tpl.html'
+    './rg-tag.tpl.html',
+    './rg-tag-remove-button.tpl.html'
 ], function (template, removeButtonTemplate) {
 
     /**

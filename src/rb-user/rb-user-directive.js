@@ -1,5 +1,5 @@
 define([
-    'html!./rb-user.tpl.html'
+    './rb-user.tpl.html'
 ], function (template) {
     /**
      * @ngdoc directive

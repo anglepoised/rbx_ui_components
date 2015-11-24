@@ -1,5 +1,5 @@
 define([
-    'html!./rb-generic-form.tpl.html'
+    './rb-generic-form.tpl.html'
 ], function (template) {
 
     /**

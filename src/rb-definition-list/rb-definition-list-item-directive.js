@@ -1,5 +1,5 @@
 define([
-    'html!./rb-definition-list-item.tpl.html'
+    './rb-definition-list-item.tpl.html'
 ], function (template) {
 
     /**

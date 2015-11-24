@@ -1,5 +1,5 @@
 define([
-    'html!./rg-site-bottom.tpl.html'
+    './rg-site-bottom.tpl.html'
 ], function (template) {
 
     /**
