@@ -33,7 +33,8 @@ config = {
 
     plugins: [
         new ngAnnotatePlugin({
-            add: true
+            add: true,
+            'single_quotes': true
         }),
         new webpack.ResolverPlugin([
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main']),
