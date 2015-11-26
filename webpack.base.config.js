@@ -64,7 +64,9 @@ config = {
             },
             {
                 test: /\.(html)$/,
-                loader: 'html-loader?collapseWhitespace=false'
+                // `collapseWhitespace=false` to prevent layout issues with html templates
+                // `collapseBooleanAttributes=false` to prevent selected="selected" => selected
+                loader: 'html-loader?collapseWhitespace=false&collapseBooleanAttributes=false'
             }
         ],
         noParse: [
