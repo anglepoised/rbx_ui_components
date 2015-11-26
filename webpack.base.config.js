@@ -26,6 +26,7 @@ config = {
             bowerRoot
         ],
         alias: {
+            'angular-material': path.join(__dirname, 'vendor/angular-material/modules/js'),
             dev: path.join(__dirname, 'dev'),
             'ui-components': path.join(__dirname, 'src')
         }

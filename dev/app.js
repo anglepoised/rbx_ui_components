@@ -54,6 +54,9 @@ define([
     'ui-components/rg-text-control/demo',
     'ui-components/rb-box-selector/demo',
     'ui-components/rg-tag/demo',
+    'ui-components/md-switch/demo',
+    'ui-components/md-toolbar/demo',
+    'ui-components/md-dialog/demo',
     'rbx_style_guide'
 ], function (
     uiRouter,
@@ -111,6 +114,9 @@ define([
     rgTextControlDemo,
     rbBoxSelectorDemo,
     rgTagDemo,
+    mdSwitchDemo,
+    mdToolbarDemo,
+    mdDialogDemo,
     css
 ) {
     // @ngInject
@@ -169,9 +175,12 @@ define([
             rgSiteDemo.name,
             rgTextControlDemo.name,
             rbBoxSelectorDemo.name,
-            rgTagDemo.name
+            rgTagDemo.name,
+            mdSwitchDemo.name,
+            mdToolbarDemo.name,
+            mdDialogDemo.name
         ])
-        .config(function ($stateProvider, $httpProvider) {
+        .config(function ($stateProvider, $httpProvider, $mdThemingProvider) {
 
             // App State
             $stateProvider.state({
@@ -185,6 +194,44 @@ define([
                     $scope.states.shift();
                 }
             });
+
+            $mdThemingProvider.definePalette('scootaGreen', {
+                '50': '#3EB980',
+                '100': '#3EB980',
+                '200': '#3EB980',
+                '300': '#3EB980',
+                '400': '#3EB980',
+                '500': '#3EB980',
+                '600': '#3EB980',
+                '700': '#3EB980',
+                '800': '#3EB980',
+                '900': '#3EB980',
+                'A100': '#3EB980',
+                'A200': '#3EB980',
+                'A400': '#3EB980',
+                'A700': '#3EB980'
+            });
+
+            $mdThemingProvider.definePalette('scootaBlue', {
+                '50': '#068DCB',
+                '100': '#068DCB',
+                '200': '#068DCB',
+                '300': '#068DCB',
+                '400': '#068DCB',
+                '500': '#068DCB',
+                '600': '#068DCB',
+                '700': '#068DCB',
+                '800': '#068DCB',
+                '900': '#068DCB',
+                'A100': '#068DCB',
+                'A200': '#068DCB',
+                'A400': '#068DCB',
+                'A700': '#068DCB'
+            });
+
+            $mdThemingProvider.theme('default')
+                .primaryPalette('scootaBlue')
+                .accentPalette('scootaGreen');
 
         })
         .config(function ($urlRouterProvider, $locationProvider) {
