@@ -1,5 +1,5 @@
 define([
-    'html!./rb-editor-wrapper.tpl.html'
+    './rb-editor-wrapper.tpl.html'
 ], function (template) {
 
     /**

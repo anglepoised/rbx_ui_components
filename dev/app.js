@@ -1,6 +1,6 @@
 define([
     'angular-ui-router',
-    'html!./demo.tpl.html',
+    './demo.tpl.html',
     'ui-components/rb-action-bar/demo',
     'ui-components/rb-badge/demo',
     'ui-components/rb-button/demo',

@@ -1,5 +1,5 @@
 define([
-    'html!./rb-tabset.tpl.html'
+    './rb-tabset.tpl.html'
 ], function (template) {
 
     /**
@@ -21,7 +21,7 @@ define([
      */
     function rbTabsetDirective () {
 
-        return {
+        return /*@ngInject*/ {
             restrict: 'E',
             transclude: true,
             replace: true,

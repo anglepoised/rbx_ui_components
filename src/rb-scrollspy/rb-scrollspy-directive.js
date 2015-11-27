@@ -1,5 +1,5 @@
 define([
-    'html!./rb-scrollspy.tpl.html'
+    './rb-scrollspy.tpl.html'
 ], function (template) {
 
     /**
@@ -48,7 +48,7 @@ define([
      */
     function rbScrollspyDirective ($compile) {
 
-        return {
+        return /*@ngInject*/ {
             scope: {
                 categories: '=',
                 offset: '@',

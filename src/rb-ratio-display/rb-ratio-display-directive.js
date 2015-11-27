@@ -1,5 +1,5 @@
 define([
-    'html!./rb-ratio-display.tpl.html'
+    './rb-ratio-display.tpl.html'
 ], function (template) {
 
     /**

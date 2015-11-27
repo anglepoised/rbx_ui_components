@@ -33,7 +33,8 @@ config = {
 
     plugins: [
         new ngAnnotatePlugin({
-            add: true
+            add: true,
+            'single_quotes': true
         }),
         new webpack.ResolverPlugin([
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main']),
@@ -60,6 +61,12 @@ config = {
             {
                 test: /\.((woff2)|(woff)|(ttf)|(eot))$/,
                 loader: 'file-loader?name=fonts/[hash].[ext]'
+            },
+            {
+                test: /\.(html)$/,
+                // `collapseWhitespace=false` to prevent layout issues with html templates
+                // `collapseBooleanAttributes=false` to prevent selected="selected" => selected
+                loader: 'html-loader?collapseWhitespace=false&collapseBooleanAttributes=false'
             }
         ],
         noParse: [

@@ -1,6 +1,6 @@
 define([
     'ui-components/rb-data-summary',
-    'html!./rb-data-summary-item.tpl.html'
+    './rb-data-summary-item.tpl.html'
 ], function (rbDataSummary, template) {
     describe('rb-data-summary-item', function () {
 

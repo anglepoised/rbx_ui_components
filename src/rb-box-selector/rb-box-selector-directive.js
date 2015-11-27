@@ -1,5 +1,5 @@
 define([
-    'html!./rb-box-selector.tpl.html'
+    './rb-box-selector.tpl.html'
 ], function (template) {
 
     /**

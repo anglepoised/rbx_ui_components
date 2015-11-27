@@ -1,6 +1,6 @@
 define([
     './rb-deep-search-tree',
-    'html!./rb-deep-search.tpl.html'
+    './rb-deep-search.tpl.html'
 ], function (Tree, template) {
 
     /**
@@ -22,7 +22,7 @@ define([
      */
     function rbDeepSearchDirective () {
 
-        return {
+        return /*@ngInject*/ {
             scope: {
                 form: '=',
                 label: '@',

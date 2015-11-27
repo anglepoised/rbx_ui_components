@@ -1,6 +1,6 @@
 define([
-    'html!./demo.tpl.html',
-    'html!./demo-group.tpl.html'
+    './demo.tpl.html',
+    './demo-group.tpl.html'
 ], function (template, groupTemplate) {
 
     // @ngInject

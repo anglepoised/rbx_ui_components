@@ -1,5 +1,5 @@
 define([
-    'html!./rb-check-control-group.tpl.html',
+    './rb-check-control-group.tpl.html',
     './rb-check-control-group-link'
 ], function (template, linkFunc) {
 

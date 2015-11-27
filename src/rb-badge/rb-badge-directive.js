@@ -1,5 +1,5 @@
 define([
-    'html!./rb-badge.tpl.html'
+    './rb-badge.tpl.html'
 ], function (template) {
 
     /**
@@ -62,6 +62,7 @@ define([
         };
     }
 
+    // @ngInject
     function controller ($scope) {
 
         // Allow template to check a state is valid.

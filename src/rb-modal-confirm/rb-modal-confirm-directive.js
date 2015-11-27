@@ -1,5 +1,5 @@
 define([
-    'html!./rb-modal-confirm.tpl.html'
+    './rb-modal-confirm.tpl.html'
 ], function (template) {
 
     /**

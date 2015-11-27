@@ -1,5 +1,5 @@
 define([
-    'html!./rb-action-bar.tpl.html'
+    './rb-action-bar.tpl.html'
 ], function (template) {
 
     /**

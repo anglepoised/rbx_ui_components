@@ -1,6 +1,6 @@
 define([
     'ui-components/rb-text-control',
-    'html!./rb-text-control-search.tpl.html'
+    './rb-text-control-search.tpl.html'
 ], function (rbTextControl, template) {
     describe('rb-text-control', function () {
 

@@ -1,6 +1,6 @@
 define([
     './rb-currency-display-link',
-    'html!./rb-currency-display.tpl.html'
+    './rb-currency-display.tpl.html'
 ], function (rbCurrencyDisplayLink, template) {
 
     /**

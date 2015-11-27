@@ -1,7 +1,7 @@
 define([
-    'html!./rb-button.tpl.html',
-    'html!./rb-button-link.tpl.html',
-    'html!./rb-button-submit.tpl.html'
+    './rb-button.tpl.html',
+    './rb-button-link.tpl.html',
+    './rb-button-submit.tpl.html'
 ], function (template, linkTemplate, submitTemplate) {
 
     /**

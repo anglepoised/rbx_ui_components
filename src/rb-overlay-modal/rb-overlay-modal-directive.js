@@ -1,5 +1,5 @@
 define([
-    'html!./rb-overlay-modal.tpl.html',
+    './rb-overlay-modal.tpl.html',
     './rb-overlay-modal-directive-link'
 ], function (template, link) {
 

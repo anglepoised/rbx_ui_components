@@ -1,5 +1,5 @@
 define([
-    'html!./rb-nav-bar.tpl.html'
+    './rb-nav-bar.tpl.html'
 ], function (template) {
 
     /**
@@ -33,7 +33,7 @@ define([
      */
     function rbNavBarDirective () {
 
-        return {
+        return /*@ngInject*/ {
             scope: {
                 'options': '='
             },

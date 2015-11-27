@@ -1,5 +1,5 @@
 define([
-    'html!./rg-header-item.tpl.html'
+    './rg-header-item.tpl.html'
 ], function (template) {
 
     /**

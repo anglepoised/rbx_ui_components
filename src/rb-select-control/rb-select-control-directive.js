@@ -1,5 +1,5 @@
 define([
-    'html!./rb-select-control.tpl.html'
+    './rb-select-control.tpl.html'
 ], function (template) {
 
     /**

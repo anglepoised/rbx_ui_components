@@ -1,5 +1,5 @@
 define([
-    'html!./rb-text-control.tpl.html'
+    './rb-text-control.tpl.html'
 ], function (template) {
 
     /**
@@ -33,7 +33,7 @@ define([
      */
     function rbTextControlDirective () {
 
-        return {
+        return /*@ngInject*/ {
             scope: {
                 isDisabled: '@',
                 isElastic: '@',

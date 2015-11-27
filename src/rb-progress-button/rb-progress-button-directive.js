@@ -1,5 +1,5 @@
 define([
-    'html!./rb-progress-button.tpl.html'
+    './rb-progress-button.tpl.html'
 ], function (template) {
 
     /**

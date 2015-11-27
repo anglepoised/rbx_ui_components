@@ -1,5 +1,5 @@
 define([
-    'html!./demo.tpl.html'
+    './demo.tpl.html'
 ], function (template) {
 
     // @ngInject

@@ -1,5 +1,5 @@
 define([
-    'html!./rb-overlay-panel.tpl.html'
+    './rb-overlay-panel.tpl.html'
 ], function (template) {
 
     /**
