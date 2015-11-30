@@ -54,6 +54,9 @@ define([
     'ui-components/rg-text-control/demo',
     'ui-components/rb-box-selector/demo',
     'ui-components/rg-tag/demo',
+    'ui-components/md-switch/demo',
+    'ui-components/md-toolbar/demo',
+    'ui-components/md-dialog/demo',
     'rbx_style_guide'
 ], function (
     uiRouter,
@@ -111,6 +114,9 @@ define([
     rgTextControlDemo,
     rbBoxSelectorDemo,
     rgTagDemo,
+    mdSwitchDemo,
+    mdToolbarDemo,
+    mdDialogDemo,
     css
 ) {
     // @ngInject
@@ -169,7 +175,10 @@ define([
             rgSiteDemo.name,
             rgTextControlDemo.name,
             rbBoxSelectorDemo.name,
-            rgTagDemo.name
+            rgTagDemo.name,
+            mdSwitchDemo.name,
+            mdToolbarDemo.name,
+            mdDialogDemo.name
         ])
         .config(function ($stateProvider, $httpProvider) {
 
