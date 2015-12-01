@@ -22,7 +22,7 @@ define([
      */
     function rbDeepSearchDirective () {
 
-        return /*@ngInject*/ {
+        return {
             scope: {
                 form: '=',
                 label: '@',
@@ -33,7 +33,7 @@ define([
             restrict: 'E',
             replace: true,
             template: template,
-            controller: function ($scope) {
+            controller: /*@ngInject*/ function ($scope) {
 
                 $scope.tree = new Tree($scope.ngModel);
 

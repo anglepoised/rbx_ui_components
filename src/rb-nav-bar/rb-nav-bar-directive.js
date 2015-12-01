@@ -33,14 +33,14 @@ define([
      */
     function rbNavBarDirective () {
 
-        return /*@ngInject*/ {
+        return {
             scope: {
                 'options': '='
             },
             restrict: 'E',
             replace: true,
             template: template,
-            controller: function ($scope, $state) {
+            controller: /*@ngInject*/ function ($scope, $state) {
                 /**
                  * Currently a workaround for an issue where ui-sref-active
                  * does not work with abstract and child states.
