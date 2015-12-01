@@ -33,7 +33,7 @@ define([
      */
     function rbTextControlDirective () {
 
-        return /*@ngInject*/ {
+        return {
             scope: {
                 isDisabled: '@',
                 isElastic: '@',
@@ -57,7 +57,7 @@ define([
             restrict: 'E',
             replace: true,
             template: template,
-            controller: function ($scope, $element) {
+            controller: /*@ngInject*/ function ($scope, $element) {
                 $scope.modelOptions = {
                     updateOnDefault: true,
                     updateOn: 'default blur',

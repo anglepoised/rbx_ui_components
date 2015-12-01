@@ -21,7 +21,7 @@ define([
      */
     function rbTabsetDirective () {
 
-        return /*@ngInject*/ {
+        return {
             restrict: 'E',
             transclude: true,
             replace: true,
@@ -29,7 +29,7 @@ define([
             template: template,
             bindToController: true,
             controllerAs: 'tabset',
-            controller: function ($scope) {
+            controller: /*@ngInject*/ function ($scope) {
                 var $this = this;
                 $this.tabs = [];
                 $this.addTab = function addTab (tab) {
