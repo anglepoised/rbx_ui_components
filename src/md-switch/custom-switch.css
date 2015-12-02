@@ -1,0 +1,12 @@
+/** @define MdSwitch; use strict */
+
+/**
+ * The `md-switch` Angular Material component...
+ */
+
+/*
+ * Ensure that the md-switch doesn't overlay other components such as rb-footer
+ */
+md-switch .md-container {
+    z-index: 0;
+}
