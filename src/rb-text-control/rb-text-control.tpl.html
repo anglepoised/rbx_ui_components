@@ -52,8 +52,8 @@
         ng-change="onChange({value:$parent.ngModel})"
         ng-class="{'is-invalid': form[name].$touched && form[name].$invalid}"
         custom-validation
-        msd-elastic="{{ isElastic || false }}"
-    />
+        msd-elastic="{{ isElastic || false }}">
+    </textarea>
 
     <div class="TextControl-message" ng-show="helpMessage">
         {{helpMessage}}
