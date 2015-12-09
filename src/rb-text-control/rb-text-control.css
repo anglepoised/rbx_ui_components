@@ -128,6 +128,19 @@
  * Disabled
  */
 
+.TextControl[is-disabled="true"] .TextControl-label.is-invalid {
+    color: var(--color-gray-tuna);
+}
+
+.TextControl[is-disabled="true"] .TextControl-field.is-touched:invalid:focus,
+.TextControl[is-disabled="true"] .TextControl-field.is-invalid, {
+    border-color: var(--TextControl-field-border-color);
+}
+
+.TextControl[is-disabled="true"] .TextControl-message.is-invalid {
+    display: none;
+}
+
 .TextControl-field:disabled,
 .TextControl-field.is-disabled {
     background: var(--TextControl-field-disabled-background-color) url(var(--TextControl-field-disabled-image)) no-repeat var(--TextControl-field-disabled-image-position) !important; /* 5 */
