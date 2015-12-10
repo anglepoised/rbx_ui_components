@@ -4,7 +4,7 @@
   "scripts": {
     "pretest": "bower install",
     "test": "grunt test",
-    "start": "webpack-dev-server --content-base dist --port 7000 --history-api-fallback"
+    "start": "webpack-dev-server --content-base dist --port 7000 --history-api-fallback --host 0.0.0.0"
   },
   "repository": {
     "type": "git",
